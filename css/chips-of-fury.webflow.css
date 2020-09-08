@@ -511,7 +511,7 @@ h4 {
   margin-right: 10px;
   margin-left: 125px;
   border-radius: 7px;
-  background-color: rgba(255, 252, 235, 0.68);
+  background-color: #fff7cb;
 }
 
 .review_background_right {
@@ -520,7 +520,7 @@ h4 {
   margin-right: 125px;
   margin-left: 10px;
   border-radius: 7px;
-  background-color: rgba(255, 252, 235, 0.68);
+  background-color: #fffcea;
 }
 
 .review_box_right {
@@ -769,6 +769,41 @@ h4 {
   background-color: #fff;
   font-family: Inconsolata, monospace;
   font-size: 14px;
+}
+
+.rating_container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.rating_text {
+  margin-bottom: 6px;
+}
+
+.feature_heading {
+  color: #fffcea;
+  font-size: 20px;
+}
+
+.feature_description {
+  font-weight: 300;
 }
 
 @media screen and (max-width: 991px) {
