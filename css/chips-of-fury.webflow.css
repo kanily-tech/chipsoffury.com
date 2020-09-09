@@ -214,7 +214,7 @@ h4 {
   transform-style: preserve-3d;
 }
 
-.image-2 {
+.screenshots {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -405,6 +405,7 @@ h4 {
   padding-top: 10px;
   padding-left: 20px;
   font-family: Exo, sans-serif;
+  font-weight: 500;
   text-align: left;
 }
 
@@ -421,11 +422,11 @@ h4 {
 
 .review_box {
   padding-top: 10px;
-  background-image: url('../images/quote_marks_2.svg');
+  background-image: url('../images/quotes_left_transparent.svg');
   background-position: 0px 0px;
-  background-size: 120px 120px;
+  background-size: 100px 100px;
   background-repeat: no-repeat;
-  color: #333;
+  color: #fff;
 }
 
 .main_heading_2 {
@@ -507,29 +508,34 @@ h4 {
 
 .review_background {
   min-height: 100px;
-  margin-top: 20px;
+  margin-top: 15px;
   margin-right: 10px;
-  margin-left: 125px;
+  margin-left: 115px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #51197d;
   border-radius: 7px;
-  background-color: #fff7cb;
+  background-color: rgba(81, 25, 125, 0.5);
 }
 
 .review_background_right {
   min-height: 100px;
-  margin-top: 20px;
-  margin-right: 125px;
+  margin-top: 15px;
+  margin-right: 115px;
   margin-left: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #51197d;
   border-radius: 7px;
-  background-color: #fffcea;
+  background-color: rgba(81, 25, 125, 0.5);
 }
 
 .review_box_right {
   padding-top: 10px;
-  background-image: url('../images/quote_marks_3.svg');
+  background-image: url('../images/quotes_right_transparent.svg');
   background-position: 100% 0%;
-  background-size: 120px 120px;
+  background-size: 100px 100px;
   background-repeat: no-repeat;
-  color: #333;
 }
 
 .footer_box {
@@ -588,6 +594,7 @@ h4 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 40px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
