@@ -23,3 +23,7 @@ database-debug.log
 .credentials
 node_modules/
 .symlinks/
+
+# Python env
+venv/
+venv27/
