@@ -56,7 +56,7 @@
       <div class="fire_background" style="min-height: 100vh">
         <div class="container_rounded w-container" style="min-height: 80vh">
           <h1>Android APK Releases - Chips of Fury</h1>
-          <p class="date_right">Last updated: June 27, 2023</p>
+          <p class="date_right">Last updated: July 9, 2023</p>
           <p>
             You can directly download the Android APK if you do not have access to Google Play Store
             on your device. Some important notes:
@@ -78,6 +78,59 @@
               us at <a href="mailto:hi.kanily@gmail.com">hi.kanily@gmail.com</a> and we will try to make it available.
             </li>
           </ul>
+
+          <div class="version_details">
+            <h3>
+              v5.2.0
+            </h3>
+            <a href="https://cof-assets.s3.ap-southeast-1.amazonaws.com/releases/android/cof-release-v5.2.0_62.apk" class="outline">
+              Download APK
+            </a>
+            <h4 style="clear: both">Released on July 9, 2023</h4>
+            <p>
+              This release brings a major change in how chips are distributed. This is an attempt to simplify the
+              flow from joining a game to buy-in
+            </p>
+            <ul style="font-style: italic;">
+              Till the previous version
+              <li>A player joined the game room using a code</li>
+              <li>Then to obtain chips they had to buy chips</li>
+              <li>The admin had to approve this request</li>
+              <li>The chips were credited to the player's wallet</li>
+              <li>Finally the player could proceed to buy-in</li>
+            </ul>
+            <p>
+              <strong>👮 Now, only Admin can give (and take back!) chips</strong></p>
+            <p>
+            <p>
+              For a non-admin player joining the game, the flow will look like this
+            </p>
+            <ul>
+              <li>A player joins the game room using a code</li>
+              <li>The admin will credit chips to the player's wallet</li>
+              <li>The player can now buy-in</li>
+            </ul>
+            <p>
+              This means the admin has to do a bit more work. But it can be reduced by using the auto-credit chips
+              setting in the game config
+            </p>
+            <p>
+              <strong>💰 Improved auto-credit behaviour</strong>
+            </p>
+            <p>
+              At the time of approving a join request, the admin will now also get an option to disable the auto-credit
+              for that particular player
+            </p>
+            <p>
+              <strong>🫶 Quality of life UI/UX improvements</strong>
+            </p>
+            <ul>
+              <li>Improved Hand Guide</li>
+              <li>Fixed Chat Page layout bug that was causing the chat input to get hidden by keyboard</li>
+              <li>Cleaner layout for the table summary in the room</li>
+              <li>Tapping on chat log in the game screen will now open up the dedicated chat page</li>
+            </ul>
+          </div>
 
           <div class="version_details">
             <h3>
