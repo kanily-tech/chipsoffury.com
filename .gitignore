@@ -27,3 +27,5 @@ node_modules/
 # Python env
 venv/
 venv27/
+
+_site/
