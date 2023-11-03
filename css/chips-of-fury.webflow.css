@@ -137,8 +137,6 @@ h4 {
 }
 
 .fire_background {
-  padding-top: 20px;
-  padding-bottom: 20px;
   background-image: url('/images/launch_screen_wave_svg.svg');
   background-position: 50% 100%;
   background-size: contain;
@@ -925,4 +923,53 @@ h4 {
 
 .version_details {
   padding-top: 30px;
+}
+.menu-bar {
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.nav-link {
+  color: #f5d5ff;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: #f0bdff;
+}
+.hero {
+  padding-top: 20px;
+  padding-bottom: 0;
+  font-weight: 400;
+}
+.vertical_padding_container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.page_header {
+  padding-bottom: 10px;
+}
+.logo_small {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.header_title_container {
+  height: 60px;
+  flex-direction: column;
+  flex: 0 auto;
+  justify-content: center;
+  padding-left: 10px;
+  display: flex;
+}
+.header_title {
+  color: #fff;
+  font-family: Exo, sans-serif;
+  font-size: 20px;
+}
+.header_subtitle {
+  color: #cbe2ff;
+  font-size: 16px;
 }
