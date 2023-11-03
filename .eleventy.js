@@ -1,5 +1,6 @@
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
+const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
     // Copy `img/` to `_site/img`
@@ -17,6 +18,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(EleventyRenderPlugin);
     eleventyConfig.addPlugin(pluginWebc, {
         components: "_includes/components/**/*.webc",
+    });
+
+    eleventyConfig.addFilter("postDate", (dateObj) => {
+        return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
     });
 
     return {

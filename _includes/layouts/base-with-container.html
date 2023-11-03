@@ -1,0 +1,20 @@
+---
+layout: layouts/base.html
+---
+<div class="section_fire">
+    <div class="full_background">
+        <div class="fire_background" style="min-height: 100vh">
+            <div class="vertical_padding_container">
+
+                {% renderTemplate "webc" %}
+                <page-header></page-header>
+                {% endrenderTemplate %}
+
+                <div class="container_rounded w-container" style="min-height: 80vh">
+                {{ content | safe }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,8 +10,8 @@ body_class: home_page
     <div class="fire_background">
       <div class="w-container">
         <div class="w-layout-hflex menu-bar">
-          <a href="#" class="nav-link">Blog</a>
-          <a href="#" class="nav-link">About</a>
+          <a href="/blog" class="nav-link">Blog</a>
+<!--          <a href="#" class="nav-link">About</a>-->
         </div>
       </div>
       <div class="hero">
@@ -213,8 +213,9 @@ body_class: home_page
           </div>
         </div>
       </div>
-      <div class="copyright_container w-container"><a href="/privacy-policy">Privacy Policy</a>
-        <div class="text-block">Copyright © 2020, Kanily Technologies LLP, All rights reserved</div>
+      <div class="copyright_container w-container" style="padding-bottom: 10px">
+        <p><a href="/privacy-policy">Privacy Policy</a></p>
+        <p>Copyright © {{ helpers.currentYear() }}, Kanily Technologies LLP, All rights reserved</p>
       </div>
     </div>
   </div>

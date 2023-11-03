@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kanily-tech/chipsoffury.com#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-webc": "^0.11.1"
+    "@11ty/eleventy-plugin-webc": "^0.11.1",
+    "luxon": "^3.4.3"
   }
 }
