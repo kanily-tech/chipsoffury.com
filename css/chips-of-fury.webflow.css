@@ -211,11 +211,18 @@ h4 {
   transform-style: preserve-3d;
 }
 
-.screenshots {
+.screenshot {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
+  border: 10px solid rgb(130, 128, 239, .5);
+  border-radius: 20px;
+  margin: 10px;
+}
+.screenshot img {
+  width: 100%;
+  height: auto;
 }
 
 .main_heading {
@@ -245,6 +252,14 @@ h4 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.vertical_flex {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .main_feature_image {
@@ -460,13 +475,23 @@ h4 {
 }
 
 .feature_copy_container {
-  margin: 30px;
-  padding: 15px;
+  margin: 20px 20px 10px 10px;
+  padding: 10px 15px 10px 15px;
   border-style: solid;
   border-width: 3px;
   border-color: rgba(26, 28, 114, 0.74);
   border-radius: 10px;
   background-color: rgba(26, 28, 114, 0.56);
+}
+.feature_copy_container p {
+  font-weight: 200;
+}
+
+.feature_copy_container ul {
+  font-weight: 300;
+  padding-left: 20px;
+  list-style-type: disc;
+  line-height: 1.8em;
 }
 
 .download_icons {
@@ -648,6 +673,33 @@ h4 {
   font-size: 12px;
   line-height: 18px;
   text-align: center;
+}
+
+.image_caption_big {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.image_description {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+}
+ul.image_description {
+  list-style-type: disc;
+  line-height: 1.5em;
+}
+.image_description li {
+  padding-bottom: .5em;
+}
+.list_item_sub {
+  font-size: 14px;
+  line-height: 1.4em;
+  font-weight: 300;
+  color: #C8C8C8;
+  margin-bottom: 0;
 }
 
 .heading_subtext {

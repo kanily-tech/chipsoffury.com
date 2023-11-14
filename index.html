@@ -11,7 +11,6 @@ body_class: home_page
       <div class="w-container">
         <div class="w-layout-hflex menu-bar">
           <a href="/blog" class="nav-link">Blog</a>
-<!--          <a href="#" class="nav-link">About</a>-->
         </div>
       </div>
       <div class="hero">
@@ -26,20 +25,7 @@ body_class: home_page
           </div>
         </div>
         <div class="w-container">
-          <div class="container_download">
-            <p class="download_title">GET THE APP<br></p>
-            <div class="download_icons">
-              <a href="https://apps.apple.com/app/id1292493748" target="_blank" class="w-inline-block">
-                <img src="/images/app-store-badge.svg" loading="lazy" alt="" class="app_store_icon">
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.kanily.chipsoffury" target="_blank" class="w-inline-block">
-                <img src="/images/play-store-badge.svg" loading="lazy" alt="" class="app_store_icon">
-              </a>
-              <a href="/releases" class="w-inline-block">
-                <img src="/images/android-apk-badge.svg" loading="lazy" alt="" class="play_store_icon">
-              </a>
-            </div>
-          </div>
+          {% include "components/download-links.html" %}
           <div class="rating_container">
             <div class="rating_text">Rated 4.5+ on App Store and Google Play</div>
             <div class="rating_block">
@@ -53,115 +39,126 @@ body_class: home_page
         </div>
       </div>
       <div class="container w-container">
-        <h2 class="main_heading">Simple, Fast , Clutter Free (and Free)</h2>
+        <h3 class="main_heading_2">No Signup, No Ads</h3>
+        <h3 class="main_heading_2">Unlimited Chips</h3>
+        <h3 class="main_heading_2">Packed with Features!</h3>
         <div class="main_pitch w-row">
-          <div class="center_flex w-col w-col-6"><img src="/images/web_shot_1.png" loading="lazy" srcset="/images/web_shot_1.png 800w, images/web_shot_1.png 829w" sizes="(max-width: 767px) 92vw, (max-width: 991px) 354px, 460px" alt="" class="screenshots"></div>
+          <div class="vertical_flex w-col w-col-6">
+            <p class="image_caption_big">
+              Game config screenshot for virtual poker
+            </p>
+            <div class="screenshot">
+              <img src="/images/screenshots/game_config_virtual_poker.png"
+                   loading="lazy"
+                   alt="Game config - virtual poker">
+            </div>
+          </div>
           <div class="feature_summary w-col w-col-6">
-            <div class="main_feature_container">
-              <h4 class="section_pitch">Chips of Fury (<strong>CoF</strong>) is <em>meticulously designed</em> for private games with friends and family</h4>
-              <ul role="list" class="list w-list-unstyled">
-                <li class="main_feature_item rotate1 w-clearfix"><img src="/images/suit_spade.png" loading="lazy" alt="" class="main_feature_image">
-                  <div class="main_feature_text">No Login</div>
-                </li>
-                <li class="main_feature_item rotate2 w-clearfix"><img src="/images/suit_heart.png" loading="lazy" alt="" class="main_feature_image">
-                  <div class="main_feature_text">Unlimited Chips</div>
-                </li>
-                <li class="main_feature_item rotate3 w-clearfix"><img src="/images/suit_club.png" loading="lazy" alt="" class="main_feature_image">
-                  <div class="main_feature_text">Virtual Chips Mode</div>
-                </li>
-                <li class="main_feature_item rotate4 w-clearfix"><img src="/images/suit_diamond.png" loading="lazy" alt="" class="main_feature_image">
-                  <div>
-                    <div class="main_feature_text">Variations</div>
-                    <div class="main_feature_subtext">Texas Hold&#x27;em, Omaha, Omaha 5</div>
-                  </div>
-                </li>
+            <p class="image_caption_big">
+              Clean Table interface
+            </p>
+            <div class="screenshot">
+              <img src="/images/screenshots/table_screenshot_1.png"
+                   loading="lazy"
+                   alt="Table screenshot">
+            </div>
+            <div class="feature_copy_container">
+              <h3 class="section_pitch">
+                Chips of Fury (CoF) is tailor-made for playing private games with your friends and family
+              </h3>
+              <p>
+                You can play virtually, with variations such as Texas Hold'em, Omaha and Omaha 5. You can also play
+                using just "Virtual Poker Chips" and your own deck of cards.
+              </p>
+              <ul>
+                <li>Flexible chip distribution options</li>
+                <li>Configurable Action Time (Turn Timer)</li>
+                <li>Blind Timers (Adaptive / Structured Blinds)</li>
+                <li>Admin Pause / Resume</li>
+                <li>Unique "chips only" mode</li>
+                <li>Visualize Statistics</li>
+                <li>Custom display settings</li>
+                <li>Dealer's Choice Style of play</li>
               </ul>
-              <div class="container_download">
-                <p class="download_title">GET THE APP<br></p>
-                <div class="download_icons"><a href="https://apps.apple.com/app/id1292493748" target="_blank" class="w-inline-block"><img src="/images/app-store-badge.svg" loading="lazy" alt="" class="app_store_icon"></a><a href="https://play.google.com/store/apps/details?id=com.kanily.chipsoffury" target="_blank" class="w-inline-block"><img src="/images/play-store-badge.svg" loading="lazy" alt="" class="play_store_icon"></a></div>
-              </div>
+              <br>
             </div>
           </div>
         </div>
       </div>
+
       <div class="container w-container">
-        <h2 class="main_heading">Just the right features</h2>
-        <h3 class="main_heading_2">for your home games</h3>
+        <h2 class="main_heading">Unlimited chips, Flexible chip management</h2>
+        <div class="main_pitch w-row">
+          <div class="vertical_flex w-col w-col-6">
+            <p class="image_caption_big">
+              Option to give 'x' chips by default to all players on joining game
+            </p>
+            <img src="/images/screenshots/chip_management_screenshot_1.png"
+                 loading="lazy"
+                 alt="Automatically credit chips setting screenshot">
+            <br>
+            <br>
+            <p class="image_caption_big">
+              Automatically load wallet on buy-in for trusted groups
+            </p>
+            <img src="/images/screenshots/chip_management_screenshot_2.png"
+                 loading="lazy"
+                 alt="self loading wallet screenshot">
+            <br>
+            <br>
+          </div>
+          <div class="vertical_flex w-col w-col-6">
+            <p class="image_caption_big">
+              Admin can give or take chips from any player
+            </p>
+            <img src="/images/screenshots/chip_management_screenshot_3.png"
+                 loading="lazy"
+                 alt="Admin add deduct chips screenshot">
+          </div>
+        </div>
+      </div>
+
+      <div class="container w-container">
+        <h2 class="main_heading">Unique "Chips only" mode</h2>
+        <h3 class="main_heading_2">bring your own deck of cards<br><br></h3>
         <div class="feature_pitch_1 w-row">
-          <div class="just_right_column w-col w-col-6">
-            <div class="main_feature_container">
-              <ul role="list" class="list w-list-unstyled">
-                <li class="main_feature_item rotate5">
-                  <div>
-                    <div class="feature_title">Change up game variations on any hand!</div>
-                    <div class="feature_subtitle">Texas Hold&#x27;em, Omaha or Omaha 5</div>
-                  </div>
-                </li>
-                <li class="main_feature_item rotate6">
-                  <div class="feature_title">Frictionless chat for friendly banter</div>
-                </li>
-                <li class="main_feature_item rotate7">
-                  <div>
-                    <div class="feature_title">Play fast or slow</div>
-                    <div class="feature_subtitle">Players control the pace</div>
-                  </div>
-                </li>
-              </ul>
-              <div class="container_download">
-                <p class="download_title">GET THE APP<br></p>
-                <div class="download_icons"><a href="https://apps.apple.com/app/id1292493748" target="_blank" class="w-inline-block"><img src="/images/app-store-badge.svg" loading="lazy" alt="" class="app_store_icon"></a><a href="https://play.google.com/store/apps/details?id=com.kanily.chipsoffury" target="_blank" class="w-inline-block"><img src="/images/play-store-badge.svg" loading="lazy" alt="" class="play_store_icon"></a></div>
-              </div>
+          <div class="vertical_flex w-col w-col-6">
+            <p class="image_caption_big">
+              Gameplay screenshot for chips only mode
+            </p>
+            <div class="screenshot">
+              <img src="/images/screenshots/gameplay_chips_only_1.png" alt="chips only mode gameplay">
             </div>
+            <ul class="image_description">
+              <li>Play with custom denominations</li>
+              <li>
+                Choose between Poker mode, or Free Style
+                <p class="list_item_sub">
+                  Free style mode is great for non poker games!
+                </p>
+              </li>
+              <li>Admin can UNDO turns played by mistake</li>
+            </ul>
+            <br>
+            <br>
           </div>
-          <div class="center_flex w-col w-col-6"><img src="/images/web_shot_2.png" loading="lazy" alt="" class="screenshots"></div>
-        </div>
-        <div class="feature_copy_container">
-          <div>
-            <h4 class="feature_heading">♠ Dealer&#x27;s Choice Style of play</h4>
-            <p class="feature_description">Home games are free flowing. The game may start as Texas Hold&#x27;em, but then during the game players might switch to playing some other variation like Omaha. CoF supports exactly that kind of gameplay 🔄. If Dealer&#x27;s Choice is enabled by the admin, then before the hand is dealt, the dealer gets the option to change the game variation. Currently, we support Texas Hold&#x27;em, Omaha and Omaha 5 variations in online poker mode. More variations are coming soon!</p>
-          </div>
-          <div>
-            <h4 class="feature_heading">♠ Seamless in-app chat</h4>
-            <p>Game talk is probably the most fun part of games with friends. CoF has the smoothest in-app chat you will find across all Poker Apps. So go ahead and engage in full on banter. Provoke or tease your friends with emojis 😎 , or express your joy 🤑 (or disgust 😵 ) on winning or losing hands!</p>
-          </div>
-          <div>
-            <h4 class="feature_heading">♠ No Clock - The speed of the game is not artificially enforced</h4>
-            <p class="feature_description">In home games, it is rare that players will play with a clock ⏰. It is often an implicit understanding that a turn must be played within a certain time limit and players respect that. Sometimes, when a lot of chatter is happening, the pace of the game is slower, whereas sometimes when everyone is focussed, hands get played in a jiffy. Players can choose to play fast or slow. It is great for teaching newbies how to play as well. They can take their time to understand how poker rules work and graduate to being a regular part of your group in no time. There are of course admin controls, in case a player becomes unresponsive - the admin can force them to sit out or kick them out of the room.<br></p>
+          <div class="vertical_flex w-col w-col-6">
+            <p class="image_caption_big">
+              Chips Settlement by admin
+            </p>
+            <div class="screenshot">
+              <img src="/images/screenshots/gameplay_chips_only_2.png" alt="chips only mode manual settlement">
+            </div>
+            <ul class="image_description">
+              <li>Automatic side pot calculation</li>
+              <li>Split pot settlement for Hi-lo variations</li>
+            </ul>
+            <br>
+            <br>
           </div>
         </div>
       </div>
-      <div class="container w-container">
-        <h2 class="main_heading">Unique &quot;Chips Only&quot; Mode</h2>
-        <div class="feature_pitch_2 w-row">
-          <div class="chips_only_column w-col w-col-6">
-            <div class="main_feature_container">
-              <ul role="list" class="list w-list-unstyled">
-                <li class="main_feature_item rotate5">
-                  <div class="feature_title">Use your own cards</div>
-                </li>
-                <li class="main_feature_item rotate6">
-                  <div class="feature_title">Play your own crazy game variations</div>
-                </li>
-              </ul>
-              <div class="container_download">
-                <p class="download_title">GET THE APP<br></p>
-                <div class="download_icons"><a href="https://apps.apple.com/app/id1292493748" target="_blank" class="w-inline-block"><img src="/images/app-store-badge.svg" loading="lazy" alt="" class="app_store_icon"></a><a href="https://play.google.com/store/apps/details?id=com.kanily.chipsoffury" target="_blank" class="w-inline-block"><img src="/images/play-store-badge.svg" loading="lazy" alt="" class="play_store_icon"></a></div>
-              </div>
-            </div>
-          </div>
-          <div class="center_flex w-col w-col-6"><img src="/images/web_shot_3.png" loading="lazy" alt="" class="screenshots"></div>
-        </div>
-        <div class="feature_copy_container">
-          <div>
-            <h4 class="feature_heading">♠ A unique &quot;chips only&quot; mode.</h4>
-            <p class="feature_description">This is amazing for when you want to play offline and don&#x27;t have a poker chipset, or don&#x27;t have enough chips in your set. The virtual chips have customizable denominations and are unlimited in number. So no matter how many chips you need, these never run out. Pot settlement is also a breeze 🧮. It even takes care of calculating Side Pots. Hi-Lo style of settlements can also be done with just a few clicks.</p>
-          </div>
-          <div>
-            <h4 class="feature_heading">♠ Play non-poker games using the Free Style mode</h4>
-            <p class="feature_description">Usage of Free Style virtual chips is not limited to offline games. Online games can also be played using third party virtual cards. Chips of Fury acts as a great companion app for the chips and betting. Many games such as Teen Patti, Flash, Seven Twenty-seven, Stud Poker, Guts, Draw Poker etc. work seamlessly.</p>
-          </div>
-        </div>
-      </div>
+
       <div class="review_container w-container">
         <h2 class="main_heading">Users Say...</h2>
         <div class="review_box">
@@ -198,20 +195,7 @@ body_class: home_page
           <div class="contact_details">
             <div class="contact_type">FB Messenger</div><a href="https://m.me/chipsoffury" target="_blank" class="contact_link">@chipsoffury</a></div>
         </div>
-        <div class="container_download">
-          <p class="download_title">GET THE APP<br></p>
-          <div class="download_icons">
-            <a href="https://apps.apple.com/app/id1292493748" target="_blank" class="w-inline-block">
-              <img src="/images/app-store-badge.svg" loading="lazy" alt="" class="app_store_icon">
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.kanily.chipsoffury" target="_blank" class="w-inline-block">
-              <img src="/images/play-store-badge.svg" loading="lazy" alt="" class="app_store_icon">
-            </a>
-            <a href="/releases" class="w-inline-block">
-              <img src="/images/android-apk-badge.svg" loading="lazy" alt="" class="play_store_icon">
-            </a>
-          </div>
-        </div>
+        {% include "components/download-links.html" %}
       </div>
       <div class="copyright_container w-container" style="padding-bottom: 10px">
         <p><a href="/privacy-policy">Privacy Policy</a></p>
