@@ -7,9 +7,16 @@ description: The official blog of Chips of Fury, a poker app for playing with fr
 <p>
     This place is a devlog of sorts. We will post updates about the app, and other things that we find interesting.
 </p>
+{% for post in collections.post | reverse %}
 <p>
-    {%- for post in collections.posts | reverse -%}
-        <a href="{{ post.url }}">{{ post.data.title }}</a> - {{ post.date | postDate }}<br>
-        <br>
-    {%- endfor -%}
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    {% for tag in post.data.tags %}
+        {% if tag != 'post' %}
+            <!-- styling to show a label with red background with rounded corners -->
+            <span style="background-color: #4342b8; color: white; padding: 5px 10px 5px 10px; margin: 0 5px 0 5px; border-radius: 5px; font-size: .9em">
+                #{{ tag }}</span>
+        {% endif %}
+    {% endfor %}
+    - {{ post.date | postDate }}
 </p>
+{% endfor %}

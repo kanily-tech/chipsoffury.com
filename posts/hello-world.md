@@ -3,7 +3,7 @@ layout: layouts/blog-post.html
 title: Hello World, we're running on 11ty now
 date: 2023-11-03
 author: Animesh
-tags: ['posts']
+tags: ['post']
 ---
 
 ### And with this we have a blog!
