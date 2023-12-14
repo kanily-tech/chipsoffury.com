@@ -1,7 +1,7 @@
 <div class="version_details">
     <h3 @html="version" style="display: inline"></h3><h4 style="float: right" @html="release_date"></h4>
     <hr style="clear: both">
-    <p>
+    <p webc:if="apk_url">
         <a :href="apk_url" class="outline">Download APK</a>
     </p>
     <slot></slot>
