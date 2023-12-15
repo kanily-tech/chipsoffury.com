@@ -11,7 +11,7 @@ Greetings from the team behind Chips of Fury! We've been on an exciting journey,
 The experience has been great so far - Fly.io is a delight to use in most regards. There are a few caveats that we’ve discovered, however, and we would like to share them.
 
 <div style="text-align: center;">
-    <img src="/images/fly-io-issues-post/pokerface.png" width="150">
+    <img src="/images/our-flight-with-fly-io/pokerface.png" width="150">
 </div>
 
 Now, let us deal the cards…
@@ -24,7 +24,7 @@ These newly spawned game servers, despite receiving the internal green light wit
 
 ### The benchmark
 
-<img src="/images/fly-io-issues-post/meme.png" width="100%">
+<img src="/images/our-flight-with-fly-io/meme.png" width="100%">
 
 Using Dart, the language Chips of Fury game servers speak, we created a [straightforward script](https://github.com/chipsoffury/fly_machines_benchmark) to collect some data on how long it takes for started servers to become responsive. It was kept running for 24 hours in regions crucial for us (`ams`, `bos`, `cdg`, `dfw`, `hkg`, `iad`, `jnb`, `lhr`, `nrt`, `otp`, `scl`, `sin`, `sjc`, and `syd`).
 
@@ -34,20 +34,26 @@ The application that the machines hosted is a basic HTTP server that has a few e
 2. Another metric is **time to respond**, which is the total time it takes before a newly started machine responds. Instead of hanging on a single request for however long it takes, we issue many of them. Each such request times out in a second, and another one is sent after another second. This was done after one of us found out that requests made very early on might never get to the instance.
 
 <div style="text-align: center;">
-    <img src="/images/fly-io-issues-post/benchmark-desc.png" width="80%">
+    <img src="/images/our-flight-with-fly-io/benchmark-desc.png" width="80%">
 </div>
 
 ### Here are some numbers
 
-<img src="/images/fly-io-issues-post/summary_plots.png" width="100%">
+<img src="/images/our-flight-with-fly-io/summary_plots.png" width="100%">
 
 For some reason, the `lhr` region was misbehaving that day. Since it would not be very fair to judge the machines’ quickness to become responsive, some outliers have been removed from the overall picture (but note that this data highlights the occasional instability of Fly.io which we are also unhappy with).
 
-<img src="/images/fly-io-issues-post/summary_plots_no_outliers.png" width="100%">
+<img src="/images/our-flight-with-fly-io/summary_plots_no_outliers.png" width="100%">
 
 Even with the extreme values removed, the startup time varies a lot from region to region, but that is not the main concern here. 
 
 Instead, it is the response times observed across different regions that raise red flags: 20-30 seconds for the machine to become available to the public internet is *very long* for our specific needs. Remember: the time to become responsive to traffic outside of the Fly’s internal network is recorded after the machines enter a started state. It seems that the Fly.io networking takes time to catch up and start routing traffic to the instance, and as stated above, for the server to be unresponsive for upwards of 20 seconds after startup is too long for a game server.
+
+<img src="/images/our-flight-with-fly-io/cold_summary_plots.png" width="100%">
+
+We have also decided to see what the time to respond for a server starting from a `STOPPED` state, not after being created but rather woken up, looks like on average. These numbers (shown above) are much more reasonable, with almost no regions extending over 2 seconds of response time. 
+
+Note that the machine issuing those requests was located in Singapore, and we did not account for round-trip time of the request.
 
 You can look at the data yourself [here](https://github.com/chipsoffury/fly_machines_benchmark) and [here](https://colab.research.google.com/drive/1dXDTrM5s5tkIgGJ3SMpT6JiGR9HWFOUl?usp=sharing). You might also find the [Fly.io Dart client](https://github.com/chipsoffury/fly_io_dart_client) that we have open sourced useful.
 
