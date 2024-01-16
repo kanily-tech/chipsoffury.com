@@ -62,5 +62,3 @@ Something else that perhaps not only us would benefit from is some sort of real 
 While this analysis has shed light on the peculiar response times, it leaves us with lingering questions about the root cause. Our goal here is simple: share what we found, spark a conversation, and hopefully make the Fly.io experience better for Chips of Fury and everyone else.
 
 Are there optimizations we've overlooked in our current infrastructure setup? Is there a possibility of unexpected behavior from the Fly.io proxy service? As we dive deeper into these mysteries, we invite the Fly.io community to join the exploration.
-
-{% include "components/comments.html" %}

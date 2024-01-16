@@ -39,5 +39,3 @@ If option 1 and option 2 are disabled, then admin will have to manually give chi
 
 With these options, most use-cases seem to get covered. If you have a different use-case, or a better idea
 on how to manage chips, we'd love to hear from you.
-
-{% include "components/comments.html" %}
