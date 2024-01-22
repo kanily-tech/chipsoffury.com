@@ -12,9 +12,15 @@ description: The official blog of Chips of Fury, a poker app for playing with fr
     <a href="{{ post.url }}">{{ post.data.title }}</a>
     {% for tag in post.data.tags %}
         {% if tag != 'post' %}
-            <!-- styling to show a label with red background with rounded corners -->
-            <span style="background-color: #4342b8; color: white; padding: 5px 10px 5px 10px; margin: 0 5px 0 5px; border-radius: 5px; font-size: .9em">
-                #{{ tag }}</span>
+            {% if tag == 'devlog' %}
+                <!-- styling to show a label with red background with rounded corners -->
+                <span style="background-color: #bb7636; color: white; padding: 5px 10px 5px 10px; margin: 0 5px 0 5px; border-radius: 5px; font-size: .9em">
+                    #{{ tag }}</span>
+            {% else %}
+                <!-- styling to show a label with red background with rounded corners -->
+                <span style="background-color: #4342b8; color: white; padding: 5px 10px 5px 10px; margin: 0 5px 0 5px; border-radius: 5px; font-size: .9em">
+                    #{{ tag }}</span>
+            {% endif %}
         {% endif %}
     {% endfor %}
     - {{ post.date | postDate }}
