@@ -109,7 +109,12 @@ In a funny way, I appreciate this churn. I am the little guy, waiting to win use
 
 But for a good player, it would not matter over this many hands. They'll have their way regardless.
 
-I can open up the code notebook for you to try all this out if you don't believe me. Just let me know.
+I can open up the code notebook for you to try all this out if you don't believe me. Just let me know. I 
+didn't do that right away as my code is in Dart. To keep things honest I was doing the data generation
+using the exact same algorithm that is used in the game. And then I was using a Python notebook to just
+copy-paste that data and plot it.
+
+I am pretty sure that we'll get similar results in pure Python as well.
 
 PS. Ran the 10k hands simulation 4 more times. Here are the results:
 
