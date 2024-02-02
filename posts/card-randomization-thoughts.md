@@ -103,11 +103,11 @@ In this run, P2 won about 150 more hands than P1... over 10K hands. So that seem
 to see those streaks though. This is all being done using a simple random number generator. But if 
 P1 were to be running into the bad luck from around hand 5000 to 7000, they would NOT think so. And no matter
 what I do, I can't convince them otherwise. So it'll be a bad review on the app stores, and the group will 
-probably not use this app again.
+probably not use this app again. 
+
+In a funny way, I appreciate this churn. I am the little guy, waiting to win users from other apps! 😂
 
 But for a good player, it would not matter over this many hands. They'll have their way regardless.
-
-In a funny way, I appreciate this churn. I am the little guy, waiting to win users from other apps!
 
 I can open up the code notebook for you to try all this out if you don't believe me. Just let me know.
 
