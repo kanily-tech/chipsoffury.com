@@ -17,7 +17,10 @@ body_class: home_page
       <div class="hero">
         <div class="container_logo w-container">
           <img src="/images/app_icon_v4_web.png" loading="lazy" height="200" alt="" class="logo">
-          <img src="/images/chips_of_fury_text.svg" loading="lazy" width="320" height="" alt="" class="image">
+          <div style="display: inline-flex; align-items: center;">
+            <img src="/images/chips_of_fury_text.svg" loading="lazy" width="320" height="" alt="" class="image" style="margin-right:5px;">
+            <span style="font-size: 2em">&reg;</span>
+          </div>
           <h2 class="logo_subtext">play poker with friends and family</h2>
           <div class="logo_desc_container">
             <h3 class="logo_description">Virtual Poker Table</h3>
@@ -246,7 +249,7 @@ body_class: home_page
         {% include "components/download-links.html" %}
       </div>
       <div class="copyright_container w-container" style="padding-bottom: 10px">
-        <p><a href="/privacy-policy">Privacy Policy</a></p>
+        <p><a href="/privacy-policy">Privacy Policy</a> • <a href="/terms">Terms of Service</a></p>
         <p>Copyright © {{ helpers.currentYear() }}, Kanily Technologies LLP, All rights reserved</p>
       </div>
     </div>
