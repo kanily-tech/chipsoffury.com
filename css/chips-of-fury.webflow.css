@@ -402,10 +402,11 @@ h4 {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  padding-top: 20px;
 }
 
 .download_title {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
 }
 
@@ -443,7 +444,7 @@ h4 {
 
 .main_heading_2 {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-weight: 300;
   text-align: center;
 }
