@@ -1026,3 +1026,8 @@ ul.image_description {
   color: #cbe2ff;
   font-size: 16px;
 }
+.post_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

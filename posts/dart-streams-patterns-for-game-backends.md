@@ -6,12 +6,6 @@ author: Animesh
 tags: ['post', 'devlog']
 ---
 <style>
-/* center images horizontally */
-.post_image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 /* center iframes horizontally */
 iframe {
   display: block;
@@ -20,11 +14,9 @@ iframe {
 }
 </style>
 <div style="padding: 16px; font-size: .9em; border-top: #be9a4e solid 1px; border-bottom: #be9a4e solid 1px">
-<p>
-You are reading a post on the Chips of Fury blog - a Poker app for playing privately with friends. Chips of Fury 
-is written in Dart - Flutter on the frontend and a Dart server on the backend.
-</p>
-Dart is not popular on the backend, so these tidbits serve as notes to self, and hopefully others writing Dart stuff.
+Chips of Fury is a Poker app for playing privately with friends. It is written in Dart - Flutter on the
+frontend and a Dart server on the backend. Dart is not popular on the backend, so these tidbits serve as 
+notes to self, and hopefully others writing Dart stuff.
 </div>
 
 ### Some context
@@ -34,9 +26,7 @@ Each game server instance is designed to host multiple tables concurrently.
 
 The client and server communicate over WebSockets. Multiple tables can share the same underlying WebSocket connection - 
 assuming that they are running on the same game server instance. Although the client does not yet support playing
-on multiple tables concurrently. 
-
-<iframe src="https://giphy.com/embed/27EbORLGRmOi4dLm27" width="240" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p class="image_caption"><a href="https://giphy.com/gifs/atljewishfilm-the-mad-adventures-of-rabbi-jacob-french-comedy-classic-grard-oury-27EbORLGRmOi4dLm27">via GIPHY</a></p>
+on multiple tables concurrently.
 
 ### High Level Game Event Flow (Incoming)
 
