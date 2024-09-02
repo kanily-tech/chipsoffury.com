@@ -19,6 +19,9 @@ In alphabetical order -
 ### Clubs Poker
 <img src="/images/posts/poker-ui/clubspoker.jpg" class="post_image">
 
+### Fish Poker
+<img src="/images/posts/poker-ui/fish_poker.jpg" class="post_image">
+
 ### Full Tilt Poker
 <img src="/images/posts/poker-ui/full_tilt.jpg" class="post_image">
 
@@ -42,6 +45,9 @@ In alphabetical order -
 
 ### Poker Stars
 <img src="/images/posts/poker-ui/pokerstars.jpg" class="post_image">
+
+### Pokio
+<img src="/images/posts/poker-ui/pokio.jpg" class="post_image">
 
 ### RIO (Run it once) Poker
 <img src="/images/posts/poker-ui/run_it_once_poker.jpg" class="post_image">
