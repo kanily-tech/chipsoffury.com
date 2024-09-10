@@ -20,4 +20,5 @@ etc.
 
 So I take my words back. Implementing passkeys on CoF is a hard PASS.
 
+[Update 2024-09-10]: Thank you DHH for agreeing - [Passwords have problems, but passkeys have more](https://world.hey.com/dhh/passwords-have-problems-but-passkeys-have-more-95285df9)
 
