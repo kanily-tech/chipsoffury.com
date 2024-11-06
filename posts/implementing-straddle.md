@@ -40,14 +40,14 @@ Without straddle, the BB is the last to take action. By straddling, the UTG gain
 to act in the pre-flop betting.
 
 ### Case 2
-#### Dan (UTG) does a blind bet after the hole cards are dealt
+#### Dan (UTG) does a voluntary blind bet after the hole cards are dealt
 <img src="/images/posts/straddle/blind_bet_setup.png" class="post_image" width="75%"/>
 
 Action:
 - Bob posts SB - 1
 - Cat posts BB - 2
 - <strong>Hole cards are dealt</strong>
-- Dan blinds bets (2xbb) - 4
+- Dan posts voluntary blind bet (that is, without seeing cards) (2xbb) - 4
 - Alice folds
 - Bob calls - 3
 - Cat calls - 2
