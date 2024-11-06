@@ -46,8 +46,8 @@ to act in the pre-flop betting.
 Action:
 - Bob posts SB - 1
 - Cat posts BB - 2
-- Dan posts Straddle (2xbb) - 4
 - <strong>Hole cards are dealt</strong>
+- Dan blinds bets (2xbb) - 4
 - Alice folds
 - Bob calls - 3
 - Cat calls - 2
