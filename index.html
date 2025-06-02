@@ -9,19 +9,19 @@ body_class: home_page
   <div class="full_background">
     <div class="fire_background">
       <div class="w-container">
-        <div class="w-layout-hflex menu-bar">
+        <nav class="w-layout-hflex menu-bar">
           <a href="/blog" class="nav-link">Blog</a>
           <a href="#contact-box" class="nav-link">Contact</a>
-        </div>
+        </nav>
       </div>
-      <div class="hero">
+      <section class="hero" aria-labelledby="page-main-heading">
         <div class="container_logo w-container">
-          <img src="/images/app_icon_v4_web.png" loading="lazy" height="200" alt="" class="logo">
-          <div style="display: inline-flex; align-items: center;">
-            <img src="/images/chips_of_fury_text.svg" loading="lazy" width="320" height="" alt="Chips of Fury" class="image" style="margin-right:5px;">
-            <span style="font-size: 2em">&reg;</span>
+          <img src="/images/app_icon_v4_web.png" loading="lazy" height="200" alt="Chips of Fury App Icon" class="logo">
+          <div class="inline-flex-center">
+            <img src="/images/chips_of_fury_text.svg" loading="lazy" width="320" height="" alt="Chips of Fury" class="image margin-right-5">
+            <span class="font-size-2em">&reg;</span>
           </div>
-          <h1 class="logo_subtext">play poker with friends and family</h1>
+          <h1 class="logo_subtext" id="page-main-heading">play poker with friends and family</h1>
           <div class="logo_desc_container">
             <h2 class="logo_description">Virtual Poker Table</h2>
             <h4 class="logo_description">for your</h4>
@@ -31,33 +31,33 @@ body_class: home_page
         <div class="w-container">
           <div class="rating_container">
             <div class="rating_text">Rated 4.5+ on App Store and Google Play</div>
-            <div class="rating_block">
-              <img src="/images/full_star.svg" loading="lazy" width="40" height="40" alt="" class="rating_star">
-              <img src="/images/full_star.svg" loading="lazy" width="40" height="40" alt="" class="rating_star">
-              <img src="/images/full_star.svg" loading="lazy" width="40" height="40" alt="" class="rating_star">
-              <img src="/images/full_star.svg" loading="lazy" width="40" height="40" alt="" class="rating_star">
-              <img src="/images/half_star.svg" loading="lazy" width="40" height="40" alt="" class="rating_star">
+            <div class="rating_block" role="img" aria-label="Rating: 4.5 out of 5 stars">
+              <img src="/images/full_star.svg" loading="lazy" width="40" height="40" alt="Star rating icon" class="rating_star">
+              <img src="/images/full_star.svg" loading="lazy" width="40" height="40" alt="Star rating icon" class="rating_star">
+              <img src="/images/full_star.svg" loading="lazy" width="40" height="40" alt="Star rating icon" class="rating_star">
+              <img src="/images/full_star.svg" loading="lazy" width="40" height="40" alt="Star rating icon" class="rating_star">
+              <img src="/images/half_star.svg" loading="lazy" width="40" height="40" alt="Half-star rating icon" class="rating_star">
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="container w-container">
-        <h3 class="main_heading_2">No Signup, No Ads</h3>
+      <section class="container w-container" aria-labelledby="features-heading">
+        <h3 id="features-heading" class="main_heading_2">No Signup, No Ads</h3>
         <h3 class="main_heading_2">Unlimited Chips</h3>
         <h3 class="main_heading_2">Packed with Features!</h3>
         {% include "components/download-links.html" %}
-      </div>
+      </section>
 
-      <div class="container w-container" style="padding-bottom: 20px">
-        <h4 class="section_pitch">
+      <section class="container w-container padding-bottom-20" aria-labelledby="pitch-heading">
+        <h4 id="pitch-heading" class="section_pitch">
           Chips of Fury (CoF) is tailor-made for playing poker with friends and family. You can play virtually, with variations such as
           Texas Hold'em, Omaha and Omaha 5. You can also play using <em>Virtual Poker Chips</em> and your own deck of cards.
         </h4>
-      </div>
+      </section>
 
-      <div class="container w-container">
-        <h2 class="main_heading">Unique <em>Chips only</em> mode</h2>
+      <section class="container w-container" aria-labelledby="chips-only-mode-heading">
+        <h2 id="chips-only-mode-heading" class="main_heading">Unique <em>Chips only</em> mode</h2>
         <h3 class="main_heading_2">bring your own deck of cards</h3>
         <div class="main_pitch w-row">
           <div class="vertical_flex w-col w-col-6">
@@ -95,10 +95,10 @@ body_class: home_page
             <br>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="container w-container">
-        <h2 class="main_heading">Exciting gameplay features for Poker home games</h2>
+      <section class="container w-container" aria-labelledby="gameplay-features-heading">
+        <h2 id="gameplay-features-heading" class="main_heading">Exciting gameplay features for Poker home games</h2>
         <div class="main_pitch w-row">
           <div class="vertical_flex w-col w-col-6">
             <p class="image_caption_big">
@@ -114,20 +114,6 @@ body_class: home_page
               <li>Customize everything about how you want to play</li>
             </ul>
           </div>
-<!--          <div class="vertical_flex w-col w-col-6">-->
-<!--            <p class="image_caption_big">-->
-<!--              Chips Settlement by admin-->
-<!--            </p>-->
-<!--            <div class="screenshot">-->
-<!--              <img src="/images/screenshots/gameplay_chips_only_2.png" alt="chips only mode manual settlement">-->
-<!--            </div>-->
-<!--            <ul class="image_description">-->
-<!--              <li>Automatic side pot calculation</li>-->
-<!--              <li>Split pot settlement for Hi-lo variations</li>-->
-<!--            </ul>-->
-<!--            <br>-->
-<!--            <br>-->
-<!--          </div>-->
           <div class="vertical_flex w-col w-col-6">
             <p class="image_caption_big">
               Clean Table interface
@@ -147,10 +133,10 @@ body_class: home_page
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="container w-container">
-        <h2 class="main_heading">Unlimited chips, Flexible chip management</h2>
+      <section class="container w-container" aria-labelledby="chip-management-heading">
+        <h2 id="chip-management-heading" class="main_heading">Unlimited chips, Flexible chip management</h2>
         <div class="main_pitch w-row">
           <div class="vertical_flex w-col w-col-6">
             <p class="image_caption_big">
@@ -179,10 +165,10 @@ body_class: home_page
                  alt="Admin add deduct chips screenshot">
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="container w-container">
-        <h2 class="main_heading">Customize your screen layout and deck theme</h2>
+      <section class="container w-container" aria-labelledby="customization-heading">
+        <h2 id="customization-heading" class="main_heading">Customize your screen layout and deck theme</h2>
         <div class="main_pitch w-row">
           <div class="vertical_flex w-col w-col-6">
             <p class="image_caption_big">
@@ -218,10 +204,10 @@ body_class: home_page
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="review_container w-container">
-        <h2 class="main_heading">Users Say...</h2>
+      <section class="review_container w-container" aria-labelledby="user-reviews-heading">
+        <h2 id="user-reviews-heading" class="main_heading">Users Say...</h2>
         <div class="review_box">
           <div class="review_background">
             <div class="review_name">Khai</div>
@@ -246,7 +232,7 @@ body_class: home_page
             <blockquote class="review_quote">Exactly what is needed for playing poker without poker chips. Also has the option to play poker virtually, or make it suit for other gambling games. Well designed UX and game controls. Kudos to the developer. Have been a user for long time and been seeing the changes over time, great work.</blockquote>
           </div>
         </div>
-      </div>
+      </section>
       <div class="bottom_container w-container">
         <div class="footer_box" id="contact-box">
           <h2 class="main_heading">Contact Us</h2>
