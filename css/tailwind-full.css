@@ -532,6 +532,45 @@
   transform: translateX(-50%);
 }
 
+/* Chips Only Swoosh Effect */
+.chips-only-swoosh {
+  position: relative;
+  display: inline-block;
+  color: #fbbf24; /* text-amber-400 for emphasis */
+  font-weight: 600; /* font-semibold */
+}
+
+.chips-only-swoosh::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -2px;
+  right: -2px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M5,8 Q25,2 50,5 T95,8' stroke='%23fbbf24' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  animation: swoosh-draw 2s ease-out forwards;
+  animation-delay: 1s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@keyframes swoosh-draw {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0.8;
+  }
+}
+
 .scroll-indicator {
   /* position: absolute: positions relative to hero-section */
   /* bottom-0: positions at the bottom edge of hero section */
