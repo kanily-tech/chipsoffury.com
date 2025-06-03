@@ -19,6 +19,18 @@
       </screenshot-card>
       
       <screenshot-card 
+        image="/images/screenshots/v10/screenshot_chips_only.webp" 
+        title="Flexible Chips Only Mode" 
+        description="Prefer your own physical cards? Use the app for seamless digital chip management.">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_chips_settle.webp" 
+        title="Clear Chip Settlement" 
+        description="Effortlessly track buy-ins, rebuys, and cash-outs for easy game settlement.">
+      </screenshot-card>
+      
+      <screenshot-card 
         image="/images/screenshots/v10/screenshot_variation_roulette.webp" 
         title="Game Variants" 
         description="Choose from multiple poker game variations">

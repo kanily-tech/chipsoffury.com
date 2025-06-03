@@ -6,7 +6,7 @@
   /* bg-indigo-900: sets dark indigo background color */
   /* text-white: sets text color to white for contrast */
   /* relative: enables positioning for overlay */
-  @apply bg-indigo-900 text-white relative overflow-hidden;
+  @apply bg-indigo-900 text-white relative;
 }
 
 /* Animated Suit Icons Background */
@@ -193,10 +193,10 @@
   /* mx-auto: centers horizontally with auto left/right margins */
   /* px-6: adds 24px padding left and right */
   /* py-12: adds 48px padding top and bottom */
-  /* pb-32: overrides bottom padding to 128px */
+  /* pb-24: overrides bottom padding to 96px (increased to accommodate scroll indicator) */
   /* relative: positions above background overlay */
   /* z-10: ensures content is above background pattern */
-  @apply max-w-7xl mx-auto px-6 py-12 pb-32 relative z-10;
+  @apply max-w-7xl mx-auto px-6 py-12 pb-24 relative z-10;
 }
 
 .hero-title {
@@ -204,13 +204,9 @@
   /* md:text-7xl: sets font size to 72px on medium screens (768px+) */
   /* font-bold: sets font weight to 700 (bold) */
   /* mb-6: adds 24px bottom margin */
-  /* bg-gradient-to-r: creates left-to-right gradient */
-  /* from-white: gradient starts with white */
-  /* to-purple-200: gradient ends with light purple (#e9d5ff) */
-  /* bg-clip-text: clips background to only show within text */
-  /* text-transparent: makes text color transparent (shows gradient) */
+  /* text-white: sets text color to solid white */
   /* text-center: centers text horizontally */
-  @apply text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent text-center;
+  @apply text-5xl md:text-7xl font-bold mb-6 text-white text-center;
 }
 
 .hero-subtitle {
@@ -230,6 +226,65 @@
   /* mx-auto: centers horizontally with auto margins */
   /* text-center: centers text horizontally */
   @apply text-lg text-purple-200 mb-8 max-w-2xl mx-auto text-center;
+}
+
+.hero-features {
+  /* flex: makes container flexbox */
+  /* flex-wrap: allows items to wrap to new line */
+  /* justify-center: centers items horizontally */
+  /* items-center: centers items vertically */
+  /* gap-3: adds 12px gap between items */
+  /* mb-8: adds 32px bottom margin */
+  /* max-w-2xl: sets max width to 672px */
+  /* mx-auto: centers horizontally with auto margins */
+  @apply flex flex-wrap justify-center items-center gap-3 mb-8 max-w-2xl mx-auto;
+}
+
+.feature-badge {
+  /* inline-flex: makes inline flexbox container */
+  /* items-center: centers content vertically */
+  /* px-4: adds 16px padding left and right */
+  /* py-2: adds 8px padding top and bottom */
+  /* rounded-full: creates pill shape */
+  /* font-semibold: sets font weight to 600 */
+  /* text-sm: sets font size to 14px */
+  /* transition-all: animates all changes smoothly */
+  /* duration-300: animation duration 300ms */
+  /* hover:scale-105: scales to 105% on hover */
+  /* cursor-default: shows default cursor (not pointer) */
+  /* shadow-lg: adds large shadow */
+  /* hover:shadow-xl: increases shadow on hover */
+  @apply inline-flex items-center px-4 py-2 rounded-full font-semibold text-sm 
+         transition-all duration-300 hover:scale-105 cursor-default 
+         shadow-lg hover:shadow-xl;
+}
+
+.feature-badge--green {
+  /* bg-green-500: sets background to green (#10b981) */
+  /* text-white: sets text color to white */
+  /* hover:bg-green-600: darkens green on hover */
+  @apply bg-green-500 text-white hover:bg-green-600;
+}
+
+.feature-badge--blue {
+  /* bg-blue-500: sets background to blue (#3b82f6) */
+  /* text-white: sets text color to white */
+  /* hover:bg-blue-600: darkens blue on hover */
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.feature-badge--purple {
+  /* bg-purple-500: sets background to purple (#a855f7) */
+  /* text-white: sets text color to white */
+  /* hover:bg-purple-600: darkens purple on hover */
+  @apply bg-purple-500 text-white hover:bg-purple-600;
+}
+
+.feature-badge--orange {
+  /* bg-orange-500: sets background to orange (#f97316) */
+  /* text-white: sets text color to white */
+  /* hover:bg-orange-600: darkens orange on hover */
+  @apply bg-orange-500 text-white hover:bg-orange-600;
 }
 
 .download-buttons {
@@ -331,11 +386,11 @@
 }
 
 .rating-section {
-  /* flex: makes container flexbox */
-  /* items-center: centers items vertically */
-  /* justify-center: centers items horizontally */
-  /* space-x-2: adds 8px horizontal space between children */
-  @apply flex items-center justify-center space-x-2;
+  /* flex: makes container flexbox with vertical stacking */
+  /* flex-col: stacks items vertically */
+  /* items-center: centers items horizontally */
+  /* justify-center: centers items vertically */
+  @apply flex flex-col items-center justify-center;
 }
 
 .features-section {
@@ -426,11 +481,9 @@
 
 .contact-section {
   /* py-20: adds 80px padding top and bottom */
-  /* bg-gradient-to-r: creates left-to-right gradient */
-  /* from-purple-900: gradient starts with dark purple (#581c87) */
-  /* to-blue-900: gradient ends with dark blue (#1e3a8a) */
+  /* bg-slate-900: sets background to very dark slate */
   /* text-white: sets text color to white */
-  @apply py-20 bg-gradient-to-r from-purple-900 to-blue-900 text-white;
+  @apply py-20 bg-slate-900 text-white;
 }
 
 .contact-content {
@@ -442,22 +495,88 @@
 }
 
 .contact-grid {
-  /* grid: makes container CSS grid */
-  /* md:grid-cols-3: creates 3 columns on medium screens (768px+) */
-  /* gap-6: adds 24px gap between grid items */
-  @apply grid md:grid-cols-3 gap-6;
+  /* flex: makes container flexbox */
+  /* flex-col: stacks items vertically */
+  /* items-center: centers items horizontally */
+  /* space-y-6: adds 24px vertical space between children */
+  /* mt-8: adds 32px top margin */
+  @apply flex flex-col items-center space-y-6 mt-8;
 }
 
 .contact-link {
   /* flex: makes container flexbox */
   /* items-center: centers items vertically */
-  /* justify-center: centers items horizontally */
   /* space-x-3: adds 12px horizontal space between children */
-  /* bg-white/10: sets background to white with 10% opacity */
-  /* hover:bg-white/20: changes to 20% white opacity on hover */
-  /* p-4: adds 16px padding on all sides */
-  /* rounded-xl: adds 12px border radius */
+  /* text-indigo-300: sets text color to light indigo */
+  /* hover:text-indigo-200: changes to lighter indigo on hover */
   /* transition-colors: animates color changes smoothly */
-  @apply flex items-center justify-center space-x-3 bg-white/10 
-         hover:bg-white/20 p-4 rounded-xl transition-colors;
+  /* text-lg: sets font size to 18px */
+  @apply flex items-center space-x-3 text-indigo-300 hover:text-indigo-200 transition-colors text-lg;
+}
+
+.hero-features-elegant {
+  /* text-lg: sets font size to 18px */
+  /* font-medium: sets font weight to 500 (medium) */
+  /* text-purple-100: sets text color to very light purple for subtle contrast */
+  /* mb-8: adds 32px bottom margin */
+  /* max-w-2xl: sets max width to 672px */
+  /* mx-auto: centers horizontally with auto margins */
+  /* text-center: centers text horizontally */
+  /* tracking-wide: adds letter spacing for elegance */
+  /* leading-relaxed: adds line height for better readability */
+  /* relative: for positioning the decorative line */
+  @apply text-lg font-medium text-purple-100 mb-8 max-w-2xl mx-auto text-center 
+         tracking-wide leading-relaxed relative;
+}
+
+.hero-features-elegant::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-indicator {
+  /* position: absolute: positions relative to hero-section */
+  /* bottom-0: positions at the bottom edge of hero section */
+  /* left-1/2: positions at 50% from left */
+  /* transform: centers horizontally and moves down by half height to cross border */
+  /* z-[9999]: extremely high z-index to appear above all components */
+  /* cursor-pointer: shows pointer cursor */
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-[9999] cursor-pointer;
+}
+
+.scroll-arrow {
+  /* w-10: sets width to 40px (smaller, less distracting) */
+  /* h-10: sets height to 40px */
+  /* bg-white/20: subtle semi-transparent white background */
+  /* hover:bg-white/30: slightly more opaque on hover */
+  /* rounded-full: makes circular */
+  /* flex: makes container flexbox */
+  /* items-center: centers content vertically */
+  /* justify-center: centers content horizontally */
+  /* text-white: sets icon color to white */
+  /* transition-all: animates all changes smoothly */
+  /* duration-300: animation duration 300ms */
+  /* backdrop-blur-sm: adds subtle blur effect */
+  @apply w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full 
+         flex items-center justify-center text-white 
+         transition-all duration-300 backdrop-blur-sm;
+  animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+@keyframes gentle-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
 } 

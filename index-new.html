@@ -30,13 +30,13 @@ description: >
   <div class="hero-content">
     <div class="max-w-4xl mx-auto">
       <h1 class="hero-title">
-        Play Poker with Friends
+        Play <span class="text-purple-300">Poker</span> with Friends
       </h1>
       <h2 class="hero-subtitle">
         The perfect app to host your private games
       </h2>
-      <p class="hero-description">
-        No Signup, No Ads, Unique Chips Only Mode, Feature Packed
+      <p class="hero-features-elegant">
+        No Signup • No Ads • Chips Only Mode • Feature Packed
       </p>
       
       <!-- App Store Badges -->
@@ -62,11 +62,24 @@ description: >
 
       <!-- Rating -->
       <div class="rating-section">
-        <div class="flex space-x-1">
-          <span class="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</span>
+        <div class="flex justify-center items-center space-x-1 mb-2">
+          <img src="/images/full_star.svg" alt="Star" class="w-6 h-6">
+          <img src="/images/full_star.svg" alt="Star" class="w-6 h-6">
+          <img src="/images/full_star.svg" alt="Star" class="w-6 h-6">
+          <img src="/images/full_star.svg" alt="Star" class="w-6 h-6">
+          <img src="/images/half_star.svg" alt="Half Star" class="w-6 h-6">
         </div>
-        <span class="text-purple-200">Rated 4.5+ on App Store and Google Play</span>
+        <p class="text-purple-200 text-center">Rated 4.5+ on App Store and Google Play</p>
       </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-arrow">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 13L12 18L17 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </div>
 </div>
@@ -80,74 +93,64 @@ description: >
 </screenshot-carousel>
 {% endrenderTemplate %}
 
-<!-- Features Section -->
-<section class="features-section">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="features-header">
-      <h2 class="features-title">No Signup, No Ads, Unlimited Chips</h2>
-      <p class="text-xl text-gray-600">Packed with Features!</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card feature-card--purple">
-        <div class="feature-icon feature-icon--purple">
-          <span>🎲</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Chips Only Mode</h3>
-        <p class="text-gray-600">Bring your own deck of cards and use the app just for virtual chips</p>
-      </div>
-
-      <div class="feature-card feature-card--blue">
-        <div class="feature-icon feature-icon--blue">
-          <span>🃏</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Multiple Variants</h3>
-        <p class="text-gray-600">Texas Hold'em, Omaha, Omaha 5, and dealer's choice games</p>
-      </div>
-
-      <div class="feature-card feature-card--green">
-        <div class="feature-icon feature-icon--green">
-          <span>👥</span>
-        </div>
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Private Games</h3>
-        <p class="text-gray-600">Play with friends and family in your own private poker room</p>
-      </div>
-    </div>
+<!-- Detailed Features Section -->
+<section class="py-16 bg-indigo-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl font-bold text-white">Packed with Features for Unforgettable Game Nights</h2>
+    <p class="mt-4 text-lg text-indigo-100 max-w-2xl mx-auto">
+      Discover the tools and options that make Chips of Fury the most versatile and fun private poker app.
+    </p>
   </div>
-</section>
 
-<!-- Screenshots Section -->
-<section class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">
-      Exciting gameplay features for Poker home games
-    </h2>
-    
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <img src="/images/screenshots/table_screenshot_1.png" alt="Clean Table interface" class="rounded-2xl shadow-2xl">
-      </div>
-      <div>
-        <h3 class="text-2xl font-bold text-gray-900 mb-4">Clean Table Interface</h3>
-        <ul class="space-y-3 text-gray-600">
-          <li class="flex items-start space-x-3">
-            <span class="text-green-500 mt-1">✓</span>
-            <span>Save and load game configurations</span>
-          </li>
-          <li class="flex items-start space-x-3">
-            <span class="text-green-500 mt-1">✓</span>
-            <span>Customize everything about how you want to play</span>
-          </li>
-          <li class="flex items-start space-x-3">
-            <span class="text-green-500 mt-1">✓</span>
-            <span>Automatic side pot calculation</span>
-          </li>
-          <li class="flex items-start space-x-3">
-            <span class="text-green-500 mt-1">✓</span>
-            <span>Split pot settlement for Hi-lo variations</span>
-          </li>
-        </ul>
-      </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% renderTemplate "webc" %}
+      <feature-card-detailed 
+        icon="💣" 
+        title="Bomb Pots" 
+        description="Ignite the action! At random intervals or designated hands, every player antes up for an instant super-sized pot before any cards are dealt.">
+      </feature-card-detailed>
+      {% endrenderTemplate %}
+
+      {% renderTemplate "webc" %}
+      <feature-card-detailed 
+        icon="🔄" 
+        title="Run it Twice/Thrice" 
+        description="Minimize bad beats and maximize equity. In all-in situations, deal the remaining board cards multiple times, splitting the pot accordingly.">
+      </feature-card-detailed>
+      {% endrenderTemplate %}
+
+      {% renderTemplate "webc" %}
+      <feature-card-detailed 
+        icon="🎲" 
+        title="Variation Roulette" 
+        description="Keep every round fresh and exciting! Let the app randomly select the poker variation for the next hand from a customizable list.">
+      </feature-card-detailed>
+      {% endrenderTemplate %}
+
+      {% renderTemplate "webc" %}
+      <feature-card-detailed 
+        icon="👑" 
+        title="Dealer's Choice" 
+        description="Classic home game fun! The player on the button gets to pick the game variation for the hand, choosing from your pre-approved list.">
+      </feature-card-detailed>
+      {% endrenderTemplate %}
+
+      {% renderTemplate "webc" %}
+      <feature-card-detailed 
+        icon="<span class='text-4xl'>🃏</span>" 
+        title="Chips Only Mode" 
+        description="Bring your own physical cards and use Chips of Fury as a sophisticated digital chip management tool for your live games.">
+      </feature-card-detailed>
+      {% endrenderTemplate %}
+
+      {% renderTemplate "webc" %}
+      <feature-card-detailed 
+        icon="📚" 
+        title="Expansive Game Library" 
+        description="Explore beyond the usual! Deal into a vast array of games including Texas Hold'em, Omaha, Omaha Hi-Lo, 5/6/3 Card Omaha, Pineapple, Short Deck, Double Board, Irish Poker, and many more.">
+      </feature-card-detailed>
+      {% endrenderTemplate %}
     </div>
   </div>
 </section>
@@ -156,25 +159,25 @@ description: >
 <section id="contact" class="contact-section">
   <div class="contact-content">
     <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
-    <p class="text-xl text-purple-200 mb-8">
+    <p class="text-xl text-indigo-200 mb-8">
       We would love to hear from you.<br>
       Please send your feedback, feature requests, ❤️ or 😠!
     </p>
     
     <div class="contact-grid">
       <a href="mailto:hi.kanily@gmail.com" class="contact-link">
-        <img src="/images/contact/email.svg" alt="Email" class="w-8 h-8">
-        <span class="font-semibold">hi.kanily@gmail.com</span>
+        <img src="/images/contact/email.svg" alt="Email" class="w-10 h-10">
+        <span class="font-semibold underline">hi.kanily@gmail.com</span>
       </a>
       
       <a href="https://m.me/chipsoffury" target="_blank" class="contact-link">
-        <img src="/images/contact/fb_messenger.svg" alt="Messenger" class="w-8 h-8">
-        <span class="font-semibold">@chipsoffury</span>
+        <img src="/images/contact/fb_messenger.svg" alt="Messenger" class="w-10 h-10">
+        <span class="font-semibold underline">@chipsoffury</span>
       </a>
       
       <a href="https://www.instagram.com/chips.of.fury/" target="_blank" class="contact-link">
-        <img src="/images/contact/insta.svg" alt="Instagram" class="w-8 h-8">
-        <span class="font-semibold">@chips.of.fury</span>
+        <img src="/images/contact/insta.svg" alt="Instagram" class="w-10 h-10">
+        <span class="font-semibold underline">@chips.of.fury</span>
       </a>
     </div>
   </div>
