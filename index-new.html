@@ -30,7 +30,14 @@ description: >
   <div class="hero-content">
     <div class="max-w-4xl mx-auto">
       <h1 class="hero-title">
-        Play <span class="text-purple-300">Poker</span> with Friends
+        <div class="text-center relative inline-block">
+          Play
+          <div class="absolute bg-yellow-400 text-black px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold shadow-lg" style="top: 0; right: -65px; transform: rotate(8deg);">
+            15+ variations
+          </div>
+        </div>
+        <div class="text-center"><span class="poker-variation-text">Poker</span></div>
+        <div class="text-center">with Friends</div>
       </h1>
       <h2 class="hero-subtitle">
         The perfect app to host your private games
@@ -38,7 +45,7 @@ description: >
       <p class="hero-features-elegant">
         No Signup • No Ads • Chips Only Mode • Feature Packed
       </p>
-      
+
       <!-- App Store Badges -->
       <div class="download-buttons">
         <!-- Primary Web CTA - Centered on its own row -->
@@ -147,8 +154,8 @@ description: >
       {% renderTemplate "webc" %}
       <feature-card-detailed 
         icon="📚" 
-        title="Expansive Game Library" 
-        description="Explore beyond the usual! Deal into a vast array of games including Texas Hold'em, Omaha, Omaha Hi-Lo, 5/6/3 Card Omaha, Pineapple, Short Deck, Double Board, Irish Poker, and many more.">
+        title="15+ Variations"
+        description="Including Texas Hold'em, Omaha, Omaha Hi-Lo, 5/6/3 Card Omaha, Pineapple, Short Deck, Double Board, Irish Poker, and many more.">
       </feature-card-detailed>
       {% endrenderTemplate %}
     </div>
@@ -181,4 +188,88 @@ description: >
       </a>
     </div>
   </div>
-</section> 
+</section>
+
+<!-- Poker Variations Typewriter Animation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const variations = [
+    "Poker",
+    "Texas Hold'em", 
+    "Omaha",
+    "Omaha Hi-Lo",
+    "5 Card Omaha",
+    "3 Card Omaha", 
+    "6 Card Omaha",
+    "Pineapple",
+    "Short Deck Hold'em",
+    "Double Board Hold'em",
+    "Crazy Pineapple",
+    "Lazy Pineapple",
+    "Irish Poker",
+    "Watermelon",
+    "Super Hold'em",
+    "Courchevel"
+  ];
+  
+  let currentIndex = 0;
+  let isDeleting = true; // Start by deleting "Poker"
+  let charIndex = 5; // Start after "Poker" (5 characters)
+  
+  const element = document.querySelector('.poker-variation-text');
+  
+  if (!element) {
+    return;
+  }
+  
+  // Function to get a random index different from current
+  function getRandomDifferentIndex(currentIdx, arrayLength) {
+    if (arrayLength <= 1) return 0;
+    
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * arrayLength);
+    } while (newIndex === currentIdx);
+    
+    return newIndex;
+  }
+  
+  function type() {
+    const currentWord = variations[currentIndex];
+    let typeSpeed = 120;
+    
+    if (isDeleting) {
+      charIndex--;
+      typeSpeed = 50;
+      
+      // Check if word is fully deleted
+      if (charIndex === 0) {
+        isDeleting = false;
+        // Pick a random variation different from current one
+        currentIndex = getRandomDifferentIndex(currentIndex, variations.length);
+        typeSpeed = 300; // Brief pause before next word
+      }
+    } else {
+      charIndex++;
+      typeSpeed = 120;
+      
+      // Check if word is fully typed
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+        typeSpeed = 2000; // Long pause after word is complete
+      }
+    }
+    
+    // Update display
+    const displayText = currentWord.substring(0, charIndex);
+    element.textContent = displayText;
+    
+    setTimeout(type, typeSpeed);
+  }
+  
+  // Start animation after 3 seconds
+  setTimeout(function() {
+    type();
+  }, 3000);
+});
+</script> 

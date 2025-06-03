@@ -200,13 +200,25 @@
 }
 
 .hero-title {
-  /* text-5xl: sets font size to 48px on mobile */
-  /* md:text-7xl: sets font size to 72px on medium screens (768px+) */
+  /* text-4xl: sets font size to 36px on mobile (reduced from 48px) */
+  /* md:text-6xl: sets font size to 60px on medium screens (reduced from 72px) */
   /* font-bold: sets font weight to 700 (bold) */
   /* mb-6: adds 24px bottom margin */
   /* text-white: sets text color to solid white */
   /* text-center: centers text horizontally */
-  @apply text-5xl md:text-7xl font-bold mb-6 text-white text-center;
+  /* leading-none: removes line height for tighter spacing */
+  @apply text-4xl md:text-6xl font-bold mb-6 text-white text-center leading-none;
+}
+
+.hero-title > div {
+  /* Ensure each line has consistent styling */
+  /* mb-1: adds minimal margin between lines (reduced from mb-2) */
+  @apply mb-1;
+}
+
+.hero-title > div:last-child {
+  /* Remove margin from last line */
+  @apply mb-0;
 }
 
 .hero-subtitle {
@@ -328,54 +340,34 @@
 }
 
 .primary-cta {
-  /* Even more prominent styling for primary CTAs */
+  /* Updated primary CTA styling with purple gradient and white outline */
   /* bg-gradient-to-r: creates a left-to-right gradient */
-  /* from-orange-500: gradient starts with orange (#f97316) */
-  /* to-red-500: gradient ends with red (#ef4444) */
+  /* from-purple-600: gradient starts with medium purple (#9333ea) */
+  /* to-purple-800: gradient ends with dark purple (#6b21a8) */
   /* text-white: sets text color to white */
   /* px-10: adds 40px padding left and right */
   /* py-5: adds 20px padding top and bottom */
-  /* rounded-2xl: adds 16px border radius */
+  /* rounded-md: adds medium border radius */
   /* font-black: sets font weight to 900 (heaviest) */
   /* text-xl: sets font size to 20px */
-  /* hover:from-orange-600: changes start color on hover */
-  /* hover:to-red-600: changes end color on hover */
-  /* hover:scale-105: scales element to 105% on hover (same as other buttons) */
+  /* hover:from-purple-700: changes start color on hover */
+  /* hover:to-purple-900: changes end color on hover */
+  /* hover:scale-105: scales element to 105% on hover */
   /* transition-all: animates all changes smoothly */
   /* duration-300: animation duration 300ms */
   /* flex: makes container flexbox */
   /* items-center: centers items vertically */
   /* justify-center: centers items horizontally */
   /* space-x-4: adds 16px horizontal space between children */
-  /* h-14: sets height to 56px (same as app store buttons) */
-  /* shadow-lg: adds large shadow (similar to download buttons) */
+  /* h-14: sets height to 56px */
+  /* shadow-lg: adds large shadow */
   /* hover:shadow-xl: increases shadow on hover */
-  /* border: adds subtle 1px border */
-  /* border-orange-400/30: sets border color to light orange with 30% opacity */
-  /* relative: for positioning pseudo-element */
-  @apply bg-gradient-to-r from-orange-500 to-red-500 text-white px-10 py-5 rounded-md
-         font-black text-xl hover:from-orange-600 hover:to-red-600 hover:scale-105 
+  /* border: adds 2px white border with 50% opacity */
+  /* border-white/50: sets border color to white with 50% opacity */
+  @apply bg-gradient-to-r from-purple-600 to-purple-800 text-white px-10 py-5 rounded-md
+         font-black text-xl hover:from-purple-700 hover:to-purple-900 hover:scale-105 
          transition-all duration-300 flex items-center justify-center space-x-4 
-         h-14 shadow-lg hover:shadow-xl border border-gray-100/50
-         relative;
-}
-
-.primary-cta::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #f97316, #ef4444, #f97316);
-  border-radius: inherit;
-  z-index: -1;
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+         h-14 shadow-lg hover:shadow-xl border-2 border-white/50;
 }
 
 .app-store-button {
@@ -579,4 +571,74 @@
   60% {
     transform: translateY(-4px);
   }
+}
+
+/* Animated Poker Variations Text Effect */
+.poker-variation-text {
+  display: inline-block;
+  color: #d8b4fe; /* text-purple-300 to match original styling */
+  position: relative;
+}
+
+.poker-variation-text::after {
+  content: '|';
+  display: inline-block;
+  color: #d8b4fe;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Alternative: Card Flip Effect */
+.poker-variations-flip {
+  display: inline-block;
+  position: relative;
+  perspective: 1000px;
+  min-width: 280px;
+}
+
+.poker-variation-flip {
+  display: block;
+  transform-style: preserve-3d;
+  animation: cardFlipCycle 24s infinite;
+}
+
+@keyframes cardFlipCycle {
+  0%, 8.33% { transform: rotateY(0deg); }
+  12.5%, 16.67% { transform: rotateY(90deg); }
+  20.83%, 29.17% { transform: rotateY(0deg); }
+  33.33%, 37.5% { transform: rotateY(90deg); }
+  41.67%, 50% { transform: rotateY(0deg); }
+  54.17%, 58.33% { transform: rotateY(90deg); }
+  62.5%, 70.83% { transform: rotateY(0deg); }
+  75%, 79.17% { transform: rotateY(90deg); }
+  83.33%, 91.67% { transform: rotateY(0deg); }
+  95.83%, 100% { transform: rotateY(90deg); }
+}
+
+/* Typewriter Effect Alternative */
+.poker-variations-typewriter {
+  display: inline-block;
+  position: relative;
+  min-width: 280px;
+}
+
+.poker-variation-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 3px solid rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  animation: typewriterCycle 18s infinite;
+}
+
+@keyframes typewriterCycle {
+  0%, 11.11% { width: 0; }
+  22.22%, 33.33% { width: 100%; }
+  44.44%, 55.56% { width: 0; }
+  66.67%, 77.78% { width: 100%; }
+  88.89%, 100% { width: 0; }
 } 
