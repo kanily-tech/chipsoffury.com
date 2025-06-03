@@ -1,7 +1,7 @@
-<section class="py-20 bg-gray-50">
+<section class="py-20 bg-indigo-950 bg-[url('/images/background_diagonal_lines.svg')]">
   <div class="text-center mb-12 max-w-4xl mx-auto px-6">
-    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" @html="title"></h2>
-    <p class="text-xl text-gray-600" @html="subtitle"></p>
+    <h2 class="text-4xl md:text-5xl font-bold text-indigo-50 mb-4" @html="title"></h2>
+    <p class="text-xl text-indigo-200" @html="subtitle"></p>
   </div>
   
   <div class="w-full overflow-x-auto px-6 pb-20 pt-8 scroll-smooth">
