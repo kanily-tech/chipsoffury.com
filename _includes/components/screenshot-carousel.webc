@@ -4,35 +4,67 @@
     <p class="text-xl text-gray-600" @html="subtitle"></p>
   </div>
   
-  <div class="flex overflow-x-auto space-x-6 px-6 pb-20 pt-8 scroll-smooth snap-x snap-mandatory justify-center">
-    <screenshot-card 
-      icon="🃏" 
-      title="Game Table" 
-      description="Clean, intuitive poker table interface">
-    </screenshot-card>
-    
-    <screenshot-card 
-      icon="🎲" 
-      title="Game Variants" 
-      description="Choose from Texas Hold'em, Omaha & more">
-    </screenshot-card>
-    
-    <screenshot-card 
-      icon="👥" 
-      title="Friends & Chat" 
-      description="Connect and chat with your poker buddies">
-    </screenshot-card>
-    
-    <screenshot-card 
-      icon="📊" 
-      title="Game Stats" 
-      description="Track your wins and poker progress">
-    </screenshot-card>
-    
-    <screenshot-card 
-      icon="⚙️" 
-      title="Customization" 
-      description="Personalize your poker experience">
-    </screenshot-card>
+  <div class="w-full overflow-x-auto px-6 pb-20 pt-8 scroll-smooth">
+    <div class="flex space-x-6 w-max mx-auto">
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_home.webp" 
+        title="Home Screen" 
+        description="Clean, intuitive app home interface">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_game_table.webp" 
+        title="Game Table" 
+        description="Beautiful poker table with clear card display">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_variation_roulette.webp" 
+        title="Game Variants" 
+        description="Choose from multiple poker game variations">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_fixed_variation.webp" 
+        title="Fixed Variation" 
+        description="Set up fixed game variation rules">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_gameplay_options.webp" 
+        title="Game Options" 
+        description="Customize your poker game settings">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_blinds_structure.webp" 
+        title="Blinds Structure" 
+        description="Set up tournament blinds and structure">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_raise_settings.webp" 
+        title="Raise Settings" 
+        description="Configure betting and raise options">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_rit_vote.webp" 
+        title="Run It Twice Vote" 
+        description="Players vote on running it twice">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_rit_deal.webp" 
+        title="Run It Twice Deal" 
+        description="See the results of running it twice">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_pineapple_discard.webp" 
+        title="Pineapple Discard" 
+        description="Discard phase in Pineapple poker variant">
+      </screenshot-card>
+    </div>
   </div>
 </section> 

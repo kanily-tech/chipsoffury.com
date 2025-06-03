@@ -95,34 +95,93 @@
 
 .download-buttons {
   /* flex: makes container flexbox */
-  /* flex-col: stacks items vertically on mobile */
-  /* sm:flex-row: arranges items horizontally on small screens (640px+) */
+  /* flex-col: stacks items vertically on all screen sizes */
   /* gap-4: adds 16px gap between items */
   /* justify-center: centers items horizontally */
   /* items-center: centers items vertically */
   /* mb-12: adds 48px bottom margin */
-  @apply flex flex-col sm:flex-row gap-4 justify-center items-center mb-12;
+  @apply flex flex-col gap-4 justify-center items-center mb-12;
 }
 
 .download-button {
-  /* bg-purple-900: sets background to dark purple (#581c87) */
+  /* bg-gradient-to-r: creates a left-to-right gradient */
+  /* from-green-500: gradient starts with green (#10b981) */
+  /* to-emerald-600: gradient ends with emerald (#059669) */
   /* text-white: sets text color to white */
-  /* px-6: adds 24px padding left and right */
-  /* py-3: adds 12px padding top and bottom */
-  /* rounded-lg: adds 8px border radius */
-  /* font-semibold: sets font weight to 600 */
-  /* hover:bg-gray-800: changes background to dark gray on hover */
-  /* transition-colors: animates color changes smoothly */
+  /* px-8: adds 32px padding left and right (larger than app store buttons) */
+  /* py-4: adds 16px padding top and bottom (taller than app store buttons) */
+  /* rounded-xl: adds 12px border radius (more rounded) */
+  /* font-bold: sets font weight to 700 (bolder than app store buttons) */
+  /* text-lg: sets font size to 18px (larger text) */
+  /* hover:from-green-600: changes start color on hover */
+  /* hover:to-emerald-700: changes end color on hover */
+  /* hover:scale-105: scales element to 105% on hover */
+  /* transition-all: animates all changes smoothly */
+  /* duration-300: animation duration 300ms */
   /* flex: makes container flexbox */
   /* items-center: centers items vertically */
   /* justify-center: centers items horizontally */
-  /* space-x-2: adds 8px horizontal space between children */
-  /* min-h-[56px]: sets minimum height to 56px (custom value) */
-  /* border: adds 1px border */
-  /* border-gray-400: sets border color to medium gray (#9ca3af) */
-  @apply bg-purple-900 text-white px-6 py-3 rounded-lg font-semibold 
-         hover:bg-gray-800 transition-colors flex items-center 
-         justify-center space-x-2 min-h-[56px] border border-gray-400;
+  /* space-x-3: adds 12px horizontal space between children */
+  /* min-h-[64px]: sets minimum height to 64px (taller than app store buttons) */
+  /* shadow-lg: adds large shadow */
+  /* hover:shadow-xl: increases shadow on hover */
+  /* ring-2: adds 2px ring */
+  /* ring-green-400/50: sets ring color to light green with 50% opacity */
+  @apply bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl 
+         font-bold text-lg hover:from-green-600 hover:to-emerald-700 hover:scale-105 
+         transition-all duration-300 flex items-center justify-center space-x-3 
+         min-h-[64px] shadow-lg hover:shadow-xl ring-2 ring-green-400/50;
+}
+
+.primary-cta {
+  /* Even more prominent styling for primary CTAs */
+  /* bg-gradient-to-r: creates a left-to-right gradient */
+  /* from-orange-500: gradient starts with orange (#f97316) */
+  /* to-red-500: gradient ends with red (#ef4444) */
+  /* text-white: sets text color to white */
+  /* px-10: adds 40px padding left and right */
+  /* py-5: adds 20px padding top and bottom */
+  /* rounded-2xl: adds 16px border radius */
+  /* font-black: sets font weight to 900 (heaviest) */
+  /* text-xl: sets font size to 20px */
+  /* hover:from-orange-600: changes start color on hover */
+  /* hover:to-red-600: changes end color on hover */
+  /* hover:scale-105: scales element to 105% on hover (same as other buttons) */
+  /* transition-all: animates all changes smoothly */
+  /* duration-300: animation duration 300ms */
+  /* flex: makes container flexbox */
+  /* items-center: centers items vertically */
+  /* justify-center: centers items horizontally */
+  /* space-x-4: adds 16px horizontal space between children */
+  /* h-14: sets height to 56px (same as app store buttons) */
+  /* shadow-lg: adds large shadow (similar to download buttons) */
+  /* hover:shadow-xl: increases shadow on hover */
+  /* border: adds subtle 1px border */
+  /* border-orange-400/30: sets border color to light orange with 30% opacity */
+  /* relative: for positioning pseudo-element */
+  @apply bg-gradient-to-r from-orange-500 to-red-500 text-white px-10 py-5 rounded-md
+         font-black text-xl hover:from-orange-600 hover:to-red-600 hover:scale-105 
+         transition-all duration-300 flex items-center justify-center space-x-4 
+         h-14 shadow-lg hover:shadow-xl border border-gray-100/50
+         relative;
+}
+
+.primary-cta::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #f97316, #ef4444, #f97316);
+  border-radius: inherit;
+  z-index: -1;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
 }
 
 .app-store-button {
