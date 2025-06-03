@@ -1,0 +1,38 @@
+<section class="py-20 bg-gray-50">
+  <div class="text-center mb-12 max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" @html="title"></h2>
+    <p class="text-xl text-gray-600" @html="subtitle"></p>
+  </div>
+  
+  <div class="flex overflow-x-auto space-x-6 px-6 pb-20 pt-8 scroll-smooth snap-x snap-mandatory justify-center">
+    <screenshot-card 
+      icon="🃏" 
+      title="Game Table" 
+      description="Clean, intuitive poker table interface">
+    </screenshot-card>
+    
+    <screenshot-card 
+      icon="🎲" 
+      title="Game Variants" 
+      description="Choose from Texas Hold'em, Omaha & more">
+    </screenshot-card>
+    
+    <screenshot-card 
+      icon="👥" 
+      title="Friends & Chat" 
+      description="Connect and chat with your poker buddies">
+    </screenshot-card>
+    
+    <screenshot-card 
+      icon="📊" 
+      title="Game Stats" 
+      description="Track your wins and poker progress">
+    </screenshot-card>
+    
+    <screenshot-card 
+      icon="⚙️" 
+      title="Customization" 
+      description="Personalize your poker experience">
+    </screenshot-card>
+  </div>
+</section> 

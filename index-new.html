@@ -1,0 +1,169 @@
+---
+layout: layouts/base-tailwind
+title: "Poker with Friends | Chips of Fury - New Design"
+description: >
+  The ultimate app to play with friends. Play dealer's choice with Texas Hold'em, Omaha and Omaha 5. Exclusive "Chips only" Mode to play with your own cards.
+---
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <!-- Navigation -->
+  <nav class="hero-nav">
+    <div class="hero-nav-brand">
+      <img src="/images/app_icon_v4_web.png" alt="Chips of Fury" class="w-12 h-12 rounded-xl">
+      <div>
+        <span class="text-xl font-bold">Chips of Fury</span>
+      </div>
+    </div>
+    <div class="hero-nav-links">
+      <a href="/blog" class="text-purple-200 hover:text-white transition-colors">Blog</a>
+      <a href="#contact" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition-colors">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="hero-title">
+        Play Poker with Friends
+      </h1>
+      <h2 class="hero-subtitle">
+        The perfect app to host your private games
+      </h2>
+      <p class="hero-description">
+        Play dealer's choice with Texas Hold'em, Omaha and Omaha 5. Exclusive "Chips only" Mode to play with your own cards.
+      </p>
+      
+      <!-- App Store Badges -->
+      <div class="download-buttons">
+        <a href="https://apps.apple.com/app/id1292493748" class="app-store-button">
+          <img src="/images/app-store-badge.svg" alt="Download on App Store" class="h-14">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.kanily.chipsoffury" class="app-store-button">
+          <img src="/images/play-store-badge.svg" alt="Get it on Google Play" class="h-14">
+        </a>
+        <a href="https://app.chipsoffury.com" class="download-button">
+          <span class="text-xl">🌐</span>
+          <span>Play on Web</span>
+        </a>
+      </div>
+
+      <!-- Rating -->
+      <div class="rating-section">
+        <div class="flex space-x-1">
+          <span class="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</span>
+        </div>
+        <span class="text-purple-200">Rated 4.5+ on App Store and Google Play</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Screenshots Carousel Component -->
+{% renderTemplate "webc" %}
+<screenshot-carousel 
+  title="See It in Action" 
+  subtitle="Experience the sleek interface and smooth gameplay"
+  :screenshots="screenshots">
+</screenshot-carousel>
+{% endrenderTemplate %}
+
+<!-- Features Section -->
+<section class="features-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="features-header">
+      <h2 class="features-title">No Signup, No Ads, Unlimited Chips</h2>
+      <p class="text-xl text-gray-600">Packed with Features!</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card feature-card--purple">
+        <div class="feature-icon feature-icon--purple">
+          <span>🎲</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Chips Only Mode</h3>
+        <p class="text-gray-600">Bring your own deck of cards and use the app just for virtual chips</p>
+      </div>
+
+      <div class="feature-card feature-card--blue">
+        <div class="feature-icon feature-icon--blue">
+          <span>🃏</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Multiple Variants</h3>
+        <p class="text-gray-600">Texas Hold'em, Omaha, Omaha 5, and dealer's choice games</p>
+      </div>
+
+      <div class="feature-card feature-card--green">
+        <div class="feature-icon feature-icon--green">
+          <span>👥</span>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Private Games</h3>
+        <p class="text-gray-600">Play with friends and family in your own private poker room</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Screenshots Section -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">
+      Exciting gameplay features for Poker home games
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <img src="/images/screenshots/table_screenshot_1.png" alt="Clean Table interface" class="rounded-2xl shadow-2xl">
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Clean Table Interface</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start space-x-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span>Save and load game configurations</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span>Customize everything about how you want to play</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span>Automatic side pot calculation</span>
+          </li>
+          <li class="flex items-start space-x-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span>Split pot settlement for Hi-lo variations</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="contact-content">
+    <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+    <p class="text-xl text-purple-200 mb-8">
+      We would love to hear from you.<br>
+      Please send your feedback, feature requests, ❤️ or 😠!
+    </p>
+    
+    <div class="contact-grid">
+      <a href="mailto:hi.kanily@gmail.com" class="contact-link">
+        <img src="/images/contact/email.svg" alt="Email" class="w-8 h-8">
+        <span class="font-semibold">hi.kanily@gmail.com</span>
+      </a>
+      
+      <a href="https://m.me/chipsoffury" target="_blank" class="contact-link">
+        <img src="/images/contact/fb_messenger.svg" alt="Messenger" class="w-8 h-8">
+        <span class="font-semibold">@chipsoffury</span>
+      </a>
+      
+      <a href="https://www.instagram.com/chips.of.fury/" target="_blank" class="contact-link">
+        <img src="/images/contact/insta.svg" alt="Instagram" class="w-8 h-8">
+        <span class="font-semibold">@chips.of.fury</span>
+      </a>
+    </div>
+  </div>
+</section> 

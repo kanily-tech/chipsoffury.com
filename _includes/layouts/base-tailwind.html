@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta content="{{ description }}" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/css/tailwind-full.css" rel="stylesheet" type="text/css">
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/web_clip_icon.png" rel="apple-touch-icon">
+    
+    <!-- Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-heading: 'Poppins', system-ui, -apple-system, sans-serif;
+        }
+        
+        body { 
+            font-family: var(--font-body);
+        }
+        
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: var(--font-heading);
+        }
+        
+        /* Utility classes for manual control */
+        .font-heading { font-family: var(--font-heading); }
+        .font-body { font-family: var(--font-body); }
+    </style>
+</head>
+<body class="antialiased">
+    {{ content | safe }}
+</body>
+</html> 
