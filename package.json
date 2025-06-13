@@ -4,7 +4,8 @@
   "description": "Chips of Fury landing site",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,9 @@
   },
   "homepage": "https://github.com/kanily-tech/chipsoffury.com#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.1",
     "@11ty/eleventy-plugin-webc": "^0.11.1",
-    "luxon": "^3.4.3"
+    "luxon": "^3.4.3",
+    "wrangler": "^4.20.0"
   }
 }

@@ -1,0 +1,11 @@
+name = "chipsoffury-marketing-site"
+compatibility_date = "2025-06-13"
+
+# This configures the Worker to serve the static assets
+# built by Eleventy.
+[assets]
+directory = "./_site"
+
+# Since you have a 404.html file, this tells Cloudflare to serve it
+# when a requested file is not found.
+not_found_handling = "404-page"
