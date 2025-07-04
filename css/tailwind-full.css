@@ -517,7 +517,7 @@
   /* tracking-wide: adds letter spacing for elegance */
   /* leading-relaxed: adds line height for better readability */
   /* relative: for positioning the decorative line */
-  @apply text-lg font-medium text-purple-100 mb-8 max-w-2xl mx-auto text-center 
+  @apply text-xl font-medium text-purple-100 mb-8 max-w-2xl mx-auto text-center 
          tracking-wide leading-relaxed relative;
 }
 
