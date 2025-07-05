@@ -1,5 +1,5 @@
 ---
-layout: layouts/blog-post.html
+layout: layouts/blog-post-tailwind.html
 title: Implementing Straddle
 date: 2024-08-25
 author: Animesh

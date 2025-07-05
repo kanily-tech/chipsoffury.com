@@ -1,5 +1,5 @@
 ---
-layout: layouts/blog-post.html
+layout: layouts/blog-post-tailwind.html
 title: Hello World, we're running on 11ty now
 date: 2023-11-03
 author: Animesh

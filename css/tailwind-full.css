@@ -1,5 +1,89 @@
 @import "tailwindcss";
 
+/* Typography for blog content - compact and clean */
+.prose {
+  @apply text-gray-700 max-w-none text-base;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply text-gray-900 font-bold mb-3 mt-6;
+}
+
+.prose h1 { @apply text-3xl; }
+.prose h2 { @apply text-2xl; }
+.prose h3 { @apply text-xl; }
+.prose h4 { @apply text-lg; }
+.prose h5 { @apply text-base; }
+.prose h6 { @apply text-sm; }
+
+.prose p {
+  @apply mb-3 leading-relaxed;
+}
+
+.prose a {
+  @apply text-purple-600 underline hover:text-purple-800 transition-colors;
+}
+
+.prose ul, .prose ol {
+  @apply mb-3 ml-5;
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-purple-300 pl-4 italic text-gray-600 my-3;
+}
+
+.prose code {
+  @apply bg-gray-100 text-purple-600 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-gray-900 text-gray-100 p-3 rounded-lg overflow-x-auto my-3 text-sm;
+}
+
+.prose pre code {
+  @apply bg-transparent text-gray-100 p-0;
+}
+
+.prose strong {
+  @apply font-semibold text-gray-900;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose img {
+  @apply rounded-lg shadow my-6 mx-auto;
+}
+
+.prose hr {
+  @apply border-gray-300 my-6;
+}
+
+.prose table {
+  @apply w-full border-collapse my-3 text-sm;
+}
+
+.prose th {
+  @apply bg-gray-50 border border-gray-200 px-3 py-2 text-left font-semibold;
+}
+
+.prose td {
+  @apply border border-gray-200 px-3 py-2;
+}
+
 /* Custom component classes for better maintainability */
 
 .hero-section {
@@ -160,6 +244,11 @@
 
 .suit-icon--rotate {
   animation: gentle-rotate 20s linear infinite;
+}
+
+/* Pause animations when page is not in focus */
+.animation-paused .suit-icon {
+  animation-play-state: paused !important;
 }
 
 .hero-nav {

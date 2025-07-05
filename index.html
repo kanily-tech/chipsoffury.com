@@ -268,6 +268,24 @@ description: >
 <!-- Poker Variations Typewriter Animation -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Handle page visibility changes to pause/resume animations
+  const suitIconsContainer = document.querySelector('.suit-icons');
+  
+  if (suitIconsContainer) {
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        suitIconsContainer.classList.add('animation-paused');
+      } else {
+        suitIconsContainer.classList.remove('animation-paused');
+      }
+    }
+    
+    // Set up event listener for visibility changes
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // Check initial state
+    handleVisibilityChange();
+  }
   const variations = [
     "Poker",
     "Texas Hold'em", 

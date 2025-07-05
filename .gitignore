@@ -29,3 +29,4 @@ venv/
 venv27/
 
 _site/
+temp/

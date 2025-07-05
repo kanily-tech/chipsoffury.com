@@ -1,5 +1,5 @@
 ---
-layout: layouts/blog-post.html
+layout: layouts/blog-post-tailwind.html
 title: What a mess it is to automate Flutter app builds
 date: 2024-01-22
 author: Animesh
