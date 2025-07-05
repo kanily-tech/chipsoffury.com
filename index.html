@@ -299,6 +299,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check initial state
     handleVisibilityChange();
+    
+    // Add window focus/blur handlers to pause animations when window loses focus
+    window.addEventListener('focus', function() {
+      suitIconsContainer.classList.remove('animation-paused');
+    });
+    
+    window.addEventListener('blur', function() {
+      suitIconsContainer.classList.add('animation-paused');
+    });
   }
   const variations = [
     "Poker",
