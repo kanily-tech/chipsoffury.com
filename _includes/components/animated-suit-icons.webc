@@ -1,0 +1,37 @@
+<div class="suit-icons">
+  <!-- Hearts -->
+  <div class="suit-icon suit-icon--heart suit-icon--pos-1">♥</div>
+  <div class="suit-icon suit-icon--heart suit-icon--pos-5 suit-icon--small">♥</div>
+  <div class="suit-icon suit-icon--heart suit-icon--pos-9 suit-icon--large">♥</div>
+  
+  <!-- Diamonds -->
+  <div class="suit-icon suit-icon--diamond suit-icon--pos-2 suit-icon--rotate">♦</div>
+  <div class="suit-icon suit-icon--diamond suit-icon--pos-8">♦</div>
+  <div class="suit-icon suit-icon--diamond suit-icon--pos-11 suit-icon--small">♦</div>
+  
+  <!-- Clubs -->
+  <div class="suit-icon suit-icon--club suit-icon--pos-3 suit-icon--large">♣</div>
+  <div class="suit-icon suit-icon--club suit-icon--pos-7">♣</div>
+  <div class="suit-icon suit-icon--club suit-icon--pos-10 suit-icon--rotate">♣</div>
+  
+  <!-- Spades -->
+  <div class="suit-icon suit-icon--spade suit-icon--pos-4">♠</div>
+  <div class="suit-icon suit-icon--spade suit-icon--pos-6 suit-icon--large">♠</div>
+  <div class="suit-icon suit-icon--spade suit-icon--pos-12 suit-icon--small">♠</div>
+  
+  <!-- Additional scattered icons for fuller effect -->
+  <div class="suit-icon suit-icon--heart suit-icon--small" style="top: 45%; left: 20%; animation-delay: -7s;">♥</div>
+  <div class="suit-icon suit-icon--club suit-icon--small" style="top: 55%; left: 80%; animation-delay: -6.5s;">♣</div>
+  <div class="suit-icon suit-icon--diamond suit-icon--small" style="top: 65%; left: 45%; animation-delay: -5.5s;">♦</div>
+  <div class="suit-icon suit-icon--spade suit-icon--small" style="top: 85%; left: 15%; animation-delay: -4.8s;">♠</div>
+  <div class="suit-icon suit-icon--heart suit-icon--small" style="top: 5%; left: 45%; animation-delay: -3.2s;">♥</div>
+  <div class="suit-icon suit-icon--diamond suit-icon--small" style="top: 95%; left: 85%; animation-delay: -2.8s;">♦</div>
+  
+  <!-- New icons for 25% density increase -->
+  <div class="suit-icon suit-icon--club suit-icon--small" style="top: 12%; left: 75%; animation-delay: -8.2s;">♣</div>
+  <div class="suit-icon suit-icon--spade suit-icon--small" style="top: 38%; left: 8%; animation-delay: -7.8s;">♠</div>
+  <div class="suit-icon suit-icon--heart suit-icon--small" style="top: 52%; left: 92%; animation-delay: -6.1s;">♥</div>
+  <div class="suit-icon suit-icon--diamond suit-icon--small" style="top: 78%; left: 55%; animation-delay: -5.2s;">♦</div>
+  <div class="suit-icon suit-icon--club suit-icon--small" style="top: 88%; left: 70%; animation-delay: -4.1s;">♣</div>
+  <div class="suit-icon suit-icon--spade suit-icon--small" style="top: 22%; left: 32%; animation-delay: -3.7s;">♠</div>
+</div> 

@@ -1,5 +1,5 @@
 ---
-layout: layouts/blog-post.html
+layout: layouts/blog-post-tailwind.html
 title: Poker UI Comparison
 date: 2024-08-28
 author: Animesh

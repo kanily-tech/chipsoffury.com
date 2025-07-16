@@ -1,0 +1,76 @@
+<section class="py-20 bg-indigo-950 bg-[url('/images/background_diagonal_lines.svg')]">
+  <div class="text-center mb-12 max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-bold text-indigo-50 mb-4" @html="title"></h2>
+    <p class="text-xl text-indigo-200" @html="subtitle"></p>
+  </div>
+  
+  <div class="w-full overflow-x-auto px-6 pb-20 pt-8 scroll-smooth">
+    <div class="flex space-x-6 w-max mx-auto">
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_home.webp" 
+        title="Home Screen" 
+        description="Clutter free and user friendly interface.">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_game_table.webp" 
+        title="Game Table" 
+        description="Table works well on all screen sizes. Ability to hide hole cards.">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_chips_only.webp" 
+        title="Chips Only Mode" 
+        description="Playing with real cards? Don't have a chip-set handy? Chips of Fury to the rescue!">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_chips_settle.webp" 
+        title="Quick Chip Settlement" 
+        description="Effortlessly track the player chips and profit. Intuitive and quick settlement UI.">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_variation_roulette.webp" 
+        title="Randomly dealt variation mode" 
+        description="Unpredictable. Ultra fun. Degen warning 😈">
+      </screenshot-card>
+            
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_gameplay_options.webp" 
+        title="Configurable Features" 
+        description="Customize your poker game just the way you like.">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_blinds_structure.webp" 
+        title="Blinds Structure" 
+        description="Set up tournament blinds and structure.">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_raise_settings.webp" 
+        title="Raise Settings" 
+        description="Personalize for your betting style.">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_rit_vote.webp" 
+        title="Run It Twice Vote" 
+        description="Vote if you agree to run it Twice / Thrice or not at all!">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_rit_deal.webp" 
+        title="RIT deal" 
+        description="upto 3 boards!">
+      </screenshot-card>
+      
+      <screenshot-card 
+        image="/images/screenshots/v10/screenshot_pineapple_discard.webp" 
+        title="Pineapple variations" 
+        description="Discard phase in (Crazy) Pineapple poker variant">
+      </screenshot-card>
+    </div>
+  </div>
+</section> 

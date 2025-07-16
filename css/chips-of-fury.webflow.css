@@ -1023,11 +1023,32 @@ ul.image_description {
   font-size: 20px;
 }
 .header_subtitle {
-  color: #cbe2ff;
-  font-size: 16px;
+  font-family: Barlow, sans-serif;
+  color: #e6e6e6;
 }
 .post_image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  object-fit: contain;
 }
+
+/* Utility Classes for inline style removal */
+.padding-bottom-20 {
+  padding-bottom: 20px;
+}
+
+.inline-flex-center {
+  display: inline-flex;
+  align-items: center;
+}
+
+.margin-right-5 {
+  margin-right: 5px;
+}
+
+.font-size-2em {
+  font-size: 2em;
+}
+
+/* End Utility Classes */

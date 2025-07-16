@@ -1,0 +1,772 @@
+@import "tailwindcss";
+
+/* Typography for blog content - compact and clean */
+.prose {
+  @apply text-gray-700 max-w-none text-base;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  @apply text-gray-900 font-bold mb-3 mt-6;
+}
+
+.prose h1 { @apply text-3xl; }
+.prose h2 { @apply text-2xl; }
+.prose h3 { @apply text-xl; }
+.prose h4 { @apply text-lg; }
+.prose h5 { @apply text-base; }
+.prose h6 { @apply text-sm; }
+
+.prose p {
+  @apply mb-3 leading-relaxed;
+}
+
+.prose a {
+  @apply text-purple-600 underline hover:text-purple-800 transition-colors;
+}
+
+.prose ul, .prose ol {
+  @apply mb-3 ml-5;
+}
+
+.prose ul {
+  @apply list-disc;
+}
+
+.prose ol {
+  @apply list-decimal;
+}
+
+.prose li {
+  @apply mb-1;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-purple-300 pl-4 italic text-gray-600 my-3;
+}
+
+.prose code {
+  @apply bg-gray-100 text-purple-600 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-gray-900 text-gray-100 p-3 rounded-lg overflow-x-auto my-3 text-sm;
+}
+
+.prose pre code {
+  @apply bg-transparent text-gray-100 p-0;
+}
+
+.prose strong {
+  @apply font-semibold text-gray-900;
+}
+
+.prose em {
+  @apply italic;
+}
+
+.prose img {
+  @apply rounded-lg shadow my-6 mx-auto;
+}
+
+.prose hr {
+  @apply border-gray-300 my-6;
+}
+
+.prose table {
+  @apply w-full border-collapse my-3 text-sm;
+}
+
+.prose th {
+  @apply bg-gray-50 border border-gray-200 px-3 py-2 text-left font-semibold;
+}
+
+.prose td {
+  @apply border border-gray-200 px-3 py-2;
+}
+
+/* Custom component classes for better maintainability */
+
+.hero-section {
+  /* bg-indigo-900: sets dark indigo background color */
+  /* text-white: sets text color to white for contrast */
+  /* relative: enables positioning for overlay */
+  @apply bg-indigo-900 text-white relative;
+}
+
+/* Animated Suit Icons Background */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 40% 40%, rgba(99, 102, 241, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.suit-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.suit-icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.08;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* Different suit icons for variety */
+.suit-icon--heart {
+  color: #ef4444;
+  animation-name: float-1;
+}
+
+.suit-icon--diamond {
+  color: #ef4444;
+  animation-name: float-2;
+}
+
+.suit-icon--club {
+  color: #8b5cf6;
+  animation-name: float-3;
+}
+
+.suit-icon--spade {
+  color: #8b5cf6;
+  animation-name: float-4;
+}
+
+/* Position variations for natural distribution */
+.suit-icon--pos-1 { top: 10%; left: 15%; animation-delay: 0s; }
+.suit-icon--pos-2 { top: 20%; left: 85%; animation-delay: -2s; }
+.suit-icon--pos-3 { top: 30%; left: 25%; animation-delay: -4s; }
+.suit-icon--pos-4 { top: 40%; left: 75%; animation-delay: -1s; }
+.suit-icon--pos-5 { top: 60%; left: 10%; animation-delay: -3s; }
+.suit-icon--pos-6 { top: 70%; left: 90%; animation-delay: -5s; }
+.suit-icon--pos-7 { top: 80%; left: 35%; animation-delay: -1.5s; }
+.suit-icon--pos-8 { top: 15%; left: 65%; animation-delay: -3.5s; }
+.suit-icon--pos-9 { top: 50%; left: 50%; animation-delay: -2.5s; }
+.suit-icon--pos-10 { top: 25%; left: 5%; animation-delay: -4.5s; }
+.suit-icon--pos-11 { top: 75%; left: 65%; animation-delay: -0.5s; }
+.suit-icon--pos-12 { top: 35%; left: 95%; animation-delay: -6s; }
+
+/* Size variations */
+.suit-icon--small { font-size: 1.5rem; opacity: 0.06; }
+.suit-icon--large { font-size: 3rem; opacity: 0.12; }
+
+/* Animation keyframes for floating effects */
+@keyframes float-1 {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.08;
+  }
+  25% { 
+    transform: translateY(-15px) rotate(3deg) scale(1.05);
+    opacity: 0.15;
+  }
+  50% { 
+    transform: translateY(-8px) rotate(-2deg) scale(0.95);
+    opacity: 0.06;
+  }
+  75% { 
+    transform: translateY(-20px) rotate(5deg) scale(1.02);
+    opacity: 0.12;
+  }
+}
+
+@keyframes float-2 {
+  0%, 100% { 
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.08;
+  }
+  33% { 
+    transform: translateX(10px) translateY(-18px) rotate(-5deg);
+    opacity: 0.15;
+  }
+  66% { 
+    transform: translateX(-7px) translateY(-10px) rotate(8deg);
+    opacity: 0.06;
+  }
+}
+
+@keyframes float-3 {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.08;
+  }
+  30% { 
+    transform: translateY(-25px) rotate(-8deg) scale(1.1);
+    opacity: 0.18;
+  }
+  60% { 
+    transform: translateY(-4px) rotate(4deg) scale(0.9);
+    opacity: 0.05;
+  }
+}
+
+@keyframes float-4 {
+  0%, 100% { 
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.08;
+  }
+  20% { 
+    transform: translateX(-15px) translateY(-12px) rotate(10deg);
+    opacity: 0.12;
+  }
+  40% { 
+    transform: translateX(7px) translateY(-20px) rotate(-3deg);
+    opacity: 0.18;
+  }
+  80% { 
+    transform: translateX(-3px) translateY(-8px) rotate(6deg);
+    opacity: 0.06;
+  }
+}
+
+/* Slower, subtle rotation animation for some icons */
+@keyframes gentle-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.suit-icon--rotate {
+  animation: gentle-rotate 20s linear infinite;
+}
+
+/* Pause animations when page is not in focus */
+.animation-paused .suit-icon {
+  animation-play-state: paused !important;
+}
+
+.hero-nav {
+  /* flex: makes container flexbox */
+  /* justify-between: spreads items to opposite ends */
+  /* items-center: centers items vertically */
+  /* p-6: adds 24px padding on all sides */
+  /* max-w-7xl: sets max width to 1280px */
+  /* mx-auto: centers horizontally with auto left/right margins */
+  /* relative: positions above background overlay */
+  /* z-10: ensures content is above background pattern */
+  @apply flex justify-between items-center p-6 max-w-7xl mx-auto relative z-10;
+}
+
+.hero-nav-brand {
+  /* flex: makes container flexbox */
+  /* items-center: centers items vertically */
+  /* space-x-4: adds 16px horizontal space between child elements */
+  @apply flex items-center space-x-4;
+}
+
+.hero-nav-links {
+  /* flex: makes container flexbox */
+  /* items-center: centers items vertically */
+  /* space-x-6: adds 24px horizontal space between child elements */
+  @apply flex items-center space-x-6;
+}
+
+.hero-content {
+  /* max-w-7xl: sets max width to 1280px */
+  /* mx-auto: centers horizontally with auto left/right margins */
+  /* px-6: adds 24px padding left and right */
+  /* py-12: adds 48px padding top and bottom */
+  /* pb-24: overrides bottom padding to 96px (increased to accommodate scroll indicator) */
+  /* relative: positions above background overlay */
+  /* z-10: ensures content is above background pattern */
+  @apply max-w-7xl mx-auto px-6 py-12 pb-24 relative z-10;
+}
+
+.hero-title {
+  /* text-4xl: sets font size to 36px on mobile (reduced from 48px) */
+  /* md:text-6xl: sets font size to 60px on medium screens (reduced from 72px) */
+  /* font-bold: sets font weight to 700 (bold) */
+  /* mb-6: adds 24px bottom margin */
+  /* text-white: sets text color to solid white */
+  /* text-center: centers text horizontally */
+  /* leading-none: removes line height for tighter spacing */
+  @apply text-4xl md:text-6xl font-bold mb-6 text-white text-center leading-none;
+}
+
+.hero-title > div {
+  /* Ensure each line has consistent styling */
+  /* mb-1: adds minimal margin between lines (reduced from mb-2) */
+  @apply mb-1;
+}
+
+.hero-title > div:last-child {
+  /* Remove margin from last line */
+  @apply mb-0;
+}
+
+.hero-subtitle {
+  /* text-xl: sets font size to 20px on mobile */
+  /* md:text-2xl: sets font size to 24px on medium screens */
+  /* text-purple-100: sets text color to very light purple (#f3e8ff) */
+  /* mb-4: adds 16px bottom margin */
+  /* text-center: centers text horizontally */
+  @apply text-xl md:text-2xl text-purple-100 mb-4 text-center;
+}
+
+.hero-description {
+  /* text-lg: sets font size to 18px */
+  /* text-purple-200: sets text color to light purple (#e9d5ff) */
+  /* mb-8: adds 32px bottom margin */
+  /* max-w-2xl: sets max width to 672px */
+  /* mx-auto: centers horizontally with auto margins */
+  /* text-center: centers text horizontally */
+  @apply text-lg text-purple-200 mb-8 max-w-2xl mx-auto text-center;
+}
+
+.hero-features {
+  /* flex: makes container flexbox */
+  /* flex-wrap: allows items to wrap to new line */
+  /* justify-center: centers items horizontally */
+  /* items-center: centers items vertically */
+  /* gap-3: adds 12px gap between items */
+  /* mb-8: adds 32px bottom margin */
+  /* max-w-2xl: sets max width to 672px */
+  /* mx-auto: centers horizontally with auto margins */
+  @apply flex flex-wrap justify-center items-center gap-3 mb-8 max-w-2xl mx-auto;
+}
+
+.feature-badge {
+  /* inline-flex: makes inline flexbox container */
+  /* items-center: centers content vertically */
+  /* px-4: adds 16px padding left and right */
+  /* py-2: adds 8px padding top and bottom */
+  /* rounded-full: creates pill shape */
+  /* font-semibold: sets font weight to 600 */
+  /* text-sm: sets font size to 14px */
+  /* transition-all: animates all changes smoothly */
+  /* duration-300: animation duration 300ms */
+  /* hover:scale-105: scales to 105% on hover */
+  /* cursor-default: shows default cursor (not pointer) */
+  /* shadow-lg: adds large shadow */
+  /* hover:shadow-xl: increases shadow on hover */
+  @apply inline-flex items-center px-4 py-2 rounded-full font-semibold text-sm 
+         transition-all duration-300 hover:scale-105 cursor-default 
+         shadow-lg hover:shadow-xl;
+}
+
+.feature-badge--green {
+  /* bg-green-500: sets background to green (#10b981) */
+  /* text-white: sets text color to white */
+  /* hover:bg-green-600: darkens green on hover */
+  @apply bg-green-500 text-white hover:bg-green-600;
+}
+
+.feature-badge--blue {
+  /* bg-blue-500: sets background to blue (#3b82f6) */
+  /* text-white: sets text color to white */
+  /* hover:bg-blue-600: darkens blue on hover */
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.feature-badge--purple {
+  /* bg-purple-500: sets background to purple (#a855f7) */
+  /* text-white: sets text color to white */
+  /* hover:bg-purple-600: darkens purple on hover */
+  @apply bg-purple-500 text-white hover:bg-purple-600;
+}
+
+.feature-badge--orange {
+  /* bg-orange-500: sets background to orange (#f97316) */
+  /* text-white: sets text color to white */
+  /* hover:bg-orange-600: darkens orange on hover */
+  @apply bg-orange-500 text-white hover:bg-orange-600;
+}
+
+.download-buttons {
+  /* flex: makes container flexbox */
+  /* flex-col: stacks items vertically on all screen sizes */
+  /* gap-4: adds 16px gap between items */
+  /* justify-center: centers items horizontally */
+  /* items-center: centers items vertically */
+  /* mb-12: adds 48px bottom margin */
+  @apply flex flex-col gap-4 justify-center items-center mb-12;
+}
+
+.download-button {
+  /* bg-gradient-to-r: creates a left-to-right gradient */
+  /* from-green-500: gradient starts with green (#10b981) */
+  /* to-emerald-600: gradient ends with emerald (#059669) */
+  /* text-white: sets text color to white */
+  /* px-8: adds 32px padding left and right (larger than app store buttons) */
+  /* py-4: adds 16px padding top and bottom (taller than app store buttons) */
+  /* rounded-xl: adds 12px border radius (more rounded) */
+  /* font-bold: sets font weight to 700 (bolder than app store buttons) */
+  /* text-lg: sets font size to 18px (larger text) */
+  /* hover:from-green-600: changes start color on hover */
+  /* hover:to-emerald-700: changes end color on hover */
+  /* hover:scale-105: scales element to 105% on hover */
+  /* transition-all: animates all changes smoothly */
+  /* duration-300: animation duration 300ms */
+  /* flex: makes container flexbox */
+  /* items-center: centers items vertically */
+  /* justify-center: centers items horizontally */
+  /* space-x-3: adds 12px horizontal space between children */
+  /* min-h-[64px]: sets minimum height to 64px (taller than app store buttons) */
+  /* shadow-lg: adds large shadow */
+  /* hover:shadow-xl: increases shadow on hover */
+  /* ring-2: adds 2px ring */
+  /* ring-green-400/50: sets ring color to light green with 50% opacity */
+  @apply bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-xl 
+         font-bold text-lg hover:from-green-600 hover:to-emerald-700 hover:scale-105 
+         transition-all duration-300 flex items-center justify-center space-x-3 
+         min-h-[64px] shadow-lg hover:shadow-xl ring-2 ring-green-400/50;
+}
+
+.primary-cta {
+  /* Updated primary CTA styling with purple gradient and white outline */
+  /* bg-gradient-to-r: creates a left-to-right gradient */
+  /* from-purple-600: gradient starts with medium purple (#9333ea) */
+  /* to-purple-800: gradient ends with dark purple (#6b21a8) */
+  /* text-white: sets text color to white */
+  /* px-10: adds 40px padding left and right */
+  /* py-5: adds 20px padding top and bottom */
+  /* rounded-md: adds medium border radius */
+  /* font-black: sets font weight to 900 (heaviest) */
+  /* text-xl: sets font size to 20px */
+  /* hover:from-purple-700: changes start color on hover */
+  /* hover:to-purple-900: changes end color on hover */
+  /* hover:scale-105: scales element to 105% on hover */
+  /* transition-all: animates all changes smoothly */
+  /* duration-300: animation duration 300ms */
+  /* flex: makes container flexbox */
+  /* items-center: centers items vertically */
+  /* justify-center: centers items horizontally */
+  /* space-x-4: adds 16px horizontal space between children */
+  /* h-14: sets height to 56px */
+  /* shadow-lg: adds large shadow */
+  /* hover:shadow-xl: increases shadow on hover */
+  /* border: adds 2px white border with 50% opacity */
+  /* border-white/50: sets border color to white with 50% opacity */
+  @apply bg-gradient-to-r from-purple-600 to-purple-800 text-white px-10 py-5 rounded-md
+         font-black text-xl hover:from-purple-700 hover:to-purple-900 hover:scale-105 
+         transition-all duration-300 flex items-center justify-center space-x-4 
+         h-14 shadow-lg hover:shadow-xl border-2 border-white/50;
+}
+
+.app-store-button {
+  /* transform: enables CSS transforms */
+  /* hover:scale-105: scales element to 105% on hover */
+  /* transition-transform: animates transform changes smoothly */
+  @apply transform hover:scale-105 transition-transform;
+}
+
+.rating-section {
+  /* flex: makes container flexbox with vertical stacking */
+  /* flex-col: stacks items vertically */
+  /* items-center: centers items horizontally */
+  /* justify-center: centers items vertically */
+  @apply flex flex-col items-center justify-center;
+}
+
+.features-section {
+  /* py-20: adds 80px padding top and bottom */
+  /* bg-white: sets background color to white */
+  @apply py-20 bg-white;
+}
+
+.features-header {
+  /* text-center: centers text horizontally */
+  /* mb-16: adds 64px bottom margin */
+  @apply text-center mb-16;
+}
+
+.features-title {
+  /* text-4xl: sets font size to 36px */
+  /* font-bold: sets font weight to 700 (bold) */
+  /* text-gray-900: sets text color to very dark gray (#111827) */
+  /* mb-4: adds 16px bottom margin */
+  @apply text-4xl font-bold text-gray-900 mb-4;
+}
+
+.features-grid {
+  /* grid: makes container CSS grid */
+  /* md:grid-cols-3: creates 3 columns on medium screens (768px+) */
+  /* gap-8: adds 32px gap between grid items */
+  @apply grid md:grid-cols-3 gap-8;
+}
+
+.feature-card {
+  /* text-center: centers text horizontally */
+  /* p-6: adds 24px padding on all sides */
+  /* rounded-2xl: adds 16px border radius */
+  /* border: adds 1px border */
+  @apply text-center p-6 rounded-2xl border;
+}
+
+.feature-card--purple {
+  /* bg-purple-50: sets background to very light purple (#faf5ff) */
+  /* border-purple-100: sets border color to light purple (#f3e8ff) */
+  @apply bg-purple-50 border-purple-100;
+}
+
+.feature-card--blue {
+  /* bg-blue-50: sets background to very light blue (#eff6ff) */
+  /* border-blue-100: sets border color to light blue (#dbeafe) */
+  @apply bg-blue-50 border-blue-100;
+}
+
+.feature-card--green {
+  /* bg-green-50: sets background to very light green (#f0fdf4) */
+  /* border-green-100: sets border color to light green (#dcfce7) */
+  @apply bg-green-50 border-green-100;
+}
+
+.feature-icon {
+  /* w-16: sets width to 64px */
+  /* h-16: sets height to 64px */
+  /* rounded-2xl: adds 16px border radius */
+  /* flex: makes container flexbox */
+  /* items-center: centers content vertically */
+  /* justify-center: centers content horizontally */
+  /* mx-auto: centers horizontally with auto margins */
+  /* mb-4: adds 16px bottom margin */
+  @apply w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4;
+}
+
+.feature-icon--purple {
+  /* bg-purple-600: sets background to medium purple (#9333ea) */
+  /* text-white: sets text color to white */
+  /* text-2xl: sets font size to 24px */
+  @apply bg-purple-600 text-white text-2xl;
+}
+
+.feature-icon--blue {
+  /* bg-blue-600: sets background to medium blue (#2563eb) */
+  /* text-white: sets text color to white */
+  /* text-2xl: sets font size to 24px */
+  @apply bg-blue-600 text-white text-2xl;
+}
+
+.feature-icon--green {
+  /* bg-green-600: sets background to medium green (#16a34a) */
+  /* text-white: sets text color to white */
+  /* text-2xl: sets font size to 24px */
+  @apply bg-green-600 text-white text-2xl;
+}
+
+.contact-section {
+  /* py-20: adds 80px padding top and bottom */
+  /* bg-slate-900: sets background to very dark slate */
+  /* text-white: sets text color to white */
+  @apply py-20 bg-slate-900 text-white;
+}
+
+.contact-content {
+  /* max-w-4xl: sets max width to 896px */
+  /* mx-auto: centers horizontally with auto margins */
+  /* px-6: adds 24px padding left and right */
+  /* text-center: centers text horizontally */
+  @apply max-w-4xl mx-auto px-6 text-center;
+}
+
+.contact-grid {
+  /* flex: makes container flexbox */
+  /* flex-col: stacks items vertically */
+  /* items-center: centers items horizontally */
+  /* space-y-6: adds 24px vertical space between children */
+  /* mt-8: adds 32px top margin */
+  @apply flex flex-col items-center space-y-6 mt-8;
+}
+
+.contact-link {
+  /* flex: makes container flexbox */
+  /* items-center: centers items vertically */
+  /* space-x-3: adds 12px horizontal space between children */
+  /* text-indigo-300: sets text color to light indigo */
+  /* hover:text-indigo-200: changes to lighter indigo on hover */
+  /* transition-colors: animates color changes smoothly */
+  /* text-lg: sets font size to 18px */
+  @apply flex items-center space-x-3 text-indigo-300 hover:text-indigo-200 transition-colors text-lg;
+}
+
+.hero-features-elegant {
+  /* text-lg: sets font size to 18px */
+  /* font-medium: sets font weight to 500 (medium) */
+  /* text-purple-100: sets text color to very light purple for subtle contrast */
+  /* mb-8: adds 32px bottom margin */
+  /* max-w-2xl: sets max width to 672px */
+  /* mx-auto: centers horizontally with auto margins */
+  /* text-center: centers text horizontally */
+  /* tracking-wide: adds letter spacing for elegance */
+  /* leading-relaxed: adds line height for better readability */
+  /* relative: for positioning the decorative line */
+  @apply text-xl font-medium text-purple-100 mb-8 max-w-2xl mx-auto text-center 
+         tracking-wide leading-relaxed relative;
+}
+
+.hero-features-elegant::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Chips Only Swoosh Effect */
+.chips-only-swoosh {
+  position: relative;
+  display: inline-block;
+  color: #fbbf24; /* text-amber-400 for emphasis */
+  font-weight: 600; /* font-semibold */
+}
+
+.chips-only-swoosh::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -2px;
+  right: -2px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M5,8 Q25,2 50,5 T95,8' stroke='%23fbbf24' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  animation: swoosh-draw 2s ease-out forwards;
+  animation-delay: 1s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@keyframes swoosh-draw {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0.8;
+  }
+}
+
+.scroll-indicator {
+  /* position: absolute: positions relative to hero-section */
+  /* bottom-0: positions at the bottom edge of hero section */
+  /* left-1/2: positions at 50% from left */
+  /* transform: centers horizontally and moves down by half height to cross border */
+  /* z-[9999]: extremely high z-index to appear above all components */
+  /* cursor-pointer: shows pointer cursor */
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-[9999] cursor-pointer;
+}
+
+.scroll-arrow {
+  /* w-10: sets width to 40px (smaller, less distracting) */
+  /* h-10: sets height to 40px */
+  /* bg-white/20: subtle semi-transparent white background */
+  /* hover:bg-white/30: slightly more opaque on hover */
+  /* rounded-full: makes circular */
+  /* flex: makes container flexbox */
+  /* items-center: centers content vertically */
+  /* justify-center: centers content horizontally */
+  /* text-white: sets icon color to white */
+  /* transition-all: animates all changes smoothly */
+  /* duration-300: animation duration 300ms */
+  /* backdrop-blur-sm: adds subtle blur effect */
+  @apply w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full 
+         flex items-center justify-center text-white 
+         transition-all duration-300 backdrop-blur-sm;
+  animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+@keyframes gentle-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Animated Poker Variations Text Effect */
+.poker-variation-text {
+  display: inline-block;
+  color: #d8b4fe; /* text-purple-300 to match original styling */
+  position: relative;
+}
+
+.poker-variation-text::after {
+  content: '|';
+  display: inline-block;
+  color: #d8b4fe;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Alternative: Card Flip Effect */
+.poker-variations-flip {
+  display: inline-block;
+  position: relative;
+  perspective: 1000px;
+  min-width: 280px;
+}
+
+.poker-variation-flip {
+  display: block;
+  transform-style: preserve-3d;
+  animation: cardFlipCycle 24s infinite;
+}
+
+@keyframes cardFlipCycle {
+  0%, 8.33% { transform: rotateY(0deg); }
+  12.5%, 16.67% { transform: rotateY(90deg); }
+  20.83%, 29.17% { transform: rotateY(0deg); }
+  33.33%, 37.5% { transform: rotateY(90deg); }
+  41.67%, 50% { transform: rotateY(0deg); }
+  54.17%, 58.33% { transform: rotateY(90deg); }
+  62.5%, 70.83% { transform: rotateY(0deg); }
+  75%, 79.17% { transform: rotateY(90deg); }
+  83.33%, 91.67% { transform: rotateY(0deg); }
+  95.83%, 100% { transform: rotateY(90deg); }
+}
+
+/* Typewriter Effect Alternative */
+.poker-variations-typewriter {
+  display: inline-block;
+  position: relative;
+  min-width: 280px;
+}
+
+.poker-variation-typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 3px solid rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  animation: typewriterCycle 18s infinite;
+}
+
+@keyframes typewriterCycle {
+  0%, 11.11% { width: 0; }
+  22.22%, 33.33% { width: 100%; }
+  44.44%, 55.56% { width: 0; }
+  66.67%, 77.78% { width: 100%; }
+  88.89%, 100% { width: 0; }
+} 
