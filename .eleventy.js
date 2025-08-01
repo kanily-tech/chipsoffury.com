@@ -6,6 +6,9 @@ const { execSync } = require("child_process");
 let isCompiling = false;
 
 module.exports = function(eleventyConfig) {
+    // Ignore ai_docs folder
+    eleventyConfig.ignores.add("ai_docs/**");
+    
     // Copy `img/` to `_site/img`
     eleventyConfig.addPassthroughCopy("images");
 
