@@ -1,6 +1,6 @@
 ---
 layout: layouts/blog-post-tailwind.html
-title: Dart streaming pattern with stream splitting 
+title: "DevLog #4: Dart streaming pattern with stream splitting" 
 date: 2024-03-15
 author: Animesh
 tags: ['post', 'devlog']

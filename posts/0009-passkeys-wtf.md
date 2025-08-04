@@ -1,6 +1,6 @@
 ---
 layout: layouts/blog-post-tailwind.html
-title: Passkeys - WTF?
+title: "DevLog #5: Passkeys - WTF?"
 date: 2024-08-22
 author: Animesh
 tags: ['post', 'devlog']

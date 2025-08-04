@@ -1,6 +1,6 @@
 ---
 layout: layouts/blog-post-tailwind.html
-title: Can we go all in on Passkey based authentication?
+title: "DevLog #2: Can we go all in on Passkey based authentication?"
 date: 2024-01-23
 author: Animesh
 tags: ['post', 'devlog']

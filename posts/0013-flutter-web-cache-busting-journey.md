@@ -1,5 +1,5 @@
 ---
-title: "Content-Hashed Caching for Flutter Web (Without a Service Worker)"
+title: "DevLog #8: Flutter Web Cache Busting - When sed Failed, We Went Deeper"
 date: 2025-08-04
 description: "How we replaced Flutter Web’s service worker with CDN-friendly, content-hashed caching."
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
