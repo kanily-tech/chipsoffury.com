@@ -3,6 +3,7 @@ layout: layouts/blog-post-tailwind.html
 title: Implementing Straddle
 date: 2024-08-25
 author: Animesh
+devlogNumber: 6
 tags: ['post', 'devlog']
 ---
 <div style="padding: 16px; font-size: .9em; margin-bottom: 20px; border-top: #be9a4e solid 1px; border-bottom: #be9a4e solid 1px">

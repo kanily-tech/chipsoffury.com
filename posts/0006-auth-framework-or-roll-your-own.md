@@ -3,6 +3,7 @@ layout: layouts/blog-post-tailwind.html
 title: Considering hand writing the authentication code 😱
 date: 2024-01-24
 author: Animesh
+devlogNumber: 3
 tags: ['post', 'devlog']
 ---
 It seems the internet gets upset at the idea of rolling your own auth code. I get it, it is a complex problem, 

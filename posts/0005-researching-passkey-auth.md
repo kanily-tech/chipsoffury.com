@@ -3,6 +3,7 @@ layout: layouts/blog-post-tailwind.html
 title: Can we go all in on Passkey based authentication?
 date: 2024-01-23
 author: Animesh
+devlogNumber: 2
 tags: ['post', 'devlog']
 ---
 Passkeys are good - more secure, arguably better UX (only reason I feel it is arguable is that it is still new, 

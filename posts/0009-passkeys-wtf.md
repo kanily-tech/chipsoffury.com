@@ -3,6 +3,7 @@ layout: layouts/blog-post-tailwind.html
 title: Passkeys - WTF?
 date: 2024-08-22
 author: Animesh
+devlogNumber: 5
 tags: ['post', 'devlog']
 ---
 Sometime back while researching about auth, I wrote a post [about passkeys](/posts/researching_passkey_auth).

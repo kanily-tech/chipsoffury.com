@@ -17,6 +17,13 @@ layout: layouts/base.html
                 </div>
 
                 <div class="container_rounded w-container" style="min-height: 80vh">
+                    {% if devlogNumber %}
+                    <div style="margin-bottom: 16px">
+                        <span style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                            DevLog #{{ devlogNumber }}
+                        </span>
+                    </div>
+                    {% endif %}
                     <h1>
                         {{ title }}
                     </h1>

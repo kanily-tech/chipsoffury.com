@@ -3,6 +3,7 @@ layout: layouts/blog-post-tailwind.html
 title: What a mess it is to automate Flutter app builds
 date: 2024-01-22
 author: Animesh
+devlogNumber: 1
 tags: ['post', 'devlog']
 ---
 The web build for Chips of Fury is due any time soon! While developing and testing, I had to build and publish manually 

@@ -37,14 +37,15 @@ description: The official blog of Chips of Fury, a poker app for playing with fr
         <a href="{{ post.url }}" class="block p-6">
           <div class="flex items-baseline gap-3 mb-2 text-sm text-gray-600">
             <time>{{ post.date | postDate }}</time>
+            {% if post.data.devlogNumber %}
+              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                DevLog #{{ post.data.devlogNumber }}
+              </span>
+            {% endif %}
             {% if post.data.tags | length > 1 %}
               {% for tag in post.data.tags %}
-                {% if tag != 'post' %}
-                  {% if tag == 'devlog' %}
-                    <span class="text-orange-600">#{{ tag }}</span>
-                  {% else %}
-                    <span class="text-purple-600">#{{ tag }}</span>
-                  {% endif %}
+                {% if tag != 'post' and tag != 'devlog' %}
+                  <span class="text-purple-600">#{{ tag }}</span>
                 {% endif %}
               {% endfor %}
             {% endif %}

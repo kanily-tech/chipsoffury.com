@@ -3,6 +3,7 @@ layout: layouts/blog-post-tailwind.html
 title: Dart streaming pattern with stream splitting 
 date: 2024-03-15
 author: Animesh
+devlogNumber: 4
 tags: ['post', 'devlog']
 ---
 <style>
