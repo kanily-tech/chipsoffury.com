@@ -1,6 +1,6 @@
 ---
 layout: layouts/blog-post-tailwind.html
-title: "DevLog #3: Considering hand writing the authentication code 😱"
+title: Considering hand writing the authentication code 😱
 date: 2024-01-24
 author: Animesh
 tags: ['post', 'devlog']

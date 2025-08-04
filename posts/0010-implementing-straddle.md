@@ -1,6 +1,6 @@
 ---
 layout: layouts/blog-post-tailwind.html
-title: "DevLog #6: Implementing Straddle"
+title: Implementing Straddle
 date: 2024-08-25
 author: Animesh
 tags: ['post', 'devlog']

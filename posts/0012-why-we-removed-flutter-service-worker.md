@@ -1,5 +1,5 @@
 ---
-title: "DevLog #7: Removing Flutter's Service Worker, how to do it correctly"
+title: "Removing Flutter's Service Worker, how to do it correctly"
 date: 2025-08-01
 description: "An in-depth look at the technical reasons behind removing Flutter's service worker from the Chips of 
 Fury webapp."
