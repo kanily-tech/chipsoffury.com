@@ -258,4 +258,12 @@ ensure all references are updated.
 **Deployment Simplicity**: Every deployment gets a fresh timestamp, ensuring clean cache invalidation whether deploying
 new features or reverting to previous code.
 
-In the following sections, we'll cover the complete implementation strategy and lessons learned.
+### Update: Evolution to Content-Based Cache Busting
+
+After implementing the timestamp-based solution described above, we evolved our approach to something more sophisticated. We now use content-based cache busting with MD5 hashes—bringing back the efficiency of the original service worker without its CDN incompatibility.
+
+Read our follow-up post: [Content-Hashed Caching for Flutter Web](/posts/flutter-web-cache-busting-journey/) to learn how we:
+
+- Implemented comprehensive URL patching inspired by Discord's Embedded App SDK
+- Created a content-based cache-busting system that only reloads changed files
+- Achieved the best of both worlds: efficient caching with CDN compatibility
