@@ -1,0 +1,81 @@
+---
+permalink: /401.html
+eleventyExcludeFromCollections: true
+sitemap:
+  exclude: true
+layout: layouts/base-tailwind.html
+title: "Unauthorized Access - Chips of Fury"
+description: "You don't have permission to access this page."
+---
+
+<!-- Navigation -->
+<nav class="bg-indigo-900 border-b border-indigo-800">
+  <div class="max-w-6xl mx-auto px-4 py-3">
+    <div class="flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 text-white hover:text-purple-200 transition-colors">
+        <img src="/images/chips_of_fury_logo.webp" alt="Chips of Fury" class="w-8 h-8 rounded-lg">
+        <span class="font-semibold">Chips of Fury</span>
+      </a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="/" class="text-purple-200 hover:text-white transition-colors">Home</a>
+        <a href="/blog" class="text-purple-200 hover:text-white transition-colors">Blog</a>
+        <a href="/#contact" class="text-purple-200 hover:text-white transition-colors">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- 401 Content -->
+<div class="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900 flex items-center justify-center px-4">
+  <div class="max-w-2xl mx-auto text-center">
+    <!-- Error Code Display -->
+    <div class="mb-8">
+      <h1 class="text-9xl md:text-[12rem] font-bold text-white opacity-20">401</h1>
+      <div class="-mt-20 md:-mt-32 relative">
+        <img src="/images/chips_of_fury_logo.webp" alt="Chips of Fury" class="w-32 h-32 mx-auto rounded-2xl shadow-2xl">
+      </div>
+    </div>
+    
+    <!-- Error Message -->
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+      Not Enough Chips to Enter
+    </h2>
+    
+    <p class="text-lg md:text-xl text-purple-200 mb-8">
+      This table requires special access. You'll need to be invited or have the right credentials to join this game.
+    </p>
+    
+    <!-- Lock Icon -->
+    <div class="mb-8">
+      <div class="inline-flex items-center justify-center w-20 h-20 bg-purple-600/20 rounded-full">
+        <svg class="w-10 h-10 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+        </svg>
+      </div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/" class="inline-flex items-center justify-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+        </svg>
+        Back to Home
+      </a>
+      
+      <a href="https://app.chipsoffury.com" class="inline-flex items-center justify-center px-6 py-3 bg-indigo-700 hover:bg-indigo-800 text-white font-semibold rounded-lg transition-colors">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+        </svg>
+        Sign In to Play
+      </a>
+    </div>
+    
+    <!-- Additional Help Text -->
+    <div class="mt-12 p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
+      <p class="text-purple-100">
+        If you should have access to this page, please <a href="/#contact" class="text-purple-300 hover:text-white underline">contact our support team</a> for assistance.
+      </p>
+    </div>
+  </div>
+</div>

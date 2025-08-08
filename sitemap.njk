@@ -1,0 +1,55 @@
+---
+permalink: /sitemap.xml
+layout: null
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{# Homepage - highest priority #}
+{%- for item in collections.all %}
+  {%- if item.url == '/' %}
+  <url>
+    <loc>https://chipsoffury.com/</loc>
+    <lastmod>{{ item.date | date('%Y-%m-%d') or page.date | date('%Y-%m-%d') }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  {%- endif %}
+{%- endfor %}
+
+{# Main pages - high priority #}
+{%- for item in collections.all %}
+  {%- if item.url == '/blog/' or item.url == '/privacy-policy/' or item.url == '/terms/' or item.url == '/releases/' %}
+  <url>
+    <loc>https://chipsoffury.com{{ item.url }}</loc>
+    <lastmod>{{ item.date | date('%Y-%m-%d') or page.date | date('%Y-%m-%d') }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {%- endif %}
+{%- endfor %}
+
+{# How-to-play pages - medium priority #}
+{%- for item in collections.all %}
+  {%- if item.url and '/how-to-play/' in item.url %}
+  <url>
+    <loc>https://chipsoffury.com{{ item.url }}</loc>
+    <lastmod>{{ item.date | date('%Y-%m-%d') or page.date | date('%Y-%m-%d') }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {%- endif %}
+{%- endfor %}
+
+{# Blog posts - sorted by date, newer first #}
+{%- for post in collections.post | reverse %}
+  {%- if post.url %}
+  <url>
+    <loc>https://chipsoffury.com{{ post.url }}</loc>
+    <lastmod>{{ post.date | date('%Y-%m-%d') }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  {%- endif %}
+{%- endfor %}
+</urlset>

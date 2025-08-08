@@ -1,13 +1,17 @@
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
+const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const { DateTime } = require("luxon");
 const { execSync } = require("child_process");
 
 let isCompiling = false;
 
 module.exports = function(eleventyConfig) {
-    // Ignore ai_docs folder
+    // Ignore ai_docs folder and docs folder
     eleventyConfig.ignores.add("ai_docs/**");
+    eleventyConfig.ignores.add("docs/**");
+    eleventyConfig.ignores.add("README.md");
+    eleventyConfig.ignores.add("CLAUDE.md");
     
     // Copy `img/` to `_site/img`
     eleventyConfig.addPassthroughCopy("images");
@@ -20,6 +24,9 @@ module.exports = function(eleventyConfig) {
     // Copy js files to _site/js
     // Keeps the same directory structure.
     eleventyConfig.addPassthroughCopy("js");
+    
+    // Copy robots.txt to root
+    eleventyConfig.addPassthroughCopy("robots.txt");
 
     // Compile Tailwind CSS after 11ty builds the HTML
     eleventyConfig.on("eleventy.after", async () => {
@@ -51,9 +58,36 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(pluginWebc, {
         components: "_includes/components/**/*.webc",
     });
+    
+    // Add sitemap plugin
+    eleventyConfig.addPlugin(sitemap, {
+        sitemap: {
+            hostname: "https://chipsoffury.com"
+        }
+    });
 
     eleventyConfig.addFilter("postDate", (dateObj) => {
         return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+    });
+    
+    // Add date filter for ISO format (for structured data)
+    eleventyConfig.addFilter("date", (dateObj, format) => {
+        if (format === '%Y-%m-%d') {
+            return DateTime.fromJSDate(dateObj).toISODate();
+        }
+        return DateTime.fromJSDate(dateObj).toFormat(format);
+    });
+    
+    // Add truncate filter
+    eleventyConfig.addFilter("truncate", (str, length = 50) => {
+        if (!str) return '';
+        if (str.length <= length) return str;
+        return str.substr(0, length) + '...';
+    });
+    
+    // Add helper for current year
+    eleventyConfig.addGlobalData("helpers", {
+        currentYear: () => new Date().getFullYear()
     });
 
     return {
