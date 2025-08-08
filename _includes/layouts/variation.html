@@ -1,0 +1,136 @@
+---
+layout: layouts/base-tailwind.html
+---
+
+<!-- Navigation -->
+{% renderTemplate "webc" %}
+<site-navigation></site-navigation>
+{% endrenderTemplate %}
+
+<article class="container mx-auto px-4 py-12 max-w-4xl">
+  <!-- Breadcrumb -->
+  <nav class="text-sm mb-6" aria-label="Breadcrumb">
+    <ol class="flex items-center space-x-2">
+      <li><a href="/" class="text-gray-500 hover:text-gray-700">Home</a></li>
+      <li><span class="text-gray-400">/</span></li>
+      <li><a href="/variations/" class="text-gray-500 hover:text-gray-700">Variations</a></li>
+      <li><span class="text-gray-400">/</span></li>
+      <li class="text-gray-900 font-medium">{{ title }}</li>
+    </ol>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-600 to-indigo-600 bg-clip-text text-transparent">
+      {{ title }}
+    </h1>
+    <p class="text-xl text-gray-600 mb-6">{{ shortDescription }}</p>
+    
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white rounded-xl p-4 border border-gray-200">
+        <div class="text-sm text-gray-500 mb-1">Hole Cards</div>
+        <div class="text-lg font-bold">{{ holeCards }}</div>
+      </div>
+      <div class="bg-white rounded-xl p-4 border border-gray-200">
+        <div class="text-sm text-gray-500 mb-1">Community</div>
+        <div class="text-lg font-bold">{{ communityCards }}</div>
+      </div>
+      <div class="bg-white rounded-xl p-4 border border-gray-200">
+        <div class="text-sm text-gray-500 mb-1">Betting</div>
+        <div class="text-lg font-bold">{{ defaultBetting }}</div>
+      </div>
+      <div class="bg-white rounded-xl p-4 border border-gray-200">
+        <div class="text-sm text-gray-500 mb-1">Difficulty</div>
+        <div class="text-lg font-bold">{{ difficulty }}</div>
+      </div>
+    </div>
+
+    <!-- Special Rules -->
+    {% if specialRules %}
+    <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+      <h3 class="font-bold text-yellow-900 mb-2">Special Rules</h3>
+      <ul class="space-y-1">
+        {% for rule in specialRules %}
+        <li class="flex items-start">
+          <svg class="w-5 h-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span class="text-gray-700">{{ rule }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </header>
+
+  <!-- Main Content -->
+  <div class="prose prose-lg max-w-none">
+    {{ content | safe }}
+  </div>
+
+  <!-- Related Variations -->
+  {% if relatedVariations %}
+  <section class="mt-12 pt-12 border-t border-gray-200">
+    <h2 class="text-2xl font-bold mb-6">Related Variations</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      {% for slug in relatedVariations %}
+        {% for variation in collections.variations %}
+          {% if variation.data.slug == slug %}
+          <a href="{{ variation.url }}" class="block bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 hover:shadow-lg transition-all">
+            <h3 class="text-xl font-bold mb-2">{{ variation.data.title }}</h3>
+            <p class="text-gray-600 text-sm">{{ variation.data.shortDescription }}</p>
+          </a>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- CTA Section -->
+  <section class="mt-12 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-3xl p-8 text-center">
+    <h2 class="text-2xl font-bold mb-4">Ready to Play {{ title }}?</h2>
+    <p class="text-lg text-gray-600 mb-6">
+      Download Chips of Fury and start playing with friends today
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://apps.apple.com/app/chips-of-fury/id6447534028" class="inline-flex items-center px-6 py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors">
+        <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        iOS App
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.artemsharypov.chipsoffury" class="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors">
+        <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+        </svg>
+        Android App
+      </a>
+    </div>
+  </section>
+</article>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }} - Poker Variation Guide",
+  "description": "{{ description }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Chips of Fury"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Chips of Fury",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://chipsoffury.com/images/logo.png"
+    }
+  },
+  "datePublished": "{{ date | date('%Y-%m-%d') }}",
+  "dateModified": "{{ date | date('%Y-%m-%d') }}"
+}
+</script>

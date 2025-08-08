@@ -90,6 +90,16 @@ module.exports = function(eleventyConfig) {
         currentYear: () => new Date().getFullYear()
     });
 
+    // Create variations collection
+    eleventyConfig.addCollection("variations", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("variations/*.md").sort((a, b) => {
+            // Sort by popularity (descending) then by name
+            const popularityDiff = (b.data.popularity || 0) - (a.data.popularity || 0);
+            if (popularityDiff !== 0) return popularityDiff;
+            return a.data.title.localeCompare(b.data.title);
+        });
+    });
+
     return {
         templateFormats: ["html", "njk", "md"],
         markdownTemplateEngine: "njk",

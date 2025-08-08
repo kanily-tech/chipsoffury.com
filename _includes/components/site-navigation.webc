@@ -1,0 +1,137 @@
+<nav class="relative z-50 bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 border-b border-purple-800/50">
+  <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-4">
+    <div class="flex justify-between items-center">
+      <!-- Logo/Brand -->
+      <a href="/" class="flex items-center space-x-2 sm:space-x-3 text-white hover:text-purple-200 transition-colors">
+        <img src="/images/chips_of_fury_logo.webp" alt="Chips of Fury" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl shadow-lg">
+        <span class="text-sm sm:text-xl font-bold" :class="showCofBrand ? 'block' : 'hidden sm:block'" @html="'Chips of Fury®'"></span>
+      </a>
+      
+      <!-- Navigation Links - visible on all screen sizes -->
+      <div class="flex items-center space-x-3 sm:space-x-6 text-sm sm:text-base">
+        <!-- Features Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center space-x-1 text-purple-200 hover:text-white transition-colors py-2" onclick="toggleDropdown(event)">
+            <span>Features</span>
+            <svg class="w-4 h-4 transition-transform dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          
+          <!-- Dropdown Menu -->
+          <div id="featuresDropdown" class="absolute right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-right scale-95">
+            <div class="bg-white rounded-xl shadow-2xl border border-purple-100 overflow-hidden">
+              <a href="/variations/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
+                <div class="flex items-start space-x-3">
+                  <span class="text-2xl">🎲</span>
+                  <div>
+                    <div class="font-semibold text-gray-900">15+ Variations</div>
+                    <div class="text-sm text-gray-600">Texas Hold'em, Omaha, and more</div>
+                  </div>
+                </div>
+              </a>
+              <a href="/virtual-poker-chips/" class="block px-4 py-3 hover:bg-purple-50 transition-colors border-t border-gray-100">
+                <div class="flex items-start space-x-3">
+                  <span class="text-2xl">🃏</span>
+                  <div>
+                    <div class="font-semibold text-gray-900">Chips Only Mode</div>
+                    <div class="text-sm text-gray-600">Use real cards, virtual chips</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Blog Link -->
+        <a href="/blog" class="text-purple-200 hover:text-white transition-colors">Blog</a>
+        
+        <!-- Contact Button -->
+        <a href="/contact" class="bg-purple-600 hover:bg-purple-700 px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg transition-all hover:shadow-lg text-white font-medium" title="Contact">
+          <!-- Icon on mobile, text on desktop -->
+          <svg class="w-5 h-5 sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span class="hidden sm:inline">Contact</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script webc:keep>
+window.toggleDropdown = function(event) {
+  event.preventDefault();
+  event.stopPropagation();
+  
+  const dropdown = document.getElementById('featuresDropdown');
+  const arrow = event.currentTarget.querySelector('.dropdown-arrow');
+  const isOpen = dropdown.classList.contains('dropdown-open');
+  
+  if (isOpen) {
+    // Close dropdown
+    dropdown.classList.remove('dropdown-open', 'opacity-100', 'visible', 'scale-100');
+    dropdown.classList.add('opacity-0', 'invisible', 'scale-95');
+    arrow.classList.remove('rotate-180');
+  } else {
+    // Open dropdown
+    dropdown.classList.add('dropdown-open', 'opacity-100', 'visible', 'scale-100');
+    dropdown.classList.remove('opacity-0', 'invisible', 'scale-95');
+    arrow.classList.add('rotate-180');
+  }
+}
+
+// Initialize after DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('featuresDropdown');
+    const button = event.target.closest('button[onclick*="toggleDropdown"]');
+    
+    if (!button && dropdown && dropdown.classList.contains('dropdown-open')) {
+      dropdown.classList.remove('dropdown-open', 'opacity-100', 'visible', 'scale-100');
+      dropdown.classList.add('opacity-0', 'invisible', 'scale-95');
+      const arrow = document.querySelector('.dropdown-arrow');
+      if (arrow) arrow.classList.remove('rotate-180');
+    }
+  });
+  
+  // Keep hover functionality for desktop
+  if (window.matchMedia('(hover: hover)').matches) {
+    const dropdownContainer = document.querySelector('.group');
+    if (dropdownContainer) {
+      dropdownContainer.addEventListener('mouseenter', function() {
+        const dropdown = document.getElementById('featuresDropdown');
+        const arrow = this.querySelector('.dropdown-arrow');
+        if (dropdown && !dropdown.classList.contains('dropdown-open')) {
+          dropdown.classList.remove('opacity-0', 'invisible', 'scale-95');
+          dropdown.classList.add('opacity-100', 'visible', 'scale-100');
+          arrow.classList.add('rotate-180');
+        }
+      });
+      
+      dropdownContainer.addEventListener('mouseleave', function() {
+        const dropdown = document.getElementById('featuresDropdown');
+        const arrow = this.querySelector('.dropdown-arrow');
+        if (dropdown && !dropdown.classList.contains('dropdown-open')) {
+          dropdown.classList.remove('opacity-100', 'visible', 'scale-100');
+          dropdown.classList.add('opacity-0', 'invisible', 'scale-95');
+          arrow.classList.remove('rotate-180');
+        }
+      });
+    }
+  }
+});
+</script>
+
+<style>
+  .dropdown-arrow {
+    transition: transform 0.2s ease;
+  }
+  
+  /* Keep focus styles for accessibility */
+  button:focus {
+    outline: 2px solid rgba(147, 51, 234, 0.5);
+    outline-offset: 2px;
+  }
+</style>
