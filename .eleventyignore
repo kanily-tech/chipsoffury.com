@@ -1,0 +1,4 @@
+AGENTS.md
+**/.*/
+!.well-known/
+!.well-known/**
