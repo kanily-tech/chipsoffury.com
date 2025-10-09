@@ -7,9 +7,9 @@ const { execSync } = require("child_process");
 let isCompiling = false;
 
 module.exports = function(eleventyConfig) {
-    // Ignore ai_docs folder and docs folder
+    // Ignore ai_docs folder and notes folder
     eleventyConfig.ignores.add("ai_docs/**");
-    eleventyConfig.ignores.add("docs/**");
+    eleventyConfig.ignores.add("notes/**");
     eleventyConfig.ignores.add("README.md");
     eleventyConfig.ignores.add("CLAUDE.md");
     
@@ -88,6 +88,16 @@ module.exports = function(eleventyConfig) {
     // Add helper for current year
     eleventyConfig.addGlobalData("helpers", {
         currentYear: () => new Date().getFullYear()
+    });
+
+    // Create variations collection
+    eleventyConfig.addCollection("variations", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("variations/*.md").sort((a, b) => {
+            // Sort by popularity (descending) then by name
+            const popularityDiff = (b.data.popularity || 0) - (a.data.popularity || 0);
+            if (popularityDiff !== 0) return popularityDiff;
+            return a.data.title.localeCompare(b.data.title);
+        });
     });
 
     return {

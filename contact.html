@@ -1,0 +1,93 @@
+---
+layout: layouts/base-tailwind
+title: Contact Us | Chips of Fury
+description: Get in touch with the Chips of Fury team - We're a small team and respond to every message personally
+---
+
+<!-- Navigation -->
+{% renderTemplate "webc" %}
+<site-navigation show-cof-brand="true"></site-navigation>
+{% endrenderTemplate %}
+
+<!-- Contact Page Content -->
+<div class="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-indigo-900">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Get in Touch</h1>
+            <p class="text-purple-200 text-lg">We'd love to hear from you!</p>
+        </div>
+
+        <!-- Main Contact Card -->
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div class="text-center mb-8">
+                <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                    We're 2 guys, building Chips of Fury with passion. So when you send a message, it's us who read it. ❤️ or 😡 messages are both welcome, we usually respond back quickly! We will be
+                    happy to discuss ideas 💡, that's how we like to build our dev roadmap.
+                </p>
+            </div>
+
+            <!-- Contact Methods -->
+            <div class="space-y-6">
+                <div class="text-center">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Reach out via:</h3>
+                </div>
+
+                <!-- Email -->
+                <a href="mailto:hello@chipsoffury.com" class="flex items-center justify-center gap-3 p-4 bg-purple-50 rounded-xl hover:bg-purple-100 transition-colors group">
+                    <svg class="w-6 h-6 text-purple-600 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span class="text-purple-700 font-semibold">hello@chipsoffury.com</span>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/chips.of.fury/" target="_blank" class="flex items-center justify-center gap-3 p-4 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors group">
+                    <svg class="w-6 h-6 text-pink-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                    </svg>
+                    <span class="text-pink-700 font-semibold">@chips.of.fury</span>
+                </a>
+
+                <!-- Facebook Messenger -->
+                <a href="https://m.me/chipsoffury" target="_blank" class="flex items-center justify-center gap-3 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors group">
+                    <svg class="w-6 h-6 text-blue-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.654V24l4.088-2.242c1.092.301 2.246.464 3.443.464 6.627 0 12-4.974 12-11.111S18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/>
+                    </svg>
+                    <span class="text-blue-700 font-semibold">@chipsoffury</span>
+                </a>
+            </div>
+
+            <!-- Message Types -->
+            <div class="mt-8 pt-8 border-t border-gray-200">
+                <p class="text-center text-sm text-gray-600">
+                    Feel free to reach out about:
+                </p>
+                <div class="mt-4 flex flex-wrap justify-center gap-2">
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Bug Reports</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Feature Requests</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Feedback</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Support</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Partnerships</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Just Saying Hi! 👋</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Company Info -->
+        <div class="text-center mt-12">
+            <p class="text-purple-200">Kanily Technologies LLP</p>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="text-center mt-8">
+            <a href="/" class="inline-flex items-center text-purple-200 hover:text-white transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </div>
+</div>
