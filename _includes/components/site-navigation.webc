@@ -21,15 +21,15 @@
           <!-- Dropdown Menu -->
           <div id="featuresDropdown" class="absolute right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-right scale-95">
             <div class="bg-white rounded-xl shadow-2xl border border-purple-100 overflow-hidden">
-              <a href="/variations/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
-                <div class="flex items-start space-x-3">
-                  <span class="text-2xl">🎲</span>
-                  <div>
-                    <div class="font-semibold text-gray-900">15+ Variations</div>
-                    <div class="text-sm text-gray-600">Texas Hold'em, Omaha, and more</div>
-                  </div>
-                </div>
-              </a>
+<!--              <a href="/variations/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">-->
+<!--                <div class="flex items-start space-x-3">-->
+<!--                  <span class="text-2xl">🎲</span>-->
+<!--                  <div>-->
+<!--                    <div class="font-semibold text-gray-900">15+ Variations</div>-->
+<!--                    <div class="text-sm text-gray-600">Texas Hold'em, Omaha, and more</div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </a>-->
               <a href="/virtual-poker-chips/" class="block px-4 py-3 hover:bg-purple-50 transition-colors border-t border-gray-100">
                 <div class="flex items-start space-x-3">
                   <span class="text-2xl">🃏</span>
