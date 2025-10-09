@@ -1,34 +1,74 @@
 ---
-layout: layouts/base-with-container.html
+layout: layouts/base-tailwind
 title: Account Deletion | Chips of Fury
 description: Instructions for requesting deletion of your Chips of Fury account and associated data.
 ---
+<!-- Navigation -->
+{% renderTemplate "webc" %}
+<site-navigation show-cof-brand="true"></site-navigation>
+{% endrenderTemplate %}
 
-<h1>Account Deletion - Chips of Fury</h1>
-<p class="date_right">Last updated: September 26, 2025</p>
+<div class="min-h-screen bg-gradient-to-b from-indigo-950 via-purple-900 to-indigo-900">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Delete Your Chips of Fury Account</h1>
+    </div>
 
-<p>Chips of Fury is published by Kanily Technologies LLP. This page explains how you can ask us to delete your
-  Chips of Fury player account and the data connected to it.</p>
+    <!-- Content Card -->
+    <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12">
+      <div class="space-y-10 text-gray-700">
+        <p class="text-sm md:text-base leading-relaxed">
+          Chips of Fury is published by Kanily Technologies LLP. Follow the steps below if you would like to permanently delete your account and associated data.
+        </p>
 
-<h2>Request account deletion</h2>
-<p>Follow the steps to delete your account:</p>
-<ol>
-  <li>Login with the account that you want to delete</li>
-  <li>Go to the accounts page (top left menu button on the home page)</li>
-  <li>Click on the Delete Account button (at the bottom of the account page)</li>
-  <li>Confirm Deletion</li>
-</ol>
+        <section class="space-y-4">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">How to request deletion</h2>
+          <p class="text-sm md:text-base leading-relaxed">Delete your account directly from the app:</p>
+          <ol class="list-decimal list-inside space-y-2 text-sm md:text-base">
+            <li>Sign in with the account you want to delete.</li>
+            <li>Open the menu and tap <span class="font-semibold">Account</span>.</li>
+            <li>Scroll to the bottom and choose <span class="font-semibold">Delete Account</span>.</li>
+            <li>Confirm the deletion when prompted.</li>
+          </ol>
+        </section>
 
-<h2>Data that will be deleted</h2>
-<p>Following data is <strong>immediately</strong> deleted</p>
-<ul>
-  <li>Account profile information (display name, email address, avatar, linked social accounts).</li>
-</ul>
+        <section class="space-y-4">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">What gets deleted immediately</h2>
+          <p class="text-sm md:text-base leading-relaxed">Once you confirm deletion, we remove:</p>
+          <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+            <li>Profile information (display name, email address, avatar, linked social accounts).</li>
+            <li>Any private notes or device-specific preferences.</li>
+          </ul>
+        </section>
 
-<h2>Data we retain</h2>
-<ul>
-  <li>Game history of games where you have already played, as these games are shared with other players</li>
-  <li>Your nickname is still visible in these old game snapshots</li>
-</ul>
+        <section class="space-y-4">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">What we retain</h2>
+          <p class="text-sm md:text-base leading-relaxed">
+            Completed game snapshots are shared with every player at the table, so we keep limited historical records for fairness:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+            <li>Past game history where you already played.</li>
+            <li>Your nickname as it appears inside those archived games.</li>
+          </ul>
+          <p class="text-sm md:text-base leading-relaxed">
+            We never use retained records for marketing and we do not sell your data.
+          </p>
+        </section>
 
-<div class="vertical-space"></div>
+        <section class="space-y-4">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Need help?</h2>
+          <p class="text-sm md:text-base leading-relaxed">
+            If you can’t access your account or need help with the process, contact us and select the “Account & Privacy” topic. We’ll verify ownership before processing the request manually.
+          </p>
+          <a href="/contact" class="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+            </svg>
+            Contact Support
+          </a>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
