@@ -8,7 +8,7 @@ author: Animesh
 layout: layouts/blog-post-tailwind.html
 ---
 
-# Beginner Poker Strategy: Step-by-Step Guide to Winning More Often
+# Beginner Poker Strategy
 *By Avery Lane — Poker Strategy Writer & Long-Time Low-Stakes Cash Game Player*
 
 Poker looks simple from the outside: get good cards, bet, win chips. But beginners quickly learn the truth — you can follow the rules perfectly and still lose money if you don’t understand why winning players make the decisions they do.
