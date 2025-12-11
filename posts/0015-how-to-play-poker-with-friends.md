@@ -44,6 +44,8 @@ Most players don’t realize there are **three** distinct ways to play poker wit
 
 ### Option 1 — Use Physical Cards + Virtual Poker Chips App
 
+🖼️ Media Suggestion: Screenshot of Chips of Fury’s virtual chip interface + photo of real cards on a table.
+
 Perfect for in-person home games, families, and teaching nights.
 
 Everyone uses physical cards while a virtual chips app like **Chips of Fury** handles:
@@ -59,6 +61,8 @@ This hybrid setup teaches beginners the *real game* without overwhelming them.
 
 ### Option 2 — Hybrid Play (Physical Cards + Remote Players + Virtual Chips)
 
+🖼️ Media Suggestion: Zoom/Discord grid with table overlay showing Chips of Fury chips.
+
 Great for groups who want to combine in-person and online players.
 
 Use:
@@ -70,6 +74,8 @@ Use:
 With hybrid groups, clarity is everything — including setting expectations. A quick set of agreed-upon [poker house rules](https://chipsoffury.com/posts/house-rules-template-for-poker/) keeps games moving and avoids confusion, especially with newer players.
 
 ### Option 3 — Fully Online Poker (Web or Mobile Apps)
+
+🖼️ Media Suggestion: Side-by-side screenshots of Chips of Fury, Poker Now, and unmasked.poker home screens.
 
 This is the classic approach when everyone is remote.
 
@@ -98,6 +104,8 @@ Fully online tables are best for groups that want seamless play without relying 
 
 ### Chips of Fury — Best Overall for Beginners
 
+🖼️ Media Suggestion: Feature highlight screenshot: clean UI, chip tracker, pot calculator.
+
 Beginners typically struggle with:
 
 - Side pot calculations
@@ -123,6 +131,8 @@ A full-featured client with stats, detailed controls, and long-term club setup �
 For casual “let’s play in 30 seconds” groups.
 
 ### Pokerrrr 2 / ClubGG / PPPoker
+
+🖼️ Media Suggestion: Mobile phone mockups of 2–3 alternative apps.
 
 Fun on mobile. Great animations. But beginners can feel overwhelmed by options.
 
@@ -185,16 +195,19 @@ Apps like Chips of Fury handle all the logistics, which makes teaching easier.
 Many groups eventually branch out beyond Hold’em. When you do, the deeper rule breakdowns in our [Omaha Hold’em rules](https://chipsoffury.com/posts/omaha-holdem-poker-rules/) and [Crazy Pineapple / Pineapple rules](https://chipsoffury.com/posts/crazy-pineapple-poker-rules/) guides are great next steps.
 
 ### Texas Hold’em
+🖼️ Media Suggestion: Visual of 2 hole cards + 5 community cards.
 
 The best beginner game — widely taught, simple to grasp, and endlessly replayable.  
 If you want a full rules tour, the dedicated beginner-friendly [Texas Hold’em rules](https://chipsoffury.com/posts/texas-holdem-rules-beginner-guide/) guide covers everything from blinds to showdowns.
 
 ### Omaha
+🖼️ Media Suggestion: Visual: 4 hole cards + “Use exactly 2” note.
 
 More cards, more action.  
 But because the hand rankings and combos get trickier, it helps to review the full [Omaha rules overview](https://chipsoffury.com/posts/omaha-holdem-poker-rules/) when you’re ready.
 
 ### Pineapple / Crazy Pineapple
+🖼️ Media Suggestion: 3 card hand illustration with “discard after flop” arrow.
 
 A fun, social variant that gives players more playable hands.  
 We have a complete [Crazy Pineapple rules breakdown](https://chipsoffury.com/posts/crazy-pineapple-poker-rules/) if your group wants something more casual and chaotic.
@@ -237,6 +250,7 @@ These actions — and how they fit into strategy — are explained more deeply i
 - River
 
 ### Poker Hand Rankings
+🖼️ Media Suggestion: Official WSOP-style hand ranking ladder graphic.
 
 From strongest to weakest:
 
