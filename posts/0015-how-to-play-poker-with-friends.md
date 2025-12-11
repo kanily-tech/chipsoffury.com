@@ -269,7 +269,7 @@ Play fewer hands.
 Fold weak hands.  
 Bet your strong ones.
 
-If you're new to structured ranges, our Beginner Poker Preflop Charts guide walks you through exactly which hands to play in each position.
+If you're new to structured ranges, our [Beginner Poker Preflop Charts](https://chipsoffury.com/posts/poker-preflop-charts/) guide walks you through exactly which hands to play in each position.
 
 ### Biggest Poker Tells (In-Person)
 
@@ -371,7 +371,7 @@ Chips of Fury — clean UI, no gambling, easy for beginners.
 Yes. Use real cards and virtual chips. For smooth buy-ins, see our guide to buy-ins with friends.
 
 **What’s the simplest poker strategy for beginners?**  
-Follow tight preflop discipline. See our preflop chart guide.
+Follow tight preflop discipline. See our [preflop chart guide](https://chipsoffury.com/posts/poker-preflop-charts/).
 
 **What game type should beginners start with?**  
 Texas Hold’em.
