@@ -853,6 +853,11 @@ html {
   opacity: 0.4;
 }
 
+.poker-card--discard {
+  transform: translateY(-10px) rotate(-15deg);
+  opacity: 0.5;
+}
+
 .poker-card .suit--heart,
 .poker-card .suit--diamond {
   color: #e53935;

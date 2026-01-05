@@ -276,7 +276,11 @@ everything: blinds, betting rounds, showdowns, the whole nine yards.
 
 ### Omaha
 
-🖼️ Media Suggestion: Visual: 4 hole cards + "Use exactly 2" note.
+<div class="not-prose">
+{% renderTemplate "webc" %}
+<poker-table-omaha></poker-table-omaha>
+{% endrenderTemplate %}
+</div>
 
 Four hole cards instead of two. Sounds like a small change, right? It's not.
 
@@ -289,7 +293,11 @@ breaks down the nuances.
 
 ### Pineapple / Crazy Pineapple
 
-🖼️ Media Suggestion: 3 card hand illustration with "discard after flop" arrow.
+<div class="not-prose">
+{% renderTemplate "webc" %}
+<poker-table-crazy-pineapple></poker-table-crazy-pineapple>
+{% endrenderTemplate %}
+</div>
 
 Want chaos? This is the variant for you.
 

@@ -148,6 +148,114 @@ layout: layouts/base-tailwind.html
 <!-- anime.js for poker table animations -->
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 
+<!-- Shared Poker Table Animation Controller -->
+<script>
+(function() {
+  // Wait for DOM to be ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPokerAnimations);
+  } else {
+    initPokerAnimations();
+  }
+
+  function initPokerAnimations() {
+    const containers = document.querySelectorAll('.poker-table-container[data-steps]');
+    containers.forEach(function(container) {
+      if (container.dataset.initialized) return;
+      container.dataset.initialized = 'true';
+      new PokerTableAnimation(container);
+    });
+  }
+
+  function PokerTableAnimation(container) {
+    var self = this;
+    this.container = container;
+    this.steps = JSON.parse(container.dataset.steps);
+    this.communityCards = container.querySelectorAll('[data-card]');
+    this.holeCards = container.querySelectorAll('[data-hole]');
+    this.badge = container.querySelector('.validation-badge');
+    this.badgeIcon = this.badge ? this.badge.querySelector('.badge-icon') : null;
+    this.badgeText = this.badge ? this.badge.querySelector('.badge-text') : null;
+    this.currentStep = 0;
+    this.animationStarted = false;
+
+    // Start animation when visible
+    var observer = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting && !self.animationStarted) {
+        self.animationStarted = true;
+        self.nextStep();
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+
+    observer.observe(container);
+  }
+
+  PokerTableAnimation.prototype.applyStep = function(step) {
+    var self = this;
+    var hasHighlights = step.community.length > 0 || step.hole.length > 0;
+    var discard = step.discard || [];
+
+    // Community cards
+    this.communityCards.forEach(function(card, i) {
+      var isHighlighted = step.community.includes(i);
+      card.classList.toggle('poker-card--highlight', isHighlighted);
+      card.classList.toggle('poker-card--dim', hasHighlights && !isHighlighted);
+    });
+
+    // Hole cards
+    this.holeCards.forEach(function(card, i) {
+      var isHighlighted = step.hole.includes(i);
+      var isDiscarded = discard.includes(i);
+      card.classList.toggle('poker-card--highlight', isHighlighted);
+      card.classList.toggle('poker-card--dim', hasHighlights && !isHighlighted && !isDiscarded);
+      card.classList.toggle('poker-card--discard', isDiscarded);
+    });
+
+    // Badge
+    this.updateBadge(step.badge, step.message);
+  };
+
+  PokerTableAnimation.prototype.updateBadge = function(state, message) {
+    if (!this.badge) return;
+
+    var showBadge = state === 'valid' || state === 'invalid';
+    var icon = state === 'valid' ? '✓' : '✗';
+    var text = message || (state === 'valid' ? 'Allowed' : 'Not Allowed');
+
+    // Update badge classes
+    this.badge.classList.toggle('validation-badge--valid', state === 'valid');
+    this.badge.classList.toggle('validation-badge--invalid', state === 'invalid');
+
+    // Update text content
+    if (this.badgeIcon) this.badgeIcon.textContent = icon;
+    if (this.badgeText) this.badgeText.textContent = text;
+
+    // Animate visibility
+    if (typeof anime !== 'undefined') {
+      anime({
+        targets: this.badge,
+        opacity: showBadge ? 1 : 0,
+        duration: 300,
+        easing: 'easeOutQuad'
+      });
+    } else {
+      this.badge.style.transition = 'opacity 0.3s ease-out';
+      this.badge.style.opacity = showBadge ? '1' : '0';
+    }
+  };
+
+  PokerTableAnimation.prototype.nextStep = function() {
+    var self = this;
+    this.applyStep(this.steps[this.currentStep]);
+    setTimeout(function() {
+      self.currentStep = (self.currentStep + 1) % self.steps.length;
+      self.nextStep();
+    }, this.steps[this.currentStep].duration);
+  };
+})();
+</script>
+
 <!-- JavaScript for progress bar, mobile ToC, scroll spy -->
 <script>
 (function() {
