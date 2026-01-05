@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Table of Contents styles */
+.toc-link {
+  @apply text-gray-600 hover:text-purple-600 transition-colors block py-1.5 text-sm border-l-2 border-transparent pl-3 -ml-px;
+}
+
+.toc-link--active {
+  @apply text-purple-600 font-medium border-l-2 border-purple-600;
+}
+
+.toc-link--h3 {
+  @apply pl-6 text-xs text-gray-500;
+}
+
+/* Reading progress bar glow effect */
+#reading-progress {
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
 /* Typography for blog content - compact and clean */
 .prose {
   @apply text-gray-700 max-w-none text-base;
@@ -74,6 +97,13 @@
 
 .prose table {
   @apply w-full border-collapse my-3 text-sm;
+}
+
+/* Make tables horizontally scrollable on mobile */
+.prose :where(table) {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .prose th {

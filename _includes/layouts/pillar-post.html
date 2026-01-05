@@ -1,0 +1,229 @@
+---
+layout: layouts/base-tailwind.html
+---
+<!-- Navigation -->
+{% renderTemplate "webc" %}
+<site-navigation></site-navigation>
+{% endrenderTemplate %}
+
+<!-- Reading Progress Bar -->
+<div id="reading-progress" class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-600 z-[60] transition-all duration-150" style="width: 0%"></div>
+
+<!-- Blog Content -->
+<article class="bg-gray-50 min-h-screen" itemscope itemtype="https://schema.org/BlogPosting">
+  <!-- Mobile ToC Toggle (sticky after scroll) -->
+  <div id="mobile-toc-bar" class="lg:hidden sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40 transform -translate-y-full transition-transform duration-300">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
+      <span class="font-semibold text-gray-900 truncate text-sm">{{ title | truncate(35) }}</span>
+      <button id="toc-toggle" class="flex items-center space-x-2 text-purple-600 hover:text-purple-700 transition-colors">
+        <span class="text-sm font-medium">Contents</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Dropdown ToC panel -->
+    <div id="mobile-toc-panel" class="hidden bg-white border-t border-gray-100 max-h-[60vh] overflow-y-auto shadow-lg">
+      <nav class="px-4 py-3">
+        {% set toc = content | extractToc %}
+        {% for item in toc %}
+        <a href="#{{ item.id }}" class="block py-2 font-medium text-gray-700 hover:text-purple-600 transition-colors">{{ item.text | safe }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <div class="lg:flex lg:gap-12">
+      <!-- Desktop ToC Sidebar -->
+      <aside class="hidden lg:block lg:w-64 shrink-0">
+        <nav class="sticky top-8">
+          <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">On this page</div>
+          {% set toc = content | extractToc %}
+          {% for item in toc %}
+          <a href="#{{ item.id }}" class="toc-link" data-toc-id="{{ item.id }}">{{ item.text | safe }}</a>
+          {% endfor %}
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 max-w-3xl">
+        <!-- Breadcrumb with Schema.org -->
+        <nav class="text-sm text-gray-600 mb-6" aria-label="Breadcrumb">
+          <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="inline-flex items-center">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="inline">
+              <a itemprop="item" href="/" class="text-purple-600 hover:text-purple-800 transition-colors">
+                <span itemprop="name">Home</span>
+              </a>
+              <meta itemprop="position" content="1">
+            </li>
+            <li class="inline mx-1 text-gray-400">›</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="inline">
+              <a itemprop="item" href="/blog" class="text-purple-600 hover:text-purple-800 transition-colors">
+                <span itemprop="name">Blog</span>
+              </a>
+              <meta itemprop="position" content="2">
+            </li>
+            <li class="inline mx-1 text-gray-400">›</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="inline text-gray-600">
+              <span itemprop="name">{{ title | truncate(30) }}</span>
+              <meta itemprop="position" content="3">
+            </li>
+          </ol>
+        </nav>
+
+        <!-- Post Header -->
+        <header class="mb-8">
+          {% if isPillar %}
+          <div class="mb-4">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-purple-600 text-white uppercase tracking-wide">
+              Ultimate Guide
+            </span>
+          </div>
+          {% endif %}
+
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" itemprop="headline">{{ title }}</h1>
+
+          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+            <span class="flex items-center">
+              <svg class="w-4 h-4 mr-1.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              {{ content | readingTime }} min read
+            </span>
+            <span class="text-gray-300">·</span>
+            <time itemprop="dateModified" datetime="{{ date | date('%Y-%m-%d') }}">
+              {{ date | postDate }}
+            </time>
+            <span class="text-gray-300">·</span>
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+              By <span itemprop="name" class="font-medium">{{ author or 'Chips of Fury Team' }}</span>
+            </span>
+          </div>
+
+          <meta itemprop="datePublished" content="{{ date | date('%Y-%m-%d') }}">
+          <meta itemprop="image" content="https://chipsoffury.com/images/chips_of_fury_logo.webp">
+          <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
+            <meta itemprop="name" content="Kanily Technologies LLP">
+            <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+              <meta itemprop="url" content="https://chipsoffury.com/images/chips_of_fury_logo.webp">
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="prose max-w-none" itemprop="articleBody">
+          {{ content | safe }}
+        </div>
+
+        <!-- Tags -->
+        {% if tags %}
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <div class="flex flex-wrap gap-2">
+            {% for tag in tags %}
+              {% if tag != 'post' %}
+                <span class="inline-block px-3 py-1 text-sm font-medium text-purple-700 bg-purple-100 rounded-full">
+                  #{{ tag }}
+                </span>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- Comments Section -->
+        <div class="mt-12">
+          {% include "components/comments-tailwind.html" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- Footer -->
+{% renderTemplate "webc" %}
+<site-footer></site-footer>
+{% endrenderTemplate %}
+
+<!-- JavaScript for progress bar, mobile ToC, scroll spy -->
+<script>
+(function() {
+  // Reading progress bar
+  function updateProgress() {
+    const article = document.querySelector('article');
+    const progressBar = document.getElementById('reading-progress');
+    if (!article || !progressBar) return;
+
+    const scrolled = window.scrollY;
+    const height = article.offsetHeight - window.innerHeight;
+    const progress = Math.min(Math.max((scrolled / height) * 100, 0), 100);
+    progressBar.style.width = progress + '%';
+  }
+
+  // Mobile ToC bar visibility (show after scrolling 200px)
+  function updateMobileTocVisibility() {
+    const bar = document.getElementById('mobile-toc-bar');
+    if (!bar) return;
+
+    if (window.scrollY > 200) {
+      bar.classList.remove('-translate-y-full');
+    } else {
+      bar.classList.add('-translate-y-full');
+      // Also close the panel when scrolling back up
+      const panel = document.getElementById('mobile-toc-panel');
+      if (panel) panel.classList.add('hidden');
+    }
+  }
+
+  // Toggle mobile ToC panel
+  const tocToggle = document.getElementById('toc-toggle');
+  if (tocToggle) {
+    tocToggle.addEventListener('click', function() {
+      const panel = document.getElementById('mobile-toc-panel');
+      if (panel) panel.classList.toggle('hidden');
+    });
+  }
+
+  // Close panel when clicking a link
+  document.querySelectorAll('#mobile-toc-panel a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      const panel = document.getElementById('mobile-toc-panel');
+      if (panel) panel.classList.add('hidden');
+    });
+  });
+
+  // Intersection Observer for active ToC highlighting
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.toc-link').forEach(function(link) {
+          link.classList.remove('toc-link--active');
+        });
+        const activeLink = document.querySelector('[data-toc-id="' + entry.target.id + '"]');
+        if (activeLink) activeLink.classList.add('toc-link--active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  document.querySelectorAll('h2[id], h3[id]').forEach(function(heading) {
+    observer.observe(heading);
+  });
+
+  // Throttled scroll handler
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateProgress();
+        updateMobileTocVisibility();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial calls
+  updateProgress();
+  updateMobileTocVisibility();
+})();
+</script>

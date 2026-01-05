@@ -3,6 +3,8 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const { DateTime } = require("luxon");
 const { execSync } = require("child_process");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 
 let isCompiling = false;
 
@@ -66,6 +68,13 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    // Configure markdown-it with anchor plugin for ToC
+    const md = markdownIt({ html: true }).use(markdownItAnchor, {
+        permalink: false,
+        slugify: (s) => s.toLowerCase().replace(/[^\w\s]+/g, '').replace(/\s+/g, '-').replace(/-+$/, '')
+    });
+    eleventyConfig.setLibrary("md", md);
+
     eleventyConfig.addFilter("postDate", (dateObj) => {
         return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
     });
@@ -84,7 +93,28 @@ module.exports = function(eleventyConfig) {
         if (str.length <= length) return str;
         return str.substr(0, length) + '...';
     });
-    
+
+    // Extract headings for Table of Contents (H2 only for cleaner ToC)
+    eleventyConfig.addFilter("extractToc", (content) => {
+        const regex = /<h2[^>]*id="([^"]*)"[^>]*>([\s\S]*?)<\/h2>/gi;
+        const headings = [];
+        let match;
+        while ((match = regex.exec(content)) !== null) {
+            // Strip HTML tags from heading text
+            const text = match[2].replace(/<[^>]*>/g, '').trim();
+            headings.push({ id: match[1], text });
+        }
+        return headings;
+    });
+
+    // Calculate reading time (avg 200 words per minute)
+    eleventyConfig.addFilter("readingTime", (content) => {
+        const text = content.replace(/<[^>]*>/g, '');
+        const words = text.split(/\s+/).length;
+        const minutes = Math.ceil(words / 200);
+        return minutes;
+    });
+
     // Add helper for current year
     eleventyConfig.addGlobalData("helpers", {
         currentYear: () => new Date().getFullYear()
