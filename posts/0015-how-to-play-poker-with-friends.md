@@ -26,8 +26,8 @@ mode, and removes the math that usually slows new players down.
 Here’s the fastest way to play poker with friends online:
 
 1. **Pick a platform**  
-   For beginners, **Chips of Fury** is the simplest and most flexible option. We have compared some other good apps 
-   in this space below if you want to explore more options.
+   For beginners, **Chips of Fury** is the simplest and most flexible option. We have compared some other good apps in
+   this space below if you want to explore more options.
 
 2. **Create a private table**  
    Start with Texas Hold’em — it’s the most beginner-friendly variant. If you want a deeper walk-through, check out our
@@ -77,6 +77,7 @@ Platforms include:
 
 - **Chips of Fury**
 - **Poker Now**
+- **Poker Patio**
 - **unmasked.poker**
 
 Fully online tables are best for groups that want seamless play without relying on physical cards. If you're curious
@@ -111,6 +112,8 @@ reuse.
   get on a table and start playing, 15+ variants, generous ad-free free plan
 - <a href="https://www.pokernow.club" target="_blank" rel="nofollow">PokerNow</a>: browser-only, no signup, quickest
   purely online table; no mobile apps or virtual poker chips.
+- <a href="https://pokerpatio.com" target="_blank" rel="nofollow">Poker Patio</a>: browser-only, no signup, simple
+  interface; Texas Hold'em only, no mobile apps.
 - <a href="https://about.unmasked.poker/" target="_blank" rel="nofollow">Unmasked Poker</a>: browser-only with built-in
   video; no apps, no digital chip tracking.
 - <a href="https://easy.poker/" target="_blank" rel="nofollow">Easy Poker</a>: mobile-only, simple, download required;
@@ -119,52 +122,44 @@ reuse.
   target="_blank" rel="nofollow">ClubGG</a>: best for large online clubs and real-money style play; slower setup,
   paywalls common.
 
----
-
 ### Best Pick by Scenario
 
-| If you want...                            | Best pick         | Why it fits                                                         | Runner-up       |
-|-------------------------------------------|-------------------|---------------------------------------------------------------------|-----------------|
-| All-around home game app                  | **Chips of Fury** | Cross-platform, no signup, fastest setup, biggest variation library | Poker Now       |
-| Play with real cards but don't have chips | **Chips of Fury** | Only option with Chips Only Mode                                    | —         <br/> |
-| Browser-only, no downloads                | Poker Now         | Instant links, no accounts                                          | Unmasked        |
-| Built-in video chat                       | Unmasked          | Native video rooms                                                  | Poker Now       |
-| Mobile-only simplicity                    | EasyPoker         | Lightweight mobile flow                                             | Chips of Fury   |
-| Large online clubs/unions                 | PPPoker           | Club tooling, agents, unions                                        | ClubGG          |
-| Tournament satellites                     | ClubGG            | WSOP-style satellites                                               | —               |
-
----
+| If you want...                  | Best pick               | Why it fits                               | Runner-up  |
+|---------------------------------|-------------------------|-------------------------------------------|------------|
+| Home games with many variations | **Chips of Fury** (CoF) | Biggest variation library           <br/> | Poker Now  |
+| Have cards but no chip set      | **CoF**                 | Chips Only Mode                           | —  <br/>   |
+| Play on desktop (browser)       | Poker Now               | Designed for bigger screens               | **CoF**    |
+| Virtual games on Mobile         | **CoF**                 | Mobile first with native apps             | Easy Poker |
+| Large online clubs/unions       | PPPoker                 | Club tooling, agents, unions              | ClubGG     |
 
 ### Can Everyone Join Fast?
 
-| App               | Platforms (count)                       | Signup required | Download needed | Time to play (est.) |
-|-------------------|-----------------------------------------|-----------------|-----------------|:-------------------:|
-| **Chips of Fury** | Web, iOS, Android (3 + desktop via web) | No              | Optional        |      **~15s**       |
-| Poker Now         | Web (works on any device)               | No              | No              |        ~15s         |
-| Unmasked          | Web (works on any device)               | No              | No              |        ~15s         |
-| EasyPoker         | iOS, Android                            | No              | Yes             |        ~45s         |
-| Pokerrrr 2        | iOS, Android                            | Yes             | Yes             |       ~2 min        |
-| PPPoker           | iOS, Android, Windows                   | Yes             | Yes             |       ~5 min        |
-| ClubGG            | iOS, Android, Win/Mac                   | Yes             | Yes             |       ~5 min        |
+| App               | Platforms (count)     | Signup required | Download needed | Time to play (est.) |
+|-------------------|-----------------------|-----------------|-----------------|:-------------------:|
+| **Chips of Fury** | Web, iOS, Android     | No              | Optional        |      **~15s**       |
+| Poker Now         | Web only              | No              | No              |        ~15s         |
+| Poker Patio       | Web only              | No              | No              |        ~15s         |
+| Unmasked          | Web only              | No              | No              |        ~15s         |
+| EasyPoker         | iOS, Android          | No              | Yes             |        ~45s         |
+| Pokerrrr 2        | iOS, Android          | Yes             | Yes             |       ~2 min        |
+| PPPoker           | iOS, Android, Windows | Yes             | Yes             |       ~5 min        |
+| ClubGG            | iOS, Android, Win/Mac | Yes             | Yes             |       ~5 min        |
 
 Takeaway: Chips of Fury is the only option here with both native apps and a full web client—easiest when your group
 mixes phones and laptops.
 
----
-
-### Cost Snapshot
+### Paid Plan Comparison
 
 | App               | Free tier highlights                           | Paid plan (approx.)       | Notes                                                              |
 |-------------------|------------------------------------------------|---------------------------|--------------------------------------------------------------------|
 | **Chips of Fury** | Common features are available for free, no ads | $3.99/mo or $24.99/yr Pro | Free trial of all PRO features for 30 mins of every game           |
 | Poker Now         | Common features are available for free         | $9.99–$49.99/mo           | No apps                                                            |
+| Poker Patio       | All game modes free, no registration           | $3.99/mo or $37.99/yr     | Texas Hold'em only, no apps, cosmetic upgrades in paid tier        |
 | Unmasked          | Fully free (play money)                        | Free                      | Includes video, does not seem to be in active development any more |
 | EasyPoker         | Up to 6 players                                | $5.99/mo or $29.99/yr     | Mobile-only, limited customization without subscription            |
 | Pokerrrr 2        | 20 min/game                                    | In-app gold (~$1/hr)      | Limits without purchases                                           |
 | PPPoker           | Limited virtual currency for free              | In-app purchases          | Required purchasing in app currency to play regularly              |
 | ClubGG            | Free clubs upto 100 members                    | $9.99–$49.99/mo           | Great for creating and managing clubs                              |
-
----
 
 ### Why Chips of Fury Stands Out for Home Games
 
@@ -173,15 +168,13 @@ mixes phones and laptops.
 - Live game mode: only app here that tracks chips when you play with physical cards.
 - Variety for dealer’s choice: 15+ variants (Hold'em, four Omahas, Short Deck, Pineapple trio, Irish, Watermelon, Double
   Board, more).
-- Fair pricing: free forever for common features (play Texas Hold'em, Omaha for free); low-cost Pro plan for access to 
+- Fair pricing: free forever for common features (play Texas Hold'em, Omaha for free); low-cost Pro plan for access to
   all features.
-
----
 
 ### When Another App Might Be Better
 
-- You're joining or managing large online clubs: PPPoker or ClubGG. For the rest of the use-cases, Chips of Fury, or 
-  any of the other apps as well work better.
+- You're joining or managing large online clubs: PPPoker or ClubGG. For the rest of the use-cases, Chips of Fury, or any
+  of the other apps as well work better.
 
 ---
 
