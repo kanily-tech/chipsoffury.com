@@ -148,24 +148,54 @@ reuse.
 Takeaway: Chips of Fury is the only option here with both native apps and a full web client—easiest when your group
 mixes phones and laptops.
 
-### Paid Plan Comparison
+### Pricing Breakdown
 
-| App               | Free tier highlights                           | Paid plan (approx.)       | Notes                                                              |
-|-------------------|------------------------------------------------|---------------------------|--------------------------------------------------------------------|
-| **Chips of Fury** | Common features are available for free, no ads | $3.99/mo or $24.99/yr Pro | Free trial of all PRO features for 30 mins of every game           |
-| Poker Now         | Common features are available for free         | $9.99–$49.99/mo           | No apps                                                            |
-| Poker Patio       | All game modes free, no registration           | $3.99/mo or $37.99/yr     | Texas Hold'em only, no apps, cosmetic upgrades in paid tier        |
-| Unmasked          | Fully free (play money)                        | Free                      | Includes video, does not seem to be in active development any more |
-| EasyPoker         | Up to 6 players                                | $5.99/mo or $29.99/yr     | Mobile-only, limited customization without subscription            |
-| Pokerrrr 2        | 20 min/game                                    | In-app gold (~$1/hr)      | Limits without purchases                                           |
-| PPPoker           | Limited virtual currency for free              | In-app purchases          | Required purchasing in app currency to play regularly              |
-| ClubGG            | Free clubs upto 100 members                    | $9.99–$49.99/mo           | Great for creating and managing clubs                              |
+#### Chips of Fury
+- **Free:** Texas Hold'em, Omaha, all core features, no ads
+- **Pro:** $3.99/mo or $24.99/yr — 15+ variants, advanced host controls, all customization
+- *Every game includes 30 minutes of Pro features free*
+
+#### Poker Now
+- **Free:** Core features, public/private tables, built-in video chat
+- **Plus:** $9.99/mo or $69.60/yr — custom avatars, AI analytics, 2 clubs (10 members each)
+- **Platinum:** $49.99/mo or $499/yr — 10 clubs (100 members each), 600-player MTTs
+- *Browser-only, no mobile apps*
+
+#### Poker Patio
+- **Free:** All game modes, no registration required
+- **Go Gold:** $3.99/mo or $37.99/yr — cosmetic upgrades, ad-free, extended lobby persistence
+- *Texas Hold'em only, browser-only, no mobile apps*
+
+#### Unmasked Poker
+- **Free:** Everything — no paid tier exists
+- *Built-in video chat, browser-only; may not be in active development*
+
+#### EasyPoker
+- **Free:** Up to 6 players, voice chat, multiple variants
+- **Plus:** $5.99/mo or $29.99/yr — up to 12 players, advanced customization, ad-free
+- *Mobile-only (iOS/Android), no web version*
+
+#### Pokerrrr 2
+- **Free:** First 20 minutes per game
+- **Paid:** Gold coins (~$1/hr for extended play, purchased in-app)
+- *Mobile-only, 8+ game variants including OFC and Stud*
+
+#### PPPoker
+- **Free:** Download and basic club play
+- **Paid:** In-app purchases for cosmetics; VIP/Black Card for detailed stats
+- *Club-based with unions, mobile-first, no browser version*
+
+#### ClubGG
+- **Free:** Clubs up to 100 members, play chips only
+- **Standard:** $9.99/mo — tournament access, Smart HUD, GGClass training
+- **Platinum:** $49.99/mo — unlimited tournament entries, WSOP satellite access
+- *No cash redemptions since April 2025; rewards are tournament tickets only*
 
 ### Why Chips of Fury Stands Out for Home Games
 
 - True cross-platform: native iOS/Android plus browser; works on any modern device.
 - Zero friction: share a code (or direct link), no accounts; great for drop-in friends.
-- Live game mode: only app here that tracks chips when you play with physical cards.
+- Chips Only mode: use real cards at the table while the app handles chip tracking, bets, and side pots.
 - Variety for dealer’s choice: 15+ variants (Hold'em, four Omahas, Short Deck, Pineapple trio, Irish, Watermelon, Double
   Board, more).
 - Fair pricing: free forever for common features (play Texas Hold'em, Omaha for free); low-cost Pro plan for access to
