@@ -151,41 +151,49 @@ mixes phones and laptops.
 ### Pricing Breakdown
 
 #### Chips of Fury
+
 - **Free:** Texas Hold'em, Omaha, all core features, no ads
 - **Pro:** $3.99/mo or $24.99/yr — 15+ variants, advanced host controls, all customization
 - *Every game includes 30 minutes of Pro features free*
 
 #### Poker Now
+
 - **Free:** Core features, public/private tables, built-in video chat
 - **Plus:** $9.99/mo or $69.60/yr — custom avatars, AI analytics, 2 clubs (10 members each)
 - **Platinum:** $49.99/mo or $499/yr — 10 clubs (100 members each), 600-player MTTs
 - *Browser-only, no mobile apps*
 
 #### Poker Patio
+
 - **Free:** All game modes, no registration required
 - **Go Gold:** $3.99/mo or $37.99/yr — cosmetic upgrades, ad-free, extended lobby persistence
 - *Texas Hold'em only, browser-only, no mobile apps*
 
 #### Unmasked Poker
+
 - **Free:** Everything — no paid tier exists
 - *Built-in video chat, browser-only; may not be in active development*
 
 #### EasyPoker
+
 - **Free:** Up to 6 players, voice chat, multiple variants
 - **Plus:** $5.99/mo or $29.99/yr — up to 12 players, advanced customization, ad-free
 - *Mobile-only (iOS/Android), no web version*
 
 #### Pokerrrr 2
+
 - **Free:** First 20 minutes per game
 - **Paid:** Gold coins (~$1/hr for extended play, purchased in-app)
 - *Mobile-only, 8+ game variants including OFC and Stud*
 
 #### PPPoker
+
 - **Free:** Download and basic club play
 - **Paid:** In-app purchases for cosmetics; VIP/Black Card for detailed stats
 - *Club-based with unions, mobile-first, no browser version*
 
 #### ClubGG
+
 - **Free:** Clubs up to 100 members, play chips only
 - **Standard:** $9.99/mo — tournament access, Smart HUD, GGClass training
 - **Platinum:** $49.99/mo — unlimited tournament entries, WSOP satellite access
@@ -241,42 +249,67 @@ Zoom, Discord, Google Meet — all work great. You can also use the in-built voi
 
 ---
 
-## Poker Game Types & Variations (Beginners’ Guide)
+## Poker Game Types & Variations (Beginners' Guide)
 
-Many groups eventually branch out beyond Hold’em. When you do, the deeper rule breakdowns in
-our [Omaha Hold’em rules](https://chipsoffury.com/posts/omaha-holdem-poker-rules/)
-and [Crazy Pineapple / Pineapple rules](https://chipsoffury.com/posts/crazy-pineapple-poker-rules/) guides are great
-next steps.
+Poker nights — they almost always start with Texas Hold'em. And that's fine! But give it a few
+months, and someone's gonna suggest trying something different. "What about Omaha?" or "I heard Pineapple is wild."
 
-### Texas Hold’em
+When that happens (and it will), we've got deeper dives
+into [Omaha Hold'em rules](#tobepublished)
+and [Crazy Pineapple / Pineapple rules](#tobepublished) ready for you.
 
-🖼️ Media Suggestion: Visual of 2 hole cards + 5 community cards.
+### Texas Hold'em
 
-The best beginner game — widely taught, simple to grasp, and endlessly replayable.  
-If you want a full rules tour, the dedicated
-beginner-friendly [Texas Hold’em rules](https://chipsoffury.com/posts/texas-holdem-rules-beginner-guide/) guide covers
-everything from blinds to showdowns.
+<div class="not-prose">
+{% renderTemplate "webc" %}
+<poker-table-holdem></poker-table-holdem>
+{% endrenderTemplate %}
+</div>
+
+There's a reason this is the one you see on TV. Two hole cards, five community cards, and enough strategic depth to keep
+you hooked for years — yet simple enough that your friend who's "never really played cards" can pick it up in one round.
+
+Start here. Seriously.
+
+Our [Texas Hold'em rules](#tobepublished) guide walks through
+everything: blinds, betting rounds, showdowns, the whole nine yards.
 
 ### Omaha
 
-🖼️ Media Suggestion: Visual: 4 hole cards + “Use exactly 2” note.
+🖼️ Media Suggestion: Visual: 4 hole cards + "Use exactly 2" note.
 
-More cards, more action.  
-But because the hand rankings and combos get trickier, it helps to review the
-full [Omaha rules overview](https://chipsoffury.com/posts/omaha-holdem-poker-rules/) when you’re ready.
+Four hole cards instead of two. Sounds like a small change, right? It's not.
+
+Omaha cranks up the action because everyone's sitting on more potential hands — which means bigger pots, crazier
+showdowns, and that one friend who keeps forgetting they *must* use exactly two cards from their hand. (We all have that
+friend.)
+
+When your group's ready to level up, the [Omaha rules overview](#tobepublished)
+breaks down the nuances.
 
 ### Pineapple / Crazy Pineapple
 
-🖼️ Media Suggestion: 3 card hand illustration with “discard after flop” arrow.
+🖼️ Media Suggestion: 3 card hand illustration with "discard after flop" arrow.
 
-A fun, social variant that gives players more playable hands.  
-We have a complete [Crazy Pineapple rules breakdown](https://chipsoffury.com/posts/crazy-pineapple-poker-rules/) if your
-group wants something more casual and chaotic.
+Want chaos? This is the variant for you.
+
+You get three hole cards, then toss one after the flop. It's Hold'em's wilder cousin — more playable starting hands,
+more "I can't believe that hit" moments, and honestly just more fun for casual nights where nobody's taking things too
+seriously.
+
+Check out our [Crazy Pineapple rules breakdown](#tobepublished) if your crew
+wants to shake things up.
 
 ### Cash Games vs Tournaments
 
-Cash games are easiest for beginners.  
-Tournaments require different pacing and strategy.
+Quick distinction that trips up new players:
+
+**Cash games** let you buy in, cash out, and leave whenever. Chips equal real value (or whatever your group's tracking).
+Perfect for beginners because there's no pressure — lose your stack, rebuy, keep hanging out.
+
+**Tournaments** are a different beast entirely. Everyone starts with the same chips, blinds increase over time, and
+you're out when you're out. More structured, more strategic, but also more commitment. Maybe save these for when your
+group's got a few sessions under their belt.
 
 ---
 

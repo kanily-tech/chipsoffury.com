@@ -1,0 +1,114 @@
+<div class="poker-table-container my-6">
+  <div class="poker-table-extended relative mx-auto">
+    <!-- Community Cards Section with top margin for lift animation -->
+    <div class="mt-3">
+      <div class="community-cards flex justify-center gap-1">
+        <div class="poker-card poker-card--face-up" data-card="0"><span class="suit--club">♣</span></div>
+        <div class="poker-card poker-card--face-up" data-card="1"><span class="suit--diamond">♦</span></div>
+        <div class="poker-card poker-card--face-up" data-card="2"><span class="suit--club">♣</span></div>
+        <div class="w-2"></div>
+        <div class="poker-card poker-card--face-up" data-card="3"><span class="suit--heart">♥</span></div>
+        <div class="w-2"></div>
+        <div class="poker-card poker-card--face-up" data-card="4"><span class="suit--diamond">♦</span></div>
+      </div>
+      <div class="text-[10px] text-white/50 text-center mt-1 font-medium tracking-wide">COMMUNITY</div>
+    </div>
+    <!-- Divider -->
+    <div class="border-t border-white/20 mx-4 mt-3 mb-6"></div>
+    <!-- Hole Cards Section with top margin for lift animation -->
+    <div class="mt-4">
+      <div class="hole-cards flex justify-center gap-1">
+        <div class="poker-card poker-card--face-up" data-hole="0"><span class="suit--diamond">♦</span></div>
+        <div class="poker-card poker-card--face-up" data-hole="1"><span class="suit--heart">♥</span></div>
+      </div>
+      <div class="text-[10px] text-white/50 text-center mt-1 font-medium tracking-wide">YOUR HAND</div>
+    </div>
+  </div>
+  <div class="validation-container h-8 mt-4 flex justify-center">
+    <div class="validation-badge validation-badge--valid" style="opacity: 0;">
+      <span>✓</span>
+      <span>Allowed</span>
+    </div>
+  </div>
+</div>
+
+<script webc:keep>
+(function() {
+  // Animation sequence matching Flutter implementation
+  const steps = [
+    { community: [], hole: [], duration: 400, showBadge: false },
+    { community: [0, 2, 3, 4], hole: [1], duration: 2500, showBadge: true },
+    { community: [], hole: [], duration: 800, showBadge: false },
+    { community: [0, 3, 4], hole: [0, 1], duration: 2500, showBadge: true },
+    { community: [], hole: [], duration: 800, showBadge: false },
+    { community: [0, 1, 2, 3, 4], hole: [], duration: 2500, showBadge: true },
+    { community: [], hole: [], duration: 400, showBadge: false },
+  ];
+
+  // Find all poker table containers on the page
+  const containers = document.querySelectorAll('.poker-table-container');
+
+  containers.forEach(function(container) {
+    // Skip if already initialized
+    if (container.dataset.initialized) return;
+    container.dataset.initialized = 'true';
+
+    const communityCards = container.querySelectorAll('[data-card]');
+    const holeCards = container.querySelectorAll('[data-hole]');
+    const badge = container.querySelector('.validation-badge');
+
+    if (!communityCards.length || !holeCards.length || !badge) return;
+
+    let currentStep = 0;
+    let animationStarted = false;
+
+    function applyStep(step) {
+      const hasHighlights = step.community.length > 0 || step.hole.length > 0;
+
+      communityCards.forEach((card, i) => {
+        const isHighlighted = step.community.includes(i);
+        card.classList.toggle('poker-card--highlight', isHighlighted);
+        card.classList.toggle('poker-card--dim', hasHighlights && !isHighlighted);
+      });
+
+      holeCards.forEach((card, i) => {
+        const isHighlighted = step.hole.includes(i);
+        card.classList.toggle('poker-card--highlight', isHighlighted);
+        card.classList.toggle('poker-card--dim', hasHighlights && !isHighlighted);
+      });
+
+      // Animate badge using anime.js if available, otherwise use simple opacity
+      if (typeof anime !== 'undefined') {
+        anime({
+          targets: badge,
+          opacity: step.showBadge ? 1 : 0,
+          duration: 300,
+          easing: 'easeOutQuad'
+        });
+      } else {
+        badge.style.transition = 'opacity 0.3s ease-out';
+        badge.style.opacity = step.showBadge ? '1' : '0';
+      }
+    }
+
+    function nextStep() {
+      applyStep(steps[currentStep]);
+      setTimeout(() => {
+        currentStep = (currentStep + 1) % steps.length;
+        nextStep();
+      }, steps[currentStep].duration);
+    }
+
+    // Start animation when visible using Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !animationStarted) {
+        animationStarted = true;
+        nextStep();
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+
+    observer.observe(container);
+  });
+})();
+</script>
