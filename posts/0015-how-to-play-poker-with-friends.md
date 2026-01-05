@@ -323,109 +323,167 @@ want to keep strict time bounds and not have people coming and going.
 
 ## Poker Rules & Hand Rankings (Beginner-Friendly)
 
-If you’re brand new, the short overview below is enough to play.  
-When you want to go deeper, see our full poker
-hand [rankings explained](https://chipsoffury.com/posts/poker-winning-hand-rankings/) guide — it includes a printable
-chart that many groups keep open during play.
+Here's everything you need to actually sit down and play. Keep this section open during your first few games — most beginners do.
 
-### Basic Rules
+For the complete breakdown with printable charts and tie-breaker rules, see our full [hand rankings guide](https://chipsoffury.com/posts/poker-winning-hand-rankings/).
 
-Poker hands follow a simple rhythm:
+### How a Hand Plays Out
 
-1. Players receive cards
-2. Players bet
-3. Community cards appear
-4. Best hand wins
+Every poker hand follows the same pattern:
 
-### Betting Actions
+1. **Two players post blinds** (forced bets to create action)
+2. **Everyone gets hole cards** (your private cards — 2 in Hold'em)
+3. **Betting rounds happen** as community cards are revealed
+4. **Best five-card hand wins** (or everyone else folds)
 
-- **Check**
-- **Call**
-- **Raise**
-- **Fold**
+That's it. Everything else is just details.
 
-These actions — and how they fit into strategy — are explained more deeply in
-our [beginner poker strategy guide](https://chipsoffury.com/posts/beginner-poker-strategy-how-to-win/).
+### The Four Betting Rounds
 
-### Betting Rounds
+| Round | What happens | Cards on board |
+|-------|-------------|----------------|
+| **Preflop** | You look at your hole cards and decide to play or fold | None yet |
+| **Flop** | Three community cards are dealt face-up | 3 cards |
+| **Turn** | One more community card | 4 cards |
+| **River** | Final community card | 5 cards |
 
-- Preflop
-- Flop
-- Turn
-- River
+After each round, there's betting. After the river, anyone still in shows their cards (the "showdown").
 
-### Poker Hand Rankings
+### Your Four Options When It's Your Turn
 
-🖼️ Media Suggestion: Official WSOP-style hand ranking ladder graphic.
+| Action | What it means | When to use it |
+|--------|---------------|----------------|
+| **Check** | "I bet nothing, but I'm staying in" | Only works if nobody's bet before you |
+| **Call** | "I match the current bet" | When you want to see more cards without raising |
+| **Raise** | "I increase the bet" | When you have a strong hand or want to bluff |
+| **Fold** | "I'm out of this hand" | When your cards aren't worth the price |
 
-From strongest to weakest:
+Quick tip: If someone bets and you want to stay in, you *must* at least call. You can't check after someone bets.
 
-1. Royal Flush
-2. Straight Flush
-3. Four of a Kind
-4. Full House
-5. Flush
-6. Straight
-7. Three of a Kind
-8. Two Pair
-9. One Pair
-10. High Card
+### Hand Rankings (What Beats What)
 
-For tie-breakers and illustration examples, refer
-to [Poker Hand Rankings Explained](https://chipsoffury.com/posts/poker-winning-hand-rankings/).
+Memorize these from best to worst. In a few games, they'll be automatic.
+
+| Rank | Hand | Example | What it is |
+|:----:|------|---------|------------|
+| 1 | **Royal Flush** | A♠ K♠ Q♠ J♠ 10♠ | A, K, Q, J, 10 — all same suit |
+| 2 | **Straight Flush** | 7♥ 6♥ 5♥ 4♥ 3♥ | Five in a row, same suit |
+| 3 | **Four of a Kind** | 9♠ 9♥ 9♦ 9♣ K♠ | Four cards of the same rank |
+| 4 | **Full House** | J♠ J♥ J♦ 4♣ 4♠ | Three of a kind + a pair |
+| 5 | **Flush** | K♦ J♦ 8♦ 4♦ 2♦ | Five cards, same suit (any order) |
+| 6 | **Straight** | 10♣ 9♦ 8♠ 7♥ 6♣ | Five in a row, mixed suits |
+| 7 | **Three of a Kind** | 5♠ 5♥ 5♦ K♣ 8♠ | Three cards of the same rank |
+| 8 | **Two Pair** | A♠ A♦ 6♥ 6♣ K♠ | Two different pairs |
+| 9 | **One Pair** | Q♠ Q♥ 9♦ 7♣ 3♠ | Two cards of the same rank |
+| 10 | **High Card** | A♥ J♦ 8♣ 5♠ 2♥ | Nothing — your highest card plays |
+
+**How often will you see these?** Royal flushes are rare (1 in 650,000 hands). Most pots are won with one pair, two pair, or high card. Don't wait around for monster hands — they almost never come.
+
+### The One Rule That Confuses Everyone
+
+Your final hand is the best five cards from your two hole cards plus the five community cards. You can use:
+- Both hole cards + 3 from the board
+- One hole card + 4 from the board
+- Just the board (called "playing the board")
+
+So if the board shows A♠ K♠ Q♠ J♠ 10♠, *everyone* has a royal flush — it would be a split pot.
+
+For tie-breakers and edge cases, check out our [complete hand rankings guide](https://chipsoffury.com/posts/poker-winning-hand-rankings/).
 
 ---
 
 ## Beginner Poker Strategies
 
-This section is your “quick wins” starter pack.  
-For a deeper framework, see
-our [Beginner Poker Strategy Guide](https://chipsoffury.com/posts/beginner-poker-strategy-how-to-win/).
+You don't need to study for months before your first game. These five concepts will put you ahead of most casual players immediately.
 
-### Preflop Strategy Basics
+For a deeper framework, see our [Beginner Poker Strategy Guide](https://chipsoffury.com/posts/beginner-poker-strategy-how-to-win/).
 
-Play fewer hands.  
-Fold weak hands.  
-Bet your strong ones.
+### 1. Play Fewer Hands (Seriously, Way Fewer)
 
-If you're new to structured ranges,
-our [Beginner Poker Preflop Charts](https://chipsoffury.com/posts/poker-preflop-charts/) guide walks you through exactly
-which hands to play in each position.
+New players play too many hands. It's the #1 mistake.
 
-### Biggest Poker Tells (In-Person)
+Here's a simple rule: if your two cards aren't in this list, just fold.
 
-Classic tells include:
+**Always play:**
+- Pairs (any pair — 22 through AA)
+- Two cards 10 or higher (KQ, QJ, KJ, AQ, AK, etc.)
+- Suited connectors (8♥ 9♥, J♠ 10♠)
+- Any ace with a decent kicker (A9 or better)
 
-- Nervous movement
-- Sudden stillness
-- Overacting
-- Unnatural bet sizing
+**Fold everything else.** Yes, that means folding K3, Q5, J4, and all that junk. It feels boring at first, but you'll win more.
 
-We cover these in more detail
-in [The 5 Biggest Tells in Poker](https://chipsoffury.com/posts/the-5-biggest-tells-in-poker/).
+For the full breakdown by position, see our [preflop charts guide](https://chipsoffury.com/posts/poker-preflop-charts/).
 
-### Biggest Online-Only Tells
+### 2. Position Matters More Than Your Cards
 
-These often include:
+"Position" means where you sit relative to the dealer button. It rotates each hand.
 
-- Instant calls
-- Strange sizing
-- Inconsistent aggression
+- **Early position** (first to act): Play tight. You have no information.
+- **Late position** (dealer or one before): Play looser. You've seen everyone else act.
 
-Learn more in [3 Common Tells in Online Poker](https://chipsoffury.com/posts/3-common-tells-in-online-poker/).
+Here's why it matters: if you're last to act, you've watched everyone bet, check, or fold before you decide. That's a huge advantage. The same hand that's a fold in early position might be a raise in late position.
 
-### Essential Poker Lingo
+### 3. Bet When You're Strong, Don't Just Call
 
-Understanding poker terminology is essential.  
-Our [Poker Lingo for Beginners](https://chipsoffury.com/posts/poker-lingo-and-terms-for-beginners/) guide covers every
-term you’ll hear at the table.
+Beginners call too much. They want to "see what happens."
 
-### Common Beginner Mistakes
+But here's the thing — betting does two things calling can't:
+1. It can win the pot right now (everyone folds)
+2. It builds the pot when you're ahead
 
-- Playing too many hands
-- Calling everything
-- Ignoring position
-- Bluffing too often
+If you have a good hand, bet it. If you're not confident enough to bet, consider folding instead of calling.
+
+### 4. Spotting Basic Tells
+
+In friendly home games, people give away information constantly. Watch for these:
+
+**In-person tells:**
+
+| What you see | What it usually means |
+|--------------|----------------------|
+| Shaky hands when betting | Excitement — they have a big hand |
+| Staring at you after betting | Usually bluffing (trying to intimidate) |
+| Looking away after betting | Usually strong (fake disinterest) |
+| Quick call | Medium hand — not strong enough to raise, not weak enough to fold |
+| Long pause, then bet | Often weak (acting like a tough decision) |
+
+**Online tells:**
+
+| What you see | What it usually means |
+|--------------|----------------------|
+| Instant call | Drawing hand or medium strength |
+| Long pause, then big raise | Usually very strong |
+| Unusual bet sizing (like 77 instead of 75) | Often a bluff |
+| Suddenly playing way more hands | Probably tilting (frustrated) |
+
+These aren't foolproof — good players mix it up. But in casual games, they're reliable more often than not.
+
+For more on this, see [The 5 Biggest Tells in Poker](https://chipsoffury.com/posts/the-5-biggest-tells-in-poker/) and [3 Common Tells in Online Poker](https://chipsoffury.com/posts/3-common-tells-in-online-poker/).
+
+### 5. The Mistakes That Cost Beginners the Most
+
+| Mistake | Why it hurts | The fix |
+|---------|--------------|---------|
+| Playing too many hands | You enter pots with weak cards and lose slowly | Use the starting hand list above |
+| Calling instead of raising | You let opponents see cheap cards and outdraw you | If it's worth calling, ask yourself if it's worth raising |
+| Ignoring position | You make decisions without information | Play tighter in early position, looser in late |
+| Bluffing too often | Casual players call too much for bluffs to work | Bluff rarely, and only against players who actually fold |
+| Chasing draws | Hoping for that flush or straight that doesn't come | Learn pot odds, or just fold when it's expensive |
+
+### Quick Glossary
+
+A few terms you'll hear at the table:
+
+| Term | Meaning |
+|------|---------|
+| **Blinds** | Forced bets from two players to start the action |
+| **The nuts** | The best possible hand given the board |
+| **Pot odds** | Whether the bet size justifies chasing a draw |
+| **Tilt** | Playing emotionally (usually badly) after a bad beat |
+| **Donk bet** | Betting into the previous aggressor (often weak) |
+| **Value bet** | Betting because you want to be called |
+
+For the full list, see [Poker Lingo for Beginners](https://chipsoffury.com/posts/poker-lingo-and-terms-for-beginners/).
 
 ---
 
