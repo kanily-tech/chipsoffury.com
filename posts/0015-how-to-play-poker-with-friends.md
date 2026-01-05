@@ -315,9 +315,9 @@ Quick distinction that trips up new players:
 **Cash games** let you buy in, cash out, and leave whenever. Chips equal real value (or whatever your group's tracking).
 Perfect for beginners because there's no pressure — lose your stack, rebuy, keep hanging out.
 
-**Tournaments** are a different beast entirely. Everyone starts with the same chips, blinds increase over time, and
-you're out when you're out. More structured, more strategic, but also more commitment. Maybe save these for when your
-group's got a few sessions under their belt.
+**Tournaments** are less common in home games. Everyone starts with the same chips, blinds increase over time, and
+you're out when you're out. More structured, more strategic, but also more commitment. They can be useful if you 
+want to keep strict time bounds and not have people coming and going.
 
 ---
 
