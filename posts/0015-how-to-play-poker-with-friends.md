@@ -251,11 +251,10 @@ Zoom, Discord, Google Meet — all work great. You can also use the in-built voi
 
 ## Poker Game Types & Variations (Beginners' Guide)
 
-Poker nights — they almost always start with Texas Hold'em. And that's fine! But give it a few
-months, and someone's gonna suggest trying something different. "What about Omaha?" or "I heard Pineapple is wild."
+Poker nights — they almost always start with Texas Hold'em. And that's fine! But give it a few months, and someone's
+gonna suggest trying something different. "What about Omaha?" or "I heard Pineapple is wild."
 
-When that happens (and it will), we've got deeper dives
-into [Omaha Hold'em rules](#tobepublished)
+When that happens (and it will), we've got deeper dives into [Omaha Hold'em rules](#tobepublished)
 and [Crazy Pineapple / Pineapple rules](#tobepublished) ready for you.
 
 ### Texas Hold'em
@@ -271,8 +270,8 @@ you hooked for years — yet simple enough that your friend who's "never really 
 
 Start here. Seriously.
 
-Our [Texas Hold'em rules](#tobepublished) guide walks through
-everything: blinds, betting rounds, showdowns, the whole nine yards.
+Our [Texas Hold'em rules](#tobepublished) guide walks through everything: blinds, betting rounds, showdowns, the whole
+nine yards.
 
 ### Omaha
 
@@ -305,8 +304,7 @@ You get three hole cards, then toss one after the flop. It's Hold'em's wilder co
 more "I can't believe that hit" moments, and honestly just more fun for casual nights where nobody's taking things too
 seriously.
 
-Check out our [Crazy Pineapple rules breakdown](#tobepublished) if your crew
-wants to shake things up.
+Check out our [Crazy Pineapple rules breakdown](#tobepublished) if your crew wants to shake things up.
 
 ### Cash Games vs Tournaments
 
@@ -316,16 +314,18 @@ Quick distinction that trips up new players:
 Perfect for beginners because there's no pressure — lose your stack, rebuy, keep hanging out.
 
 **Tournaments** are less common in home games. Everyone starts with the same chips, blinds increase over time, and
-you're out when you're out. More structured, more strategic, but also more commitment. They can be useful if you 
-want to keep strict time bounds and not have people coming and going.
+you're out when you're out. More structured, more strategic, but also more commitment. They can be useful if you want to
+keep strict time bounds and not have people coming and going.
 
 ---
 
 ## Poker Rules & Hand Rankings (Beginner-Friendly)
 
-Here's everything you need to actually sit down and play. Keep this section open during your first few games — most beginners do.
+Here's everything you need to actually sit down and play. Keep this section open during your first few games — most
+beginners do.
 
-For the complete breakdown with printable charts and tie-breaker rules, see our full [hand rankings guide](https://chipsoffury.com/posts/poker-winning-hand-rankings/).
+For the complete breakdown with printable charts and tie-breaker rules, see our
+full [hand rankings guide](https://chipsoffury.com/posts/poker-winning-hand-rankings/).
 
 ### How a Hand Plays Out
 
@@ -340,23 +340,23 @@ That's it. Everything else is just details.
 
 ### The Four Betting Rounds
 
-| Round | What happens | Cards on board |
-|-------|-------------|----------------|
-| **Preflop** | You look at your hole cards and decide to play or fold | None yet |
-| **Flop** | Three community cards are dealt face-up | 3 cards |
-| **Turn** | One more community card | 4 cards |
-| **River** | Final community card | 5 cards |
+| Round       | What happens                                           | Cards on board |
+|-------------|--------------------------------------------------------|----------------|
+| **Preflop** | You look at your hole cards and decide to play or fold | None yet       |
+| **Flop**    | Three community cards are dealt face-up                | 3 cards        |
+| **Turn**    | One more community card                                | 4 cards        |
+| **River**   | Final community card                                   | 5 cards        |
 
 After each round, there's betting. After the river, anyone still in shows their cards (the "showdown").
 
 ### Your Four Options When It's Your Turn
 
-| Action | What it means | When to use it |
-|--------|---------------|----------------|
-| **Check** | "I bet nothing, but I'm staying in" | Only works if nobody's bet before you |
-| **Call** | "I match the current bet" | When you want to see more cards without raising |
-| **Raise** | "I increase the bet" | When you have a strong hand or want to bluff |
-| **Fold** | "I'm out of this hand" | When your cards aren't worth the price |
+| Action    | What it means                       | When to use it                                  |
+|-----------|-------------------------------------|-------------------------------------------------|
+| **Check** | "I bet nothing, but I'm staying in" | Only works if nobody's bet before you           |
+| **Call**  | "I match the current bet"           | When you want to see more cards without raising |
+| **Raise** | "I increase the bet"                | When you have a strong hand or want to bluff    |
+| **Fold**  | "I'm out of this hand"              | When your cards aren't worth the price          |
 
 Quick tip: If someone bets and you want to stay in, you *must* at least call. You can't check after someone bets.
 
@@ -364,39 +364,43 @@ Quick tip: If someone bets and you want to stay in, you *must* at least call. Yo
 
 Memorize these from best to worst. In a few games, they'll be automatic.
 
-| Rank | Hand | Example | What it is |
-|:----:|------|---------|------------|
-| 1 | **Royal Flush** | A♠ K♠ Q♠ J♠ 10♠ | A, K, Q, J, 10 — all same suit |
-| 2 | **Straight Flush** | 7♥ 6♥ 5♥ 4♥ 3♥ | Five in a row, same suit |
-| 3 | **Four of a Kind** | 9♠ 9♥ 9♦ 9♣ K♠ | Four cards of the same rank |
-| 4 | **Full House** | J♠ J♥ J♦ 4♣ 4♠ | Three of a kind + a pair |
-| 5 | **Flush** | K♦ J♦ 8♦ 4♦ 2♦ | Five cards, same suit (any order) |
-| 6 | **Straight** | 10♣ 9♦ 8♠ 7♥ 6♣ | Five in a row, mixed suits |
-| 7 | **Three of a Kind** | 5♠ 5♥ 5♦ K♣ 8♠ | Three cards of the same rank |
-| 8 | **Two Pair** | A♠ A♦ 6♥ 6♣ K♠ | Two different pairs |
-| 9 | **One Pair** | Q♠ Q♥ 9♦ 7♣ 3♠ | Two cards of the same rank |
-| 10 | **High Card** | A♥ J♦ 8♣ 5♠ 2♥ | Nothing — your highest card plays |
+| Rank | Hand                | Example         | What it is                        |
+|:----:|---------------------|-----------------|-----------------------------------|
+|  1   | **Royal Flush**     | A♠ K♠ Q♠ J♠ 10♠ | A, K, Q, J, 10 — all same suit    |
+|  2   | **Straight Flush**  | 7♥ 6♥ 5♥ 4♥ 3♥  | Five in a row, same suit          |
+|  3   | **Four of a Kind**  | 9♠ 9♥ 9♦ 9♣ K♠  | Four cards of the same rank       |
+|  4   | **Full House**      | J♠ J♥ J♦ 4♣ 4♠  | Three of a kind + a pair          |
+|  5   | **Flush**           | K♦ J♦ 8♦ 4♦ 2♦  | Five cards, same suit (any order) |
+|  6   | **Straight**        | 10♣ 9♦ 8♠ 7♥ 6♣ | Five in a row, mixed suits        |
+|  7   | **Three of a Kind** | 5♠ 5♥ 5♦ K♣ 8♠  | Three cards of the same rank      |
+|  8   | **Two Pair**        | A♠ A♦ 6♥ 6♣ K♠  | Two different pairs               |
+|  9   | **One Pair**        | Q♠ Q♥ 9♦ 7♣ 3♠  | Two cards of the same rank        |
+|  10  | **High Card**       | A♥ J♦ 8♣ 5♠ 2♥  | Nothing — your highest card plays |
 
-**How often will you see these?** Royal flushes are rare (1 in 650,000 hands). Most pots are won with one pair, two pair, or high card. Don't wait around for monster hands — they almost never come.
+**How often will you see these?** Royal flushes are rare (1 in 650,000 hands). Most pots are won with one pair, two
+pair, or high card. Don't wait around for monster hands — they almost never come.
 
 ### The One Rule That Confuses Everyone
 
 Your final hand is the best five cards from your two hole cards plus the five community cards. You can use:
+
 - Both hole cards + 3 from the board
 - One hole card + 4 from the board
 - Just the board (called "playing the board")
 
 So if the board shows A♠ K♠ Q♠ J♠ 10♠, *everyone* has a royal flush — it would be a split pot.
 
-For tie-breakers and edge cases, check out our [complete hand rankings guide](https://chipsoffury.com/posts/poker-winning-hand-rankings/).
+For tie-breakers and edge cases, check out our [complete hand rankings guide](#tobepublished).
 
 ---
 
 ## Beginner Poker Strategies
 
-You don't need to study for months before your first game. These five concepts will put you ahead of most casual players immediately.
+You don't need to study for months before your first game. These five concepts will put you ahead of most casual players
+immediately.
 
-For a deeper framework, see our [Beginner Poker Strategy Guide](https://chipsoffury.com/posts/beginner-poker-strategy-how-to-win/).
+For a deeper framework, see
+our [Beginner Poker Strategy Guide](https://chipsoffury.com/posts/beginner-poker-strategy-how-to-win/).
 
 ### 1. Play Fewer Hands (Seriously, Way Fewer)
 
@@ -405,12 +409,14 @@ New players play too many hands. It's the #1 mistake.
 Here's a simple rule: if your two cards aren't in this list, just fold.
 
 **Always play:**
+
 - Pairs (any pair — 22 through AA)
 - Two cards 10 or higher (KQ, QJ, KJ, AQ, AK, etc.)
 - Suited connectors (8♥ 9♥, J♠ 10♠)
 - Any ace with a decent kicker (A9 or better)
 
-**Fold everything else.** Yes, that means folding K3, Q5, J4, and all that junk. It feels boring at first, but you'll win more.
+**Fold everything else.** Yes, that means folding K3, Q5, J4, and all that junk. It feels boring at first, but you'll
+win more.
 
 For the full breakdown by position, see our [preflop charts guide](https://chipsoffury.com/posts/poker-preflop-charts/).
 
@@ -421,13 +427,15 @@ For the full breakdown by position, see our [preflop charts guide](https://chips
 - **Early position** (first to act): Play tight. You have no information.
 - **Late position** (dealer or one before): Play looser. You've seen everyone else act.
 
-Here's why it matters: if you're last to act, you've watched everyone bet, check, or fold before you decide. That's a huge advantage. The same hand that's a fold in early position might be a raise in late position.
+Here's why it matters: if you're last to act, you've watched everyone bet, check, or fold before you decide. That's a
+huge advantage. The same hand that's a fold in early position might be a raise in late position.
 
 ### 3. Bet When You're Strong, Don't Just Call
 
 Beginners call too much. They want to "see what happens."
 
 But here's the thing — betting does two things calling can't:
+
 1. It can win the pot right now (everyone folds)
 2. It builds the pot when you're ahead
 
@@ -439,49 +447,50 @@ In friendly home games, people give away information constantly. Watch for these
 
 **In-person tells:**
 
-| What you see | What it usually means |
-|--------------|----------------------|
-| Shaky hands when betting | Excitement — they have a big hand |
-| Staring at you after betting | Usually bluffing (trying to intimidate) |
-| Looking away after betting | Usually strong (fake disinterest) |
-| Quick call | Medium hand — not strong enough to raise, not weak enough to fold |
-| Long pause, then bet | Often weak (acting like a tough decision) |
+| What you see                 | What it usually means                                             |
+|------------------------------|-------------------------------------------------------------------|
+| Shaky hands when betting     | Excitement — they have a big hand                                 |
+| Staring at you after betting | Usually bluffing (trying to intimidate)                           |
+| Looking away after betting   | Usually strong (fake disinterest)                                 |
+| Quick call                   | Medium hand — not strong enough to raise, not weak enough to fold |
+| Long pause, then bet         | Often weak (acting like a tough decision)                         |
 
 **Online tells:**
 
-| What you see | What it usually means |
-|--------------|----------------------|
-| Instant call | Drawing hand or medium strength |
-| Long pause, then big raise | Usually very strong |
-| Unusual bet sizing (like 77 instead of 75) | Often a bluff |
-| Suddenly playing way more hands | Probably tilting (frustrated) |
+| What you see                               | What it usually means           |
+|--------------------------------------------|---------------------------------|
+| Instant call                               | Drawing hand or medium strength |
+| Long pause, then big raise                 | Usually very strong             |
+| Unusual bet sizing (like 77 instead of 75) | Often a bluff                   |
+| Suddenly playing way more hands            | Probably tilting (frustrated)   |
 
 These aren't foolproof — good players mix it up. But in casual games, they're reliable more often than not.
 
-For more on this, see [The 5 Biggest Tells in Poker](https://chipsoffury.com/posts/the-5-biggest-tells-in-poker/) and [3 Common Tells in Online Poker](https://chipsoffury.com/posts/3-common-tells-in-online-poker/).
+For more on this, see [The 5 Biggest Tells in Poker](https://chipsoffury.com/posts/the-5-biggest-tells-in-poker/)
+and [3 Common Tells in Online Poker](https://chipsoffury.com/posts/3-common-tells-in-online-poker/).
 
 ### 5. The Mistakes That Cost Beginners the Most
 
-| Mistake | Why it hurts | The fix |
-|---------|--------------|---------|
-| Playing too many hands | You enter pots with weak cards and lose slowly | Use the starting hand list above |
-| Calling instead of raising | You let opponents see cheap cards and outdraw you | If it's worth calling, ask yourself if it's worth raising |
-| Ignoring position | You make decisions without information | Play tighter in early position, looser in late |
-| Bluffing too often | Casual players call too much for bluffs to work | Bluff rarely, and only against players who actually fold |
-| Chasing draws | Hoping for that flush or straight that doesn't come | Learn pot odds, or just fold when it's expensive |
+| Mistake                    | Why it hurts                                        | The fix                                                   |
+|----------------------------|-----------------------------------------------------|-----------------------------------------------------------|
+| Playing too many hands     | You enter pots with weak cards and lose slowly      | Use the starting hand list above                          |
+| Calling instead of raising | You let opponents see cheap cards and outdraw you   | If it's worth calling, ask yourself if it's worth raising |
+| Ignoring position          | You make decisions without information              | Play tighter in early position, looser in late            |
+| Bluffing too often         | Casual players call too much for bluffs to work     | Bluff rarely, and only against players who actually fold  |
+| Chasing draws              | Hoping for that flush or straight that doesn't come | Learn pot odds, or just fold when it's expensive          |
 
 ### Quick Glossary
 
 A few terms you'll hear at the table:
 
-| Term | Meaning |
-|------|---------|
-| **Blinds** | Forced bets from two players to start the action |
-| **The nuts** | The best possible hand given the board |
-| **Pot odds** | Whether the bet size justifies chasing a draw |
-| **Tilt** | Playing emotionally (usually badly) after a bad beat |
-| **Donk bet** | Betting into the previous aggressor (often weak) |
-| **Value bet** | Betting because you want to be called |
+| Term          | Meaning                                              |
+|---------------|------------------------------------------------------|
+| **Blinds**    | Forced bets from two players to start the action     |
+| **The nuts**  | The best possible hand given the board               |
+| **Pot odds**  | Whether the bet size justifies chasing a draw        |
+| **Tilt**      | Playing emotionally (usually badly) after a bad beat |
+| **Donk bet**  | Betting into the previous aggressor (often weak)     |
+| **Value bet** | Betting because you want to be called                |
 
 For the full list, see [Poker Lingo for Beginners](https://chipsoffury.com/posts/poker-lingo-and-terms-for-beginners/).
 
@@ -489,89 +498,80 @@ For the full list, see [Poker Lingo for Beginners](https://chipsoffury.com/posts
 
 ## Beginner Poker Etiquette
 
-Friendly games run best when:
+There are some unsaid rules at the poker table. Following these keeps the game fun for everyone. Most of these rules 
+are automatically enforced when using an online poker app like Chips of Fury. But if you are playing in person, with 
+real cards and chips, these etiquette tips are important to follow.
 
-- Players act in turn
-- No one slow-rolls
-- Distractions are minimized
-- Rules are agreed upon early
+### Act in Turn
 
-See [Poker House Rules to Keep the Game Moving](https://chipsoffury.com/posts/house-rules-template-for-poker/) for a
-helpful framework.
+Wait for the person before you to finish before you do anything. Acting early gives away information. If you fold out of
+turn, the person ahead of you now knows they're facing one fewer opponent. You've changed their decision for them.
 
----
+This one is only applicable when you are playing physically with real cards and chips. If you are using Chips of 
+Fury, it manages the turn order for you even in Chips only mode.  
 
-## Free vs Paid Options (What’s Best for Your Group?)
+### Say What You're Doing
 
-Free tools already give beginners everything they need.  
-Chips of Fury, Poker Now, and unmasked.poker offer frictionless setups.
+It is a good idea to announce your bet "Raise" or "Call" or "Fold." This prevents confusion 
+when you are pushing chips into the pot.
 
-Paid apps usually add:
+For eg. A string bet is when you put chips forward in multiple motions. You slide out $20, pause, then add another $20.
+By the time you push the second set of chips, another player may have made their move. So clearly saying "I raise to 
+$40" avoids confusion.
 
-- Avatars
-- Clubs
-- Stats
-- Fancy animations
+### The Slow Roll
 
-But they aren’t necessary to have a great poker night.
+A slow roll is when you have the winning hand at showdown and take your time revealing it. Your opponent shows their
+cards, thinks they've won, starts reaching for the pot. Then you flip over a better hand. Slow rolling has no strategic
+purpose. The hand is over. You're just making someone feel bad for your entertainment. So if you have the winner, show 
+it promptly.
 
----
+### Keep Chips Visible
 
-## Troubleshooting Common Problems
+Stack your chips so other players can estimate your stack size. Hiding high-value chips behind low-value ones is
+considered deceptive. In home games, keep stacks reasonably organized and in plain view.
 
-Common issues and simple fixes:
+### One Player to a Hand
 
-- **Confusing side pots** — fixed by apps like Chips of Fury
-- **Join issues** — use private links
-- **Unclear rules** — reference house rules
-- **Slow play** — set soft time limits
-- **Buy-in confusion** — use consistent buy-in amounts
+Poker is individual. Don't ask friends at the table "what would you do?" Don't offer advice to someone mid-hand. Don't
+announce what you folded. Don't point out that there's a possible flush on the board. If you're not in the hand, stay
+out of it until it's over. Then you can discuss whatever you want.
 
----
-
-## Tips for Hosting the Perfect Online Poker Night
-
-- Start with low blinds
-- Keep sessions short
-- Use video chat for social feel
-- Agree on house rules
-- Encourage beginners to ask questions
+For a complete framework on house rules,
+see [Poker House Rules to Keep the Game Moving](#tobepublished).
 
 ---
 
-## FAQs (People Also Ask)
+## FAQs
 
-**How can beginners play poker with friends online?**  
-Use a beginner-friendly platform like Chips of Fury and start with Texas Hold’em.
+**How many people do you need to play poker?**
 
-**What’s the easiest app for playing poker with friends?**  
-Chips of Fury — clean UI, no gambling, easy for beginners.
+Two is the minimum. This format is called "heads-up" and plays faster with more aggression. For Texas Hold'em home games, six to nine players is the sweet spot. Enough action to keep things interesting, not so many that hands drag. Ten is the typical maximum for a single table.
 
-**Can you play poker online with physical cards?**  
-Yes. Use real cards and virtual chips. For smooth buy-ins, see our guide
-to [buy-ins with friends](https://chipsoffury.com/posts/how-to-handle-poker-buy-ins-with-friends/).
+**How long should a poker night last?**
 
-**What’s the simplest poker strategy for beginners?**  
-Follow tight preflop discipline. See our [preflop chart guide](https://chipsoffury.com/posts/poker-preflop-charts/).
+Two to four hours works for most groups. At roughly 25 hands per hour, you'll see 50 to 100 hands in that window. Enough for skill to matter and for everyone to feel they played real poker. Set a hard end time before you start. People have lives.
 
-**What game type should beginners start with?**  
-Texas Hold’em.
+**What blinds should beginners start with?**
 
----
+For cash games, 25/50 or 50/100 chips with starting stacks of 50 to 100 big blinds. This gives everyone room to play without feeling short-stacked immediately. If running a tournament, increase blinds every 20 to 30 minutes so the game wraps up in your target timeframe.
 
-## Final Thoughts + CTA
+**Is poker luck or skill?**
 
-Poker with friends doesn’t need complexity, gambling, or expensive tools.  
-Modern beginner-first platforms make hosting a fun, smooth game incredibly easy.
+Both. In a single hand or session, luck dominates. The cards fall how they fall. Over hundreds of hands, skill takes over. Simulations show skill becomes the dominant factor after roughly 1,500 hands of play. A [study of the 2010 World Series of Poker](https://www.nber.org/papers/w17023) found that players identified as highly skilled beforehand achieved a 30% return on investment, compared to -15% for everyone else. That gap would be statistically impossible if poker were purely luck.
 
-If you want the simplest setup for both in-person and remote play, **Chips of Fury** is the best starting point.
+**Can complete beginners play with experienced players?**
 
-**Try Chips of Fury — the easiest way to play poker with friends online.**
+Yes, with adjustments. Keep stakes low so losses stay small while learning. Experienced players should avoid exploiting obvious beginner mistakes too aggressively; it kills the fun and empties pockets faster than anyone learns. A brief rules walkthrough before the first hand helps. Most beginners pick up the basics within an hour of play.
 
 ---
 
-## AUTHOR BIO — Avery Lane
+**Ready to play?** [Start a free game on Chips of Fury](https://chipsoffury.com) and have your friends at the table in under a minute.
 
-Avery Lane is a longtime home-game host, poker strategy writer, and contributing author at Search Engine Land, SEMrush,
-Ahrefs, and the Google Developers Blog. Avery has taught hundreds of beginners the fundamentals of Texas Hold’em and
-specializes in making complex concepts simple, friendly, and fun for new players.
+---
+
+<div class="author-bio">
+
+**Avery Lane** is a home-game host, poker strategy writer, and contributing author at Search Engine Land, SEMrush, Ahrefs, and the Google Developers Blog.
+
+</div>
