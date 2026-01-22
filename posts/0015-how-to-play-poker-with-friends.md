@@ -325,7 +325,7 @@ Here's everything you need to actually sit down and play. Keep this section open
 beginners do.
 
 For the complete breakdown with printable charts and tie-breaker rules, see our
-full [hand rankings guide](https://chipsoffury.com/posts/poker-winning-hand-rankings/).
+full [hand rankings guide](#tobepublished).
 
 ### How a Hand Plays Out
 
@@ -362,7 +362,7 @@ Quick tip: If someone bets and you want to stay in, you *must* at least call. Yo
 
 ### Hand Rankings (What Beats What)
 
-Memorize these from best to worst. In a few games, they'll be automatic.
+This is the part that scares new players. Don't overthink it. After a few games, you'll recognize these instantly. Here's the full list from strongest to weakest:
 
 <div class="not-prose">
 {% renderTemplate "webc" %}
@@ -370,20 +370,47 @@ Memorize these from best to worst. In a few games, they'll be automatic.
 {% endrenderTemplate %}
 </div>
 
-**How often will you see these?** Royal flushes are rare (1 in 650,000 hands). Most pots are won with one pair, two
-pair, or high card. Don't wait around for monster hands — they almost never come.
+**The simple logic behind rankings:** Rarer hands beat common hands. That's it. A royal flush happens once in 650,000 hands. A pair happens all the time. Rarity equals strength.
 
-### The One Rule That Confuses Everyone
+**What you'll actually see:** Forget about royal flushes. Most pots at home games are won with one pair, two pair, or even high card. If you hit three of a kind, you're probably winning. A full house at a friendly game usually takes the whole pot.
 
-Your final hand is the best five cards from your two hole cards plus the five community cards. You can use:
+#### The Part Everyone Gets Wrong
+
+New players constantly mix up straights, flushes, and full houses. Here's a memory trick:
+
+**A house contains plumbing.** Picture a house. Inside it has flushing toilets connected by straight pipes. The house contains the flush, which contains the straight.
+
+```
+🏠 Full House
+ └─ 💧 Flush
+     └─ ➡️ Straight
+```
+
+So: **Full House > Flush > Straight**. The container beats what's inside it.
+
+#### What's a Kicker?
+
+When two players have the same type of hand, the "kicker" decides who wins. This trips up beginners constantly.
+
+Say you have A♠ 9♦ and your friend has A♥ 5♣. The board is A♣ K♦ 7♠ 4♠ 2♥. You both have a pair of aces. But you win because your 9 beats their 5 as the kicker. Your best five cards are A-A-K-9-7. Theirs are A-A-K-7-5.
+
+Kickers only matter when hands are otherwise tied. With two pair or better, look at the pair ranks first. If those match, then check kickers.
+
+#### The Ace Confusion
+
+The ace can be high (part of A-K-Q-J-10) or low (part of A-2-3-4-5). But it can't wrap around. K-A-2-3-4 is *not* a straight. Beginners try this all the time. It doesn't work.
+
+#### Building Your Best Five Cards
+
+Your final hand is the best five cards you can make from your two hole cards plus the five community cards. You can use:
 
 - Both hole cards + 3 from the board
 - One hole card + 4 from the board
 - Just the board (called "playing the board")
 
-So if the board shows A♠ K♠ Q♠ J♠ 10♠, *everyone* has a royal flush — it would be a split pot.
+This confuses new players because you don't have to use both hole cards. If the board shows A♠ K♠ Q♠ J♠ 10♠, everyone has a royal flush regardless of their hole cards — it would be a split pot.
 
-For tie-breakers and edge cases, check out our [complete hand rankings guide](#tobepublished).
+For more tie-breakers and edge cases, check out our [complete hand rankings guide](#tobepublished).
 
 ---
 
@@ -393,7 +420,7 @@ You don't need to study for months before your first game. These five concepts w
 immediately.
 
 For a deeper framework, see
-our [Beginner Poker Strategy Guide](https://chipsoffury.com/posts/beginner-poker-strategy-how-to-win/).
+our [Beginner Poker Strategy Guide](#tobepublished).
 
 ### 1. Play Fewer Hands (Seriously, Way Fewer)
 
@@ -411,7 +438,7 @@ Here's a simple rule: if your two cards aren't in this list, just fold.
 **Fold everything else.** Yes, that means folding K3, Q5, J4, and all that junk. It feels boring at first, but you'll
 win more.
 
-For the full breakdown by position, see our [preflop charts guide](https://chipsoffury.com/posts/poker-preflop-charts/).
+For the full breakdown by position, see our [preflop charts guide](#tobepublished).
 
 ### 2. Position Matters More Than Your Cards
 
@@ -459,8 +486,8 @@ In friendly home games, people give away information constantly. Watch for these
 
 These aren't foolproof — good players mix it up. But in casual games, they're reliable more often than not.
 
-For more on this, see [The 5 Biggest Tells in Poker](https://chipsoffury.com/posts/the-5-biggest-tells-in-poker/)
-and [3 Common Tells in Online Poker](https://chipsoffury.com/posts/3-common-tells-in-online-poker/).
+For more on this, see [The 5 Biggest Tells in Poker](#tobepublished)
+and [3 Common Tells in Online Poker](#tobepublished).
 
 ### 5. The Mistakes That Cost Beginners the Most
 
@@ -485,7 +512,7 @@ A few terms you'll hear at the table:
 | **Donk bet**  | Betting into the previous aggressor (often weak)     |
 | **Value bet** | Betting because you want to be called                |
 
-For the full list, see [Poker Lingo for Beginners](https://chipsoffury.com/posts/poker-lingo-and-terms-for-beginners/).
+For the full list, see [Poker Lingo for Beginners](#tobepublished).
 
 ---
 
@@ -531,7 +558,7 @@ announce what you folded. Don't point out that there's a possible flush on the b
 out of it until it's over. Then you can discuss whatever you want.
 
 For a complete framework on house rules,
-see [Poker House Rules to Keep the Game Moving](#tobepublished).
+see [Poker House Rules to Keep the Game Moving](https://chipsoffury.com/posts/poker-house-rules-to-keep-the-game-moving/).
 
 ---
 
