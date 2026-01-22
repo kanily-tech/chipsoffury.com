@@ -21,7 +21,7 @@ layout: layouts/blog-post-tailwind.html
 
 Chips of Fury is a multiplayer poker game we built with Flutter. It runs on iOS, Android, and the web. When working on our game promotion strategy, we quickly explored the possibility of bringing our game to other platforms to reach an even bigger audience.
 
-Discord stood out as an easy choice. Flutter compiles to web, Discord activities are just web apps in an iframe - how hard could it be?
+Discord stood out as an easy choice. Flutter compiles to web; Discord activities are just web apps in an iframe - how hard could it be?
 
 This is the story of what we learned the hard way.
 
@@ -29,7 +29,7 @@ This is the story of what we learned the hard way.
 
 Discord Activities are essentially web apps running inside an iframe within the Discord client. Discord provides an [Embedded App SDK](https://discord.com/developers/docs/developer-tools/embedded-app-sdk) that lets your app access Discord features: user information, voice channel state, authentication, and more.
 
-We tried running an example app from the Embedded App SDK tutorial, and it was pretty straightforward: initialize the Discord SDK, set up a tunnel to the local development server, and set public URL from the tunnel in the Developer Portal.
+We tried running an example app from the Embedded App SDK tutorial, and it was pretty straightforward: initialize the Discord SDK, set up a tunnel to the local development server, and set the public URL from the tunnel in the Developer Portal.
 
 At first glance, we thought that all we had to do was integrate the SDK via JavaScript interop and that's it. We built the web version of our game, started up a static server locally, created a tunneled connection to it with Cloudflare, aaaand...
 
@@ -110,7 +110,7 @@ That third point from the Discord CSP became important again as we moved on to c
 
 > Only whitelisted domains (Discord's proxy system) can serve resources
 
-That sucked for us, because our game communicates with 2 different servers. That meant we need to run 2 additional tunnels. Not only that, but we also quickly realized that having a constant tunnel URL would be very nice, since
+That sucked for us, because our game communicates with 2 different servers. That meant we needed to run 2 additional tunnels. Not only that, but we also quickly realized that having a constant tunnel URL would be very nice, since
 
 ```bash
 cloudflared tunnel --url http://localhost:5173
@@ -138,7 +138,7 @@ Anyway, now we had stable URLs that survived restarts. We set up three tunnels t
 | `/game-server` | `cof-game-server.example.com` |
 
 
-All this means that instead of hitting `https://admin.chipsoffury.com/endpoint` directly, your app must access `/admin-server` that's proxied to the original server URL. Fortunately, that does not mean you have to fork your API call logic inside your application code. What you can do instead is use a utility function called `patchUrlMappings` provided by Discord Embedded SDK. There you can specify the calls to intercept and patch them:
+All this means that instead of hitting `https://admin.chipsoffury.com/endpoint` directly, your app must access `/admin-server` that's proxied to the original server URL. Fortunately, that does not mean you have to fork your API call logic inside your application code. What you can do instead is use a utility function called `patchUrlMappings` provided by the Discord Embedded SDK. There you specify which calls to intercept:
 
 ```js
 /**
@@ -212,7 +212,7 @@ Don't worry - you'll get it, too.
 
 ## Third Wall: Firebase Wants to Inject Scripts
 
-We use Firebase for analytics, crash reporting, and messaging. Firebase's JavaScript SDK is modular—it loads additional code on demand. When you call `firebase.analytics()`, it dynamically injects the analytics module.
+We use Firebase for analytics, crash reporting, and messaging. Firebase's JavaScript SDK is modular - it loads additional code on demand. When you call `firebase.analytics()`, it dynamically injects the analytics module.
 
 Dynamic script injection violates CSP. Every Firebase feature we tried to use threw errors:
 
@@ -252,7 +252,7 @@ If you're like us, you've probably never thought about how Flutter's hot reload 
 
 Flutter's hot reload is magic during development. Change some code, save, and see the result instantly. It's one of Flutter's killer features. But it relies on a WebSocket connection between your development server and the browser.
 
-Discord's CSP blocks those WebSocket connections. The `$dwdsSseHandler` (Flutter's internal hot reload handler) that Flutter uses for hot reload? Blocked.
+Discord's CSP blocks those WebSocket connections. Flutter's internal hot reload handler, `$dwdsSseHandler`? Blocked.
 
 The fundamental problem is architectural. Flutter's development server expects direct browser connections. Discord Activities require everything to go through their proxy system. These two models don't mix.
 
@@ -302,8 +302,10 @@ One more gotcha: Discord caches aggressively. After deploying updates, users kep
 
 ---
 
-That's it. Chips of Fury is now on Discord with some platform-specific enhancements!
+That's it. Chips of Fury is now on Discord with some platform-specific enhancements! Join our [official Discord server](https://discord.gg/9x7MPRPacZ) to get in touch with us or find people to play with.
 
-Firebase still doesn't fully work - their JS library calls too many external endpoints that we haven't mapped yet. We've parked it for now. The game runs fine without analytics, and we couldn't wait to show let people on Discord play Chips of Fury any longer.
+<img src="/images/posts/discord-activity/screenshot.png" class="post_image">
+
+Firebase still doesn't fully work - their JS library calls too many external endpoints that we haven't mapped yet. We've parked it for now. The game runs fine without analytics, and we couldn't wait to let people on Discord play Chips of Fury any longer.
 
 If we ever get Firebase working in Discord's sandbox, we'll share what we learned.
