@@ -47,8 +47,9 @@ layout: layouts/base-tailwind.html
       {% endif %}
       <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3" itemprop="headline">{{ title }}</h1>
       <div class="text-sm text-gray-600">
+        {% set authorData = authorsMap[author] %}
         <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-          <span itemprop="name">{{ author or 'Chips of Fury Team' }}</span>
+          {% if authorData %}<a href="/authors/{{ authorData.slug }}/" class="text-purple-600 hover:text-purple-800 transition-colors"><span itemprop="name">{{ authorData.name }}</span></a>{% else %}<span itemprop="name">{{ author or 'Chips of Fury Team' }}</span>{% endif %}
         </span>
         <span class="mx-2">·</span>
         <time itemprop="datePublished" datetime="{{ date | date('%Y-%m-%d') }}">{{ date | postDate }}</time>

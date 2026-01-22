@@ -4,7 +4,7 @@ date: 2026-01-05
 lastUpdated: 2026-01-05
 description: "Learn how to play poker with friends online in 2025 with this free, beginner-friendly guide. Simple setup, private tables, game rules, and easy strategies."
 tags: [ 'post', 'guide' ]
-author: Avery Lane
+author: mayank-jain
 layout: layouts/pillar-post.html
 isPillar: true
 ---
@@ -580,11 +580,3 @@ Yes, with adjustments. Keep stakes low so losses stay small while learning. Expe
 ---
 
 **Ready to play?** [Start a free game on Chips of Fury](https://chipsoffury.com) and have your friends at the table in under a minute.
-
----
-
-<div class="author-bio">
-
-**Avery Lane** is a home-game host, poker strategy writer, and contributing author at Search Engine Land, SEMrush, Ahrefs, and the Google Developers Blog.
-
-</div>
