@@ -27,8 +27,9 @@ layout: layouts/base.html
                     <h1>
                         {{ title }}
                     </h1>
+                    {% set authorData = authorsMap[author] %}
                     <p style="color: #758696">
-                        by {{ author }} - {{ date | postDate }}
+                        by {% if authorData %}<a href="/authors/{{ authorData.slug }}/" style="color: #758696; text-decoration: underline;">{{ authorData.name }}</a>{% else %}{{ author or 'Chips of Fury Team' }}{% endif %} - {{ date | postDate }}
                     </p>
 
                     {{ content | safe }}

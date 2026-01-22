@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Table of Contents styles */
+.toc-link {
+  @apply text-gray-600 hover:text-purple-600 transition-colors block py-1.5 text-sm border-l-2 border-transparent pl-3 -ml-px;
+}
+
+.toc-link--active {
+  @apply text-purple-600 font-medium border-l-2 border-purple-600;
+}
+
+.toc-link--h3 {
+  @apply pl-6 text-xs text-gray-500;
+}
+
+/* Reading progress bar glow effect */
+#reading-progress {
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
 /* Typography for blog content - compact and clean */
 .prose {
   @apply text-gray-700 max-w-none text-base;
@@ -100,6 +123,13 @@
 
 .prose table {
   @apply w-full border-collapse my-3 text-sm;
+}
+
+/* Make tables horizontally scrollable on mobile */
+.prose :where(table) {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .prose th {
@@ -795,4 +825,166 @@
   44.44%, 55.56% { width: 0; }
   66.67%, 77.78% { width: 100%; }
   88.89%, 100% { width: 0; }
+}
+
+/* ============================================
+   Poker Table Animation Styles
+   Animated card widget for blog posts
+   ============================================ */
+
+.poker-table {
+  @apply relative rounded-[20px];
+  width: 200px;
+  height: 120px;
+  background-color: #31661E;
+  border: 3px solid #DDA54A;
+}
+
+.poker-table-extended {
+  @apply rounded-[20px] pt-4 pb-4 px-5;
+  background-color: #31661E;
+  border: 3px solid #DDA54A;
+  width: fit-content;
+}
+
+.poker-card {
+  @apply flex items-center justify-center text-lg font-bold;
+  width: 25px;
+  height: 32px;
+  border-radius: 4px;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, opacity 0.15s ease-out;
+}
+
+.poker-card--face-up {
+  @apply bg-white;
+}
+
+.poker-card--face-down {
+  background-color: #0045A9;
+  border: 1px solid #19e9e6;
+}
+
+.poker-card--undealt {
+  @apply border border-dashed;
+  border-color: rgba(0,0,0,0.26);
+  background: transparent;
+}
+
+.poker-card--highlight {
+  transform: translateY(-5px);
+  box-shadow: 0 0 0 2px #ffe06c;
+}
+
+.poker-card--dim {
+  opacity: 0.4;
+}
+
+.poker-card--discard {
+  transform: translateY(-10px) rotate(-15deg);
+  opacity: 0.5;
+}
+
+.poker-card .suit--heart,
+.poker-card .suit--diamond {
+  color: #e53935;
+}
+
+.poker-card .suit--club,
+.poker-card .suit--spade {
+  color: #1a1a1a;
+}
+
+.validation-badge {
+  @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.validation-badge--valid {
+  @apply text-green-400;
+}
+
+.validation-badge--invalid {
+  @apply text-red-400;
+}
+
+/* ============================================
+   Hand Rankings - Simple Light Theme
+   ============================================ */
+
+.hand-rankings-simple {
+  @apply border border-gray-200 rounded-lg overflow-hidden my-4;
+  max-width: 480px;
+}
+
+.hr-row {
+  @apply flex items-center py-2.5 px-3 border-b border-gray-100;
+}
+
+.hr-row:last-child {
+  @apply border-b-0;
+}
+
+.hr-row:nth-child(even) {
+  @apply bg-purple-100/60;
+}
+
+.hr-left {
+  @apply flex-1 min-w-0;
+}
+
+.hr-header {
+  @apply flex items-baseline gap-1;
+}
+
+.hr-rank {
+  @apply text-xs font-medium text-gray-400;
+}
+
+.hr-name {
+  @apply text-sm font-semibold text-gray-800;
+}
+
+.hr-desc {
+  @apply text-xs text-gray-500 mt-0.5;
+}
+
+.hr-odds {
+  @apply text-xs text-purple-600 font-medium mt-1;
+}
+
+.hr-cards {
+  @apply flex flex-shrink-0 ml-2;
+  gap: 1px;
+}
+
+/* Override prose img styles */
+.hr-cards img {
+  width: 32px;
+  height: auto;
+  margin: 0 !important;
+  padding: 0;
+  box-shadow: none;
+  @apply rounded-sm;
+}
+
+.hr-kicker {
+  opacity: 0.4;
+}
+
+@media (min-width: 400px) {
+  .hr-cards img {
+    width: 36px;
+  }
+}
+
+@media (min-width: 640px) {
+  .hr-row {
+    @apply py-2 px-3;
+  }
+  .hr-cards img {
+    width: 44px;
+  }
+  .hr-cards {
+    gap: 2px;
+  }
 } 

@@ -1,0 +1,60 @@
+---
+pagination:
+  data: authors
+  size: 1
+  alias: author
+permalink: /authors/{{ author.slug }}/
+layout: layouts/base-tailwind.html
+---
+
+{% renderTemplate "webc" %}
+<site-navigation></site-navigation>
+{% endrenderTemplate %}
+
+<main class="bg-gray-50 min-h-screen py-12">
+  <div class="max-w-3xl mx-auto px-4">
+
+    <!-- Author Header -->
+    <div class="bg-white rounded-2xl shadow-sm p-8 mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">{{ author.name }}</h1>
+      <p class="text-gray-600 text-lg mb-4">{{ author.bio }}</p>
+      {% if author.website %}
+      <a href="{{ author.website }}" target="_blank" rel="noopener" class="inline-flex items-center text-purple-600 hover:text-purple-800 transition-colors">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+        </svg>
+        {{ author.website | replace("https://", "") | replace("http://", "") }}
+      </a>
+      {% endif %}
+    </div>
+
+    <!-- Articles by Author -->
+    <h2 class="text-xl font-bold text-gray-900 mb-6">Articles by {{ author.name }}</h2>
+
+    {% set authorPosts = [] %}
+    {% for post in collections.post %}
+      {% if post.data.author == author.slug %}
+        {% set authorPosts = (authorPosts.push(post), authorPosts) %}
+      {% endif %}
+    {% endfor %}
+
+    {% if authorPosts.length > 0 %}
+    <div class="space-y-4">
+      {% for post in authorPosts | reverse %}
+      <a href="{{ post.url }}" class="block bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ post.data.title }}</h3>
+        <p class="text-gray-600 text-sm mb-3">{{ post.data.description | truncate(120) }}</p>
+        <time class="text-gray-400 text-sm">{{ post.data.date | postDate }}</time>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-gray-500">No articles yet.</p>
+    {% endif %}
+
+  </div>
+</main>
+
+{% renderTemplate "webc" %}
+<site-footer></site-footer>
+{% endrenderTemplate %}
