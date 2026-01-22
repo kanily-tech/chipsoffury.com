@@ -6,6 +6,7 @@ devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
 author: Animesh
 layout: layouts/blog-post-tailwind.html
+draft: true
 ---
 
 # Beginner Poker Strategy

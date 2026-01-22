@@ -130,6 +130,12 @@ module.exports = function(eleventyConfig) {
         });
     });
 
+    // Create publishedPosts collection (excludes drafts)
+    // Draft posts are still built and accessible via direct URL
+    eleventyConfig.addCollection("publishedPosts", function(collectionApi) {
+        return collectionApi.getFilteredByTag("post").filter(post => !post.data.draft);
+    });
+
     return {
         templateFormats: ["html", "njk", "md"],
         markdownTemplateEngine: "njk",

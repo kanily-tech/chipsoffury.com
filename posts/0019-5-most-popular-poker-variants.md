@@ -6,6 +6,7 @@ devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
 author: Animesh
 layout: layouts/blog-post-tailwind.html
+draft: true
 ---
 
 Poker has been played in dozens of forms over the years, from classic saloon games to modern online tournaments. If you’re new to the game, that variety can feel overwhelming fast. With so many rulesets, formats, and betting structures, it’s natural to wonder which versions of poker actually matter — and which ones you can safely ignore for now.

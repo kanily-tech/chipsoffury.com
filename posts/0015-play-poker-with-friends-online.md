@@ -7,6 +7,7 @@ tags: [ 'post', 'guide' ]
 author: mayank-jain
 layout: layouts/pillar-post.html
 isPillar: true
+featured: true
 ---
 
 Playing poker with friends online has never been easier. In 2025, beginner-friendly apps, private
