@@ -65,11 +65,37 @@
 }
 
 .prose img {
-  @apply rounded-lg shadow my-6 mx-auto;
+  @apply rounded-lg my-6 mx-auto cursor-pointer transition-transform duration-200 hover:scale-[1.02];
 }
 
 .prose hr {
   @apply border-gray-300 my-6;
+}
+
+/* Image Modal/Lightbox */
+.image-modal {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  @apply bg-black/90 opacity-0 invisible;
+  @apply transition-opacity duration-300 ease-out;
+}
+
+.image-modal.active {
+  @apply opacity-100 visible;
+}
+
+.image-modal img {
+  @apply max-w-full max-h-[90vh] object-contain rounded-lg;
+  @apply transform scale-95 transition-transform duration-300 ease-out;
+}
+
+.image-modal.active img {
+  @apply scale-100;
+}
+
+.image-modal-close {
+  @apply absolute top-4 right-4 text-white/80 hover:text-white;
+  @apply w-10 h-10 flex items-center justify-center rounded-full;
+  @apply bg-white/10 hover:bg-white/20 transition-colors cursor-pointer;
 }
 
 .prose table {
