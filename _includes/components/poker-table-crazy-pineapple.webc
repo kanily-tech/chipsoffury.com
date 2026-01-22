@@ -1,0 +1,42 @@
+<div class="poker-table-container my-6"
+     data-steps='[
+       {"community":[],"hole":[],"discard":[2],"duration":800,"badge":null},
+       {"community":[0,2,3,4],"hole":[1],"discard":[2],"duration":2500,"badge":"valid"},
+       {"community":[],"hole":[],"discard":[2],"duration":800,"badge":null},
+       {"community":[0,3,4],"hole":[0,1],"discard":[2],"duration":2500,"badge":"valid"},
+       {"community":[],"hole":[],"discard":[2],"duration":800,"badge":null},
+       {"community":[0,1,2,3,4],"hole":[],"discard":[2],"duration":2500,"badge":"valid"}
+     ]'>
+  <div class="poker-table-extended relative mx-auto">
+    <!-- Community Cards Section -->
+    <div class="mt-3">
+      <div class="community-cards flex justify-center gap-1">
+        <div class="poker-card poker-card--face-up" data-card="0"><span class="suit--club">♣</span></div>
+        <div class="poker-card poker-card--face-up" data-card="1"><span class="suit--diamond">♦</span></div>
+        <div class="poker-card poker-card--face-up" data-card="2"><span class="suit--club">♣</span></div>
+        <div class="w-2"></div>
+        <div class="poker-card poker-card--face-up" data-card="3"><span class="suit--heart">♥</span></div>
+        <div class="w-2"></div>
+        <div class="poker-card poker-card--face-up" data-card="4"><span class="suit--diamond">♦</span></div>
+      </div>
+      <div class="text-[10px] text-white/50 text-center mt-1 font-medium tracking-wide">COMMUNITY</div>
+    </div>
+    <!-- Divider -->
+    <div class="border-t border-white/20 mx-4 mt-3 mb-6"></div>
+    <!-- Hole Cards Section - 3 cards for Crazy Pineapple, third is discarded -->
+    <div class="mt-4">
+      <div class="hole-cards flex justify-center gap-1">
+        <div class="poker-card poker-card--face-up" data-hole="0"><span class="suit--diamond">♦</span></div>
+        <div class="poker-card poker-card--face-up" data-hole="1"><span class="suit--heart">♥</span></div>
+        <div class="poker-card poker-card--face-up" data-hole="2"><span class="suit--spade">♠</span></div>
+      </div>
+      <div class="text-[10px] text-white/50 text-center mt-1 font-medium tracking-wide">YOUR HAND (discard 1 after flop)</div>
+    </div>
+  </div>
+  <div class="validation-container h-8 mt-4 flex justify-center">
+    <div class="validation-badge validation-badge--valid" style="opacity: 0;">
+      <span class="badge-icon">✓</span>
+      <span class="badge-text">Allowed</span>
+    </div>
+  </div>
+</div>
