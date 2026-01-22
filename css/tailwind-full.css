@@ -879,4 +879,86 @@ html {
 
 .validation-badge--invalid {
   @apply text-red-400;
+}
+
+/* ============================================
+   Hand Rankings - Simple Light Theme
+   ============================================ */
+
+.hand-rankings-simple {
+  @apply border border-gray-200 rounded-lg overflow-hidden my-4;
+  max-width: 480px;
+}
+
+.hr-row {
+  @apply flex items-center py-2.5 px-3 border-b border-gray-100;
+}
+
+.hr-row:last-child {
+  @apply border-b-0;
+}
+
+.hr-row:nth-child(even) {
+  @apply bg-purple-100/60;
+}
+
+.hr-left {
+  @apply flex-1 min-w-0;
+}
+
+.hr-header {
+  @apply flex items-baseline gap-1;
+}
+
+.hr-rank {
+  @apply text-xs font-medium text-gray-400;
+}
+
+.hr-name {
+  @apply text-sm font-semibold text-gray-800;
+}
+
+.hr-desc {
+  @apply text-xs text-gray-500 mt-0.5;
+}
+
+.hr-odds {
+  @apply text-xs text-purple-600 font-medium mt-1;
+}
+
+.hr-cards {
+  @apply flex flex-shrink-0 ml-2;
+  gap: 1px;
+}
+
+/* Override prose img styles */
+.hr-cards img {
+  width: 32px;
+  height: auto;
+  margin: 0 !important;
+  padding: 0;
+  box-shadow: none;
+  @apply rounded-sm;
+}
+
+.hr-kicker {
+  opacity: 0.4;
+}
+
+@media (min-width: 400px) {
+  .hr-cards img {
+    width: 36px;
+  }
+}
+
+@media (min-width: 640px) {
+  .hr-row {
+    @apply py-2 px-3;
+  }
+  .hr-cards img {
+    width: 44px;
+  }
+  .hr-cards {
+    gap: 2px;
+  }
 } 

@@ -364,18 +364,11 @@ Quick tip: If someone bets and you want to stay in, you *must* at least call. Yo
 
 Memorize these from best to worst. In a few games, they'll be automatic.
 
-| Rank | Hand                | Example         | What it is                        |
-|:----:|---------------------|-----------------|-----------------------------------|
-|  1   | **Royal Flush**     | A♠ K♠ Q♠ J♠ 10♠ | A, K, Q, J, 10 — all same suit    |
-|  2   | **Straight Flush**  | 7♥ 6♥ 5♥ 4♥ 3♥  | Five in a row, same suit          |
-|  3   | **Four of a Kind**  | 9♠ 9♥ 9♦ 9♣ K♠  | Four cards of the same rank       |
-|  4   | **Full House**      | J♠ J♥ J♦ 4♣ 4♠  | Three of a kind + a pair          |
-|  5   | **Flush**           | K♦ J♦ 8♦ 4♦ 2♦  | Five cards, same suit (any order) |
-|  6   | **Straight**        | 10♣ 9♦ 8♠ 7♥ 6♣ | Five in a row, mixed suits        |
-|  7   | **Three of a Kind** | 5♠ 5♥ 5♦ K♣ 8♠  | Three cards of the same rank      |
-|  8   | **Two Pair**        | A♠ A♦ 6♥ 6♣ K♠  | Two different pairs               |
-|  9   | **One Pair**        | Q♠ Q♥ 9♦ 7♣ 3♠  | Two cards of the same rank        |
-|  10  | **High Card**       | A♥ J♦ 8♣ 5♠ 2♥  | Nothing — your highest card plays |
+<div class="not-prose">
+{% renderTemplate "webc" %}
+<hand-rankings></hand-rankings>
+{% endrenderTemplate %}
+</div>
 
 **How often will you see these?** Royal flushes are rare (1 in 650,000 hands). Most pots are won with one pair, two
 pair, or high card. Don't wait around for monster hands — they almost never come.
