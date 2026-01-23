@@ -1,0 +1,108 @@
+<div class="tie-breakers">
+
+  <!-- Same Pair -->
+  <div class="tb-scenario">
+    <div class="tb-title">Same Pair</div>
+    <div class="tb-subtitle">Higher kickers win</div>
+    <div class="tb-matchup">
+      <div class="tb-hand tb-winner">
+        <div class="tb-badge">WIN</div>
+        <div class="tb-cards">
+          <img src="/images/cards/as.png" alt="A♠"><img src="/images/cards/ah.png" alt="A♥"><img src="/images/cards/kd.png" alt="K♦"><img src="/images/cards/jc.png" alt="J♣" class="tb-decisive"><img src="/images/cards/9h.png" alt="9♥">
+        </div>
+      </div>
+      <div class="tb-hand tb-loser">
+        <div class="tb-badge tb-badge-lose">LOSE</div>
+        <div class="tb-cards">
+          <img src="/images/cards/ad.png" alt="A♦"><img src="/images/cards/ac.png" alt="A♣"><img src="/images/cards/ks.png" alt="K♠"><img src="/images/cards/10h.png" alt="10♥" class="tb-decisive"><img src="/images/cards/8d.png" alt="8♦">
+        </div>
+      </div>
+    </div>
+    <div class="tb-explain">J kicker beats 10</div>
+  </div>
+
+  <!-- Same Two Pair -->
+  <div class="tb-scenario">
+    <div class="tb-title">Same Two Pair</div>
+    <div class="tb-subtitle">Kicker decides when both pairs match</div>
+    <div class="tb-matchup">
+      <div class="tb-hand tb-winner">
+        <div class="tb-badge">WIN</div>
+        <div class="tb-cards">
+          <img src="/images/cards/kh.png" alt="K♥"><img src="/images/cards/kd.png" alt="K♦"><img src="/images/cards/5s.png" alt="5♠"><img src="/images/cards/5c.png" alt="5♣"><img src="/images/cards/as.png" alt="A♠" class="tb-decisive">
+        </div>
+      </div>
+      <div class="tb-hand tb-loser">
+        <div class="tb-badge tb-badge-lose">LOSE</div>
+        <div class="tb-cards">
+          <img src="/images/cards/ks.png" alt="K♠"><img src="/images/cards/kc.png" alt="K♣"><img src="/images/cards/5h.png" alt="5♥"><img src="/images/cards/5d.png" alt="5♦"><img src="/images/cards/qd.png" alt="Q♦" class="tb-decisive">
+        </div>
+      </div>
+    </div>
+    <div class="tb-explain">A kicker beats Q</div>
+  </div>
+
+  <!-- Same Three of a Kind -->
+  <div class="tb-scenario">
+    <div class="tb-title">Same Three of a Kind</div>
+    <div class="tb-subtitle">Higher kickers win</div>
+    <div class="tb-matchup">
+      <div class="tb-hand tb-winner">
+        <div class="tb-badge">WIN</div>
+        <div class="tb-cards">
+          <img src="/images/cards/7s.png" alt="7♠"><img src="/images/cards/7h.png" alt="7♥"><img src="/images/cards/7d.png" alt="7♦"><img src="/images/cards/ah.png" alt="A♥"><img src="/images/cards/kc.png" alt="K♣" class="tb-decisive">
+        </div>
+      </div>
+      <div class="tb-hand tb-loser">
+        <div class="tb-badge tb-badge-lose">LOSE</div>
+        <div class="tb-cards">
+          <img src="/images/cards/7c.png" alt="7♣"><img src="/images/cards/7h.png" alt="7♥"><img src="/images/cards/7d.png" alt="7♦"><img src="/images/cards/ad.png" alt="A♦"><img src="/images/cards/qh.png" alt="Q♥" class="tb-decisive">
+        </div>
+      </div>
+    </div>
+    <div class="tb-explain">K kicker beats Q</div>
+  </div>
+
+  <!-- Straight vs Straight -->
+  <div class="tb-scenario">
+    <div class="tb-title">Straight vs Straight</div>
+    <div class="tb-subtitle">Higher top card wins</div>
+    <div class="tb-matchup">
+      <div class="tb-hand tb-winner">
+        <div class="tb-badge">WIN</div>
+        <div class="tb-cards">
+          <img src="/images/cards/9c.png" alt="9♣" class="tb-decisive"><img src="/images/cards/8d.png" alt="8♦"><img src="/images/cards/7s.png" alt="7♠"><img src="/images/cards/6h.png" alt="6♥"><img src="/images/cards/5c.png" alt="5♣">
+        </div>
+      </div>
+      <div class="tb-hand tb-loser">
+        <div class="tb-badge tb-badge-lose">LOSE</div>
+        <div class="tb-cards">
+          <img src="/images/cards/8s.png" alt="8♠" class="tb-decisive"><img src="/images/cards/7h.png" alt="7♥"><img src="/images/cards/6c.png" alt="6♣"><img src="/images/cards/5d.png" alt="5♦"><img src="/images/cards/4h.png" alt="4♥">
+        </div>
+      </div>
+    </div>
+    <div class="tb-explain">9-high beats 8-high</div>
+  </div>
+
+  <!-- Identical Hands -->
+  <div class="tb-scenario">
+    <div class="tb-title">Identical Hands</div>
+    <div class="tb-subtitle">Same five cards = split pot</div>
+    <div class="tb-matchup">
+      <div class="tb-hand">
+        <div class="tb-badge tb-badge-split">SPLIT</div>
+        <div class="tb-cards">
+          <img src="/images/cards/as.png" alt="A♠"><img src="/images/cards/kd.png" alt="K♦"><img src="/images/cards/qh.png" alt="Q♥"><img src="/images/cards/jc.png" alt="J♣"><img src="/images/cards/10s.png" alt="10♠">
+        </div>
+      </div>
+      <div class="tb-hand">
+        <div class="tb-badge tb-badge-split">SPLIT</div>
+        <div class="tb-cards">
+          <img src="/images/cards/ah.png" alt="A♥"><img src="/images/cards/ks.png" alt="K♠"><img src="/images/cards/qc.png" alt="Q♣"><img src="/images/cards/jd.png" alt="J♦"><img src="/images/cards/10h.png" alt="10♥">
+        </div>
+      </div>
+    </div>
+    <div class="tb-explain">Both A-K-Q-J-10 (suits don't matter)</div>
+  </div>
+
+</div>

@@ -964,6 +964,91 @@ html {
 }
 
 /* ============================================
+   Tie-Breakers Visual Component
+   Stacked hand comparisons (mobile-first)
+   ============================================ */
+
+.tie-breakers {
+  @apply space-y-3 flex flex-col items-center;
+}
+
+.tb-scenario {
+  @apply bg-white rounded-xl border border-gray-200 p-4 shadow-sm;
+}
+
+.tb-title {
+  @apply text-base font-bold text-gray-800 mb-0.5;
+}
+
+.tb-subtitle {
+  @apply text-xs text-gray-500 mb-3;
+}
+
+.tb-matchup {
+  @apply flex flex-col gap-2 items-start;
+}
+
+.tb-hand {
+  @apply flex items-center gap-3;
+}
+
+.tb-badge {
+  @apply text-xs font-bold px-2 py-0.5 rounded w-12 text-center flex-shrink-0;
+  @apply bg-emerald-100 text-emerald-700;
+}
+
+.tb-badge-lose {
+  @apply bg-gray-100 text-gray-400;
+}
+
+.tb-badge-split {
+  @apply bg-amber-100 text-amber-700;
+}
+
+.tb-cards {
+  @apply flex;
+  gap: 2px;
+}
+
+.tb-cards img {
+  width: 38px;
+  height: auto;
+  margin: 0 !important;
+  padding: 0;
+  box-shadow: none;
+  @apply rounded-sm;
+}
+
+.tb-decisive {
+  box-shadow: 0 0 0 2px #10b981 !important;
+  @apply rounded-sm;
+}
+
+.tb-loser .tb-decisive {
+  box-shadow: 0 0 0 2px #f87171 !important;
+}
+
+.tb-explain {
+  @apply text-xs text-gray-500 mt-2;
+  padding-left: 60px;
+}
+
+@media (min-width: 400px) {
+  .tb-cards img {
+    width: 44px;
+  }
+  .tb-cards {
+    gap: 3px;
+  }
+}
+
+@media (min-width: 640px) {
+  .tb-cards img {
+    width: 48px;
+  }
+}
+
+/* ============================================
    Poker Term Glossary - Inline Explainers
    Card-flip style term definitions for beginners
    ============================================ */

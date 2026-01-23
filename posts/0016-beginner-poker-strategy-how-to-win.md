@@ -14,17 +14,9 @@ You know the rules. You've played a few hands with friends, maybe jumped into so
 chip stack keeps shrinking. You're making reasonable decisions - or so it feels - but somehow the players who seem to be
 gambling recklessly keep winning pots while you're left wondering what you're doing wrong.
 
-Here's the uncomfortable truth: knowing poker rules and knowing poker strategy are completely different things. You can
-follow every rule perfectly and still hemorrhage money if you don't understand *why* winning players make certain
-decisions. The gap between "I know how to play" and "I know how to win" is where most beginners stay stuck for months or
-years.
+Knowing poker rules and knowing poker strategy are completely different things. You can follow every rule perfectly and still hemorrhage money if you don't understand *why* winning players make certain decisions. Most beginners stay stuck in that gap - "I know how to play" vs "I know how to win" - for months or years.
 
-This guide bridges that gap.
-
-Rather than giving you a scattered list of tips you'll forget by tomorrow, you'll get a repeatable decision framework
-for every hand of Texas Hold'em - from the moment you look at your cards to the final bet. You'll also get the core math
-concepts (simplified, no PhD required), the psychological reads that actually matter at beginner tables, and the
-discipline habits that separate players who profit from players who donate.
+What follows is a structured way to think through every hand of Texas Hold'em, from the moment you look at your cards to the final bet. You'll also find the core math concepts (simplified), the psychological reads that actually matter at beginner tables, and the discipline habits that separate players who profit from players who donate.
 
 Fair warning: some of this advice will feel boring. Fold more. Play fewer hands. Skip the flashy bluffs. That's not
 sexy, but it's what works. Professional players fold around 80% of their starting hands. If you're mostly folding,
@@ -132,7 +124,7 @@ The players who last in poker aren't necessarily the most talented - they're the
 
 ### Hand Rankings (Simple Memory Framework)
 
-Here's the complete list from strongest to weakest:
+Here's the complete list from strongest to weakest. For a deeper breakdown with examples and tie-breaker rules, see our [full hand rankings guide](/posts/poker-winning-hand-rankings/).
 
 | Rank | Hand | What It Looks Like | How Rare |
 |------|------|-------------------|----------|

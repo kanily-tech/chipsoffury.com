@@ -322,7 +322,6 @@ keep strict time bounds and not have people coming and going.
 Here's everything you need to actually sit down and play. Keep this section open during your first few games. Most
 beginners do.
 
-<!-- TODO: hand-rankings-guide - "For the complete breakdown with printable charts and tie-breaker rules, see our full hand rankings guide." -->
 
 ### How a Hand Plays Out
 
@@ -359,7 +358,7 @@ Quick tip: If someone bets and you want to stay in, you *must* at least call. Yo
 
 ### Hand Rankings (What Beats What)
 
-This is the part that scares new players. Don't overthink it. After a few games, you'll recognize these instantly. Here's the full list from strongest to weakest:
+This is the part that scares new players. Don't overthink it. After a few games, you'll recognize these instantly. Here's the full list from strongest to weakest. For more detail with tie-breaker rules and examples, see our [complete hand rankings guide](/posts/poker-winning-hand-rankings/).
 
 <div class="not-prose">
 {% renderTemplate "webc" %}
@@ -407,14 +406,13 @@ Your final hand is the best five cards you can make from your two hole cards plu
 
 This confuses new players because you don't have to use both hole cards. If the board shows A♠ K♠ Q♠ J♠ 10♠, everyone has a royal flush regardless of their hole cards, so it would be a split pot.
 
-<!-- TODO: complete-hand-rankings-guide - "For more tie-breakers and edge cases, check out our complete hand rankings guide." -->
 
 ---
 
 ## Beginner Poker Strategies
 
 You don't need to study for months before your first game. These five concepts will put you ahead of most casual players
-immediately. For a deeper framework, see our [Beginner Poker Strategy Guide](/posts/beginner-poker-strategy-how-to-win/).
+immediately. For a deeper framework, see our [beginner poker strategy guide](/posts/beginner-poker-strategy-how-to-win/).
 
 ### 1. Play Fewer Hands (Seriously, Way Fewer)
 
