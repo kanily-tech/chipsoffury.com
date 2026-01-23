@@ -34,7 +34,9 @@ npx wrangler deploy
 
 2. **Component Architecture**: WebC components in `_includes/components/` use inline Tailwind utilities (not @apply). Components are rendered using `{% renderTemplate "webc" %}` wrapper.
 
-3. **Blog System**: Markdown posts in `posts/` directory use frontmatter and the `layouts/blog-post.html` layout. **Always invoke the `blog-writer` skill when writing or editing posts.**
+3. **Blog System**: Markdown posts in `posts/` directory use frontmatter and the `layouts/blog-post.html` layout.
+   - **URL slugs**: The numeric prefix is stripped from filenames. `0016-beginner-poker-guide.md` → `/posts/beginner-poker-guide/`
+   - **Frontmatter flags**: `draft: true` (hidden everywhere), `unlisted: true` (hidden from /blog but in sitemap), `featured: true` (highlighted in blog)
 
 ### Directory Structure
 
