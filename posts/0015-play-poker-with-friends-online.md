@@ -414,9 +414,7 @@ This confuses new players because you don't have to use both hole cards. If the 
 ## Beginner Poker Strategies
 
 You don't need to study for months before your first game. These five concepts will put you ahead of most casual players
-immediately.
-
-<!-- TODO: beginner-poker-strategy-guide - "For a deeper framework, see our Beginner Poker Strategy Guide." -->
+immediately. For a deeper framework, see our [Beginner Poker Strategy Guide](/posts/beginner-poker-strategy-how-to-win/).
 
 ### 1. Play Fewer Hands (Seriously, Way Fewer)
 

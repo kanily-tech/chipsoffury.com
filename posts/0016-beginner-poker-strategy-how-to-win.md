@@ -1,18 +1,14 @@
 ---
-title: "Beginner Poker Guide"
-date: 2025-08-04
+title: "Beginner Poker Strategy"
+date: 2026-01-27
 description: "Beginner poker guide for new players."
-devlogNumber: 8
-tags: [ 'post', 'devlog', 'flutter', 'web' ]
-author: Animesh
+tags: [ 'post', 'learn-poker' ]
+author: mayank-jain
 layout: layouts/blog-post-tailwind.html
-draft: true
+unlisted: true
 ---
 
-# Beginner Poker Strategy
-*By Avery Lane — Poker Strategy Writer & Long-Time Low-Stakes Cash Game Player*
-
-Poker looks simple from the outside: get good cards, bet, win chips. But beginners quickly learn the truth — you can follow the rules perfectly and still lose money if you don’t understand why winning players make the decisions they do.
+    Poker looks simple from the outside: get good cards, bet, win chips. But beginners quickly learn the truth — you can follow the rules perfectly and still lose money if you don’t understand why winning players make the decisions they do.
 
 This guide fixes that.
 
