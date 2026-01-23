@@ -8,6 +8,8 @@ layout: layouts/blog-post-tailwind.html
 unlisted: true
 ---
 
+{% include "components/beginner-help-notice.html" %}
+
 You know the rules. You've played a few hands with friends, maybe jumped into some low-stakes games online. And yet your
 chip stack keeps shrinking. You're making reasonable decisions - or so it feels - but somehow the players who seem to be
 gambling recklessly keep winning pots while you're left wondering what you're doing wrong.
@@ -54,8 +56,8 @@ everywhere and wonder why they keep getting outmaneuvered.
 
 **They tilt after losing.** You make the right call, your opponent hits a miracle card on the river, and suddenly your
 stack is halved. The temptation to "win it back" with aggressive, reckless play is overwhelming. This emotional spiral -
-playing worse because you're upset about losing - destroys more bankrolls than bad cards ever could. The cards don't
-know you're frustrated. They don't owe you a win.
+playing worse because you're upset about losing - destroys more [bankrolls](glossary:bankroll) than bad cards ever could.
+The cards don't know you're frustrated. They don't owe you a win.
 
 This guide addresses each of these weaknesses directly with tight, aggressive fundamentals and a structured approach to
 every decision.
@@ -70,7 +72,8 @@ Every winning poker player - from the weekend grinder to the World Series champi
 
 Poker math sounds intimidating, but at the beginner level, you only need a handful of concepts:
 
-- **Hand rankings:** Know instantly whether a flush beats a straight (it does) or whether two pair beats three of a kind (it doesn't). Hesitation here costs you money.
+- **Hand rankings:** Know instantly whether a flush beats a straight (it does) or whether two pair beats three of a 
+  kind (it doesn't). Confusion here costs you money.
 - **Pot odds:** If the pot is $30 and you need to call $10, you're getting 3:1 odds. That means you need to win more than 25% of the time for the call to be profitable. If your draw only hits 20% of the time, fold.
 - **Expected Value (EV):** This is the average result of a decision if you made it thousands of times. A simple formula: (% chance of winning × amount you'd win) minus (% chance of losing × amount you'd lose). Positive number = good decision. Negative number = bad decision. You don't need to calculate this at the table, but understanding the concept helps you recognize why certain plays are profitable and others aren't.
 
@@ -84,7 +87,7 @@ Most players fall somewhere on two spectrums: tight to loose (how many hands the
 
 - **Tight-aggressive (TAG):** Plays few hands, bets them hard. Respect their raises - they usually have it. This is the style you should aim for.
 - **Loose-passive (calling station):** Plays many hands, rarely raises, hates folding. Don't bluff these players. Just bet your good hands for value - they'll call with worse.
-- **Tight-passive (rock):** Plays few hands, rarely bets without the nuts. Steal their blinds, but fold when they show aggression.
+- **Tight-passive (rock):** Plays few hands, rarely bets without [the nuts](glossary:nuts). Steal their blinds, but fold when they show aggression.
 - **Loose-aggressive (maniac):** Plays many hands, bets and raises constantly. Tighten up and let them pay you off with your strong hands.
 
 A quick tell that works at most tables: look at how someone stacks their chips. Messy, scattered stacks often indicate a loose, gambling style. Neat, organized stacks suggest a tighter, more methodical player. Not foolproof, but a useful first impression.
@@ -94,8 +97,8 @@ A quick tell that works at most tables: look at how someone stacks their chips. 
 You can know all the math and read every opponent perfectly, but without discipline, you'll still lose. Discipline means:
 
 - Folding a hand you want to play because the situation is wrong
-- Walking away from a table when you're tilting
-- Sticking to your bankroll limits even when you're "sure" you can win it back
+- Walking away from a table when you're [tilting](glossary:tilt)
+- Sticking to your [bankroll](glossary:bankroll) limits even when you're "sure" you can win it back
 - Making the boring, correct play instead of the exciting, risky one
 
 The best players aren't the ones who make brilliant plays - they're the ones who consistently avoid bad ones. Discipline is the multiplier. Good math × good reads × poor discipline = losing player. Decent math × decent reads × strong discipline = winning player.

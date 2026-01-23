@@ -51,8 +51,43 @@ css/
 └── normalize.css        # CSS reset
 
 posts/               # Blog posts in Markdown
+glossary/            # Poker term definitions (*.md)
 _site/              # Build output (gitignored)
 ```
+
+### Poker Glossary System
+
+Interactive inline definitions for poker terms, designed for beginner-friendly content.
+
+**Usage in markdown:**
+```markdown
+destroys more [bankrolls](glossary:bankroll) than bad cards ever could.
+```
+
+**Creating a glossary term** (`glossary/bankroll.md`):
+```markdown
+---
+term: Bankroll
+---
+
+Your total poker funds set aside specifically for playing.
+
+- **Separate** from living expenses
+- Supports full markdown including images
+```
+
+**How it works:**
+1. `_data/glossary.js` reads all `glossary/*.md` files at build time
+2. Eleventy transform converts `[text](glossary:slug)` → clickable `<span class="poker-term">`
+3. Glossary data is embedded as JSON in blog pages
+4. JS powers the modal popup with formatted HTML content
+
+**Files involved:**
+- `glossary/*.md` — Term definitions
+- `_data/glossary.js` — Processes markdown to HTML
+- `.eleventy.js` — Transform for link syntax
+- `css/tailwind-full.css` — `.poker-term` and modal styles
+- `_includes/layouts/blog-post-tailwind.html` — Modal HTML + JS
 
 ### CSS Architecture
 

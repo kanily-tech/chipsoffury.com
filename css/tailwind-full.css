@@ -961,4 +961,240 @@ html {
   .hr-cards {
     gap: 2px;
   }
+}
+
+/* ============================================
+   Poker Term Glossary - Inline Explainers
+   Card-flip style term definitions for beginners
+   ============================================ */
+
+.poker-term {
+  position: relative;
+  display: inline;
+  color: #065f46; /* emerald-800 - rich green like felt */
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 1.5px dashed #10b981; /* emerald-500 */
+  padding-bottom: 1px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  background: linear-gradient(to bottom, transparent 60%, rgba(16, 185, 129, 0.12) 60%);
+}
+
+.poker-term:hover,
+.poker-term:focus {
+  color: #047857; /* emerald-700 */
+  border-bottom-color: #047857;
+  background: linear-gradient(to bottom, transparent 60%, rgba(16, 185, 129, 0.25) 60%);
+  outline: none;
+}
+
+.poker-term:focus-visible {
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.4);
+  border-radius: 2px;
+}
+
+/* Beginner Help Notice Banner */
+.beginner-help-notice {
+  @apply relative overflow-hidden rounded-xl mb-8 p-4;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%);
+  border: 1px solid #6ee7b7;
+}
+
+.beginner-help-notice::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.beginner-help-notice__content {
+  @apply relative flex items-start gap-3;
+}
+
+.beginner-help-notice__icon {
+  @apply flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-lg;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.beginner-help-notice__text {
+  @apply flex-1;
+}
+
+.beginner-help-notice__title {
+  @apply font-semibold text-emerald-800 text-sm mb-0.5;
+}
+
+.beginner-help-notice__description {
+  @apply text-emerald-700 text-sm leading-snug;
+}
+
+.beginner-help-notice__example {
+  @apply inline font-medium;
+  color: #065f46;
+  border-bottom: 1.5px dashed #10b981;
+  background: linear-gradient(to bottom, transparent 60%, rgba(16, 185, 129, 0.12) 60%);
+}
+
+/* Poker Term Modal - Card Flip Style */
+.poker-term-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.poker-term-modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.poker-term-modal {
+  position: fixed;
+  z-index: 9999;
+  background: white;
+  border-radius: 16px;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  max-width: 400px;
+  width: calc(100% - 32px);
+}
+
+/* Desktop: centered with scale animation */
+@media (min-width: 640px) {
+  .poker-term-modal {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  .poker-term-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Mobile: bottom sheet with slide-up */
+@media (max-width: 639px) {
+  .poker-term-modal {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+    max-width: none;
+    transform: translateY(100%);
+    border-radius: 20px;
+  }
+
+  .poker-term-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.poker-term-modal__header {
+  @apply relative px-5 pt-5 pb-3;
+  background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+}
+
+.poker-term-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 1;
+}
+
+.poker-term-modal__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+.poker-term-modal__term {
+  @apply text-xl font-bold text-white m-0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.poker-term-modal__body {
+  @apply px-5 py-4;
+}
+
+.poker-term-modal__definition {
+  @apply text-gray-700 leading-relaxed text-base;
+}
+
+.poker-term-modal__definition p {
+  @apply mb-3;
+}
+
+.poker-term-modal__definition p:last-child {
+  @apply mb-0;
+}
+
+.poker-term-modal__definition ul,
+.poker-term-modal__definition ol {
+  @apply mb-3 ml-5;
+}
+
+.poker-term-modal__definition ul {
+  @apply list-disc;
+}
+
+.poker-term-modal__definition ol {
+  @apply list-decimal;
+}
+
+.poker-term-modal__definition li {
+  @apply mb-1;
+}
+
+.poker-term-modal__definition strong {
+  @apply font-semibold text-gray-800;
+}
+
+.poker-term-modal__definition img {
+  @apply rounded-lg my-3 max-w-full;
+}
+
+/* Animation for term highlight after modal closes */
+@keyframes termHighlight {
+  0%, 100% {
+    background: linear-gradient(to bottom, transparent 60%, rgba(16, 185, 129, 0.12) 60%);
+  }
+  50% {
+    background: linear-gradient(to bottom, transparent 60%, rgba(16, 185, 129, 0.4) 60%);
+  }
+}
+
+.poker-term--just-viewed {
+  animation: termHighlight 0.6s ease;
 } 

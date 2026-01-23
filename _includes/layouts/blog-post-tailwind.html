@@ -96,3 +96,86 @@ layout: layouts/base-tailwind.html
     </div>
   </div>
 </article>
+
+<!-- Poker Term Modal (for glossary popups) -->
+<div class="poker-term-modal-backdrop" id="pokerTermBackdrop" onclick="closePokerTermModal()"></div>
+<div class="poker-term-modal" id="pokerTermModal" role="dialog" aria-modal="true" aria-labelledby="pokerTermTitle">
+  <div class="poker-term-modal__header">
+    <button class="poker-term-modal__close" onclick="closePokerTermModal()" aria-label="Close">&times;</button>
+    <h3 class="poker-term-modal__term" id="pokerTermTitle"></h3>
+  </div>
+  <div class="poker-term-modal__body">
+    <div class="poker-term-modal__definition" id="pokerTermDefinition"></div>
+  </div>
+</div>
+
+<!-- Glossary data for poker terms -->
+<script id="glossaryData" type="application/json">
+{{ glossary | dump | safe }}
+</script>
+
+<script>
+(function() {
+  let currentTermElement = null;
+  let glossaryData = {};
+
+  // Load glossary data
+  try {
+    const dataEl = document.getElementById('glossaryData');
+    if (dataEl) {
+      glossaryData = JSON.parse(dataEl.textContent);
+    }
+  } catch (e) {
+    console.warn('Failed to load glossary data:', e);
+  }
+
+  window.openPokerTermModal = function(element) {
+    const slug = element.dataset.term;
+    const entry = glossaryData[slug];
+
+    if (!entry) {
+      console.warn('Glossary entry not found:', slug);
+      return;
+    }
+
+    document.getElementById('pokerTermTitle').textContent = entry.term;
+    document.getElementById('pokerTermDefinition').innerHTML = entry.content;
+
+    document.getElementById('pokerTermBackdrop').classList.add('active');
+    document.getElementById('pokerTermModal').classList.add('active');
+
+    currentTermElement = element;
+
+    // Trap focus in modal
+    document.getElementById('pokerTermModal').querySelector('.poker-term-modal__close').focus();
+
+    // Prevent body scroll on mobile
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closePokerTermModal = function() {
+    document.getElementById('pokerTermBackdrop').classList.remove('active');
+    document.getElementById('pokerTermModal').classList.remove('active');
+
+    // Restore body scroll
+    document.body.style.overflow = '';
+
+    // Highlight the term briefly and return focus
+    if (currentTermElement) {
+      currentTermElement.classList.add('poker-term--just-viewed');
+      currentTermElement.focus();
+      setTimeout(() => {
+        currentTermElement.classList.remove('poker-term--just-viewed');
+      }, 600);
+      currentTermElement = null;
+    }
+  };
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('pokerTermModal').classList.contains('active')) {
+      closePokerTermModal();
+    }
+  });
+})();
+</script>

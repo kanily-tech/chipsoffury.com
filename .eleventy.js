@@ -136,6 +136,27 @@ module.exports = function(eleventyConfig) {
         return collectionApi.getFilteredByTag("post").filter(post => !post.data.draft);
     });
 
+    // Create glossary collection for poker term definitions
+    eleventyConfig.addCollection("glossary", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("glossary/*.md");
+    });
+
+    // Transform glossary links [text](glossary:slug) to poker-term spans
+    // This runs after markdown is processed
+    eleventyConfig.addTransform("glossaryLinks", function(content, outputPath) {
+        if (!outputPath || !outputPath.endsWith(".html")) {
+            return content;
+        }
+
+        // Match [text](glossary:slug) pattern
+        // After markdown processing, this becomes <a href="glossary:slug">text</a>
+        const glossaryLinkRegex = /<a href="glossary:([^"]+)">([^<]+)<\/a>/g;
+
+        return content.replace(glossaryLinkRegex, (match, slug, text) => {
+            return `<span class="poker-term" tabindex="0" role="button" data-term="${slug}" onclick="openPokerTermModal(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPokerTermModal(this)}">${text}</span>`;
+        });
+    });
+
     return {
         templateFormats: ["html", "njk", "md"],
         markdownTemplateEngine: "njk",
