@@ -1,5 +1,4 @@
 ---
-layout: layouts/blog-post-tailwind.html
 title: Some graphs on randomization of cards in Poker
 date: 2024-02-02
 author: Animesh

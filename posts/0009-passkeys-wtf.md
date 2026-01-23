@@ -1,5 +1,4 @@
 ---
-layout: layouts/blog-post-tailwind.html
 title: Passkeys - WTF?
 date: 2024-08-22
 author: Animesh

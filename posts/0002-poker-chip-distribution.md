@@ -1,5 +1,4 @@
 ---
-layout: layouts/blog-post-tailwind.html
 title: Poker Chips - Flexible distribution and management
 date: 2023-11-16
 author: Animesh

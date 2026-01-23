@@ -5,7 +5,6 @@ description: "How we replaced Flutter Web's service worker with CDN-friendly, co
 devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
 author: Animesh
-layout: layouts/blog-post-tailwind.html
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css">
