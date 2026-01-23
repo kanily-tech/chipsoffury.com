@@ -109,7 +109,7 @@ reuse.
 
 ### TL;DR
 
-- [Chips of Fury](https://chipsoffury.com): web + iOS + Android, no signup, chip-tracking for live card nights, ~30s to
+- <a href="https://chipsoffury.com" target="_blank">Chips of Fury</a>: web + iOS + Android, no signup, chip-tracking for live card nights, ~30s to
   get on a table and start playing, 15+ variants, generous ad-free free plan
 - <a href="https://www.pokernow.club" target="_blank" rel="nofollow">PokerNow</a>: browser-only, no signup, quickest
   purely online table; no mobile apps or virtual poker chips.
