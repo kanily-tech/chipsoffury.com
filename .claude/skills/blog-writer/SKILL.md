@@ -70,6 +70,8 @@ unprecedented, vibrant, vital, whispering, understanding
 - "sights unseen, sounds unheard"
 - "in the quest"
 - "and robust"
+- "here's the uncomfortable truth"
+- "repeatable decision framework"
 
 ### Banned Concepts
 
@@ -78,6 +80,7 @@ unprecedented, vibrant, vital, whispering, understanding
 - "rapidly changing"
 - "In the competitive business environment"
 - Generic inclusivity platitudes
+- "this guide bridges that gap" or "this guide fixes that" when we are writing learning content
 
 ### Punctuation
 - Avoid em dashes. Use regular dashes or other punctuation instead.
@@ -86,7 +89,6 @@ unprecedented, vibrant, vital, whispering, understanding
 
 1. **Be direct.** Say what you mean without preamble.
 2. **Use concrete language.** Specifics beat abstractions.
-3. **Vary sentence length.** Mix short punchy sentences with longer ones.
 4. **Have opinions.** Humans have takes. Share them.
 5. **Skip the throat-clearing.** No "In this article, we will explore..."
 6. **Avoid stoccato prose.** Sentences should flow naturally. Don't make it cringe like LinkedIn posts.
