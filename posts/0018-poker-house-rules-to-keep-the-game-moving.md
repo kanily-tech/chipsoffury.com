@@ -5,8 +5,8 @@ description: "Tired of slow, awkward home poker games? Learn simple poker house 
 devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
 author: Animesh
-layout: layouts/blog-post-tailwind.html
 draft: true
+showAuthorBio: true
 ---
 
 Hosting a home poker game should feel fun, social, and smooth—not bogged down by confusion, arguments, or endless delays. Yet most home games slow to a crawl for the same reason: **unclear house rules**.

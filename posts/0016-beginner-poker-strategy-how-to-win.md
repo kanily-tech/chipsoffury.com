@@ -4,8 +4,8 @@ date: 2026-01-27
 description: "Learn winning poker strategy from the ground up. Covers hand selection, position, postflop decisions, common traps to avoid, and detailed hand examples. Everything beginners need to stop donating chips."
 tags: [ 'post', 'learn-poker' ]
 author: mayank-jain
-layout: layouts/blog-post-tailwind.html
 unlisted: true
+showAuthorBio: true
 ---
 
 {% include "components/beginner-help-notice.html" %}

@@ -4,8 +4,8 @@ date: 2026-01-27
 description: "Complete poker hand rankings from Royal Flush to High Card. Visual chart, examples, and the memory tricks that actually stick."
 tags: [ 'post', 'learn-poker' ]
 author: mayank-jain
-layout: layouts/blog-post-tailwind.html
 unlisted: true
+showAuthorBio: true
 ---
 
 {% include "components/beginner-help-notice.html" %}
