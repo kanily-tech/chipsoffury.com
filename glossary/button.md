@@ -2,20 +2,19 @@
 term: Button
 ---
 
-The dealer position — marked by a white disc (the "button") and the best seat at the table.
+The dealer position, marked by a white disc. It's the best seat at the table because you act last on every street after the flop.
 
-**Why the button is best:**
-- You act **last** on every street after the flop
+**Why it matters:**
 - You see what everyone else does before you decide
 - You control the pot size
-- Bluffs are more effective from position
+- Bluffs work better from here
 
-**Button strategy:**
-- Play the widest range of hands from this position
-- Raise to steal the blinds when it folds to you
-- Take advantage of position to outmaneuver opponents postflop
+**How to play it:**
+- Open a wider range of hands from the button
+- Raise to steal the blinds when the action folds to you
+- Use your position to push opponents around postflop
 
-**The rotation:**
-The button moves one seat clockwise after each hand. This ensures everyone pays the blinds equally and gets the button equally over time.
+**How it rotates:**
+The button moves one seat clockwise after each hand, so everyone eventually pays the blinds and gets the button the same number of times.
 
-In home games, the button player may actually deal. In casinos, a professional dealer handles the cards, but the button still marks whose "turn" it is to be in that seat.
+In home games, the button player deals the cards. In casinos, a dealer does the dealing, but the button still shows whose turn it is to be in that seat.

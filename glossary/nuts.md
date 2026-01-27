@@ -2,12 +2,12 @@
 term: The Nuts
 ---
 
-The best possible hand at any given moment, based on the community cards showing.
+The best possible hand you can make with the cards on the table.
 
-For example, if the board is **A♠ K♠ Q♠ 7♥ 2♣**, the nuts would be **J♠ T♠** (a royal flush). No other hand can beat it.
+For example, if the board is **A♠ K♠ Q♠ 7♥ 2♣**, the nuts is **J♠ T♠** (a royal flush). Nothing beats it.
 
-The nuts changes as new cards are dealt:
-- On the flop, one hand might be the nuts
-- By the river, a completely different hand could be unbeatable
+The nuts changes as new cards come out:
+- On the flop, you might have the nuts
+- By the river, a different hand could be unbeatable instead
 
-When someone says "I had the nuts," they mean they held the absolute best hand possible — not just a strong hand, but one that *cannot* be beaten given the board.
+When someone says "I had the nuts," they had the single best hand possible at that moment. It's unbeatable.

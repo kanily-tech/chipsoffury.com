@@ -2,23 +2,23 @@
 term: Flop
 ---
 
-The first three community cards dealt face-up in Hold'em, shared by all players.
+The first three community cards dealt face-up in Hold'em. Everyone at the table can use them in their hand.
 
-**The sequence:**
-1. **Preflop** — betting before any community cards
-2. **Flop** — three cards dealt, then betting
-3. **Turn** — fourth card dealt, then betting
-4. **River** — fifth card dealt, final betting
+**How it fits into the game:**
+1. **Preflop** - betting before any community cards
+2. **Flop** - three cards come out, then everyone bets
+3. **Turn** - the fourth card comes, more betting
+4. **River** - the fifth and final card, last bet
 
-**Why the flop matters:**
-- You see 5 of 7 total cards (71% of your final hand)
-- Most hands are made or missed on the flop
-- Flop betting often determines who wins the pot
+**Why it matters:**
+- You now see 5 of 7 cards (71% of your hand is done)
+- Most of the time you'll know whether you're winning or losing by the flop
+- This is when the pot usually gets fought over
 
-**Common flop descriptions:**
-- **Dry flop:** Few draws possible (e.g., A♠ 7♥ 2♣)
-- **Wet flop:** Many draws possible (e.g., 9♠ 8♠ 7♥)
-- **Coordinated flop:** Cards that connect well (e.g., J♦ T♦ 9♣)
-- **Rainbow:** Three different suits (no flush draws)
+**Types of flops:**
+- **Dry flop:** Not many ways for people to make hands (like A♠ 7♥ 2♣)
+- **Wet flop:** Lots of possible draws and made hands (like 9♠ 8♠ 7♥)
+- **Coordinated flop:** The cards work together nicely (like J♦ T♦ 9♣)
+- **Rainbow:** Three different suits, so nobody can make a flush yet
 
-**"Flopping" a hand** means making that hand on the flop (e.g., "I flopped a set" means your pocket pair hit three of a kind with the first three community cards).
+**"Flopping" a hand** means you made that hand on the flop. For example, "I flopped a set" means your pair in your hand made three of a kind when those three cards hit.

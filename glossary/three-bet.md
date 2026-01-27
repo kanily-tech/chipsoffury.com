@@ -2,24 +2,24 @@
 term: Three-Bet
 ---
 
-A re-raise over an initial raise — the third aggressive action preflop.
+A re-raise over an initial raise. It's the third betting action preflop.
 
-**The sequence:**
-1. **Bet 1:** Posting the big blind (forced)
-2. **Bet 2:** The first raise
-3. **Bet 3:** A re-raise over that raise = the three-bet
+Here's how it works:
+1. Someone posts the big blind (forced)
+2. A player raises
+3. You re-raise over that raise - that's your three-bet
 
-**Example:** In a $1/$2 game, a player raises to $8. You look down at Q♠ Q♥ and re-raise to $24. That's a three-bet.
+**Example:** $1/$2 game. A player raises to $8. You've got Q♠ Q♥ and re-raise to $24. That's a three-bet.
 
-**Why three-bet:**
-- Build bigger pots with premium hands
-- Isolate weaker hands that would've called a single raise
-- Represent strength and take the initiative
-- Sometimes as a bluff to steal pots preflop
+**Why you'd three-bet:**
+- Get more money in the pot with strong hands
+- Kick out weaker hands that would just call a single raise
+- Show you've got something and take control
+- Sometimes bluff to win the pot right there
 
-**Common three-betting hands:**
-- Premium pairs (AA, KK, QQ, JJ)
-- Strong broadway hands (AK, AQ)
-- Occasionally suited connectors or small pairs as bluffs (advanced)
+**Hands worth three-betting:**
+- Premium pairs like AA, KK, QQ, JJ
+- Strong broadway cards like AK, AQ
+- Occasionally small pairs or suited connectors as bluffs (once you know what you're doing)
 
-A "four-bet" is a re-raise over a three-bet — typically signals a very strong hand.
+A "four-bet" is a re-raise after your three-bet. Usually means someone's holding something really strong.

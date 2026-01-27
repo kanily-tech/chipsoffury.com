@@ -2,21 +2,12 @@
 term: Showdown
 ---
 
-When two or more players remain after the final betting round and reveal their cards to determine the winner.
+When everyone stops betting and reveals their cards to see who has the best hand.
 
-**How it works:**
-1. All remaining players show their hole cards
-2. Each player makes their best five-card hand from their two hole cards plus the five community cards
-3. The best hand wins the pot
-4. If hands are exactly equal, the pot is split
+Here's what actually happens: the last person who bet or raised shows their cards first, then everyone else reveals. You make your best five-card hand using your two hole cards plus the five community cards on the board. Highest hand wins the pot. If two hands are identical, you split it.
 
-**Showdown rules:**
-- The last aggressor (player who bet or raised) typically shows first
-- Other players can "muck" (fold without showing) if they know they're beaten
-- In most games, any player can request to see a called hand
+You don't have to show your cards if you fold before anyone goes all-in. So if everyone else reveals and you know you're beat, just muck your hand and move on.
 
-**"Going to showdown"** vs. **"Winning without showdown":**
-- Showdown wins = you had the best hand
-- Non-showdown wins = everyone folded before the river ended
+Not every hand goes to showdown. Sometimes everyone folds and one player wins without anyone seeing the cards. That's a non-showdown win.
 
-**WTSD (Went to Showdown)** is a poker statistic measuring how often you reach showdown. Too high means you're calling too much; too low might mean you're folding to pressure too often.
+You'll see "WTSD" in poker stats sometimes. It stands for "went to showdown" and shows how often you actually reach this point. If your WTSD is really high, you're probably calling too much. Too low and you might be folding under pressure too easily.

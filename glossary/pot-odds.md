@@ -2,13 +2,13 @@
 term: Pot Odds
 ---
 
-The ratio between the current size of the pot and the cost of a call.
+The ratio between what's in the pot and what you have to pay to stay in the hand.
 
-**Example:** The pot is $100 and your opponent bets $20. The pot is now $120, and you need $20 to call. That's 6:1 pot odds (or about 14% to break even).
+**Example:** The pot is $100 and your opponent bets $20. You're looking at $120 in the pot and need $20 to call. That's 6:1 pot odds - meaning you get 6 dollars back for every dollar you put in.
 
 **Why it matters:**
-- Compare pot odds to your chance of winning
-- If your winning percentage exceeds the break-even percentage, calling is profitable
-- If it's lower, fold
+- Match pot odds against your chances of winning
+- If you'll win more often than the pot odds suggest, call it
+- If you'll win less often, fold
 
-Pot odds are the foundation of poker math — they turn "should I call?" from a guess into a calculation.
+Pot odds turn "should I call?" into math. You're not guessing anymore - you're deciding based on numbers.

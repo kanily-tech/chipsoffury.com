@@ -2,23 +2,23 @@
 term: C-Bet
 ---
 
-Short for "continuation bet" — a bet on the flop by the player who raised preflop, continuing their aggression.
+Short for "continuation bet" - a bet on the flop by the player who raised before the flop.
 
-**Example:** You raise preflop with A♠ K♦, one player calls. The flop comes 8♥ 5♣ 2♦ — you missed completely. Betting here anyway is a c-bet.
+**Example:** You raise preflop with A♠ K♦, someone calls. The flop comes 8♥ 5♣ 2♦ and you whiffed. You bet anyway. That's a c-bet.
 
-**Why c-bets work:**
-- You represented strength by raising preflop
-- Your opponent misses the flop about 2/3 of the time
-- Betting follows through on your story
+**Why they work:**
+- You already raised preflop, so your bet makes sense
+- Most flops miss your opponent about 2 out of 3 times
+- You're continuing the story you started before the flop
 
 **When to c-bet:**
-- Dry boards (few draws) that favor your range
-- Heads-up pots (one opponent)
+- Dry boards (few draws) where your hand looks strong
+- When you're heads-up against one opponent
 - When you have position
 
-**When to check instead:**
-- Multi-way pots (someone likely connected)
-- Wet boards with many draws
-- When you have a very weak hand and the board hits your opponent's range
+**When to skip it:**
+- Multi-way pots where someone likely hit something
+- Wet boards full of draws
+- When the flop heavily favors your opponent's likely hands
 
-C-betting too often makes you predictable. C-betting selectively keeps opponents guessing.
+C-bet too much and you're predictable. Mix it up and you keep people guessing.

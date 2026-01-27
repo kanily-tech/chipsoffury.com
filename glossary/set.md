@@ -2,19 +2,16 @@
 term: Set
 ---
 
-Three of a kind when you hold a pocket pair and the board provides the third matching card.
+Three of a kind when you hold a pocket pair and one matching card hits the board.
 
-**Example:** You have 7♥ 7♦ and the board comes K♠ 7♣ 2♦. You've flopped a set of sevens.
+**Example:** You have 7♥ 7♦ and the board comes K♠ 7♣ 2♦. That's a set of sevens.
 
 **Set vs. Trips:**
-- **Set:** Pocket pair + one on board (stronger, more disguised)
-- **Trips:** One card in your hand + two on board (weaker, more obvious)
+- **Set:** Your pocket pair + one on board (harder to spot, way better)
+- **Trips:** One of your cards + two on board (easier to see coming)
 
-Sets are more valuable because:
-1. They're harder for opponents to detect
-2. You have a stronger full house redraw (your pair fills up)
-3. Opponents with top pair often pay you off
+Sets win more money because opponents can't figure out what you're holding. Plus, even if the board pairs, you've got a full house waiting. Guys holding top pair get crushed trying to make you fold.
 
-**The math:** You'll flop a set with a pocket pair about **12% of the time** (roughly 1 in 8 flops).
+**The reality:** You'll flop a set about 1 in 8 times when you start with a pocket pair.
 
-This is why small pairs are speculative hands — their main value comes from set-mining, and you miss 7 times out of 8.
+That's why small pairs matter. You don't win big every time - you lose 7 out of 8 flops - but when you hit, the hand pays off huge.

@@ -4,22 +4,22 @@ term: Bluff
 
 Betting or raising with a weak hand, hoping your opponent will fold a better hand.
 
-**Example:** You have 6♠ 7♠ on a board of A♣ K♥ 8♦ 2♠ 3♣. You have nothing — but you bet big, representing that you have an ace. If your opponent folds their pocket jacks, you win with the worst hand.
+**Example:** You have 6♠ 7♠ on a board of A♣ K♥ 8♦ 2♠ 3♣. You have nothing - but you bet big, acting like you have an ace. If your opponent folds their pocket jacks, you win with the worst hand.
 
 **Why bluffs work:**
-- Opponents can't see your cards
-- Betting represents strength
-- Risk-averse players fold marginal hands
+- Your opponent can't see your cards
+- A big bet looks strong
+- Players fold hands they're unsure about
 
 **When to bluff:**
-- Against tight players who can fold
-- When the board favors your range
-- With backdoor equity (some chance to improve if called)
-- When your story is consistent
+- Against players who fold easily
+- When the board could fit your story
+- When you have some way to improve if they call
+- When your betting makes sense for your position
 
 **When NOT to bluff:**
-- Against calling stations (they don't fold)
-- Multi-way pots (someone likely has something)
-- When you've been caught bluffing recently
+- Against players who call everything
+- In pots with multiple players (someone probably has something)
+- Right after you got caught bluffing
 
-**Beginner advice:** Bluff less than you think. Most low-stakes players call too much. Your strong hands are where the real money comes from.
+**Beginner tip:** Bluff less often than you think. Most casual players call way too much, so your actual good hands make more money.

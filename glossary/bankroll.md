@@ -2,10 +2,10 @@
 term: Bankroll
 ---
 
-Your total poker funds set aside specifically for playing.
+The money you set aside just for poker.
 
-A proper bankroll is:
-- **Separate** from your living expenses
-- **Sized** to withstand the natural ups and downs (variance) of the game
+A good bankroll is:
+- **Kept separate** from the money you need for bills and life
+- **Big enough** to handle losing streaks without going broke
 
-Most players recommend having **20-30 buy-ins** for your regular stakes.
+Most players keep **20-30 buy-ins** for the stakes they play at. So if you're playing $1/$2, that's $40-$60 total.

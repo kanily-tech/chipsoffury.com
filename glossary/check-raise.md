@@ -2,22 +2,20 @@
 term: Check-Raise
 ---
 
-Checking to an opponent with the intention of raising after they bet.
+You check, someone bets, then you raise them. That's a check-raise.
 
-**Example:** You're first to act with a strong hand. You check, your opponent bets $30, and you raise to $90. That's a check-raise.
+**Example:** You're in position with top pair. You check, your opponent bets $30, and you raise to $90.
 
-**Why check-raise:**
-- Build bigger pots with strong hands
-- Trap aggressive opponents who bet when checked to
-- Balance your checking range (so checks don't always mean weakness)
-- It's your main weapon when out of position
+**Why use it:**
+- Win bigger pots when you're holding strong hands
+- Trap aggressive players who bet after you check
+- Keep opponents guessing what your check means (not always weakness)
+- Your best move when you're out of position
 
-**When to check-raise:**
-- You have a very strong hand and expect aggression
-- The board favors your range and you want to represent strength
-- As a semi-bluff with a strong draw
+**Good spots:**
+- You have a strong hand and expect your opponent to bet
+- The board is good for your holdings and you want to show strength
+- You have a strong draw and want to build the pot right now
 
-**The psychology:**
-Check-raises feel aggressive and can put opponents on tilt. Showing this move occasionally makes opponents hesitant to bet into you — which gives your legitimate checks more respect.
-
-Some older home games consider check-raising "poor etiquette." In serious poker, it's a fundamental play.
+**The mind game:**
+Check-raises are aggressive. They can frustrate opponents and make them second-guess betting into you next time. Some older home games treat it as rude, but in real poker it's a basic strategy tool.

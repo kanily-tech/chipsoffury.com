@@ -2,15 +2,15 @@
 term: Blinds
 ---
 
-Forced bets posted before any cards are dealt, creating a pot worth fighting for.
+Forced bets that two players put in before cards are dealt. They give everyone a reason to play the hand.
 
 **The two blinds:**
-- **Small blind (SB):** Posted by the player directly left of the dealer button — typically half the big blind
-- **Big blind (BB):** Posted by the next player left — sets the minimum bet for the round
+- **Small blind (SB):** Posted by the player directly left of the dealer button, usually half the big blind
+- **Big blind (BB):** Posted by the next player left. This sets the minimum bet for the round
 
-**Example:** In a $1/$2 game, the small blind posts $1 and the big blind posts $2. Any player wanting to enter the pot must at least match the $2.
+**Example:** In a $1/$2 game, the small blind posts $1 and the big blind posts $2. To stay in the hand, everyone else needs to put in at least $2.
 
-**Why blinds exist:**
-Without them, everyone could fold until they got pocket aces. Blinds force action and create something to win in every hand.
+**Why they exist:**
+If there were no blinds, players would just fold every hand until they got pocket aces. Blinds force action and make sure there's always something to win.
 
-The dealer button (and thus the blinds) moves one seat clockwise after each hand, so everyone pays equally over time.
+The dealer button rotates clockwise after each hand, so everyone takes turns posting the blinds over time.

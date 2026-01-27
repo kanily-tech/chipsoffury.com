@@ -2,21 +2,21 @@
 term: Calling Station
 ---
 
-A player who calls too often and almost never folds — they want to see showdowns regardless of the odds.
+A player who calls too often and almost never folds. They want to see every showdown, no matter what the odds say.
 
-**Characteristics:**
-- Calls bets with weak hands hoping to "catch up"
-- Rarely raises even with strong hands
-- Chases draws without considering pot odds
-- Hates folding — they paid to see their cards, so they'll play them
+**What they do:**
+- Calls bets with weak hands, hoping to catch up
+- Rarely raises, even with strong hands
+- Chases draws without thinking about pot odds
+- Won't fold once they've put money in the pot
 
-**How to beat a calling station:**
-1. **Don't bluff** — they'll call anyway
-2. **Value bet relentlessly** — they'll pay you off with worse hands
-3. **Bet your strong hands bigger** — they're not folding
-4. **Give up on weak hands** — you can't move them off pots
+**How to beat them:**
+1. **Stop bluffing** - they'll just call anyway
+2. **Bet your good hands for value** - they'll pay you off with worse
+3. **Make your strong hands bigger** - they're not going anywhere
+4. **Give up on weak hands** - you won't push them off the pot
 
-**The silver lining:**
-Calling stations are profitable opponents in the long run. They call too much with losing hands. Your job is simple: make strong hands and bet them.
+**Why they're great for you:**
+Calling stations are money machines long-term. They call too much with hands that lose. Your strategy is simple: make solid hands and bet them.
 
-The term is slightly derogatory — it implies a player who doesn't understand bet sizing or hand selection. But at low stakes, calling stations often fund the entire table.
+It's a derogatory term that suggests a player doesn't really understand bet sizing or which hands to play. But at low stakes, calling stations basically keep the whole table in business.
