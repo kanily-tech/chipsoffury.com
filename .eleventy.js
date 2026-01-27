@@ -149,13 +149,21 @@ module.exports = function(eleventyConfig) {
             return content;
         }
 
-        // Match [text](glossary:slug) pattern
-        // After markdown processing, this becomes <a href="glossary:slug">text</a>
-        const glossaryLinkRegex = /<a href="glossary:([^"]+)">([^<]+)<\/a>/g;
-
-        return content.replace(glossaryLinkRegex, (match, slug, text) => {
+        // Helper to create poker-term span
+        const createPokerTerm = (slug, text) => {
             return `<span class="poker-term" tabindex="0" role="button" data-term="${slug}" onclick="openPokerTermModal(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPokerTermModal(this)}">${text}</span>`;
-        });
+        };
+
+        // Pattern 1: After markdown processing, [text](glossary:slug) becomes <a href="glossary:slug">text</a>
+        const markdownProcessedRegex = /<a href="glossary:([^"]+)">([^<]+)<\/a>/g;
+        content = content.replace(markdownProcessedRegex, (match, slug, text) => createPokerTerm(slug, text));
+
+        // Pattern 2: Raw markdown syntax [text](glossary:slug) - for content inside WebC slots
+        // that doesn't go through markdown processing
+        const rawMarkdownRegex = /\[([^\]]+)\]\(glossary:([^)]+)\)/g;
+        content = content.replace(rawMarkdownRegex, (match, text, slug) => createPokerTerm(slug, text));
+
+        return content;
     });
 
     return {
