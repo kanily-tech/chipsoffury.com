@@ -1302,77 +1302,119 @@ html {
 
 /* ===========================================
    Hand Display Component
-   Clean, utilitarian poker hand visualization
+   Clean, minimal 6-seat poker table
    =========================================== */
 
 .hand-display {
-  @apply rounded-lg overflow-hidden my-6;
+  @apply rounded-2xl overflow-hidden my-6;
   background: #0f1419;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-  max-width: 480px;
+  max-width: 600px;
 }
 
 .hand-display__header {
   @apply flex justify-between items-center px-4 py-2.5;
-  background: linear-gradient(180deg, #1a2028 0%, #141a21 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: #1a2028;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .hand-display__street {
   @apply text-xs font-bold uppercase tracking-widest;
   color: #6b7280;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
 }
 
 .hand-display__pot {
   @apply text-sm font-semibold px-3 py-1 rounded;
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(16, 185, 129, 0.15);
   color: #34d399;
 }
 
-.hand-display__felt {
-  @apply p-5;
-  background: linear-gradient(165deg, #1a5f36 0%, #14482a 50%, #0f3a21 100%);
-  position: relative;
+/* ===== Table Area ===== */
+.hand-display__table {
+  @apply p-4;
+  background: #1a4d32;
 }
 
-/* Subtle felt texture */
-.hand-display__felt::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  pointer-events: none;
+.hand-display__row {
+  @apply flex justify-center items-center;
 }
 
-/* ===== Community Board ===== */
+.hand-display__row--top {
+  @apply justify-center gap-16 mb-3;
+}
+
+.hand-display__row--middle {
+  @apply justify-between items-center px-2 mb-3;
+}
+
+.hand-display__row--bottom {
+  @apply justify-center gap-16 mt-3;
+}
+
+/* ===== Seats ===== */
+.hand-display__seat {
+  @apply flex flex-col items-center;
+  min-width: 70px;
+}
+
+.hand-display__seat--folded {
+  @apply opacity-40;
+}
+
+.hand-display__seat--hero .hand-display__seat-label {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.hand-display__seat-label {
+  @apply text-xs font-medium mb-1.5;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hand-display__hole-cards {
+  @apply flex gap-0.5 mb-1.5;
+  min-height: 42px;
+}
+
+.hand-display__hole-cards--empty {
+  @apply opacity-0;
+}
+
+.hand-display__hole-card {
+  width: 28px;
+  height: auto;
+  @apply rounded;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hand-display__seat-stack {
+  @apply text-xs font-medium px-2 py-0.5 rounded;
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+  font-variant-numeric: tabular-nums;
+  font-size: 10px;
+}
+
+/* ===== Board ===== */
 .hand-display__board {
-  @apply flex justify-center items-center gap-3 mb-5;
+  @apply flex justify-center items-center gap-1;
 }
 
 .hand-display__board-group {
-  @apply flex gap-1;
-}
-
-.hand-display__board-group--flop {
-  @apply gap-1;
-}
-
-.hand-display__board-group--turn,
-.hand-display__board-group--river {
-  @apply ml-2;
+  @apply flex gap-0.5;
 }
 
 .hand-display__slot {
-  width: 44px;
-  height: 62px;
+  width: 36px;
+  height: 50px;
   @apply rounded flex items-center justify-center;
-  position: relative;
 }
 
 .hand-display__slot--empty {
-  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -1382,90 +1424,65 @@ html {
 }
 
 .hand-display__board-card {
-  width: 44px;
-  height: auto;
-  @apply rounded shadow-lg;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* ===== Players ===== */
-.hand-display__players {
-  @apply flex justify-between items-end;
-  padding: 0 4px;
-}
-
-.hand-display__player {
-  @apply flex flex-col items-center;
-}
-
-.hand-display__player-label {
-  @apply text-xs font-medium uppercase tracking-wide mb-2;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-}
-
-.hand-display__player--hero .hand-display__player-label {
-  color: #fbbf24;
-  font-weight: 600;
-}
-
-.hand-display__hole-cards {
-  @apply flex gap-1 mb-2;
-}
-
-.hand-display__hole-card {
-  width: 40px;
+  width: 36px;
   height: auto;
   @apply rounded;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hand-display__chip-stack {
-  @apply text-xs font-semibold px-2.5 py-1 rounded-full;
-  background: rgba(0, 0, 0, 0.35);
-  color: rgba(255, 255, 255, 0.85);
-  font-variant-numeric: tabular-nums;
+/* ===== Action Log ===== */
+.hand-display__actions {
+  @apply px-4 py-2.5 text-xs;
+  background: #141a21;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  line-height: 1.5;
 }
 
-/* ===== Street-specific accent colors ===== */
-.hand-display--preflop .hand-display__street {
-  color: #60a5fa;
-}
-
-.hand-display--flop .hand-display__street {
-  color: #34d399;
-}
-
-.hand-display--turn .hand-display__street {
-  color: #fbbf24;
-}
-
-.hand-display--river .hand-display__street {
-  color: #f87171;
-}
+/* ===== Street Colors ===== */
+.hand-display--preflop .hand-display__street { color: #60a5fa; }
+.hand-display--flop .hand-display__street { color: #34d399; }
+.hand-display--turn .hand-display__street { color: #fbbf24; }
+.hand-display--river .hand-display__street { color: #f87171; }
 
 /* ===== Responsive ===== */
 @media (min-width: 480px) {
   .hand-display {
-    max-width: 520px;
+    max-width: 640px;
   }
 
-  .hand-display__slot {
-    width: 52px;
-    height: 73px;
+  .hand-display__table {
+    @apply p-6;
   }
 
-  .hand-display__board-card {
-    width: 52px;
+  .hand-display__row--top,
+  .hand-display__row--bottom {
+    @apply gap-24;
+  }
+
+  .hand-display__seat {
+    min-width: 80px;
+  }
+
+  .hand-display__seat-label {
+    font-size: 11px;
   }
 
   .hand-display__hole-card {
-    width: 46px;
+    width: 34px;
   }
 
-  .hand-display__felt {
-    @apply p-6;
+  .hand-display__slot {
+    width: 44px;
+    height: 62px;
+  }
+
+  .hand-display__board-card {
+    width: 44px;
+  }
+
+  .hand-display__seat-stack {
+    font-size: 11px;
   }
 }
 
