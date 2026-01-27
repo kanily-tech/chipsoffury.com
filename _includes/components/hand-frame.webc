@@ -46,9 +46,9 @@
     </div>
   </div>
 
-  <div class="hand-frame__thought" webc:if="thought">
+  <div class="hand-frame__thought">
     <span class="hand-frame__thought-icon">💭</span>
-    <p @html="thought"></p>
+    <div class="hand-frame__thought-text"><slot></slot></div>
   </div>
 
   <div class="hand-frame__actions">

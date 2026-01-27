@@ -1384,8 +1384,12 @@ html {
   @apply text-xl flex-shrink-0;
 }
 
-.hand-frame__thought p {
-  @apply text-sm text-gray-700 leading-relaxed m-0;
+.hand-frame__thought-text {
+  @apply text-sm text-gray-700 leading-relaxed;
+}
+
+.hand-frame__thought-text p {
+  @apply m-0;
 }
 
 .hand-frame__actions {

@@ -582,9 +582,9 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
     villain-stack="200"
     your-position="BTN"
     villain-position="MP"
-    thought="Pocket aces — the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, I want to build a big pot. Raise."
     action="You raise to $8"
     result="Villain calls">
+    Pocket aces — the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, I want to build a big pot. Raise.
   </hand-frame>
 
   <hand-frame
@@ -597,9 +597,9 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
     villain-stack="192"
     your-position="BTN"
     villain-position="MP"
-    thought="This is a great flop for my aces. There's a king, but I still have the best pair possible — an <a href='glossary:overpair'>overpair</a>. The board is 'dry': no flush possible, no obvious straight draws. My opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. I'm ahead — bet for value."
     action="You bet $12"
     result="Villain calls">
+    This is a great flop for my aces. There's a king, but I still have the best pair possible — an [overpair](glossary:overpair). The board is "dry": no flush possible, no obvious straight draws. My opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. I'm ahead — bet for value.
   </hand-frame>
 
   <hand-frame
@@ -612,9 +612,9 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
     villain-stack="180"
     your-position="BTN"
     villain-position="MP"
-    thought="The 5 changes nothing. My aces are still best. If my opponent had a set (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting."
     action="You bet $28"
     result="Villain calls">
+    The 5 changes nothing. My aces are still best. If my opponent had a [set](glossary:set) (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting.
   </hand-frame>
 
   <hand-frame
@@ -627,9 +627,9 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
     villain-stack="152"
     your-position="BTN"
     villain-position="MP"
-    thought="Another blank. My aces are almost certainly winning. My opponent has called three bets — they have something. A king makes sense. One more value bet to get paid."
     action="You bet $50"
     result="Villain calls and shows K♠J♠">
+    Another blank. My aces are almost certainly winning. My opponent has called three bets — they have something. A king makes sense. One more value bet to get paid.
   </hand-frame>
 </hand-replay>
 {% endrenderTemplate %}
@@ -662,9 +662,9 @@ Three players see the flop. Pot: $21.
     villain-stack="174"
     your-position="BTN"
     villain-position="EP"
-    thought="I don't have a made hand — just nine-high. But I have four spades, which means I need one more spade to make a <a href='glossary:flush'>flush</a>. That's called a <a href='glossary:flush-draw'>flush draw</a>. There are 9 spades left in the deck, so I have 9 '<a href='glossary:outs'>outs</a>' — cards that complete my hand."
     action="Villain bets $14"
     result="Other player folds">
+    I don't have a made hand — just nine-high. But I have four spades, which means I need one more spade to make a [flush](glossary:flush). That's called a [flush draw](glossary:flush-draw). There are 9 spades left in the deck, so I have 9 "[outs](glossary:outs)" — cards that complete my hand.
   </hand-frame>
 
   <hand-frame
@@ -677,9 +677,9 @@ Three players see the flop. Pot: $21.
     villain-stack="160"
     your-position="BTN"
     villain-position="EP"
-    thought="Now I need to do the math. The pot is $35 and I need to call $14. That's getting about 2.5-to-1 on my money. My flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct <a href='glossary:pot-odds'>pot odds</a> say I need 29% to call... but if I hit, I'll probably win more money. That's called <a href='glossary:implied-odds'>implied odds</a>. With position and a hidden draw, it's worth a call."
     action="You call $14"
     result="Pot is now $49">
+    Now I need to do the math. The pot is $35 and I need to call $14. That's getting about 2.5-to-1 on my money. My flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct [pot odds](glossary:pot-odds) say I need 29% to call... but if I hit, I'll probably win more money. That's called [implied odds](glossary:implied-odds). With position and a hidden draw, it's worth a call.
   </hand-frame>
 
   <hand-frame
@@ -692,9 +692,9 @@ Three players see the flop. Pot: $21.
     villain-stack="160"
     your-position="BTN"
     villain-position="EP"
-    thought="The 4♠! I made my flush — the third-best hand in poker. But I need to get paid. If I bet big, my opponent might fold. If they check, I can bet smaller and maybe get a call."
     action="Villain checks"
     result="Your turn to act">
+    The 4♠! I made my flush — the third-best hand in poker. But I need to get paid. If I bet big, my opponent might fold. If they check, I can bet smaller and maybe get a call.
   </hand-frame>
 
   <hand-frame
@@ -707,9 +707,9 @@ Three players see the flop. Pot: $21.
     villain-stack="160"
     your-position="BTN"
     villain-position="EP"
-    thought="They checked — probably scared of the flush. I have the goods, but a huge bet will scare them away. A smaller bet looks like I might be stealing. Let's try to get some value."
     action="You bet $25"
     result="Villain calls">
+    They checked — probably scared of the flush. I have the goods, but a huge bet will scare them away. A smaller bet looks like I might be stealing. Time to get some value.
   </hand-frame>
 
   <hand-frame
@@ -722,9 +722,9 @@ Three players see the flop. Pot: $21.
     villain-stack="135"
     your-position="BTN"
     villain-position="EP"
-    thought="The J♦ doesn't change anything — I still have my flush. One more bet to extract value. They called the turn, so they have something worth calling with."
     action="You bet $45. Villain calls with K♦Q♦"
     result="You win with a flush">
+    The J♦ doesn't change anything — I still have my flush. One more bet to extract value. They called the turn, so they have something worth calling with.
   </hand-frame>
 </hand-replay>
 {% endrenderTemplate %}
@@ -757,9 +757,9 @@ Heads-up to the flop. Pot: $15.
     villain-stack="194"
     your-position="CO"
     villain-position="EP"
-    thought="Top pair with a jack <a href='glossary:kicker'>kicker</a>. That's a solid hand. But wait — this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, my jack kicker loses to their ace or king."
     action="Villain bets $10"
     result="Your turn to act">
+    Top pair with a jack [kicker](glossary:kicker). That's a solid hand. But wait — this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, my jack kicker loses to their ace or king.
   </hand-frame>
 
   <hand-frame
@@ -772,9 +772,9 @@ Heads-up to the flop. Pot: $15.
     villain-stack="184"
     your-position="CO"
     villain-position="EP"
-    thought="One pair is usually good enough to call one bet. I'm not folding yet — they could have AK and missed, or a smaller pair. But I'm not raising either. Just call and see what they do next."
     action="You call $10"
     result="Pot is now $35">
+    One pair is usually good enough to call one bet. I'm not folding yet — they could have AK and missed, or a smaller pair. But I'm not raising either. Just call and see what they do next.
   </hand-frame>
 
   <hand-frame
@@ -787,9 +787,9 @@ Heads-up to the flop. Pot: $15.
     villain-stack="184"
     your-position="CO"
     villain-position="EP"
-    thought="The 9 doesn't help me. They're betting again — and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. My top pair with a jack kicker is looking weaker."
     action="Villain bets $25"
     result="Your turn to act">
+    The 9 doesn't help me. They're betting again — and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. My top pair with a jack kicker is looking weaker.
   </hand-frame>
 
   <hand-frame
@@ -802,9 +802,9 @@ Heads-up to the flop. Pot: $15.
     villain-stack="159"
     your-position="CO"
     villain-position="EP"
-    thought="I'll call one more time, but I'm not happy about it. If they fire a third barrel on the river, I'm probably beat. A queen with a jack kicker just isn't strong enough against a range that raised preflop and bet twice."
     action="You call $25"
     result="Pot is now $85">
+    I'll call one more time, but I'm not happy about it. If they fire a third barrel on the river, I'm probably beat. A queen with a jack kicker just isn't strong enough against a [range](glossary:range) that raised preflop and bet twice.
   </hand-frame>
 
   <hand-frame
@@ -817,9 +817,9 @@ Heads-up to the flop. Pot: $15.
     villain-stack="159"
     your-position="CO"
     villain-position="EP"
-    thought="Blank river. Now they're betting $55 — almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that I beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 — all these hands crush me. The math doesn't add up."
     action="Villain bets $55"
     result="Decision time">
+    Blank river. Now they're betting $55 — almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that I beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 — all these hands crush me. The math doesn't add up.
   </hand-frame>
 
   <hand-frame
@@ -832,9 +832,9 @@ Heads-up to the flop. Pot: $15.
     villain-stack="104"
     your-position="CO"
     villain-position="EP"
-    thought="This is the hardest part of poker: folding a hand that looks good. Top pair feels strong. But three big bets from a tight player? They're not bluffing. I'm behind. Save the $55 for a better spot."
     action="You fold"
     result="Villain shows Q♥K♥ — same pair, better kicker">
+    This is the hardest part of poker: folding a hand that looks good. Top pair feels strong. But three big bets from a tight player? They're not bluffing. I'm behind. Save the $55 for a better spot.
   </hand-frame>
 </hand-replay>
 {% endrenderTemplate %}
