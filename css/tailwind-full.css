@@ -1156,7 +1156,7 @@ html {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-  max-width: 400px;
+  max-width: 480px;
   width: calc(100% - 32px);
 }
 
@@ -1165,6 +1165,9 @@ html {
   .poker-term-modal {
     left: 50%;
     top: 50%;
+    max-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
     transform: translate(-50%, -50%) scale(0.9);
   }
 
@@ -1172,6 +1175,10 @@ html {
     opacity: 1;
     visibility: visible;
     transform: translate(-50%, -50%) scale(1);
+  }
+
+  .poker-term-modal__body {
+    overflow-y: auto;
   }
 }
 
@@ -1183,6 +1190,10 @@ html {
     bottom: 16px;
     width: auto;
     max-width: none;
+    max-height: calc(100vh - 32px);
+    max-height: calc(100dvh - 32px); /* Use dynamic viewport height for mobile browsers */
+    display: flex;
+    flex-direction: column;
     transform: translateY(100%);
     border-radius: 20px;
   }
@@ -1191,6 +1202,11 @@ html {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  .poker-term-modal__body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
