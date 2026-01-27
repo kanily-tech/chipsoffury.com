@@ -1301,38 +1301,32 @@ html {
 }
 
 /* ===========================================
-   Hand Display Component
-   Clean, minimal 6-seat poker table
+   Hand Display Component V2
+   Light theme, 5-seat layout, hero at bottom
    =========================================== */
 
 .hand-display {
-  @apply rounded-2xl overflow-hidden my-6;
-  background: #0f1419;
-  max-width: 600px;
+  @apply rounded-xl overflow-hidden my-6 border;
+  border-color: #e5e7eb;
+  max-width: 520px;
 }
 
 .hand-display__header {
-  @apply flex justify-between items-center px-4 py-2.5;
-  background: #1a2028;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  @apply px-4 py-2;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .hand-display__street {
   @apply text-xs font-bold uppercase tracking-widest;
-  color: #6b7280;
-  letter-spacing: 0.12em;
-}
-
-.hand-display__pot {
-  @apply text-sm font-semibold px-3 py-1 rounded;
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
+  color: #374151;
+  letter-spacing: 0.1em;
 }
 
 /* ===== Table Area ===== */
 .hand-display__table {
-  @apply p-4;
-  background: #1a4d32;
+  @apply px-2 py-3;
+  background: transparent;
 }
 
 .hand-display__row {
@@ -1340,149 +1334,231 @@ html {
 }
 
 .hand-display__row--top {
-  @apply justify-center gap-16 mb-3;
+  @apply justify-center;
+  gap: 2rem;
+  margin-bottom: 4px;
 }
 
-.hand-display__row--middle {
-  @apply justify-between items-center px-2 mb-3;
+.hand-display__row--board {
+  @apply justify-center;
+  margin-bottom: 4px;
+}
+
+.hand-display__row--sides {
+  @apply justify-between items-center px-1;
+  margin-bottom: 4px;
 }
 
 .hand-display__row--bottom {
-  @apply justify-center gap-16 mt-3;
+  @apply justify-center;
+  margin-top: 4px;
+}
+
+/* ===== Center (board + pot) ===== */
+.hand-display__center {
+  @apply flex flex-col items-center;
+  gap: 2px;
+}
+
+.hand-display__board {
+  @apply flex justify-center items-center;
+  gap: 2px;
+  padding-top: 14px;
+}
+
+.hand-display__board-slot {
+  width: 28px;
+  height: 40px;
+  @apply rounded flex items-center justify-center;
+}
+
+.hand-display__board-slot--empty {
+  border: 1.5px dashed #d1d5db;
+  background: #f9fafb;
+}
+
+.hand-display__board-slot--filled {
+  border: none;
+  background: transparent;
+}
+
+.hand-display__board-slot .hand-display__card {
+  width: 100%;
+  height: auto;
+}
+
+.hand-display__pot {
+  @apply text-xs font-semibold px-2 py-0.5 rounded-full;
+  background: #f3f4f6;
+  color: #374151;
 }
 
 /* ===== Seats ===== */
 .hand-display__seat {
   @apply flex flex-col items-center;
-  min-width: 70px;
+  gap: 1px;
+  min-width: 50px;
+}
+
+.hand-display__seat-placeholder {
+  min-width: 50px;
 }
 
 .hand-display__seat--folded {
-  @apply opacity-40;
+  /* Do not dim the entire seat, or the bet chip becomes unreadable */
+  opacity: 1;
 }
 
-.hand-display__seat--hero .hand-display__seat-label {
-  color: #fbbf24;
-  font-weight: 600;
+.hand-display__seat--folded .hand-display__seat-label {
+  color: #9ca3af;
 }
 
 .hand-display__seat-label {
-  @apply text-xs font-medium mb-1.5;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 10px;
+  @apply text-xs font-medium;
+  color: #374151;
   text-align: center;
   white-space: nowrap;
+  line-height: 1.2;
 }
 
-.hand-display__hole-cards {
-  @apply flex gap-0.5 mb-1.5;
-  min-height: 42px;
+.hand-display__seat--hero .hand-display__seat-label {
+  color: #d97706;
+  font-weight: 600;
 }
 
-.hand-display__hole-cards--empty {
-  @apply opacity-0;
+.hand-display__cards {
+  @apply flex;
+  gap: 2px;
 }
 
-.hand-display__hole-card {
-  width: 28px;
+/* Override global prose image margins inside the component */
+.prose .hand-display__card {
+  margin: 0;
+  display: block;
+}
+
+.hand-display__cards--folded {
+  opacity: 0.35;
+  filter: grayscale(100%);
+}
+
+.hand-display__card {
+  width: 24px;
   height: auto;
-  @apply rounded;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  @apply rounded shadow;
 }
 
-.hand-display__seat-stack {
-  @apply text-xs font-medium px-2 py-0.5 rounded;
-  background: rgba(0, 0, 0, 0.3);
-  color: rgba(255, 255, 255, 0.8);
+.hand-display__card--small {
+  width: 20px;
+}
+
+/* ===== Bets ===== */
+.hand-display__bet {
+  @apply text-xs font-medium px-1.5 py-0.5 rounded-full;
+  background: #dbeafe;
+  color: #1d4ed8;
   font-variant-numeric: tabular-nums;
-  font-size: 10px;
+  line-height: 1;
 }
 
-/* ===== Board ===== */
-.hand-display__board {
-  @apply flex justify-center items-center gap-1;
+.hand-display__seat--top .hand-display__bet {
+  order: 10;
 }
 
-.hand-display__board-group {
-  @apply flex gap-0.5;
-}
-
-.hand-display__slot {
-  width: 36px;
-  height: 50px;
-  @apply rounded flex items-center justify-center;
-}
-
-.hand-display__slot--empty {
-  border: 1px dashed rgba(255, 255, 255, 0.2);
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.hand-display__slot--filled {
-  border: none;
-  background: transparent;
-}
-
-.hand-display__board-card {
-  width: 36px;
-  height: auto;
-  @apply rounded;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.hand-display__seat--hero .hand-display__bet {
+  order: -1;
 }
 
 /* ===== Action Log ===== */
 .hand-display__actions {
-  @apply px-4 py-2.5 text-xs;
-  background: #141a21;
-  color: rgba(255, 255, 255, 0.6);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  line-height: 1.5;
+  @apply px-4 py-3;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.hand-display__action {
+  @apply text-sm py-0.5;
+  color: #4b5563;
+}
+
+.hand-display__action:not(:last-child) {
+  border-bottom: 1px solid #f3f4f6;
+  @apply pb-1 mb-1;
 }
 
 /* ===== Street Colors ===== */
-.hand-display--preflop .hand-display__street { color: #60a5fa; }
-.hand-display--flop .hand-display__street { color: #34d399; }
-.hand-display--turn .hand-display__street { color: #fbbf24; }
-.hand-display--river .hand-display__street { color: #f87171; }
+.hand-display--preflop .hand-display__street { color: #3b82f6; }
+.hand-display--flop .hand-display__street { color: #10b981; }
+.hand-display--turn .hand-display__street { color: #f59e0b; }
+.hand-display--river .hand-display__street { color: #ef4444; }
 
 /* ===== Responsive ===== */
 @media (min-width: 480px) {
   .hand-display {
-    max-width: 640px;
+    max-width: 420px;
   }
 
   .hand-display__table {
-    @apply p-6;
+    @apply px-4 py-4;
   }
 
-  .hand-display__row--top,
+  .hand-display__row--top {
+    gap: 3rem;
+    margin-bottom: 6px;
+  }
+
+  .hand-display__row--board {
+    margin-bottom: 6px;
+  }
+
+  .hand-display__row--sides {
+    margin-bottom: 6px;
+    @apply px-2;
+  }
+
   .hand-display__row--bottom {
-    @apply gap-24;
+    margin-top: 6px;
+  }
+
+  .hand-display__center {
+    gap: 4px;
+  }
+
+  .hand-display__board {
+    gap: 3px;
+  }
+
+  .hand-display__board-slot {
+    width: 36px;
+    height: 50px;
   }
 
   .hand-display__seat {
-    min-width: 80px;
+    gap: 2px;
+    min-width: 70px;
+  }
+
+  .hand-display__card {
+    width: 32px;
+  }
+
+  .hand-display__card--small {
+    width: 26px;
+  }
+
+  .hand-display__cards {
+    gap: 3px;
   }
 
   .hand-display__seat-label {
-    font-size: 11px;
+    font-size: 13px;
   }
 
-  .hand-display__hole-card {
-    width: 34px;
+  .hand-display__pot {
+    @apply text-sm px-3 py-1;
   }
 
-  .hand-display__slot {
-    width: 44px;
-    height: 62px;
-  }
-
-  .hand-display__board-card {
-    width: 44px;
-  }
-
-  .hand-display__seat-stack {
-    font-size: 11px;
+  .hand-display__action {
+    font-size: 14px;
   }
 }
-

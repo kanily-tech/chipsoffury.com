@@ -567,71 +567,145 @@ You're playing a $1/$2 cash game with $200. You're on the [button](glossary:butt
 
 You look down at A♠A♥. Pocket aces. The best starting hand in poker.
 
-A player in middle position calls the $2 [big blind](glossary:big-blind). Now it's your turn.
+#### Preflop
+
+The blinds post their forced bets. UTG (Under the Gun) limps in for $2. Cutoff folds. Now it's your turn.
 
 <div>{% renderTemplate "webc" %}
-<hand-display street="preflop" pot="3" board=""
+<hand-display street="preflop" pot="5" board=""
   seats='[
-    {"position":"sb","stack":"199","bet":"1","folded":true},
-    {"position":"bb","stack":"198","bet":"2","folded":true},
-    {"position":"late","cards":"hidden","stack":"200","bet":"2"},
-    {"position":"dealer","cards":"as,ah","stack":"200","hero":true}
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1"},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2"},
+    {"position":"utg","cards":"hidden","stack":"198","bet":"2"},
+    {"position":"co","cards":"hidden","stack":"200","folded":true},
+    {"position":"btn","cards":"as,ah","stack":"200","hero":true}
   ]'
-  actions='["Small Blind posts $1","Big Blind posts $2","Late calls $2"]'
+  actions='["Small Blind posts $1","Big Blind posts $2","UTG calls $2","Cutoff folds"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 Pocket aces - the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, you want to build a big pot. Raise.
 
-**You raise to $8** — Villain calls.
+**You raise to $8.**
+
+The Small Blind folds. The Big Blind folds. UTG calls.
+
+<div>{% renderTemplate "webc" %}
+<hand-display street="preflop" pot="19" board=""
+  seats='[
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2","folded":true},
+    {"position":"utg","cards":"hidden","stack":"192","bet":"8"},
+    {"position":"co","cards":"hidden","stack":"200","folded":true},
+    {"position":"btn","cards":"as,ah","stack":"192","bet":"8","hero":true}
+  ]'
+  actions='["You raise to $8","Small Blind folds","Big Blind folds","UTG calls $8"]'
+></hand-display>
+{% endrenderTemplate %}</div>
+
+Heads-up to the flop. Pot: $19.
+
+#### Flop: K♦ 7♣ 2♠
+
+UTG checks to you.
 
 <div>{% renderTemplate "webc" %}
 <hand-display street="flop" pot="19" board="kd,7c,2s"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"late","cards":"hidden","stack":"192"},
-    {"position":"dealer","cards":"as,ah","stack":"192","hero":true}
+    {"position":"sb","cards":"hidden","stack":"199","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","folded":true},
+    {"position":"utg","cards":"hidden","stack":"192"},
+    {"position":"co","cards":"hidden","stack":"200","folded":true},
+    {"position":"btn","cards":"as,ah","stack":"192","hero":true}
   ]'
-  actions='["You raise to $8","Late calls $8"]'
+  actions='["UTG checks"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 Great flop for your aces. There's a king, but you still have the best pair possible - an [overpair](glossary:overpair). The board is "dry": no flush possible, no obvious straight draws. Your opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. You're ahead - bet for value.
 
-**You bet $12** — Villain calls.
+**You bet $12.** UTG calls.
+
+<div>{% renderTemplate "webc" %}
+<hand-display street="flop" pot="43" board="kd,7c,2s"
+  seats='[
+    {"position":"sb","cards":"hidden","stack":"199","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","folded":true},
+    {"position":"utg","cards":"hidden","stack":"180","bet":"12"},
+    {"position":"co","cards":"hidden","stack":"200","folded":true},
+    {"position":"btn","cards":"as,ah","stack":"180","bet":"12","hero":true}
+  ]'
+  actions='["You bet $12","UTG calls $12"]'
+></hand-display>
+{% endrenderTemplate %}</div>
+
+#### Turn: 5♥
+
+UTG checks again.
 
 <div>{% renderTemplate "webc" %}
 <hand-display street="turn" pot="43" board="kd,7c,2s,5h"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"late","cards":"hidden","stack":"180"},
-    {"position":"dealer","cards":"as,ah","stack":"180","hero":true}
+    {"position":"sb","cards":"hidden","stack":"199","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","folded":true},
+    {"position":"utg","cards":"hidden","stack":"180"},
+    {"position":"co","cards":"hidden","stack":"200","folded":true},
+    {"position":"btn","cards":"as,ah","stack":"180","hero":true}
   ]'
-  actions='["You bet $12","Late calls $12"]'
+  actions='["UTG checks"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 The 5 changes nothing. Your aces are still best. If your opponent had a [set](glossary:set) (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting.
 
-**You bet $28** — Villain calls.
+**You bet $28.** UTG calls.
+
+<div>{% renderTemplate "webc" %}
+<hand-display street="turn" pot="99" board="kd,7c,2s,5h"
+  seats='[
+    {"position":"sb","cards":"hidden","stack":"199","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","folded":true},
+    {"position":"utg","cards":"hidden","stack":"152","bet":"28"},
+    {"position":"co","cards":"hidden","stack":"200","folded":true},
+    {"position":"btn","cards":"as,ah","stack":"152","bet":"28","hero":true}
+  ]'
+  actions='["You bet $28","UTG calls $28"]'
+></hand-display>
+{% endrenderTemplate %}</div>
+
+#### River: 3♦
+
+UTG checks one more time.
 
 <div>{% renderTemplate "webc" %}
 <hand-display street="river" pot="99" board="kd,7c,2s,5h,3d"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"late","cards":"ks,js","stack":"152"},
-    {"position":"dealer","cards":"as,ah","stack":"152","hero":true}
+    {"position":"sb","cards":"hidden","stack":"199","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","folded":true},
+    {"position":"utg","cards":"hidden","stack":"152"},
+    {"position":"co","cards":"hidden","stack":"200","folded":true},
+    {"position":"btn","cards":"as,ah","stack":"152","hero":true}
   ]'
-  actions='["You bet $28","Late calls $28"]'
+  actions='["UTG checks"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 Another blank. Your aces are almost certainly winning. Your opponent has called three bets - they have something. A king makes sense. One more value bet to get paid.
 
-**You bet $50** — Villain calls and shows K♠J♠.
+**You bet $50.** UTG calls and shows K♠J♠.
+
+<div>{% renderTemplate "webc" %}
+<hand-display street="river" pot="199" board="kd,7c,2s,5h,3d"
+  seats='[
+    {"position":"sb","cards":"hidden","stack":"199","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","folded":true},
+    {"position":"utg","cards":"ks,js","stack":"102","bet":"50"},
+    {"position":"co","cards":"hidden","stack":"200","folded":true},
+    {"position":"btn","cards":"as,ah","stack":"102","bet":"50","hero":true}
+  ]'
+  actions='["You bet $50","UTG calls $50 and shows K♠J♠","You win with pocket aces"]'
+></hand-display>
+{% endrenderTemplate %}</div>
 
 **Result:** You win a $199 pot with pocket aces. Your opponent had top pair with a decent kicker — exactly the kind of hand that will call you down.
 
@@ -650,13 +724,13 @@ Three players see the flop. Pot: $21.
 <div>{% renderTemplate "webc" %}
 <hand-display street="flop" pot="21" board="ks,5s,2c"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"early","cards":"hidden","stack":"194","bet":"6"},
-    {"position":"late","cards":"hidden","stack":"194","bet":"6"},
-    {"position":"dealer","cards":"9s,8s","stack":"194","bet":"6","hero":true}
+    {"position":"sb","stack":"199","bet":"1","folded":true},
+    {"position":"bb","stack":"198","bet":"2","folded":true},
+    {"position":"utg","cards":"hidden","stack":"194","bet":"6"},
+    {"position":"co","cards":"hidden","stack":"194","bet":"6"},
+    {"position":"btn","cards":"9s,8s","stack":"194","bet":"6","hero":true}
   ]'
-  actions='["Early raises to $6","Late calls $6","You call $6"]'
+  actions='["UTG raises to $6","Cutoff calls $6","You call $6"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
@@ -664,35 +738,35 @@ Three players see the flop. Pot: $21.
 
 **Villain bets $14** — other player folds.
 
-{% renderTemplate "webc" %}
+<div>{% renderTemplate "webc" %}
 <hand-display street="flop" pot="35" board="ks,5s,2c"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"early","cards":"hidden","stack":"180","bet":"14"},
-    {"position":"late","stack":"194","folded":true},
-    {"position":"dealer","cards":"9s,8s","stack":"194","hero":true}
+    {"position":"sb","stack":"199","bet":"1","folded":true},
+    {"position":"bb","stack":"198","bet":"2","folded":true},
+    {"position":"utg","cards":"hidden","stack":"180","bet":"14"},
+    {"position":"co","cards":"hidden","stack":"194","bet":"6","folded":true},
+    {"position":"btn","cards":"9s,8s","stack":"194","hero":true}
   ]'
-  actions='["Early bets $14","Late folds"]'
+  actions='["UTG bets $14","Cutoff folds"]'
 ></hand-display>
-{% endrenderTemplate %}
+{% endrenderTemplate %}</div>
 
 💭 Time to do the math. The pot is $35 and you need to call $14. That's about 2.5-to-1 on your money. Your flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct [pot odds](glossary:pot-odds) say you need 29% to call... but if you hit, you'll probably win more money. That's called [implied odds](glossary:implied-odds). With position and a hidden draw, it's worth a call.
 
 **You call $14** — pot is now $49.
 
-{% renderTemplate "webc" %}
+<div>{% renderTemplate "webc" %}
 <hand-display street="turn" pot="49" board="ks,5s,2c,4s"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"early","cards":"hidden","stack":"180"},
-    {"position":"late","stack":"194","folded":true},
-    {"position":"dealer","cards":"9s,8s","stack":"180","hero":true}
+    {"position":"sb","stack":"199","bet":"1","folded":true},
+    {"position":"bb","stack":"198","bet":"2","folded":true},
+    {"position":"utg","cards":"hidden","stack":"180","bet":"14"},
+    {"position":"co","cards":"hidden","stack":"194","bet":"6","folded":true},
+    {"position":"btn","cards":"9s,8s","stack":"180","bet":"14","hero":true}
   ]'
-  actions='["You call $14"]'
+  actions='["UTG bets $14","You call $14"]'
 ></hand-display>
-{% endrenderTemplate %}
+{% endrenderTemplate %}</div>
 
 💭 The 4♠! You made your flush - the third-best hand in poker. But you need to get paid. If you bet big, your opponent might fold. If they check, you can bet smaller and maybe get a call.
 
@@ -702,7 +776,7 @@ Three players see the flop. Pot: $21.
 
 **You bet $25** — Villain calls.
 
-{% renderTemplate "webc" %}
+<div>{% renderTemplate "webc" %}
 <hand-display street="river" pot="99" board="ks,5s,2c,4s,jd"
   seats='[
     {"position":"sb","stack":"199","folded":true},
@@ -713,7 +787,7 @@ Three players see the flop. Pot: $21.
   ]'
   actions='["You bet $25","Early calls $25"]'
 ></hand-display>
-{% endrenderTemplate %}
+{% endrenderTemplate %}</div>
 
 💭 The J♦ doesn't change anything - you still have your flush. One more bet to extract value. They called the turn, so they have something worth calling with.
 
@@ -733,7 +807,7 @@ A tight player raises to $6 from early position. You call. Everyone else folds.
 
 Heads-up to the flop. Pot: $15.
 
-{% renderTemplate "webc" %}
+<div>{% renderTemplate "webc" %}
 <hand-display street="flop" pot="15" board="qd,7c,3h"
   seats='[
     {"position":"sb","stack":"199","folded":true},
@@ -744,7 +818,7 @@ Heads-up to the flop. Pot: $15.
   ]'
   actions='["Early raises to $6","You call $6"]'
 ></hand-display>
-{% endrenderTemplate %}
+{% endrenderTemplate %}</div>
 
 💭 Top pair with a jack [kicker](glossary:kicker). That's a solid hand. But wait - this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, your jack kicker loses to their ace or king.
 
@@ -754,7 +828,7 @@ Heads-up to the flop. Pot: $15.
 
 **You call $10** — pot is now $35.
 
-{% renderTemplate "webc" %}
+<div>{% renderTemplate "webc" %}
 <hand-display street="turn" pot="35" board="qd,7c,3h,9s"
   seats='[
     {"position":"sb","stack":"199","folded":true},
@@ -765,7 +839,7 @@ Heads-up to the flop. Pot: $15.
   ]'
   actions='["Early bets $10","You call $10"]'
 ></hand-display>
-{% endrenderTemplate %}
+{% endrenderTemplate %}</div>
 
 💭 The 9 doesn't help. They're betting again - and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. Your top pair with a jack kicker is looking weaker.
 
@@ -775,7 +849,7 @@ Heads-up to the flop. Pot: $15.
 
 **You call $25** — pot is now $85.
 
-{% renderTemplate "webc" %}
+<div>{% renderTemplate "webc" %}
 <hand-display street="river" pot="85" board="qd,7c,3h,9s,2d"
   seats='[
     {"position":"sb","stack":"199","folded":true},
@@ -786,7 +860,7 @@ Heads-up to the flop. Pot: $15.
   ]'
   actions='["Early bets $25","You call $25"]'
 ></hand-display>
-{% endrenderTemplate %}
+{% endrenderTemplate %}</div>
 
 💭 Blank river. Now they're betting $55 - almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that you beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 - all these hands crush you. The math doesn't add up.
 
@@ -927,4 +1001,3 @@ Do I have a strong made hand?
 - Blinds fold to steal attempts **50-60%** of the time
 - You'll flop a set with a pocket pair **12%** of the time
 - A flush draw hits on the turn **19%** of the time (36% by the river)
-
