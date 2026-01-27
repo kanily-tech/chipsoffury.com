@@ -553,40 +553,83 @@ the goods. Passive players don't bluff rivers. Save your hero calls for a differ
 
 Theory only goes so far. Here's what good decision-making looks like in practice.
 
-### Hand 1: Value Betting a Premium (Pocket Kings)
+### Hand 1: I'm Ahead — Bet for Value
 
-**Setup:** $1/$2 game. You have $200 on the button. A loose-passive player in middle position limps for $2. You look
-down at K♠K♥.
+You're playing a $1/$2 cash game with $200. You're on the [button](glossary:button) — the best seat at the table because you act last after the flop.
 
-**Preflop:** Don't trap. With the second-best starting hand in poker, build a pot. You raise
-to $12. Small blind folds, big blind calls, the limper calls. Pot: $37.
+You look down at A♠A♥. Pocket aces. The best starting hand in poker.
 
-**Flop: J♦8♣3♠**
+A player in middle position calls the $2 [big blind](glossary:big-blind). Now it's your turn.
 
-This is a great flop for your kings - no ace, no flush draws, your [overpair](glossary:overpair) is almost certainly best. How much to bet?
+<div class="not-prose">
+{% renderTemplate "webc" %}
+<hand-replay title="Hand 1: I'm Ahead — Bet for Value">
+  <hand-frame
+    street="preflop"
+    pot="3"
+    board=""
+    your-cards="as,ah"
+    villain-cards="hidden"
+    your-stack="200"
+    villain-stack="200"
+    your-position="BTN"
+    villain-position="MP"
+    thought="Pocket aces — the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, I want to build a big pot. Raise."
+    action="You raise to $8"
+    result="Villain calls">
+  </hand-frame>
 
-Your thinking: "I have an overpair on a dry board. Both opponents likely have hands like QJ, JT, 99, or random suited
-cards. I want value from worse hands - especially that loose player who loves calling. Two-thirds pot."
+  <hand-frame
+    street="flop"
+    pot="19"
+    board="kd,7c,2s"
+    your-cards="as,ah"
+    villain-cards="hidden"
+    your-stack="192"
+    villain-stack="192"
+    your-position="BTN"
+    villain-position="MP"
+    thought="This is a great flop for my aces. There's a king, but I still have the best pair possible — an <a href='glossary:overpair'>overpair</a>. The board is 'dry': no flush possible, no obvious straight draws. My opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. I'm ahead — bet for value."
+    action="You bet $12"
+    result="Villain calls">
+  </hand-frame>
 
-You bet $25. Big blind folds. The limper thinks and calls. Pot: $87.
+  <hand-frame
+    street="turn"
+    pot="43"
+    board="kd,7c,2s,5h"
+    your-cards="as,ah"
+    villain-cards="hidden"
+    your-stack="180"
+    villain-stack="180"
+    your-position="BTN"
+    villain-position="MP"
+    thought="The 5 changes nothing. My aces are still best. If my opponent had a set (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting."
+    action="You bet $28"
+    result="Villain calls">
+  </hand-frame>
 
-**Turn: 5♥**
+  <hand-frame
+    street="river"
+    pot="99"
+    board="kd,7c,2s,5h,3d"
+    your-cards="as,ah"
+    villain-cards="ks,js"
+    your-stack="152"
+    villain-stack="152"
+    your-position="BTN"
+    villain-position="MP"
+    thought="Another blank. My aces are almost certainly winning. My opponent has called three bets — they have something. A king makes sense. One more value bet to get paid."
+    action="You bet $50"
+    result="Villain calls and shows K♠J♠">
+  </hand-frame>
+</hand-replay>
+{% endrenderTemplate %}
+</div>
 
-Total blank. Your kings are still best. The loose player would have raised a set on the flop.
+**Result:** You win a $199 pot with pocket aces. Your opponent had top pair with a decent kicker — exactly the kind of hand that will call you down.
 
-You bet $55. He calls. Pot: $197.
-
-**River: 2♦**
-
-Another brick. You have about $108 left.
-
-Bet again? Absolutely. This player has shown he'll call with marginal hands. Make him pay. You bet $75. He sighs, says "
-I have to see it," and calls with J♠T♥. Top pair, mediocre kicker.
-
-You scoop $347.
-
-**The lesson:** Premium hands make money through value extraction, not deception. Bet every street when you're ahead.
-Against calling stations, slowplaying costs you money.
+> **The lesson:** When you have the best hand, bet. Don't get fancy. Don't slowplay. Strong hands make money by building pots, not by trapping. If your opponent wants to call with worse, let them pay for it.
 
 ---
 
