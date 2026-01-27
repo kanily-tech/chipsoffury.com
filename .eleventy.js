@@ -12,6 +12,7 @@ module.exports = function(eleventyConfig) {
     // Ignore ai_docs folder and notes folder
     eleventyConfig.ignores.add("ai_docs/**");
     eleventyConfig.ignores.add("notes/**");
+    eleventyConfig.ignores.add("docs/**");
     eleventyConfig.ignores.add("README.md");
     eleventyConfig.ignores.add("CLAUDE.md");
     

@@ -19,11 +19,11 @@
       <div class="hand-frame__player hand-frame__player--villain">
         <div class="hand-frame__position" @text="villainPosition || 'Villain'"></div>
         <div class="hand-frame__cards">
-          <template webc:if="villainCards === 'hidden' || !villainCards">
+          <template webc:nokeep webc:if="villainCards === 'hidden' || !villainCards">
             <img src="/images/cards/card_back.png" alt="Hidden" class="hand-frame__card">
             <img src="/images/cards/card_back.png" alt="Hidden" class="hand-frame__card">
           </template>
-          <template webc:if="villainCards && villainCards !== 'hidden'">
+          <template webc:nokeep webc:if="villainCards && villainCards !== 'hidden'">
             <img webc:for="card of villainCards.split(',')"
                  :src="'/images/cards/' + card.trim() + '.png'"
                  :alt="card.trim()"
