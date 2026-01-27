@@ -722,16 +722,13 @@ A tight player raises to $6 from early position. You call. Everyone else folds.
 Heads-up to the flop. Pot: $15.
 
 {% renderTemplate "webc" %}
-<hand-display
-  street="flop"
-  pot="15"
-  board="qd,7c,3h"
-  your-cards="qs,js"
-  villain-cards="hidden"
-  your-stack="194"
-  villain-stack="194"
-  your-position="CO"
-  villain-position="EP">
+<hand-display street="flop" pot="15" board="qd,7c,3h" actions="Early raises $6 → You call $6">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" cards="hidden" stack="194"></seat>
+  <seat position="middle" stack="200" folded></seat>
+  <seat position="late" cards="qs,js" stack="194" hero></seat>
+  <seat position="dealer" stack="200" folded></seat>
 </hand-display>
 {% endrenderTemplate %}
 
@@ -744,16 +741,13 @@ Heads-up to the flop. Pot: $15.
 **You call $10** — pot is now $35.
 
 {% renderTemplate "webc" %}
-<hand-display
-  street="turn"
-  pot="35"
-  board="qd,7c,3h,9s"
-  your-cards="qs,js"
-  villain-cards="hidden"
-  your-stack="184"
-  villain-stack="184"
-  your-position="CO"
-  villain-position="EP">
+<hand-display street="turn" pot="35" board="qd,7c,3h,9s" actions="Early bets $10 → You call $10">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" cards="hidden" stack="184"></seat>
+  <seat position="middle" stack="200" folded></seat>
+  <seat position="late" cards="qs,js" stack="184" hero></seat>
+  <seat position="dealer" stack="200" folded></seat>
 </hand-display>
 {% endrenderTemplate %}
 
@@ -766,16 +760,13 @@ Heads-up to the flop. Pot: $15.
 **You call $25** — pot is now $85.
 
 {% renderTemplate "webc" %}
-<hand-display
-  street="river"
-  pot="85"
-  board="qd,7c,3h,9s,2d"
-  your-cards="qs,js"
-  villain-cards="hidden"
-  your-stack="159"
-  villain-stack="159"
-  your-position="CO"
-  villain-position="EP">
+<hand-display street="river" pot="85" board="qd,7c,3h,9s,2d" actions="Early bets $25 → You call $25">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" cards="hidden" stack="159"></seat>
+  <seat position="middle" stack="200" folded></seat>
+  <seat position="late" cards="qs,js" stack="159" hero></seat>
+  <seat position="dealer" stack="200" folded></seat>
 </hand-display>
 {% endrenderTemplate %}
 
