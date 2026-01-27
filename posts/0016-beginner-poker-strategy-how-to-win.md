@@ -633,46 +633,98 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
 
 ---
 
-### Hand 2: Playing a Flush Draw With Pot Odds
+### Hand 2: I'm Drawing — Check the Math
 
-**Setup:** $1/$2 game. You're on the button with $180. A tight-aggressive player in the hijack opens to $8. One caller.
-You look at A♠9♠ - suited ace in position, worth a call.
+Same $1/$2 game. You're on the button with $180 and look down at 9♠8♠ — suited connectors.
 
-Three players to the flop. Pot: $27.
+A solid player raises to $6 from early position. One player calls. You call too — suited connectors play well in position with deep stacks.
 
-**Flop: K♠7♠2♣**
+Three players see the flop. Pot: $21.
 
-You've flopped the nut flush draw - nine spades remain in the deck. You don't have a made hand yet, but you have a
-powerful draw.
+<div class="not-prose">
+{% renderTemplate "webc" %}
+<hand-replay title="Hand 2: I'm Drawing — Check the Math">
+  <hand-frame
+    street="flop"
+    pot="21"
+    board="ks,5s,2c"
+    your-cards="9s,8s"
+    villain-cards="hidden"
+    your-stack="174"
+    villain-stack="174"
+    your-position="BTN"
+    villain-position="EP"
+    thought="I don't have a made hand — just nine-high. But I have four spades, which means I need one more spade to make a <a href='glossary:flush'>flush</a>. That's called a <a href='glossary:flush-draw'>flush draw</a>. There are 9 spades left in the deck, so I have 9 '<a href='glossary:outs'>outs</a>' — cards that complete my hand."
+    action="Villain bets $14"
+    result="Other player folds">
+  </hand-frame>
 
-The original raiser bets $18 into $27. The other player folds.
+  <hand-frame
+    street="flop"
+    pot="35"
+    board="ks,5s,2c"
+    your-cards="9s,8s"
+    villain-cards="hidden"
+    your-stack="174"
+    villain-stack="160"
+    your-position="BTN"
+    villain-position="EP"
+    thought="Now I need to do the math. The pot is $35 and I need to call $14. That's getting about 2.5-to-1 on my money. My flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct <a href='glossary:pot-odds'>pot odds</a> say I need 29% to call... but if I hit, I'll probably win more money. That's called <a href='glossary:implied-odds'>implied odds</a>. With position and a hidden draw, it's worth a call."
+    action="You call $14"
+    result="Pot is now $49">
+  </hand-frame>
 
-Your thinking: "I need a spade to win. Nine outs. The rule of 2-and-4 says multiply by 2 for one card: 9 × 2 = 18% on
-the turn."
+  <hand-frame
+    street="turn"
+    pot="49"
+    board="ks,5s,2c,4s"
+    your-cards="9s,8s"
+    villain-cards="hidden"
+    your-stack="160"
+    villain-stack="160"
+    your-position="BTN"
+    villain-position="EP"
+    thought="The 4♠! I made my flush — the third-best hand in poker. But I need to get paid. If I bet big, my opponent might fold. If they check, I can bet smaller and maybe get a call."
+    action="Villain checks"
+    result="Your turn to act">
+  </hand-frame>
 
-The pot is $45 ($27 + $18). You need to call $18 to stay in. That's pot odds of about 2.5:1, meaning you need roughly
-28% [equity](glossary:equity). Your 18% on the turn alone doesn't quite get there.
+  <hand-frame
+    street="turn"
+    pot="49"
+    board="ks,5s,2c,4s"
+    your-cards="9s,8s"
+    villain-cards="hidden"
+    your-stack="160"
+    villain-stack="160"
+    your-position="BTN"
+    villain-position="EP"
+    thought="They checked — probably scared of the flush. I have the goods, but a huge bet will scare them away. A smaller bet looks like I might be stealing. Let's try to get some value."
+    action="You bet $25"
+    result="Villain calls">
+  </hand-frame>
 
-But: you have [implied odds](glossary:implied-odds). If you hit the flush, this tight player with a strong range will likely pay you off. And
-your ace might be good sometimes.
+  <hand-frame
+    street="river"
+    pot="99"
+    board="ks,5s,2c,4s,jd"
+    your-cards="9s,8s"
+    villain-cards="kd,qd"
+    your-stack="135"
+    villain-stack="135"
+    your-position="BTN"
+    villain-position="EP"
+    thought="The J♦ doesn't change anything — I still have my flush. One more bet to extract value. They called the turn, so they have something worth calling with."
+    action="You bet $45. Villain calls with K♦Q♦"
+    result="You win with a flush">
+  </hand-frame>
+</hand-replay>
+{% endrenderTemplate %}
+</div>
 
-You call. Pot: $63.
+**Result:** You win a $189 pot with a flush. Your opponent had top pair with a good kicker and couldn't let it go.
 
-**Turn: 4♠**
-
-Bingo. The flush arrives. Opponent checks.
-
-How to extract value? A tight player who checks here after betting the flop is often giving up or scared of the flush.
-If you bet big, he might fold. A smaller bet might look like a steal attempt.
-
-You bet $35 (about half pot). He thinks, then calls. Pot: $133.
-
-**River: J♦**
-
-He checks. You bet $60. He makes a frustrated call with K♦Q♦.
-
-**The lesson:** Drawing hands require math, not hope. Know your outs, calculate your odds, continue only when the price
-is right. When you hit, extract maximum value - opponents who've invested this much rarely find folds.
+> **The lesson:** Drawing hands require math, not hope. Count your outs, check your pot odds, and only continue if the price is right. When you hit, extract value — opponents who've invested chips rarely find folds.
 
 ---
 
