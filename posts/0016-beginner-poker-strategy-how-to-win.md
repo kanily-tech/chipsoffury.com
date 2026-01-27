@@ -570,14 +570,7 @@ You look down at A♠A♥. Pocket aces. The best starting hand in poker.
 A player in middle position calls the $2 [big blind](glossary:big-blind). Now it's your turn.
 
 <div>{% renderTemplate "webc" %}
-<hand-display street="preflop" pot="3" board="" actions="Small Blind $1 → Big Blind $2 → Middle calls $2">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" stack="200" folded></seat>
-  <seat position="middle" cards="hidden" stack="200"></seat>
-  <seat position="late" stack="200" folded></seat>
-  <seat position="dealer" cards="as,ah" stack="200" hero></seat>
-</hand-display>
+<hand-display street="preflop" pot="3" board="" actions="Small Blind $1 → Big Blind $2 → Middle calls $2" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","stack":"200","folded":true},{"position":"middle","cards":"hidden","stack":"200"},{"position":"late","stack":"200","folded":true},{"position":"dealer","cards":"as,ah","stack":"200","hero":true}]'></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 Pocket aces - the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, you want to build a big pot. Raise.
@@ -585,14 +578,7 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
 **You raise to $8** — Villain calls.
 
 <div>{% renderTemplate "webc" %}
-<hand-display street="flop" pot="19" board="kd,7c,2s" actions="You raise $8 → Middle calls $8">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" stack="200" folded></seat>
-  <seat position="middle" cards="hidden" stack="192"></seat>
-  <seat position="late" stack="200" folded></seat>
-  <seat position="dealer" cards="as,ah" stack="192" hero></seat>
-</hand-display>
+<hand-display street="flop" pot="19" board="kd,7c,2s" actions="You raise $8 → Middle calls $8" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","stack":"200","folded":true},{"position":"middle","cards":"hidden","stack":"192"},{"position":"late","stack":"200","folded":true},{"position":"dealer","cards":"as,ah","stack":"192","hero":true}]'></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 Great flop for your aces. There's a king, but you still have the best pair possible - an [overpair](glossary:overpair). The board is "dry": no flush possible, no obvious straight draws. Your opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. You're ahead - bet for value.
@@ -600,14 +586,7 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
 **You bet $12** — Villain calls.
 
 <div>{% renderTemplate "webc" %}
-<hand-display street="turn" pot="43" board="kd,7c,2s,5h" actions="You bet $12 → Middle calls">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" stack="200" folded></seat>
-  <seat position="middle" cards="hidden" stack="180"></seat>
-  <seat position="late" stack="200" folded></seat>
-  <seat position="dealer" cards="as,ah" stack="180" hero></seat>
-</hand-display>
+<hand-display street="turn" pot="43" board="kd,7c,2s,5h" actions="You bet $12 → Middle calls" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","stack":"200","folded":true},{"position":"middle","cards":"hidden","stack":"180"},{"position":"late","stack":"200","folded":true},{"position":"dealer","cards":"as,ah","stack":"180","hero":true}]'></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 The 5 changes nothing. Your aces are still best. If your opponent had a [set](glossary:set) (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting.
@@ -615,14 +594,7 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
 **You bet $28** — Villain calls.
 
 <div>{% renderTemplate "webc" %}
-<hand-display street="river" pot="99" board="kd,7c,2s,5h,3d" actions="You bet $28 → Middle calls">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" stack="200" folded></seat>
-  <seat position="middle" cards="ks,js" stack="152"></seat>
-  <seat position="late" stack="200" folded></seat>
-  <seat position="dealer" cards="as,ah" stack="152" hero></seat>
-</hand-display>
+<hand-display street="river" pot="99" board="kd,7c,2s,5h,3d" actions="You bet $28 → Middle calls" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","stack":"200","folded":true},{"position":"middle","cards":"ks,js","stack":"152"},{"position":"late","stack":"200","folded":true},{"position":"dealer","cards":"as,ah","stack":"152","hero":true}]'></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 Another blank. Your aces are almost certainly winning. Your opponent has called three bets - they have something. A king makes sense. One more value bet to get paid.
@@ -644,14 +616,7 @@ A solid player raises to $6 from early position. One player calls. You call too 
 Three players see the flop. Pot: $21.
 
 <div>{% renderTemplate "webc" %}
-<hand-display street="flop" pot="21" board="ks,5s,2c" actions="Early raises $6 → Middle calls $6 → You call $6">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" cards="hidden" stack="174"></seat>
-  <seat position="middle" cards="hidden" stack="174"></seat>
-  <seat position="late" stack="200" folded></seat>
-  <seat position="dealer" cards="9s,8s" stack="174" hero></seat>
-</hand-display>
+<hand-display street="flop" pot="21" board="ks,5s,2c" actions="Early raises $6 → Middle calls $6 → You call $6" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","cards":"hidden","stack":"174"},{"position":"middle","cards":"hidden","stack":"174"},{"position":"late","stack":"200","folded":true},{"position":"dealer","cards":"9s,8s","stack":"174","hero":true}]'></hand-display>
 {% endrenderTemplate %}</div>
 
 💭 You don't have a made hand - just nine-high. But you have four spades, which means you need one more spade to make a [flush](glossary:flush). That's called a [flush draw](glossary:flush-draw). There are 9 spades left in the deck, so you have 9 "[outs](glossary:outs)" - cards that complete your hand.
@@ -659,14 +624,7 @@ Three players see the flop. Pot: $21.
 **Villain bets $14** — other player folds.
 
 {% renderTemplate "webc" %}
-<hand-display street="flop" pot="35" board="ks,5s,2c" actions="Early bets $14 → Middle folds">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" cards="hidden" stack="160"></seat>
-  <seat position="middle" stack="174" folded></seat>
-  <seat position="late" stack="200" folded></seat>
-  <seat position="dealer" cards="9s,8s" stack="174" hero></seat>
-</hand-display>
+<hand-display street="flop" pot="35" board="ks,5s,2c" actions="Early bets $14 → Middle folds" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","cards":"hidden","stack":"160"},{"position":"middle","stack":"174","folded":true},{"position":"late","stack":"200","folded":true},{"position":"dealer","cards":"9s,8s","stack":"174","hero":true}]'></hand-display>
 {% endrenderTemplate %}
 
 💭 Time to do the math. The pot is $35 and you need to call $14. That's about 2.5-to-1 on your money. Your flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct [pot odds](glossary:pot-odds) say you need 29% to call... but if you hit, you'll probably win more money. That's called [implied odds](glossary:implied-odds). With position and a hidden draw, it's worth a call.
@@ -674,14 +632,7 @@ Three players see the flop. Pot: $21.
 **You call $14** — pot is now $49.
 
 {% renderTemplate "webc" %}
-<hand-display street="turn" pot="49" board="ks,5s,2c,4s" actions="You call $14">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" cards="hidden" stack="160"></seat>
-  <seat position="middle" stack="174" folded></seat>
-  <seat position="late" stack="200" folded></seat>
-  <seat position="dealer" cards="9s,8s" stack="160" hero></seat>
-</hand-display>
+<hand-display street="turn" pot="49" board="ks,5s,2c,4s" actions="You call $14" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","cards":"hidden","stack":"160"},{"position":"middle","stack":"174","folded":true},{"position":"late","stack":"200","folded":true},{"position":"dealer","cards":"9s,8s","stack":"160","hero":true}]'></hand-display>
 {% endrenderTemplate %}
 
 💭 The 4♠! You made your flush - the third-best hand in poker. But you need to get paid. If you bet big, your opponent might fold. If they check, you can bet smaller and maybe get a call.
@@ -693,14 +644,7 @@ Three players see the flop. Pot: $21.
 **You bet $25** — Villain calls.
 
 {% renderTemplate "webc" %}
-<hand-display street="river" pot="99" board="ks,5s,2c,4s,jd" actions="You bet $25 → Early calls">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" cards="kd,qd" stack="135"></seat>
-  <seat position="middle" stack="174" folded></seat>
-  <seat position="late" stack="200" folded></seat>
-  <seat position="dealer" cards="9s,8s" stack="135" hero></seat>
-</hand-display>
+<hand-display street="river" pot="99" board="ks,5s,2c,4s,jd" actions="You bet $25 → Early calls" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","cards":"kd,qd","stack":"135"},{"position":"middle","stack":"174","folded":true},{"position":"late","stack":"200","folded":true},{"position":"dealer","cards":"9s,8s","stack":"135","hero":true}]'></hand-display>
 {% endrenderTemplate %}
 
 💭 The J♦ doesn't change anything - you still have your flush. One more bet to extract value. They called the turn, so they have something worth calling with.
@@ -722,14 +666,7 @@ A tight player raises to $6 from early position. You call. Everyone else folds.
 Heads-up to the flop. Pot: $15.
 
 {% renderTemplate "webc" %}
-<hand-display street="flop" pot="15" board="qd,7c,3h" actions="Early raises $6 → You call $6">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" cards="hidden" stack="194"></seat>
-  <seat position="middle" stack="200" folded></seat>
-  <seat position="late" cards="qs,js" stack="194" hero></seat>
-  <seat position="dealer" stack="200" folded></seat>
-</hand-display>
+<hand-display street="flop" pot="15" board="qd,7c,3h" actions="Early raises $6 → You call $6" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","cards":"hidden","stack":"194"},{"position":"middle","stack":"200","folded":true},{"position":"late","cards":"qs,js","stack":"194","hero":true},{"position":"dealer","stack":"200","folded":true}]'></hand-display>
 {% endrenderTemplate %}
 
 💭 Top pair with a jack [kicker](glossary:kicker). That's a solid hand. But wait - this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, your jack kicker loses to their ace or king.
@@ -741,14 +678,7 @@ Heads-up to the flop. Pot: $15.
 **You call $10** — pot is now $35.
 
 {% renderTemplate "webc" %}
-<hand-display street="turn" pot="35" board="qd,7c,3h,9s" actions="Early bets $10 → You call $10">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" cards="hidden" stack="184"></seat>
-  <seat position="middle" stack="200" folded></seat>
-  <seat position="late" cards="qs,js" stack="184" hero></seat>
-  <seat position="dealer" stack="200" folded></seat>
-</hand-display>
+<hand-display street="turn" pot="35" board="qd,7c,3h,9s" actions="Early bets $10 → You call $10" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","cards":"hidden","stack":"184"},{"position":"middle","stack":"200","folded":true},{"position":"late","cards":"qs,js","stack":"184","hero":true},{"position":"dealer","stack":"200","folded":true}]'></hand-display>
 {% endrenderTemplate %}
 
 💭 The 9 doesn't help. They're betting again - and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. Your top pair with a jack kicker is looking weaker.
@@ -760,14 +690,7 @@ Heads-up to the flop. Pot: $15.
 **You call $25** — pot is now $85.
 
 {% renderTemplate "webc" %}
-<hand-display street="river" pot="85" board="qd,7c,3h,9s,2d" actions="Early bets $25 → You call $25">
-  <seat position="sb" stack="199" folded></seat>
-  <seat position="bb" stack="198" folded></seat>
-  <seat position="early" cards="hidden" stack="159"></seat>
-  <seat position="middle" stack="200" folded></seat>
-  <seat position="late" cards="qs,js" stack="159" hero></seat>
-  <seat position="dealer" stack="200" folded></seat>
-</hand-display>
+<hand-display street="river" pot="85" board="qd,7c,3h,9s,2d" actions="Early bets $25 → You call $25" seats='[{"position":"sb","stack":"199","folded":true},{"position":"bb","stack":"198","folded":true},{"position":"early","cards":"hidden","stack":"159"},{"position":"middle","stack":"200","folded":true},{"position":"late","cards":"qs,js","stack":"159","hero":true},{"position":"dealer","stack":"200","folded":true}]'></hand-display>
 {% endrenderTemplate %}
 
 💭 Blank river. Now they're betting $55 - almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that you beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 - all these hands crush you. The math doesn't add up.

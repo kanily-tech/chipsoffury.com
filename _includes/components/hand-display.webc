@@ -9,22 +9,27 @@ const positionLabels = {
   'dealer': 'Dealer'
 };
 
-// Parse seat elements from children
-function parseSeats(children) {
-  const seats = [];
+// Parse seats from JSON attribute
+// seats attribute should be JSON like: [{"position":"sb","stack":"199","folded":true},...]
+function parseSeats(seatsJson) {
   const seatOrder = ['sb', 'bb', 'early', 'middle', 'late', 'dealer'];
-
-  // Create a map from the provided children
   const seatMap = {};
-  if (children) {
-    for (const child of children) {
-      if (child.position) {
-        seatMap[child.position] = child;
+
+  if (seatsJson) {
+    try {
+      const seatsArray = JSON.parse(seatsJson);
+      for (const seat of seatsArray) {
+        if (seat.position) {
+          seatMap[seat.position] = seat;
+        }
       }
+    } catch (e) {
+      // JSON parse failed, return empty seats
     }
   }
 
   // Build seats array in fixed order
+  const seats = [];
   for (const pos of seatOrder) {
     const seat = seatMap[pos];
     if (seat) {
@@ -33,8 +38,8 @@ function parseSeats(children) {
         label: positionLabels[pos],
         stack: seat.stack || '0',
         cards: seat.cards || null,
-        folded: seat.folded !== undefined,
-        hero: seat.hero !== undefined
+        folded: seat.folded === true,
+        hero: seat.hero === true
       });
     } else {
       // Empty seat
@@ -84,13 +89,7 @@ function renderSeat(seat) {
     cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
   }
 
-  return `
-    <div class="hand-display__seat ${foldedClass} ${heroClass}">
-      <div class="hand-display__seat-label">${label}</div>
-      ${cardsHtml}
-      <div class="hand-display__seat-stack">$${seat.stack}</div>
-    </div>
-  `;
+  return `<div class="hand-display__seat ${foldedClass} ${heroClass}"><div class="hand-display__seat-label">${label}</div>${cardsHtml}<div class="hand-display__seat-stack">$${seat.stack}</div></div>`;
 }
 </script>
 
@@ -100,31 +99,18 @@ function renderSeat(seat) {
     <span class="hand-display__pot">Pot: $<span @text="pot"></span></span>
   </div>
 
-  <div class="hand-display__table">
-    <!-- Top row: SB and BB -->
-    <div class="hand-display__row hand-display__row--top">
-      <script webc:type="js">
-      const seats = parseSeats($data.seats);
-      const sb = seats.find(s => s.position === 'sb');
-      const bb = seats.find(s => s.position === 'bb');
+  <div class="hand-display__table"><div class="hand-display__row hand-display__row--top"><script webc:type="js">
+      const parsedSeats = parseSeats(seats);
+      const sb = parsedSeats.find(s => s.position === 'sb');
+      const bb = parsedSeats.find(s => s.position === 'bb');
       renderSeat(sb) + renderSeat(bb);
-      </script>
-    </div>
-
-    <!-- Middle row: Dealer, Board, Early -->
-    <div class="hand-display__row hand-display__row--middle">
-      <script webc:type="js">
-      const seats = parseSeats($data.seats);
-      const dealer = seats.find(s => s.position === 'dealer');
+      </script></div><div class="hand-display__row hand-display__row--middle"><script webc:type="js">
+      const parsedSeats = parseSeats(seats);
+      const dealer = parsedSeats.find(s => s.position === 'dealer');
       renderSeat(dealer);
-      </script>
-
-      <!-- Board in center -->
-      <div class="hand-display__board">
-        <script webc:type="js">
+      </script><div class="hand-display__board"><script webc:type="js">
         const boardCards = parseBoard(board);
         let html = '';
-
         // Flop (3 cards)
         html += '<div class="hand-display__board-group">';
         for (let i = 0; i < 3; i++) {
@@ -135,7 +121,6 @@ function renderSeat(seat) {
           }
         }
         html += '</div>';
-
         // Turn
         html += '<div class="hand-display__board-group">';
         if (boardCards[3]) {
@@ -144,7 +129,6 @@ function renderSeat(seat) {
           html += '<div class="hand-display__slot hand-display__slot--empty"></div>';
         }
         html += '</div>';
-
         // River
         html += '<div class="hand-display__board-group">';
         if (boardCards[4]) {
@@ -153,31 +137,17 @@ function renderSeat(seat) {
           html += '<div class="hand-display__slot hand-display__slot--empty"></div>';
         }
         html += '</div>';
-
         html;
-        </script>
-      </div>
-
-      <script webc:type="js">
-      const seats = parseSeats($data.seats);
-      const early = seats.find(s => s.position === 'early');
+        </script></div><script webc:type="js">
+      const parsedSeats = parseSeats(seats);
+      const early = parsedSeats.find(s => s.position === 'early');
       renderSeat(early);
-      </script>
-    </div>
-
-    <!-- Bottom row: Late and Middle -->
-    <div class="hand-display__row hand-display__row--bottom">
-      <script webc:type="js">
-      const seats = parseSeats($data.seats);
-      const late = seats.find(s => s.position === 'late');
-      const middle = seats.find(s => s.position === 'middle');
+      </script></div><div class="hand-display__row hand-display__row--bottom"><script webc:type="js">
+      const parsedSeats = parseSeats(seats);
+      const late = parsedSeats.find(s => s.position === 'late');
+      const middle = parsedSeats.find(s => s.position === 'middle');
       renderSeat(late) + renderSeat(middle);
-      </script>
-    </div>
-  </div>
-
-  <!-- Action log -->
-  <div class="hand-display__actions" webc:if="actions">
+      </script></div></div><div class="hand-display__actions" webc:if="actions">
     <span @text="actions"></span>
   </div>
 </div>
