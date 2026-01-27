@@ -1300,149 +1300,172 @@ html {
   animation: termHighlight 0.6s ease;
 }
 
-/* Hand Replay Component - Visual poker hand walkthroughs */
-.hand-replay {
-  @apply my-8;
+/* ===========================================
+   Hand Display Component
+   Clean, utilitarian poker hand visualization
+   =========================================== */
+
+.hand-display {
+  @apply rounded-lg overflow-hidden my-6;
+  background: #0f1419;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  max-width: 480px;
 }
 
-.hand-replay__title {
-  @apply text-lg font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200;
+.hand-display__header {
+  @apply flex justify-between items-center px-4 py-2.5;
+  background: linear-gradient(180deg, #1a2028 0%, #141a21 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.hand-replay__frames {
-  @apply space-y-4;
+.hand-display__street {
+  @apply text-xs font-bold uppercase tracking-widest;
+  color: #6b7280;
+  letter-spacing: 0.15em;
 }
 
-.hand-frame {
-  @apply rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm;
+.hand-display__pot {
+  @apply text-sm font-semibold px-3 py-1 rounded;
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
 }
 
-.hand-frame__header {
-  @apply flex justify-between items-center px-4 py-2 bg-gray-50 border-b border-gray-200;
+.hand-display__felt {
+  @apply p-5;
+  background: linear-gradient(165deg, #1a5f36 0%, #14482a 50%, #0f3a21 100%);
+  position: relative;
 }
 
-.hand-frame__street {
-  @apply text-sm font-semibold text-gray-600 uppercase tracking-wide;
+/* Subtle felt texture */
+.hand-display__felt::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
 }
 
-.hand-frame__pot {
-  @apply text-sm font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full;
+/* ===== Community Board ===== */
+.hand-display__board {
+  @apply flex justify-center items-center gap-3 mb-5;
 }
 
-.hand-frame__table {
-  @apply p-4;
-  background: linear-gradient(135deg, #1e5631 0%, #2d7a46 100%);
+.hand-display__board-group {
+  @apply flex gap-1;
 }
 
-.hand-frame__board {
-  @apply flex justify-center gap-1 mb-4 min-h-[52px] items-center;
+.hand-display__board-group--flop {
+  @apply gap-1;
 }
 
-.hand-frame__board--empty {
-  @apply border-2 border-dashed border-white/30 rounded-lg py-3;
+.hand-display__board-group--turn,
+.hand-display__board-group--river {
+  @apply ml-2;
 }
 
-.hand-frame__no-cards {
-  @apply text-white/60 text-sm italic;
+.hand-display__slot {
+  width: 44px;
+  height: 62px;
+  @apply rounded flex items-center justify-center;
+  position: relative;
 }
 
-.hand-frame__players {
-  @apply flex justify-between items-start px-2;
+.hand-display__slot--empty {
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.1);
 }
 
-.hand-frame__player {
-  @apply text-center;
+.hand-display__slot--filled {
+  border: none;
+  background: transparent;
 }
 
-.hand-frame__position {
-  @apply text-xs text-white/80 font-medium mb-1 uppercase tracking-wide;
+.hand-display__board-card {
+  width: 44px;
+  height: auto;
+  @apply rounded shadow-lg;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-.hand-frame__player--hero .hand-frame__position {
-  @apply text-yellow-300 font-bold;
+/* ===== Players ===== */
+.hand-display__players {
+  @apply flex justify-between items-end;
+  padding: 0 4px;
 }
 
-.hand-frame__cards {
-  @apply flex gap-0.5 justify-center mb-1;
+.hand-display__player {
+  @apply flex flex-col items-center;
 }
 
-.hand-frame__card {
+.hand-display__player-label {
+  @apply text-xs font-medium uppercase tracking-wide mb-2;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.hand-display__player--hero .hand-display__player-label {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.hand-display__hole-cards {
+  @apply flex gap-1 mb-2;
+}
+
+.hand-display__hole-card {
   width: 40px;
   height: auto;
-  @apply rounded shadow-md;
+  @apply rounded;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-.hand-frame__stack {
-  @apply text-xs text-white font-medium bg-black/30 px-2 py-0.5 rounded-full inline-block;
+.hand-display__chip-stack {
+  @apply text-xs font-semibold px-2.5 py-1 rounded-full;
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.85);
+  font-variant-numeric: tabular-nums;
 }
 
-.hand-frame__thought {
-  @apply flex gap-3 p-4 bg-amber-50 border-t border-amber-200;
+/* ===== Street-specific accent colors ===== */
+.hand-display--preflop .hand-display__street {
+  color: #60a5fa;
 }
 
-.hand-frame__thought-icon {
-  @apply text-xl flex-shrink-0;
+.hand-display--flop .hand-display__street {
+  color: #34d399;
 }
 
-.hand-frame__thought-text {
-  @apply text-sm text-gray-700 leading-relaxed;
+.hand-display--turn .hand-display__street {
+  color: #fbbf24;
 }
 
-.hand-frame__thought-text p {
-  @apply m-0;
+.hand-display--river .hand-display__street {
+  color: #f87171;
 }
 
-.hand-frame__actions {
-  @apply px-4 py-3 bg-gray-50 border-t border-gray-200 space-y-1;
-}
-
-.hand-frame__action,
-.hand-frame__result {
-  @apply flex items-center gap-2 text-sm;
-}
-
-.hand-frame__action-icon {
-  @apply text-emerald-600 font-bold;
-}
-
-.hand-frame__result-icon {
-  @apply text-gray-400;
-}
-
-/* Street-specific header colors */
-.hand-frame--preflop .hand-frame__street {
-  @apply text-blue-600;
-}
-
-.hand-frame--flop .hand-frame__street {
-  @apply text-emerald-600;
-}
-
-.hand-frame--turn .hand-frame__street {
-  @apply text-amber-600;
-}
-
-.hand-frame--river .hand-frame__street {
-  @apply text-red-600;
-}
-
-/* Responsive: larger cards on bigger screens */
-@media (min-width: 640px) {
-  .hand-frame__card {
-    width: 48px;
-  }
-}
-
-@media (min-width: 768px) {
-  .hand-frame__card {
-    width: 56px;
+/* ===== Responsive ===== */
+@media (min-width: 480px) {
+  .hand-display {
+    max-width: 520px;
   }
 
-  .hand-frame__table {
+  .hand-display__slot {
+    width: 52px;
+    height: 73px;
+  }
+
+  .hand-display__board-card {
+    width: 52px;
+  }
+
+  .hand-display__hole-card {
+    width: 46px;
+  }
+
+  .hand-display__felt {
     @apply p-6;
   }
+}
 
-  .hand-frame__thought {
-    @apply p-5;
-  }
-} 

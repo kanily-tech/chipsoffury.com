@@ -1,6 +1,0 @@
-<div class="hand-replay">
-  <h4 class="hand-replay__title" webc:if="title" @text="title"></h4>
-  <div class="hand-replay__frames">
-    <slot></slot>
-  </div>
-</div>

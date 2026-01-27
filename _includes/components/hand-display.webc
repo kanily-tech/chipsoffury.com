@@ -1,0 +1,17 @@
+<div class="hand-display" :class="'hand-display--' + street">
+  <div class="hand-display__header">
+    <span class="hand-display__street" @text="street.charAt(0).toUpperCase() + street.slice(1)"></span>
+    <span class="hand-display__pot">Pot: $<span @text="pot"></span></span>
+  </div>
+  <div class="hand-display__felt">
+    <div class="hand-display__board">
+      <div class="hand-display__board-group hand-display__board-group--flop"><script webc:type="js">const cards = board ? board.split(',').map(c => c.trim()) : [];let html = '';for (let i = 0; i < 3; i++) {if (cards[i]) {html += `<div class="hand-display__slot hand-display__slot--filled"><img src="/images/cards/${cards[i]}.png" alt="${cards[i]}" class="hand-display__board-card"></div>`;} else {html += `<div class="hand-display__slot hand-display__slot--empty"></div>`;}}html;</script></div>
+      <div class="hand-display__board-group hand-display__board-group--turn"><script webc:type="js">const cards = board ? board.split(',').map(c => c.trim()) : [];if (cards[3]) {`<div class="hand-display__slot hand-display__slot--filled"><img src="/images/cards/${cards[3]}.png" alt="${cards[3]}" class="hand-display__board-card"></div>`;} else {`<div class="hand-display__slot hand-display__slot--empty"></div>`;}</script></div>
+      <div class="hand-display__board-group hand-display__board-group--river"><script webc:type="js">const cards = board ? board.split(',').map(c => c.trim()) : [];if (cards[4]) {`<div class="hand-display__slot hand-display__slot--filled"><img src="/images/cards/${cards[4]}.png" alt="${cards[4]}" class="hand-display__board-card"></div>`;} else {`<div class="hand-display__slot hand-display__slot--empty"></div>`;}</script></div>
+    </div>
+    <div class="hand-display__players">
+      <div class="hand-display__player hand-display__player--villain"><div class="hand-display__player-label" @text="villainPosition || 'Villain'"></div><div class="hand-display__hole-cards"><template webc:nokeep webc:if="villainCards === 'hidden' || !villainCards"><img src="/images/cards/card_back.png" alt="Hidden" class="hand-display__hole-card"><img src="/images/cards/card_back.png" alt="Hidden" class="hand-display__hole-card"></template><template webc:nokeep webc:if="villainCards && villainCards !== 'hidden'"><img webc:for="card of villainCards.split(',')" :src="'/images/cards/' + card.trim() + '.png'" :alt="card.trim()" class="hand-display__hole-card"></template></div><div class="hand-display__chip-stack">$<span @text="villainStack"></span></div></div>
+      <div class="hand-display__player hand-display__player--hero"><div class="hand-display__player-label">YOU (<span @text="yourPosition"></span>)</div><div class="hand-display__hole-cards"><img webc:for="card of yourCards.split(',')" :src="'/images/cards/' + card.trim() + '.png'" :alt="card.trim()" class="hand-display__hole-card"></div><div class="hand-display__chip-stack">$<span @text="yourStack"></span></div></div>
+    </div>
+  </div>
+</div>

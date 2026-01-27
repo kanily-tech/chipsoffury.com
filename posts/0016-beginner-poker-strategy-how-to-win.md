@@ -569,71 +569,29 @@ You look down at A♠A♥. Pocket aces. The best starting hand in poker.
 
 A player in middle position calls the $2 [big blind](glossary:big-blind). Now it's your turn.
 
-<div class="not-prose">
-{% renderTemplate "webc" %}
-<hand-replay title="Hand 1: I'm Ahead — Bet for Value">
-  <hand-frame
-    street="preflop"
-    pot="3"
-    board=""
-    your-cards="as,ah"
-    villain-cards="hidden"
-    your-stack="200"
-    villain-stack="200"
-    your-position="BTN"
-    villain-position="MP"
-    action="You raise to $8"
-    result="Villain calls">
-    Pocket aces — the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, I want to build a big pot. Raise.
-  </hand-frame>
+<div>{% renderTemplate "webc" %}<hand-display street="preflop" pot="3" board="" your-cards="as,ah" villain-cards="hidden" your-stack="200" villain-stack="200" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
 
-  <hand-frame
-    street="flop"
-    pot="19"
-    board="kd,7c,2s"
-    your-cards="as,ah"
-    villain-cards="hidden"
-    your-stack="192"
-    villain-stack="192"
-    your-position="BTN"
-    villain-position="MP"
-    action="You bet $12"
-    result="Villain calls">
-    This is a great flop for my aces. There's a king, but I still have the best pair possible — an [overpair](glossary:overpair). The board is "dry": no flush possible, no obvious straight draws. My opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. I'm ahead — bet for value.
-  </hand-frame>
+💭 Pocket aces — the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, I want to build a big pot. Raise.
 
-  <hand-frame
-    street="turn"
-    pot="43"
-    board="kd,7c,2s,5h"
-    your-cards="as,ah"
-    villain-cards="hidden"
-    your-stack="180"
-    villain-stack="180"
-    your-position="BTN"
-    villain-position="MP"
-    action="You bet $28"
-    result="Villain calls">
-    The 5 changes nothing. My aces are still best. If my opponent had a [set](glossary:set) (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting.
-  </hand-frame>
+**You raise to $8** — Villain calls.
 
-  <hand-frame
-    street="river"
-    pot="99"
-    board="kd,7c,2s,5h,3d"
-    your-cards="as,ah"
-    villain-cards="ks,js"
-    your-stack="152"
-    villain-stack="152"
-    your-position="BTN"
-    villain-position="MP"
-    action="You bet $50"
-    result="Villain calls and shows K♠J♠">
-    Another blank. My aces are almost certainly winning. My opponent has called three bets — they have something. A king makes sense. One more value bet to get paid.
-  </hand-frame>
-</hand-replay>
-{% endrenderTemplate %}
-</div>
+<div>{% renderTemplate "webc" %}<hand-display street="flop" pot="19" board="kd,7c,2s" your-cards="as,ah" villain-cards="hidden" your-stack="192" villain-stack="192" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
+
+💭 This is a great flop for my aces. There's a king, but I still have the best pair possible — an [overpair](glossary:overpair). The board is "dry": no flush possible, no obvious straight draws. My opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. I'm ahead — bet for value.
+
+**You bet $12** — Villain calls.
+
+<div>{% renderTemplate "webc" %}<hand-display street="turn" pot="43" board="kd,7c,2s,5h" your-cards="as,ah" villain-cards="hidden" your-stack="180" villain-stack="180" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
+
+💭 The 5 changes nothing. My aces are still best. If my opponent had a [set](glossary:set) (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting.
+
+**You bet $28** — Villain calls.
+
+<div>{% renderTemplate "webc" %}<hand-display street="river" pot="99" board="kd,7c,2s,5h,3d" your-cards="as,ah" villain-cards="ks,js" your-stack="152" villain-stack="152" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
+
+💭 Another blank. My aces are almost certainly winning. My opponent has called three bets — they have something. A king makes sense. One more value bet to get paid.
+
+**You bet $50** — Villain calls and shows K♠J♠.
 
 **Result:** You win a $199 pot with pocket aces. Your opponent had top pair with a decent kicker — exactly the kind of hand that will call you down.
 
@@ -649,86 +607,69 @@ A solid player raises to $6 from early position. One player calls. You call too 
 
 Three players see the flop. Pot: $21.
 
-<div class="not-prose">
+<div>{% renderTemplate "webc" %}<hand-display street="flop" pot="21" board="ks,5s,2c" your-cards="9s,8s" villain-cards="hidden" your-stack="174" villain-stack="174" your-position="BTN" villain-position="EP"></hand-display>{% endrenderTemplate %}</div>
+
+💭 I don't have a made hand — just nine-high. But I have four spades, which means I need one more spade to make a [flush](glossary:flush). That's called a [flush draw](glossary:flush-draw). There are 9 spades left in the deck, so I have 9 "[outs](glossary:outs)" — cards that complete my hand.
+
+**Villain bets $14** — other player folds.
+
 {% renderTemplate "webc" %}
-<hand-replay title="Hand 2: I'm Drawing — Check the Math">
-  <hand-frame
-    street="flop"
-    pot="21"
-    board="ks,5s,2c"
-    your-cards="9s,8s"
-    villain-cards="hidden"
-    your-stack="174"
-    villain-stack="174"
-    your-position="BTN"
-    villain-position="EP"
-    action="Villain bets $14"
-    result="Other player folds">
-    I don't have a made hand — just nine-high. But I have four spades, which means I need one more spade to make a [flush](glossary:flush). That's called a [flush draw](glossary:flush-draw). There are 9 spades left in the deck, so I have 9 "[outs](glossary:outs)" — cards that complete my hand.
-  </hand-frame>
-
-  <hand-frame
-    street="flop"
-    pot="35"
-    board="ks,5s,2c"
-    your-cards="9s,8s"
-    villain-cards="hidden"
-    your-stack="174"
-    villain-stack="160"
-    your-position="BTN"
-    villain-position="EP"
-    action="You call $14"
-    result="Pot is now $49">
-    Now I need to do the math. The pot is $35 and I need to call $14. That's getting about 2.5-to-1 on my money. My flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct [pot odds](glossary:pot-odds) say I need 29% to call... but if I hit, I'll probably win more money. That's called [implied odds](glossary:implied-odds). With position and a hidden draw, it's worth a call.
-  </hand-frame>
-
-  <hand-frame
-    street="turn"
-    pot="49"
-    board="ks,5s,2c,4s"
-    your-cards="9s,8s"
-    villain-cards="hidden"
-    your-stack="160"
-    villain-stack="160"
-    your-position="BTN"
-    villain-position="EP"
-    action="Villain checks"
-    result="Your turn to act">
-    The 4♠! I made my flush — the third-best hand in poker. But I need to get paid. If I bet big, my opponent might fold. If they check, I can bet smaller and maybe get a call.
-  </hand-frame>
-
-  <hand-frame
-    street="turn"
-    pot="49"
-    board="ks,5s,2c,4s"
-    your-cards="9s,8s"
-    villain-cards="hidden"
-    your-stack="160"
-    villain-stack="160"
-    your-position="BTN"
-    villain-position="EP"
-    action="You bet $25"
-    result="Villain calls">
-    They checked — probably scared of the flush. I have the goods, but a huge bet will scare them away. A smaller bet looks like I might be stealing. Time to get some value.
-  </hand-frame>
-
-  <hand-frame
-    street="river"
-    pot="99"
-    board="ks,5s,2c,4s,jd"
-    your-cards="9s,8s"
-    villain-cards="kd,qd"
-    your-stack="135"
-    villain-stack="135"
-    your-position="BTN"
-    villain-position="EP"
-    action="You bet $45. Villain calls with K♦Q♦"
-    result="You win with a flush">
-    The J♦ doesn't change anything — I still have my flush. One more bet to extract value. They called the turn, so they have something worth calling with.
-  </hand-frame>
-</hand-replay>
+<hand-display
+  street="flop"
+  pot="35"
+  board="ks,5s,2c"
+  your-cards="9s,8s"
+  villain-cards="hidden"
+  your-stack="174"
+  villain-stack="160"
+  your-position="BTN"
+  villain-position="EP">
+</hand-display>
 {% endrenderTemplate %}
-</div>
+
+💭 Now I need to do the math. The pot is $35 and I need to call $14. That's getting about 2.5-to-1 on my money. My flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct [pot odds](glossary:pot-odds) say I need 29% to call... but if I hit, I'll probably win more money. That's called [implied odds](glossary:implied-odds). With position and a hidden draw, it's worth a call.
+
+**You call $14** — pot is now $49.
+
+{% renderTemplate "webc" %}
+<hand-display
+  street="turn"
+  pot="49"
+  board="ks,5s,2c,4s"
+  your-cards="9s,8s"
+  villain-cards="hidden"
+  your-stack="160"
+  villain-stack="160"
+  your-position="BTN"
+  villain-position="EP">
+</hand-display>
+{% endrenderTemplate %}
+
+💭 The 4♠! I made my flush — the third-best hand in poker. But I need to get paid. If I bet big, my opponent might fold. If they check, I can bet smaller and maybe get a call.
+
+**Villain checks** — your turn to act.
+
+💭 They checked — probably scared of the flush. I have the goods, but a huge bet will scare them away. A smaller bet looks like I might be stealing. Time to get some value.
+
+**You bet $25** — Villain calls.
+
+{% renderTemplate "webc" %}
+<hand-display
+  street="river"
+  pot="99"
+  board="ks,5s,2c,4s,jd"
+  your-cards="9s,8s"
+  villain-cards="kd,qd"
+  your-stack="135"
+  villain-stack="135"
+  your-position="BTN"
+  villain-position="EP">
+</hand-display>
+{% endrenderTemplate %}
+
+💭 The J♦ doesn't change anything — I still have my flush. One more bet to extract value. They called the turn, so they have something worth calling with.
+
+**You bet $45** — Villain calls with K♦Q♦. You win with a flush.
 
 **Result:** You win a $189 pot with a flush. Your opponent had top pair with a good kicker and couldn't let it go.
 
@@ -744,101 +685,71 @@ A tight player raises to $6 from early position. You call. Everyone else folds.
 
 Heads-up to the flop. Pot: $15.
 
-<div class="not-prose">
 {% renderTemplate "webc" %}
-<hand-replay title="Hand 3: I'm Behind — Save My Chips">
-  <hand-frame
-    street="flop"
-    pot="15"
-    board="qd,7c,3h"
-    your-cards="qs,js"
-    villain-cards="hidden"
-    your-stack="194"
-    villain-stack="194"
-    your-position="CO"
-    villain-position="EP"
-    action="Villain bets $10"
-    result="Your turn to act">
-    Top pair with a jack [kicker](glossary:kicker). That's a solid hand. But wait — this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, my jack kicker loses to their ace or king.
-  </hand-frame>
-
-  <hand-frame
-    street="flop"
-    pot="25"
-    board="qd,7c,3h"
-    your-cards="qs,js"
-    villain-cards="hidden"
-    your-stack="194"
-    villain-stack="184"
-    your-position="CO"
-    villain-position="EP"
-    action="You call $10"
-    result="Pot is now $35">
-    One pair is usually good enough to call one bet. I'm not folding yet — they could have AK and missed, or a smaller pair. But I'm not raising either. Just call and see what they do next.
-  </hand-frame>
-
-  <hand-frame
-    street="turn"
-    pot="35"
-    board="qd,7c,3h,9s"
-    your-cards="qs,js"
-    villain-cards="hidden"
-    your-stack="184"
-    villain-stack="184"
-    your-position="CO"
-    villain-position="EP"
-    action="Villain bets $25"
-    result="Your turn to act">
-    The 9 doesn't help me. They're betting again — and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. My top pair with a jack kicker is looking weaker.
-  </hand-frame>
-
-  <hand-frame
-    street="turn"
-    pot="60"
-    board="qd,7c,3h,9s"
-    your-cards="qs,js"
-    villain-cards="hidden"
-    your-stack="184"
-    villain-stack="159"
-    your-position="CO"
-    villain-position="EP"
-    action="You call $25"
-    result="Pot is now $85">
-    I'll call one more time, but I'm not happy about it. If they fire a third barrel on the river, I'm probably beat. A queen with a jack kicker just isn't strong enough against a [range](glossary:range) that raised preflop and bet twice.
-  </hand-frame>
-
-  <hand-frame
-    street="river"
-    pot="85"
-    board="qd,7c,3h,9s,2d"
-    your-cards="qs,js"
-    villain-cards="hidden"
-    your-stack="159"
-    villain-stack="159"
-    your-position="CO"
-    villain-position="EP"
-    action="Villain bets $55"
-    result="Decision time">
-    Blank river. Now they're betting $55 — almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that I beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 — all these hands crush me. The math doesn't add up.
-  </hand-frame>
-
-  <hand-frame
-    street="river"
-    pot="140"
-    board="qd,7c,3h,9s,2d"
-    your-cards="qs,js"
-    villain-cards="qh,kh"
-    your-stack="159"
-    villain-stack="104"
-    your-position="CO"
-    villain-position="EP"
-    action="You fold"
-    result="Villain shows Q♥K♥ — same pair, better kicker">
-    This is the hardest part of poker: folding a hand that looks good. Top pair feels strong. But three big bets from a tight player? They're not bluffing. I'm behind. Save the $55 for a better spot.
-  </hand-frame>
-</hand-replay>
+<hand-display
+  street="flop"
+  pot="15"
+  board="qd,7c,3h"
+  your-cards="qs,js"
+  villain-cards="hidden"
+  your-stack="194"
+  villain-stack="194"
+  your-position="CO"
+  villain-position="EP">
+</hand-display>
 {% endrenderTemplate %}
-</div>
+
+💭 Top pair with a jack [kicker](glossary:kicker). That's a solid hand. But wait — this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, my jack kicker loses to their ace or king.
+
+**Villain bets $10** — your turn to act.
+
+💭 One pair is usually good enough to call one bet. I'm not folding yet — they could have AK and missed, or a smaller pair. But I'm not raising either. Just call and see what they do next.
+
+**You call $10** — pot is now $35.
+
+{% renderTemplate "webc" %}
+<hand-display
+  street="turn"
+  pot="35"
+  board="qd,7c,3h,9s"
+  your-cards="qs,js"
+  villain-cards="hidden"
+  your-stack="184"
+  villain-stack="184"
+  your-position="CO"
+  villain-position="EP">
+</hand-display>
+{% endrenderTemplate %}
+
+💭 The 9 doesn't help me. They're betting again — and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. My top pair with a jack kicker is looking weaker.
+
+**Villain bets $25** — your turn to act.
+
+💭 I'll call one more time, but I'm not happy about it. If they fire a third barrel on the river, I'm probably beat. A queen with a jack kicker just isn't strong enough against a [range](glossary:range) that raised preflop and bet twice.
+
+**You call $25** — pot is now $85.
+
+{% renderTemplate "webc" %}
+<hand-display
+  street="river"
+  pot="85"
+  board="qd,7c,3h,9s,2d"
+  your-cards="qs,js"
+  villain-cards="hidden"
+  your-stack="159"
+  villain-stack="159"
+  your-position="CO"
+  villain-position="EP">
+</hand-display>
+{% endrenderTemplate %}
+
+💭 Blank river. Now they're betting $55 — almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that I beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 — all these hands crush me. The math doesn't add up.
+
+**Villain bets $55** — decision time.
+
+💭 This is the hardest part of poker: folding a hand that looks good. Top pair feels strong. But three big bets from a tight player? They're not bluffing. I'm behind. Save the $55 for a better spot.
+
+**You fold** — Villain shows Q♥K♥ (same pair, better kicker).
 
 **Result:** You lose $35 instead of $90. Your opponent had the same top pair with a king kicker — exactly what their betting line represented.
 
