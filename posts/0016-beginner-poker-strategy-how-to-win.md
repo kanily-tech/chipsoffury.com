@@ -569,25 +569,61 @@ You look down at A♠A♥. Pocket aces. The best starting hand in poker.
 
 A player in middle position calls the $2 [big blind](glossary:big-blind). Now it's your turn.
 
-<div>{% renderTemplate "webc" %}<hand-display street="preflop" pot="3" board="" your-cards="as,ah" villain-cards="hidden" your-stack="200" villain-stack="200" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
+<div>{% renderTemplate "webc" %}
+<hand-display street="preflop" pot="3" board="" actions="Small Blind $1 → Big Blind $2 → Middle calls $2">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" stack="200" folded></seat>
+  <seat position="middle" cards="hidden" stack="200"></seat>
+  <seat position="late" stack="200" folded></seat>
+  <seat position="dealer" cards="as,ah" stack="200" hero></seat>
+</hand-display>
+{% endrenderTemplate %}</div>
 
 💭 Pocket aces - the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, you want to build a big pot. Raise.
 
 **You raise to $8** — Villain calls.
 
-<div>{% renderTemplate "webc" %}<hand-display street="flop" pot="19" board="kd,7c,2s" your-cards="as,ah" villain-cards="hidden" your-stack="192" villain-stack="192" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
+<div>{% renderTemplate "webc" %}
+<hand-display street="flop" pot="19" board="kd,7c,2s" actions="You raise $8 → Middle calls $8">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" stack="200" folded></seat>
+  <seat position="middle" cards="hidden" stack="192"></seat>
+  <seat position="late" stack="200" folded></seat>
+  <seat position="dealer" cards="as,ah" stack="192" hero></seat>
+</hand-display>
+{% endrenderTemplate %}</div>
 
 💭 Great flop for your aces. There's a king, but you still have the best pair possible - an [overpair](glossary:overpair). The board is "dry": no flush possible, no obvious straight draws. Your opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. You're ahead - bet for value.
 
 **You bet $12** — Villain calls.
 
-<div>{% renderTemplate "webc" %}<hand-display street="turn" pot="43" board="kd,7c,2s,5h" your-cards="as,ah" villain-cards="hidden" your-stack="180" villain-stack="180" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
+<div>{% renderTemplate "webc" %}
+<hand-display street="turn" pot="43" board="kd,7c,2s,5h" actions="You bet $12 → Middle calls">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" stack="200" folded></seat>
+  <seat position="middle" cards="hidden" stack="180"></seat>
+  <seat position="late" stack="200" folded></seat>
+  <seat position="dealer" cards="as,ah" stack="180" hero></seat>
+</hand-display>
+{% endrenderTemplate %}</div>
 
 💭 The 5 changes nothing. Your aces are still best. If your opponent had a [set](glossary:set) (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting.
 
 **You bet $28** — Villain calls.
 
-<div>{% renderTemplate "webc" %}<hand-display street="river" pot="99" board="kd,7c,2s,5h,3d" your-cards="as,ah" villain-cards="ks,js" your-stack="152" villain-stack="152" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
+<div>{% renderTemplate "webc" %}
+<hand-display street="river" pot="99" board="kd,7c,2s,5h,3d" actions="You bet $28 → Middle calls">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" stack="200" folded></seat>
+  <seat position="middle" cards="ks,js" stack="152"></seat>
+  <seat position="late" stack="200" folded></seat>
+  <seat position="dealer" cards="as,ah" stack="152" hero></seat>
+</hand-display>
+{% endrenderTemplate %}</div>
 
 💭 Another blank. Your aces are almost certainly winning. Your opponent has called three bets - they have something. A king makes sense. One more value bet to get paid.
 
