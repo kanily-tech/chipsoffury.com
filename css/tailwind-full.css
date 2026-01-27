@@ -1298,4 +1298,147 @@ html {
 
 .poker-term--just-viewed {
   animation: termHighlight 0.6s ease;
+}
+
+/* Hand Replay Component - Visual poker hand walkthroughs */
+.hand-replay {
+  @apply my-8;
+}
+
+.hand-replay__title {
+  @apply text-lg font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200;
+}
+
+.hand-replay__frames {
+  @apply space-y-4;
+}
+
+.hand-frame {
+  @apply rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm;
+}
+
+.hand-frame__header {
+  @apply flex justify-between items-center px-4 py-2 bg-gray-50 border-b border-gray-200;
+}
+
+.hand-frame__street {
+  @apply text-sm font-semibold text-gray-600 uppercase tracking-wide;
+}
+
+.hand-frame__pot {
+  @apply text-sm font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full;
+}
+
+.hand-frame__table {
+  @apply p-4;
+  background: linear-gradient(135deg, #1e5631 0%, #2d7a46 100%);
+}
+
+.hand-frame__board {
+  @apply flex justify-center gap-1 mb-4 min-h-[52px] items-center;
+}
+
+.hand-frame__board--empty {
+  @apply border-2 border-dashed border-white/30 rounded-lg py-3;
+}
+
+.hand-frame__no-cards {
+  @apply text-white/60 text-sm italic;
+}
+
+.hand-frame__players {
+  @apply flex justify-between items-start px-2;
+}
+
+.hand-frame__player {
+  @apply text-center;
+}
+
+.hand-frame__position {
+  @apply text-xs text-white/80 font-medium mb-1 uppercase tracking-wide;
+}
+
+.hand-frame__player--hero .hand-frame__position {
+  @apply text-yellow-300 font-bold;
+}
+
+.hand-frame__cards {
+  @apply flex gap-0.5 justify-center mb-1;
+}
+
+.hand-frame__card {
+  width: 40px;
+  height: auto;
+  @apply rounded shadow-md;
+}
+
+.hand-frame__stack {
+  @apply text-xs text-white font-medium bg-black/30 px-2 py-0.5 rounded-full inline-block;
+}
+
+.hand-frame__thought {
+  @apply flex gap-3 p-4 bg-amber-50 border-t border-amber-200;
+}
+
+.hand-frame__thought-icon {
+  @apply text-xl flex-shrink-0;
+}
+
+.hand-frame__thought p {
+  @apply text-sm text-gray-700 leading-relaxed m-0;
+}
+
+.hand-frame__actions {
+  @apply px-4 py-3 bg-gray-50 border-t border-gray-200 space-y-1;
+}
+
+.hand-frame__action,
+.hand-frame__result {
+  @apply flex items-center gap-2 text-sm;
+}
+
+.hand-frame__action-icon {
+  @apply text-emerald-600 font-bold;
+}
+
+.hand-frame__result-icon {
+  @apply text-gray-400;
+}
+
+/* Street-specific header colors */
+.hand-frame--preflop .hand-frame__street {
+  @apply text-blue-600;
+}
+
+.hand-frame--flop .hand-frame__street {
+  @apply text-emerald-600;
+}
+
+.hand-frame--turn .hand-frame__street {
+  @apply text-amber-600;
+}
+
+.hand-frame--river .hand-frame__street {
+  @apply text-red-600;
+}
+
+/* Responsive: larger cards on bigger screens */
+@media (min-width: 640px) {
+  .hand-frame__card {
+    width: 48px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hand-frame__card {
+    width: 56px;
+  }
+
+  .hand-frame__table {
+    @apply p-6;
+  }
+
+  .hand-frame__thought {
+    @apply p-5;
+  }
 } 
