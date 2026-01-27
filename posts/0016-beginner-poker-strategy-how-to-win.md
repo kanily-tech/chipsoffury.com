@@ -728,32 +728,113 @@ Three players see the flop. Pot: $21.
 
 ---
 
-### Hand 3: The Disciplined Fold (Pocket Queens)
+### Hand 3: I'm Behind — Save My Chips
 
-**Setup:** $1/$2 game. You're in the hijack with $220. A tight, experienced player in early position (UTG+1) opens to $
-10. This player has been quiet all night - when he enters pots, he has something real.
+Same $1/$2 game. You're in the cutoff with $200 and pick up Q♠J♠ — a decent hand, but not premium.
 
-You look at Q♠Q♥. Premium hand. You [three-bet](glossary:three-bet) to $32.
+A tight player raises to $6 from early position. You call. Everyone else folds.
 
-Everyone folds back to the original raiser. He thinks for ten seconds, then four-bets to $85.
+Heads-up to the flop. Pot: $15.
 
-**Your thinking:** "This is a tight player who opened under the gun. I raised, and instead of calling, he four-bet.
-Against this specific player, his range is almost certainly AA, KK, or maybe AK. Two of those hands crush me. One is a
-coin flip. Calling to see a flop means I'll stack off 200 big blinds as an 80% underdog if he has aces or kings."
+<div class="not-prose">
+{% renderTemplate "webc" %}
+<hand-replay title="Hand 3: I'm Behind — Save My Chips">
+  <hand-frame
+    street="flop"
+    pot="15"
+    board="qd,7c,3h"
+    your-cards="qs,js"
+    villain-cards="hidden"
+    your-stack="194"
+    villain-stack="194"
+    your-position="CO"
+    villain-position="EP"
+    thought="Top pair with a jack <a href='glossary:kicker'>kicker</a>. That's a solid hand. But wait — this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, my jack kicker loses to their ace or king."
+    action="Villain bets $10"
+    result="Your turn to act">
+  </hand-frame>
 
-You fold face-up. "Nice hand."
+  <hand-frame
+    street="flop"
+    pot="25"
+    board="qd,7c,3h"
+    your-cards="qs,js"
+    villain-cards="hidden"
+    your-stack="194"
+    villain-stack="184"
+    your-position="CO"
+    villain-position="EP"
+    thought="One pair is usually good enough to call one bet. I'm not folding yet — they could have AK and missed, or a smaller pair. But I'm not raising either. Just call and see what they do next."
+    action="You call $10"
+    result="Pot is now $35">
+  </hand-frame>
 
-He shows A♠A♥ with a slight smile. You just saved $135 - and potentially your entire stack.
+  <hand-frame
+    street="turn"
+    pot="35"
+    board="qd,7c,3h,9s"
+    your-cards="qs,js"
+    villain-cards="hidden"
+    your-stack="184"
+    villain-stack="184"
+    your-position="CO"
+    villain-position="EP"
+    thought="The 9 doesn't help me. They're betting again — and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. My top pair with a jack kicker is looking weaker."
+    action="Villain bets $25"
+    result="Your turn to act">
+  </hand-frame>
 
-**Why this fold is correct:** Many beginners can't fold queens preflop. "But it's QQ! Third-best hand!" Yes, but hand
-strength is relative to what your opponent represents. When a tight player screams strength through their betting,
-believe them.
+  <hand-frame
+    street="turn"
+    pot="60"
+    board="qd,7c,3h,9s"
+    your-cards="qs,js"
+    villain-cards="hidden"
+    your-stack="184"
+    villain-stack="159"
+    your-position="CO"
+    villain-position="EP"
+    thought="I'll call one more time, but I'm not happy about it. If they fire a third barrel on the river, I'm probably beat. A queen with a jack kicker just isn't strong enough against a range that raised preflop and bet twice."
+    action="You call $25"
+    result="Pot is now $85">
+  </hand-frame>
 
-**The disaster you avoided:** Imagine calling. Flop comes J♦8♣3♥. Looks safe! You bet, he raises all-in. You convince
-yourself he might have AK and call. He doesn't. You're broke.
+  <hand-frame
+    street="river"
+    pot="85"
+    board="qd,7c,3h,9s,2d"
+    your-cards="qs,js"
+    villain-cards="hidden"
+    your-stack="159"
+    villain-stack="159"
+    your-position="CO"
+    villain-position="EP"
+    thought="Blank river. Now they're betting $55 — almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that I beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 — all these hands crush me. The math doesn't add up."
+    action="Villain bets $55"
+    result="Decision time">
+  </hand-frame>
 
-**The lesson:** Good poker isn't just about playing your cards - it's about playing your opponent's likely range. The
-money you save by folding strong-but-beaten hands is as valuable as the money you win with monsters.
+  <hand-frame
+    street="river"
+    pot="140"
+    board="qd,7c,3h,9s,2d"
+    your-cards="qs,js"
+    villain-cards="qh,kh"
+    your-stack="159"
+    villain-stack="104"
+    your-position="CO"
+    villain-position="EP"
+    thought="This is the hardest part of poker: folding a hand that looks good. Top pair feels strong. But three big bets from a tight player? They're not bluffing. I'm behind. Save the $55 for a better spot."
+    action="You fold"
+    result="Villain shows Q♥K♥ — same pair, better kicker">
+  </hand-frame>
+</hand-replay>
+{% endrenderTemplate %}
+</div>
+
+**Result:** You lose $35 instead of $90. Your opponent had the same top pair with a king kicker — exactly what their betting line represented.
+
+> **The lesson:** One pair is a marginal hand. When a tight opponent bets three streets, believe them. The money you save by folding is just as valuable as the money you win. Discipline isn't exciting, but it's profitable.
 
 ---
 
