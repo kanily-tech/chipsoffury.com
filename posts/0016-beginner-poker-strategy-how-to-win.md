@@ -643,23 +643,29 @@ A solid player raises to $6 from early position. One player calls. You call too 
 
 Three players see the flop. Pot: $21.
 
-<div>{% renderTemplate "webc" %}<hand-display street="flop" pot="21" board="ks,5s,2c" your-cards="9s,8s" villain-cards="hidden" your-stack="174" villain-stack="174" your-position="BTN" villain-position="EP"></hand-display>{% endrenderTemplate %}</div>
+<div>{% renderTemplate "webc" %}
+<hand-display street="flop" pot="21" board="ks,5s,2c" actions="Early raises $6 → Middle calls $6 → You call $6">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" cards="hidden" stack="174"></seat>
+  <seat position="middle" cards="hidden" stack="174"></seat>
+  <seat position="late" stack="200" folded></seat>
+  <seat position="dealer" cards="9s,8s" stack="174" hero></seat>
+</hand-display>
+{% endrenderTemplate %}</div>
 
 💭 You don't have a made hand - just nine-high. But you have four spades, which means you need one more spade to make a [flush](glossary:flush). That's called a [flush draw](glossary:flush-draw). There are 9 spades left in the deck, so you have 9 "[outs](glossary:outs)" - cards that complete your hand.
 
 **Villain bets $14** — other player folds.
 
 {% renderTemplate "webc" %}
-<hand-display
-  street="flop"
-  pot="35"
-  board="ks,5s,2c"
-  your-cards="9s,8s"
-  villain-cards="hidden"
-  your-stack="174"
-  villain-stack="160"
-  your-position="BTN"
-  villain-position="EP">
+<hand-display street="flop" pot="35" board="ks,5s,2c" actions="Early bets $14 → Middle folds">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" cards="hidden" stack="160"></seat>
+  <seat position="middle" stack="174" folded></seat>
+  <seat position="late" stack="200" folded></seat>
+  <seat position="dealer" cards="9s,8s" stack="174" hero></seat>
 </hand-display>
 {% endrenderTemplate %}
 
@@ -668,16 +674,13 @@ Three players see the flop. Pot: $21.
 **You call $14** — pot is now $49.
 
 {% renderTemplate "webc" %}
-<hand-display
-  street="turn"
-  pot="49"
-  board="ks,5s,2c,4s"
-  your-cards="9s,8s"
-  villain-cards="hidden"
-  your-stack="160"
-  villain-stack="160"
-  your-position="BTN"
-  villain-position="EP">
+<hand-display street="turn" pot="49" board="ks,5s,2c,4s" actions="You call $14">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" cards="hidden" stack="160"></seat>
+  <seat position="middle" stack="174" folded></seat>
+  <seat position="late" stack="200" folded></seat>
+  <seat position="dealer" cards="9s,8s" stack="160" hero></seat>
 </hand-display>
 {% endrenderTemplate %}
 
@@ -690,16 +693,13 @@ Three players see the flop. Pot: $21.
 **You bet $25** — Villain calls.
 
 {% renderTemplate "webc" %}
-<hand-display
-  street="river"
-  pot="99"
-  board="ks,5s,2c,4s,jd"
-  your-cards="9s,8s"
-  villain-cards="kd,qd"
-  your-stack="135"
-  villain-stack="135"
-  your-position="BTN"
-  villain-position="EP">
+<hand-display street="river" pot="99" board="ks,5s,2c,4s,jd" actions="You bet $25 → Early calls">
+  <seat position="sb" stack="199" folded></seat>
+  <seat position="bb" stack="198" folded></seat>
+  <seat position="early" cards="kd,qd" stack="135"></seat>
+  <seat position="middle" stack="174" folded></seat>
+  <seat position="late" stack="200" folded></seat>
+  <seat position="dealer" cards="9s,8s" stack="135" hero></seat>
 </hand-display>
 {% endrenderTemplate %}
 
