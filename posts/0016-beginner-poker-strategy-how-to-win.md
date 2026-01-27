@@ -555,13 +555,13 @@ Reading about poker strategy is one thing. Seeing it in action is another.
 
 These three hands show the "Three Questions" framework from Step 3 in real situations. Each hand focuses on one question:
 
-1. **Am I ahead?** → Bet for value
-2. **Am I drawing?** → Check the math
-3. **Am I behind?** → Save my chips
+1. **You're ahead** → Bet for value
+2. **You're drawing** → Check the math
+3. **You're behind** → Save your chips
 
-Follow the thought bubbles — they show exactly how a beginner should think through each decision.
+Follow the thought bubbles - they show exactly how you should think through each decision.
 
-### Hand 1: I'm Ahead — Bet for Value
+### Hand 1: You're Ahead - Bet for Value
 
 You're playing a $1/$2 cash game with $200. You're on the [button](glossary:button) — the best seat at the table because you act last after the flop.
 
@@ -571,25 +571,25 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
 
 <div>{% renderTemplate "webc" %}<hand-display street="preflop" pot="3" board="" your-cards="as,ah" villain-cards="hidden" your-stack="200" villain-stack="200" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
 
-💭 Pocket aces — the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, I want to build a big pot. Raise.
+💭 Pocket aces - the best possible starting hand. Some players try to be sneaky and just call here, hoping to trap. That's a mistake. With a hand this strong, you want to build a big pot. Raise.
 
 **You raise to $8** — Villain calls.
 
 <div>{% renderTemplate "webc" %}<hand-display street="flop" pot="19" board="kd,7c,2s" your-cards="as,ah" villain-cards="hidden" your-stack="192" villain-stack="192" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
 
-💭 This is a great flop for my aces. There's a king, but I still have the best pair possible — an [overpair](glossary:overpair). The board is "dry": no flush possible, no obvious straight draws. My opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. I'm ahead — bet for value.
+💭 Great flop for your aces. There's a king, but you still have the best pair possible - an [overpair](glossary:overpair). The board is "dry": no flush possible, no obvious straight draws. Your opponent probably has a king, a smaller pair, or nothing. Any of those hands will call a bet. You're ahead - bet for value.
 
 **You bet $12** — Villain calls.
 
 <div>{% renderTemplate "webc" %}<hand-display street="turn" pot="43" board="kd,7c,2s,5h" your-cards="as,ah" villain-cards="hidden" your-stack="180" villain-stack="180" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
 
-💭 The 5 changes nothing. My aces are still best. If my opponent had a [set](glossary:set) (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting.
+💭 The 5 changes nothing. Your aces are still best. If your opponent had a [set](glossary:set) (three of a kind), they probably would have raised the flop. They likely have a king or a medium pair. Keep betting.
 
 **You bet $28** — Villain calls.
 
 <div>{% renderTemplate "webc" %}<hand-display street="river" pot="99" board="kd,7c,2s,5h,3d" your-cards="as,ah" villain-cards="ks,js" your-stack="152" villain-stack="152" your-position="BTN" villain-position="MP"></hand-display>{% endrenderTemplate %}</div>
 
-💭 Another blank. My aces are almost certainly winning. My opponent has called three bets — they have something. A king makes sense. One more value bet to get paid.
+💭 Another blank. Your aces are almost certainly winning. Your opponent has called three bets - they have something. A king makes sense. One more value bet to get paid.
 
 **You bet $50** — Villain calls and shows K♠J♠.
 
@@ -599,7 +599,7 @@ A player in middle position calls the $2 [big blind](glossary:big-blind). Now it
 
 ---
 
-### Hand 2: I'm Drawing — Check the Math
+### Hand 2: You're Drawing - Check the Math
 
 Same $1/$2 game. You're on the button with $180 and look down at 9♠8♠ — suited connectors.
 
@@ -609,7 +609,7 @@ Three players see the flop. Pot: $21.
 
 <div>{% renderTemplate "webc" %}<hand-display street="flop" pot="21" board="ks,5s,2c" your-cards="9s,8s" villain-cards="hidden" your-stack="174" villain-stack="174" your-position="BTN" villain-position="EP"></hand-display>{% endrenderTemplate %}</div>
 
-💭 I don't have a made hand — just nine-high. But I have four spades, which means I need one more spade to make a [flush](glossary:flush). That's called a [flush draw](glossary:flush-draw). There are 9 spades left in the deck, so I have 9 "[outs](glossary:outs)" — cards that complete my hand.
+💭 You don't have a made hand - just nine-high. But you have four spades, which means you need one more spade to make a [flush](glossary:flush). That's called a [flush draw](glossary:flush-draw). There are 9 spades left in the deck, so you have 9 "[outs](glossary:outs)" - cards that complete your hand.
 
 **Villain bets $14** — other player folds.
 
@@ -627,7 +627,7 @@ Three players see the flop. Pot: $21.
 </hand-display>
 {% endrenderTemplate %}
 
-💭 Now I need to do the math. The pot is $35 and I need to call $14. That's getting about 2.5-to-1 on my money. My flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct [pot odds](glossary:pot-odds) say I need 29% to call... but if I hit, I'll probably win more money. That's called [implied odds](glossary:implied-odds). With position and a hidden draw, it's worth a call.
+💭 Time to do the math. The pot is $35 and you need to call $14. That's about 2.5-to-1 on your money. Your flush draw hits about 19% on the next card (9 outs × 2 = 18%). The direct [pot odds](glossary:pot-odds) say you need 29% to call... but if you hit, you'll probably win more money. That's called [implied odds](glossary:implied-odds). With position and a hidden draw, it's worth a call.
 
 **You call $14** — pot is now $49.
 
@@ -645,11 +645,11 @@ Three players see the flop. Pot: $21.
 </hand-display>
 {% endrenderTemplate %}
 
-💭 The 4♠! I made my flush — the third-best hand in poker. But I need to get paid. If I bet big, my opponent might fold. If they check, I can bet smaller and maybe get a call.
+💭 The 4♠! You made your flush - the third-best hand in poker. But you need to get paid. If you bet big, your opponent might fold. If they check, you can bet smaller and maybe get a call.
 
 **Villain checks** — your turn to act.
 
-💭 They checked — probably scared of the flush. I have the goods, but a huge bet will scare them away. A smaller bet looks like I might be stealing. Time to get some value.
+💭 They checked - probably scared of the flush. You have the goods, but a huge bet will scare them away. A smaller bet looks like you might be stealing. Time to get some value.
 
 **You bet $25** — Villain calls.
 
@@ -667,7 +667,7 @@ Three players see the flop. Pot: $21.
 </hand-display>
 {% endrenderTemplate %}
 
-💭 The J♦ doesn't change anything — I still have my flush. One more bet to extract value. They called the turn, so they have something worth calling with.
+💭 The J♦ doesn't change anything - you still have your flush. One more bet to extract value. They called the turn, so they have something worth calling with.
 
 **You bet $45** — Villain calls with K♦Q♦. You win with a flush.
 
@@ -677,7 +677,7 @@ Three players see the flop. Pot: $21.
 
 ---
 
-### Hand 3: I'm Behind — Save My Chips
+### Hand 3: You're Behind - Save Your Chips
 
 Same $1/$2 game. You're in the cutoff with $200 and pick up Q♠J♠ — a decent hand, but not premium.
 
@@ -699,11 +699,11 @@ Heads-up to the flop. Pot: $15.
 </hand-display>
 {% endrenderTemplate %}
 
-💭 Top pair with a jack [kicker](glossary:kicker). That's a solid hand. But wait — this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, my jack kicker loses to their ace or king.
+💭 Top pair with a jack [kicker](glossary:kicker). That's a solid hand. But wait - this opponent raised from early position. That usually means a strong hand: big pairs or big cards like AK, AQ, KQ. If they have AQ or KQ, your jack kicker loses to their ace or king.
 
 **Villain bets $10** — your turn to act.
 
-💭 One pair is usually good enough to call one bet. I'm not folding yet — they could have AK and missed, or a smaller pair. But I'm not raising either. Just call and see what they do next.
+💭 One pair is usually good enough to call one bet. You're not folding yet - they could have AK and missed, or a smaller pair. But you're not raising either. Just call and see what they do next.
 
 **You call $10** — pot is now $35.
 
@@ -721,11 +721,11 @@ Heads-up to the flop. Pot: $15.
 </hand-display>
 {% endrenderTemplate %}
 
-💭 The 9 doesn't help me. They're betting again — and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. My top pair with a jack kicker is looking weaker.
+💭 The 9 doesn't help. They're betting again - and bigger this time. That's two bets now. Most players at this level don't bluff twice. They usually have something. Your top pair with a jack kicker is looking weaker.
 
 **Villain bets $25** — your turn to act.
 
-💭 I'll call one more time, but I'm not happy about it. If they fire a third barrel on the river, I'm probably beat. A queen with a jack kicker just isn't strong enough against a [range](glossary:range) that raised preflop and bet twice.
+💭 Call one more time, but you're not happy about it. If they fire a third barrel on the river, you're probably beat. A queen with a jack kicker just isn't strong enough against a [range](glossary:range) that raised preflop and bet twice.
 
 **You call $25** — pot is now $85.
 
@@ -743,11 +743,11 @@ Heads-up to the flop. Pot: $15.
 </hand-display>
 {% endrenderTemplate %}
 
-💭 Blank river. Now they're betting $55 — almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that I beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 — all these hands crush me. The math doesn't add up.
+💭 Blank river. Now they're betting $55 - almost two-thirds of the pot. That's three streets of betting. At low stakes, this almost always means a real hand. What could they have that you beat? A bluff with AK? Maybe. But AQ, KQ, QQ, 99, 77, 33 - all these hands crush you. The math doesn't add up.
 
 **Villain bets $55** — decision time.
 
-💭 This is the hardest part of poker: folding a hand that looks good. Top pair feels strong. But three big bets from a tight player? They're not bluffing. I'm behind. Save the $55 for a better spot.
+💭 This is the hardest part of poker: folding a hand that looks good. Top pair feels strong. But three big bets from a tight player? They're not bluffing. You're behind. Save the $55 for a better spot.
 
 **You fold** — Villain shows Q♥K♥ (same pair, better kicker).
 
