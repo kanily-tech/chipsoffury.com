@@ -65,6 +65,33 @@ function cardImg(card, isHoleCard = false) {
   }
   return `<img src="/images/cards/${card}.png" alt="${card}" class="${cls}">`;
 }
+
+// Render a seat with cards and stack
+function renderSeat(seat) {
+  const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
+  const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
+  const label = seat.hero ? `You (${seat.label})` : seat.label;
+
+  let cardsHtml = '';
+  if (seat.folded) {
+    cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+  } else if (seat.cards === 'hidden') {
+    cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
+  } else if (seat.cards) {
+    const cards = seat.cards.split(',').map(c => c.trim());
+    cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
+  } else {
+    cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+  }
+
+  return `
+    <div class="hand-display__seat ${foldedClass} ${heroClass}">
+      <div class="hand-display__seat-label">${label}</div>
+      ${cardsHtml}
+      <div class="hand-display__seat-stack">$${seat.stack}</div>
+    </div>
+  `;
+}
 </script>
 
 <div class="hand-display" :class="'hand-display--' + street">
@@ -80,33 +107,6 @@ function cardImg(card, isHoleCard = false) {
       const seats = parseSeats($data.seats);
       const sb = seats.find(s => s.position === 'sb');
       const bb = seats.find(s => s.position === 'bb');
-
-      function renderSeat(seat) {
-        const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
-        const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
-        const label = seat.hero ? `You (${seat.label})` : seat.label;
-
-        let cardsHtml = '';
-        if (seat.folded) {
-          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
-        } else if (seat.cards === 'hidden') {
-          cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
-        } else if (seat.cards) {
-          const cards = seat.cards.split(',').map(c => c.trim());
-          cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
-        } else {
-          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
-        }
-
-        return `
-          <div class="hand-display__seat ${foldedClass} ${heroClass}">
-            <div class="hand-display__seat-label">${label}</div>
-            ${cardsHtml}
-            <div class="hand-display__seat-stack">$${seat.stack}</div>
-          </div>
-        `;
-      }
-
       renderSeat(sb) + renderSeat(bb);
       </script>
     </div>
@@ -116,33 +116,6 @@ function cardImg(card, isHoleCard = false) {
       <script webc:type="js">
       const seats = parseSeats($data.seats);
       const dealer = seats.find(s => s.position === 'dealer');
-
-      function renderSeat(seat) {
-        const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
-        const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
-        const label = seat.hero ? `You (${seat.label})` : seat.label;
-
-        let cardsHtml = '';
-        if (seat.folded) {
-          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
-        } else if (seat.cards === 'hidden') {
-          cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
-        } else if (seat.cards) {
-          const cards = seat.cards.split(',').map(c => c.trim());
-          cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
-        } else {
-          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
-        }
-
-        return `
-          <div class="hand-display__seat ${foldedClass} ${heroClass}">
-            <div class="hand-display__seat-label">${label}</div>
-            ${cardsHtml}
-            <div class="hand-display__seat-stack">$${seat.stack}</div>
-          </div>
-        `;
-      }
-
       renderSeat(dealer);
       </script>
 
@@ -188,33 +161,6 @@ function cardImg(card, isHoleCard = false) {
       <script webc:type="js">
       const seats = parseSeats($data.seats);
       const early = seats.find(s => s.position === 'early');
-
-      function renderSeat(seat) {
-        const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
-        const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
-        const label = seat.hero ? `You (${seat.label})` : seat.label;
-
-        let cardsHtml = '';
-        if (seat.folded) {
-          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
-        } else if (seat.cards === 'hidden') {
-          cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
-        } else if (seat.cards) {
-          const cards = seat.cards.split(',').map(c => c.trim());
-          cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
-        } else {
-          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
-        }
-
-        return `
-          <div class="hand-display__seat ${foldedClass} ${heroClass}">
-            <div class="hand-display__seat-label">${label}</div>
-            ${cardsHtml}
-            <div class="hand-display__seat-stack">$${seat.stack}</div>
-          </div>
-        `;
-      }
-
       renderSeat(early);
       </script>
     </div>
@@ -225,33 +171,6 @@ function cardImg(card, isHoleCard = false) {
       const seats = parseSeats($data.seats);
       const late = seats.find(s => s.position === 'late');
       const middle = seats.find(s => s.position === 'middle');
-
-      function renderSeat(seat) {
-        const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
-        const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
-        const label = seat.hero ? `You (${seat.label})` : seat.label;
-
-        let cardsHtml = '';
-        if (seat.folded) {
-          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
-        } else if (seat.cards === 'hidden') {
-          cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
-        } else if (seat.cards) {
-          const cards = seat.cards.split(',').map(c => c.trim());
-          cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
-        } else {
-          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
-        }
-
-        return `
-          <div class="hand-display__seat ${foldedClass} ${heroClass}">
-            <div class="hand-display__seat-label">${label}</div>
-            ${cardsHtml}
-            <div class="hand-display__seat-stack">$${seat.stack}</div>
-          </div>
-        `;
-      }
-
       renderSeat(late) + renderSeat(middle);
       </script>
     </div>
