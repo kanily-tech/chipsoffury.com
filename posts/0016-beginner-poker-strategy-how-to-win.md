@@ -551,7 +551,15 @@ the goods. Passive players don't bluff rivers. Save your hero calls for a differ
 
 ## Putting It Together: Three Real Hands
 
-Theory only goes so far. Here's what good decision-making looks like in practice.
+Reading about poker strategy is one thing. Seeing it in action is another.
+
+These three hands show the "Three Questions" framework from Step 3 in real situations. Each hand focuses on one question:
+
+1. **Am I ahead?** → Bet for value
+2. **Am I drawing?** → Check the math
+3. **Am I behind?** → Save my chips
+
+Follow the thought bubbles — they show exactly how a beginner should think through each decision.
 
 ### Hand 1: I'm Ahead — Bet for Value
 
