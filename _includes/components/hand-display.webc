@@ -1,17 +1,264 @@
+<script webc:setup>
+// Position display names for beginners
+const positionLabels = {
+  'sb': 'Small Blind',
+  'bb': 'Big Blind',
+  'early': 'Early',
+  'middle': 'Middle',
+  'late': 'Late',
+  'dealer': 'Dealer'
+};
+
+// Parse seat elements from children
+function parseSeats(children) {
+  const seats = [];
+  const seatOrder = ['sb', 'bb', 'early', 'middle', 'late', 'dealer'];
+
+  // Create a map from the provided children
+  const seatMap = {};
+  if (children) {
+    for (const child of children) {
+      if (child.position) {
+        seatMap[child.position] = child;
+      }
+    }
+  }
+
+  // Build seats array in fixed order
+  for (const pos of seatOrder) {
+    const seat = seatMap[pos];
+    if (seat) {
+      seats.push({
+        position: pos,
+        label: positionLabels[pos],
+        stack: seat.stack || '0',
+        cards: seat.cards || null,
+        folded: seat.folded !== undefined,
+        hero: seat.hero !== undefined
+      });
+    } else {
+      // Empty seat
+      seats.push({
+        position: pos,
+        label: positionLabels[pos],
+        stack: '0',
+        cards: null,
+        folded: true,
+        hero: false
+      });
+    }
+  }
+  return seats;
+}
+
+// Parse board cards
+function parseBoard(boardStr) {
+  if (!boardStr) return [];
+  return boardStr.split(',').map(c => c.trim()).filter(c => c);
+}
+
+// Generate card HTML
+function cardImg(card, isHoleCard = false) {
+  const cls = isHoleCard ? 'hand-display__hole-card' : 'hand-display__board-card';
+  if (card === 'back') {
+    return `<img src="/images/cards/card_back.png" alt="Hidden" class="${cls}">`;
+  }
+  return `<img src="/images/cards/${card}.png" alt="${card}" class="${cls}">`;
+}
+</script>
+
 <div class="hand-display" :class="'hand-display--' + street">
   <div class="hand-display__header">
     <span class="hand-display__street" @text="street.charAt(0).toUpperCase() + street.slice(1)"></span>
     <span class="hand-display__pot">Pot: $<span @text="pot"></span></span>
   </div>
-  <div class="hand-display__felt">
-    <div class="hand-display__board">
-      <div class="hand-display__board-group hand-display__board-group--flop"><script webc:type="js">const cards = board ? board.split(',').map(c => c.trim()) : [];let html = '';for (let i = 0; i < 3; i++) {if (cards[i]) {html += `<div class="hand-display__slot hand-display__slot--filled"><img src="/images/cards/${cards[i]}.png" alt="${cards[i]}" class="hand-display__board-card"></div>`;} else {html += `<div class="hand-display__slot hand-display__slot--empty"></div>`;}}html;</script></div>
-      <div class="hand-display__board-group hand-display__board-group--turn"><script webc:type="js">const cards = board ? board.split(',').map(c => c.trim()) : [];if (cards[3]) {`<div class="hand-display__slot hand-display__slot--filled"><img src="/images/cards/${cards[3]}.png" alt="${cards[3]}" class="hand-display__board-card"></div>`;} else {`<div class="hand-display__slot hand-display__slot--empty"></div>`;}</script></div>
-      <div class="hand-display__board-group hand-display__board-group--river"><script webc:type="js">const cards = board ? board.split(',').map(c => c.trim()) : [];if (cards[4]) {`<div class="hand-display__slot hand-display__slot--filled"><img src="/images/cards/${cards[4]}.png" alt="${cards[4]}" class="hand-display__board-card"></div>`;} else {`<div class="hand-display__slot hand-display__slot--empty"></div>`;}</script></div>
+
+  <div class="hand-display__table">
+    <!-- Top row: SB and BB -->
+    <div class="hand-display__row hand-display__row--top">
+      <script webc:type="js">
+      const seats = parseSeats($data.seats);
+      const sb = seats.find(s => s.position === 'sb');
+      const bb = seats.find(s => s.position === 'bb');
+
+      function renderSeat(seat) {
+        const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
+        const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
+        const label = seat.hero ? `You (${seat.label})` : seat.label;
+
+        let cardsHtml = '';
+        if (seat.folded) {
+          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+        } else if (seat.cards === 'hidden') {
+          cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
+        } else if (seat.cards) {
+          const cards = seat.cards.split(',').map(c => c.trim());
+          cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
+        } else {
+          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+        }
+
+        return `
+          <div class="hand-display__seat ${foldedClass} ${heroClass}">
+            <div class="hand-display__seat-label">${label}</div>
+            ${cardsHtml}
+            <div class="hand-display__seat-stack">$${seat.stack}</div>
+          </div>
+        `;
+      }
+
+      renderSeat(sb) + renderSeat(bb);
+      </script>
     </div>
-    <div class="hand-display__players">
-      <div class="hand-display__player hand-display__player--villain"><div class="hand-display__player-label" @text="villainPosition || 'Villain'"></div><div class="hand-display__hole-cards"><template webc:nokeep webc:if="villainCards === 'hidden' || !villainCards"><img src="/images/cards/card_back.png" alt="Hidden" class="hand-display__hole-card"><img src="/images/cards/card_back.png" alt="Hidden" class="hand-display__hole-card"></template><template webc:nokeep webc:if="villainCards && villainCards !== 'hidden'"><img webc:for="card of villainCards.split(',')" :src="'/images/cards/' + card.trim() + '.png'" :alt="card.trim()" class="hand-display__hole-card"></template></div><div class="hand-display__chip-stack">$<span @text="villainStack"></span></div></div>
-      <div class="hand-display__player hand-display__player--hero"><div class="hand-display__player-label">YOU (<span @text="yourPosition"></span>)</div><div class="hand-display__hole-cards"><img webc:for="card of yourCards.split(',')" :src="'/images/cards/' + card.trim() + '.png'" :alt="card.trim()" class="hand-display__hole-card"></div><div class="hand-display__chip-stack">$<span @text="yourStack"></span></div></div>
+
+    <!-- Middle row: Dealer, Board, Early -->
+    <div class="hand-display__row hand-display__row--middle">
+      <script webc:type="js">
+      const seats = parseSeats($data.seats);
+      const dealer = seats.find(s => s.position === 'dealer');
+
+      function renderSeat(seat) {
+        const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
+        const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
+        const label = seat.hero ? `You (${seat.label})` : seat.label;
+
+        let cardsHtml = '';
+        if (seat.folded) {
+          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+        } else if (seat.cards === 'hidden') {
+          cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
+        } else if (seat.cards) {
+          const cards = seat.cards.split(',').map(c => c.trim());
+          cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
+        } else {
+          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+        }
+
+        return `
+          <div class="hand-display__seat ${foldedClass} ${heroClass}">
+            <div class="hand-display__seat-label">${label}</div>
+            ${cardsHtml}
+            <div class="hand-display__seat-stack">$${seat.stack}</div>
+          </div>
+        `;
+      }
+
+      renderSeat(dealer);
+      </script>
+
+      <!-- Board in center -->
+      <div class="hand-display__board">
+        <script webc:type="js">
+        const boardCards = parseBoard(board);
+        let html = '';
+
+        // Flop (3 cards)
+        html += '<div class="hand-display__board-group">';
+        for (let i = 0; i < 3; i++) {
+          if (boardCards[i]) {
+            html += `<div class="hand-display__slot hand-display__slot--filled">${cardImg(boardCards[i])}</div>`;
+          } else {
+            html += '<div class="hand-display__slot hand-display__slot--empty"></div>';
+          }
+        }
+        html += '</div>';
+
+        // Turn
+        html += '<div class="hand-display__board-group">';
+        if (boardCards[3]) {
+          html += `<div class="hand-display__slot hand-display__slot--filled">${cardImg(boardCards[3])}</div>`;
+        } else {
+          html += '<div class="hand-display__slot hand-display__slot--empty"></div>';
+        }
+        html += '</div>';
+
+        // River
+        html += '<div class="hand-display__board-group">';
+        if (boardCards[4]) {
+          html += `<div class="hand-display__slot hand-display__slot--filled">${cardImg(boardCards[4])}</div>`;
+        } else {
+          html += '<div class="hand-display__slot hand-display__slot--empty"></div>';
+        }
+        html += '</div>';
+
+        html;
+        </script>
+      </div>
+
+      <script webc:type="js">
+      const seats = parseSeats($data.seats);
+      const early = seats.find(s => s.position === 'early');
+
+      function renderSeat(seat) {
+        const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
+        const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
+        const label = seat.hero ? `You (${seat.label})` : seat.label;
+
+        let cardsHtml = '';
+        if (seat.folded) {
+          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+        } else if (seat.cards === 'hidden') {
+          cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
+        } else if (seat.cards) {
+          const cards = seat.cards.split(',').map(c => c.trim());
+          cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
+        } else {
+          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+        }
+
+        return `
+          <div class="hand-display__seat ${foldedClass} ${heroClass}">
+            <div class="hand-display__seat-label">${label}</div>
+            ${cardsHtml}
+            <div class="hand-display__seat-stack">$${seat.stack}</div>
+          </div>
+        `;
+      }
+
+      renderSeat(early);
+      </script>
     </div>
+
+    <!-- Bottom row: Late and Middle -->
+    <div class="hand-display__row hand-display__row--bottom">
+      <script webc:type="js">
+      const seats = parseSeats($data.seats);
+      const late = seats.find(s => s.position === 'late');
+      const middle = seats.find(s => s.position === 'middle');
+
+      function renderSeat(seat) {
+        const foldedClass = seat.folded ? 'hand-display__seat--folded' : '';
+        const heroClass = seat.hero ? 'hand-display__seat--hero' : '';
+        const label = seat.hero ? `You (${seat.label})` : seat.label;
+
+        let cardsHtml = '';
+        if (seat.folded) {
+          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+        } else if (seat.cards === 'hidden') {
+          cardsHtml = `<div class="hand-display__hole-cards">${cardImg('back', true)}${cardImg('back', true)}</div>`;
+        } else if (seat.cards) {
+          const cards = seat.cards.split(',').map(c => c.trim());
+          cardsHtml = `<div class="hand-display__hole-cards">${cards.map(c => cardImg(c, true)).join('')}</div>`;
+        } else {
+          cardsHtml = '<div class="hand-display__hole-cards hand-display__hole-cards--empty"></div>';
+        }
+
+        return `
+          <div class="hand-display__seat ${foldedClass} ${heroClass}">
+            <div class="hand-display__seat-label">${label}</div>
+            ${cardsHtml}
+            <div class="hand-display__seat-stack">$${seat.stack}</div>
+          </div>
+        `;
+      }
+
+      renderSeat(late) + renderSeat(middle);
+      </script>
+    </div>
+  </div>
+
+  <!-- Action log -->
+  <div class="hand-display__actions" webc:if="actions">
+    <span @text="actions"></span>
   </div>
 </div>
