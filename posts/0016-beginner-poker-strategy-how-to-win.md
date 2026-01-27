@@ -45,7 +45,7 @@ committing too much. But calling is often the worst option. When you bet or rais
 folds, or you make the best hand. When you call, you can only win one way. This single habit - calling too much - is
 probably costing you more money than any other leak.
 
-**They ignore position.** Where you sit relative to the dealer button might seem like a minor detail. It's not. Acting
+**They ignore position.** Where you sit relative to the dealer [button](glossary:button) might seem like a minor detail. It's not. Acting
 last gives you information about what everyone else did before you have to decide. Acting first means you're flying
 blind. Good players play 2-3x more hands from late position than early position. Beginners play the same hands
 everywhere and wonder why they keep getting outmaneuvered.
@@ -71,14 +71,14 @@ Poker math sounds intimidating, but at the beginner level, you only need a handf
 
 - **Hand rankings:** Know instantly whether a flush beats a straight (it does) or whether two pair beats three of a
   kind (it doesn't). Confusion here costs you money.
-- **Pot odds:** If the pot is $30 and you need to call $10, you're getting 3:1 odds. That means you need to win more
+- **[Pot odds](glossary:pot-odds):** If the pot is $30 and you need to call $10, you're getting 3:1 odds. That means you need to win more
   than 25% of the time for the call to be profitable. If your draw only hits 20% of the time, fold.
-- **Expected Value (EV):** This is the average result of a decision if you made it thousands of times. A simple
+- **[Expected Value](glossary:expected-value) (EV):** This is the average result of a decision if you made it thousands of times. A simple
   formula: (% chance of winning × amount you'd win) minus (% chance of losing × amount you'd lose). Positive number =
   good decision. Negative number = bad decision. You don't need to calculate this at the table, but understanding the
   concept helps you recognize why certain plays are profitable and others aren't.
 
-Here's a practical example: You have a flush draw (9 outs, roughly 35% chance to hit by the river). The pot
+Here's a practical example: You have a [flush draw](glossary:flush-draw) (9 [outs](glossary:outs), roughly 35% chance to hit by the river). The pot
 is $100 and your opponent bets $20. The pot is now $120, and you need to call $20 to stay in. You're
 risking $20 to win $120 - that's 6:1 pot odds, meaning you only need to win about 14% of the time for calling to be
 profitable. Your 35% chance crushes that threshold. Clear call.
@@ -93,7 +93,7 @@ they bet those hands). This creates four basic types:
 
 - **Tight-aggressive (TAG):** Plays few hands, bets them hard. Respect their raises - they usually have it. This is the
   style you should aim for.
-- **Loose-passive (calling station):** Plays many hands, rarely raises, hates folding. Don't bluff these players. Just
+- **Loose-passive ([calling station](glossary:calling-station)):** Plays many hands, rarely raises, hates folding. Don't bluff these players. Just
   bet your good hands for value - they'll call with worse.
 - **Tight-passive (rock):** Plays few hands, rarely bets without [the nuts](glossary:nuts). Steal their blinds, but fold
   when they show aggression.
@@ -124,7 +124,7 @@ discipline = winning player.
 
 Here's something that frustrates every new player: you can make the perfect decision and still lose. You can get your
 money in with pocket aces against pocket kings - an 80/20 favorite - and watch a king hit the board. That's not bad
-play. That's variance.
+play. That's [variance](glossary:variance).
 
 **Variance is the gap between what should happen and what actually happens in the short term.** In any individual hand
 or session, luck dominates. The player making terrible decisions can win. The player making perfect decisions can lose.
@@ -206,7 +206,7 @@ straight (five sequential cards of mixed suits). The "plumbing" mnemonic fixes t
 **Mistake 2: The ace wrap-around.** The ace can be high (A-K-Q-J-10) or low (A-2-3-4-5). But it cannot wrap around.
 K-A-2-3-4 is *not* a straight. Beginners try this constantly. It doesn't work.
 
-**Mistake 3: Forgetting kickers.** When two players have the same hand type, the side cards (kickers) decide the winner.
+**Mistake 3: Forgetting [kickers](glossary:kicker).** When two players have the same hand type, the side cards (kickers) decide the winner.
 You have A-9, your opponent has A-5, the board shows A-K-7-4-2. You both have a pair of aces, but your 9 kicker beats
 their 5. Your best five cards: A-A-K-9-7. Theirs: A-A-K-7-5. You win.
 
@@ -257,12 +257,12 @@ fighting for in every hand.
 The **dealer button** (a small disc) marks whose turn it is to "deal." It moves clockwise after each hand, so the blinds
 rotate around the table.
 
-#### The Deal: Your Hole Cards
+#### The Deal: Your [Hole Cards](glossary:hole-cards)
 
 Each player receives two private cards face-down. Only you can see them. This hidden information is what makes poker
 poker - you know something your opponents don't, and they know something you don't.
 
-#### Preflop: The First Betting Round
+#### [Preflop](glossary:preflop): The First Betting Round
 
 Action starts with the player to the left of the big blind (the "under the gun" position). Each player can:
 
@@ -273,10 +273,9 @@ Action starts with the player to the left of the big blind (the "under the gun" 
 Action moves clockwise. The big blind acts last and has a special option: if nobody raised, they can "check" (stay in
 without adding money) since their blind already counts as a bet.
 
-#### The Flop: Three Community Cards
+#### The [Flop](glossary:flop): Three Community Cards
 
-After preflop betting ends, the dealer places three cards face-up in the center. These are **community cards** that
-everyone shares. A new betting round begins, but now the first active player to the left of the button acts first.
+After preflop betting ends, the dealer places three cards face-up in the center. These are **[community cards](glossary:community-cards)** that everyone shares. A new betting round begins, but now the first active player to the left of the button acts first.
 
 New options appear when nobody has bet yet:
 
@@ -285,21 +284,20 @@ New options appear when nobody has bet yet:
 
 Once someone bets, other players must call, raise, or fold - you can't check past a bet.
 
-#### The Turn: Fourth Community Card
+#### The [Turn](glossary:turn): Fourth Community Card
 
 After flop betting completes, a fourth community card is added. Another betting round follows the same pattern.
 
-#### The River: Fifth and Final Card
+#### The [River](glossary:river): Fifth and Final Card
 
 The fifth community card hits the board. This is the last betting round - make it count.
 
-#### Showdown: Who Wins?
+#### [Showdown](glossary:showdown): Who Wins?
 
 If two or more players remain after river betting, they reveal their cards. Each player makes their best five-card hand
 from any combination of their two hole cards and the five community cards. Best hand takes the pot.
 
-If everyone except one player folds at any point, the last player standing wins without showing their cards. This is why
-bluffing works - you can win without the best hand if everyone else gives up.
+If everyone except one player folds at any point, the last player standing wins without showing their cards. This is why [bluffing](glossary:bluff) works - you can win without the best hand if everyone else gives up.
 
 #### Quick Reference: What Actions Are Available?
 
@@ -307,7 +305,7 @@ bluffing works - you can win without the best hand if everyone else gives up.
 |-------------------|----------------------------------|
 | No bet facing you | Check, Bet, Fold                 |
 | Bet facing you    | Call, Raise, Fold                |
-| Any time          | All-in (bet everything you have) |
+| Any time          | [All-in](glossary:all-in) (bet everything you have) |
 
 #### Common Beginner Confusions
 
@@ -366,13 +364,12 @@ kicker (KQ, AK, AQ). You win small pots and lose big ones.
 **Weak Aces (A9, A8, A7 offsuit):** When an ace hits, you celebrate. Then your opponent shows AK and you're drawing
 nearly dead.
 
-**Small Pairs:** A pair of fives rarely holds up against multiple opponents. Small pairs make money by hitting a set (
-three of a kind) on the flop, which only happens 12% of the time. Play them from late position with deep stacks, and be
+**Small Pairs:** A pair of fives rarely holds up against multiple opponents. Small pairs make money by hitting a [set](glossary:set) (three of a kind) on the flop, which only happens 12% of the time. Play them from late position with deep stacks, and be
 ready to fold if you miss.
 
 #### The "Raise or Fold" Rule
 
-If a hand is worth playing, it's worth raising. Limping (just calling the big blind) is a losing strategy. Here's why:
+If a hand is worth playing, it's worth raising. [Limping](glossary:limp) (just calling the big blind) is a losing strategy. Here's why:
 
 1. You give up initiative. A raiser can win by everyone folding. A limper can't.
 2. You signal weakness. Good players will raise behind you constantly.
@@ -417,7 +414,7 @@ Sometimes you're stuck acting first. Minimize the damage:
 
 **Tighten up.** The blinds may act last preflop, but you'll act first on every street after. Stick to stronger hands.
 
-**Use the check-raise.** This is your primary weapon when out of position. Check to the aggressor, then raise when they
+**Use the [check-raise](glossary:check-raise).** This is your primary weapon when out of position. Check to the aggressor, then raise when they
 bet. It protects your checking range and builds pots with your strong hands.
 
 **Accept smaller pots.** With marginal hands out of position, keep pots manageable. Check-call rather than leading out.
@@ -442,16 +439,14 @@ questions:
 
 Strong made hands include top pair with a good kicker, two pair, sets (three of a kind), straights, flushes, and better.
 
-**If yes: Bet for value.** You want worse hands to call. Bet around half to two-thirds of the pot. Don't get cute -
+**If yes: [Bet for value](glossary:value-bet).** You want worse hands to call. Bet around half to two-thirds of the pot. Don't get cute -
 strong hands make money by building pots, not by trapping.
 
 #### Question 2: Do I Have a Strong Draw?
 
-Strong draws include flush draws (9 outs), open-ended straight draws (8 outs), and combination draws (flush draw +
-straight draw).
+Strong draws include flush draws (9 outs), open-ended [straight draws](glossary:straight-draw) (8 outs), and combination draws (flush draw + straight draw).
 
-**If yes: Consider semi-bluffing.** A semi-bluff is a bet with a hand that's not currently best but has a good chance to
-improve. You can win two ways: everyone folds now, or you hit your draw and win at showdown.
+**If yes: Consider [semi-bluffing](glossary:semi-bluff).** A semi-bluff is a bet with a hand that's not currently best but has a good chance to improve. You can win two ways: everyone folds now, or you hit your draw and win at showdown.
 
 Calculate your pot odds before calling a bet. Count your outs (cards that complete your hand), multiply by 2 for one
 card to come or by 4 for two cards. That's roughly your percentage chance of hitting.
@@ -568,7 +563,7 @@ to $12. Small blind folds, big blind calls, the limper calls. Pot: $37.
 
 **Flop: J♦8♣3♠**
 
-This is a great flop for your kings - no ace, no flush draws, your overpair is almost certainly best. How much to bet?
+This is a great flop for your kings - no ace, no flush draws, your [overpair](glossary:overpair) is almost certainly best. How much to bet?
 
 Your thinking: "I have an overpair on a dry board. Both opponents likely have hands like QJ, JT, 99, or random suited
 cards. I want value from worse hands - especially that loose player who loves calling. Two-thirds pot."
@@ -613,9 +608,9 @@ Your thinking: "I need a spade to win. Nine outs. The rule of 2-and-4 says multi
 the turn."
 
 The pot is $45 ($27 + $18). You need to call $18 to stay in. That's pot odds of about 2.5:1, meaning you need roughly
-28% equity. Your 18% on the turn alone doesn't quite get there.
+28% [equity](glossary:equity). Your 18% on the turn alone doesn't quite get there.
 
-But: you have implied odds. If you hit the flush, this tight player with a strong range will likely pay you off. And
+But: you have [implied odds](glossary:implied-odds). If you hit the flush, this tight player with a strong range will likely pay you off. And
 your ace might be good sometimes.
 
 You call. Pot: $63.
@@ -643,7 +638,7 @@ is right. When you hit, extract maximum value - opponents who've invested this m
 **Setup:** $1/$2 game. You're in the hijack with $220. A tight, experienced player in early position (UTG+1) opens to $
 10. This player has been quiet all night - when he enters pots, he has something real.
 
-You look at Q♠Q♥. Premium hand. You three-bet to $32.
+You look at Q♠Q♥. Premium hand. You [three-bet](glossary:three-bet) to $32.
 
 Everyone folds back to the original raiser. He thinks for ten seconds, then four-bets to $85.
 
@@ -685,12 +680,11 @@ plays work.
 
 ### Phase 2: Intermediate Concepts
 
-**Hand ranges:** Stop putting opponents on one exact hand. Instead, think about the *range* of hands they could have. "
+**Hand ranges:** Stop putting opponents on one exact hand. Instead, think about the *[range](glossary:range)* of hands they could have. "
 He raised from early position, so his range is weighted toward big pairs and strong aces." This shift from "he has AK"
 to "he has a range" changes everything.
 
-**Continuation betting:** When you raise preflop and get called, betting the flop is called a "c-bet." Learn when to
-c-bet (dry boards that favor your range) versus when to check (wet boards where your opponent likely connected).
+**Continuation betting:** When you raise preflop and get called, betting the flop is called a "[c-bet](glossary:c-bet)." Learn when to c-bet (dry boards that favor your range) versus when to check (wet boards where your opponent likely connected).
 
 **Board texture:** A flop of A-7-2 rainbow is "dry" - few draws, one player likely has the best hand. A flop of 9-8-7
 with two hearts is "wet" - many draws, ranges overlap. Adjust your aggression accordingly.
