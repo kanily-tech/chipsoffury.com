@@ -8,49 +8,49 @@
       <!-- Seats positioned clockwise starting from Button at bottom -->
 
       <!-- BOTTOM: Button (best seat) -->
-      <div class="table-positions__seat" style="bottom: -18px; left: 50%; transform: translateX(-50%);">
+      <div class="table-positions__seat" style="--x: 50%; --y: 97%;">
         <div class="table-positions__seat-marker table-positions__seat-marker--late">BTN</div>
         <div class="table-positions__seat-name">Button</div>
       </div>
 
       <!-- BOTTOM-LEFT: Small Blind -->
-      <div class="table-positions__seat" style="bottom: 2%; left: -4%;">
+      <div class="table-positions__seat" style="--x: 15%; --y: 88%;">
         <div class="table-positions__seat-marker table-positions__seat-marker--blind">SB</div>
         <div class="table-positions__seat-name">Small Blind</div>
       </div>
 
       <!-- LEFT: Big Blind -->
-      <div class="table-positions__seat" style="top: 50%; left: -18px; transform: translateY(-50%);">
+      <div class="table-positions__seat" style="--x: 3%; --y: 50%;">
         <div class="table-positions__seat-marker table-positions__seat-marker--blind">BB</div>
         <div class="table-positions__seat-name">Big Blind</div>
       </div>
 
       <!-- TOP-LEFT: UTG (first to act) -->
-      <div class="table-positions__seat" style="top: 2%; left: -4%;">
+      <div class="table-positions__seat" style="--x: 15%; --y: 12%;">
         <div class="table-positions__seat-marker table-positions__seat-marker--early">UTG</div>
         <div class="table-positions__seat-name">Under the Gun</div>
       </div>
 
       <!-- TOP: UTG+1 -->
-      <div class="table-positions__seat" style="top: -18px; left: 50%; transform: translateX(-50%);">
+      <div class="table-positions__seat" style="--x: 50%; --y: 3%;">
         <div class="table-positions__seat-marker table-positions__seat-marker--early">+1</div>
         <div class="table-positions__seat-name">UTG+1</div>
       </div>
 
       <!-- TOP-RIGHT: Middle Position -->
-      <div class="table-positions__seat" style="top: 2%; right: -4%;">
+      <div class="table-positions__seat" style="--x: 85%; --y: 12%;">
         <div class="table-positions__seat-marker table-positions__seat-marker--middle">MP</div>
         <div class="table-positions__seat-name">Middle</div>
       </div>
 
       <!-- RIGHT: Hijack -->
-      <div class="table-positions__seat" style="top: 50%; right: -18px; transform: translateY(-50%);">
+      <div class="table-positions__seat" style="--x: 97%; --y: 50%;">
         <div class="table-positions__seat-marker table-positions__seat-marker--middle">HJ</div>
         <div class="table-positions__seat-name">Hijack</div>
       </div>
 
       <!-- BOTTOM-RIGHT: Cutoff -->
-      <div class="table-positions__seat" style="bottom: 2%; right: -4%;">
+      <div class="table-positions__seat" style="--x: 85%; --y: 88%;">
         <div class="table-positions__seat-marker table-positions__seat-marker--late">CO</div>
         <div class="table-positions__seat-name">Cutoff</div>
       </div>

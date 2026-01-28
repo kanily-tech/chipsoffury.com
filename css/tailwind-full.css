@@ -1612,11 +1612,14 @@ html {
 /* Seat base styles */
 .table-positions__seat {
   position: absolute;
+  left: var(--x);
+  top: var(--y);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3px;
   z-index: 1;
+  transform: translate(-50%, -50%) translate(var(--dx, 0px), var(--dy, 0px));
 }
 
 .table-positions__seat-marker {
