@@ -34,7 +34,9 @@ npx wrangler deploy
 
 2. **Component Architecture**: WebC components in `_includes/components/` use inline Tailwind utilities (not @apply). Components are rendered using `{% renderTemplate "webc" %}` wrapper.
 
-3**Blog System**: Markdown posts in `posts/` directory use frontmatter and the `layouts/blog-post.html` layout.
+3. **Blog System**: Markdown posts in `posts/` directory use frontmatter and the `layouts/blog-post.html` layout.
+   - **URL slugs**: The numeric prefix is stripped from filenames. `0016-beginner-poker-guide.md` → `/posts/beginner-poker-guide/`
+   - **Frontmatter flags**: `draft: true` (hidden everywhere), `unlisted: true` (hidden from /blog but in sitemap), `featured: true` (highlighted in blog)
 
 ### Directory Structure
 
@@ -49,8 +51,43 @@ css/
 └── normalize.css        # CSS reset
 
 posts/               # Blog posts in Markdown
+glossary/            # Poker term definitions (*.md)
 _site/              # Build output (gitignored)
 ```
+
+### Poker Glossary System
+
+Interactive inline definitions for poker terms, designed for beginner-friendly content.
+
+**Usage in markdown:**
+```markdown
+destroys more [bankrolls](glossary:bankroll) than bad cards ever could.
+```
+
+**Creating a glossary term** (`glossary/bankroll.md`):
+```markdown
+---
+term: Bankroll
+---
+
+Your total poker funds set aside specifically for playing.
+
+- **Separate** from living expenses
+- Supports full markdown including images
+```
+
+**How it works:**
+1. `_data/glossary.js` reads all `glossary/*.md` files at build time
+2. Eleventy transform converts `[text](glossary:slug)` → clickable `<span class="poker-term">`
+3. Glossary data is embedded as JSON in blog pages
+4. JS powers the modal popup with formatted HTML content
+
+**Files involved:**
+- `glossary/*.md` — Term definitions
+- `_data/glossary.js` — Processes markdown to HTML
+- `.eleventy.js` — Transform for link syntax
+- `css/tailwind-full.css` — `.poker-term` and modal styles
+- `_includes/layouts/blog-post-tailwind.html` — Modal HTML + JS
 
 ### CSS Architecture
 

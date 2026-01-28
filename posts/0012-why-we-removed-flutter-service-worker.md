@@ -6,7 +6,6 @@ Fury webapp."
 devlogNumber: 7
 tags: ['post', 'devlog']
 author: Animesh
-layout: layouts/blog-post-tailwind.html
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css">

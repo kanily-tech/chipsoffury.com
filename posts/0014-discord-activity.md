@@ -5,7 +5,6 @@ description: "A developer's journey through Content Security Policy hell, the de
 devlogNumber: 9
 tags: [ 'post', 'devlog', 'flutter', 'web', 'discord' ]
 author: Kirill
-layout: layouts/blog-post-tailwind.html
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css">

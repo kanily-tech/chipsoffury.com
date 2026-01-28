@@ -12,6 +12,7 @@ module.exports = function(eleventyConfig) {
     // Ignore ai_docs folder and notes folder
     eleventyConfig.ignores.add("ai_docs/**");
     eleventyConfig.ignores.add("notes/**");
+    eleventyConfig.ignores.add("docs/**");
     eleventyConfig.ignores.add("README.md");
     eleventyConfig.ignores.add("CLAUDE.md");
     
@@ -134,6 +135,30 @@ module.exports = function(eleventyConfig) {
     // Draft posts are still built and accessible via direct URL
     eleventyConfig.addCollection("publishedPosts", function(collectionApi) {
         return collectionApi.getFilteredByTag("post").filter(post => !post.data.draft);
+    });
+
+    // Create glossary collection for poker term definitions
+    eleventyConfig.addCollection("glossary", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("glossary/*.md");
+    });
+
+    // Transform glossary links [text](glossary:slug) to poker-term spans
+    // This runs after markdown is processed
+    eleventyConfig.addTransform("glossaryLinks", function(content, outputPath) {
+        if (!outputPath || !outputPath.endsWith(".html")) {
+            return content;
+        }
+
+        // Helper to create poker-term span
+        const createPokerTerm = (slug, text) => {
+            return `<span class="poker-term" tabindex="0" role="button" data-term="${slug}" onclick="openPokerTermModal(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPokerTermModal(this)}">${text}</span>`;
+        };
+
+        // After markdown processing, [text](glossary:slug) becomes <a href="glossary:slug">text</a>
+        const markdownProcessedRegex = /<a href="glossary:([^"]+)">([^<]+)<\/a>/g;
+        content = content.replace(markdownProcessedRegex, (match, slug, text) => createPokerTerm(slug, text));
+
+        return content;
     });
 
     return {

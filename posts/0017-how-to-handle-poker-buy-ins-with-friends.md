@@ -5,8 +5,8 @@ description: "Handle poker buy-ins with friends the right way. Set fair stakes, 
 devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
 author: Animesh
-layout: layouts/blog-post-tailwind.html
 draft: true
+showAuthorBio: true
 ---
 
 If you’ve ever hosted or joined a home poker game, you already know the cards aren’t what cause problems — **money does**.

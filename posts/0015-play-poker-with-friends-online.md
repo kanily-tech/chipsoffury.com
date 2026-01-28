@@ -8,6 +8,7 @@ author: mayank-jain
 layout: layouts/pillar-post.html
 isPillar: true
 featured: true
+showAuthorBio: true
 ---
 
 Playing poker with friends online has never been easier. In 2025, beginner-friendly apps, private
@@ -109,7 +110,7 @@ reuse.
 
 ### TL;DR
 
-- [Chips of Fury](https://chipsoffury.com): web + iOS + Android, no signup, chip-tracking for live card nights, ~30s to
+- <a href="https://chipsoffury.com" target="_blank">Chips of Fury</a>: web + iOS + Android, no signup, chip-tracking for live card nights, ~30s to
   get on a table and start playing, 15+ variants, generous ad-free free plan
 - <a href="https://www.pokernow.club" target="_blank" rel="nofollow">PokerNow</a>: browser-only, no signup, quickest
   purely online table; no mobile apps or virtual poker chips.
@@ -322,7 +323,6 @@ keep strict time bounds and not have people coming and going.
 Here's everything you need to actually sit down and play. Keep this section open during your first few games. Most
 beginners do.
 
-<!-- TODO: hand-rankings-guide - "For the complete breakdown with printable charts and tie-breaker rules, see our full hand rankings guide." -->
 
 ### How a Hand Plays Out
 
@@ -359,7 +359,7 @@ Quick tip: If someone bets and you want to stay in, you *must* at least call. Yo
 
 ### Hand Rankings (What Beats What)
 
-This is the part that scares new players. Don't overthink it. After a few games, you'll recognize these instantly. Here's the full list from strongest to weakest:
+This is the part that scares new players. Don't overthink it. After a few games, you'll recognize these instantly. Here's the full list from strongest to weakest. For more detail with tie-breaker rules and examples, see our [complete hand rankings guide](/posts/poker-winning-hand-rankings/).
 
 <div class="not-prose">
 {% renderTemplate "webc" %}
@@ -407,16 +407,13 @@ Your final hand is the best five cards you can make from your two hole cards plu
 
 This confuses new players because you don't have to use both hole cards. If the board shows A♠ K♠ Q♠ J♠ 10♠, everyone has a royal flush regardless of their hole cards, so it would be a split pot.
 
-<!-- TODO: complete-hand-rankings-guide - "For more tie-breakers and edge cases, check out our complete hand rankings guide." -->
 
 ---
 
 ## Beginner Poker Strategies
 
 You don't need to study for months before your first game. These five concepts will put you ahead of most casual players
-immediately.
-
-<!-- TODO: beginner-poker-strategy-guide - "For a deeper framework, see our Beginner Poker Strategy Guide." -->
+immediately. For a deeper framework, see our [beginner poker strategy guide](/posts/beginner-poker-strategy-how-to-win/).
 
 ### 1. Play Fewer Hands (Seriously, Way Fewer)
 

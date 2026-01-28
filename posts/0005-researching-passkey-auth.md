@@ -1,5 +1,4 @@
 ---
-layout: layouts/blog-post-tailwind.html
 title: Can we go all in on Passkey based authentication?
 date: 2024-01-23
 author: Animesh

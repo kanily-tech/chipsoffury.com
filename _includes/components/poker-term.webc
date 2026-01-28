@@ -1,0 +1,14 @@
+<!--
+  Poker Term Glossary Component
+  Usage: <poker-term term="bankroll" definition="The total amount of money...">bankrolls</poker-term>
+-->
+<span
+  class="poker-term"
+  tabindex="0"
+  role="button"
+  :aria-label="'Learn about: ' + term"
+  :data-term="term"
+  :data-definition="definition"
+  onclick="openPokerTermModal(this)"
+  onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPokerTermModal(this)}"
+><slot></slot></span>

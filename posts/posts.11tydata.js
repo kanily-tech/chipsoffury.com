@@ -1,6 +1,6 @@
 module.exports = {
     // Apply default layout to all posts
-    layout: "layouts/blog-post.html",
+    layout: "layouts/blog-post-tailwind.html",
     
     // Compute the permalink by stripping the number prefix
     eleventyComputed: {

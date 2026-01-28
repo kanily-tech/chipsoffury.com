@@ -1,0 +1,247 @@
+<script webc:setup>
+// Position display names
+const positionLabels = {
+  'sb': 'Small Blind',
+  'bb': 'Big Blind',
+  'utg': 'UTG',
+  'utg1': 'UTG+1',
+  'mp': 'Middle',
+  'hj': 'Hijack',
+  'co': 'Cutoff',
+  'btn': 'Button'
+};
+
+// Standard position order (clockwise from SB)
+const positionOrder = ['sb', 'bb', 'utg', 'utg1', 'mp', 'hj', 'co', 'btn'];
+
+// Parse seats and rotate so hero is at bottom
+function parseAndRotateSeats(seatsJson) {
+  if (!seatsJson) return { hero: null, opponents: [] };
+
+  let seatsArray;
+  try {
+    seatsArray = JSON.parse(seatsJson);
+  } catch (e) {
+    return { hero: null, opponents: [] };
+  }
+
+  // Find hero
+  const hero = seatsArray.find(s => s.hero);
+  if (!hero) return { hero: null, opponents: [] };
+
+  // Get hero's index in position order
+  const heroIdx = positionOrder.indexOf(hero.position);
+
+  // Build opponents array in clockwise order from hero
+  const opponents = [];
+  for (let i = 1; i < positionOrder.length; i++) {
+    const pos = positionOrder[(heroIdx + i) % positionOrder.length];
+    const seat = seatsArray.find(s => s.position === pos);
+    if (seat) {
+      opponents.push({
+        ...seat,
+        label: positionLabels[seat.position] || seat.position
+      });
+    }
+  }
+
+  return {
+    hero: {
+      ...hero,
+      label: `You (${positionLabels[hero.position] || hero.position})`
+    },
+    opponents
+  };
+}
+
+// Parse board cards
+function parseBoard(boardStr) {
+  if (!boardStr) return [];
+  return boardStr.split(',').map(c => c.trim()).filter(c => c);
+}
+
+// Parse actions array
+function parseActions(actionsJson) {
+  if (!actionsJson) return [];
+  try {
+    return JSON.parse(actionsJson);
+  } catch (e) {
+    return [];
+  }
+}
+
+// Derive per-seat action display (e.g., $12, check) from action log
+const actionActorMap = {
+  'utg+1': 'utg1',
+  'utg': 'utg',
+  'small blind': 'sb',
+  'big blind': 'bb',
+  'middle': 'mp',
+  'hijack': 'hj',
+  'cutoff': 'co',
+  'button': 'btn'
+};
+
+function actionActorPosition(action, heroPosition) {
+  const match = action.match(/^(You|UTG\+1|UTG|Small Blind|Big Blind|Middle|Hijack|Cutoff|Button)\b/i);
+  if (!match) return null;
+  const actor = match[1].toLowerCase();
+  if (actor === 'you') return heroPosition || null;
+  return actionActorMap[actor] || null;
+}
+
+function actionDisplayValue(action) {
+  if (/checks?/i.test(action)) return 'check';
+  const amountMatch = action.match(/\$(\d+(?:\.\d+)?)/);
+  if (amountMatch) return `$${amountMatch[1]}`;
+  return '';
+}
+
+function deriveActionDisplays(actionsList, heroPosition) {
+  const displays = {};
+  for (const action of actionsList) {
+    const pos = actionActorPosition(action, heroPosition);
+    if (!pos) continue;
+    const display = actionDisplayValue(action);
+    if (display) displays[pos] = display;
+  }
+  return displays;
+}
+
+// Generate card HTML - isSmall for opponent hidden cards
+function cardImg(card, isSmall = false) {
+  const sizeClass = isSmall ? 'hand-display__card--small' : '';
+  if (card === 'back') {
+    return `<img src="/images/cards/card_back.png" alt="Hidden" class="hand-display__card ${sizeClass}">`;
+  }
+  return `<img src="/images/cards/${card}.png" alt="${card}" class="hand-display__card ${sizeClass}">`;
+}
+
+// Render hole cards - isHero determines card size
+function renderCards(seat, isHero = false) {
+  if (!seat.cards) {
+    return '';
+  }
+  // Folded players show greyed-out face-down cards
+  if (seat.folded) {
+    const isSmall = !isHero;
+    return `<div class="hand-display__cards hand-display__cards--folded">${cardImg('back', isSmall)}${cardImg('back', isSmall)}</div>`;
+  }
+  const isSmall = !isHero && seat.cards === 'hidden';
+  if (seat.cards === 'hidden') {
+    return `<div class="hand-display__cards hand-display__cards--hidden">${cardImg('back', isSmall)}${cardImg('back', isSmall)}</div>`;
+  }
+  const cards = seat.cards.split(',').map(c => c.trim());
+  // Revealed opponent cards shown at full size (showdown)
+  return `<div class="hand-display__cards">${cards.map(c => cardImg(c, false)).join('')}</div>`;
+}
+
+// Render bet circle
+function renderBet(seat, actionDisplays) {
+  const actionDisplay = actionDisplays && seat.position ? actionDisplays[seat.position] : '';
+  const betDisplay = actionDisplay || (seat.bet && seat.bet !== '0' ? `$${seat.bet}` : '');
+  if (!betDisplay) return '';
+  return `<div class="hand-display__bet">${betDisplay}</div>`;
+}
+</script>
+
+<div class="hand-display" :class="'hand-display--' + street"><div class="hand-display__header"><span class="hand-display__street" @text="street.toUpperCase()"></span></div><div class="hand-display__table"><script webc:type="js">
+const { hero, opponents } = parseAndRotateSeats(seats);
+const actionsList = parseActions(actions);
+const actionDisplays = deriveActionDisplays(actionsList, hero && hero.position ? hero.position : null);
+// Map opponents to visual slots based on table position:
+// - First clockwise from hero = immediately to hero's left
+// - Last clockwise before hero = immediately to hero's right
+const left = opponents[0] || null;      // First clockwise (e.g., SB when hero is BTN)
+const topLeft = opponents[1] || null;   // Second clockwise (e.g., BB)
+const topRight = opponents[2] || null;  // Third clockwise (e.g., UTG)
+const right = opponents[3] || null;     // Fourth clockwise (e.g., CO - just before hero)
+
+let html = '';
+
+// Top row: two opponents
+html += '<div class="hand-display__row hand-display__row--top">';
+if (topLeft) {
+  const foldedClass = topLeft.folded ? 'hand-display__seat--folded' : '';
+  html += `<div class="hand-display__seat hand-display__seat--top ${foldedClass}">`;
+  html += `<div class="hand-display__seat-label">${topLeft.label}</div>`;
+  html += renderCards(topLeft, false);
+  html += renderBet(topLeft, actionDisplays);
+  html += '</div>';
+}
+if (topRight) {
+  const foldedClass = topRight.folded ? 'hand-display__seat--folded' : '';
+  html += `<div class="hand-display__seat hand-display__seat--top ${foldedClass}">`;
+  html += `<div class="hand-display__seat-label">${topRight.label}</div>`;
+  html += renderCards(topRight, false);
+  html += renderBet(topRight, actionDisplays);
+  html += '</div>';
+}
+html += '</div>';
+
+// Board row: community cards + pot (centered, full width)
+html += '<div class="hand-display__row hand-display__row--board">';
+html += '<div class="hand-display__center">';
+const boardCards = parseBoard(board);
+html += '<div class="hand-display__board">';
+for (let i = 0; i < 5; i++) {
+  if (boardCards[i]) {
+    html += `<div class="hand-display__board-slot hand-display__board-slot--filled">${cardImg(boardCards[i])}</div>`;
+  } else {
+    html += '<div class="hand-display__board-slot hand-display__board-slot--empty"></div>';
+  }
+}
+html += '</div>';
+html += `<div class="hand-display__pot">Pot: $${pot}</div>`;
+html += '</div>';
+html += '</div>';
+
+// Side row: left and right opponents
+html += '<div class="hand-display__row hand-display__row--sides">';
+
+// Left opponent
+if (left) {
+  const foldedClass = left.folded ? 'hand-display__seat--folded' : '';
+  html += `<div class="hand-display__seat hand-display__seat--side ${foldedClass}">`;
+  html += `<div class="hand-display__seat-label">${left.label}</div>`;
+  html += renderCards(left, false);
+  html += renderBet(left, actionDisplays);
+  html += '</div>';
+} else {
+  html += '<div class="hand-display__seat-placeholder"></div>';
+}
+
+// Right opponent
+if (right) {
+  const foldedClass = right.folded ? 'hand-display__seat--folded' : '';
+  html += `<div class="hand-display__seat hand-display__seat--side ${foldedClass}">`;
+  html += `<div class="hand-display__seat-label">${right.label}</div>`;
+  html += renderCards(right, false);
+  html += renderBet(right, actionDisplays);
+  html += '</div>';
+} else {
+  html += '<div class="hand-display__seat-placeholder"></div>';
+}
+
+html += '</div>';
+
+// Bottom row: hero
+html += '<div class="hand-display__row hand-display__row--bottom">';
+if (hero) {
+  html += '<div class="hand-display__seat hand-display__seat--hero">';
+  html += renderBet(hero, actionDisplays);
+  html += `<div class="hand-display__seat-label">${hero.label}</div>`;
+  html += renderCards(hero, true);
+  html += '</div>';
+}
+html += '</div>';
+
+html;
+</script></div><div class="hand-display__actions"><script webc:type="js">
+const actionsList = parseActions(actions);
+let html = '';
+for (const action of actionsList) {
+  html += `<div class="hand-display__action">${action}</div>`;
+}
+html;
+</script></div></div>

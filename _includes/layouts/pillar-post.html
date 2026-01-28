@@ -117,6 +117,25 @@ layout: layouts/base-tailwind.html
           {{ content | safe }}
         </div>
 
+        {% if showAuthorBio and authorData and authorData.bio %}
+        <!-- Author Bio -->
+        <div class="mt-12 p-6 bg-gray-100 rounded-xl">
+          <p class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">About the Author</p>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">{{ authorData.name }}</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">{{ authorData.bio }}</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/authors/{{ authorData.slug }}/" class="text-purple-600 hover:text-purple-800 transition-colors">
+              → View all articles by {{ authorData.name }}
+            </a>
+            {% if authorData.website %}
+            <a href="{{ authorData.website }}" target="_blank" rel="nofollow noopener" class="text-purple-600 hover:text-purple-800 transition-colors">
+              → {{ authorData.website | replace("https://", "") | replace("http://", "") }}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+
         <!-- Tags -->
         {% if tags %}
         <div class="mt-12 pt-8 border-t border-gray-200">

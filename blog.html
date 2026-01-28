@@ -47,7 +47,7 @@ description: The official blog of Chips of Fury, a poker app for playing with fr
 
     <div class="space-y-4">
       {% for post in collections.publishedPosts | reverse %}
-      {% if not post.data.featured %}
+      {% if not post.data.featured and not post.data.unlisted %}
       <article class="bg-white border border-gray-200 rounded-lg hover:border-purple-300 transition-colors">
         <a href="{{ post.url }}" class="block p-6">
           <div class="flex items-baseline gap-3 mb-2 text-sm text-gray-600">
