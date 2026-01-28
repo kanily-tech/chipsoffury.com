@@ -37,8 +37,8 @@ Here's every poker hand ranked from strongest to weakest, with visual examples:
 
 **A-K-Q-J-10, all the same suit.**
 
-The rarest hand in poker. You'll see one roughly once every 650,000 hands. Some players go their entire lives without
-hitting one. When you do, take a picture - it's that rare.
+The rarest hand in poker. In Texas Hold'em, you'll see one roughly once every 31,000 hands. Some players go their entire
+lives without hitting one. When you do, take a picture - it's that rare.
 
 The royal flush is just the highest possible straight flush. If you have one, you cannot lose (though you can tie if the
 board shows the royal flush and both players play it).
@@ -82,12 +82,14 @@ because King beats Queen.
 
 **Five sequential cards, mixed suits.**
 
-10-9-8-7-6 is a straight. So is A-2-3-4-5 (called "the wheel" - the lowest possible straight). And A-K-Q-J-10 (the "
-broadway" straight, which becomes a royal flush if suited).
+10-9-8-7-6 is a straight. 
+
+So is A-2-3-4-5 (called "the wheel" - the lowest possible straight). Here the Ace counts as a 1.
+
+And A-K-Q-J-10 (the "broadway" straight, which becomes a royal flush if suited). Here the Ace counts as a 14.
 
 **Ace does not wrap-around**: The ace can be high (A-K-Q-J-10) or low (A-2-3-4-5). It cannot wrap around. 
-K-A-2-3-4 is
-NOT a straight.
+K-A-2-3-4 is NOT a straight. 
 
 ### 7. Three of a Kind (Trips/Set)
 
@@ -187,18 +189,20 @@ Forget about royal flushes - they're poster material, not practical poker.
 
 At casual home games, here's what wins most pots:
 
-| Hand Type       | Odds         | How Often You'll See It Win |
+| Hand Type       | Odds*        | How Often You'll See It Win |
 |-----------------|--------------|---------------------------|
-| High Card       | 1 in 2       | Sometimes (weak tables)   |
-| One Pair        | 1 in 2.4     | Very often                |
-| Two Pair        | 1 in 21      | Often                     |
-| Three of a Kind | 1 in 47      | Regularly                 |
-| Straight        | 1 in 255     | Occasionally              |
-| Flush           | 1 in 509     | Occasionally              |
-| Full House      | 1 in 694     | Sometimes                 |
-| Four of a Kind  | 1 in 4,165   | Rarely                    |
-| Straight Flush  | 1 in 72,000  | Almost never              |
-| Royal Flush     | 1 in 650,000 | Once in a lifetime        |
+| High Card       | 1 in 6       | Sometimes (weak tables)   |
+| One Pair        | 1 in 2       | Very often                |
+| Two Pair        | 1 in 4       | Often                     |
+| Three of a Kind | 1 in 21      | Regularly                 |
+| Straight        | 1 in 22      | Occasionally              |
+| Flush           | 1 in 33      | Occasionally              |
+| Full House      | 1 in 39      | Sometimes                 |
+| Four of a Kind  | 1 in 595     | Rarely                    |
+| Straight Flush  | 1 in 3,600   | Almost never              |
+| Royal Flush     | 1 in 31,000  | Once in a lifetime        |
+
+*Odds for Texas Hold'em (best 5 of 7 cards). Source: [Wizard of Odds](https://wizardofodds.com/games/poker/)
 
 If you make three of a kind, you're usually ahead. A full house at a friendly table wins almost everything. Don't chase
 the monster hands - focus on playing solid cards and making better pairs than your opponents.

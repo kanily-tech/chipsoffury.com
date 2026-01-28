@@ -22,9 +22,9 @@ What follows is a structured way to think through every hand of Texas Hold'em, f
 the final bet. You'll also find the core math concepts (simplified), the psychological reads that actually matter at
 beginner tables, and the discipline habits that separate players who profit from players who donate.
 
-Fair warning: some of this advice will feel boring. Fold more. Play fewer hands. Skip the flashy bluffs. That's not
-sexy, but it's what works. Professional players fold around 80% of their starting hands. If you're mostly folding,
-you're doing it right. The players who lose money are the ones who can't resist "just seeing one more flop."
+Fair warning: some of this advice will feel boring. Play fewer hands. Skip the flashy bluffs. That's not
+sexy, but it's what works. Professional players also fold many hands, more than you would think as shown in movies. The
+players who lose money are the ones who can't resist "just seeing one more flop."
 
 ---
 
@@ -36,9 +36,11 @@ Ask any experienced player what separates winners from losers at low-stakes tabl
 over and over:
 
 **They play too many hands.** New players look at their two cards and want to gamble. A-4? "Well, it's an ace." K-7
-suited? "Could make a flush." 9-6? "Might hit something." This thinking bleeds money. In poker, only about 20% of
-starting hands are profitable long-term winners. That means folding 80% of what you're dealt isn't pessimistic - it's
-correct.
+suited? "Could make a flush." 9-6? "Might hit something." This thinking bleeds money. In poker, depending on the 
+table situation, only about 20% to 40% of starting hands are profitable long-term winners. That means you are folding
+more hands than you play. Learning which hands to play takes time to master, and there is a lot of math and 
+discipline that goes into it. So it is not a skill that you can learn overnight. But as a beginner, it helps to keep 
+this in mind.
 
 **They call when they should fold or raise.** Beginners love calling. It feels safe - you're still in the hand without
 committing too much. But calling is often the worst option. When you bet or raise, you can win two ways: your opponent
@@ -65,25 +67,22 @@ every decision.
 Every winning poker player - from the weekend grinder to the World Series champion - relies on three interconnected
 skills. You don't need to master all three immediately, but you need to know they exist and start building each one.
 
-**Math: The Foundation You Can't Bluff Your Way Around**
+#### Math: The Foundation You Can't Bluff Your Way Around
 
 Poker math sounds intimidating, but at the beginner level, you only need a handful of concepts:
 
 - **Hand rankings:** Know instantly whether a flush beats a straight (it does) or whether two pair beats three of a
   kind (it doesn't). Confusion here costs you money.
-- **[Pot odds](glossary:pot-odds):** If the pot is $30 and you need to call $10, you're getting 3:1 odds. That means you need to win more
-  than 25% of the time for the call to be profitable. If your draw only hits 20% of the time, fold.
-- **[Expected Value](glossary:expected-value) (EV):** This is the average result of a decision if you made it thousands of times. A simple
+- **Pot odds:** If the pot is $30 and you need to call $10, you're getting 3:1 odds. That means you need to win more
+  than 25% of the time for the call to be profitable. If your draw only hits 20% of the time, fold. To be honest, 
+  this is an intermediate concept. Mentioning it here so that you get a taste of the math side of poker.
+  ([Learn More](glossary:pot-odds))
+- **Expected Value (EV):** This is the average result of a decision if you made it thousands of times. A simple
   formula: (% chance of winning × amount you'd win) minus (% chance of losing × amount you'd lose). Positive number =
-  good decision. Negative number = bad decision. You don't need to calculate this at the table, but understanding the
-  concept helps you recognize why certain plays are profitable and others aren't.
+  good decision. Negative number = bad decision. Again, this is an intermediate level concept, but it gives you some 
+  intuition about the math behind poker. [Learn More](glossary:expected-value)
 
-Here's a practical example: You have a [flush draw](glossary:flush-draw) (9 [outs](glossary:outs), roughly 35% chance to hit by the river). The pot
-is $100 and your opponent bets $20. The pot is now $120, and you need to call $20 to stay in. You're
-risking $20 to win $120 - that's 6:1 pot odds, meaning you only need to win about 14% of the time for calling to be
-profitable. Your 35% chance crushes that threshold. Clear call.
-
-**Psychology: Reading People, Not Minds**
+#### Psychology: Reading People, Not Minds
 
 Forget the Hollywood version of poker tells where someone's eye twitches and you know they're bluffing. At beginner
 tables, psychology is simpler: categorize players and adjust.
@@ -104,7 +103,7 @@ A quick tell that works at most tables: look at how someone stacks their chips. 
 loose, gambling style. Neat, organized stacks suggest a tighter, more methodical player. Not foolproof, but a useful
 first impression.
 
-**Discipline: The Multiplier That Makes Everything Else Work**
+#### Discipline: The Multiplier That Makes Everything Else Work
 
 You can know all the math and read every opponent perfectly, but without discipline, you'll still lose. Discipline
 means:
@@ -142,23 +141,25 @@ A healthier framework: after every session, ask yourself "Did I make good decisi
 perfect decisions and lose. You can make terrible decisions and win. Judging your play by results is like judging a
 weather forecaster by whether it rained today. Focus on the process.
 
-**Practical advice for surviving variance:**
+**How to keep your head straight at the table:**
 
-- **Play stakes you can afford to lose.** If losing a buy-in ruins your week, you're playing too high.
-- **Zoom out your timeline.** Don't evaluate your play over one session. Look at trends over weeks or months.
-- **Accept bad beats without spiraling.** When you lose with aces to a two-outer, acknowledge it sucks, then move on.
-  The cards don't owe you anything.
-- **Recognize when you're tilting.** If you catch yourself thinking "I deserve to win this one" or making revenge calls,
-  stop playing. Your emotional state is costing you money.
+- **Set a number you're comfortable losing before you sit down.** Whether it's $20 at a home game or a tournament buy-in,
+  decide upfront what you're okay walking away without. Then stick to it.
+- **Don't keep score session by session.** One bad night doesn't mean you're terrible at poker. One good night doesn't
+  mean you've figured it out. Your real skill shows up over dozens of games, not one.
+- **Laugh off the bad beats.** Your aces got cracked by someone who called three bets with 7-2? It happens. Groan, shake
+  your head, and deal the next hand. Getting mad won't un-lose those chips.
+- **Notice when you stop having fun.** If you're chasing losses, calling bets just to "get even," or snapping at your
+  friends - take a break. Grab a drink. Step outside. Frustrated poker is bad poker.
 
-The players who last in poker aren't necessarily the most talented - they're the ones who can handle losing with grace
-and keep making correct decisions anyway.
+The people who stick with this game aren't always the most naturally gifted. They're the ones who can lose a hand,
+shrug, and still make a smart play on the next one.
 
 ---
 
 ## The Poker Basics You Must Master First
 
-### Hand Rankings (Simple Memory Framework)
+### Hand Rankings
 
 Here's the complete list from strongest to weakest. For a deeper breakdown with examples and tie-breaker rules, see
 our [full hand rankings guide](/posts/poker-winning-hand-rankings/).
@@ -176,13 +177,12 @@ our [full hand rankings guide](/posts/poker-winning-hand-rankings/).
 | 9    | **One Pair**        | Two cards of same rank                                         | 1 in 2                |
 | 10   | **High Card**       | Nothing above; highest card plays                              | Most common           |
 
-*Probabilities for Texas Hold'em (best 5 of 7 cards). Source: Combinatorial analysis of 133,784,560 possible 7-card
-hands.
+*Probabilities for Texas Hold'em (best 5 of 7 cards). Source: [Wikipedia](https://en.wikipedia.org/wiki/Poker_probability).
 
 **The logic:** Rarer hands beat common hands. That's the entire system. A royal flush happens about once in 31,000
 Hold'em hands. A pair happens nearly every other hand. Rarity equals strength.
 
-#### The Memory Trick That Actually Works
+#### A Memory Trick for a common beginner confusion
 
 The part that trips up most beginners is the middle section: Full House, Flush, and Straight. Which beats which? Here's
 a visual that sticks:
@@ -204,43 +204,16 @@ So: **Full House > Flush > Straight**. The container beats what's inside it.
 straight (five sequential cards of mixed suits). The "plumbing" mnemonic fixes this.
 
 **Mistake 2: The ace wrap-around.** The ace can be high (A-K-Q-J-10) or low (A-2-3-4-5). But it cannot wrap around.
-K-A-2-3-4 is *not* a straight. Beginners try this constantly. It doesn't work.
+K-A-2-3-4 is *not* a straight. (A-2-3-4-5) is the lowest straight and loses to all other straights.
 
-**Mistake 3: Forgetting [kickers](glossary:kicker).** When two players have the same hand type, the side cards (kickers) decide the winner.
-You have A-9, your opponent has A-5, the board shows A-K-7-4-2. You both have a pair of aces, but your 9 kicker beats
-their 5. Your best five cards: A-A-K-9-7. Theirs: A-A-K-7-5. You win.
+**Mistake 3: Forgetting kickers.** When two players have the same hand type, the side cards (kickers) decide the 
+winner. [Learn More](glossary:kicker)
 
 #### What You'll Actually See at the Table
 
 Forget about royal flushes. In home games, most pots are won with one pair, two pair, or high card. If you make three of
 a kind, you're probably winning. A full house at a casual table usually takes down everything. The monster hands you see
 on TV highlights happen because they film thousands of hands and show you the five interesting ones.
-
----
-
-### Position Terminology (What Those Abbreviations Mean)
-
-We covered why position matters earlier - acting last gives you information, and good players play 2-3x more hands from
-late position. But if you watch poker content or join online discussions, you'll hear specific position names thrown
-around. Here's the glossary:
-
-**At a 9-player table, positions go clockwise from the dealer button:**
-
-| Abbreviation  | Name                 | Category | Why It's Called That                                                                                                                  |
-|---------------|----------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------|
-| **BTN**       | Button               | Late     | The dealer button sits here. Best seat at the table - you act last on every postflop street.                                          |
-| **CO**        | Cutoff               | Late     | One seat right of the button. Named because a raise here can "cut off" the button, stealing their positional advantage.               |
-| **HJ**        | Hijack               | Middle   | Two seats right of button. A raise can "hijack" the late position by folding out the cutoff and button.                               |
-| **LJ**        | Lojack               | Middle   | Three seats right of button. A wordplay on "hijack" - the "low" version of hijack.                                                    |
-| **UTG**       | Under the Gun        | Early    | First to act preflop, right after the big blind. Named for the pressure of acting first with no information - you're "under the gun." |
-| **UTG+1, +2** | Under the Gun +1, +2 | Early    | The next seats after UTG. Still early position, still tight.                                                                          |
-| **SB**        | Small Blind          | Blind    | Posts half the big blind. Acts second-to-last preflop but first postflop - worst position overall.                                    |
-| **BB**        | Big Blind            | Blind    | Posts the full blind. Acts last preflop but second postflop.                                                                          |
-
-**The simple version:** Button and cutoff are good. Under the gun is bad. Everything else is somewhere in between. If
-you never learn the fancy names, you'll be fine - just remember that seats closer to the button are stronger.
-
----
 
 ### How a Poker Hand Works (Preflop → Postflop → Showdown)
 
@@ -724,8 +697,8 @@ Three players see the flop. Pot: $21.
 <div>{% renderTemplate "webc" %}
 <hand-display street="flop" pot="21" board="ks,5s,2c"
   seats='[
-    {"position":"sb","stack":"199","bet":"1","folded":true},
-    {"position":"bb","stack":"198","bet":"2","folded":true},
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2","folded":true},
     {"position":"utg","cards":"hidden","stack":"194","bet":"6"},
     {"position":"co","cards":"hidden","stack":"194","bet":"6"},
     {"position":"btn","cards":"9s,8s","stack":"194","bet":"6","hero":true}
@@ -741,8 +714,8 @@ Three players see the flop. Pot: $21.
 <div>{% renderTemplate "webc" %}
 <hand-display street="flop" pot="35" board="ks,5s,2c"
   seats='[
-    {"position":"sb","stack":"199","bet":"1","folded":true},
-    {"position":"bb","stack":"198","bet":"2","folded":true},
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2","folded":true},
     {"position":"utg","cards":"hidden","stack":"180","bet":"14"},
     {"position":"co","cards":"hidden","stack":"194","bet":"6","folded":true},
     {"position":"btn","cards":"9s,8s","stack":"194","hero":true}
@@ -758,8 +731,8 @@ Three players see the flop. Pot: $21.
 <div>{% renderTemplate "webc" %}
 <hand-display street="turn" pot="49" board="ks,5s,2c,4s"
   seats='[
-    {"position":"sb","stack":"199","bet":"1","folded":true},
-    {"position":"bb","stack":"198","bet":"2","folded":true},
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2","folded":true},
     {"position":"utg","cards":"hidden","stack":"180","bet":"14"},
     {"position":"co","cards":"hidden","stack":"194","bet":"6","folded":true},
     {"position":"btn","cards":"9s,8s","stack":"180","bet":"14","hero":true}
@@ -779,13 +752,13 @@ Three players see the flop. Pot: $21.
 <div>{% renderTemplate "webc" %}
 <hand-display street="river" pot="99" board="ks,5s,2c,4s,jd"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"early","cards":"kd,qd","stack":"155"},
-    {"position":"late","stack":"194","folded":true},
-    {"position":"dealer","cards":"9s,8s","stack":"155","hero":true}
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2","folded":true},
+    {"position":"utg","cards":"kd,qd","stack":"155","bet":"25"},
+    {"position":"co","cards":"hidden","stack":"194","bet":"6","folded":true},
+    {"position":"btn","cards":"9s,8s","stack":"155","bet":"25","hero":true}
   ]'
-  actions='["You bet $25","Early calls $25"]'
+  actions='["You bet $25","UTG calls $25"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
@@ -810,13 +783,13 @@ Heads-up to the flop. Pot: $15.
 <div>{% renderTemplate "webc" %}
 <hand-display street="flop" pot="15" board="qd,7c,3h"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"early","cards":"hidden","stack":"194","bet":"6"},
-    {"position":"late","cards":"qs,js","stack":"194","bet":"6","hero":true},
-    {"position":"dealer","stack":"200","folded":true}
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2","folded":true},
+    {"position":"utg","cards":"hidden","stack":"194","bet":"6"},
+    {"position":"co","cards":"qs,js","stack":"194","bet":"6","hero":true},
+    {"position":"btn","cards":"hidden","stack":"200","folded":true}
   ]'
-  actions='["Early raises to $6","You call $6"]'
+  actions='["UTG raises to $6","You call $6","Button folds","Small Blind folds","Big Blind folds"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
@@ -831,13 +804,13 @@ Heads-up to the flop. Pot: $15.
 <div>{% renderTemplate "webc" %}
 <hand-display street="turn" pot="35" board="qd,7c,3h,9s"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"early","cards":"hidden","stack":"184","bet":"10"},
-    {"position":"late","cards":"qs,js","stack":"184","hero":true},
-    {"position":"dealer","stack":"200","folded":true}
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2","folded":true},
+    {"position":"utg","cards":"hidden","stack":"184","bet":"10"},
+    {"position":"co","cards":"qs,js","stack":"184","bet":"10","hero":true},
+    {"position":"btn","cards":"hidden","stack":"200","folded":true}
   ]'
-  actions='["Early bets $10","You call $10"]'
+  actions='["UTG bets $10","You call $10"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
@@ -852,13 +825,13 @@ Heads-up to the flop. Pot: $15.
 <div>{% renderTemplate "webc" %}
 <hand-display street="river" pot="85" board="qd,7c,3h,9s,2d"
   seats='[
-    {"position":"sb","stack":"199","folded":true},
-    {"position":"bb","stack":"198","folded":true},
-    {"position":"early","cards":"hidden","stack":"159","bet":"25"},
-    {"position":"late","cards":"qs,js","stack":"159","hero":true},
-    {"position":"dealer","stack":"200","folded":true}
+    {"position":"sb","cards":"hidden","stack":"199","bet":"1","folded":true},
+    {"position":"bb","cards":"hidden","stack":"198","bet":"2","folded":true},
+    {"position":"utg","cards":"qh,kh","stack":"104","bet":"55"},
+    {"position":"co","cards":"qs,js","stack":"159","hero":true},
+    {"position":"btn","cards":"hidden","stack":"200","folded":true}
   ]'
-  actions='["Early bets $25","You call $25"]'
+  actions='["UTG bets $55","You fold","UTG shows Q♥K♥"]'
 ></hand-display>
 {% endrenderTemplate %}</div>
 
@@ -870,7 +843,7 @@ Heads-up to the flop. Pot: $15.
 
 **You fold** — Villain shows Q♥K♥ (same pair, better kicker).
 
-**Result:** You lose $35 instead of $90. Your opponent had the same top pair with a king kicker — exactly what their betting line represented.
+**Result:** You lose $41 instead of $96. Your opponent had the same top pair with a king kicker — exactly what their betting line represented.
 
 > **The lesson:** One pair is a marginal hand. When a tight opponent bets three streets, believe them. The money you save by folding is just as valuable as the money you win. Discipline isn't exciting, but it's profitable.
 
@@ -950,6 +923,24 @@ accomplish? What range did I put them on? Would I play it differently?"
 ---
 
 ## Quick Reference Cheat Sheet
+
+### Position Names
+
+If you watch poker on YouTube or read strategy articles, you'll see abbreviations like "UTG" and "CO." Here's what they
+mean. The only thing that actually matters: seats closer to the dealer button are better because you act later and get
+more information.
+
+| Term                    | What it means                                                | Good or bad?                              |
+|-------------------------|--------------------------------------------------------------|-------------------------------------------|
+| **Button (BTN)**        | The dealer position. Acts last after the flop.               | Best seat at the table.                   |
+| **Cutoff (CO)**         | One seat to the right of the button.                         | Second-best seat.                         |
+| **Hijack (HJ)**         | Two seats to the right of the button.                        | Decent. Middle of the pack.               |
+| **Under the Gun (UTG)** | First person to act after the blinds.                        | Worst non-blind seat. Be careful here.    |
+| **Small Blind (SB)**    | Posts half the minimum bet. Acts first after the flop.       | Awkward position. You're out of position all hand. |
+| **Big Blind (BB)**      | Posts the full minimum bet. Gets to act last before the flop.| Forced to put money in, but at least you see a "free" flop if nobody raises. |
+
+**For home games:** Your table probably has 5-6 players, not the 9-player setup you see in tournaments. Fewer positions,
+same principle: closer to the button = better.
 
 ### Preflop Ranges (Simplified)
 

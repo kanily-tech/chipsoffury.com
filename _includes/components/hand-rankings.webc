@@ -3,7 +3,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">1.</span> <span class="hr-name">Royal Flush</span></div>
       <div class="hr-desc">A-K-Q-J-10, same suit</div>
-      <div class="hr-odds">1 in 650k</div>
+      <div class="hr-odds">1 in 31k</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/as.png" alt="A♠"><img src="/images/cards/ks.png" alt="K♠"><img src="/images/cards/qs.png" alt="Q♠"><img src="/images/cards/js.png" alt="J♠"><img src="/images/cards/10s.png" alt="10♠">
@@ -13,7 +13,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">2.</span> <span class="hr-name">Straight Flush</span></div>
       <div class="hr-desc">Five in sequence, same suit</div>
-      <div class="hr-odds">1 in 72k</div>
+      <div class="hr-odds">1 in 3.6k</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/9h.png" alt="9♥"><img src="/images/cards/8h.png" alt="8♥"><img src="/images/cards/7h.png" alt="7♥"><img src="/images/cards/6h.png" alt="6♥"><img src="/images/cards/5h.png" alt="5♥">
@@ -23,7 +23,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">3.</span> <span class="hr-name">Four of a Kind</span></div>
       <div class="hr-desc">Four of same rank</div>
-      <div class="hr-odds">1 in 4,165</div>
+      <div class="hr-odds">1 in 595</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/9s.png" alt="9♠"><img src="/images/cards/9h.png" alt="9♥"><img src="/images/cards/9d.png" alt="9♦"><img src="/images/cards/9c.png" alt="9♣"><img src="/images/cards/kh.png" alt="K♥" class="hr-kicker">
@@ -33,7 +33,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">4.</span> <span class="hr-name">Full House</span></div>
       <div class="hr-desc">Three + pair</div>
-      <div class="hr-odds">1 in 694</div>
+      <div class="hr-odds">1 in 39</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/jc.png" alt="J♣"><img src="/images/cards/jh.png" alt="J♥"><img src="/images/cards/jd.png" alt="J♦"><img src="/images/cards/4s.png" alt="4♠"><img src="/images/cards/4c.png" alt="4♣">
@@ -43,7 +43,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">5.</span> <span class="hr-name">Flush</span></div>
       <div class="hr-desc">Five of same suit</div>
-      <div class="hr-odds">1 in 509</div>
+      <div class="hr-odds">1 in 33</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/kd.png" alt="K♦"><img src="/images/cards/jd.png" alt="J♦"><img src="/images/cards/8d.png" alt="8♦"><img src="/images/cards/4d.png" alt="4♦"><img src="/images/cards/2d.png" alt="2♦">
@@ -53,7 +53,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">6.</span> <span class="hr-name">Straight</span></div>
       <div class="hr-desc">Five in sequence</div>
-      <div class="hr-odds">1 in 255</div>
+      <div class="hr-odds">1 in 22</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/10c.png" alt="10♣"><img src="/images/cards/9d.png" alt="9♦"><img src="/images/cards/8s.png" alt="8♠"><img src="/images/cards/7h.png" alt="7♥"><img src="/images/cards/6c.png" alt="6♣">
@@ -63,7 +63,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">7.</span> <span class="hr-name">Three of a Kind</span></div>
       <div class="hr-desc">Three of same rank</div>
-      <div class="hr-odds">1 in 47</div>
+      <div class="hr-odds">1 in 21</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/5s.png" alt="5♠"><img src="/images/cards/5h.png" alt="5♥"><img src="/images/cards/5d.png" alt="5♦"><img src="/images/cards/kc.png" alt="K♣" class="hr-kicker"><img src="/images/cards/8s.png" alt="8♠" class="hr-kicker">
@@ -73,7 +73,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">8.</span> <span class="hr-name">Two Pair</span></div>
       <div class="hr-desc">Two different pairs</div>
-      <div class="hr-odds">1 in 21</div>
+      <div class="hr-odds">1 in 4</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/as.png" alt="A♠"><img src="/images/cards/ad.png" alt="A♦"><img src="/images/cards/6h.png" alt="6♥"><img src="/images/cards/6c.png" alt="6♣"><img src="/images/cards/ks.png" alt="K♠" class="hr-kicker">
@@ -83,7 +83,7 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">9.</span> <span class="hr-name">One Pair</span></div>
       <div class="hr-desc">Two of same rank</div>
-      <div class="hr-odds">1 in 2.4</div>
+      <div class="hr-odds">1 in 2</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/qc.png" alt="Q♣"><img src="/images/cards/qh.png" alt="Q♥"><img src="/images/cards/9d.png" alt="9♦" class="hr-kicker"><img src="/images/cards/7c.png" alt="7♣" class="hr-kicker"><img src="/images/cards/3s.png" alt="3♠" class="hr-kicker">
@@ -93,10 +93,11 @@
     <div class="hr-left">
       <div class="hr-header"><span class="hr-rank">10.</span> <span class="hr-name">High Card</span></div>
       <div class="hr-desc">Highest card wins</div>
-      <div class="hr-odds">1 in 2</div>
+      <div class="hr-odds">1 in 6</div>
     </div>
     <span class="hr-cards">
       <img src="/images/cards/ah.png" alt="A♥"><img src="/images/cards/jd.png" alt="J♦" class="hr-kicker"><img src="/images/cards/8c.png" alt="8♣" class="hr-kicker"><img src="/images/cards/5s.png" alt="5♠" class="hr-kicker"><img src="/images/cards/2h.png" alt="2♥" class="hr-kicker">
     </span>
   </div>
+  <p class="hr-footnote">Odds for Texas Hold'em (best 5 of 7 cards)</p>
 </div>

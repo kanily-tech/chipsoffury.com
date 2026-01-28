@@ -945,6 +945,10 @@ html {
   opacity: 0.4;
 }
 
+.hr-footnote {
+  @apply text-xs text-gray-500 text-center mt-3 mb-0;
+}
+
 @media (min-width: 400px) {
   .hr-cards img {
     width: 36px;
