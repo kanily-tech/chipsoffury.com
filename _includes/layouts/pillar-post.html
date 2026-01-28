@@ -25,9 +25,9 @@ layout: layouts/base-tailwind.html
     <!-- Dropdown ToC panel -->
     <div id="mobile-toc-panel" class="hidden bg-white border-t border-gray-100 max-h-[60vh] overflow-y-auto shadow-lg">
       <nav class="px-4 py-3">
-        {% set toc = content | extractToc %}
+        {% set toc = content | extractToc(tocIncludeH3) %}
         {% for item in toc %}
-        <a href="#{{ item.id }}" class="block py-2 font-medium text-gray-700 hover:text-purple-600 transition-colors">{{ item.text | safe }}</a>
+        <a href="#{{ item.id }}" class="block py-2 {% if item.level == 3 %}pl-4 text-sm text-gray-600{% else %}font-medium text-gray-700{% endif %} hover:text-purple-600 transition-colors">{{ item.text | safe }}</a>
         {% endfor %}
       </nav>
     </div>
@@ -39,9 +39,9 @@ layout: layouts/base-tailwind.html
       <aside class="hidden lg:block lg:w-64 shrink-0">
         <nav class="sticky top-8">
           <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">On this page</div>
-          {% set toc = content | extractToc %}
+          {% set toc = content | extractToc(tocIncludeH3) %}
           {% for item in toc %}
-          <a href="#{{ item.id }}" class="toc-link" data-toc-id="{{ item.id }}">{{ item.text | safe }}</a>
+          <a href="#{{ item.id }}" class="toc-link {% if item.level == 3 %}toc-link--h3{% endif %}" data-toc-id="{{ item.id }}" data-toc-level="{{ item.level }}">{{ item.text | safe }}</a>
           {% endfor %}
         </nav>
       </aside>
@@ -323,11 +323,23 @@ layout: layouts/base-tailwind.html
     });
   });
 
+  // Close panel when clicking outside
+  document.addEventListener('click', function(e) {
+    const panel = document.getElementById('mobile-toc-panel');
+    const tocBar = document.getElementById('mobile-toc-bar');
+    if (!panel || panel.classList.contains('hidden')) return;
+
+    // Check if click is outside the TOC bar (which contains both toggle and panel)
+    if (!tocBar.contains(e.target)) {
+      panel.classList.add('hidden');
+    }
+  });
+
   // Active ToC highlighting based on scroll position
   // Only track headings that have a corresponding TOC entry
   const tocLinks = document.querySelectorAll('.toc-link[data-toc-id]');
   const tocIds = new Set(Array.from(tocLinks).map(link => link.dataset.tocId));
-  const headings = Array.from(document.querySelectorAll('h2[id]'))
+  const headings = Array.from(document.querySelectorAll('h2[id], h3[id]'))
     .filter(h => tocIds.has(h.id))
     .sort((a, b) => a.offsetTop - b.offsetTop);
 

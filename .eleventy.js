@@ -95,16 +95,29 @@ module.exports = function(eleventyConfig) {
         return str.substr(0, length) + '...';
     });
 
-    // Extract headings for Table of Contents (H2 only for cleaner ToC)
-    eleventyConfig.addFilter("extractToc", (content) => {
-        const regex = /<h2[^>]*id="([^"]*)"[^>]*>([\s\S]*?)<\/h2>/gi;
+    // Extract headings for Table of Contents (H2 by default, optionally H3)
+    eleventyConfig.addFilter("extractToc", (content, includeH3 = false) => {
         const headings = [];
+
+        // Extract H2 headings
+        const h2Regex = /<h2[^>]*id="([^"]*)"[^>]*>([\s\S]*?)<\/h2>/gi;
         let match;
-        while ((match = regex.exec(content)) !== null) {
-            // Strip HTML tags from heading text
+        while ((match = h2Regex.exec(content)) !== null) {
             const text = match[2].replace(/<[^>]*>/g, '').trim();
-            headings.push({ id: match[1], text });
+            headings.push({ id: match[1], text, level: 2, index: match.index });
         }
+
+        // Optionally extract H3 headings
+        if (includeH3) {
+            const h3Regex = /<h3[^>]*id="([^"]*)"[^>]*>([\s\S]*?)<\/h3>/gi;
+            while ((match = h3Regex.exec(content)) !== null) {
+                const text = match[2].replace(/<[^>]*>/g, '').trim();
+                headings.push({ id: match[1], text, level: 3, index: match.index });
+            }
+            // Sort by position in document
+            headings.sort((a, b) => a.index - b.index);
+        }
+
         return headings;
     });
 
