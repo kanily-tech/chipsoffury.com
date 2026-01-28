@@ -202,7 +202,7 @@ At casual home games, here's what wins most pots:
 | Straight Flush  | 1 in 3,600   | Almost never              |
 | Royal Flush     | 1 in 31,000  | Once in a lifetime        |
 
-*Odds for Texas Hold'em (best 5 of 7 cards). Source: [Wizard of Odds](https://wizardofodds.com/games/poker/)
+*Probabilities for Texas Hold'em (best 5 of 7 cards). Source: [Wikipedia](https://en.wikipedia.org/wiki/Poker_probability).
 
 If you make three of a kind, you're usually ahead. A full house at a friendly table wins almost everything. Don't chase
 the monster hands - focus on playing solid cards and making better pairs than your opponents.
