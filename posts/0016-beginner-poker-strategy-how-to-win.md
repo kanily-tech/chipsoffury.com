@@ -217,25 +217,23 @@ on TV highlights happen because they film thousands of hands and show you the fi
 
 ### How a Poker Hand Works (Preflop → Postflop → Showdown)
 
-Every Texas Hold'em hand follows the same structure. Understanding this flow is the foundation for everything else.
+Every Texas Hold'em hand follows the same structure.
 
 #### The Setup: Blinds and the Button
 
-Before any cards are dealt, two players post forced bets called [blinds](glossary:blinds). The **small blind** (one seat
-left of the dealer button) puts in half the minimum bet. The **big blind** (two seats left) puts in the full minimum.
-
-Why do blinds exist? Without them, everyone could just fold until they got pocket aces. Blinds create something worth
-fighting for in every hand.
+Before any cards are dealt, two players post mandatory bets called blinds. The **small blind** (one seat
+left of the dealer button) puts in a pre-set amount, often half the big blind. The **big blind** (two seats left) puts in
+the full minimum bet. [Learn More](glossary:blinds)
 
 The **dealer button** (a small disc) marks whose turn it is to "deal." It moves clockwise after each hand, so the blinds
 rotate around the table.
 
-#### The Deal: Your [Hole Cards](glossary:hole-cards)
+#### The Deal: Your Hole Cards
 
 Each player receives two private cards face-down. Only you can see them. This hidden information is what makes poker
-poker - you know something your opponents don't, and they know something you don't.
+poker - you know something your opponents don't, and they know something you don't. [Learn More](glossary:hole-cards)
 
-#### [Preflop](glossary:preflop): The First Betting Round
+#### Pre-flop: The First Betting Round
 
 Action starts with the player to the left of the big blind (the "under the gun" position). Each player can:
 
@@ -244,41 +242,39 @@ Action starts with the player to the left of the big blind (the "under the gun" 
 - **Raise:** Increase the bet, forcing others to match or fold
 
 Action moves clockwise. The big blind acts last and has a special option: if nobody raised, they can "check" (stay in
-without adding money) since their blind already counts as a bet.
+without adding money) since their blind already counts as a bet. [Learn More](glossary:preflop)
 
-#### The [Flop](glossary:flop): Three Community Cards
+#### The Flop: Three Community Cards
 
-After preflop betting ends, the dealer places three cards face-up in the center. These are **[community cards](glossary:community-cards)** that everyone shares. A new betting round begins, but now the first active player to the left of the button acts first.
+After preflop betting ends, the dealer places three cards face-up in the center. These are 
+**[community cards](glossary:community-cards)** that everyone shares. A new betting round begins, but now the first 
+active player to the left of the button acts first.
 
 New options appear when nobody has bet yet:
 
 - **Check:** Pass the action without betting (only available if nobody has bet this round)
 - **Bet:** Put chips in the pot, starting the action
 
-Once someone bets, other players must call, raise, or fold - you can't check past a bet.
+Once someone bets, other players must call, raise, or fold - you can't check past a bet. [Learn More](glossary:flop)
 
-#### The [Turn](glossary:turn): Fourth Community Card
+#### The Turn: Fourth Community Card
 
 After flop betting completes, a fourth community card is added. Another betting round follows the same pattern.
+[Learn More](glossary:turn)
 
-#### The [River](glossary:river): Fifth and Final Card
+#### The River: Fifth and Final Card
 
-The fifth community card hits the board. This is the last betting round - make it count.
+The fifth community card hits the board. This is the last betting round - make it count. [Learn More](glossary:river)
 
-#### [Showdown](glossary:showdown): Who Wins?
+#### Showdown: Who Wins?
 
 If two or more players remain after river betting, they reveal their cards. Each player makes their best five-card hand
 from any combination of their two hole cards and the five community cards. Best hand takes the pot.
 
-If everyone except one player folds at any point, the last player standing wins without showing their cards. This is why [bluffing](glossary:bluff) works - you can win without the best hand if everyone else gives up.
+If everyone except one player folds at any point, the last player standing wins without showing their cards. This is 
+why [bluffing](glossary:bluff) works - you can win without the best hand if everyone else gives up.
 
-#### Quick Reference: What Actions Are Available?
-
-| Situation         | Your Options                     |
-|-------------------|----------------------------------|
-| No bet facing you | Check, Bet, Fold                 |
-| Bet facing you    | Call, Raise, Fold                |
-| Any time          | [All-in](glossary:all-in) (bet everything you have) |
+[Learn More](glossary:showdown)
 
 #### Common Beginner Confusions
 
@@ -300,34 +296,69 @@ Here's your default decision-making framework. Follow this until the patterns be
 
 ### Step 1 — Preflop: What Hands to Play
 
-Most beginners play way too many hands. Professional players fold around 70-80% of their starting hands. That's not
+Most beginners play way too many hands. Professional players fold around 70% of their starting hands. That's not
 pessimism - it's math.
 
-The hands worth playing depend on your position. The later you act, the more hands become profitable.
+The hands worth playing depend on your position. The later you act, the more hands become profitable. And the weaker the players at your table, the more hands you can play profitably - a loose home game lets you see more flops than a tough casino table.
 
-#### Early Position (Under the Gun, UTG+1, UTG+2)
+#### Quick Guide to Hand Notation
 
-You're first to act with 5-8 players behind you. Any of them could have a monster. Play tight.
+Before we go further, here's how poker players write hands:
 
-**Raise with:** AA, KK, QQ, JJ, TT, AK (suited or offsuit), AQs, AQo, AJs, KQs
+- **AA, KK, QQ** = A pair of aces, kings, or queens
+- **AK** = Ace-King (any suits)
+- **AKs** = Ace-King suited (both cards same suit, like A♠K♠)
+- **AKo** = Ace-King offsuit (different suits, like A♠K♥)
+- **T** = Ten (we use T so every card is one character)
 
-**Fold everything else.** Yes, including KJ. Yes, including A9.
+Suited hands are stronger than offsuit because they can make flushes.
 
-#### Middle Position (Lojack, Hijack)
+#### Understanding Table Position
 
-You've seen some folds, so the chance of running into premium hands drops.
+Picture the poker table as a clock. The dealer button rotates each hand, and your position is measured by how far you are from acting.
 
-**Add:** 99, 88, 77, 66, ATs, A5s (wheel ace for straights/flushes), KJs, KQo, QJs, JTs, T9s
+<div class="not-prose">
+{% renderTemplate "webc" %}
+<table-positions></table-positions>
+{% endrenderTemplate %}
+</div>
 
-#### Late Position (Cutoff, Button)
+- **Early position** = First 2-3 seats to act after the blinds. You speak first, so everyone else gets to react to you.
+- **Middle position** = The next 2-3 seats. Some players have already folded, so you have more information.
+- **Late position** = The last 2 seats before the blinds (the button is best). You've seen what everyone else did.
 
-The button is the best seat in poker. You act last on every street after the flop, which means you have maximum
-information before every decision.
+The principle is simple: **the later you act, the more you know, and the more hands you can play.**
 
-**Add:** 55, 44, 33, 22, suited connectors down to 54s, A4s-A2s, K9s+, ATo, KJo, QJo
+#### Your Starting Hands by Position
 
-When it folds to you on the button or cutoff, you can raise with a wide range. The blinds fold to "steal" attempts
-50-60% of the time. Even mediocre hands become profitable when you're winning the blinds that often.
+**From Early Position (first to act):** Play only your strongest hands. You have no information and everyone acts after you.
+
+| Hand Type | Examples |
+|-----------|----------|
+| Big pairs | AA, KK, QQ, JJ, TT |
+| Ace-King | AK suited or offsuit |
+| Strong aces | AQ, AJ (suited preferred) |
+| King-Queen suited | KQs |
+
+**From Middle Position:** You've seen a few folds, so the chance someone has a monster drops. Add:
+
+| Hand Type | Examples |
+|-----------|----------|
+| Medium pairs | 99, 88, 77, 66 |
+| Good suited aces | AT suited, A5 suited |
+| Suited broadway | KJ, QJ, JT (all suited) |
+| Suited connectors | T9 suited |
+
+**From Late Position (button or one seat before it):** This is where poker gets fun. You act last after the flop, which is a huge advantage. Add:
+
+| Hand Type | Examples |
+|-----------|----------|
+| Small pairs | 55, 44, 33, 22 |
+| More suited connectors | 98s, 87s, 76s, 65s, 54s |
+| Weaker suited aces | A4s, A3s, A2s |
+| Good offsuit hands | AT, KJ, QJ offsuit |
+
+**Stealing the blinds:** When everyone folds to you on the button or one seat before it, you can raise with a wide range. The players in the blinds will fold more than half the time. Even mediocre hands become profitable when you're winning the blinds that often.
 
 #### The Hands That Trap Beginners
 

@@ -2,22 +2,36 @@
 term: River
 ---
 
-The fifth and final community card in Hold'em. Once the river hits, no more cards come, and the hand either goes to showdown or someone wins it right there.
+The fifth and final community card. After the river is dealt, no more cards come - the hand either goes to showdown or someone folds.
 
-**The sequence:**
-1. Preflop → 2. Flop (3 cards) → 3. Turn (4th card) → 4. **River (5th card)**
+<div style="text-align: center; margin: 16px 0;">
+<div style="display: flex; gap: 6px; justify-content: center; align-items: center;">
+<img src="/images/cards/ks.png" alt="K♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+<img src="/images/cards/9h.png" alt="9♥" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+<img src="/images/cards/4d.png" alt="4♦" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+<img src="/images/cards/jc.png" alt="J♣" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+<div style="width: 6px;"></div>
+<img src="/images/cards/2s.png" alt="2♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); outline: 2px solid #10b981;">
+</div>
+<div style="font-size: 11px; color: #6b7280; margin-top: 8px;">Flop + Turn → <span style="color: #10b981; font-weight: 500;">River card</span></div>
+</div>
 
-**Why it matters:**
-- Your hand is locked in. No more chances to improve
-- This is where big decisions happen. The biggest bets often come on the river
-- If you were on a draw, this card either saves you or ends your night
+**Where it fits:**
 
-**What happens on the river:**
-- **Value betting:** You hit something strong and want your opponent to call
-- **Bluff-catching:** You think your opponent might be bluffing and you're deciding whether to call
-- **Folding:** Your draw missed and you're out
+<div style="display: flex; align-items: center; gap: 8px; margin: 16px 0; flex-wrap: wrap;">
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">Preflop</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">Flop (3)</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">Turn (4th)</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 6px; padding: 8px 12px; font-size: 13px; font-weight: 500;">River (5th)</div>
+</div>
 
-**Where the name comes from:**
-Riverboat gamblers in 19th-century America. Some cheaters allegedly would wait until the boat reached the river before dealing the final card to reduce their chances of getting caught.
+After the river, there's one final betting round. If more than one player remains after betting, cards are revealed at showdown.
 
-**Being "rivered"** means your opponent caught their card on the river to beat you. Usually feels bad because you were winning the entire hand.
+**Why "river"?** The name comes from riverboat gambling in 19th-century America. One story says cheaters would deal the final card only after the boat reached the river - making it harder to get caught and thrown overboard.
+
+**"I got rivered"** = Your opponent caught the exact card they needed on the river to beat you. Usually said with frustration, since you were ahead the whole hand.
+
+**Also called:** Fifth street.

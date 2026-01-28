@@ -2,25 +2,35 @@
 term: Preflop
 ---
 
-The first betting round in Hold'em, before any community cards are dealt.
+The first phase of a Texas Hold'em hand - after you get your two cards but before any community cards hit the board.
 
-**What happens preflop:**
-1. Blinds are posted
-2. Each player gets two hole cards
-3. Betting starts with the player left of the big blind (UTG)
-4. Players fold, call, or raise
-5. Action continues until all bets are matched
+**The sequence:**
 
-**Why it matters:**
-- Which hands you start with shapes your profit over time
-- Your position at the table determines what hands you can play
-- Raises give you the upper hand for the rest of the hand
-- Most hands end preflop because someone folds
+<div style="display: flex; align-items: center; gap: 8px; margin: 16px 0; flex-wrap: wrap;">
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">
+<span style="font-weight: 600;">1.</span> Blinds posted
+</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">
+<span style="font-weight: 600;">2.</span> Cards dealt
+</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 6px; padding: 8px 12px; font-size: 13px; font-weight: 500;">
+<span style="font-weight: 600;">3.</span> Preflop betting
+</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">
+<span style="font-weight: 600;">4.</span> Flop
+</div>
+</div>
 
-**Basic preflop strategy:**
-- Play tight early in position, looser when you're late
-- Raise or fold. Don't limp (just call the big blind)
-- Respect raises from tight players in early position
-- Steal the blinds from late position when the table folds to you
+**Who acts first:** The player to the left of the big blind (called "under the gun" or UTG). Action moves clockwise.
 
-Professional players fold 70-80% of their hands preflop. If you're folding less than that, you're probably playing too many hands.
+**Your options:**
+- **Fold** - Give up your hand
+- **Call** - Match the current bet (at minimum, the big blind)
+- **Raise** - Increase the bet
+
+The round ends when everyone has either folded or put in the same amount. Then the flop is dealt.
+
+**Why "preflop"?** The flop is the first three community cards. "Pre" just means before - so preflop = before the flop comes out.

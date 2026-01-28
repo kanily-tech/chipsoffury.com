@@ -2,12 +2,28 @@
 term: Showdown
 ---
 
-When everyone stops betting and reveals their cards to see who has the best hand.
+The final reveal. When all betting is done and two or more players are still in the hand, everyone shows their cards to see who wins.
 
-Here's what actually happens: the last person who bet or raised shows their cards first, then everyone else reveals. You make your best five-card hand using your two hole cards plus the five community cards on the board. Highest hand wins the pot. If two hands are identical, you split it.
+**Where it fits:**
 
-You don't have to show your cards if you fold before anyone goes all-in. So if everyone else reveals and you know you're beat, just muck your hand and move on.
+<div style="display: flex; align-items: center; gap: 8px; margin: 16px 0; flex-wrap: wrap;">
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">Preflop</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">Flop</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">Turn</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px;">River</div>
+<span style="color: #9ca3af;">→</span>
+<div style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 6px; padding: 8px 12px; font-size: 13px; font-weight: 500;">Showdown</div>
+</div>
 
-Not every hand goes to showdown. Sometimes everyone folds and one player wins without anyone seeing the cards. That's a non-showdown win.
+**Who shows first?** The player who made the last bet or raise on the river. If everyone checked, it starts with the first player to the left of the dealer button.
 
-You'll see "WTSD" in poker stats sometimes. It stands for "went to showdown" and shows how often you actually reach this point. If your WTSD is really high, you're probably calling too much. Too low and you might be folding under pressure too easily.
+**Do I have to show if I lose?** No. Once you see an opponent's winning hand, you can "muck" (fold without showing). Many players do this to hide information about what they were playing.
+
+**Tip for beginners:** Just flip your cards over and let the dealer figure out who wins. Beginners sometimes misread their hands and muck winners by accident. The dealer won't let that happen if your cards are face-up.
+
+**Don't slow roll.** If you have the winning hand, show it promptly. Making your opponent wait while you pretend to think about it is considered rude. Just flip your cards over.
+
+Not every hand reaches showdown - often everyone folds and one player wins without revealing anything.
