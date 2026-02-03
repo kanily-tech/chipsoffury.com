@@ -38,7 +38,7 @@ npx wrangler deploy
    - **`blog/`**: Dev blog / technical posts → `/blog/<slug>/`
    - **`learn/`**: User-facing educational content → `/learn/<slug>/`
    - **URL slugs**: The numeric prefix is stripped from filenames. `0001-hello-world.md` → `/blog/hello-world/`
-   - **Frontmatter flags**: `draft: true` (hidden everywhere), `unlisted: true` (hidden from /blog listing but in sitemap), `featured: true` (highlighted in blog)
+   - **Frontmatter flags**: `draft: true` (hidden everywhere), `unlisted: true` (hidden from /blog listing but in sitemap)
 
 ### Directory Structure
 

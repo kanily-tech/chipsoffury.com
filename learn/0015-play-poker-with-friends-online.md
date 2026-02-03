@@ -7,7 +7,6 @@ tags: [ 'post', 'guide' ]
 author: mayank-jain
 layout: layouts/pillar-post.html
 isPillar: true
-featured: true
 showAuthorBio: true
 ---
 
