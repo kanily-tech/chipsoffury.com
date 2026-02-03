@@ -34,9 +34,11 @@ npx wrangler deploy
 
 2. **Component Architecture**: WebC components in `_includes/components/` use inline Tailwind utilities (not @apply). Components are rendered using `{% renderTemplate "webc" %}` wrapper.
 
-3. **Blog System**: Markdown posts in `posts/` directory use frontmatter and the `layouts/blog-post.html` layout.
-   - **URL slugs**: The numeric prefix is stripped from filenames. `0016-beginner-poker-guide.md` → `/posts/beginner-poker-guide/`
-   - **Frontmatter flags**: `draft: true` (hidden everywhere), `unlisted: true` (hidden from /blog but in sitemap), `featured: true` (highlighted in blog)
+3. **Content System**: Two content directories with different purposes:
+   - **`blog/`**: Dev blog / technical posts → `/blog/<slug>/`
+   - **`learn/`**: User-facing educational content → `/learn/<slug>/`
+   - **URL slugs**: The numeric prefix is stripped from filenames. `0001-hello-world.md` → `/blog/hello-world/`
+   - **Frontmatter flags**: `draft: true` (hidden everywhere), `unlisted: true` (hidden from /blog listing but in sitemap)
 
 ### Directory Structure
 
@@ -50,7 +52,8 @@ css/
 ├── chips-of-fury.webflow.css  # Legacy Webflow styles
 └── normalize.css        # CSS reset
 
-posts/               # Blog posts in Markdown
+blog/                # Dev blog / technical posts in Markdown
+learn/               # User-facing educational content in Markdown
 glossary/            # Poker term definitions (*.md)
 _site/              # Build output (gitignored)
 ```

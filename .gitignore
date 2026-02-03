@@ -30,3 +30,6 @@ venv27/
 
 _site/
 temp/
+
+# Git worktrees
+.worktrees/

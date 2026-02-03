@@ -1,0 +1,37 @@
+# Blog posts (0001-0014)
+/posts/hello-world /blog/hello-world/ 301
+/posts/hello-world/ /blog/hello-world/ 301
+/posts/poker-chip-distribution /blog/poker-chip-distribution/ 301
+/posts/poker-chip-distribution/ /blog/poker-chip-distribution/ 301
+/posts/fly-io-issues /blog/fly-io-issues/ 301
+/posts/fly-io-issues/ /blog/fly-io-issues/ 301
+/posts/build-automation-flutter-app /blog/build-automation-flutter-app/ 301
+/posts/build-automation-flutter-app/ /blog/build-automation-flutter-app/ 301
+/posts/researching-passkey-auth /blog/researching-passkey-auth/ 301
+/posts/researching-passkey-auth/ /blog/researching-passkey-auth/ 301
+/posts/auth-framework-or-roll-your-own /blog/auth-framework-or-roll-your-own/ 301
+/posts/auth-framework-or-roll-your-own/ /blog/auth-framework-or-roll-your-own/ 301
+/posts/card-randomization-thoughts /blog/card-randomization-thoughts/ 301
+/posts/card-randomization-thoughts/ /blog/card-randomization-thoughts/ 301
+/posts/dart-streams-patterns-for-game-backends /blog/dart-streams-patterns-for-game-backends/ 301
+/posts/dart-streams-patterns-for-game-backends/ /blog/dart-streams-patterns-for-game-backends/ 301
+/posts/passkeys-wtf /blog/passkeys-wtf/ 301
+/posts/passkeys-wtf/ /blog/passkeys-wtf/ 301
+/posts/implementing-straddle /blog/implementing-straddle/ 301
+/posts/implementing-straddle/ /blog/implementing-straddle/ 301
+/posts/poker-ui-comparison /blog/poker-ui-comparison/ 301
+/posts/poker-ui-comparison/ /blog/poker-ui-comparison/ 301
+/posts/why-we-removed-flutter-service-worker /blog/why-we-removed-flutter-service-worker/ 301
+/posts/why-we-removed-flutter-service-worker/ /blog/why-we-removed-flutter-service-worker/ 301
+/posts/flutter-web-cache-busting-strategy /blog/flutter-web-cache-busting-strategy/ 301
+/posts/flutter-web-cache-busting-strategy/ /blog/flutter-web-cache-busting-strategy/ 301
+/posts/discord-activity /blog/discord-activity/ 301
+/posts/discord-activity/ /blog/discord-activity/ 301
+
+# Learn posts (0015-0020, excluding drafts)
+/posts/play-poker-with-friends-online /learn/play-poker-with-friends-online/ 301
+/posts/play-poker-with-friends-online/ /learn/play-poker-with-friends-online/ 301
+/posts/beginner-poker-strategy-how-to-win /learn/beginner-poker-strategy-how-to-win/ 301
+/posts/beginner-poker-strategy-how-to-win/ /learn/beginner-poker-strategy-how-to-win/ 301
+/posts/poker-winning-hand-rankings /learn/poker-winning-hand-rankings/ 301
+/posts/poker-winning-hand-rankings/ /learn/poker-winning-hand-rankings/ 301

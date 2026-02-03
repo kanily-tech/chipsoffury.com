@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.ignores.add("docs/**");
     eleventyConfig.ignores.add("README.md");
     eleventyConfig.ignores.add("CLAUDE.md");
+    eleventyConfig.ignores.add("AGENTS.md");
     
     // Copy `img/` to `_site/img`
     eleventyConfig.addPassthroughCopy("images");
@@ -30,6 +31,9 @@ module.exports = function(eleventyConfig) {
     
     // Copy robots.txt to root
     eleventyConfig.addPassthroughCopy("robots.txt");
+
+    // Copy _redirects for Cloudflare
+    eleventyConfig.addPassthroughCopy("_redirects");
 
     // Compile Tailwind CSS after 11ty builds the HTML
     eleventyConfig.on("eleventy.after", async () => {
@@ -144,10 +148,28 @@ module.exports = function(eleventyConfig) {
         });
     });
 
-    // Create publishedPosts collection (excludes drafts)
-    // Draft posts are still built and accessible via direct URL
+    // Create publishedPosts collection (excludes drafts, includes unlisted)
+    // Used by sitemap - unlisted posts should appear in sitemap
     eleventyConfig.addCollection("publishedPosts", function(collectionApi) {
-        return collectionApi.getFilteredByTag("post").filter(post => !post.data.draft);
+        return collectionApi.getFilteredByGlob("blog/*.md")
+            .filter(post => !post.data.draft)
+            .reverse();
+    });
+
+    // Create listedPosts collection (excludes drafts AND unlisted)
+    // Used by /blog listing page
+    eleventyConfig.addCollection("listedPosts", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("blog/*.md")
+            .filter(post => !post.data.draft && !post.data.unlisted)
+            .reverse();
+    });
+
+    // Create publishedLearnPosts collection (excludes drafts)
+    // Used by sitemap
+    eleventyConfig.addCollection("publishedLearnPosts", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("learn/*.md")
+            .filter(post => !post.data.draft)
+            .reverse();
     });
 
     // Create glossary collection for poker term definitions

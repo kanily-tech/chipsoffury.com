@@ -8,7 +8,7 @@ tags: ['post', 'devlog']
 It seems the internet gets upset at the idea of rolling your own auth code. I get it, it is a complex problem, 
 and there are many well written authentication providers out there. 
 
-I was even [delving into a few of them](/posts/researching_passkey_auth) yesterday. I was flabbergasted to see
+I was even [delving into a few of them](/blog/researching-passkey-auth/) yesterday. I was flabbergasted to see
 how large these repos are. For instance, at the time of writing 
 - Ory Kratos has a [quarter of a million lines of code](https://ghloc.vercel.app/ory/kratos?branch=master)
 - Hanko comes in slightly lighter at about [120K LOC](https://ghloc.vercel.app/teamhanko/hanko?branch=main) 

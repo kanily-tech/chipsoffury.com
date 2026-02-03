@@ -164,7 +164,7 @@ shrug, and still make a smart play on the next one.
 ### Hand Rankings
 
 Here's the complete list from strongest to weakest. For a deeper breakdown with examples and tie-breaker rules, see
-our [full hand rankings guide](/posts/poker-winning-hand-rankings/).
+our [full hand rankings guide](/learn/poker-winning-hand-rankings/).
 
 | Rank | Hand                | What It Looks Like                                             | How Often in Hold'em* |
 |------|---------------------|----------------------------------------------------------------|-----------------------|
