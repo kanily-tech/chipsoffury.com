@@ -10,6 +10,13 @@ layout: layouts/base-tailwind.html
 <article class="bg-gray-50 min-h-screen" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="max-w-3xl mx-auto px-4 py-8">
     <!-- Breadcrumb with Schema.org -->
+    {% if page.url.startsWith('/learn/') %}
+      {% set breadcrumbUrl = '/learn/' %}
+      {% set breadcrumbName = 'Learn' %}
+    {% else %}
+      {% set breadcrumbUrl = '/blog/' %}
+      {% set breadcrumbName = 'Blog' %}
+    {% endif %}
     <nav class="text-sm text-gray-600 mb-6" aria-label="Breadcrumb">
       <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="inline-flex items-center">
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="inline">
@@ -20,8 +27,8 @@ layout: layouts/base-tailwind.html
         </li>
         <li class="inline mx-1 text-gray-400">›</li>
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="inline">
-          <a itemprop="item" href="/blog" class="text-purple-600 hover:text-purple-800 transition-colors">
-            <span itemprop="name">Blog</span>
+          <a itemprop="item" href="{{ breadcrumbUrl }}" class="text-purple-600 hover:text-purple-800 transition-colors">
+            <span itemprop="name">{{ breadcrumbName }}</span>
           </a>
           <meta itemprop="position" content="2">
         </li>
