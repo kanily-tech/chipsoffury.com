@@ -1,0 +1,90 @@
+---
+layout: layouts/base-tailwind.html
+title: Learn Poker | Chips of Fury
+description: Master poker from scratch with our free guides. Learn the rules, hand rankings, and winning strategies for playing poker with friends.
+---
+<!-- Navigation -->
+{% renderTemplate "webc" %}
+<site-navigation></site-navigation>
+{% endrenderTemplate %}
+
+<!-- Learn Header -->
+<div class="bg-indigo-900 text-white py-8">
+  <div class="max-w-3xl mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-2">Learn Poker</h1>
+    <p class="text-purple-200">Free guides for your first home game. No casino jargon, no math degree required.</p>
+  </div>
+</div>
+
+<!-- Main Content -->
+<section class="bg-gray-50 min-h-screen">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+
+    <!-- Hero: Featured Pillar Post -->
+    <div class="mb-12">
+      <a href="/learn/play-poker-with-friends-online/" class="block p-8 bg-gradient-to-br from-purple-100 via-indigo-100 to-white rounded-2xl border-2 border-purple-300 hover:border-purple-500 hover:shadow-xl transition-all group">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-purple-600 text-white uppercase tracking-wide">
+            Start Here
+          </span>
+          <span class="text-sm text-gray-500">15 min read</span>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
+          How to Play Poker With Friends Online
+        </h2>
+        <p class="text-gray-600 mt-3 text-lg">
+          Everything you need to host poker night with friends online. Pick a platform, learn the rules, and start playing.
+        </p>
+        <span class="inline-flex items-center mt-6 text-purple-600 font-semibold text-lg group-hover:translate-x-2 transition-transform">
+          Start learning
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <!-- More Resources Section -->
+    <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">More Resources</div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <!-- Beginner Poker Strategy -->
+      <a href="/learn/beginner-poker-strategy-how-to-win/" class="block p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group">
+        <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
+          Beginner Poker Strategy
+        </h3>
+        <p class="text-gray-600 mt-2 text-sm">
+          Stop donating chips. Which hands to play, when to fold, and the mistakes that cost beginners money.
+        </p>
+        <span class="inline-flex items-center mt-4 text-purple-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+          Read guide
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Poker Hand Rankings -->
+      <a href="/learn/poker-winning-hand-rankings/" class="block p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group">
+        <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
+          Poker Hand Rankings
+        </h3>
+        <p class="text-gray-600 mt-2 text-sm">
+          The one page to bookmark. All ten hand types ranked, with examples and memory tricks.
+        </p>
+        <span class="inline-flex items-center mt-4 text-purple-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+          Read guide
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+{% renderTemplate "webc" %}
+<site-footer></site-footer>
+{% endrenderTemplate %}
