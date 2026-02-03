@@ -63,4 +63,4 @@ perhaps quite complex for our simple needs
 - We can have a fallback on Email Magic Link or Email OTP based login.
 - We should prompt after signup or first login for the user to associate their account with a passkey.
 
-#### [2024-08-21] Update: [Follow up article](/posts/passkeys-wtf)
+#### [2024-08-21] Update: [Follow up article](/blog/passkeys-wtf/)

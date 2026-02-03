@@ -262,7 +262,7 @@ new features or reverting to previous code.
 
 After implementing the timestamp-based solution described above, we evolved our approach to something more sophisticated. We now use content-based cache busting with MD5 hashes—bringing back the efficiency of the original service worker without its CDN incompatibility.
 
-Read our follow-up post: [Content-Hashed Caching for Flutter Web](/posts/flutter-web-cache-busting-strategy/) to learn 
+Read our follow-up post: [Content-Hashed Caching for Flutter Web](/blog/flutter-web-cache-busting-strategy/) to learn 
 how we:
 
 - Implemented comprehensive URL patching inspired by Discord's Embedded App SDK

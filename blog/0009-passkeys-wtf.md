@@ -5,7 +5,7 @@ author: Animesh
 devlogNumber: 5
 tags: ['post', 'devlog']
 ---
-Sometime back while researching about auth, I wrote a post [about passkeys](/posts/researching_passkey_auth).
+Sometime back while researching about auth, I wrote a post [about passkeys](/blog/researching-passkey-auth/).
 
 It has been 7 months since, and everytime I have come across a passkey based auth on the interwebs, I have been 
 utterly confused. Github for example, shows me a link to login with passkey, making me believe that I have one 

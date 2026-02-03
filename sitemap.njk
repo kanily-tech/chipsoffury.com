@@ -29,12 +29,12 @@ eleventyExcludeFromCollections: true
   {%- endif %}
 {%- endfor %}
 
-{# How-to-play pages - medium priority #}
-{%- for item in collections.all %}
-  {%- if item.url and '/how-to-play/' in item.url %}
+{# Learn posts - educational content (excludes drafts) #}
+{%- for post in collections.publishedLearnPosts | reverse %}
+  {%- if post.url %}
   <url>
-    <loc>https://chipsoffury.com{{ item.url }}</loc>
-    <lastmod>{{ item.date | date('%Y-%m-%d') or page.date | date('%Y-%m-%d') }}</lastmod>
+    <loc>https://chipsoffury.com{{ post.url }}</loc>
+    <lastmod>{{ post.date | date('%Y-%m-%d') }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

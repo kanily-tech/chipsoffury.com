@@ -359,7 +359,7 @@ Quick tip: If someone bets and you want to stay in, you *must* at least call. Yo
 
 ### Hand Rankings (What Beats What)
 
-This is the part that scares new players. Don't overthink it. After a few games, you'll recognize these instantly. Here's the full list from strongest to weakest. For more detail with tie-breaker rules and examples, see our [complete hand rankings guide](/posts/poker-winning-hand-rankings/).
+This is the part that scares new players. Don't overthink it. After a few games, you'll recognize these instantly. Here's the full list from strongest to weakest. For more detail with tie-breaker rules and examples, see our [complete hand rankings guide](/learn/poker-winning-hand-rankings/).
 
 <div class="not-prose">
 {% renderTemplate "webc" %}
@@ -413,7 +413,7 @@ This confuses new players because you don't have to use both hole cards. If the 
 ## Beginner Poker Strategies
 
 You don't need to study for months before your first game. These five concepts will put you ahead of most casual players
-immediately. For a deeper framework, see our [beginner poker strategy guide](/posts/beginner-poker-strategy-how-to-win/).
+immediately. For a deeper framework, see our [beginner poker strategy guide](/learn/beginner-poker-strategy-how-to-win/).
 
 ### 1. Play Fewer Hands (Seriously, Way Fewer)
 

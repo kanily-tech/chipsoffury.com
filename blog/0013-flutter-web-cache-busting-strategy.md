@@ -16,7 +16,7 @@ author: Animesh
 
 ---
 
-In our [previous post](/posts/why-we-removed-flutter-service-worker/), we discussed why we removed Flutter's service
+In our [previous post](/blog/why-we-removed-flutter-service-worker/), we discussed why we removed Flutter's service
 worker due to its incompatibility with CDN caching. We implemented a simple timestamp-based cache-busting strategy that
 worked well enough. But there are a few shortcomings to that:
 
@@ -26,7 +26,7 @@ worked well enough. But there are a few shortcomings to that:
 
 The original service worker actually had one brilliant feature: content-based caching using MD5 hashes. Files were only
 reloaded when their content changed, not on every deployment. We wanted that efficiency back, but
-without [the service worker's CDN incompatibility](/posts/why-we-removed-flutter-service-worker/).
+without [the service worker's CDN incompatibility](/blog/why-we-removed-flutter-service-worker/).
 
 <br>
 

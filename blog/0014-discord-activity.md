@@ -297,7 +297,7 @@ The Discord build script:
 
 The loader (`discord-loader.js`) handles environment detection and loads the appropriate SDK. Regular web builds don't include any Discord code at all.
 
-One more gotcha: Discord caches aggressively. After deploying updates, users kept seeing the old version. The fix is to implement some cache-busting strategy, and to be fair, Discord does document this in the Development Portal. Luckily, we already had one - read about it in our [previous post](/posts/flutter-web-cache-busting-strategy/).
+One more gotcha: Discord caches aggressively. After deploying updates, users kept seeing the old version. The fix is to implement some cache-busting strategy, and to be fair, Discord does document this in the Development Portal. Luckily, we already had one - read about it in our [previous post](/blog/flutter-web-cache-busting-strategy/).
 
 ---
 
