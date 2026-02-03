@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.ignores.add("docs/**");
     eleventyConfig.ignores.add("README.md");
     eleventyConfig.ignores.add("CLAUDE.md");
+    eleventyConfig.ignores.add("AGENTS.md");
     
     // Copy `img/` to `_site/img`
     eleventyConfig.addPassthroughCopy("images");
