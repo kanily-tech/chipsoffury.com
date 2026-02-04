@@ -3,6 +3,7 @@ title: "How to Play Poker With Friends Online (Free & Easy Guide for 2026)"
 date: 2026-01-05
 lastUpdated: 2026-01-05
 description: "Learn how to play poker with friends online in 2025 with this free, beginner-friendly guide. Simple setup, private tables, game rules, and easy strategies."
+ogImage: "https://chipsoffury.com/images/posts/how-to-play-with-friends/chips_only_example.webp"
 tags: [ 'post', 'guide' ]
 authorSlugs: [mayank]
 layout: layouts/pillar-post.html
