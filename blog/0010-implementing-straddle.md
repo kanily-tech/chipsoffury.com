@@ -1,5 +1,6 @@
 ---
 title: Implementing Straddle
+description: "How do you build straddle betting for an online poker app without slowing down the game? We walk through three UX approaches and their tradeoffs."
 date: 2024-08-25
 authorSlugs: [animesh]
 devlogNumber: 6

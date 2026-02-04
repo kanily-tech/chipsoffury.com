@@ -1,5 +1,6 @@
 ---
 title: Passkeys - WTF?
+description: "After months of passkey encounters on GitHub and other sites, I still can't figure out where my passkeys live. That's why we're skipping them."
 date: 2024-08-22
 authorSlugs: [animesh]
 devlogNumber: 5

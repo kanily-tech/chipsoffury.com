@@ -1,5 +1,6 @@
 ---
 title: Hello World, we're running on 11ty now
+description: "We moved Chips of Fury to 11ty and it was a breeze. Here's why this static site generator won us over with its flexibility and simple setup."
 date: 2023-11-03
 authorSlugs: [animesh]
 tags: ['post']

@@ -1,5 +1,6 @@
 ---
 title: Poker Chips - Flexible distribution and management
+description: "Three ways to handle chip distribution in your poker game: auto-loading wallets for trusted groups, fixed amounts for tournaments, or full manual control."
 date: 2023-11-16
 authorSlugs: [animesh]
 tags: ['post', 'feature-spotlight']

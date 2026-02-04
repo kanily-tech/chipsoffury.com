@@ -1,5 +1,6 @@
 ---
 title: What a mess it is to automate Flutter app builds
+description: "Automating Flutter builds for iOS, Android, and web is a mess. Fastlane alone won't cut it. Here's the bash and make combo that finally worked for us."
 date: 2024-01-22
 authorSlugs: [animesh]
 devlogNumber: 1
