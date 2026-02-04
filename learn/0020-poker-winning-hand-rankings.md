@@ -1,10 +1,9 @@
 ---
 title: "Poker Hand Rankings Explained (With Chart)"
-date: 2026-01-27
+date: 2026-01-01
 description: "Complete poker hand rankings from Royal Flush to High Card. Visual chart, examples, and the memory tricks that actually stick."
 tags: [ 'post', 'learn-poker' ]
 authorSlugs: [mayank]
-unlisted: true
 showAuthorBio: true
 ---
 

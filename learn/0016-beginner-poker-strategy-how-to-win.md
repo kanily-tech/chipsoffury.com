@@ -6,7 +6,6 @@ tags: [ 'post', 'learn-poker' ]
 authorSlugs: [mayank]
 layout: layouts/pillar-post.html
 tocIncludeH3: true
-unlisted: true
 showAuthorBio: true
 ---
 
