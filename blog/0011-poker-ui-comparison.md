@@ -1,5 +1,6 @@
 ---
 title: Poker UI Comparison
+description: "Screenshots of 18 poker app interfaces from PokerStars to Zynga. Visual research for anyone designing a poker game UI."
 date: 2024-08-28
 authorSlugs: [animesh]
 tags: ['post', 'fun', 'ui-ux']

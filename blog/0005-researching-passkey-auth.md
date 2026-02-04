@@ -1,5 +1,6 @@
 ---
 title: Can we go all in on Passkey based authentication?
+description: "Researching passkeys as a primary auth method. Cross-browser quirks, device sync issues, and why we're keeping OAuth2 and magic links as fallbacks."
 date: 2024-01-23
 authorSlugs: [animesh]
 devlogNumber: 2

@@ -1,5 +1,6 @@
 ---
 title: Some graphs on randomization of cards in Poker
+description: "Visual proof that our card shuffling is random. Distribution graphs and win-streak patterns that look rigged but are statistically normal. Data included."
 date: 2024-02-02
 authorSlugs: [animesh]
 tags: ['post', 'player-experience']

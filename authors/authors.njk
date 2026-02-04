@@ -5,6 +5,10 @@ pagination:
   alias: author
 permalink: /authors/{{ author.slug }}/
 layout: layouts/base-tailwind.html
+eleventyComputed:
+  title: "{{ authorsMap[author.slug].name | safe }}{% if authorsMap[author.slug].title %} - {{ authorsMap[author.slug].title | safe }}{% endif %} | Chips of Fury"
+  description: "{{ authorsMap[author.slug].bio | safe or 'Author at Chips of Fury' }}"
+  ogImage: "{% if authorsMap[author.slug].image %}https://chipsoffury.com{{ authorsMap[author.slug].image }}{% endif %}"
 ---
 
 {% renderTemplate "webc" %}

@@ -1,5 +1,6 @@
 ---
-title: Dart streaming pattern with stream splitting 
+title: Dart streaming pattern with stream splitting
+description: "How to route WebSocket events to multiple game controllers in Dart. Covers stream splitting, handling async initialization, and synchronizing event processing."
 date: 2024-03-15
 authorSlugs: [animesh]
 devlogNumber: 4

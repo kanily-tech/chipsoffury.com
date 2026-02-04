@@ -1,5 +1,6 @@
 ---
 title: Running game servers on Fly.io - Our flight so far
+description: "We benchmarked Fly.io game server startup times across 14 regions. The results: 20-30 seconds before machines respond to external traffic. Here's the data."
 date: 2023-12-12
 authorSlugs: [kirill, animesh]
 tags: ['post']

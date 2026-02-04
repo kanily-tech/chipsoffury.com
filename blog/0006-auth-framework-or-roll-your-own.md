@@ -1,5 +1,6 @@
 ---
-title: Considering hand writing the authentication code 😱
+title: Considering hand writing the authentication code
+description: "Auth frameworks run 100K-500K lines of code. Our needs are simpler. Here's why we're building custom OAuth2 and magic link auth instead of using Kratos or Hanko."
 date: 2024-01-24
 authorSlugs: [animesh]
 devlogNumber: 3
