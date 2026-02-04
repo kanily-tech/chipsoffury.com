@@ -4,7 +4,7 @@ date: 2026-01-08
 description: "Tired of slow, awkward home poker games? Learn simple poker house rules that prevent delays, disputes, and confusion."
 devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
-author: Animesh
+authorSlugs: [animesh]
 draft: true
 showAuthorBio: true
 ---

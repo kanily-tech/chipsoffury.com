@@ -1,7 +1,7 @@
 ---
 title: Running game servers on Fly.io - Our flight so far
 date: 2023-12-12
-author: Kirill, Animesh
+authorSlugs: [kirill, animesh]
 tags: ['post']
 ---
 

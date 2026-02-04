@@ -1,7 +1,7 @@
 ---
 title: Poker Chips - Flexible distribution and management
 date: 2023-11-16
-author: Animesh
+authorSlugs: [animesh]
 tags: ['post', 'feature-spotlight']
 ---
 

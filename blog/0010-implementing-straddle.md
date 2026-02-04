@@ -1,7 +1,7 @@
 ---
 title: Implementing Straddle
 date: 2024-08-25
-author: Animesh
+authorSlugs: [animesh]
 devlogNumber: 6
 tags: ['post', 'devlog']
 ---

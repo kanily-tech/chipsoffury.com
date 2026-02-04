@@ -1,7 +1,7 @@
 ---
 title: Can we go all in on Passkey based authentication?
 date: 2024-01-23
-author: Animesh
+authorSlugs: [animesh]
 devlogNumber: 2
 tags: ['post', 'devlog']
 ---

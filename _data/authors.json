@@ -1,8 +1,34 @@
 [
   {
-    "slug": "mayank-jain",
+    "slug": "mayank",
     "name": "Mayank Jain",
-    "bio": "Mayank Jain is a No-limit Texas Hold'em Poker Coach. He has played over 3 million hands in a career spanning a decade of online cash games.",
-    "website": "https://www.mayankja.in/poker-coaching"
+    "title": "Poker Coach & Writer",
+    "bio": "IIT Roorkee graduate, startup founder, and professional poker player turned coach. Author of 'Restart' and founder of The Little Rationals. 17+ years in poker with 3+ million hands played.",
+    "location": "Bengaluru, India",
+    "website": "https://www.mayankja.in",
+    "coachingUrl": "https://www.mayankja.in/poker-coaching",
+    "image": "/images/authors/mayank-jain.webp",
+    "education": "IIT Roorkee",
+    "credentials": [
+      "IIT Roorkee graduate",
+      "Musicfellas co-founder (acquired by Times Internet, 2014)",
+      "Author of 'Restart – Lessons from one startup for another'",
+      "17+ years playing poker (since 2008)",
+      "Professional poker player since 2016",
+      "3+ million cash game hands",
+      "Poker Sports League - Gujarat Team (Seasons 1 & 2)",
+      "Founder, The Little Rationals"
+    ],
+    "expertise": ["No-Limit Texas Hold'em", "Cash Games", "GTO Strategy", "Exploitative Play", "Poker Coaching"]
+  },
+  {
+    "slug": "animesh",
+    "name": "Animesh",
+    "bio": "Founder and developer at Chips of Fury."
+  },
+  {
+    "slug": "kirill",
+    "name": "Kirill",
+    "bio": "Developer at Chips of Fury."
   }
 ]

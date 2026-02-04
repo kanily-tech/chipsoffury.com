@@ -1,7 +1,7 @@
 ---
 title: Some graphs on randomization of cards in Poker
 date: 2024-02-02
-author: Animesh
+authorSlugs: [animesh]
 tags: ['post', 'player-experience']
 ---
 Let's shuffle a deck of cards and deal the first card out. And shuffle again and deal another one. Rinse and repeat 52 

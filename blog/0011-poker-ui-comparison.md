@@ -1,7 +1,7 @@
 ---
 title: Poker UI Comparison
 date: 2024-08-28
-author: Animesh
+authorSlugs: [animesh]
 tags: ['post', 'fun', 'ui-ux']
 ---
 I was doing some research for UI/UX of chips of fury. If you like screenshots, you'll love this post. 

@@ -4,7 +4,7 @@ date: 2026-01-05
 lastUpdated: 2026-01-05
 description: "Learn how to play poker with friends online in 2025 with this free, beginner-friendly guide. Simple setup, private tables, game rules, and easy strategies."
 tags: [ 'post', 'guide' ]
-author: mayank-jain
+authorSlugs: [mayank]
 layout: layouts/pillar-post.html
 isPillar: true
 showAuthorBio: true

@@ -1,7 +1,7 @@
 ---
 title: Passkeys - WTF?
 date: 2024-08-22
-author: Animesh
+authorSlugs: [animesh]
 devlogNumber: 5
 tags: ['post', 'devlog']
 ---

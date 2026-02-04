@@ -103,10 +103,11 @@ layout: layouts/base-tailwind.html
               {{ date | postDate }}
             </time>
             <span class="text-gray-300">·</span>
-            {% set authorData = authorsMap[author] %}
-            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-              By {% if authorData %}<a href="/authors/{{ authorData.slug }}/" class="font-medium text-purple-600 hover:text-purple-800 transition-colors"><span itemprop="name">{{ authorData.name }}</span></a>{% else %}<span itemprop="name" class="font-medium">{{ author or 'Chips of Fury Team' }}</span>{% endif %}
-            </span>
+            By {% if authorSlugs and authorSlugs.length > 0 %}
+              {% for slug in authorSlugs %}{% set authorData = authorsMap[slug] %}<span itemprop="author" itemscope itemtype="https://schema.org/Person">{% if authorData and authorData.hasPage %}<a href="/authors/{{ authorData.slug }}/" class="font-medium text-purple-600 hover:text-purple-800 transition-colors"><span itemprop="name">{{ authorData.name or slug }}</span></a>{% elif authorData %}<span itemprop="name" class="font-medium">{{ authorData.name or slug }}</span>{% else %}<span itemprop="name" class="font-medium">{{ slug }}</span>{% endif %}</span>{% if not loop.last %}, {% endif %}{% endfor %}
+            {% else %}
+              <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name" class="font-medium">Chips of Fury Team</span></span>
+            {% endif %}
           </div>
 
           <meta itemprop="datePublished" content="{{ date | date('%Y-%m-%d') }}">
