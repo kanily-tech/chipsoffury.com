@@ -1,7 +1,7 @@
 ---
 title: Dart streaming pattern with stream splitting 
 date: 2024-03-15
-author: Animesh
+authorSlugs: [animesh]
 devlogNumber: 4
 tags: ['post', 'devlog']
 ---

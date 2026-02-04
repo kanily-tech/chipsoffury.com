@@ -1,7 +1,7 @@
 ---
 title: What a mess it is to automate Flutter app builds
 date: 2024-01-22
-author: Animesh
+authorSlugs: [animesh]
 devlogNumber: 1
 tags: ['post', 'devlog']
 ---

@@ -4,7 +4,7 @@ date: 2026-01-08
 description: "Handle poker buy-ins with friends the right way. Set fair stakes, avoid awkward money moments, and keep home games fun and drama-free."
 devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
-author: Animesh
+authorSlugs: [animesh]
 draft: true
 showAuthorBio: true
 ---

@@ -4,7 +4,7 @@ date: 2026-01-08
 description: "New to poker? This guide explains the most popular poker variants, how they work, and which types of poker you should learn first."
 devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
-author: Animesh
+authorSlugs: [animesh]
 draft: true
 showAuthorBio: true
 ---

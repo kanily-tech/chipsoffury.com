@@ -3,7 +3,7 @@ title: "Beginner Poker Strategy: A Complete Guide to Winning at Texas Hold'em"
 date: 2026-01-27
 description: "Learn winning poker strategy from the ground up. Covers hand selection, position, postflop decisions, common traps to avoid, and detailed hand examples. Everything beginners need to stop donating chips."
 tags: [ 'post', 'learn-poker' ]
-author: mayank-jain
+authorSlugs: [mayank]
 layout: layouts/pillar-post.html
 tocIncludeH3: true
 unlisted: true

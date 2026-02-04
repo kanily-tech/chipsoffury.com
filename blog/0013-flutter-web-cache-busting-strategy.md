@@ -4,7 +4,7 @@ date: 2025-08-04
 description: "How we replaced Flutter Web's service worker with CDN-friendly, content-hashed caching."
 devlogNumber: 8
 tags: [ 'post', 'devlog', 'flutter', 'web' ]
-author: Animesh
+authorSlugs: [animesh]
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css">

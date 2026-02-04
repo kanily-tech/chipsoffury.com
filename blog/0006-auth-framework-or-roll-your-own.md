@@ -1,7 +1,7 @@
 ---
 title: Considering hand writing the authentication code 😱
 date: 2024-01-24
-author: Animesh
+authorSlugs: [animesh]
 devlogNumber: 3
 tags: ['post', 'devlog']
 ---

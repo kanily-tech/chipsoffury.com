@@ -4,7 +4,7 @@ date: 2026-01-22
 description: "A developer's journey through Content Security Policy hell, the death of hot reload, and the mock SDK that saved our sanity."
 devlogNumber: 9
 tags: [ 'post', 'devlog', 'flutter', 'web', 'discord' ]
-author: Kirill
+authorSlugs: [kirill]
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css">

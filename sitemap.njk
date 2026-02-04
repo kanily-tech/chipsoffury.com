@@ -42,7 +42,7 @@ eleventyExcludeFromCollections: true
 {%- endfor %}
 
 {# Blog posts - sorted by date, newer first (excludes drafts) #}
-{%- for post in collections.publishedPosts | reverse %}
+{%- for post in collections.publishedBlogPosts | reverse %}
   {%- if post.url %}
   <url>
     <loc>https://chipsoffury.com{{ post.url }}</loc>

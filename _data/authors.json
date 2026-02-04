@@ -1,8 +1,18 @@
 [
   {
-    "slug": "mayank-jain",
+    "slug": "mayank",
     "name": "Mayank Jain",
     "bio": "Mayank Jain is a No-limit Texas Hold'em Poker Coach. He has played over 3 million hands in a career spanning a decade of online cash games.",
     "website": "https://www.mayankja.in/poker-coaching"
+  },
+  {
+    "slug": "animesh",
+    "name": "Animesh",
+    "bio": "Founder and developer at Chips of Fury."
+  },
+  {
+    "slug": "kirill",
+    "name": "Kirill",
+    "bio": "Developer at Chips of Fury."
   }
 ]

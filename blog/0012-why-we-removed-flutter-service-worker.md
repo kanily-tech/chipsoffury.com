@@ -5,7 +5,7 @@ description: "An in-depth look at the technical reasons behind removing Flutter'
 Fury webapp."
 devlogNumber: 7
 tags: ['post', 'devlog']
-author: Animesh
+authorSlugs: [animesh]
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/tokyo-night-dark.min.css">

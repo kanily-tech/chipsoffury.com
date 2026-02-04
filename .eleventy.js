@@ -148,9 +148,9 @@ module.exports = function(eleventyConfig) {
         });
     });
 
-    // Create publishedPosts collection (excludes drafts, includes unlisted)
+    // Create publishedBlogPosts collection (excludes drafts, includes unlisted)
     // Used by sitemap - unlisted posts should appear in sitemap
-    eleventyConfig.addCollection("publishedPosts", function(collectionApi) {
+    eleventyConfig.addCollection("publishedBlogPosts", function(collectionApi) {
         return collectionApi.getFilteredByGlob("blog/*.md")
             .filter(post => !post.data.draft)
             .reverse();
@@ -165,11 +165,21 @@ module.exports = function(eleventyConfig) {
     });
 
     // Create publishedLearnPosts collection (excludes drafts)
-    // Used by sitemap
+    // Used by sitemap and /learn listing
     eleventyConfig.addCollection("publishedLearnPosts", function(collectionApi) {
         return collectionApi.getFilteredByGlob("learn/*.md")
             .filter(post => !post.data.draft)
             .reverse();
+    });
+
+    // Create listedAllPosts collection (blog + learn, excludes drafts AND unlisted)
+    // Used by author pages - reverse chronological order
+    eleventyConfig.addCollection("listedAllPosts", function(collectionApi) {
+        const blogPosts = collectionApi.getFilteredByGlob("blog/*.md");
+        const learnPosts = collectionApi.getFilteredByGlob("learn/*.md");
+        return [...blogPosts, ...learnPosts]
+            .filter(post => !post.data.draft && !post.data.unlisted)
+            .sort((a, b) => b.date - a.date);
     });
 
     // Create glossary collection for poker term definitions
