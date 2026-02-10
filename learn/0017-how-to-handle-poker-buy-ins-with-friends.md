@@ -1,11 +1,10 @@
 ---
 title: "How to Handle Poker Buy-Ins With Friends (Without Ruining Friendships)"
-date: 2026-01-08
+date: 2026-02-08
 description: "Handle poker buy-ins with friends the right way. Set fair stakes, avoid awkward money moments, and keep home games fun and drama-free."
 devlogNumber: 8
-tags: [ 'post', 'devlog', 'flutter', 'web' ]
+tags: [ 'post' , 'home-games']
 authorSlugs: [mayank]
-draft: true
 showAuthorBio: true
 ---
 
