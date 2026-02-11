@@ -1,6 +1,6 @@
 ---
 title: "Poker House Rules to Keep the Game Moving"
-date: 2026-01-10
+date: 2026-02-10
 description: "Tired of slow, awkward home poker games? Learn simple poker house rules that prevent delays, disputes, and confusion."
 tags: [ 'post', 'home-games' ]
 authorSlugs: [mayank]
@@ -27,7 +27,7 @@ Use at least three denominations. A common setup for a $0.25/$0.50 game:
 - Red chips = $1
 - Green chips = $5
 
-Give each player their starting stack in the same breakdown. If everyone starts with $50, that's 20 whites, 20 reds, and 2 greens. Consistent stacks mean fewer mistakes and easier counting at [showdown](glossary:showdown). Use our [chip distribution calculator](/learn/chip-distribution-calculator/) to figure out the exact breakdown for your game.
+Give each player their starting stack in the same breakdown. If everyone starts with $50, that's 20 whites, 20 reds, and 2 greens. Consistent stacks mean fewer mistakes and easier counting at [showdown](glossary:showdown). Use our [chip distribution calculator](/chip-distribution-calculator/) to figure out the exact breakdown for your game.
 
 Verify the deck before your first session. Spread all cards face-up on the table and confirm you have 52. A guy on a poker forum once played three hands before realizing his deck had two Queen of Spades and no Queen of Hearts. The pot from hand two was never properly resolved.
 
