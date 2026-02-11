@@ -269,7 +269,8 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   display: flex;
   flex-wrap: wrap;
   gap: 0.42rem;
-  margin-bottom: 0.5rem;
+  justify-content: center;
+  margin: 0.45rem 0 0.65rem;
 }
 .cof-preset {
   border: 1px solid #d7deea;
@@ -286,6 +287,121 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   color: #115e59;
   font-weight: 700;
 }
+
+/* Marked-mode preset picker */
+.cof-presets-picker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0.45rem 0 0.65rem;
+}
+.cof-picker-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid #d7deea;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0.44rem 0.62rem;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: #334155;
+}
+.cof-picker-trigger:hover { border-color: #9ecbc4; }
+.cof-picker-trigger.has-selection {
+  border-color: #84b9b0;
+  background: #f0fdf4;
+  color: #115e59;
+}
+.cof-picker-caret {
+  font-size: var(--fs-xs);
+  color: #64748b;
+  margin-left: 0.1rem;
+}
+.cof-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 16rem;
+  max-width: calc(100vw - 2rem);
+  border: 1px solid #d7deea;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.14);
+  padding: 0.35rem;
+  z-index: 30;
+  display: grid;
+  gap: 0.2rem;
+}
+.cof-picker-dropdown.cof-hidden { display: none; }
+.cof-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  padding: 0.42rem 0.5rem;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+  color: #334155;
+  width: 100%;
+  text-align: left;
+}
+.cof-picker-item:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+.cof-picker-item.is-active {
+  background: #f0fdf4;
+  border-color: #84b9b0;
+  font-weight: 700;
+  color: #115e59;
+}
+.cof-preset-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.18rem;
+  flex-shrink: 0;
+}
+.cof-preset-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  flex-shrink: 0;
+}
+.cof-preset-vals {
+  font-weight: 700;
+  color: #334155;
+  white-space: nowrap;
+}
+.cof-picker-item.is-active .cof-preset-vals { color: #115e59; }
+.cof-preset-label {
+  font-size: var(--fs-xs);
+  color: #64748b;
+  white-space: nowrap;
+  margin-left: auto;
+}
+.cof-picker-item.is-active .cof-preset-label { color: #115e59; }
+.cof-picker-custom {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 0;
+  border-top: 1px solid #eef2f7;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.42rem 0.5rem;
+  cursor: pointer;
+  font-size: var(--fs-sm);
+  color: #64748b;
+  width: 100%;
+  text-align: left;
+}
+.cof-picker-custom:hover { color: #334155; }
 
 .cof-chip-list {
   display: grid;
@@ -836,6 +952,73 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   font-size: var(--fs-lg);
 }
 
+.cof-marked-switch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+}
+.cof-marked-switch-track {
+  display: inline-flex;
+  border: 1px solid #9ecbc4;
+  border-radius: 999px;
+  background: #ecfdf5;
+  padding: 0.18rem;
+  gap: 0;
+}
+.cof-marked-switch-track input { position: absolute; opacity: 0; width: 0; height: 0; }
+.cof-marked-opt {
+  padding: 0.32rem 0.72rem;
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: #0f766e;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  user-select: none;
+  white-space: nowrap;
+  text-align: center;
+}
+.cof-marked-opt.is-active {
+  background: #fff;
+  color: #115e59;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
+.cof-chip-columns.is-marked {
+  grid-template-columns: 3.2rem 5.5rem minmax(0, 1fr) 2.05rem;
+}
+.cof-chip-row.is-marked {
+  grid-template-columns: 3.2rem 5.5rem minmax(0, 1fr) 2.05rem;
+}
+.cof-chip-row.is-marked .cof-chip-mult { display: none; }
+.cof-col-value { text-align: center; }
+.cof-chip-value {
+  display: flex;
+  align-items: center;
+  gap: 0.12rem;
+}
+.cof-chip-value .cof-dollar {
+  font-size: var(--fs-sm);
+  line-height: 1;
+}
+.cof-val-input {
+  width: 3.5rem;
+  font-size: var(--fs-sm);
+  font-weight: var(--cof-number-weight);
+  color: var(--cof-number-color);
+  background: transparent;
+  border: none;
+  border-bottom: 2px dashed var(--cof-number-underline);
+  padding: 0 0 0.1rem 0;
+  line-height: 1;
+  outline: none;
+  text-align: right;
+}
+.cof-val-input:focus {
+  border-bottom-style: solid;
+  border-bottom-color: var(--cof-accent);
+}
+
 @media (max-width: 600px) {
   #cof-calc {
     padding: 0.65rem;
@@ -853,10 +1036,16 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     gap: 0.12rem;
     padding: 0;
   }
+  .cof-chip-columns.is-marked {
+    grid-template-columns: 2.5rem 4rem minmax(0, 1fr) 1.9rem;
+  }
   .cof-chip-row {
     grid-template-columns: 3.7rem minmax(0, 1fr) 1.9rem;
     gap: 0.12rem;
     padding: 0.2rem 0;
+  }
+  .cof-chip-row.is-marked {
+    grid-template-columns: 2.5rem 4rem minmax(0, 1fr) 1.9rem;
   }
   .cof-chip-button {
     width: 1.9rem;
@@ -961,9 +1150,17 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     </section>
     <section data-step="1" class="cof-hidden">
       <div id="cof-chip-alert" class="cof-alert cof-hidden"></div>
+      <div class="cof-marked-switch" id="cof-marked-switch">
+        <div class="cof-marked-switch-track">
+          <input type="checkbox" id="cof-marked-toggle">
+          <span class="cof-marked-opt is-active" data-val="0">Unmarked chips</span>
+          <span class="cof-marked-opt" data-val="1">Denominations on chips</span>
+        </div>
+      </div>
       <div class="cof-presets" id="cof-presets"></div>
-      <div class="cof-chip-columns" aria-hidden="true">
+      <div class="cof-chip-columns" id="cof-chip-columns" aria-hidden="true">
         <span>Color</span>
+        <span class="cof-col-value cof-hidden">Value</span>
         <span>Count</span>
         <span></span>
       </div>
@@ -1062,6 +1259,58 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     ]
   };
 
+  var MARKED_PRESETS = {
+    '200 · $1/$5/$10/$25': [
+      { color: '#f3f4f6', border: '#d1d5db', name: 'White', totalCount: 75, value: 1 },
+      { color: '#dc2626', border: '#991b1b', name: 'Red', totalCount: 50, value: 5 },
+      { color: '#2563eb', border: '#1d4ed8', name: 'Blue', totalCount: 50, value: 10 },
+      { color: '#16a34a', border: '#15803d', name: 'Green', totalCount: 25, value: 25 }
+    ],
+    '200 · $1/$5/$25/$100': [
+      { color: '#f3f4f6', border: '#d1d5db', name: 'White', totalCount: 75, value: 1 },
+      { color: '#dc2626', border: '#991b1b', name: 'Red', totalCount: 50, value: 5 },
+      { color: '#16a34a', border: '#15803d', name: 'Green', totalCount: 50, value: 25 },
+      { color: '#1f2937', border: '#111827', name: 'Black', totalCount: 25, value: 100 }
+    ],
+    '300 · $1/$5/$25/$100': [
+      { color: '#f3f4f6', border: '#d1d5db', name: 'White', totalCount: 100, value: 1 },
+      { color: '#dc2626', border: '#991b1b', name: 'Red', totalCount: 100, value: 5 },
+      { color: '#16a34a', border: '#15803d', name: 'Green', totalCount: 50, value: 25 },
+      { color: '#1f2937', border: '#111827', name: 'Black', totalCount: 50, value: 100 }
+    ],
+    '300 · $1/$5/$25/$50/$100/$500': [
+      { color: '#f3f4f6', border: '#d1d5db', name: 'White', totalCount: 100, value: 1 },
+      { color: '#dc2626', border: '#991b1b', name: 'Red', totalCount: 50, value: 5 },
+      { color: '#16a34a', border: '#15803d', name: 'Green', totalCount: 50, value: 25 },
+      { color: '#2563eb', border: '#1d4ed8', name: 'Blue', totalCount: 50, value: 50 },
+      { color: '#1f2937', border: '#111827', name: 'Black', totalCount: 25, value: 100 },
+      { color: '#7c3aed', border: '#5b21b6', name: 'Purple', totalCount: 25, value: 500 }
+    ],
+    '500 · $1/$5/$10/$25/$100': [
+      { color: '#f3f4f6', border: '#d1d5db', name: 'White', totalCount: 150, value: 1 },
+      { color: '#dc2626', border: '#991b1b', name: 'Red', totalCount: 150, value: 5 },
+      { color: '#2563eb', border: '#1d4ed8', name: 'Blue', totalCount: 100, value: 10 },
+      { color: '#16a34a', border: '#15803d', name: 'Green', totalCount: 50, value: 25 },
+      { color: '#1f2937', border: '#111827', name: 'Black', totalCount: 50, value: 100 }
+    ],
+    '500 · $1/$5/$25/$100/$500': [
+      { color: '#f3f4f6', border: '#d1d5db', name: 'White', totalCount: 150, value: 1 },
+      { color: '#dc2626', border: '#991b1b', name: 'Red', totalCount: 150, value: 5 },
+      { color: '#16a34a', border: '#15803d', name: 'Green', totalCount: 100, value: 25 },
+      { color: '#1f2937', border: '#111827', name: 'Black', totalCount: 50, value: 100 },
+      { color: '#7c3aed', border: '#5b21b6', name: 'Purple', totalCount: 50, value: 500 }
+    ],
+    '500 · $1/$5/$25/$50/$100/$500/$1k': [
+      { color: '#f3f4f6', border: '#d1d5db', name: 'White', totalCount: 100, value: 1 },
+      { color: '#dc2626', border: '#991b1b', name: 'Red', totalCount: 100, value: 5 },
+      { color: '#16a34a', border: '#15803d', name: 'Green', totalCount: 100, value: 25 },
+      { color: '#2563eb', border: '#1d4ed8', name: 'Blue', totalCount: 50, value: 50 },
+      { color: '#1f2937', border: '#111827', name: 'Black', totalCount: 50, value: 100 },
+      { color: '#7c3aed', border: '#5b21b6', name: 'Purple', totalCount: 50, value: 500 },
+      { color: '#eab308', border: '#a16207', name: 'Yellow', totalCount: 50, value: 1000 }
+    ]
+  };
+
   function cloneChips(arr) {
     return arr.map(function (c) {
       return {
@@ -1118,7 +1367,9 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     bb: 0.5,
     chips: cloneChips(PRESETS['300-piece']),
     values: null,
-    suggestions: []
+    suggestions: [],
+    marked: false,
+    markedValues: []
   };
 
   var els = {
@@ -1145,6 +1396,9 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 
     chipAlert: document.getElementById('cof-chip-alert'),
     presets: document.getElementById('cof-presets'),
+    markedToggle: document.getElementById('cof-marked-toggle'),
+    markedOpts: Array.prototype.slice.call(document.querySelectorAll('.cof-marked-opt')),
+    chipColumns: document.getElementById('cof-chip-columns'),
     chipList: document.getElementById('cof-chip-list'),
     addChip: document.getElementById('cof-add-chip'),
 
@@ -1263,7 +1517,9 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
             totalCount: parseInt(c.totalCount, 10)
           };
         }),
-        selectedValues: state.values ? state.values.map(function (v) { return round2(v); }) : null
+        selectedValues: state.values ? state.values.map(function (v) { return round2(v); }) : null,
+        marked: state.marked,
+        markedValues: state.markedValues.slice()
       },
       output: {
         selectedMappingId: selectedKey,
@@ -1333,6 +1589,12 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     if (state.values && state.values.length === state.chips.length) {
       qs.set('vals', state.values.map(function (v) { return round2(v); }).join(','));
     }
+    if (state.marked) {
+      qs.set('mk', '1');
+      if (state.markedValues.length) {
+        qs.set('mvals', state.markedValues.map(function (v) { return v === null || v === undefined ? '' : round2(v); }).join(','));
+      }
+    }
     history.replaceState(null, '', location.pathname + '?' + qs.toString());
   }
 
@@ -1357,6 +1619,25 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     var vals = parseVals(qs.get('vals'), state.chips.length);
     if (vals) state.values = vals;
 
+    if (qs.get('mk') === '1') {
+      state.marked = true;
+      var mvalsRaw = qs.get('mvals');
+      if (mvalsRaw) {
+        var mvParts = mvalsRaw.split(',');
+        state.markedValues = [];
+        for (var mvi = 0; mvi < state.chips.length; mvi++) {
+          if (mvi < mvParts.length) {
+            var mvn = parseFloat(mvParts[mvi]);
+            state.markedValues.push(isFinite(mvn) && mvn > 0 ? round2(mvn) : null);
+          } else {
+            state.markedValues.push(null);
+          }
+        }
+      } else {
+        state.markedValues = state.chips.map(function () { return null; });
+      }
+    }
+
     var t = parseInt(qs.get('t'), 10);
     if (isFinite(t)) state.step = clamp(t, 0, 2);
   }
@@ -1377,21 +1658,35 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
       state.bb = Math.max(state.sb, round2(state.bb));
     }
 
-    state.suggestions = ChipDistribution.suggestDenominationMappings({
-      buyIn: state.buyIn,
-      playerCount: state.players,
-      smallBlind: state.sb,
-      bigBlind: state.bb,
-      chipSet: state.chips,
-      preferredValues: state.values,
-      maxOptions: 1
-    });
+    if (state.marked) {
+      state.suggestions = [];
+      var allFilled = state.markedValues.length === state.chips.length;
+      if (allFilled) {
+        for (var mi = 0; mi < state.markedValues.length; mi++) {
+          if (state.markedValues[mi] === null || state.markedValues[mi] === undefined || state.markedValues[mi] <= 0) {
+            allFilled = false;
+            break;
+          }
+        }
+      }
+      state.values = allFilled ? state.markedValues.slice() : null;
+    } else {
+      state.suggestions = ChipDistribution.suggestDenominationMappings({
+        buyIn: state.buyIn,
+        playerCount: state.players,
+        smallBlind: state.sb,
+        bigBlind: state.bb,
+        chipSet: state.chips,
+        preferredValues: state.values,
+        maxOptions: 1
+      });
 
-    if (!state.values || state.values.length !== state.chips.length) {
-      state.values = chooseDefaultValues();
-    }
-    if (state.values && state.values.length === state.chips.length && !findSuggestionByValues(state.values)) {
-      state.values = chooseDefaultValues();
+      if (!state.values || state.values.length !== state.chips.length) {
+        state.values = chooseDefaultValues();
+      }
+      if (state.values && state.values.length === state.chips.length && !findSuggestionByValues(state.values)) {
+        state.values = chooseDefaultValues();
+      }
     }
 
     render();
@@ -1458,23 +1753,143 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 
   function renderChipTabAlert() {
     els.chipAlert.classList.add('cof-hidden');
+    els.markedToggle.checked = state.marked;
+    els.markedOpts.forEach(function (opt) {
+      var isMarked = opt.getAttribute('data-val') === '1';
+      opt.classList.toggle('is-active', isMarked === state.marked);
+    });
+  }
+
+  function markedPresetMatch() {
+    var names = Object.keys(MARKED_PRESETS);
+    for (var i = 0; i < names.length; i++) {
+      var p = MARKED_PRESETS[names[i]];
+      if (p.length !== state.chips.length) continue;
+      var ok = true;
+      for (var j = 0; j < p.length; j++) {
+        if (p[j].color.toLowerCase() !== state.chips[j].color.toLowerCase() ||
+            parseInt(p[j].totalCount, 10) !== parseInt(state.chips[j].totalCount, 10) ||
+            p[j].value !== state.markedValues[j]) {
+          ok = false;
+          break;
+        }
+      }
+      if (ok) return names[i];
+    }
+    return null;
+  }
+
+  function markedPresetLabel(preset) {
+    return '$' + preset.map(function (c) {
+      var v = c.value;
+      if (v >= 1000) return (v / 1000) + 'k';
+      return String(v);
+    }).join('/');
+  }
+
+  function markedPresetTotal(preset) {
+    var t = 0;
+    preset.forEach(function (c) { t += c.totalCount; });
+    return t;
+  }
+
+  function buildPresetDots(preset) {
+    var dots = document.createElement('span');
+    dots.className = 'cof-preset-dots';
+    preset.forEach(function (c) {
+      var dot = document.createElement('span');
+      dot.className = 'cof-preset-dot';
+      dot.style.background = c.color;
+      dots.appendChild(dot);
+    });
+    return dots;
   }
 
   function renderPresets() {
-    var active = presetMatch();
     els.presets.innerHTML = '';
-    Object.keys(PRESETS).forEach(function (name) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'cof-preset' + (active === name ? ' is-active' : '');
-      btn.textContent = name;
-      btn.addEventListener('click', function () {
-        state.chips = cloneChips(PRESETS[name]);
-        state.values = null;
-        recompute();
+    els.presets.className = state.marked ? 'cof-presets-picker' : 'cof-presets';
+    if (state.marked) {
+      var active = markedPresetMatch();
+      var activePreset = active ? MARKED_PRESETS[active] : null;
+
+      var trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'cof-picker-trigger' + (activePreset ? ' has-selection' : '');
+      if (activePreset) {
+        trigger.appendChild(buildPresetDots(activePreset));
+        var trigLabel = document.createElement('span');
+        trigLabel.textContent = markedPresetLabel(activePreset) + '  \u00b7  ' + markedPresetTotal(activePreset) + ' pcs';
+        trigger.appendChild(trigLabel);
+      } else {
+        trigger.textContent = 'Choose a chip set';
+      }
+      var caret = document.createElement('span');
+      caret.className = 'cof-picker-caret';
+      caret.textContent = '\u25BE';
+      trigger.appendChild(caret);
+      els.presets.appendChild(trigger);
+
+      var dropdown = document.createElement('div');
+      dropdown.className = 'cof-picker-dropdown cof-hidden';
+
+      Object.keys(MARKED_PRESETS).forEach(function (name) {
+        var preset = MARKED_PRESETS[name];
+        var item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'cof-picker-item' + (active === name ? ' is-active' : '');
+        item.appendChild(buildPresetDots(preset));
+
+        var vals = document.createElement('span');
+        vals.className = 'cof-preset-vals';
+        vals.textContent = markedPresetLabel(preset);
+        item.appendChild(vals);
+
+        var count = document.createElement('span');
+        count.className = 'cof-preset-label';
+        count.textContent = markedPresetTotal(preset) + ' pcs';
+        item.appendChild(count);
+
+        item.addEventListener('click', function (ev) {
+          ev.stopPropagation();
+          state.chips = cloneChips(preset);
+          state.markedValues = preset.map(function (c) { return c.value; });
+          state.values = null;
+          dropdown.classList.add('cof-hidden');
+          recompute();
+        });
+        dropdown.appendChild(item);
       });
-      els.presets.appendChild(btn);
-    });
+
+      var custom = document.createElement('button');
+      custom.type = 'button';
+      custom.className = 'cof-picker-custom';
+      custom.textContent = 'None of these \u2014 enter custom values';
+      custom.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        dropdown.classList.add('cof-hidden');
+      });
+      dropdown.appendChild(custom);
+      els.presets.appendChild(dropdown);
+
+      trigger.addEventListener('click', function (ev) {
+        ev.stopPropagation();
+        dropdown.classList.toggle('cof-hidden');
+      });
+    } else {
+      var active = presetMatch();
+      Object.keys(PRESETS).forEach(function (name) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'cof-preset' + (active === name ? ' is-active' : '');
+        btn.textContent = name;
+        btn.addEventListener('click', function () {
+          state.chips = cloneChips(PRESETS[name]);
+          state.values = null;
+          recompute();
+        });
+        els.presets.appendChild(btn);
+      });
+    }
   }
 
   function closeChipColorMenus() {
@@ -1487,9 +1902,18 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   function renderChipRows() {
     els.chipList.innerHTML = '';
 
+    var valueHeader = els.chipColumns.querySelector('.cof-col-value');
+    if (state.marked) {
+      els.chipColumns.classList.add('is-marked');
+      if (valueHeader) valueHeader.classList.remove('cof-hidden');
+    } else {
+      els.chipColumns.classList.remove('is-marked');
+      if (valueHeader) valueHeader.classList.add('cof-hidden');
+    }
+
     state.chips.forEach(function (chip, idx) {
       var row = document.createElement('div');
-      row.className = 'cof-chip-row';
+      row.className = 'cof-chip-row' + (state.marked ? ' is-marked' : '');
 
       var colorControl = document.createElement('div');
       colorControl.className = 'cof-chip-color';
@@ -1535,6 +1959,40 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
         if (wasClosed) colorMenu.classList.remove('cof-hidden');
       });
       row.appendChild(colorControl);
+
+      if (state.marked) {
+        var valWrap = document.createElement('div');
+        valWrap.className = 'cof-chip-value';
+        var valDollar = document.createElement('span');
+        valDollar.className = 'cof-dollar';
+        valDollar.textContent = '$';
+        valWrap.appendChild(valDollar);
+        var valInput = document.createElement('input');
+        valInput.type = 'number';
+        valInput.min = '0.01';
+        valInput.step = 'any';
+        valInput.className = 'cof-val-input';
+        valInput.setAttribute('aria-label', 'Denomination value for ' + chip.name);
+        var curVal = state.markedValues[idx];
+        if (curVal !== null && curVal !== undefined && curVal > 0) {
+          valInput.value = String(curVal);
+        } else {
+          valInput.value = '';
+        }
+        valInput.addEventListener('input', (function (i) {
+          return function () {
+            var n = parseFloat(this.value);
+            if (!isFinite(n) || n <= 0) {
+              state.markedValues[i] = null;
+            } else {
+              state.markedValues[i] = round2(n);
+            }
+            recompute();
+          };
+        })(idx));
+        valWrap.appendChild(valInput);
+        row.appendChild(valWrap);
+      }
 
       var countStepper = document.createElement('div');
       countStepper.className = 'cof-chip-stepper';
@@ -1585,6 +2043,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
         if (state.chips.length <= 2) return;
         state.chips.splice(idx, 1);
         if (state.values && state.values.length > idx) state.values.splice(idx, 1);
+        if (state.marked && state.markedValues.length > idx) state.markedValues.splice(idx, 1);
         recompute();
       });
       row.appendChild(remove);
@@ -1599,12 +2058,32 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     els.warnings.innerHTML = '';
     els.distAlert.classList.add('cof-hidden');
 
+    if (state.marked && (!state.values || state.values.length !== state.chips.length)) {
+      els.distAlert.classList.remove('cof-hidden');
+      els.distAlert.innerHTML = 'Enter a denomination value for every chip color.';
+      return;
+    }
+
     if (!state.values || state.values.length !== state.chips.length) return;
 
     var denoms = buildDenoms(state.values);
     var result = ChipDistribution.distribute(state.buyIn, denoms, state.players);
     var total = getTotalValue(result.chips);
     var count = getTotalCount(result.chips);
+
+    if (state.marked) {
+      var shortfall = round2(state.buyIn - total);
+      if (shortfall > 0.001) {
+        var denomList = state.chips.map(function (c, i) {
+          return c.name + ' ($' + state.values[i] + ')';
+        }).join(', ');
+        els.distAlert.classList.remove('cof-hidden');
+        els.distAlert.innerHTML = '<strong>Cannot distribute $' + state.buyIn + '</strong> with these chip denominations. ' +
+          'Your chips (' + denomList + ') cannot produce a $' + state.buyIn + ' buy-in for ' + state.players +
+          ' players with the available chip counts. Try adjusting the buy-in, player count, or chip quantities.';
+        return;
+      }
+    }
 
     els.summary.innerHTML =
       '<div class="cof-dist-kicker">Each player gets <strong>' + count + ' chips</strong> worth <strong>' + fmt(total) +
@@ -1763,12 +2242,31 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
       var used = state.chips.map(function (c) { return c.color.toLowerCase(); });
       var next = COLORS.find(function (c) { return used.indexOf(c.color.toLowerCase()) === -1; }) || COLORS[0];
       state.chips.push({ color: next.color, border: next.border, name: next.name, totalCount: 50 });
+      if (state.marked) state.markedValues.push(null);
       state.values = null;
       recompute();
     });
 
+    els.markedOpts.forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        var newMarked = opt.getAttribute('data-val') === '1';
+        if (newMarked === state.marked) return;
+        state.marked = newMarked;
+        els.markedToggle.checked = newMarked;
+        if (state.marked && state.markedValues.length !== state.chips.length) {
+          state.markedValues = state.chips.map(function (c, i) {
+            return state.markedValues[i] !== undefined ? state.markedValues[i] : null;
+          });
+        }
+        state.values = null;
+        recompute();
+      });
+    });
+
     document.addEventListener('click', function () {
       closeChipColorMenus();
+      var dd = els.presets.querySelector('.cof-picker-dropdown');
+      if (dd) dd.classList.add('cof-hidden');
     });
 
     els.share.addEventListener('click', function () {
