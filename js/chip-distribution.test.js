@@ -94,6 +94,18 @@ test('Uneven buy-in: adjusted when not divisible by smallest chip', function () 
   assert.strictEqual(totalValue(result.chips), result.adjustedBuyIn, 'Total should equal adjusted buy-in');
 });
 
+// 4b. Exact cent-compatible buy-ins should not trigger uneven warning.
+test('Uneven buy-in: no warning for $2 with $0.01 smallest chip', function () {
+  var denoms = [
+    { value: 0.01, totalCount: 500, color: '#f0f0f0', name: 'White' },
+    { value: 0.05, totalCount: 300, color: '#dc2626', name: 'Red' },
+    { value: 0.25, totalCount: 200, color: '#16a34a', name: 'Green' }
+  ];
+  var result = ChipDistribution.distribute(2, denoms, 6);
+  assert.strictEqual(result.adjustedBuyIn, 2, 'Adjusted buy-in should remain unchanged');
+  assert.ok(!hasWarning(result.warnings, 'uneven_buyin'), 'Should not warn for an exactly divisible buy-in');
+});
+
 // 5. Blind mismatch detection
 test('Blind mismatch: smallest chip > small blind triggers warning', function () {
   var denoms = [

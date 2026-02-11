@@ -204,13 +204,16 @@ var ChipDistribution = (function () {
     }
 
     var smallest = sorted[0].value;
+    var buyInCents = toCents(buyIn);
+    var smallestCents = toCents(smallest);
 
-    // Adjust buy-in to be divisible by smallest denomination
-    var adjustedBuyIn = buyIn;
-    var remainder = buyIn % smallest;
-    if (remainder !== 0) {
-      adjustedBuyIn = Math.round(buyIn / smallest) * smallest;
-      if (adjustedBuyIn === 0) adjustedBuyIn = smallest;
+    // Adjust buy-in to be divisible by smallest denomination (in cents to avoid float modulo issues)
+    var adjustedBuyIn = round2(buyInCents / 100);
+    var remainderCents = smallestCents > 0 ? (buyInCents % smallestCents) : 0;
+    if (remainderCents !== 0) {
+      var adjustedCents = Math.round(buyInCents / smallestCents) * smallestCents;
+      if (adjustedCents === 0) adjustedCents = smallestCents;
+      adjustedBuyIn = round2(adjustedCents / 100);
       warnings.push({
         type: 'uneven_buyin',
         severity: 'yellow',
