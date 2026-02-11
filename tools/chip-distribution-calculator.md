@@ -1967,6 +1967,18 @@ description: "Cash-game chip setup assistant with buy-in-first flow, blind sugge
 
     var t = parseInt(qs.get('t'), 10);
     if (isFinite(t)) state.step = clamp(t, 0, 2);
+
+    if (qs.get('shared') === '1') {
+      state.step = 2;
+      requestAnimationFrame(function () {
+        var target = document.getElementById('calculator');
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+      // Strip shared param from URL so it doesn't persist on further navigation
+      var clean = new URLSearchParams(location.search);
+      clean.delete('shared');
+      history.replaceState(null, '', location.pathname + '?' + clean.toString());
+    }
   }
 
   function chooseDefaultValues() {
@@ -2599,7 +2611,10 @@ description: "Cash-game chip setup assistant with buy-in-first flow, blind sugge
     });
 
     els.share.addEventListener('click', function () {
-      var url = location.href;
+      var shareUrl = new URL(location.href);
+      shareUrl.searchParams.set('t', '2');
+      shareUrl.searchParams.set('shared', '1');
+      var url = shareUrl.toString();
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function () {
           els.status.textContent = 'Link copied.';
