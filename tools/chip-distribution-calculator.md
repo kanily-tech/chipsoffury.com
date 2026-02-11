@@ -1,7 +1,7 @@
 ---
 title: "Poker Chip Distribution Calculator"
 date: 2026-02-10
-description: "Cash-game chip setup assistant with buy-in-first flow, blind suggestions, denomination suggestions, and shareable URLs."
+description: "Free tool to figure out poker chip distribution for your home game. Enter your buy-in, player count, and chip set to get the exact per-player breakdown."
 ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 ---
 
