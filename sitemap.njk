@@ -41,6 +41,18 @@ eleventyExcludeFromCollections: true
   {%- endif %}
 {%- endfor %}
 
+{# Tools - interactive tools and calculators (excludes drafts) #}
+{%- for tool in collections.publishedTools %}
+  {%- if tool.url %}
+  <url>
+    <loc>https://chipsoffury.com{{ tool.url }}</loc>
+    <lastmod>{{ tool.date | date('%Y-%m-%d') }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {%- endif %}
+{%- endfor %}
+
 {# Blog posts - sorted by date, newer first (excludes drafts) #}
 {%- for post in collections.publishedBlogPosts | reverse %}
   {%- if post.url %}
