@@ -129,7 +129,7 @@ More home games die from unclear rebuy rules than from bad cards.
 
 ### The Unlimited Rebuy Problem
 
-A recurring story on poker forums goes like this: a player (call him Robbie) shoves [all-in](glossary:all-in) every other hand during the first hour, rebuys when he busts, and does it again. He has the bankroll for it. The problem is that he knocks out two or three players per session who can't or won't rebuy at that pace. They're sitting there stacked while Robbie reloads for the third time.
+A recurring story on poker forums goes like this: a player (call him Robbie) shoves [all-in](glossary:all-in) every other hand during the first hour, rebuys when he busts, and does it again. He has the bankroll for it. The problem is that he knocks out two or three players per session who can't or won't rebuy at that pace. They're sitting there [stacked](glossary:stacked) while Robbie reloads for the third time.
 
 The host in that story eventually capped rebuys at one per player after two regulars quietly stopped showing up. The cap fixed the game, though Robbie wasn't thrilled about it.
 
