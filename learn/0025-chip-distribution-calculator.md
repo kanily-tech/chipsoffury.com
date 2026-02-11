@@ -640,7 +640,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 .cof-summary {
   font-size: var(--fs-sm);
   color: #334155;
-  margin-top: 0.25rem;
+  margin: 1rem 0 1.2rem;
 }
 .cof-dist-kicker {
   font-size: var(--fs-base);
@@ -663,9 +663,10 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   margin-top: 0.7rem;
 }
 .cof-ref-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(5.5rem, 1fr));
-  gap: 0.9rem 0.4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.2rem;
 }
 .cof-ref-item {
   display: flex;
@@ -1033,19 +1034,19 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   }
   .cof-chip-columns {
     grid-template-columns: 3.7rem minmax(0, 1fr) 1.9rem;
-    gap: 0.12rem;
+    gap: 0.25rem;
     padding: 0;
   }
   .cof-chip-columns.is-marked {
-    grid-template-columns: 2.5rem 4rem minmax(0, 1fr) 1.9rem;
+    grid-template-columns: 3.2rem 5.5rem minmax(0, 1fr) 1.9rem;
   }
   .cof-chip-row {
     grid-template-columns: 3.7rem minmax(0, 1fr) 1.9rem;
-    gap: 0.12rem;
-    padding: 0.2rem 0;
+    gap: 0.25rem;
+    padding: 0.25rem 0;
   }
   .cof-chip-row.is-marked {
-    grid-template-columns: 2.5rem 4rem minmax(0, 1fr) 1.9rem;
+    grid-template-columns: 3.2rem 5.5rem minmax(0, 1fr) 1.9rem;
   }
   .cof-chip-button {
     width: 1.9rem;
@@ -1062,9 +1063,6 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   .cof-remove {
     width: 1.9rem;
     height: 1.9rem;
-  }
-  .cof-ref-grid {
-    gap: 0.7rem 0.3rem;
   }
   .cof-color-menu {
     grid-template-columns: repeat(4, 1.35rem);
@@ -1087,8 +1085,9 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
       <p class="cof-status" id="cof-status">Step through setup, then copy a shareable link.</p>
     </div>
     <div class="cof-head-actions">
-      <button type="button" class="cof-share cof-copy-state" id="cof-copy-state">Copy State</button>
-      <button type="button" class="cof-share" id="cof-share">Copy Share Link</button>
+      <!-- Debug: copies full internal state (inputs, chips, values, suggestions) as JSON to clipboard for troubleshooting -->
+      <!-- <button type="button" class="cof-share cof-copy-state" id="cof-copy-state">Copy State</button> -->
+      <button type="button" class="cof-share" id="cof-share">Copy Config</button>
       <a href="#" class="cof-reset" id="cof-reset">Reset</a>
     </div>
   </div>
@@ -1979,13 +1978,15 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
         } else {
           valInput.value = '';
         }
-        valInput.addEventListener('input', (function (i) {
+        valInput.addEventListener('change', (function (i) {
           return function () {
             var n = parseFloat(this.value);
             if (!isFinite(n) || n <= 0) {
               state.markedValues[i] = null;
+              this.value = '';
             } else {
               state.markedValues[i] = round2(n);
+              this.value = String(round2(n));
             }
             recompute();
           };
@@ -2095,7 +2096,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
       els.distAlert.innerHTML = '<strong>Important:</strong> ' + blindWarnings[0].message;
     }
 
-    var allWarnings = result.warnings.concat(blindWarnings);
+    var allWarnings = result.warnings;
     allWarnings.forEach(function (w) {
       var div = document.createElement('div');
       div.className = 'cof-warning ' + (w.severity === 'red' ? 'red' : 'yellow');
