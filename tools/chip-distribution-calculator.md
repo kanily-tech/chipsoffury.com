@@ -4,7 +4,346 @@ date: 2026-02-10
 description: "Cash-game chip setup assistant with buy-in-first flow, blind suggestions, denomination suggestions, and shareable URLs."
 ---
 
-Use this cash-game setup assistant to move from buy-in to playable stacks in three steps: game settings, chip set, then denomination mapping + distribution.
+<style>
+/* ═══ Landing Page ═══ */
+.cof-lp-hero {
+  background: #091A12;
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 1.5rem 4rem;
+}
+.cof-lp-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -10%;
+  width: 60%; height: 160%;
+  background: radial-gradient(ellipse at center, rgba(20, 83, 50, 0.3) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cof-lp-deco {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.cof-lp-deco--1 {
+  width: 300px; height: 300px;
+  top: -80px; right: 3%;
+  border: 2px solid rgba(191, 162, 78, 0.1);
+}
+.cof-lp-deco--1::after {
+  content: '';
+  position: absolute; inset: 26px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(191, 162, 78, 0.07);
+}
+.cof-lp-deco--2 {
+  width: 140px; height: 140px;
+  bottom: 40px; right: 20%;
+  border: 1.5px solid rgba(191, 162, 78, 0.06);
+}
+.cof-lp-deco--3 {
+  width: 80px; height: 80px;
+  top: 35%; left: -20px;
+  border: 1.5px solid rgba(191, 162, 78, 0.05);
+}
+.cof-lp-hero-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+@keyframes cof-lp-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.cof-lp-hero-inner > * {
+  animation: cof-lp-up 0.55s ease-out both;
+}
+.cof-lp-hero-inner > :nth-child(2) { animation-delay: 0.08s; }
+.cof-lp-hero-inner > :nth-child(3) { animation-delay: 0.16s; }
+.cof-lp-hero-inner > :nth-child(4) { animation-delay: 0.24s; }
+.cof-lp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #BFA24E;
+  margin-bottom: 1rem;
+}
+.cof-lp-eyebrow::before {
+  content: '';
+  display: block;
+  width: 1.4rem;
+  height: 1.5px;
+  background: #BFA24E;
+}
+.cof-lp-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #F2EFE8;
+  margin: 0 0 1.2rem;
+}
+.cof-lp-sub {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #8FA894;
+  max-width: 36rem;
+  margin: 0 0 2rem;
+}
+.cof-lp-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+  max-width: 36rem;
+}
+.cof-lp-steps-list li {
+  display: flex;
+  gap: 0.7rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #8FA894;
+}
+.cof-lp-steps-list strong {
+  color: #D6D1C4;
+  font-weight: 600;
+}
+.cof-lp-step-hint {
+  font-size: 0.85rem;
+  color: #6B7E6F;
+}
+.cof-lp-step-num {
+  flex-shrink: 0;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(191, 162, 78, 0.4);
+  color: #BFA24E;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem;
+}
+.cof-lp-note {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #6B7E6F;
+  max-width: 36rem;
+  margin: 0 0 2rem;
+}
+.cof-lp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #BFA24E;
+  color: #091A12;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 0.85rem 1.7rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, transform 0.12s;
+}
+.cof-lp-cta:hover {
+  background: #CEAF5C;
+  transform: translateY(-1px);
+}
+.cof-lp-cta svg { width: 1rem; height: 1rem; }
+.cof-lp-tool {
+  background: #EEEDEA;
+  padding: 3rem 0.85rem 3.5rem;
+  position: relative;
+}
+.cof-lp-tool::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C8B87A 50%, transparent);
+}
+.cof-lp-tool-inner {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+.cof-lp-tool-head {
+  text-align: center;
+  margin-bottom: 1.3rem;
+}
+.cof-lp-tool-head h2 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1A2E23;
+  margin: 0 0 0.2rem;
+}
+.cof-lp-tool-head p {
+  font-size: 0.875rem;
+  color: #5F6B63;
+  margin: 0;
+}
+.cof-lp-problems {
+  background: #FAFAF6;
+  padding: 3.5rem 1.5rem;
+}
+.cof-lp-problems-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+.cof-lp-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8B7335;
+  margin-bottom: 0.45rem;
+}
+.cof-lp-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: #1A2E23;
+  margin: 0 0 1.8rem;
+}
+.cof-lp-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+@media (max-width: 560px) {
+  .cof-lp-cards { grid-template-columns: 1fr; }
+}
+.cof-lp-card {
+  background: #fff;
+  border: 1px solid #E8E5DD;
+  border-radius: 12px;
+  padding: 1.15rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+.cof-lp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #BFA24E, #8B7335);
+}
+.cof-lp-card-icon {
+  width: 2rem; height: 2rem;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  background: #FBF6EB;
+  border: 1px solid #EDE4CC;
+}
+.cof-lp-card h3 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1A2E23;
+  margin: 0 0 0.25rem;
+  line-height: 1.3;
+}
+.cof-lp-card p {
+  font-size: 0.825rem;
+  line-height: 1.5;
+  color: #5F6B63;
+  margin: 0;
+}
+.cof-lp-features {
+  background: #FAFAF6;
+  padding: 2.5rem 1.5rem 3rem;
+  border-top: 1px solid #E8E5DD;
+}
+.cof-lp-features-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+.cof-lp-feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem 1.5rem;
+}
+@media (max-width: 640px) {
+  .cof-lp-feat-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 380px) {
+  .cof-lp-feat-grid { grid-template-columns: 1fr; }
+}
+.cof-lp-feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.cof-lp-feat-check {
+  width: 1.2rem; height: 1.2rem;
+  border-radius: 999px;
+  background: #E8F5EE;
+  color: #0F766E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  font-size: 0.6rem;
+  font-weight: 800;
+}
+.cof-lp-feat span {
+  font-size: 0.85rem;
+  color: #3D4F44;
+  line-height: 1.4;
+}
+.cof-lp-feat strong {
+  color: #1A2E23;
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .cof-lp-hero { padding: 3.5rem 1.2rem 3rem; }
+  .cof-lp-tool { padding: 2.5rem 0.65rem 3rem; }
+  .cof-lp-problems { padding: 2.5rem 1.2rem; }
+  .cof-lp-features { padding: 2rem 1.2rem 2.5rem; }
+}
+</style>
+
+<section class="cof-lp-hero">
+  <div class="cof-lp-deco cof-lp-deco--1" aria-hidden="true"></div>
+  <div class="cof-lp-deco cof-lp-deco--2" aria-hidden="true"></div>
+  <div class="cof-lp-deco cof-lp-deco--3" aria-hidden="true"></div>
+  <div class="cof-lp-hero-inner">
+    <div class="cof-lp-eyebrow">Free Tool</div>
+    <h1 class="cof-lp-h1">Chip Distribution Calculator</h1>
+    <ol class="cof-lp-steps-list">
+      <li><span class="cof-lp-step-num">1</span><div>Enter your game's <strong>buy-in</strong> and <strong>player count</strong>.<br><span class="cof-lp-step-hint">Blinds are automatically suggested but you can set them manually if you want.</span></div></li>
+      <li><span class="cof-lp-step-num">2</span><span>Enter the <strong>chip inventory</strong> in your poker set.</span></li>
+      <li><span class="cof-lp-step-num">3</span><span>Get a breakdown of how many of each chip to give every player.</span></li>
+    </ol>
+    <p class="cof-lp-note">The URL stores the full config so you can pull it up next session or send it to players as a chip-value reference for unmarked chips (great for beginners).</p>
+    <a href="#calculator" class="cof-lp-cta">Start Setting Up <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
+  </div>
+</section>
+
+<section id="calculator" class="cof-lp-tool">
+<div class="cof-lp-tool-inner">
+<div class="cof-lp-tool-head">
+  <h2>Cash Game Chip Setup</h2>
+  <p>Set your buy-in, enter your chips, review the distribution.</p>
+</div>
 
 <style>
 #cof-calc {
@@ -54,13 +393,8 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   align-items: flex-start;
   margin-bottom: 0.7rem;
 }
-.cof-head h3 {
-  margin: 0;
-  font-size: var(--fs-md);
-  letter-spacing: 0.01em;
-}
 .cof-status {
-  margin: 0.15rem 0 0;
+  margin: 0;
   font-size: var(--fs-sm);
   color: var(--cof-sub);
 }
@@ -77,7 +411,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 .cof-head-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.85rem;
   justify-content: flex-end;
 }
 .cof-copy-state {
@@ -1077,14 +1411,11 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 
 <div id="cof-calc">
   <div class="cof-head">
-    <div>
-      <h3>Cash Game Chip Setup Assistant</h3>
-      <p class="cof-status" id="cof-status">Step through setup, then copy a shareable link.</p>
-    </div>
+    <p class="cof-status" id="cof-status"></p>
     <div class="cof-head-actions">
       <!-- Debug: copies full internal state (inputs, chips, values, suggestions) as JSON to clipboard for troubleshooting -->
       <!-- <button type="button" class="cof-share cof-copy-state" id="cof-copy-state">Copy State</button> -->
-      <button type="button" class="cof-share" id="cof-share">Copy Config</button>
+      <button type="button" class="cof-share" id="cof-share">Copy Setup Link</button>
       <a href="#" class="cof-reset" id="cof-reset">Reset</a>
     </div>
   </div>
@@ -2154,7 +2485,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 
   function renderNav() {
     renderTabs();
-    els.status.textContent = 'Step through setup, then copy a shareable link.';
+    els.status.textContent = '';
   }
 
   function render() {
@@ -2271,7 +2602,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
       var url = location.href;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function () {
-          els.status.textContent = 'Share link copied.';
+          els.status.textContent = 'Link copied.';
         }).catch(function () {
           els.status.textContent = 'Could not copy automatically. Copy from address bar.';
         });
@@ -2311,14 +2642,66 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 })();
 </script>
 
----
+</div>
+</section>
 
-## How It Works
+<section class="cof-lp-problems">
+  <div class="cof-lp-problems-inner">
+    <div class="cof-lp-tag">The Problem</div>
+    <h2 class="cof-lp-h2">The same setup questions come up every game night</h2>
+    <div class="cof-lp-cards">
+      <div class="cof-lp-card">
+        <div class="cof-lp-card-icon">🎨</div>
+        <h3>Which values go on which colors?</h3>
+        <p>Most chip sets don't have denominations printed on them. Hosts end up guessing values, and the result is usually an overcomplicated ladder that causes problems during play.</p>
+      </div>
+      <div class="cof-lp-card">
+        <div class="cof-lp-card-icon">📦</div>
+        <h3>The chip set doesn't match the game</h3>
+        <p>Retail sets tend to include too many high-denomination chips and not enough low ones. A 300-piece set might cover 8 players on paper, but there's no room left for rebuys or making change.</p>
+      </div>
+      <div class="cof-lp-card">
+        <div class="cof-lp-card-icon">🔢</div>
+        <h3>Blinds don't fit any chip in the set</h3>
+        <p>If the blinds are decided before chip values, you can end up with no chip small enough to post the small blind. Every hand turns into a change-making exercise.</p>
+      </div>
+      <div class="cof-lp-card">
+        <div class="cof-lp-card-icon">⏱️</div>
+        <h3>Setup eats into play time</h3>
+        <p>First-time hosts often spend 20 minutes debating chip values at the table before anyone plays a hand. There's no standard template, so everyone starts from scratch.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-The tool is structured as a 3-step wizard for cash games:
-
-1. Choose buy-in first.
-2. Set blinds and players (or let blinds auto-suggest in the 50-150 BB range).
-3. Configure chip colors and counts, then review the recommended denomination mapping and distribution.
-
-The URL stores the full setup (`buy-in`, `blinds`, `players`, `chips`, and selected denomination values), so any setup can be shared directly.
+<section class="cof-lp-features">
+  <div class="cof-lp-features-inner">
+    <div class="cof-lp-tag">What's Built In</div>
+    <div class="cof-lp-feat-grid">
+      <div class="cof-lp-feat">
+        <span class="cof-lp-feat-check">✓</span>
+        <span><strong>Auto blinds:</strong> suggests SB/BB that keeps depth in the 50-150 BB range</span>
+      </div>
+      <div class="cof-lp-feat">
+        <span class="cof-lp-feat-check">✓</span>
+        <span><strong>Denomination mapping:</strong> assigns dollar values to each chip color</span>
+      </div>
+      <div class="cof-lp-feat">
+        <span class="cof-lp-feat-check">✓</span>
+        <span><strong>Setup warnings:</strong> flags blind mismatches and insufficient counts</span>
+      </div>
+      <div class="cof-lp-feat">
+        <span class="cof-lp-feat-check">✓</span>
+        <span><strong>Config in URL:</strong> saves your setup for reuse, or as a chip-value reference for the table</span>
+      </div>
+      <div class="cof-lp-feat">
+        <span class="cof-lp-feat-check">✓</span>
+        <span><strong>Marked chip mode:</strong> for sets that already have values printed on them</span>
+      </div>
+      <div class="cof-lp-feat">
+        <span class="cof-lp-feat-check">✓</span>
+        <span><strong>Cash games only:</strong> built for home cash games, not tournament structures</span>
+      </div>
+    </div>
+  </div>
+</section>
