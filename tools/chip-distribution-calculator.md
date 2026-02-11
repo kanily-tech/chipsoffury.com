@@ -2,6 +2,7 @@
 title: "Poker Chip Distribution Calculator"
 date: 2026-02-10
 description: "Cash-game chip setup assistant with buy-in-first flow, blind suggestions, denomination suggestions, and shareable URLs."
+ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 ---
 
 <style>
