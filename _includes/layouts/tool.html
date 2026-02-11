@@ -1,0 +1,19 @@
+---
+layout: layouts/base-tailwind.html
+---
+<!-- Navigation -->
+{% renderTemplate "webc" %}
+<site-navigation></site-navigation>
+{% endrenderTemplate %}
+
+<!-- Tool Content -->
+<article class="bg-gray-50 min-h-screen">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <!-- Main Content -->
+    <div class="prose max-w-none">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
+
+{% include "components/glossary-modal.html" %}

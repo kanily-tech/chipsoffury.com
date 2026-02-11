@@ -2,9 +2,6 @@
 title: "Poker Chip Distribution Calculator"
 date: 2026-02-10
 description: "Cash-game chip setup assistant with buy-in-first flow, blind suggestions, denomination suggestions, and shareable URLs."
-tags: [ 'post', 'home-games' ]
-authorSlugs: [animesh]
-showAuthorBio: false
 ---
 
 Use this cash-game setup assistant to move from buy-in to playable stacks in three steps: game settings, chip set, then denomination mapping + distribution.
