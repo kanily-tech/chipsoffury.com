@@ -2,11 +2,9 @@
 title: "How to Play Texas Hold’em: Beginner Rules Explained Simply"
 date: 2026-01-30
 description: "Learn how to play Texas Hold’em with simple, beginner-friendly rules. Understand the flow of a hand, card rankings, and start playing with confidence."
-devlogNumber: 8
 tags: [ 'post', 'guide', 'web' ]
-author: Animesh
+authorSlugs: [mayank]
 draft: true
-layout: layouts/blog-post-tailwind.html
 ---
 
 Texas Hold’em looks intimidating at first — chips, cards, betting, and unfamiliar terms everywhere. The good news? You can understand the basics much faster than you think.

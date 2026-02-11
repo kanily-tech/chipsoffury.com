@@ -4,9 +4,8 @@ date: 2026-01-30
 description: "Looking for a poker app you can play with friends? We compare the best private poker apps for 2026 - no real money, no public tables, just easy home-game play."
 devlogNumber: 8
 tags: [ 'post', 'guide', 'web' ]
-author: Animesh
+authorSlugs: [mayank]
 draft: true
-layout: layouts/blog-post-tailwind.html
 ---
 
 If you’ve ever tried to organize 	an online poker night with friends, you already know the problem: **most poker apps aren’t built for private games**.

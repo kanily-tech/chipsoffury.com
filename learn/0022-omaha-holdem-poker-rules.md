@@ -2,11 +2,9 @@
 title: "How to Play Omaha Poker: Rules Explained for Beginners"
 date: 2026-01-30
 description: "Learn how to play Omaha poker with simple beginner rules. Understand the key differences from Texas Hold’em and start playing without confusion."
-devlogNumber: 8
 tags: [ 'post', 'guide', 'web' ]
-author: Animesh
+authorSlugs: [mayank]
 draft: true
-layout: layouts/blog-post-tailwind.html
 ---
 
 If you already understand the basics of poker — especially Texas Hold’em — Omaha poker will feel familiar at first. But there’s **one key rule** that changes everything, and it’s the reason so many beginners get confused.

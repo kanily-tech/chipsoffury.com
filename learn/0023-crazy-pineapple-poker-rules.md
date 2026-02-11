@@ -2,11 +2,9 @@
 title: "How to Play Crazy Pineapple Poker: Rules Explained Simply"
 date: 2026-01-30
 description: "Learn how to play Crazy Pineapple poker with simple rules. Understand the key difference from Texas Hold’em and start playing with confidence."
-devlogNumber: 8
 tags: [ 'post', 'guide', 'web' ]
-author: Animesh
+authorSlugs: [mayank]
 draft: true
-layout: layouts/blog-post-tailwind.html
 ---
 
 If you already know Texas Hold’em, Crazy Pineapple will feel familiar — with one fun twist.
