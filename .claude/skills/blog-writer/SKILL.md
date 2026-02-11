@@ -72,6 +72,7 @@ unprecedented, vibrant, vital, whispering, understanding
 - "and robust"
 - "here's the uncomfortable truth"
 - "repeatable decision framework"
+- "here's the thing"
 
 ### Banned Concepts
 

@@ -182,6 +182,12 @@ module.exports = function(eleventyConfig) {
             .sort((a, b) => b.date - a.date);
     });
 
+    // Create publishedTools collection (excludes drafts)
+    eleventyConfig.addCollection("publishedTools", function(collectionApi) {
+        return collectionApi.getFilteredByGlob("tools/*.md")
+            .filter(post => !post.data.draft);
+    });
+
     // Create glossary collection for poker term definitions
     eleventyConfig.addCollection("glossary", function(collectionApi) {
         return collectionApi.getFilteredByGlob("glossary/*.md");
