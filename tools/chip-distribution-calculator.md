@@ -1898,7 +1898,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   }
 
   function buyInStep(value) {
-    if (value < 10) return 5;
+    if (value < 10) return 1;
     return Math.pow(10, Math.floor(Math.log10(value)));
   }
 
@@ -1929,7 +1929,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   function load() {
     var qs = new URLSearchParams(location.search);
     var bi = parseFloat(qs.get('bi'));
-    if (isFinite(bi) && bi > 0) state.buyIn = bi;
+    if (isFinite(bi) && bi > 0) state.buyIn = Math.max(1, bi);
 
     var p = parseInt(qs.get('p'), 10);
     if (isFinite(p)) state.players = clamp(p, 2, 10);
@@ -2076,7 +2076,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       els.buyInput.value = String(round2(state.buyIn));
     }
     els.depthLabel.textContent = round2(state.buyIn / state.bb) + ' BB deep at ' + fmt(state.sb) + '/' + fmt(state.bb);
-    els.buyMinus.disabled = state.buyIn <= 5;
+    els.buyMinus.disabled = state.buyIn <= 1;
 
     els.autoBlinds.checked = state.autoBlinds;
     if (document.activeElement !== els.sb) {
@@ -2356,11 +2356,23 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       countInput.step = '1';
       countInput.value = String(chip.totalCount);
       countInput.title = 'Total count';
-      countInput.addEventListener('input', function () {
-        var n = parseInt(this.value, 10);
-        if (!isFinite(n) || n <= 0) return;
+      function commitCountInput() {
+        var n = parseInt(countInput.value, 10);
+        if (!isFinite(n) || n <= 0) {
+          countInput.value = String(state.chips[idx].totalCount);
+          return;
+        }
+        if (n === parseInt(state.chips[idx].totalCount, 10)) return;
         state.chips[idx].totalCount = n;
         recompute();
+      }
+      countInput.addEventListener('change', commitCountInput);
+      countInput.addEventListener('blur', commitCountInput);
+      countInput.addEventListener('keydown', function (ev) {
+        if (ev.key !== 'Enter') return;
+        ev.preventDefault();
+        commitCountInput();
+        countInput.blur();
       });
       countStepper.appendChild(countInput);
 
@@ -2530,7 +2542,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
     els.buyMinus.addEventListener('click', function () {
       var step = buyInStep(state.buyIn - 1);
-      state.buyIn = Math.max(5, round2(state.buyIn - step));
+      state.buyIn = Math.max(1, round2(state.buyIn - step));
       recompute();
     });
     els.buyPlus.addEventListener('click', function () {
@@ -2541,7 +2553,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     els.buyInput.addEventListener('input', function () {
       var n = parseFloat(this.value);
       if (!isFinite(n) || n <= 0) return;
-      state.buyIn = n;
+      state.buyIn = Math.max(1, n);
       recompute();
     });
 

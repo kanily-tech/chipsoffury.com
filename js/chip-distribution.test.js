@@ -457,5 +457,81 @@ test('suggestDenominationMappings: prefers SB as minimum denomination for clean 
   assert.ok(Math.abs(suggestions[0].metrics.smallestValue - 0.5) < 0.001, 'Smallest denomination should be SB (0.5), not below it');
 });
 
+// 26. Low-stakes blind pairs should be supported for unmarked chips.
+test('suggestDenominationMappings: supports $0.10/$0.20 blinds', function () {
+  var chipSet = [
+    { color: '#f3f4f6', name: 'White', totalCount: 100 },
+    { color: '#dc2626', name: 'Red', totalCount: 100 },
+    { color: '#16a34a', name: 'Green', totalCount: 50 },
+    { color: '#1f2937', name: 'Black', totalCount: 50 }
+  ];
+
+  var suggestions = ChipDistribution.suggestDenominationMappings({
+    buyIn: 20,
+    playerCount: 8,
+    smallBlind: 0.1,
+    bigBlind: 0.2,
+    chipSet: chipSet,
+    maxOptions: 1
+  });
+
+  assert.strictEqual(suggestions.length, 1, 'Should provide one recommended mapping');
+  assert.ok(suggestions[0].metrics.smallestValue <= 0.1 + 1e-9, 'Smallest denomination should be <= $0.10 SB');
+  assert.ok(!hasWarning(suggestions[0].distribution.warnings, 'impossible'), 'Low-stakes recommendation should still distribute exactly');
+});
+
+// 27. Very low buy-ins should still allow playable low-denomination ladders.
+test('suggestDenominationMappings: supports $1 buy-in with $0.05/$0.10 blinds', function () {
+  var chipSet = [
+    { color: '#f3f4f6', name: 'White', totalCount: 100 },
+    { color: '#dc2626', name: 'Red', totalCount: 100 },
+    { color: '#16a34a', name: 'Green', totalCount: 50 },
+    { color: '#1f2937', name: 'Black', totalCount: 50 }
+  ];
+
+  var suggestions = ChipDistribution.suggestDenominationMappings({
+    buyIn: 1,
+    playerCount: 6,
+    smallBlind: 0.05,
+    bigBlind: 0.1,
+    chipSet: chipSet,
+    maxOptions: 1
+  });
+
+  assert.strictEqual(suggestions.length, 1, 'Should provide one recommended mapping');
+  assert.ok(suggestions[0].metrics.smallestValue <= 0.05 + 1e-9, 'Smallest denomination should be <= $0.05 SB');
+  assert.ok(!hasWarning(suggestions[0].distribution.warnings, 'impossible'), 'Very low buy-in recommendation should still distribute exactly');
+});
+
+// 28. Penny-stakes blinds should be supported for $1 games.
+test('suggestDenominationMappings: supports $1 buy-in with $0.01/$0.02 blinds', function () {
+  var chipSet = [
+    { color: '#f3f4f6', name: 'White', totalCount: 100 },
+    { color: '#dc2626', name: 'Red', totalCount: 100 },
+    { color: '#16a34a', name: 'Green', totalCount: 50 },
+    { color: '#1f2937', name: 'Black', totalCount: 50 }
+  ];
+
+  var suggestions = ChipDistribution.suggestDenominationMappings({
+    buyIn: 1,
+    playerCount: 6,
+    smallBlind: 0.01,
+    bigBlind: 0.02,
+    chipSet: chipSet,
+    maxOptions: 1
+  });
+
+  assert.strictEqual(suggestions.length, 1, 'Should provide one recommended mapping');
+  assert.ok(suggestions[0].metrics.smallestValue <= 0.01 + 1e-9, 'Smallest denomination should be <= $0.01 SB');
+  assert.ok(!hasWarning(suggestions[0].distribution.warnings, 'impossible'), 'Penny-stakes recommendation should still distribute exactly');
+});
+
+// 29. Auto blind selection should include penny stakes for very small buy-ins.
+test('suggestBlinds: $1 buy-in suggests $0.01/$0.02', function () {
+  var suggestion = ChipDistribution.suggestBlinds(1);
+  assert.strictEqual(suggestion.smallBlind, 0.01, 'Expected SB 0.01');
+  assert.strictEqual(suggestion.bigBlind, 0.02, 'Expected BB 0.02');
+});
+
 console.log('\n' + passed + ' passed, ' + failed + ' failed\n');
 process.exit(failed > 0 ? 1 : 0);

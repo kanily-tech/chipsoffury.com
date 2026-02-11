@@ -439,6 +439,8 @@ var ChipDistribution = (function () {
 
     // Ordered by common home/casino cash-game usage.
     var conventionalPairs = [
+      { sb: 0.01, bb: 0.02 },
+      { sb: 0.02, bb: 0.05 },
       { sb: 0.05, bb: 0.1 },
       { sb: 0.1, bb: 0.2 },
       { sb: 0.25, bb: 0.5 },
@@ -509,10 +511,15 @@ var ChipDistribution = (function () {
 
     var blindUnit = (smallBlind > 0) ? smallBlind : (bigBlind > 0 ? bigBlind / 2 : 0.25);
     if (blindUnit <= 0) blindUnit = 0.25;
-    var cleanIncrement = blindUnit >= 0.25 ? 0.25 : (blindUnit >= 0.1 ? 0.1 : 0.05);
+    var cleanIncrement = blindUnit >= 0.25 ? 0.25 : (blindUnit >= 0.1 ? 0.1 : (blindUnit >= 0.05 ? 0.05 : 0.01));
 
     // Conventional denomination ladders only (prevents odd values like 0.07/0.35/1.75/7).
     var ladderLibrary = [
+      [0.01, 0.02, 0.05, 0.1, 0.25, 1, 5, 25],
+      [0.01, 0.02, 0.05, 0.25, 1, 5, 25, 100],
+      [0.05, 0.1, 0.25, 1, 5, 25, 100, 500],
+      [0.05, 0.1, 0.5, 1, 5, 25, 100, 500],
+      [0.1, 0.5, 1, 5, 25, 100, 500, 1000],
       [0.25, 1, 5, 25, 100, 500, 1000, 5000],
       [0.5, 1, 5, 25, 100, 500, 1000, 5000],
       [1, 2, 5, 25, 100, 500, 1000, 5000],
