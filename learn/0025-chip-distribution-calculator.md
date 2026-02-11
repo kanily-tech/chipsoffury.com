@@ -11,7 +11,6 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 
 <style>
 #cof-calc {
-  --cof-bg: linear-gradient(160deg, #eff6ff 0%, #f8fafc 45%, #fefce8 100%);
   --cof-panel: #ffffff;
   --cof-ink: #0f172a;
   --cof-sub: #475569;
@@ -27,16 +26,26 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   --cof-number-color: #0f4c5c;
   --cof-number-weight: 600;
   --cof-number-underline: #b0c4c0;
+
+  /* Typography scale – Minor Third (1.2) */
+  --fs-xs:   0.75rem;   /* 12px – tags, badges */
+  --fs-sm:   0.875rem;  /* 14px – secondary text, labels, small buttons */
+  --fs-base: 1rem;      /* 16px – body, controls */
+  --fs-md:   1.25rem;   /* 20px – titles, captions */
+  --fs-lg:   1.5rem;    /* 24px – large numbers */
+  --fs-xl:   2rem;      /* 32px – hero numbers */
+
   margin: 1.5rem 0;
   padding: 0.95rem;
   border-radius: 16px;
   border: 1px solid #dbe4f0;
-  background: var(--cof-bg);
+  background: #fff;
   color: var(--cof-ink);
   font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
   font-variant-numeric: tabular-nums;
 }
 #cof-calc * { box-sizing: border-box; }
+#cof-calc input, #cof-calc button, #cof-calc select { font-family: inherit; }
 #cof-calc input[type="number"] { -moz-appearance: textfield; }
 #cof-calc input::-webkit-inner-spin-button,
 #cof-calc input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
@@ -50,12 +59,12 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 }
 .cof-head h3 {
   margin: 0;
-  font-size: 1.02rem;
+  font-size: var(--fs-md);
   letter-spacing: 0.01em;
 }
 .cof-status {
   margin: 0.15rem 0 0;
-  font-size: 0.74rem;
+  font-size: var(--fs-sm);
   color: var(--cof-sub);
 }
 .cof-share {
@@ -64,7 +73,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   color: #0f5f58;
   border-radius: 999px;
   padding: 0.34rem 0.7rem;
-  font-size: 0.71rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   cursor: pointer;
 }
@@ -81,7 +90,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 }
 .cof-reset {
   align-self: center;
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   color: #475569;
   text-decoration: underline;
   text-underline-offset: 0.12rem;
@@ -90,58 +99,68 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 .cof-reset:hover { color: #0f4c5c; }
 
 .cof-tabs {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.4rem;
-  margin-bottom: 0.65rem;
+  display: flex;
+  border-bottom: 1px solid var(--cof-line);
 }
 .cof-tab {
-  border: 1px solid #d7deea;
-  background: #fff;
-  border-radius: 10px;
-  padding: 0.42rem 0.4rem;
+  flex: 1;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  padding: 0.52rem 0.4rem;
   text-align: center;
-  font-size: 0.72rem;
-  color: #334155;
+  font-size: var(--fs-sm);
+  color: #64748b;
   font-weight: 700;
   cursor: pointer;
 }
 .cof-tab.is-active {
-  border-color: #82b9af;
-  background: #ecfdf5;
-  color: #115e59;
+  color: #0f172a;
+  border-bottom-color: #0f172a;
 }
 
 .cof-panel {
-  background: var(--cof-panel);
-  border: 1px solid var(--cof-line);
-  border-radius: 12px;
-  padding: 0.75rem;
+  padding: 0.85rem 0 0;
 }
 #cof-calc section[data-step] > :first-child {
   margin-top: 0 !important;
 }
-#cof-calc .cof-step-header {
+.cof-caption-bar {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin: 0 0 0.62rem;
-  padding: 0.05rem 0 0.42rem;
-  border-bottom: 1px solid #e7edf7;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.35rem 0 0.65rem;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid #eef2f7;
 }
-#cof-calc .cof-step-title {
-  margin: 0 !important;
-  font-size: 0.82rem !important;
-  line-height: 1.15;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #334155;
+.cof-caption {
+  order: -1;
+  flex: 0 0 100%;
+  text-align: center;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.35;
 }
-#cof-calc .cof-step-note {
-  font-size: 0.72rem;
-  color: var(--cof-sub);
+.cof-caption-nav {
+  border: 1px solid #0f766e;
+  border-radius: 8px;
+  background: #ecfdf5;
+  color: #0f766e;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0.36rem 0.7rem;
+  white-space: nowrap;
+}
+#cof-next { margin-left: auto; }
+.cof-caption-nav:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+.cof-caption-nav:not(:disabled):hover {
+  background: #d1fae5;
 }
 
 .cof-hidden { display: none; }
@@ -154,13 +173,13 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   margin-bottom: 0.55rem;
 }
 .cof-buy-main {
-  font-size: 1.58rem;
+  font-size: var(--fs-lg);
   font-weight: 800;
   color: #0f4c5c;
   line-height: 1;
 }
 .cof-buy-sub {
-  font-size: 0.76rem;
+  font-size: var(--fs-sm);
   color: var(--cof-sub);
 }
 .cof-slider {
@@ -178,7 +197,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   background: #f8fafc;
   color: #334155;
   border-radius: 999px;
-  font-size: 0.7rem;
+  font-size: var(--fs-sm);
   padding: 0.24rem 0.6rem;
   cursor: pointer;
 }
@@ -189,7 +208,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   gap: 0.2rem;
 }
 .cof-field label {
-  font-size: 0.7rem;
+  font-size: var(--fs-sm);
   color: #64748b;
   font-weight: 700;
 }
@@ -200,7 +219,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   background: #fff;
   color: var(--cof-ink);
   padding: 0.35rem 0.44rem;
-  font-size: 0.86rem;
+  font-size: var(--fs-base);
 }
 
 .cof-grid-2 {
@@ -213,7 +232,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   color: #475569;
   font-weight: 600;
 }
@@ -230,7 +249,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   background: #fff;
   color: #0f766e;
   font-weight: 800;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   cursor: pointer;
 }
 .cof-stepper button:first-child { border-radius: 8px 0 0 8px; }
@@ -241,7 +260,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   text-align: center;
   border-top: 1px solid #d7deea;
   border-bottom: 1px solid #d7deea;
-  font-size: 0.9rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: #1e293b;
 }
@@ -257,7 +276,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   background: #fff;
   color: #334155;
   border-radius: 999px;
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   padding: 0.24rem 0.62rem;
   cursor: pointer;
 }
@@ -280,7 +299,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   margin-bottom: 0.18rem;
 }
 .cof-chip-columns span {
-  font-size: 0.67rem;
+  font-size: var(--fs-xs);
   text-transform: uppercase;
   letter-spacing: 0.07em;
   color: #64748b;
@@ -320,7 +339,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   flex-shrink: 0;
 }
 .cof-chip-mult {
-  font-size: 1rem;
+  font-size: var(--fs-base);
   color: #475569;
   font-weight: 700;
   line-height: 1;
@@ -366,7 +385,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   border-radius: 10px;
   background: var(--cof-control-bg);
   color: #0f766e;
-  font-size: 1.15rem;
+  font-size: var(--fs-md);
   font-weight: 800;
   cursor: pointer;
   flex-shrink: 0;
@@ -379,7 +398,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   border-radius: 0;
   background: transparent;
   padding: 0 0 0.1rem 0;
-  font-size: 1.5rem;
+  font-size: var(--fs-lg);
   line-height: 1;
   text-align: center;
   font-weight: var(--cof-number-weight);
@@ -397,7 +416,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   border-radius: 999px;
   background: #fff;
   color: #c2410c;
-  font-size: 1.05rem;
+  font-size: var(--fs-base);
   line-height: 1;
   cursor: pointer;
   flex-shrink: 0;
@@ -409,7 +428,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   border-radius: 10px;
   background: #f8fbff;
   color: #334155;
-  font-size: 0.84rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   padding: 0.55rem 0.5rem;
   cursor: pointer;
@@ -424,7 +443,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   gap: 0.5rem;
 }
 .cof-suggest-head span {
-  font-size: 0.72rem;
+  font-size: var(--fs-sm);
   color: #64748b;
   font-weight: 700;
 }
@@ -433,7 +452,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   background: #ecfdf5;
   color: #0f766e;
   border-radius: 999px;
-  font-size: 0.68rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   padding: 0.22rem 0.55rem;
   cursor: pointer;
@@ -462,12 +481,12 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   margin-bottom: 0.2rem;
 }
 .cof-option-label {
-  font-size: 0.74rem;
+  font-size: var(--fs-sm);
   font-weight: 800;
   color: #1e3a5f;
 }
 .cof-tag {
-  font-size: 0.64rem;
+  font-size: var(--fs-xs);
   border-radius: 999px;
   padding: 0.15rem 0.42rem;
   border: 1px solid transparent;
@@ -475,7 +494,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 .cof-tag.good { color: #166534; background: #ecfdf3; border-color: #b9efcd; }
 .cof-tag.warn { color: #92400e; background: #fffbeb; border-color: #f5dd9b; }
 .cof-map {
-  font-size: 0.7rem;
+  font-size: var(--fs-sm);
   color: #475569;
 }
 
@@ -485,7 +504,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   color: var(--cof-danger);
   border-radius: 10px;
   padding: 0.5rem 0.56rem;
-  font-size: 0.76rem;
+  font-size: var(--fs-sm);
   line-height: 1.35;
   margin-bottom: 0.6rem;
 }
@@ -497,30 +516,40 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   color: #9f1239;
   border-radius: 999px;
   padding: 0.2rem 0.52rem;
-  font-size: 0.68rem;
+  font-size: var(--fs-sm);
   font-weight: 700;
   cursor: pointer;
 }
 
 .cof-summary {
-  font-size: 0.82rem;
+  font-size: var(--fs-sm);
   color: #334155;
   margin-top: 0.25rem;
 }
-.cof-summary strong { color: #0f172a; }
 .cof-dist-kicker {
-  font-size: 1.02rem;
-  color: #475569;
+  font-size: var(--fs-base);
+  color: #334155;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+}
+.cof-dist-kicker strong {
   font-weight: 700;
-  line-height: 1.35;
+  color: #0f172a;
+}
+.cof-dist-blinds {
+  font-size: var(--fs-sm);
+  color: #475569;
+  text-align: center;
+  margin-top: 0.15rem;
 }
 .cof-stacks {
   margin-top: 0.7rem;
 }
 .cof-ref-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7.8rem, 1fr));
-  gap: 0.9rem 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(5.5rem, 1fr));
+  gap: 0.9rem 0.4rem;
 }
 .cof-ref-item {
   display: flex;
@@ -581,28 +610,28 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 .cof-chip-token-value {
   position: relative;
   z-index: 2;
-  font-size: 1.18rem;
-  font-weight: 900;
+  font-size: var(--fs-base);
+  font-weight: 700;
   color: var(--chip-text, #0f172a);
   letter-spacing: 0.01em;
 }
 .cof-ref-name {
   margin-top: 0.44rem;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: #334155;
   font-weight: 700;
 }
 .cof-ref-mult {
   margin-top: 0.08rem;
-  font-size: 1.25rem;
-  font-weight: 900;
+  font-size: var(--fs-base);
+  font-weight: 700;
   color: #0f172a;
   line-height: 1;
 }
 .cof-ref-eq {
   margin-top: 0.04rem;
-  font-size: 0.86rem;
-  font-weight: 700;
+  font-size: var(--fs-sm);
+  font-weight: 600;
   color: #475569;
 }
 .cof-stack-total {
@@ -612,8 +641,8 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   color: #115e59;
   border-radius: 10px;
   padding: 0.48rem 0.62rem;
-  font-size: 1rem;
-  font-weight: 900;
+  font-size: var(--fs-base);
+  font-weight: 700;
   text-align: center;
   letter-spacing: 0.01em;
 }
@@ -626,33 +655,35 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 .cof-warning {
   border: 1px solid transparent;
   border-radius: 8px;
-  font-size: 0.74rem;
+  font-size: var(--fs-sm);
   padding: 0.34rem 0.48rem;
 }
 .cof-warning.red { border-color: #fecdd3; background: #fff1f2; color: #9f1239; }
 .cof-warning.yellow { border-color: #fde68a; background: #fffbeb; color: #92400e; }
 
-.cof-nav {
-  margin-top: 0.7rem;
+
+.cof-form-row {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 0.45rem;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #eef2f7;
 }
-.cof-nav button {
-  flex: 1;
-  border-radius: 10px;
-  border: 1px solid #d7deea;
-  background: #fff;
+.cof-form-row:first-of-type { padding-top: 0; }
+.cof-form-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.cof-form-label {
+  font-size: var(--fs-sm);
+  font-weight: 800;
   color: #334155;
-  font-size: 0.76rem;
-  font-weight: 700;
-  padding: 0.45rem 0.55rem;
-  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
 }
-.cof-nav .cof-next {
-  border-color: #7fbab0;
-  background: #ecfdf5;
-  color: #0f766e;
+.cof-form-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .cof-section { margin-bottom: 1.1rem; }
@@ -662,7 +693,6 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  margin-bottom: 0.35rem;
 }
 .cof-buy-value {
   display: flex;
@@ -677,7 +707,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   background: var(--cof-control-bg);
   color: #0f766e;
   font-weight: 800;
-  font-size: 1.25rem;
+  font-size: var(--fs-md);
   cursor: pointer;
   flex-shrink: 0;
   display: flex;
@@ -687,31 +717,38 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 .cof-buy-step:active { background: #f0fdfa; }
 .cof-buy-step:disabled { opacity: 0.35; cursor: default; }
 .cof-dollar {
-  font-size: 1.7rem;
+  font-size: var(--fs-lg);
   font-weight: var(--cof-number-weight);
   color: var(--cof-number-color);
   line-height: 1;
 }
-.cof-buy-hero input {
-  font-size: 2.1rem;
+.cof-num-input {
+  font-size: var(--fs-lg);
   font-weight: var(--cof-number-weight);
   color: var(--cof-number-color);
   background: transparent;
   border: none;
   border-bottom: 2px dashed var(--cof-number-underline);
   padding: 0 0 0.1rem 0;
-  width: 7rem;
   line-height: 1;
   outline: none;
+  text-align: right;
 }
-.cof-buy-hero input:focus {
+.cof-num-input:focus {
   border-bottom-style: solid;
   border-bottom-color: var(--cof-accent);
 }
+.cof-buy-hero input:not(.cof-num-narrow) {
+  width: 5rem;
+}
+.cof-num-narrow {
+  width: 2.5rem;
+  text-align: center;
+}
 .cof-depth {
-  font-size: 0.76rem;
+  font-size: var(--fs-sm);
   color: var(--cof-sub);
-  margin-top: 0.3rem;
+  margin-top: 0.12rem;
 }
 
 .cof-section-head {
@@ -721,7 +758,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   margin-bottom: 0.3rem;
 }
 .cof-section-label {
-  font-size: 0.88rem;
+  font-size: var(--fs-base);
   font-weight: 700;
   color: #334155;
   letter-spacing: 0.01em;
@@ -731,7 +768,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   align-items: center;
   gap: 0.35rem;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   color: #475569;
   user-select: none;
@@ -776,27 +813,14 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   gap: 0.1rem;
 }
 .cof-blinds-row .cof-dollar {
-  font-size: 1.3rem;
+  font-size: var(--fs-lg);
 }
 .cof-blinds-row input {
-  font-size: 1.5rem;
-  font-weight: var(--cof-number-weight);
-  color: var(--cof-number-color);
-  background: transparent;
-  border: none;
-  border-bottom: 2px dashed var(--cof-number-underline);
-  padding: 0 0 0.1rem 0;
   width: 4rem;
-  line-height: 1;
-  outline: none;
-}
-.cof-blinds-row input:focus {
-  border-bottom-style: solid;
-  border-bottom-color: var(--cof-accent);
 }
 .cof-blinds-sep {
-  font-size: 1.3rem;
-  color: #94a3b8;
+  font-size: var(--fs-lg);
+  color: #64748b;
   font-weight: 500;
   padding: 0 0.2rem;
 }
@@ -804,15 +828,26 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 .cof-stepper-lg button {
   width: 2.5rem;
   height: 2.5rem;
-  font-size: 1.15rem;
+  font-size: var(--fs-md);
 }
 .cof-stepper-lg > span {
   min-width: 2.8rem;
   line-height: 2.5rem;
-  font-size: 1.05rem;
+  font-size: var(--fs-lg);
 }
 
 @media (max-width: 600px) {
+  #cof-calc {
+    padding: 0.65rem;
+    overflow-x: hidden;
+  }
+  .cof-head { flex-wrap: wrap; }
+  .cof-head-actions { width: 100%; }
+  .cof-form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
   .cof-chip-columns {
     grid-template-columns: 3.7rem minmax(0, 1fr) 1.9rem;
     gap: 0.12rem;
@@ -830,11 +865,9 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
   .cof-chip-stepper button {
     width: 2rem;
     height: 2rem;
-    font-size: 1rem;
   }
   .cof-chip-stepper input {
     width: 3.1rem;
-    font-size: 1.25rem;
     padding: 0 0 0.08rem 0;
   }
   .cof-remove {
@@ -842,15 +875,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     height: 1.9rem;
   }
   .cof-ref-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.7rem 0.45rem;
-  }
-  .cof-chip-token {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-  .cof-chip-token-value {
-    font-size: 1.02rem;
+    gap: 0.7rem 0.3rem;
   }
   .cof-color-menu {
     grid-template-columns: repeat(4, 1.35rem);
@@ -863,7 +888,6 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 
 @media (min-width: 900px) {
   #cof-calc { padding: 1.15rem; }
-  .cof-panel { padding: 0.9rem; }
 }
 </style>
 
@@ -885,58 +909,57 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     <button type="button" class="cof-tab" data-tab="2">3. Distribution</button>
   </div>
   <div class="cof-panel">
+    <div class="cof-caption-bar">
+      <button type="button" id="cof-prev" class="cof-caption-nav" aria-label="Previous step">&larr; Prev</button>
+      <span class="cof-caption" id="cof-caption">Set buy-in, blinds, and player count</span>
+      <button type="button" id="cof-next" class="cof-caption-nav" aria-label="Next step">Next &rarr;</button>
+    </div>
     <section data-step="0">
-      <div class="cof-step-header">
-        <h4 class="cof-step-title">Game Setup</h4>
-        <span class="cof-step-note">Set buy-in, blinds, and players</span>
-      </div>
-      <div class="cof-section">
-        <div class="cof-section-head">
-          <span class="cof-section-label">Buy-in</span>
-        </div>
-        <div class="cof-buy-hero">
-          <button id="cof-buy-minus" type="button" class="cof-buy-step" aria-label="Decrease buy-in">&minus;</button>
-          <div class="cof-buy-value">
-            <span class="cof-dollar">$</span>
-            <input id="cof-buy-input" type="number" min="1" max="10000000" step="any" value="50">
+      <div class="cof-form-row">
+        <span class="cof-form-label">Buy-in</span>
+        <div class="cof-form-controls">
+          <div class="cof-buy-hero">
+            <button id="cof-buy-minus" type="button" class="cof-buy-step" aria-label="Decrease buy-in">&minus;</button>
+            <div class="cof-buy-value">
+              <span class="cof-dollar">$</span>
+              <input id="cof-buy-input" type="number" min="1" max="10000000" step="any" value="50" aria-label="Buy-in amount" class="cof-num-input">
+            </div>
+            <button id="cof-buy-plus" type="button" class="cof-buy-step" aria-label="Increase buy-in">+</button>
           </div>
-          <button id="cof-buy-plus" type="button" class="cof-buy-step" aria-label="Increase buy-in">+</button>
         </div>
-        <div class="cof-depth" id="cof-depth-label">100 BB deep at $0.25/$0.50</div>
       </div>
-      <div class="cof-section">
-        <div class="cof-section-head">
-          <span class="cof-section-label">Blinds</span>
+      <div class="cof-form-row">
+        <div>
+          <span class="cof-form-label">Blinds</span>
+          <div class="cof-depth" id="cof-depth-label">100 BB deep at $0.25/$0.50</div>
+        </div>
+        <div class="cof-form-controls">
+          <div class="cof-blinds-row">
+            <span class="cof-dollar">$</span>
+            <input id="cof-sb" type="number" min="0.01" step="any" value="0.25" aria-label="Small blind" class="cof-num-input">
+            <span class="cof-blinds-sep">/</span>
+            <span class="cof-dollar">$</span>
+            <input id="cof-bb" type="number" min="0.01" step="any" value="0.50" aria-label="Big blind" class="cof-num-input">
+          </div>
           <label class="cof-auto-check">
             <input type="checkbox" id="cof-auto-blinds" checked>
             <span class="cof-checkmark"></span>
             <span>Auto</span>
           </label>
         </div>
-        <div class="cof-blinds-row">
-          <span class="cof-dollar">$</span>
-          <input id="cof-sb" type="number" min="0.01" step="any" value="0.25">
-          <span class="cof-blinds-sep">/</span>
-          <span class="cof-dollar">$</span>
-          <input id="cof-bb" type="number" min="0.01" step="any" value="0.50">
-        </div>
       </div>
-      <div class="cof-section">
-        <div class="cof-section-head">
-          <span class="cof-section-label">Players</span>
-        </div>
-        <div class="cof-stepper cof-stepper-lg">
-          <button id="cof-player-minus" type="button" aria-label="Decrease players">&minus;</button>
-          <span id="cof-player-count">6</span>
-          <button id="cof-player-plus" type="button" aria-label="Increase players">+</button>
+      <div class="cof-form-row">
+        <span class="cof-form-label">Players</span>
+        <div class="cof-form-controls">
+          <div class="cof-buy-hero">
+            <button id="cof-player-minus" type="button" class="cof-buy-step" aria-label="Decrease players">&minus;</button>
+            <input id="cof-player-count" type="number" min="2" max="10" step="1" value="6" aria-label="Player count" class="cof-num-input cof-num-narrow">
+            <button id="cof-player-plus" type="button" class="cof-buy-step" aria-label="Increase players">+</button>
+          </div>
         </div>
       </div>
     </section>
     <section data-step="1" class="cof-hidden">
-      <div class="cof-step-header">
-        <h4 class="cof-step-title">Chip Set</h4>
-        <span class="cof-step-note">Configure colors/counts. Denominations are assigned in step 3.</span>
-      </div>
       <div id="cof-chip-alert" class="cof-alert cof-hidden"></div>
       <div class="cof-presets" id="cof-presets"></div>
       <div class="cof-chip-columns" aria-hidden="true">
@@ -948,18 +971,11 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
       <button id="cof-add-chip" class="cof-add" type="button">+ Add Chip Color</button>
     </section>
     <section data-step="2" class="cof-hidden">
-      <div class="cof-step-header">
-        <h4 class="cof-step-title">Recommended Denominations and Distribution</h4>
-      </div>
       <div id="cof-dist-alert" class="cof-alert cof-hidden"></div>
       <div id="cof-summary" class="cof-summary"></div>
       <div id="cof-stacks" class="cof-stacks"></div>
       <div id="cof-warnings" class="cof-warnings"></div>
     </section>
-  </div>
-  <div class="cof-nav">
-    <button type="button" id="cof-prev">Previous</button>
-    <button type="button" id="cof-next" class="cof-next">Next</button>
   </div>
 </div>
 
@@ -1114,6 +1130,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     sections: Array.prototype.slice.call(document.querySelectorAll('[data-step]')),
     prev: document.getElementById('cof-prev'),
     next: document.getElementById('cof-next'),
+    caption: document.getElementById('cof-caption'),
 
     depthLabel: document.getElementById('cof-depth-label'),
     buyInput: document.getElementById('cof-buy-input'),
@@ -1398,6 +1415,12 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     return null;
   }
 
+  var CAPTIONS = [
+    'Set buy-in, blinds, and player count',
+    'Configure chip colors and counts',
+    'Recommended denominations and distribution'
+  ];
+
   function renderTabs() {
     els.tabs.forEach(function (tab) {
       var idx = parseInt(tab.getAttribute('data-tab'), 10);
@@ -1408,8 +1431,9 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
       section.classList.toggle('cof-hidden', idx !== state.step);
     });
 
+    els.caption.textContent = CAPTIONS[state.step];
     els.prev.disabled = state.step === 0;
-    els.next.textContent = state.step === 2 ? 'Done' : 'Next';
+    els.next.disabled = state.step === 2;
   }
 
   function renderGame() {
@@ -1427,7 +1451,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
       els.bb.value = String(round2(state.bb));
     }
 
-    els.playerCount.textContent = String(state.players);
+    els.playerCount.value = state.players;
     els.playerMinus.disabled = state.players <= 2;
     els.playerPlus.disabled = state.players >= 10;
   }
@@ -1584,7 +1608,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 
     els.summary.innerHTML =
       '<div class="cof-dist-kicker">Each player gets <strong>' + count + ' chips</strong> worth <strong>' + fmt(total) +
-      '</strong> (' + round2(state.buyIn / state.bb) + ' BB at ' + fmt(state.sb) + '/' + fmt(state.bb) + ').</div>';
+      '</strong></div><div class="cof-dist-blinds">SB/BB ' + fmt(state.sb) + '/' + fmt(state.bb) + '</div>';
 
     var blindWarnings = ChipDistribution.checkBlindWarnings(state.sb, denoms);
     if (blindWarnings.length) {
@@ -1621,7 +1645,7 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
 
       var tokenValue = document.createElement('div');
       tokenValue.className = 'cof-chip-token-value';
-      tokenValue.textContent = fmt(v);
+      tokenValue.textContent = fmt(v).replace('$', '');
       token.appendChild(tokenValue);
       item.appendChild(token);
 
@@ -1725,6 +1749,12 @@ Use this cash-game setup assistant to move from buy-in to playable stacks in thr
     });
     els.playerPlus.addEventListener('click', function () {
       state.players = clamp(state.players + 1, 2, 10);
+      recompute();
+    });
+    els.playerCount.addEventListener('input', function () {
+      var n = parseInt(this.value, 10);
+      if (!isFinite(n) || n < 2 || n > 10) return;
+      state.players = n;
       recompute();
     });
 
