@@ -33,3 +33,6 @@ temp/
 
 # Git worktrees
 .worktrees/
+
+# Script secrets
+scripts/.env
