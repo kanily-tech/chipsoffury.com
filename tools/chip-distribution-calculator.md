@@ -458,22 +458,25 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   margin-top: 0 !important;
 }
 .cof-caption-bar {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   gap: 0.4rem;
   padding: 0.35rem 0 0.65rem;
   margin-bottom: 0.65rem;
   border-bottom: 1px solid #eef2f7;
+  align-items: center;
 }
 .cof-caption {
-  order: -1;
-  flex: 0 0 100%;
+  grid-column: 1 / -1;
+  grid-row: 1;
   text-align: center;
   font-size: var(--fs-md);
   font-weight: 600;
   color: #1e293b;
   line-height: 1.35;
 }
+#cof-prev { grid-column: 1; grid-row: 2; justify-self: start; }
+#cof-next { grid-column: 3; grid-row: 2; justify-self: end; }
 .cof-caption-nav {
   border: 1px solid #0f766e;
   border-radius: 8px;
@@ -482,11 +485,31 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   font-size: var(--fs-sm);
   font-weight: 700;
   cursor: pointer;
-  flex-shrink: 0;
   padding: 0.36rem 0.7rem;
   white-space: nowrap;
 }
-#cof-next { margin-left: auto; }
+.cof-share-img {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1.5px solid #7c3aed;
+  border-radius: 8px;
+  background: #ede9fe;
+  color: #6d28d9;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.36rem 0.85rem;
+  white-space: nowrap;
+}
+.cof-share-img:hover {
+  background: #ddd6fe;
+}
+.cof-share-img.cof-hidden { display: none; }
+.cof-share-img svg { width: 1em; height: 1em; }
 .cof-caption-nav:disabled {
   opacity: 0.2;
   cursor: default;
@@ -1429,6 +1452,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     <div class="cof-caption-bar">
       <button type="button" id="cof-prev" class="cof-caption-nav" aria-label="Previous step">&larr; Prev</button>
       <span class="cof-caption" id="cof-caption">Set buy-in, blinds, and player count</span>
+      <button type="button" class="cof-share-img cof-hidden" id="cof-share-img"><span id="cof-share-icon"></span> Share</button>
       <button type="button" id="cof-next" class="cof-caption-nav" aria-label="Next step">Next &rarr;</button>
     </div>
     <section data-step="0">
@@ -1504,6 +1528,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="/js/chip-distribution.js"></script>
 <script>
 (function () {
@@ -1704,6 +1729,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     status: document.getElementById('cof-status'),
     copyState: document.getElementById('cof-copy-state'),
     share: document.getElementById('cof-share'),
+    shareImg: document.getElementById('cof-share-img'),
     reset: document.getElementById('cof-reset'),
     tabs: Array.prototype.slice.call(document.querySelectorAll('.cof-tab')),
     sections: Array.prototype.slice.call(document.querySelectorAll('[data-step]')),
@@ -2069,6 +2095,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     els.caption.textContent = CAPTIONS[state.step];
     els.prev.disabled = state.step === 0;
     els.next.disabled = state.step === 2;
+    els.shareImg.classList.toggle('cof-hidden', state.step !== 2);
   }
 
   function renderGame() {
@@ -2623,6 +2650,49 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       if (dd) dd.classList.add('cof-hidden');
     });
 
+    els.shareImg.addEventListener('click', function () {
+      var section = document.querySelector('[data-step="2"]');
+      if (!section || section.classList.contains('cof-hidden')) {
+        els.status.textContent = 'Go to the Distribution tab first.';
+        return;
+      }
+      els.status.textContent = 'Capturing...';
+      html2canvas(section, { backgroundColor: '#ffffff', scale: 2 }).then(function (canvas) {
+        canvas.toBlob(function (blob) {
+          var file = new File([blob], 'chip-distribution.png', { type: 'image/png' });
+          var shareData = {
+            files: [file],
+            title: 'Poker Chip Distribution',
+            text: 'Chip breakdown for $' + state.buyIn + ' buy-in, ' + state.players + ' players'
+          };
+          var canTryShare = navigator.share && (navigator.canShare ? navigator.canShare(shareData) : true);
+          if (canTryShare) {
+            navigator.share(shareData).then(function () {
+              els.status.textContent = 'Shared!';
+            }).catch(function (err) {
+              if (err.name === 'AbortError') return;
+              // Share failed (e.g. not secure context), fall back to download
+              var link = document.createElement('a');
+              link.download = 'chip-distribution.png';
+              link.href = URL.createObjectURL(blob);
+              link.click();
+              URL.revokeObjectURL(link.href);
+              els.status.textContent = 'Image downloaded.';
+            });
+          } else {
+            var link = document.createElement('a');
+            link.download = 'chip-distribution.png';
+            link.href = URL.createObjectURL(blob);
+            link.click();
+            URL.revokeObjectURL(link.href);
+            els.status.textContent = 'Image downloaded.';
+          }
+        }, 'image/png');
+      }).catch(function () {
+        els.status.textContent = 'Could not capture screenshot.';
+      });
+    });
+
     els.share.addEventListener('click', function () {
       var shareUrl = new URL(location.href);
       shareUrl.searchParams.set('t', '2');
@@ -2663,6 +2733,12 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       });
     }
   }
+
+  // Platform-aware share icon: iOS/Mac get the "share-up" icon, others get the Android-style share
+  var isApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
+  document.getElementById('cof-share-icon').innerHTML = isApple
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>';
 
   load();
   bind();
