@@ -446,8 +446,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   pointer-events: none;
   z-index: 1;
 }
-.cof-cl-currency-wrap input {
-  padding-left: 1.4rem;
+.cof-cl-currency-wrap input[type="number"] {
+  padding-left: 1.8rem;
 }
 .cof-cl-grid-2 {
   display: grid;
@@ -937,7 +937,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         <div class="cof-cl-field">
           <label for="cof-bb">Big blind</label>
           <div class="cof-cl-currency-wrap">
-            <input type="number" id="cof-bb" value="0.50" min="0.01" step="0.01" placeholder="0.50">
+            <input type="number" id="cof-bb" value="0.50" min="0.01" step="0.01" placeholder="0.50" aria-describedby="err-bb">
           </div>
           <div class="cof-cl-error" id="err-bb">Big blind must be greater than small blind.</div>
         </div>
@@ -952,7 +952,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         <div class="cof-cl-field">
           <label for="cof-buyin-max">Maximum buy-in</label>
           <div class="cof-cl-currency-wrap">
-            <input type="number" id="cof-buyin-max" value="100" min="1" step="1" placeholder="100">
+            <input type="number" id="cof-buyin-max" value="100" min="1" step="1" placeholder="100" aria-describedby="err-buyin">
           </div>
           <div class="cof-cl-error" id="err-buyin">Maximum buy-in must be at least the minimum.</div>
         </div>
@@ -982,7 +982,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       <div class="cof-cl-field">
         <label for="cof-bounty-amt">Bounty amount</label>
         <div class="cof-cl-currency-wrap">
-          <input type="number" id="cof-bounty-amt" value="10" min="1" step="1" placeholder="10">
+          <input type="number" id="cof-bounty-amt" value="10" min="1" step="1" placeholder="10" aria-describedby="err-bounty">
         </div>
         <div class="cof-cl-error" id="err-bounty">Bounty must be less than the total buy-in.</div>
       </div>
@@ -1374,14 +1374,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
   // ═══ Sanitize ═══
-  function sanitize(str) {
-    if (typeof str !== 'string') return '';
-    var el = document.createElement('div');
-    el.textContent = str;
-    return el.innerHTML.replace(/[<>"'&]/g, function(c) {
-      return {'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','&':'&amp;'}[c];
-    });
-  }
   function sanitizePlain(str) {
     if (typeof str !== 'string') return '';
     return str.replace(/[<>"']/g, '').substring(0, 300);
@@ -2314,18 +2306,23 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         }
       }
 
-      // Rules
+      // Rules — validate IDs against known presets to prevent selector injection
+      var validRuleIds = PRESET_RULES.map(function(r) { return r.id; });
       if (data[KEY_MAP.rules_off]) {
         var off = data[KEY_MAP.rules_off].split(',');
         off.forEach(function(id) {
-          var t = document.querySelector('[data-rule="' + sanitizePlain(id) + '"]');
+          id = sanitizePlain(id);
+          if (validRuleIds.indexOf(id) < 0) return;
+          var t = document.querySelector('[data-rule="' + id + '"]');
           if (t) t.setAttribute('aria-checked', 'false');
         });
       }
       if (data[KEY_MAP.rules_on]) {
         var on = data[KEY_MAP.rules_on].split(',');
         on.forEach(function(id) {
-          var t = document.querySelector('[data-rule="' + sanitizePlain(id) + '"]');
+          id = sanitizePlain(id);
+          if (validRuleIds.indexOf(id) < 0) return;
+          var t = document.querySelector('[data-rule="' + id + '"]');
           if (t) t.setAttribute('aria-checked', 'true');
         });
       }
