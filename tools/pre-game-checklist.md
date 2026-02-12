@@ -755,9 +755,10 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   background: rgba(0,0,0,0.3);
   z-index: 51;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.2s;
 }
-.cof-cl-sheet-backdrop.is-open { opacity: 1; }
+.cof-cl-sheet-backdrop.is-open { opacity: 1; pointer-events: auto; }
 .cof-cl-sheet {
   display: none;
   position: fixed;
@@ -771,8 +772,9 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   transform: translateY(100%);
   transition: transform 0.3s ease;
   overflow: hidden;
+  pointer-events: none;
 }
-.cof-cl-sheet.is-open { transform: translateY(0); }
+.cof-cl-sheet.is-open { transform: translateY(0); pointer-events: auto; }
 @media (max-width: 1023px) {
   .cof-cl-sheet-backdrop, .cof-cl-sheet { display: block; }
 }
