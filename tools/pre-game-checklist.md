@@ -449,6 +449,94 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 .cof-cl-currency-wrap input[type="number"] {
   padding-left: 1.8rem;
 }
+
+/* ═══ Stepper (±) Controls ═══ */
+.cof-cl-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.cof-cl-stepper .cof-cl-currency-wrap {
+  flex: 1;
+}
+.cof-cl-step-btn {
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid #d7deea;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.cof-cl-step-btn:active { background: #f0fdfa; }
+.cof-cl-step-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* ═══ Auto-calculate Checkbox ═══ */
+.cof-cl-auto-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #475569;
+  user-select: none;
+  margin-top: 0.35rem;
+}
+.cof-cl-auto-check input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.cof-cl-checkmark {
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 2px solid #d7deea;
+  border-radius: 0.25rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+.cof-cl-auto-check input:checked + .cof-cl-checkmark {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+.cof-cl-checkmark::after {
+  content: '';
+  width: 0.3rem;
+  height: 0.55rem;
+  border: solid transparent;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+.cof-cl-auto-check input:checked + .cof-cl-checkmark::after {
+  border-color: #fff;
+}
+
+/* ═══ Auto-derived Field Dimming ═══ */
+.cof-cl-field.is-auto-derived label {
+  opacity: 0.55;
+}
+.cof-cl-field.is-auto-derived input,
+.cof-cl-field.is-auto-derived select {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
 .cof-cl-grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -931,52 +1019,59 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     <div data-show="cash">
       <div class="cof-cl-grid-2">
         <div class="cof-cl-field">
+          <label for="cof-buyin-min">Min buy-in</label>
+          <div class="cof-cl-stepper">
+            <button type="button" class="cof-cl-step-btn" data-step="-1" data-target="cof-buyin-min" aria-label="Decrease min buy-in">&minus;</button>
+            <div class="cof-cl-currency-wrap">
+              <input type="number" id="cof-buyin-min" value="20" min="1" step="1" placeholder="20">
+            </div>
+            <button type="button" class="cof-cl-step-btn" data-step="1" data-target="cof-buyin-min" aria-label="Increase min buy-in">+</button>
+          </div>
+        </div>
+        <div class="cof-cl-field" id="cof-buyin-max-field">
+          <label for="cof-buyin-max">Max buy-in</label>
+          <div class="cof-cl-stepper">
+            <button type="button" class="cof-cl-step-btn" data-step="-1" data-target="cof-buyin-max" aria-label="Decrease max buy-in">&minus;</button>
+            <div class="cof-cl-currency-wrap">
+              <input type="number" id="cof-buyin-max" value="40" min="1" step="1" placeholder="40" aria-describedby="err-buyin">
+            </div>
+            <button type="button" class="cof-cl-step-btn" data-step="1" data-target="cof-buyin-max" aria-label="Increase max buy-in">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="cof-cl-error" id="err-buyin">Max buy-in must be at least the minimum.</div>
+      <div class="cof-cl-helper" id="cof-depth-label" style="margin-bottom:0.5rem"></div>
+      <div class="cof-cl-grid-2">
+        <div class="cof-cl-field" id="cof-sb-field">
           <label for="cof-sb">Small blind</label>
           <div class="cof-cl-currency-wrap">
             <input type="number" id="cof-sb" value="0.25" min="0.01" step="0.01" placeholder="0.25">
           </div>
         </div>
-        <div class="cof-cl-field">
+        <div class="cof-cl-field" id="cof-bb-field">
           <label for="cof-bb">Big blind</label>
           <div class="cof-cl-currency-wrap">
             <input type="number" id="cof-bb" value="0.50" min="0.01" step="0.01" placeholder="0.50" aria-describedby="err-bb">
           </div>
-          <div class="cof-cl-error" id="err-bb">Big blind must be greater than small blind.</div>
         </div>
       </div>
-      <div class="cof-cl-grid-2">
-        <div class="cof-cl-field">
-          <label for="cof-buyin-min">Minimum buy-in</label>
-          <div class="cof-cl-currency-wrap">
-            <input type="number" id="cof-buyin-min" value="20" min="1" step="1" placeholder="20">
-          </div>
-        </div>
-        <div class="cof-cl-field">
-          <label for="cof-buyin-max">Maximum buy-in</label>
-          <div class="cof-cl-currency-wrap">
-            <input type="number" id="cof-buyin-max" value="100" min="1" step="1" placeholder="100" aria-describedby="err-buyin">
-          </div>
-          <div class="cof-cl-error" id="err-buyin">Maximum buy-in must be at least the minimum.</div>
-        </div>
-      </div>
-      <div class="cof-cl-field">
-        <label for="cof-stack-bb">Starting stack</label>
-        <select id="cof-stack-bb">
-          <option value="50">50 BB</option>
-          <option value="80">80 BB</option>
-          <option value="100" selected>100 BB</option>
-          <option value="150">150 BB</option>
-          <option value="200">200 BB</option>
-        </select>
-        <div class="cof-cl-helper">Minimum buy-in is typically 50-100 big blinds. Maximum is usually 100-200 big blinds.</div>
-      </div>
+      <div class="cof-cl-error" id="err-bb">Big blind must be greater than small blind.</div>
+      <label class="cof-cl-auto-check">
+        <input type="checkbox" id="cof-auto-buyin" checked>
+        <span class="cof-cl-checkmark"></span>
+        <span>Auto-calculate blinds &amp; max buy-in</span>
+      </label>
     </div>
     <!-- Tournament/Bounty fields -->
     <div data-show="tournament bounty">
       <div class="cof-cl-field">
         <label for="cof-tourn-buyin">Tournament buy-in</label>
-        <div class="cof-cl-currency-wrap">
-          <input type="number" id="cof-tourn-buyin" value="40" min="1" step="1" placeholder="40">
+        <div class="cof-cl-stepper">
+          <button type="button" class="cof-cl-step-btn" data-step="-1" data-target="cof-tourn-buyin" aria-label="Decrease tournament buy-in">&minus;</button>
+          <div class="cof-cl-currency-wrap">
+            <input type="number" id="cof-tourn-buyin" value="40" min="1" step="1" placeholder="40">
+          </div>
+          <button type="button" class="cof-cl-step-btn" data-step="1" data-target="cof-tourn-buyin" aria-label="Increase tournament buy-in">+</button>
         </div>
       </div>
     </div>
@@ -1309,7 +1404,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     custom_rules: 'cr', date: 'dt', start_time: 'st',
     last_buyin_time: 'lt', hard_stop: 'hs', break_schedule: 'bs',
     location_name: 'ln', location_address: 'la', notes: 'nt',
-    payout: 'py', payout_custom: 'pc', starting_stack_bb: 'sk'
+    payout: 'py', payout_custom: 'pc', starting_stack_bb: 'sk',
+    auto_buyin: 'ab'
   };
 
   var KEY_MAP_REV = {};
@@ -1337,9 +1433,9 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   function getDefaults() {
     return {
       format: 'cash',
+      auto_buyin: true,
       sb: 0.25, bb: 0.50,
-      buyin_min: 20, buyin_max: 100,
-      starting_stack_bb: '100',
+      buyin_min: 20, buyin_max: 40,
       tournament_buyin: 40,
       bounty_amount: 10,
       starting_chips: 10000,
@@ -1420,6 +1516,144 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     return h12 + ':' + String(m).padStart(2,'0') + ' ' + ampm;
   }
 
+  // ═══ Smart Stakes ═══
+  var CONVENTIONAL_BLINDS = [
+    { sb: 0.01, bb: 0.02 },
+    { sb: 0.02, bb: 0.05 },
+    { sb: 0.05, bb: 0.1 },
+    { sb: 0.1, bb: 0.2 },
+    { sb: 0.25, bb: 0.5 },
+    { sb: 0.5, bb: 1 },
+    { sb: 1, bb: 2 },
+    { sb: 2, bb: 5 },
+    { sb: 5, bb: 10 },
+    { sb: 10, bb: 20 },
+    { sb: 25, bb: 50 },
+    { sb: 50, bb: 100 },
+    { sb: 100, bb: 200 }
+  ];
+
+  function round2(n) {
+    return Math.round(n * 100) / 100;
+  }
+
+  function suggestBlinds(maxBuyIn) {
+    if (maxBuyIn <= 0) return { sb: 0.25, bb: 0.5 };
+    var minBBValue = maxBuyIn / 150;
+    var maxBBValue = maxBuyIn / 50;
+    var candidates = CONVENTIONAL_BLINDS.filter(function(p) {
+      return p.bb >= minBBValue - 1e-9 && p.bb <= maxBBValue + 1e-9;
+    });
+    if (!candidates.length) candidates = CONVENTIONAL_BLINDS.slice();
+    var best = candidates[0];
+    var bestScore = Infinity;
+    for (var i = 0; i < candidates.length; i++) {
+      var p = candidates[i];
+      var stackBB = maxBuyIn / p.bb;
+      var score = Math.abs(stackBB - 100);
+      if (p.bb < minBBValue || p.bb > maxBBValue) score += 6;
+      if (score < bestScore) { bestScore = score; best = p; }
+    }
+    return { sb: round2(best.sb), bb: round2(best.bb) };
+  }
+
+  function buyInStep(value) {
+    if (value < 10) return 1;
+    return Math.pow(10, Math.floor(Math.log10(value)));
+  }
+
+  function applyAutoBuyin() {
+    if (!state.auto_buyin || state.format !== 'cash') return;
+    // Derive blinds from min buy-in (~50 BB depth)
+    var blinds = suggestBlinds(state.buyin_min);
+    state.sb = blinds.sb;
+    state.bb = blinds.bb;
+    $('cof-sb').value = blinds.sb;
+    $('cof-bb').value = blinds.bb;
+    // Max buy-in = 2× min
+    var maxBuyin = round2(state.buyin_min * 2);
+    state.buyin_max = maxBuyin;
+    $('cof-buyin-max').value = maxBuyin;
+  }
+
+  function updateDepthLabel() {
+    var el = $('cof-depth-label');
+    if (!el) return;
+    if (state.format !== 'cash' || !state.bb || !state.buyin_min) {
+      el.textContent = '';
+      return;
+    }
+    var minDepth = Math.round(state.buyin_min / state.bb);
+    var maxDepth = Math.round(state.buyin_max / state.bb);
+    el.textContent = minDepth + ' BB to ' + maxDepth + ' BB at $' + state.bb + ' big blind';
+  }
+
+  function updateAutoDerivedStyling() {
+    var fields = ['cof-sb-field', 'cof-bb-field', 'cof-buyin-max-field'];
+    for (var i = 0; i < fields.length; i++) {
+      var el = $(fields[i]);
+      if (el) el.classList.toggle('is-auto-derived', !!state.auto_buyin);
+    }
+  }
+
+  function updateStepperState() {
+    $$('.cof-cl-step-btn[data-step="-1"]').forEach(function(btn) {
+      var input = $(btn.getAttribute('data-target'));
+      if (input) {
+        var min = parseFloat(input.min) || 1;
+        btn.disabled = (parseFloat(input.value) || 0) <= min;
+      }
+    });
+  }
+
+  function setupSteppers() {
+    // +/- button handlers
+    $$('.cof-cl-step-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var targetId = btn.getAttribute('data-target');
+        var input = $(targetId);
+        if (!input) return;
+        var dir = parseInt(btn.getAttribute('data-step'));
+        var val = parseFloat(input.value) || 0;
+        var stepRef = dir < 0 ? Math.max(1, val - 1) : Math.max(1, val);
+        var step = buyInStep(stepRef);
+        var newVal = round2(val + dir * step);
+        var min = parseFloat(input.min) || 1;
+        if (newVal < min) newVal = min;
+        input.value = newVal;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    });
+
+    // Auto checkbox
+    var autoCheck = $('cof-auto-buyin');
+    if (autoCheck) {
+      autoCheck.addEventListener('change', function() {
+        state.auto_buyin = autoCheck.checked;
+        if (state.auto_buyin) applyAutoBuyin();
+        updateDepthLabel();
+        updateAutoDerivedStyling();
+        updateStepperState();
+        updatePreview();
+        updateSummaries();
+      });
+    }
+
+    // Manual edit of SB/BB/max unchecks auto
+    ['cof-sb', 'cof-bb', 'cof-buyin-max'].forEach(function(id) {
+      var el = $(id);
+      if (!el) return;
+      el.addEventListener('input', function() {
+        if (state.auto_buyin) {
+          state.auto_buyin = false;
+          var cb = $('cof-auto-buyin');
+          if (cb) cb.checked = false;
+          updateAutoDerivedStyling();
+        }
+      });
+    });
+  }
+
   // ═══ Initialize ═══
   function init() {
     setupDate();
@@ -1433,7 +1667,12 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     setupPayoutCustom();
     setupRebuyAmountToggle();
     setupOutputButtons();
+    setupSteppers();
     loadFromHash();
+    applyAutoBuyin();
+    updateDepthLabel();
+    updateAutoDerivedStyling();
+    updateStepperState();
     updateConditionalFields();
     updatePreview();
     updateSummaries();
@@ -1608,6 +1847,10 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       clearTimeout(debounceTimer);
       debounceTimer = setTimeout(function() {
         readFormState();
+        applyAutoBuyin();
+        updateDepthLabel();
+        updateAutoDerivedStyling();
+        updateStepperState();
         validateFields();
         updatePreview();
         updateSummaries();
@@ -1634,7 +1877,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     });
 
     // Selects
-    ['cof-stack-bb', 'cof-payout', 'cof-rebuys-amount', 'cof-rebuys-condition', 'cof-settle', 'cof-breaks'].forEach(function(id) {
+    ['cof-payout', 'cof-rebuys-amount', 'cof-rebuys-condition', 'cof-settle', 'cof-breaks'].forEach(function(id) {
       var el = $(id);
       if (el) el.addEventListener('change', onInput);
     });
@@ -1646,11 +1889,11 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   }
 
   function readFormState() {
+    state.auto_buyin = $('cof-auto-buyin') ? $('cof-auto-buyin').checked : state.auto_buyin;
     state.sb = parseFloat($('cof-sb').value) || 0;
     state.bb = parseFloat($('cof-bb').value) || 0;
     state.buyin_min = parseFloat($('cof-buyin-min').value) || 0;
     state.buyin_max = parseFloat($('cof-buyin-max').value) || 0;
-    state.starting_stack_bb = $('cof-stack-bb').value;
     state.tournament_buyin = parseFloat($('cof-tourn-buyin').value) || 0;
     state.bounty_amount = parseFloat($('cof-bounty-amt').value) || 0;
     state.starting_chips = parseInt($('cof-start-chips').value) || 0;
@@ -1808,7 +2051,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     // Format + stakes line
     if (fmt === 'cash') {
       lines.push('Cash Game | ' + fmtCurrency(state.sb) + '/' + fmtCurrency(state.bb) + ' blinds');
-      lines.push('Buy-in: ' + fmtCurrency(state.buyin_min) + '\u2013' + fmtCurrency(state.buyin_max) + ' (' + state.starting_stack_bb + ' BB starting stack)');
+      lines.push('Buy-in: ' + fmtCurrency(state.buyin_min) + '\u2013' + fmtCurrency(state.buyin_max));
     } else if (fmt === 'tournament') {
       lines.push('Tournament | ' + fmtCurrency(state.tournament_buyin) + ' buy-in | ' + state.starting_chips.toLocaleString('en-US') + ' chips');
       var payoutStr = state.payout === 'custom' ? (state.payout_custom || 'Custom') : (state.payout === 'wta' ? 'Winner take all' : state.payout);
@@ -2100,12 +2343,12 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     // Format
     if (state.format !== defaults.format) data[KEY_MAP.format] = FORMAT_MAP_REV[state.format];
 
-    // Cash fields
+    // Cash fields — always encode concrete values, encode auto_buyin only when off
     if (state.sb !== defaults.sb) data[KEY_MAP.sb] = state.sb;
     if (state.bb !== defaults.bb) data[KEY_MAP.bb] = state.bb;
     if (state.buyin_min !== defaults.buyin_min) data[KEY_MAP.buyin_min] = state.buyin_min;
     if (state.buyin_max !== defaults.buyin_max) data[KEY_MAP.buyin_max] = state.buyin_max;
-    if (state.starting_stack_bb !== defaults.starting_stack_bb) data[KEY_MAP.starting_stack_bb] = state.starting_stack_bb;
+    if (!state.auto_buyin) data[KEY_MAP.auto_buyin] = 0;
 
     // Tournament fields
     if (state.tournament_buyin !== defaults.tournament_buyin) data[KEY_MAP.tournament_buyin] = state.tournament_buyin;
@@ -2239,10 +2482,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       }
 
       // Selects
-      if (data[KEY_MAP.starting_stack_bb]) {
-        state.starting_stack_bb = String(data[KEY_MAP.starting_stack_bb]);
-        $('cof-stack-bb').value = state.starting_stack_bb;
-      }
+      // starting_stack_bb from old URLs is ignored (field removed)
       if (data[KEY_MAP.payout]) {
         state.payout = sanitizePlain(String(data[KEY_MAP.payout]));
         $('cof-payout').value = state.payout;
@@ -2334,6 +2574,25 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         customRules = data[KEY_MAP.custom_rules].split('|').map(sanitizePlain).slice(0, 10);
         renderCustomRules();
       }
+
+      // Auto buy-in flag
+      if (data[KEY_MAP.auto_buyin] !== undefined) {
+        state.auto_buyin = data[KEY_MAP.auto_buyin] !== 0;
+      } else {
+        // Old link without ab flag — detect if explicit values differ from auto
+        var hasBlinds = data[KEY_MAP.sb] !== undefined || data[KEY_MAP.bb] !== undefined;
+        var hasMax = data[KEY_MAP.buyin_max] !== undefined;
+        if (state.buyin_min > 0) {
+          var auto = suggestBlinds(state.buyin_min);
+          var autoMax = round2(state.buyin_min * 2);
+          if ((hasBlinds && (round2(state.sb) !== auto.sb || round2(state.bb) !== auto.bb)) ||
+              (hasMax && round2(state.buyin_max) !== autoMax)) {
+            state.auto_buyin = false;
+          }
+        }
+      }
+      var autoCb = $('cof-auto-buyin');
+      if (autoCb) autoCb.checked = state.auto_buyin;
 
       // Show shared banner
       $('cof-shared-banner').classList.remove('cof-cl-hidden');
