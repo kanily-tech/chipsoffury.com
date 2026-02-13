@@ -1,0 +1,4 @@
+interface:
+  display_name: "Poker Article Agent Team"
+  short_description: "Run multi-agent workflow for beginner poker blog posts"
+  default_prompt: "Take article_path input, run the research-writer-editor-factcheck team workflow, and return the final article plus summary."
