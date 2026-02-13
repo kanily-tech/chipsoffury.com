@@ -56,6 +56,15 @@
                   </div>
                 </div>
               </a>
+              <a href="/pre-game-checklist/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
+                <div class="flex items-start space-x-3">
+                  <span class="text-2xl">📋</span>
+                  <div>
+                    <div class="font-semibold text-gray-900">Pre-Game Checklist</div>
+                    <div class="text-sm text-gray-600">Generate a shareable game plan</div>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
