@@ -403,7 +403,21 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   font-size: 0.875rem;
   color: #64748b;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
+.cof-cl-clear-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+}
+.cof-cl-clear-btn:hover { color: #ef4444; }
 .cof-cl-field input[type="text"],
 .cof-cl-field input[type="number"],
 .cof-cl-field input[type="date"],
@@ -765,28 +779,21 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 }
 .cof-cl-btn-copy:hover { background: #0d6357; }
 .cof-cl-btn-copy.is-success { background: #166534; }
-.cof-cl-btn-secondary {
-  width: 100%;
-  background: #fff;
-  color: #334155;
-  font-size: 0.875rem;
-  font-weight: 700;
-  border-radius: 8px;
-  padding: 0.5rem;
-  border: 1px solid #d7deea;
+.cof-cl-btn-link {
+  background: none;
+  border: none;
+  color: #0f766e;
+  font-size: 0.8125rem;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  transition: all 0.15s;
+  gap: 0.3rem;
+  padding: 0.5rem 0;
 }
-.cof-cl-btn-secondary:hover { background: #f8fafc; }
-.cof-cl-btn-secondary.is-success {
-  border-color: #7c3aed;
-  background: #ede9fe;
-  color: #5b21b6;
-}
+.cof-cl-btn-link:hover { color: #0d6357; }
+.cof-cl-btn-link.is-success { color: #166534; }
 
 /* ═══ Mobile Bottom Bar ═══ */
 .cof-cl-bottom-bar {
@@ -805,22 +812,11 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   box-sizing: border-box;
 }
 @media (max-width: 1023px) {
-  .cof-cl-bottom-bar { display: flex; gap: 0.5rem; align-items: center; }
-  .cof-cl-form-area { padding-bottom: 5rem; }
+  .cof-cl-bottom-bar { display: flex; flex-direction: column; gap: 0.25rem; }
+  .cof-cl-form-area { padding-bottom: 6rem; }
 }
 .cof-cl-bar-preview-btn {
-  flex-shrink: 0;
-  border: 1px solid #d7deea;
-  background: #f8fafc;
-  color: #475569;
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-.cof-cl-bar-copy-btn {
-  flex: 1;
+  width: 100%;
   background: #0f766e;
   color: #fff;
   font-size: 0.875rem;
@@ -829,31 +825,23 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   padding: 0.6rem;
   border: none;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
 }
-.cof-cl-bar-copy-btn:hover { background: #0d6357; }
-.cof-cl-bar-copy-btn.is-success { background: #166534; }
-.cof-cl-bar-share-btn {
-  flex-shrink: 0;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid #d7deea;
-  background: #f8fafc;
-  border-radius: 8px;
+.cof-cl-bar-preview-btn:hover { background: #0d6357; }
+.cof-cl-bar-copy-btn {
+  background: none;
+  border: none;
+  color: #0f766e;
+  font-size: 0.8125rem;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #475569;
+  gap: 0.3rem;
+  padding: 0.5rem 0.25rem;
 }
-.cof-cl-bar-share-btn.is-success {
-  border-color: #7c3aed;
-  background: #ede9fe;
-  color: #5b21b6;
-}
+.cof-cl-bar-copy-btn:hover { color: #0d6357; }
+.cof-cl-bar-copy-btn.is-success { color: #166534; }
 
 /* ═══ Mobile Bottom Sheet ═══ */
 .cof-cl-sheet-backdrop {
@@ -902,9 +890,17 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   margin: 0.5rem auto;
 }
 .cof-cl-sheet-content {
-  padding: 0 1rem 5rem;
+  padding: 0 1rem 1rem;
   overflow-y: auto;
-  max-height: calc(60vh - 2rem);
+  max-height: calc(60vh - 5.5rem);
+}
+.cof-cl-sheet-actions {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e2e8f0;
+  background: #fff;
+}
+.cof-cl-sheet-actions .cof-cl-btn-copy {
+  width: 100%;
 }
 
 /* ═══ Toast ═══ */
@@ -932,6 +928,16 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 .cof-cl-toast.is-visible {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+@media (max-width: 1023px) {
+  .cof-cl-toast {
+    top: auto;
+    bottom: 6.5rem;
+    transform: translateX(-50%) translateY(8px);
+  }
+  .cof-cl-toast.is-visible {
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* ═══ URL Length Warning ═══ */
@@ -1251,6 +1257,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         <button type="button" class="cof-cl-chip" data-payment="venmo">Venmo</button>
         <button type="button" class="cof-cl-chip" data-payment="zelle">Zelle</button>
         <button type="button" class="cof-cl-chip" data-payment="cashapp">Cash App</button>
+        <button type="button" class="cof-cl-chip" data-payment="upi">UPI</button>
         <button type="button" class="cof-cl-chip" data-payment="other">Other</button>
       </div>
     </div>
@@ -1261,9 +1268,10 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     <div class="cof-cl-field">
       <label for="cof-settle">Settle-up policy</label>
       <select id="cof-settle">
-        <option value="before_leave" selected>Settle before you leave (recommended)</option>
-        <option value="same_night">Settle by end of night</option>
+        <option value="at_cashout" selected>Settle at cash-out</option>
+        <option value="after_last_hand">Settle after last hand</option>
         <option value="next_day">Settle by next day</option>
+        <option value="before_next">Flexible — settle before next game</option>
       </select>
     </div>
   </div>
@@ -1319,12 +1327,12 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     </div>
     <div class="cof-cl-grid-2">
       <div class="cof-cl-field">
-        <label for="cof-last-buyin-time">Last buy-in time</label>
+        <label for="cof-last-buyin-time">Last buy-in time <button type="button" class="cof-cl-clear-btn" data-clear="cof-last-buyin-time">clear</button></label>
         <input type="time" id="cof-last-buyin-time" value="21:00">
       </div>
       <div class="cof-cl-field">
-        <label for="cof-hard-stop">Hard stop time</label>
-        <input type="time" id="cof-hard-stop" value="00:00">
+        <label for="cof-hard-stop">Hard stop time <button type="button" class="cof-cl-clear-btn" data-clear="cof-hard-stop">clear</button></label>
+        <input type="time" id="cof-hard-stop">
       </div>
     </div>
     <div class="cof-cl-field">
@@ -1360,7 +1368,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 <div class="cof-cl-output">
   <div class="cof-cl-output-header">
     <h3>Preview</h3>
-    <p>What your group chat will see</p>
+    <p>Send this to your group chat</p>
   </div>
   <div class="cof-cl-output-preview">
     <div class="cof-cl-preview-text" id="cof-preview-desktop"></div>
@@ -1368,13 +1376,13 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   <div class="cof-cl-output-actions">
     <button type="button" class="cof-cl-btn-copy" id="cof-copy-desktop">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-      Copy to clipboard
+      Copy to Clipboard
     </button>
-    <button type="button" class="cof-cl-btn-secondary" id="cof-share-desktop">
+    <button type="button" class="cof-cl-btn-link" id="cof-share-desktop">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-      Share link
+      Save Configuration
     </button>
-    <button type="button" class="cof-cl-btn-secondary" id="cof-print-btn" onclick="window.print()">
+    <button type="button" class="cof-cl-btn-link" id="cof-print-btn" onclick="window.print()">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
       Print
     </button>
@@ -1388,12 +1396,9 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 <!-- Mobile bottom bar -->
 <div class="cof-cl-bottom-bar" id="cof-bottom-bar">
   <button type="button" class="cof-cl-bar-preview-btn" id="cof-bar-preview">Preview</button>
-  <button type="button" class="cof-cl-bar-copy-btn" id="cof-copy-mobile">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-    Copy
-  </button>
-  <button type="button" class="cof-cl-bar-share-btn" id="cof-share-mobile" aria-label="Share link">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+  <button type="button" class="cof-cl-bar-copy-btn" id="cof-share-mobile">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+    Save Configuration
   </button>
 </div>
 
@@ -1403,6 +1408,12 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   <div class="cof-cl-sheet-handle"></div>
   <div class="cof-cl-sheet-content">
     <div class="cof-cl-preview-text" id="cof-preview-mobile"></div>
+  </div>
+  <div class="cof-cl-sheet-actions">
+    <button type="button" class="cof-cl-btn-copy" id="cof-copy-mobile">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      Copy to Clipboard
+    </button>
   </div>
 </div>
 
@@ -1457,18 +1468,18 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
   var FORMAT_MAP = { c: 'cash', t: 'tournament' };
   var FORMAT_MAP_REV = { cash: 'c', tournament: 't' };
-  var SETTLE_MAP = { l: 'before_leave', n: 'same_night', d: 'next_day' };
-  var SETTLE_MAP_REV = { before_leave: 'l', same_night: 'n', next_day: 'd' };
-  var SETTLE_LABELS = { before_leave: 'Settle up before you leave', same_night: 'Settle by end of night', next_day: 'Settle by next day' };
+  var SETTLE_MAP = { c: 'at_cashout', h: 'after_last_hand', d: 'next_day', n: 'before_next' };
+  var SETTLE_MAP_REV = { at_cashout: 'c', after_last_hand: 'h', next_day: 'd', before_next: 'n' };
+  var SETTLE_LABELS = { at_cashout: 'Settle at cash-out', after_last_hand: 'Settle after last hand', next_day: 'Settle by next day', before_next: 'Flexible — settle before next game' };
   var CONDITION_MAP = { m: 'below_min', a: 'anytime', f: 'felted' };
   var CONDITION_MAP_REV = { below_min: 'm', anytime: 'a', felted: 'f' };
   var CONDITION_LABELS = { below_min: 'Rebuy when below min buy-in', anytime: 'Rebuy any amount', felted: 'Rebuy only when stacked' };
   var BREAK_MAP = { '90': 'every_90', 'o': 'every_orbit', '60': 'every_60', 'n': 'no_breaks' };
   var BREAK_MAP_REV = { every_90: '90', every_orbit: 'o', every_60: '60', no_breaks: 'n' };
   var BREAK_LABELS = { every_90: 'Breaks every 90 min', every_orbit: 'Breaks every orbit', every_60: 'Breaks every 60 min', no_breaks: '' };
-  var PAYMENT_MAP = { c: 'cash', v: 'venmo', z: 'zelle', a: 'cashapp', o: 'other' };
-  var PAYMENT_MAP_REV = { cash: 'c', venmo: 'v', zelle: 'z', cashapp: 'a', other: 'o' };
-  var PAYMENT_LABELS = { cash: 'Cash', venmo: 'Venmo', zelle: 'Zelle', cashapp: 'Cash App' };
+  var PAYMENT_MAP = { c: 'cash', v: 'venmo', z: 'zelle', a: 'cashapp', u: 'upi', o: 'other' };
+  var PAYMENT_MAP_REV = { cash: 'c', venmo: 'v', zelle: 'z', cashapp: 'a', upi: 'u', other: 'o' };
+  var PAYMENT_LABELS = { cash: 'Cash', venmo: 'Venmo', zelle: 'Zelle', cashapp: 'Cash App', upi: 'UPI' };
 
   // ═══ State ═══
   var state = getDefaults();
@@ -1496,11 +1507,11 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       banker: '',
       payment_method: ['cash'],
       payment_other: '',
-      settle_policy: 'before_leave',
+      settle_policy: 'at_cashout',
       date: todayStr(),
       start_time: '19:00',
       last_buyin_time: '21:00',
-      hard_stop: '00:00',
+      hard_stop: '',
       break_schedule: 'every_90',
       location_name: '',
       location_address: '',
@@ -1764,6 +1775,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     setupPayoutCustom();
     setupRebuyAmountToggle();
     setupOutputButtons();
+    setupClearButtons();
     setupSteppers();
     loadFromHash();
     applyAutoBuyin();
@@ -2381,19 +2393,19 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   }
 
   // ═══ Copy to Clipboard ═══
-  function copyToClipboard(text, btn, successText) {
+  function copyToClipboard(text, btn, successText, toastText) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function() {
-        showCopySuccess(btn, successText);
+        showCopySuccess(btn, successText, toastText);
       }).catch(function() {
-        fallbackCopy(text, btn, successText);
+        fallbackCopy(text, btn, successText, toastText);
       });
     } else {
-      fallbackCopy(text, btn, successText);
+      fallbackCopy(text, btn, successText, toastText);
     }
   }
 
-  function fallbackCopy(text, btn, successText) {
+  function fallbackCopy(text, btn, successText, toastText) {
     var textarea = document.createElement('textarea');
     textarea.value = text;
     textarea.style.cssText = 'position:fixed;left:-9999px;top:-9999px;';
@@ -2401,18 +2413,18 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     textarea.select();
     try {
       document.execCommand('copy');
-      showCopySuccess(btn, successText);
+      showCopySuccess(btn, successText, toastText);
     } catch(e) {
       showToast('Copy failed. Please copy manually.');
     }
     document.body.removeChild(textarea);
   }
 
-  function showCopySuccess(btn, successText) {
+  function showCopySuccess(btn, successText, toastText) {
     var original = btn.innerHTML;
     btn.classList.add('is-success');
     btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> ' + (successText || 'Copied!');
-    showToast(successText || 'Copied to clipboard!');
+    showToast(toastText || successText || 'Copied to clipboard!');
     setTimeout(function() {
       btn.classList.remove('is-success');
       btn.innerHTML = original;
@@ -2439,19 +2451,19 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     // Desktop share
     $('cof-share-desktop').addEventListener('click', function() {
       var url = generateShareURL();
-      copyToClipboard(url, this, 'Link Copied!');
+      copyToClipboard(url, this, 'Saved!', 'Unique Link copied to clipboard — save it to load these settings again');
       checkURLLength(url);
     });
 
-    // Mobile copy
+    // Mobile copy (in bottom sheet)
     $('cof-copy-mobile').addEventListener('click', function() {
       copyToClipboard(generateOutput(), this, 'Copied!');
     });
 
-    // Mobile share
+    // Mobile share (bottom bar)
     $('cof-share-mobile').addEventListener('click', function() {
       var url = generateShareURL();
-      copyToClipboard(url, this, 'Link Copied!');
+      copyToClipboard(url, this, 'Saved!', 'Unique Link copied to clipboard — save it to load these settings again');
       checkURLLength(url);
     });
 
@@ -2464,6 +2476,19 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     $('cof-sheet-backdrop').addEventListener('click', function() {
       closeSheet();
     });
+  }
+
+  function setupClearButtons() {
+    var btns = document.querySelectorAll('.cof-cl-clear-btn[data-clear]');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        var input = $(this.getAttribute('data-clear'));
+        input.value = '';
+        input.dispatchEvent(new Event('change'));
+        updatePreview();
+      });
+    }
   }
 
   function openSheet() {
@@ -2791,3 +2816,12 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
 })();
 </script>
+
+<section style="background: #FAFAF6; border-top: 1px solid #E8E5DD; padding: 3.5rem 1.5rem;">
+  <div style="max-width: 36rem; margin: 0 auto; text-align: center;">
+    <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8B7335; margin-bottom: 0.45rem;">Feedback</div>
+    <h2 style="font-family: var(--font-heading); font-size: clamp(1.4rem, 3.2vw, 1.85rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; color: #1A2E23; margin: 0 0 1rem;">Have a suggestion or found a bug?</h2>
+    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0 0 1.5rem;">This tool is actively maintained. If something doesn't work for your game, or you have an idea that would make it more useful, we'd love to hear from you.</p>
+    <a href="/contact/" style="display: inline-flex; align-items: center; gap: 0.45rem; background: #BFA24E; color: #091A12; font-family: var(--font-heading); font-weight: 700; padding: 0.85rem 1.7rem; border-radius: 10px; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.01em; transition: background 0.2s, transform 0.12s;" onmouseover="this.style.background='#CEAF5C';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#BFA24E';this.style.transform='none'">Send Feedback</a>
+  </div>
+</section>
