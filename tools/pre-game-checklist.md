@@ -1121,11 +1121,26 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     </div>
   </button>
   <div class="cof-cl-section-body" id="sec-rebuys-body">
-    <div class="cof-cl-toggle-row">
-      <button type="button" class="cof-cl-toggle" role="switch" aria-checked="true" id="cof-rebuys-on" aria-label="Rebuys allowed"></button>
-      <span class="cof-cl-toggle-label">Rebuys allowed</span>
+    <!-- Cash: simple top-up limit -->
+    <div data-show="cash" id="cof-topup-section">
+      <div class="cof-cl-field">
+        <label for="cof-topup-limit">Max top-ups per player</label>
+        <div class="cof-cl-stepper">
+          <button type="button" class="cof-cl-step-btn" data-step="-1" data-target="cof-topup-limit" aria-label="Decrease top-up limit">&minus;</button>
+          <input type="number" id="cof-topup-limit" value="3" min="0" step="1" placeholder="3">
+          <button type="button" class="cof-cl-step-btn" data-step="1" data-target="cof-topup-limit" aria-label="Increase top-up limit">+</button>
+        </div>
+        <div class="cof-cl-helper">Top up to max buy-in between hands. 0 = no top-ups (freezeout).</div>
+      </div>
     </div>
-    <div id="cof-rebuys-fields">
+    <!-- Tournament/Bounty: full rebuy settings -->
+    <div data-show="tournament bounty">
+      <div class="cof-cl-toggle-row">
+        <button type="button" class="cof-cl-toggle" role="switch" aria-checked="true" id="cof-rebuys-on" aria-label="Rebuys allowed"></button>
+        <span class="cof-cl-toggle-label">Rebuys allowed</span>
+      </div>
+    </div>
+    <div id="cof-rebuys-fields" data-show="tournament bounty">
       <div class="cof-cl-grid-2">
         <div class="cof-cl-field">
           <label for="cof-rebuys-max">Max rebuys</label>
@@ -1148,14 +1163,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         <div class="cof-cl-currency-wrap">
           <input type="number" id="cof-rebuys-custom" value="" min="1" step="1" placeholder="50">
         </div>
-      </div>
-      <div class="cof-cl-field" data-show="cash" id="cof-rebuys-condition-wrap">
-        <label for="cof-rebuys-condition">Rebuy condition</label>
-        <select id="cof-rebuys-condition">
-          <option value="below_min" selected>Below minimum buy-in</option>
-          <option value="anytime">Any amount</option>
-          <option value="felted">Only when stacked (felted)</option>
-        </select>
       </div>
       <!-- Tournament/Bounty add-on -->
       <div data-show="tournament bounty" id="cof-addon-section">
@@ -1405,7 +1412,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     last_buyin_time: 'lt', hard_stop: 'hs', break_schedule: 'bs',
     location_name: 'ln', location_address: 'la', notes: 'nt',
     payout: 'py', payout_custom: 'pc', starting_stack_bb: 'sk',
-    auto_buyin: 'ab'
+    auto_buyin: 'ab', topup_limit: 'tl'
   };
 
   var KEY_MAP_REV = {};
@@ -1441,6 +1448,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       starting_chips: 10000,
       payout: '50/30/20',
       payout_custom: '',
+      topup_limit: 3,
       rebuys_allowed: true,
       rebuys_max: 1, rebuys_window: 90,
       rebuys_amount: 'same', rebuys_custom: '',
@@ -1799,9 +1807,15 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       this.setAttribute('aria-checked', !checked ? 'true' : 'false');
       state.rebuys_allowed = !checked;
       $('cof-rebuys-fields').querySelector('#cof-rebuys-fields > .cof-cl-grid-2').style.display = !checked ? '' : 'none';
-      $$('#cof-rebuys-fields > .cof-cl-field, #cof-rebuys-condition-wrap, #cof-addon-section').forEach(function(el) {
+      $$('#cof-rebuys-fields > .cof-cl-field').forEach(function(el) {
         el.style.display = !checked ? '' : 'none';
       });
+      // Add-on only for tournament/bounty
+      var addonEl = $('cof-addon-section');
+      if (addonEl) {
+        var showAddon = !checked && state.format !== 'cash';
+        addonEl.style.display = showAddon ? '' : 'none';
+      }
       updatePreview();
       updateSummaries();
     });
@@ -1860,7 +1874,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     var inputIds = [
       'cof-sb', 'cof-bb', 'cof-buyin-min', 'cof-buyin-max',
       'cof-tourn-buyin', 'cof-bounty-amt', 'cof-start-chips',
-      'cof-rebuys-max', 'cof-rebuys-window', 'cof-rebuys-custom',
+      'cof-topup-limit', 'cof-rebuys-max', 'cof-rebuys-window', 'cof-rebuys-custom',
       'cof-addon-amount', 'cof-addon-chips',
       'cof-banker', 'cof-payment-other',
       'cof-date', 'cof-start-time', 'cof-last-buyin-time', 'cof-hard-stop',
@@ -1899,6 +1913,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     state.starting_chips = parseInt($('cof-start-chips').value) || 0;
     state.payout = $('cof-payout').value;
     state.payout_custom = $('cof-payout-custom').value;
+    state.topup_limit = parseInt($('cof-topup-limit').value) || 0;
     state.rebuys_max = parseInt($('cof-rebuys-max').value) || 1;
     state.rebuys_window = parseInt($('cof-rebuys-window').value) || 90;
     state.rebuys_amount = $('cof-rebuys-amount').value;
@@ -2064,14 +2079,19 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     }
     lines.push('');
 
-    // Rebuys
-    if (!state.rebuys_allowed) {
-      lines.push('No rebuys');
+    // Rebuys / Top-ups
+    if (fmt === 'cash') {
+      if (state.topup_limit === 0) {
+        lines.push('No top-ups (freezeout)');
+      } else {
+        lines.push('Top-ups: ' + state.topup_limit + ' max (buy-in limits apply)');
+      }
     } else {
-      var rebuyAmt = state.rebuys_amount === 'same' ? 'same as buy-in' : fmtCurrency(state.rebuys_custom);
-      lines.push('Rebuys: ' + state.rebuys_max + ' max, first ' + state.rebuys_window + ' min, ' + rebuyAmt);
-      if (fmt === 'cash') {
-        lines.push(CONDITION_LABELS[state.rebuys_condition] || '');
+      if (!state.rebuys_allowed) {
+        lines.push('No rebuys');
+      } else {
+        var rebuyAmt = state.rebuys_amount === 'same' ? 'same as buy-in' : fmtCurrency(state.rebuys_custom);
+        lines.push('Rebuys: ' + state.rebuys_max + ' max, first ' + state.rebuys_window + ' min, ' + rebuyAmt);
       }
     }
 
@@ -2193,8 +2213,13 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     $('sum-stakes').textContent = stakesSummary;
     setCheck('chk-stakes', true);
 
-    // Rebuys
-    var rebuysSummary = state.rebuys_allowed ? (state.rebuys_max + ' max, ' + state.rebuys_window + ' min') : 'No rebuys';
+    // Rebuys / Top-ups
+    var rebuysSummary;
+    if (state.format === 'cash') {
+      rebuysSummary = state.topup_limit === 0 ? 'No top-ups' : state.topup_limit + ' top-ups max';
+    } else {
+      rebuysSummary = state.rebuys_allowed ? (state.rebuys_max + ' max, ' + state.rebuys_window + ' min') : 'No rebuys';
+    }
     $('sum-rebuys').textContent = rebuysSummary;
     setCheck('chk-rebuys', true);
 
@@ -2349,6 +2374,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     if (state.buyin_min !== defaults.buyin_min) data[KEY_MAP.buyin_min] = state.buyin_min;
     if (state.buyin_max !== defaults.buyin_max) data[KEY_MAP.buyin_max] = state.buyin_max;
     if (!state.auto_buyin) data[KEY_MAP.auto_buyin] = 0;
+    if (state.topup_limit !== defaults.topup_limit) data[KEY_MAP.topup_limit] = state.topup_limit;
 
     // Tournament fields
     if (state.tournament_buyin !== defaults.tournament_buyin) data[KEY_MAP.tournament_buyin] = state.tournament_buyin;
@@ -2450,6 +2476,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       var numFields = {
         sb: 'cof-sb', bb: 'cof-bb', buyin_min: 'cof-buyin-min', buyin_max: 'cof-buyin-max',
         tournament_buyin: 'cof-tourn-buyin', bounty_amount: 'cof-bounty-amt', starting_chips: 'cof-start-chips',
+        topup_limit: 'cof-topup-limit',
         rebuys_max: 'cof-rebuys-max', rebuys_window: 'cof-rebuys-window',
         addon_amount: 'cof-addon-amount', addon_chips: 'cof-addon-chips'
       };
@@ -2518,7 +2545,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         state.rebuys_allowed = data[KEY_MAP.rebuys_allowed] === 1;
         $('cof-rebuys-on').setAttribute('aria-checked', state.rebuys_allowed ? 'true' : 'false');
         if (!state.rebuys_allowed) {
-          $$('#cof-rebuys-fields > .cof-cl-grid-2, #cof-rebuys-fields > .cof-cl-field, #cof-rebuys-condition-wrap, #cof-addon-section').forEach(function(el) {
+          $$('#cof-rebuys-fields > .cof-cl-grid-2, #cof-rebuys-fields > .cof-cl-field, #cof-addon-section').forEach(function(el) {
             el.style.display = 'none';
           });
         }
