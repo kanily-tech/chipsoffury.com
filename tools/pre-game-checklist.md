@@ -996,7 +996,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     <div class="cof-lp-eyebrow">Free Tool</div>
     <h1 class="cof-lp-h1">Pre-Game Checklist Generator</h1>
     <ol class="cof-lp-steps-list">
-      <li><span class="cof-lp-step-num">1</span><span><strong>Pick your format</strong> — cash game, tournament, or bounty</span></li>
+      <li><span class="cof-lp-step-num">1</span><span><strong>Pick your format</strong> — cash game or tournament</span></li>
       <li><span class="cof-lp-step-num">2</span><span><strong>Fill in the details</strong> — stakes, rebuys, house rules, logistics</span></li>
       <li><span class="cof-lp-step-num">3</span><span><strong>Copy and share</strong> — paste into your group chat</span></li>
     </ol>
@@ -1020,7 +1020,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   <div class="cof-cl-format" role="radiogroup" aria-label="Game format">
     <button type="button" class="cof-cl-format-btn is-active" role="radio" aria-checked="true" data-format="cash">Cash Game</button>
     <button type="button" class="cof-cl-format-btn" role="radio" aria-checked="false" data-format="tournament">Tournament</button>
-    <button type="button" class="cof-cl-format-btn" role="radio" aria-checked="false" data-format="bounty">Bounty</button>
   </div>
 </div>
 
@@ -1088,8 +1087,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         <span>Auto-calculate blinds &amp; max buy-in</span>
       </label>
     </div>
-    <!-- Tournament/Bounty fields -->
-    <div data-show="tournament bounty">
+    <!-- Tournament fields -->
+    <div data-show="tournament">
       <div class="cof-cl-field">
         <label for="cof-tourn-buyin">Tournament buy-in</label>
         <div class="cof-cl-stepper">
@@ -1101,16 +1100,22 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         </div>
       </div>
     </div>
-    <div data-show="bounty">
-      <div class="cof-cl-field">
-        <label for="cof-bounty-amt">Bounty amount</label>
-        <div class="cof-cl-currency-wrap">
-          <input type="number" id="cof-bounty-amt" value="10" min="1" step="1" placeholder="10" aria-describedby="err-bounty">
+    <div data-show="tournament" id="cof-bounty-section">
+      <div class="cof-cl-toggle-row">
+        <button type="button" class="cof-cl-toggle" role="switch" aria-checked="false" id="cof-bounty-on" aria-label="Bounty tournament"></button>
+        <span class="cof-cl-toggle-label">Bounty tournament</span>
+      </div>
+      <div id="cof-bounty-fields" class="cof-cl-hidden">
+        <div class="cof-cl-field">
+          <label for="cof-bounty-amt">Bounty amount</label>
+          <div class="cof-cl-currency-wrap">
+            <input type="number" id="cof-bounty-amt" value="10" min="1" step="1" placeholder="10" aria-describedby="err-bounty">
+          </div>
+          <div class="cof-cl-error" id="err-bounty">Bounty must be less than the total buy-in.</div>
         </div>
-        <div class="cof-cl-error" id="err-bounty">Bounty must be less than the total buy-in.</div>
       </div>
     </div>
-    <div data-show="tournament bounty">
+    <div data-show="tournament">
       <div class="cof-cl-field">
         <label for="cof-start-chips">Starting chips</label>
         <input type="number" id="cof-start-chips" value="10000" min="100" step="100" placeholder="10,000">
@@ -1164,14 +1169,14 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         </div>
       </div>
     </div>
-    <!-- Tournament/Bounty: full rebuy settings -->
-    <div data-show="tournament bounty">
+    <!-- Tournament: full rebuy settings -->
+    <div data-show="tournament">
       <div class="cof-cl-toggle-row">
         <button type="button" class="cof-cl-toggle" role="switch" aria-checked="true" id="cof-rebuys-on" aria-label="Rebuys allowed"></button>
         <span class="cof-cl-toggle-label">Rebuys allowed</span>
       </div>
     </div>
-    <div id="cof-rebuys-fields" data-show="tournament bounty">
+    <div id="cof-rebuys-fields" data-show="tournament">
       <div class="cof-cl-grid-2">
         <div class="cof-cl-field">
           <label for="cof-rebuys-max">Max rebuys</label>
@@ -1195,8 +1200,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
           <input type="number" id="cof-rebuys-custom" value="" min="1" step="1" placeholder="50">
         </div>
       </div>
-      <!-- Tournament/Bounty add-on -->
-      <div data-show="tournament bounty" id="cof-addon-section">
+      <!-- Tournament add-on -->
+      <div data-show="tournament" id="cof-addon-section">
         <div class="cof-cl-toggle-row" style="margin-top: 0.5rem;">
           <button type="button" class="cof-cl-toggle" role="switch" aria-checked="false" id="cof-addon-on" aria-label="Add-on allowed"></button>
           <span class="cof-cl-toggle-label">Add-on allowed</span>
@@ -1443,14 +1448,15 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     last_buyin_time: 'lt', hard_stop: 'hs', break_schedule: 'bs',
     location_name: 'ln', location_address: 'la', notes: 'nt',
     payout: 'py', payout_custom: 'pc', starting_stack_bb: 'sk',
-    auto_buyin: 'ab', topup_limited: 'tc', topup_limit: 'tl'
+    auto_buyin: 'ab', topup_limited: 'tc', topup_limit: 'tl',
+    bounty_enabled: 'be'
   };
 
   var KEY_MAP_REV = {};
   for (var k in KEY_MAP) KEY_MAP_REV[KEY_MAP[k]] = k;
 
-  var FORMAT_MAP = { c: 'cash', t: 'tournament', b: 'bounty' };
-  var FORMAT_MAP_REV = { cash: 'c', tournament: 't', bounty: 'b' };
+  var FORMAT_MAP = { c: 'cash', t: 'tournament' };
+  var FORMAT_MAP_REV = { cash: 'c', tournament: 't' };
   var SETTLE_MAP = { l: 'before_leave', n: 'same_night', d: 'next_day' };
   var SETTLE_MAP_REV = { before_leave: 'l', same_night: 'n', next_day: 'd' };
   var SETTLE_LABELS = { before_leave: 'Settle up before you leave', same_night: 'Settle by end of night', next_day: 'Settle by next day' };
@@ -1475,6 +1481,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       sb: 0.25, bb: 0.50,
       buyin_min: 20, buyin_max: 40,
       tournament_buyin: 40,
+      bounty_enabled: false,
       bounty_amount: 10,
       starting_chips: 10000,
       payout: '50/30/20',
@@ -1909,12 +1916,22 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       $$('#cof-rebuys-fields > .cof-cl-field').forEach(function(el) {
         el.style.display = !checked ? '' : 'none';
       });
-      // Add-on only for tournament/bounty
+      // Add-on only for tournament
       var addonEl = $('cof-addon-section');
       if (addonEl) {
         var showAddon = !checked && state.format !== 'cash';
         addonEl.style.display = showAddon ? '' : 'none';
       }
+      updatePreview();
+      updateSummaries();
+    });
+
+    // Bounty toggle
+    $('cof-bounty-on').addEventListener('click', function() {
+      var checked = this.getAttribute('aria-checked') === 'true';
+      this.setAttribute('aria-checked', !checked ? 'true' : 'false');
+      state.bounty_enabled = !checked;
+      $('cof-bounty-fields').classList.toggle('cof-cl-hidden', checked);
       updatePreview();
       updateSummaries();
     });
@@ -2009,6 +2026,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     state.buyin_min = parseFloat($('cof-buyin-min').value) || 0;
     state.buyin_max = parseFloat($('cof-buyin-max').value) || 0;
     state.tournament_buyin = parseFloat($('cof-tourn-buyin').value) || 0;
+    state.bounty_enabled = $('cof-bounty-on').getAttribute('aria-checked') === 'true';
     state.bounty_amount = parseFloat($('cof-bounty-amt').value) || 0;
     state.starting_chips = parseInt($('cof-start-chips').value) || 0;
     state.payout = $('cof-payout').value;
@@ -2061,7 +2079,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
     // Bounty < buy-in
     var errBounty = $('err-bounty');
-    if (state.format === 'bounty' && state.bounty_amount >= state.tournament_buyin) {
+    if (state.format === 'tournament' && state.bounty_enabled && state.bounty_amount >= state.tournament_buyin) {
       errBounty.classList.add('is-visible');
       valid = false;
     } else {
@@ -2171,14 +2189,16 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       lines.push('Cash Game | ' + fmtCurrency(state.sb) + '/' + fmtCurrency(state.bb) + ' blinds');
       lines.push('Buy-in: ' + fmtCurrency(state.buyin_min) + '\u2013' + fmtCurrency(state.buyin_max));
     } else if (fmt === 'tournament') {
-      lines.push('Tournament | ' + fmtCurrency(state.tournament_buyin) + ' buy-in | ' + state.starting_chips.toLocaleString('en-US') + ' chips');
-      var payoutStr = state.payout === 'custom' ? (state.payout_custom || 'Custom') : (state.payout === 'wta' ? 'Winner take all' : state.payout);
-      lines.push('Payout: ' + payoutStr);
-    } else if (fmt === 'bounty') {
-      lines.push('Bounty Tournament | ' + fmtCurrency(state.tournament_buyin) + ' buy-in (' + fmtCurrency(state.bounty_amount) + ' bounty) | ' + state.starting_chips.toLocaleString('en-US') + ' chips');
-      var prizePool = state.tournament_buyin - state.bounty_amount;
-      var payoutStr2 = state.payout === 'custom' ? (state.payout_custom || 'Custom') : (state.payout === 'wta' ? 'Winner take all' : state.payout);
-      lines.push('Payout: ' + payoutStr2 + ' (from ' + fmtCurrency(prizePool) + '/player prize pool)');
+      if (state.bounty_enabled) {
+        lines.push('Bounty Tournament | ' + fmtCurrency(state.tournament_buyin) + ' buy-in (' + fmtCurrency(state.bounty_amount) + ' bounty) | ' + state.starting_chips.toLocaleString('en-US') + ' chips');
+        var prizePool = state.tournament_buyin - state.bounty_amount;
+        var payoutStr = state.payout === 'custom' ? (state.payout_custom || 'Custom') : (state.payout === 'wta' ? 'Winner take all' : state.payout);
+        lines.push('Payout: ' + payoutStr + ' (from ' + fmtCurrency(prizePool) + '/player prize pool)');
+      } else {
+        lines.push('Tournament | ' + fmtCurrency(state.tournament_buyin) + ' buy-in | ' + state.starting_chips.toLocaleString('en-US') + ' chips');
+        var payoutStr = state.payout === 'custom' ? (state.payout_custom || 'Custom') : (state.payout === 'wta' ? 'Winner take all' : state.payout);
+        lines.push('Payout: ' + payoutStr);
+      }
     }
     lines.push('');
 
@@ -2200,8 +2220,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       }
     }
 
-    // Add-on (tournament/bounty only)
-    if ((fmt === 'tournament' || fmt === 'bounty') && state.addon_allowed) {
+    // Add-on (tournament only)
+    if (fmt === 'tournament' && state.addon_allowed) {
       lines.push('Add-on: ' + fmtCurrency(state.addon_amount) + ' for ' + state.addon_chips.toLocaleString('en-US') + ' chips at first break');
     }
     lines.push('');
@@ -2311,9 +2331,11 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     if (state.format === 'cash') {
       stakesSummary = fmtCurrency(state.sb) + '/' + fmtCurrency(state.bb) + ' | ' + fmtCurrency(state.buyin_min) + '\u2013' + fmtCurrency(state.buyin_max);
     } else if (state.format === 'tournament') {
-      stakesSummary = fmtCurrency(state.tournament_buyin) + ' buy-in | ' + state.starting_chips.toLocaleString('en-US') + ' chips';
-    } else {
-      stakesSummary = fmtCurrency(state.tournament_buyin) + ' (' + fmtCurrency(state.bounty_amount) + ' bounty)';
+      if (state.bounty_enabled) {
+        stakesSummary = fmtCurrency(state.tournament_buyin) + ' (' + fmtCurrency(state.bounty_amount) + ' bounty)';
+      } else {
+        stakesSummary = fmtCurrency(state.tournament_buyin) + ' buy-in | ' + state.starting_chips.toLocaleString('en-US') + ' chips';
+      }
     }
     $('sum-stakes').textContent = stakesSummary;
     setCheck('chk-stakes', true);
@@ -2486,6 +2508,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
     // Tournament fields
     if (state.tournament_buyin !== defaults.tournament_buyin) data[KEY_MAP.tournament_buyin] = state.tournament_buyin;
+    if (state.bounty_enabled) data[KEY_MAP.bounty_enabled] = 1;
     if (state.bounty_amount !== defaults.bounty_amount) data[KEY_MAP.bounty_amount] = state.bounty_amount;
     if (state.starting_chips !== defaults.starting_chips) data[KEY_MAP.starting_chips] = state.starting_chips;
     if (state.payout !== defaults.payout) data[KEY_MAP.payout] = state.payout;
@@ -2566,7 +2589,13 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
       // Format
       if (data[KEY_MAP.format]) {
-        var fmt = FORMAT_MAP[data[KEY_MAP.format]];
+        var fmtCode = data[KEY_MAP.format];
+        var fmt = FORMAT_MAP[fmtCode];
+        // Backward compat: old bounty format (f=b) → tournament + bounty_enabled
+        if (fmtCode === 'b') {
+          fmt = 'tournament';
+          state.bounty_enabled = true;
+        }
         if (fmt) {
           state.format = fmt;
           $$('.cof-cl-format-btn').forEach(function(b) {
@@ -2663,6 +2692,11 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         $('cof-addon-on').setAttribute('aria-checked', state.addon_allowed ? 'true' : 'false');
         if (state.addon_allowed) $('cof-addon-fields').classList.remove('cof-cl-hidden');
       }
+      if (data[KEY_MAP.bounty_enabled] !== undefined) {
+        state.bounty_enabled = data[KEY_MAP.bounty_enabled] === 1;
+      }
+      $('cof-bounty-on').setAttribute('aria-checked', state.bounty_enabled ? 'true' : 'false');
+      if (state.bounty_enabled) $('cof-bounty-fields').classList.remove('cof-cl-hidden');
 
       // Date/time
       if (data[KEY_MAP.date]) { state.date = data[KEY_MAP.date]; $('cof-date').value = state.date; }
