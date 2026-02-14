@@ -1,8 +1,8 @@
 ---
-title: "Free Poker Pre-Game Checklist Generator | Chips of Fury"
+title: "Poker Home Game Rules and Invite Generator | Chips of Fury"
 date: 2026-02-12
 description: "Generate a shareable poker night checklist in seconds. Set stakes, buy-in, rebuys, house rules, and logistics — then copy-paste it into your group chat."
-ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
+ogImage: "https://chipsoffury.com/images/pre-game-checklist-og.webp"
 ---
 
 <style>
