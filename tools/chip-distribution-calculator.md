@@ -1132,6 +1132,23 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 }
 .cof-warning.red { border-color: #fecdd3; background: #fff1f2; color: #9f1239; }
 .cof-warning.yellow { border-color: #fde68a; background: #fffbeb; color: #92400e; }
+.cof-chips-only-pitch {
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #3730a3;
+  border-radius: 8px;
+  font-size: var(--fs-sm);
+  padding: 0.34rem 0.48rem;
+  line-height: 1.45;
+}
+.cof-chips-only-pitch strong { color: #312e81; }
+.cof-chips-only-pitch a {
+  color: #4338ca;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.12rem;
+}
+.cof-chips-only-pitch a:hover { color: #3730a3; }
 
 
 .cof-form-row {
@@ -2461,7 +2478,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         els.distAlert.classList.remove('cof-hidden');
         els.distAlert.innerHTML = '<strong>Cannot distribute $' + state.buyIn + '</strong> with these chip denominations. ' +
           'Your chips (' + denomList + ') cannot produce a $' + state.buyIn + ' buy-in for ' + state.players +
-          ' players with the available chip counts. Try adjusting the buy-in, player count, or chip quantities.';
+          ' players with the available chip counts. Try adjusting the buy-in, player count, or chip quantities.' +
+          '<div class="cof-chips-only-pitch" style="margin-top:0.5rem"><strong>Don\u2019t have enough chips?</strong> Use <a href="/virtual-poker-chips/">Chips Only Mode</a> in Chips of Fury to replace physical chips entirely \u2014 play with real cards while your phone tracks chips and pots.</div>';
         return;
       }
     }
@@ -2483,6 +2501,16 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       div.textContent = w.message;
       els.warnings.appendChild(div);
     });
+
+    var hasChipIssue = allWarnings.some(function (w) {
+      return w.type === 'impossible' || w.type === 'few_chips';
+    });
+    if (hasChipIssue) {
+      var pitch = document.createElement('div');
+      pitch.className = 'cof-chips-only-pitch';
+      pitch.innerHTML = '<strong>Don\u2019t have enough chips?</strong> Use <a href="/virtual-poker-chips/">Chips Only Mode</a> in Chips of Fury to replace physical chips entirely \u2014 play with real cards while your phone tracks chips and pots.';
+      els.warnings.appendChild(pitch);
+    }
 
     var sortedVals = Object.keys(result.chips).map(Number).sort(function (a, b) { return a - b; });
     var grid = document.createElement('div');
@@ -2807,5 +2835,14 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         <span><strong>Cash games only:</strong> built for home cash games, not tournament structures</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="cof-lp-problems" style="background: #fff; border-top: 1px solid #E8E5DD;">
+  <div class="cof-lp-problems-inner" style="max-width: 36rem; text-align: center;">
+    <div class="cof-lp-tag">Feedback</div>
+    <h2 class="cof-lp-h2">Have a suggestion or found a bug?</h2>
+    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0 0 1.5rem;">This tool is actively maintained. If something doesn't work for your setup, or you have an idea that would make it more useful, we'd love to hear from you.</p>
+    <a href="/contact/" style="display: inline-flex; align-items: center; gap: 0.45rem; background: #BFA24E; color: #091A12; font-family: var(--font-heading); font-weight: 700; padding: 0.85rem 1.7rem; border-radius: 10px; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.01em; transition: background 0.2s, transform 0.12s;" onmouseover="this.style.background='#CEAF5C';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#BFA24E';this.style.transform='none'">Send Feedback</a>
   </div>
 </section>
