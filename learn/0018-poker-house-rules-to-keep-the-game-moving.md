@@ -295,46 +295,11 @@ A few optional rules that sound fun but slow things down:
 
 ---
 
-## The House Rules Card
+## Put It All Together
 
-Print this, screenshot it, or paste it in the group chat. Customize for your game.
+You don't need to memorize any of this. Our [Pre-Game Checklist](/tools/pre-game-checklist/) lets you toggle the rules that apply to your game, set stakes, buy-ins, and logistics, then copy the whole thing into your group chat. It takes about two minutes and saves you from explaining the same rules at the start of every session.
 
-**Before the Game**
-- [ ] Stakes and buy-in announced (see [Pre-Game Checklist](/learn/how-to-handle-poker-buy-ins-with-friends/#the-pregame-checklist))
-- [ ] Banker designated
-- [ ] Two decks with different backs, verified (52 cards each)
-- [ ] Chip denominations and starting stacks set
-- [ ] Seats drawn or assigned
-- [ ] Hard stop time posted
-- [ ] Break schedule decided (every 90 min or per orbit)
-- [ ] Floor person and backup named
-
-**During Play**
-- [ ] Verbal bets are binding
-- [ ] No string betting - one motion or announce first
-- [ ] Single chip without declaration = call
-- [ ] Act only on your turn
-- [ ] No reaching into wallets mid-hand - only bet what's on the table. Rebuys happen between hands, per host's rules
-- [ ] Dealer button moves clockwise each hand
-- [ ] Burn before flop, turn, river
-- [ ] One player to a hand - no coaching
-- [ ] Show one, show all
-- [ ] Phones down when you're in a hand
-- [ ] Show cards at showdown - do not assume win or loss without actual cards
-- [ ] Food off the felt
-
-**Administrative**
-- [ ] Rebuys between hands only
-- [ ] [Color-ups](glossary:color-up) during breaks
-- [ ] Late arrivals post both blinds on first hand
-- [ ] Early departures: announce 30 min ahead, don't leave right before your blinds
-- [ ] Settle up before leaving
-
-**Disputes**
-- [ ] Floor person makes the call
-- [ ] Discussion happens after the hand, not during
-- [ ] Unresolved = kill the hand, return bets
-- [ ] Robert's Rules of Poker for edge cases
+<a href="/tools/pre-game-checklist/" class="btn-primary" style="display:inline-block; margin-top:0.5rem;">Open the Pre-Game Checklist &rarr;</a>
 
 ---
 
