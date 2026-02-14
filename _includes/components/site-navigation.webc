@@ -20,7 +20,7 @@
           </button>
 
           <!-- Dropdown Menu -->
-          <div class="dropdown-menu absolute left-0 sm:left-auto sm:right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-left sm:origin-top-right scale-95">
+          <div class="dropdown-menu absolute left-0 sm:left-auto sm:right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-left sm:origin-top-right scale-95 hidden">
             <div class="bg-white rounded-xl shadow-2xl border border-purple-100 overflow-hidden">
               <a href="/virtual-poker-chips/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
                 <div class="font-semibold text-gray-900">Chips Only Mode</div>
@@ -40,7 +40,7 @@
           </button>
 
           <!-- Dropdown Menu -->
-          <div class="dropdown-menu absolute left-0 sm:left-auto sm:right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-left sm:origin-top-right scale-95">
+          <div class="dropdown-menu absolute left-0 sm:left-auto sm:right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-left sm:origin-top-right scale-95 hidden">
             <div class="bg-white rounded-xl shadow-2xl border border-purple-100 overflow-hidden">
               <a href="/chip-distribution-calculator/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
                 <div class="font-semibold text-gray-900">Chip Calculator</div>
@@ -77,6 +77,27 @@
 // Initialize after DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
   const dropdowns = document.querySelectorAll('.nav-dropdown');
+  const HIDE_DELAY_MS = 210;
+
+  function showMenu(menu) {
+    if (menu.__hideTimer) {
+      window.clearTimeout(menu.__hideTimer);
+      menu.__hideTimer = null;
+    }
+    menu.classList.remove('hidden');
+  }
+
+  function hideMenuAfterTransition(menu) {
+    if (menu.__hideTimer) {
+      window.clearTimeout(menu.__hideTimer);
+    }
+    menu.__hideTimer = window.setTimeout(function() {
+      if (!menu.classList.contains('dropdown-open')) {
+        menu.classList.add('hidden');
+      }
+      menu.__hideTimer = null;
+    }, HIDE_DELAY_MS);
+  }
 
   function positionMenu(container) {
     var menu = container.querySelector('.dropdown-menu');
@@ -103,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function openDropdown(container) {
     var menu = container.querySelector('.dropdown-menu');
     var arrow = container.querySelector('.dropdown-arrow');
+    showMenu(menu);
     positionMenu(container);
     menu.classList.add('dropdown-open', 'opacity-100', 'visible', 'scale-100');
     menu.classList.remove('opacity-0', 'invisible', 'scale-95');
@@ -115,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
     menu.classList.remove('dropdown-open', 'opacity-100', 'visible', 'scale-100');
     menu.classList.add('opacity-0', 'invisible', 'scale-95');
     arrow.classList.remove('rotate-180');
+    hideMenuAfterTransition(menu);
   }
 
   function closeAllDropdowns() {
@@ -155,6 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
         positionMenu(container);
         var menu = container.querySelector('.dropdown-menu');
         var arrow = container.querySelector('.dropdown-arrow');
+        showMenu(menu);
         menu.classList.add('opacity-100', 'visible', 'scale-100');
         menu.classList.remove('opacity-0', 'invisible', 'scale-95');
         arrow.classList.add('rotate-180');

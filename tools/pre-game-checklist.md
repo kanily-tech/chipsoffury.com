@@ -6,6 +6,13 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 ---
 
 <style>
+:root {
+  --cof-vw: 100vw;
+}
+@supports (width: 100dvw) {
+  :root { --cof-vw: 100dvw; }
+}
+
 /* ═══ Landing Page Hero (shared pattern with chip calculator) ═══ */
 .cof-lp-hero {
   background: #091A12;
@@ -188,6 +195,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   --cof-accent-hover: #0d6357;
   --cof-danger: #dc2626;
   --cof-danger-soft: #fff1f2;
+  width: min(100%, var(--cof-vw));
   max-width: 64rem;
   margin: 0 auto;
   font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
@@ -208,7 +216,16 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   align-items: start;
 }
 @media (max-width: 1023px) {
+  #cof-checklist,
+  .cof-cl-layout,
+  .cof-cl-form-area,
+  .cof-cl-format-wrap,
+  .cof-cl-format {
+    max-width: var(--cof-vw);
+  }
   .cof-cl-layout { grid-template-columns: 1fr; }
+  .cof-cl-format { width: 100%; }
+  .cof-cl-format-btn { flex: 1; }
 }
 @media (min-width: 1280px) {
   .cof-cl-layout { grid-template-columns: minmax(0, 1fr) 24rem; }
@@ -777,12 +794,15 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: auto;
+  width: var(--cof-vw);
+  max-width: var(--cof-vw);
   z-index: 50;
   background: #fff;
   border-top: 1px solid #dbe4f0;
   box-shadow: 0 -4px 16px rgba(15,23,42,0.08);
   padding: 0.75rem 1rem;
+  box-sizing: border-box;
 }
 @media (max-width: 1023px) {
   .cof-cl-bottom-bar { display: flex; gap: 0.5rem; align-items: center; }
@@ -839,7 +859,10 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 .cof-cl-sheet-backdrop {
   display: none;
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--cof-vw);
   background: rgba(0,0,0,0.3);
   z-index: 51;
   opacity: 0;
@@ -852,7 +875,9 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: auto;
+  width: var(--cof-vw);
+  max-width: var(--cof-vw);
   z-index: 52;
   background: #fff;
   border-radius: 16px 16px 0 0;
@@ -896,6 +921,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   font-size: 0.875rem;
   font-weight: 700;
   box-shadow: 0 10px 24px rgba(15,23,42,0.2);
+  max-width: calc(var(--cof-vw) - 1rem);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
@@ -1484,6 +1510,14 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   function $(id) { return document.getElementById(id); }
   function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
+  function syncViewportWidthVar() {
+    var vw = window.innerWidth;
+    if (window.visualViewport && window.visualViewport.width) {
+      vw = window.visualViewport.width;
+    }
+    document.documentElement.style.setProperty('--cof-vw', Math.round(vw) + 'px');
+  }
+
   // ═══ Sanitize ═══
   function sanitizePlain(str) {
     if (typeof str !== 'string') return '';
@@ -1707,6 +1741,11 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
   // ═══ Initialize ═══
   function init() {
+    syncViewportWidthVar();
+    window.addEventListener('resize', syncViewportWidthVar);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', syncViewportWidthVar);
+    }
     setupDate();
     renderRules();
     setupFormatSelector();
@@ -1807,39 +1846,55 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   // ═══ Accordions ═══
   function setupAccordions() {
     var isMobile = window.innerWidth < 640;
+    var sections = $$('.cof-cl-section');
+
+    function setExpanded(section, expanded) {
+      section.classList.toggle('is-expanded', expanded);
+      section.querySelector('.cof-cl-section-header').setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    }
+
+    function syncAccordionMode() {
+      if (!sections.length) return;
+
+      if (isMobile) {
+        // Keep only one section open on mobile to avoid dense layouts after viewport switches.
+        var firstExpanded = null;
+        sections.forEach(function(s) {
+          if (!firstExpanded && s.classList.contains('is-expanded')) firstExpanded = s;
+        });
+        sections.forEach(function(s) { setExpanded(s, false); });
+        setExpanded(firstExpanded || sections[0], true);
+      } else {
+        sections.forEach(function(s) { setExpanded(s, true); });
+      }
+    }
+
     $$('.cof-cl-section-header').forEach(function(header) {
       header.addEventListener('click', function() {
         var section = this.closest('.cof-cl-section');
         var isExpanded = section.classList.contains('is-expanded');
 
         if (isMobile) {
-          $$('.cof-cl-section').forEach(function(s) {
-            s.classList.remove('is-expanded');
-            s.querySelector('.cof-cl-section-header').setAttribute('aria-expanded', 'false');
-          });
+          sections.forEach(function(s) { setExpanded(s, false); });
         }
 
         if (!isExpanded) {
-          section.classList.add('is-expanded');
-          this.setAttribute('aria-expanded', 'true');
+          setExpanded(section, true);
           section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
-          section.classList.remove('is-expanded');
-          this.setAttribute('aria-expanded', 'false');
+          setExpanded(section, false);
         }
       });
     });
 
-    // On desktop, expand first section. On mobile, only first.
-    if (!isMobile) {
-      $$('.cof-cl-section').forEach(function(s) {
-        s.classList.add('is-expanded');
-        s.querySelector('.cof-cl-section-header').setAttribute('aria-expanded', 'true');
-      });
-    }
+    syncAccordionMode();
 
     window.addEventListener('resize', function() {
-      isMobile = window.innerWidth < 640;
+      var nextIsMobile = window.innerWidth < 640;
+      if (nextIsMobile !== isMobile) {
+        isMobile = nextIsMobile;
+        syncAccordionMode();
+      }
     });
   }
 
