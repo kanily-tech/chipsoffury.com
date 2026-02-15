@@ -5,7 +5,6 @@ description: "New to poker? This guide explains the most popular poker variants,
 tags: [ 'post', 'learn', 'poker-basics' ]
 authorSlugs: [mayank]
 ogImage: "https://chipsoffury.com/images/poker-variants-og.webp"
-draft: true
 showAuthorBio: true
 ---
 
