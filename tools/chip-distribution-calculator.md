@@ -334,7 +334,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       <li><span class="cof-lp-step-num">2</span><span>Enter the <strong>chip inventory</strong> in your poker set.</span></li>
       <li><span class="cof-lp-step-num">3</span><span>Get a breakdown of how many of each chip to give every player.</span></li>
     </ol>
-    <p class="cof-lp-note">The URL stores the full config so you can pull it up next session or send it to players as a chip-value reference for unmarked chips (great for beginners).</p>
     <a href="#calculator" class="cof-lp-cta">Start Setting Up <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
   </div>
 </section>
@@ -373,10 +372,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   --fs-xl:   2rem;      /* 32px – hero numbers */
 
   margin: 1.5rem 0;
-  padding: 0.95rem;
-  border-radius: 16px;
-  border: 1px solid #dbe4f0;
-  background: #fff;
+  padding: 0;
+  background: transparent;
   color: var(--cof-ink);
   font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
   font-variant-numeric: tabular-nums;
@@ -430,68 +427,90 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 }
 .cof-reset:hover { color: #0f4c5c; }
 
-.cof-tabs {
+/* ═══ Accordion Sections ═══ */
+.cof-cl-section {
+  border: 1px solid #dbe4f0;
+  border-radius: 12px;
+  background: #fff;
+  margin-bottom: 0.75rem;
+}
+.cof-cl-section-header {
   display: flex;
-  border-bottom: 1px solid var(--cof-line);
-}
-.cof-tab {
-  flex: 1;
-  border: none;
-  border-bottom: 2px solid transparent;
-  background: none;
-  padding: 0.52rem 0.4rem;
-  text-align: center;
-  font-size: var(--fs-sm);
-  color: #64748b;
-  font-weight: 700;
-  cursor: pointer;
-}
-.cof-tab.is-active {
-  color: #0f172a;
-  border-bottom-color: #0f172a;
-}
-
-.cof-panel {
-  padding: 0.85rem 0 0;
-}
-#cof-calc section[data-step] > :first-child {
-  margin-top: 0 !important;
-}
-.cof-caption-bar {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 0.4rem;
-  padding: 0.35rem 0 0.65rem;
-  margin-bottom: 0.65rem;
-  border-bottom: 1px solid #eef2f7;
+  justify-content: space-between;
   align-items: center;
-}
-.cof-caption {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  text-align: center;
-  font-size: var(--fs-md);
-  font-weight: 600;
-  color: #1e293b;
-  line-height: 1.35;
-}
-#cof-prev { grid-column: 1; grid-row: 2; justify-self: start; }
-#cof-next { grid-column: 3; grid-row: 2; justify-self: end; }
-.cof-caption-nav {
-  border: 1px solid #0f766e;
-  border-radius: 8px;
-  background: #ecfdf5;
-  color: #0f766e;
-  font-size: var(--fs-sm);
-  font-weight: 700;
+  padding: 0.85rem 1rem;
   cursor: pointer;
-  padding: 0.36rem 0.7rem;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  gap: 0.5rem;
+}
+.cof-cl-section-header:hover { background: #fafbfc; border-radius: 12px; }
+.cof-cl-section-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  flex: 1;
+}
+.cof-cl-section-num {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(15,118,110,0.3);
+  color: #0f766e;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cof-cl-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
   white-space: nowrap;
 }
+.cof-cl-section-summary {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-left: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+.cof-cl-section-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+.cof-cl-chevron {
+  width: 1rem;
+  height: 1rem;
+  color: #94a3b8;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.cof-cl-section.is-expanded .cof-cl-chevron { transform: rotate(180deg); }
+.cof-cl-section.is-expanded .cof-cl-section-summary { opacity: 0; }
+.cof-cl-section-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+}
+.cof-cl-section.is-expanded .cof-cl-section-body {
+  max-height: 2000px;
+  opacity: 1;
+  padding: 0 1rem 1rem;
+  overflow: visible;
+}
 .cof-share-img {
-  grid-column: 2;
-  grid-row: 2;
-  justify-self: center;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -508,14 +527,11 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 .cof-share-img:hover {
   background: #ddd6fe;
 }
-.cof-share-img.cof-hidden { display: none; }
 .cof-share-img svg { width: 1em; height: 1em; }
-.cof-caption-nav:disabled {
-  opacity: 0.2;
-  cursor: default;
-}
-.cof-caption-nav:not(:disabled):hover {
-  background: #d1fae5;
+.cof-share-img-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.75rem;
 }
 
 .cof-hidden { display: none; }
@@ -1394,7 +1410,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
 @media (max-width: 600px) {
   #cof-calc {
-    padding: 0.65rem;
     overflow-x: hidden;
   }
   .cof-head { flex-wrap: wrap; }
@@ -1445,9 +1460,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   }
 }
 
-@media (min-width: 900px) {
-  #cof-calc { padding: 1.15rem; }
-}
 </style>
 
 <div id="cof-calc">
@@ -1456,23 +1468,22 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     <div class="cof-head-actions">
       <!-- Debug: copies full internal state (inputs, chips, values, suggestions) as JSON to clipboard for troubleshooting -->
       <!-- <button type="button" class="cof-share cof-copy-state" id="cof-copy-state">Copy State</button> -->
-      <button type="button" class="cof-share" id="cof-share">Copy Setup Link</button>
+      <button type="button" class="cof-share" id="cof-share">Save Configuration</button>
       <a href="#" class="cof-reset" id="cof-reset">Reset</a>
     </div>
   </div>
-  <div class="cof-tabs">
-    <button type="button" class="cof-tab is-active" data-tab="0">1. Game</button>
-    <button type="button" class="cof-tab" data-tab="1">2. Chip Set</button>
-    <button type="button" class="cof-tab" data-tab="2">3. Distribution</button>
-  </div>
-  <div class="cof-panel">
-    <div class="cof-caption-bar">
-      <button type="button" id="cof-prev" class="cof-caption-nav" aria-label="Previous step">&larr; Prev</button>
-      <span class="cof-caption" id="cof-caption">Set buy-in, blinds, and player count</span>
-      <button type="button" class="cof-share-img cof-hidden" id="cof-share-img"><span id="cof-share-icon"></span> Share</button>
-      <button type="button" id="cof-next" class="cof-caption-nav" aria-label="Next step">Next &rarr;</button>
-    </div>
-    <section data-step="0">
+  <div class="cof-cl-section is-expanded" id="sec-game">
+    <button type="button" class="cof-cl-section-header" aria-expanded="true" aria-controls="sec-game-body">
+      <div class="cof-cl-section-left">
+        <span class="cof-cl-section-num">1</span>
+        <span class="cof-cl-section-title">Game Setup</span>
+        <span class="cof-cl-section-summary" id="sum-game"></span>
+      </div>
+      <div class="cof-cl-section-right">
+        <svg class="cof-cl-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+    </button>
+    <div class="cof-cl-section-body" id="sec-game-body">
       <div class="cof-form-row">
         <span class="cof-form-label">Buy-in</span>
         <div class="cof-form-controls">
@@ -1516,8 +1527,21 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
           </div>
         </div>
       </div>
-    </section>
-    <section data-step="1" class="cof-hidden">
+    </div>
+  </div>
+
+  <div class="cof-cl-section is-expanded" id="sec-chips">
+    <button type="button" class="cof-cl-section-header" aria-expanded="true" aria-controls="sec-chips-body">
+      <div class="cof-cl-section-left">
+        <span class="cof-cl-section-num">2</span>
+        <span class="cof-cl-section-title">Chip Set</span>
+        <span class="cof-cl-section-summary" id="sum-chips"></span>
+      </div>
+      <div class="cof-cl-section-right">
+        <svg class="cof-cl-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+    </button>
+    <div class="cof-cl-section-body" id="sec-chips-body">
       <div id="cof-chip-alert" class="cof-alert cof-hidden"></div>
       <div class="cof-marked-switch" id="cof-marked-switch">
         <div class="cof-marked-switch-track">
@@ -1535,13 +1559,31 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       </div>
       <div class="cof-chip-list" id="cof-chip-list"></div>
       <button id="cof-add-chip" class="cof-add" type="button">+ Add Chip Color</button>
-    </section>
-    <section data-step="2" class="cof-hidden">
-      <div id="cof-dist-alert" class="cof-alert cof-hidden"></div>
-      <div id="cof-summary" class="cof-summary"></div>
-      <div id="cof-stacks" class="cof-stacks"></div>
-      <div id="cof-warnings" class="cof-warnings"></div>
-    </section>
+    </div>
+  </div>
+
+  <div class="cof-cl-section is-expanded" id="sec-dist">
+    <button type="button" class="cof-cl-section-header" aria-expanded="true" aria-controls="sec-dist-body">
+      <div class="cof-cl-section-left">
+        <span class="cof-cl-section-num">3</span>
+        <span class="cof-cl-section-title">Distribution</span>
+        <span class="cof-cl-section-summary" id="sum-dist"></span>
+      </div>
+      <div class="cof-cl-section-right">
+        <svg class="cof-cl-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+      </div>
+    </button>
+    <div class="cof-cl-section-body" id="sec-dist-body">
+      <div id="cof-dist-capture" class="cof-dist-capture">
+        <div id="cof-dist-alert" class="cof-alert cof-hidden"></div>
+        <div id="cof-summary" class="cof-summary"></div>
+        <div id="cof-stacks" class="cof-stacks"></div>
+        <div id="cof-warnings" class="cof-warnings"></div>
+      </div>
+      <div class="cof-share-img-wrap">
+        <button type="button" class="cof-share-img" id="cof-share-img"><span id="cof-share-icon"></span> Share</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1729,7 +1771,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   }
 
   var state = {
-    step: 0,
     buyIn: 50,
     players: 6,
     autoBlinds: true,
@@ -1748,11 +1789,10 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     share: document.getElementById('cof-share'),
     shareImg: document.getElementById('cof-share-img'),
     reset: document.getElementById('cof-reset'),
-    tabs: Array.prototype.slice.call(document.querySelectorAll('.cof-tab')),
-    sections: Array.prototype.slice.call(document.querySelectorAll('[data-step]')),
-    prev: document.getElementById('cof-prev'),
-    next: document.getElementById('cof-next'),
-    caption: document.getElementById('cof-caption'),
+
+    sumGame: document.getElementById('sum-game'),
+    sumChips: document.getElementById('sum-chips'),
+    sumDist: document.getElementById('sum-dist'),
 
     depthLabel: document.getElementById('cof-depth-label'),
     buyInput: document.getElementById('cof-buy-input'),
@@ -1871,7 +1911,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       url: location.href,
       input: {
         game: {
-          step: state.step,
           buyIn: round2(state.buyIn),
           players: state.players,
           autoBlinds: !!state.autoBlinds,
@@ -1945,56 +1984,55 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     return Math.pow(10, Math.floor(Math.log10(value)));
   }
 
-  function serialize() {
-    var qs = new URLSearchParams();
-    qs.set('v', '3');
-    qs.set('t', String(state.step));
-    qs.set('bi', String(round2(state.buyIn)));
-    qs.set('p', String(state.players));
-    qs.set('auto', state.autoBlinds ? '1' : '0');
-    qs.set('sb', String(round2(state.sb)));
-    qs.set('bb', String(round2(state.bb)));
-    qs.set('chips', state.chips.map(function (c) {
+  function generateShareURL() {
+    var data = {};
+    data.bi = round2(state.buyIn);
+    data.p = state.players;
+    if (!state.autoBlinds) data.auto = 0;
+    data.sb = round2(state.sb);
+    data.bb = round2(state.bb);
+    data.chips = state.chips.map(function (c) {
       return c.color.replace('#', '').toLowerCase() + ':' + parseInt(c.totalCount, 10);
-    }).join(','));
+    }).join(',');
     if (state.values && state.values.length === state.chips.length) {
-      qs.set('vals', state.values.map(function (v) { return round2(v); }).join(','));
+      data.vals = state.values.map(function (v) { return round2(v); }).join(',');
     }
     if (state.marked) {
-      qs.set('mk', '1');
+      data.mk = 1;
       if (state.markedValues.length) {
-        qs.set('mvals', state.markedValues.map(function (v) { return v === null || v === undefined ? '' : round2(v); }).join(','));
+        data.mvals = state.markedValues.map(function (v) { return v === null || v === undefined ? '' : round2(v); }).join(',');
       }
     }
-    history.replaceState(null, '', location.pathname + '?' + qs.toString());
+    var json = JSON.stringify(data);
+    var encoded = btoa(unescape(encodeURIComponent(json)));
+    return window.location.origin + window.location.pathname + '#d=' + encoded;
   }
 
-  function load() {
-    var qs = new URLSearchParams(location.search);
-    var bi = parseFloat(qs.get('bi'));
+  function applyData(data) {
+    var bi = parseFloat(data.bi);
     if (isFinite(bi) && bi > 0) state.buyIn = Math.max(1, bi);
 
-    var p = parseInt(qs.get('p'), 10);
+    var p = parseInt(data.p, 10);
     if (isFinite(p)) state.players = clamp(p, 2, 10);
 
-    if (qs.get('auto') === '0') state.autoBlinds = false;
+    if (data.auto === 0 || data.auto === '0') state.autoBlinds = false;
 
-    var sb = parseFloat(qs.get('sb'));
-    var bb = parseFloat(qs.get('bb'));
+    var sb = parseFloat(data.sb);
+    var bb = parseFloat(data.bb);
     if (isFinite(sb) && sb > 0) state.sb = sb;
     if (isFinite(bb) && bb > 0) state.bb = bb;
 
-    var chips = parseChips(qs.get('chips'));
+    var chips = parseChips(data.chips);
     if (chips) state.chips = chips;
 
-    var vals = parseVals(qs.get('vals'), state.chips.length);
+    var vals = parseVals(data.vals, state.chips.length);
     if (vals) state.values = vals;
 
-    if (qs.get('mk') === '1') {
+    if (data.mk === 1 || data.mk === '1') {
       state.marked = true;
-      var mvalsRaw = qs.get('mvals');
+      var mvalsRaw = data.mvals;
       if (mvalsRaw) {
-        var mvParts = mvalsRaw.split(',');
+        var mvParts = (typeof mvalsRaw === 'string') ? mvalsRaw.split(',') : [];
         state.markedValues = [];
         for (var mvi = 0; mvi < state.chips.length; mvi++) {
           if (mvi < mvParts.length) {
@@ -2008,21 +2046,47 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
         state.markedValues = state.chips.map(function () { return null; });
       }
     }
+  }
 
-    var t = parseInt(qs.get('t'), 10);
-    if (isFinite(t)) state.step = clamp(t, 0, 2);
-
-    if (qs.get('shared') === '1') {
-      state.step = 2;
+  function loadFromHash() {
+    var hash = window.location.hash;
+    if (!hash || hash.indexOf('#d=') !== 0) return false;
+    try {
+      var encoded = hash.substring(3);
+      var json = decodeURIComponent(escape(atob(encoded)));
+      var data = JSON.parse(json);
+      if (typeof data !== 'object' || data === null) return false;
+      applyData(data);
       requestAnimationFrame(function () {
         var target = document.getElementById('calculator');
         if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
-      // Strip shared param from URL so it doesn't persist on further navigation
-      var clean = new URLSearchParams(location.search);
-      clean.delete('shared');
-      history.replaceState(null, '', location.pathname + '?' + clean.toString());
+      return true;
+    } catch(e) {
+      console.warn('Chip calculator: invalid share URL', e);
+      return false;
     }
+  }
+
+  function load() {
+    // Try hash-based URL first (new format)
+    if (loadFromHash()) return;
+
+    // Fall back to query-param URL (legacy format)
+    var qs = new URLSearchParams(location.search);
+    if (!qs.has('bi')) return;
+
+    var data = {};
+    qs.forEach(function(value, key) { data[key] = value; });
+    applyData(data);
+
+    requestAnimationFrame(function () {
+      var target = document.getElementById('calculator');
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Clean legacy params from URL
+    history.replaceState(null, '', location.pathname);
   }
 
   function chooseDefaultValues() {
@@ -2073,7 +2137,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     }
 
     render();
-    serialize();
   }
 
   function presetMatch() {
@@ -2091,28 +2154,6 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
       if (ok) return names[i];
     }
     return null;
-  }
-
-  var CAPTIONS = [
-    'Set buy-in, blinds, and player count',
-    'Configure chip colors and counts',
-    'Recommended denominations and distribution'
-  ];
-
-  function renderTabs() {
-    els.tabs.forEach(function (tab) {
-      var idx = parseInt(tab.getAttribute('data-tab'), 10);
-      tab.classList.toggle('is-active', idx === state.step);
-    });
-    els.sections.forEach(function (section) {
-      var idx = parseInt(section.getAttribute('data-step'), 10);
-      section.classList.toggle('cof-hidden', idx !== state.step);
-    });
-
-    els.caption.textContent = CAPTIONS[state.step];
-    els.prev.disabled = state.step === 0;
-    els.next.disabled = state.step === 2;
-    els.shareImg.classList.toggle('cof-hidden', state.step !== 2);
   }
 
   function renderGame() {
@@ -2455,6 +2496,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     els.stacks.innerHTML = '';
     els.warnings.innerHTML = '';
     els.distAlert.classList.add('cof-hidden');
+    els.sumDist.textContent = '';
 
     if (state.marked && (!state.values || state.values.length !== state.chips.length)) {
       els.distAlert.classList.remove('cof-hidden');
@@ -2468,6 +2510,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     var result = ChipDistribution.distribute(state.buyIn, denoms, state.players);
     var total = getTotalValue(result.chips);
     var count = getTotalCount(result.chips);
+
+    els.sumDist.textContent = count + ' chips, ' + fmt(total) + ' each';
 
     if (state.marked) {
       var shortfall = round2(state.buyIn - total);
@@ -2533,7 +2577,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 
       var tokenValue = document.createElement('div');
       tokenValue.className = 'cof-chip-token-value';
-      tokenValue.textContent = fmt(v).replace('$', '');
+      tokenValue.textContent = fmt(v);
       token.appendChild(tokenValue);
       item.appendChild(token);
 
@@ -2564,8 +2608,17 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
   }
 
   function renderNav() {
-    renderTabs();
     els.status.textContent = '';
+
+    // Game summary
+    els.sumGame.textContent = '$' + round2(state.buyIn) + ' buy-in, ' + state.players + ' players';
+
+    // Chip summary
+    var totalChips = 0;
+    state.chips.forEach(function (c) { totalChips += parseInt(c.totalCount, 10); });
+    els.sumChips.textContent = state.chips.length + ' colors, ' + totalChips + ' chips';
+
+    // Dist summary (filled later by renderDistribution)
   }
 
   function render() {
@@ -2577,23 +2630,56 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     renderDistribution();
   }
 
-  function setStep(idx) {
-    state.step = clamp(idx, 0, 2);
-    render();
-    serialize();
-  }
-
   function bind() {
-    els.tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        setStep(parseInt(this.getAttribute('data-tab'), 10));
-      });
-    });
+    // ═══ Accordion setup ═══
+    (function setupAccordions() {
+      var isMobile = window.innerWidth < 640;
+      var sections = Array.prototype.slice.call(document.querySelectorAll('#cof-calc .cof-cl-section'));
 
-    els.prev.addEventListener('click', function () { setStep(state.step - 1); });
-    els.next.addEventListener('click', function () {
-      if (state.step < 2) setStep(state.step + 1);
-    });
+      function setExpanded(section, expanded) {
+        section.classList.toggle('is-expanded', expanded);
+        section.querySelector('.cof-cl-section-header').setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      }
+
+      function syncAccordionMode() {
+        if (!sections.length) return;
+        if (isMobile) {
+          var firstExpanded = null;
+          sections.forEach(function (s) {
+            if (!firstExpanded && s.classList.contains('is-expanded')) firstExpanded = s;
+          });
+          sections.forEach(function (s) { setExpanded(s, false); });
+          setExpanded(firstExpanded || sections[0], true);
+        } else {
+          sections.forEach(function (s) { setExpanded(s, true); });
+        }
+      }
+
+      sections.forEach(function (section) {
+        section.querySelector('.cof-cl-section-header').addEventListener('click', function () {
+          var isExpanded = section.classList.contains('is-expanded');
+          if (isMobile) {
+            sections.forEach(function (s) { setExpanded(s, false); });
+          }
+          if (!isExpanded) {
+            setExpanded(section, true);
+            section.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            setExpanded(section, false);
+          }
+        });
+      });
+
+      syncAccordionMode();
+
+      window.addEventListener('resize', function () {
+        var nextIsMobile = window.innerWidth < 640;
+        if (nextIsMobile !== isMobile) {
+          isMobile = nextIsMobile;
+          syncAccordionMode();
+        }
+      });
+    })();
 
     els.buyMinus.addEventListener('click', function () {
       var step = buyInStep(state.buyIn - 1);
@@ -2679,11 +2765,8 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     });
 
     els.shareImg.addEventListener('click', function () {
-      var section = document.querySelector('[data-step="2"]');
-      if (!section || section.classList.contains('cof-hidden')) {
-        els.status.textContent = 'Go to the Distribution tab first.';
-        return;
-      }
+      var section = document.getElementById('cof-dist-capture');
+      if (!section) return;
       els.status.textContent = 'Capturing...';
       html2canvas(section, { backgroundColor: '#ffffff', scale: 2 }).then(function (canvas) {
         canvas.toBlob(function (blob) {
@@ -2722,18 +2805,15 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     });
 
     els.share.addEventListener('click', function () {
-      var shareUrl = new URL(location.href);
-      shareUrl.searchParams.set('t', '2');
-      shareUrl.searchParams.set('shared', '1');
-      var url = shareUrl.toString();
+      var url = generateShareURL();
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(function () {
-          els.status.textContent = 'Link copied.';
+          els.status.textContent = 'Link copied — save it to load this setup again.';
         }).catch(function () {
-          els.status.textContent = 'Could not copy automatically. Copy from address bar.';
+          els.status.textContent = 'Could not copy automatically.';
         });
       } else {
-        els.status.textContent = 'Copy from address bar.';
+        els.status.textContent = 'Could not copy automatically.';
       }
     });
 
@@ -2756,7 +2836,7 @@ ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
     if (els.reset) {
       els.reset.addEventListener('click', function (ev) {
         ev.preventDefault();
-        history.replaceState(null, '', location.pathname);
+        history.replaceState(null, '', location.pathname + location.search);
         location.reload();
       });
     }
