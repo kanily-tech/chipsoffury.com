@@ -1527,6 +1527,26 @@ h2[id], h3[id] {
 .hand-display--turn .hand-display__street { color: #f59e0b; }
 .hand-display--river .hand-display__street { color: #ef4444; }
 
+/* ===== Inline Card Row (for article examples) ===== */
+.card-row {
+  @apply flex flex-col items-center my-4;
+}
+.card-row-cards {
+  @apply flex;
+  gap: 2px;
+}
+.card-row-cards img {
+  @apply rounded-sm;
+  width: 44px;
+  height: auto;
+  margin: 0 !important;
+}
+.card-row-label {
+  @apply text-xs font-semibold;
+  margin-top: 2px;
+  color: #6b7280;
+}
+
 /* ===== Responsive ===== */
 @media (min-width: 480px) {
   .hand-display {
