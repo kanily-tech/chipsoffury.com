@@ -7,7 +7,7 @@ description: Orchestrate an agent team to expand and refine beginner poker artic
 
 ## Overview
 
-Run a repeatable multi-agent workflow for beginner poker blog articles where the draft already exists. Coordinate SEO, research, writing, editing, and fact-checking so the final article is simple for RICP beginners and grounded in real beginner questions from Reddit and the broader web.
+Run a repeatable multi-agent workflow for beginner poker blog articles where the draft already exists. Coordinate research, writing, editing, and quality checks so the final article is a standout resource that ranks above competing content — simple for beginners, grounded in real questions, and written with genuine voice.
 
 ## Inputs
 
@@ -15,103 +15,146 @@ Collect these inputs before starting:
 - `article_path` (required): markdown file to improve, for example `learn/0021-texas-holdem-rules-beginner-guide.md`
 - `primary_keyword` (optional): main target keyword if not obvious in draft
 - `secondary_keywords` (optional): supporting SEO terms
-- `audience` (default): RICP beginner poker players
+- `audience` (default): RICP beginner poker players — casual players, not casino grinders
 - `complexity_cap` (default): beginner-friendly, no advanced strategy depth unless explicitly requested
 
-## Team Structure
+## Architecture: Hybrid Subagent + Agent Team
 
-Use one lead plus five teammates:
-1. `SEO Lead`: check search intent, heading coverage, keyword placement, internal link opportunities, and metadata recommendations.
-2. `Community Researcher`: gather real beginner questions and confusion points from Reddit plus supporting web sources.
-3. `Writer`: expand and rewrite article in simple language; must use the `blog-writer` skill.
-4. `Beginner Editor`: enforce clarity and simplicity, remove redundancy, and provide revision feedback to writer.
-5. `Fact Checker`: verify poker rules/terms and spot factual mistakes or overclaims.
+Not every role needs peer-to-peer collaboration. Use agent teams only where back-and-forth discussion adds value (the writer-editor loop). Use subagents for focused tasks that produce a deliverable and report back.
 
-Do not add a publisher/content-ops role in this workflow.
+### Why hybrid?
+
+- Agent teams use significantly more tokens — each teammate is a separate Claude instance.
+- Subagents are cheaper and faster for fire-and-forget research tasks.
+- The writer-editor revision loop is the one place genuine collaboration matters.
+
+### Roles
+
+| Role | Type | Why |
+|---|---|---|
+| **Lead** | Orchestrator (delegate mode) | Coordinates phases, synthesizes research, merges final output. Does NOT write the article. |
+| **SEO + Competitive Analyst** | Subagent (Phase 1) | Produces a research report and is done. No collaboration needed. |
+| **Community Researcher** | Subagent (Phase 1) | Produces a research report and is done. No collaboration needed. |
+| **Writer** | Teammate (Phase 2) | Needs back-and-forth with Editor. Must use `blog-writer` skill. |
+| **Beginner Editor** | Teammate (Phase 2) | Needs back-and-forth with Writer. Enforces clarity and simplicity. |
+| **Fact Checker + YMYL Reviewer** | Subagent (Phase 3) | Reviews final draft and reports issues. No collaboration needed. |
 
 ## Setup Steps
 
 1. Confirm `article_path` exists and contains frontmatter + draft body.
 2. Ensure agent teams are enabled (`CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in environment or settings).
-3. Create an agent team with the five teammates above.
-4. Keep lead focused on orchestration and synthesis; avoid lead doing the writing pass.
-5. Read `references/team-prompts.md` and use those prompts when spawning teammates.
-
-## Kickoff Prompt Template
-
-Use this starter prompt for the lead:
-
-```text
-Create an agent team to refine this article: {{article_path}}.
-
-Team roles:
-- SEO Lead
-- Community Researcher
-- Writer (must use blog-writer skill)
-- Beginner Editor
-- Fact Checker
-
-Process requirements:
-- Research beginner questions from Reddit first, plus web sources.
-- Keep writing simple for RICP beginner poker players.
-- Run writer/editor revision loops until no major clarity or redundancy issues remain.
-- Run final fact-check and SEO gate before finalizing.
-- Return final updated article and a concise completion summary with sources used.
-```
+3. Read `references/team-prompts.md` and use those prompts when spawning subagents and teammates.
+4. Use **delegate mode** for the lead (Shift+Tab after team creation) to prevent the lead from writing the article itself.
 
 ## Workflow
 
-Run phases in order:
+### Phase 1: Parallel Research (subagents)
 
-1. `Intake`
-- Lead reads article and extracts current structure, gaps, and difficulty level.
-- Lead creates a task list with clear deliverables per teammate.
+Spawn three subagents in parallel. Each reports back to the lead.
 
-2. `Parallel research`
-- SEO Lead maps target intent and identifies missing sections/subtopics.
-- Community Researcher collects beginner questions from Reddit and corroborating web sources.
-- Fact Checker notes obvious rule/terminology risks in current draft.
+**1a. SEO + Competitive Analysis** (`subagent_type: Explore`)
+- Search the primary keyword and read the top 3-5 ranking articles.
+- Identify table-stakes content (what every competitor covers — must include).
+- Identify content gaps (what competitors miss — differentiation opportunity).
+- Map search intent, heading coverage gaps, and natural keyword placement.
+- Identify internal linking opportunities, including `glossary:term` links.
 
-3. `Draft expansion`
-- Writer applies `blog-writer` skill and produces the first full rewrite/expansion using research findings.
-- Keep tone practical and simple. Avoid advanced jargon unless defined inline.
+**1b. Community Research** (`subagent_type: Explore`)
+- Research beginner questions about the article's specific topic (not hardcoded to Texas Hold'em).
+- Search Reddit and broader web for recurring confusion points.
+- Deliver: top questions, source links, suggested placement in article, plain-language resolutions.
 
-4. `Editor-writer loop`
+**1c. Initial Draft Review** (`subagent_type: Explore`)
+- Read the current draft and flag obvious factual errors, terminology mistakes, or overclaims.
+- Note areas where the draft is too advanced for beginners.
+- Deliver: list of issues with locations and suggested corrections.
+
+**Lead waits for all three subagents to complete before proceeding.**
+
+### Phase 2: Writing (agent team — Writer + Editor)
+
+Create the agent team with two teammates. Pass all Phase 1 research findings into the Writer's spawn prompt as context.
+
+**2a. Writer produces first full rewrite**
+- Use the `blog-writer` skill (invoke it before writing).
+- Use the `glossarize` skill to add glossary links for poker terms.
+- Incorporate competitive gaps as differentiation opportunities.
+- Address the top beginner questions from community research.
+- Follow the voice guidance below.
+
+**2b. Editor-Writer revision loop**
 - Beginner Editor reviews for clarity, simplicity, flow, and redundancy.
 - Editor returns structured feedback: `Must Fix`, `Should Fix`, `Nice to Have`.
 - Writer revises based on feedback.
-- Repeat until editor marks article as acceptable or no further material improvements remain.
+- **Cap at 3 rounds.** If Must Fix items remain after round 3, the lead intervenes to resolve.
 
-5. `Fact and SEO gate`
-- Fact Checker verifies rules and claims after final rewrite.
-- SEO Lead runs final on-page check to ensure intent coverage without keyword stuffing.
+**Writer and Editor communicate via direct messaging.** The lead monitors but does not write.
 
-6. `Finalize`
-- Lead merges approved edits into the target article.
-- Lead produces final summary report using the template in `references/team-prompts.md`.
+### Phase 3: Final Gates (subagents)
+
+After the editor approves the draft, spawn two subagents in parallel:
+
+**3a. Fact Checker** (`subagent_type: Explore`)
+- Verify all poker rules, hand flows, terminology, and claims in the final draft.
+- Flag inaccuracies, ambiguities, and overclaims with exact corrections.
+
+**3b. YMYL Reviewer** (`subagent_type: general-purpose`)
+- Run the `ymyl-editor` skill on the final draft.
+- Check E-E-A-T quality signals, responsible gambling language, and beginner protection.
+- Return structured review with pass/fail and specific issues.
+
+### Phase 4: Finalize (lead)
+
+- Apply fact-check corrections and YMYL fixes to the article.
+- Verify glossary links are applied (run `glossarize` if the Writer missed any).
+- Produce the final summary report using the template in `references/team-prompts.md`.
+- Shut down teammates and clean up the team.
+
+## Voice Guidance for Writer
+
+The Writer MUST follow these principles:
+
+**DO:**
+- Write with specificity. Real cards, real amounts, real situations. "You're holding A-7 offsuit in middle position and someone raises to 3x" beats "consider your hand strength."
+- Have opinions when they're earned. If something is a bad idea, say so and say why. Don't hedge everything.
+- Be honest about what's hard, what's boring, and what's beyond a beginner's concern right now.
+- Let the topic dictate the structure. A rules explainer reads differently than a strategy piece. Don't force a single format.
+- Write at the paragraph level. Some paragraphs are short, some aren't. Let the content decide, not a rhythm formula.
+
+**DON'T:**
+- Don't narrate what the article is doing. No "In this section we'll cover..." or "Now that we've discussed X, let's move to Y."
+- Don't contrast yourself with other guides. The reader came here to learn poker, not to hear about other websites.
+- Don't force a home-game framing where it doesn't fit. Know the audience (casual players, not grinders) but don't shoehorn every example into someone's kitchen.
+- Don't write in staccato one-liners. That's LinkedIn, not a poker guide. Vary sentence length naturally.
+- Don't soften everything with "you may want to consider" or "it can be helpful to." Just say it.
 
 ## Quality Gates
 
 Do not finish until all gates pass:
-1. Beginner-first clarity: a new poker player can follow each section.
-2. No redundancy: repeated explanations are merged or removed.
-3. SEO quality: headings and content match search intent naturally.
-4. Research-grounded: major beginner concerns from Reddit/web are addressed.
-5. Accuracy: poker rules/terminology are fact-checked.
+1. **Beginner-first clarity**: a new poker player can follow each section.
+2. **No redundancy**: repeated explanations are merged or removed.
+3. **Competitive edge**: the article covers something the top-ranking competitors miss.
+4. **Research-grounded**: major beginner concerns from Reddit/web are addressed.
+5. **Accuracy**: poker rules/terminology are fact-checked.
+6. **SEO quality**: headings and content match search intent naturally, glossary links are applied.
+7. **YMYL compliance**: E-E-A-T signals present, no irresponsible claims.
 
 ## Output Contract
 
 Return:
 1. Updated article content in `article_path`.
 2. A concise summary with:
-- What changed (top structural/content improvements).
-- Which Reddit/web beginner questions were incorporated.
-- SEO improvements made.
-- Fact corrections made.
-- Remaining risks or unresolved questions (if any).
+   - What changed (top structural/content improvements).
+   - Competitive differentiation (what this article covers that top competitors don't).
+   - Which Reddit/web beginner questions were incorporated.
+   - SEO improvements made (including glossary links added).
+   - Fact corrections made.
+   - YMYL review result.
+   - Remaining risks or unresolved questions (if any).
 
 ## Notes
 
 - Prioritize practical examples over theory-heavy explanations.
-- Prefer short paragraphs and concrete language for beginners.
 - If teammate outputs conflict, lead chooses the simpler wording that remains accurate.
+- The lead should NOT write the article. Use delegate mode to enforce this.
+- If the article topic is not Texas Hold'em, research prompts must target the actual topic.
