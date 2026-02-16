@@ -10,7 +10,7 @@ layout: layouts/base-tailwind.html
 <div id="reading-progress" class="fixed top-0 left-0 h-0.5 bg-gradient-to-r from-purple-500 to-indigo-600 z-[60] transition-all duration-150" style="width: 0%"></div>
 
 <!-- Blog Content -->
-<article class="bg-gray-50 min-h-screen" itemscope itemtype="https://schema.org/BlogPosting">
+<article class="bg-gray-50 min-h-screen" itemscope itemtype="https://schema.org/Article">
   <!-- Mobile ToC Toggle (sticky after scroll) -->
   <div id="mobile-toc-bar" class="lg:hidden sticky top-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40 transform -translate-y-full transition-transform duration-300">
     <div class="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
@@ -113,7 +113,7 @@ layout: layouts/base-tailwind.html
           <meta itemprop="datePublished" content="{{ date | date('%Y-%m-%d') }}">
           <meta itemprop="image" content="https://chipsoffury.com/images/chips_of_fury_logo.webp">
           <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization" style="display: none;">
-            <meta itemprop="name" content="Kanily Technologies LLP">
+            <meta itemprop="name" content="Chips of Fury">
             <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
               <meta itemprop="url" content="https://chipsoffury.com/images/chips_of_fury_logo.webp">
             </div>
@@ -152,6 +152,44 @@ layout: layouts/base-tailwind.html
         }
         </script>
         {% endif %}
+
+        <!-- Article Schema (JSON-LD) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": {{ title | dump | safe }},
+          "description": {{ description | dump | safe }},
+          "datePublished": "{{ date | date('%Y-%m-%d') }}",
+          "dateModified": "{{ (lastUpdated or date) | date('%Y-%m-%d') }}",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://chipsoffury.com{{ page.url }}"
+          },
+          "image": "{{ ogImage or 'https://chipsoffury.com/images/chips_of_fury_logo.webp' }}",
+          "author": {% if authorSlugs and authorSlugs.length > 0 %}{% if authorSlugs.length == 1 %}{% set authorData = authorsMap[authorSlugs[0]] %}{
+            "@type": "Person",
+            "name": {{ (authorData.name or authorSlugs[0]) | dump | safe }}{% if authorData and authorData.hasPage %},
+            "url": "https://chipsoffury.com/authors/{{ authorData.slug }}/"{% endif %}
+          }{% else %}[{% for slug in authorSlugs %}{% set authorData = authorsMap[slug] %}{
+            "@type": "Person",
+            "name": {{ (authorData.name or slug) | dump | safe }}{% if authorData and authorData.hasPage %},
+            "url": "https://chipsoffury.com/authors/{{ authorData.slug }}/"{% endif %}
+          }{% if not loop.last %},{% endif %}{% endfor %}]{% endif %}{% else %}{
+            "@type": "Organization",
+            "name": "Chips of Fury Team"
+          }{% endif %},
+          "publisher": {
+            "@type": "Organization",
+            "name": "Chips of Fury",
+            "url": "https://chipsoffury.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://chipsoffury.com/images/chips_of_fury_logo.webp"
+            }
+          }
+        }
+        </script>
 
         <!-- Tags -->
         {% if tags %}

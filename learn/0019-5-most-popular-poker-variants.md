@@ -212,24 +212,73 @@ One last thing: if you're playing for real money, start at the lowest stakes you
 
 ---
 
+<div itemscope itemtype="https://schema.org/FAQPage">
+
 ## FAQ
 
-### What is the easiest poker variant to learn?
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">What is the easiest poker variant to learn?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 Five-Card Draw. Five cards, one swap, best hand wins. You can teach the full rules in about sixty seconds.
 
-### How many types of poker are there?
+</div>
+</div>
+</div>
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">How many types of poker are there?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 Dozens of recognized variants, and hundreds if you count home-game inventions. In practice, about five to eight variants account for most of the poker played worldwide. Texas Hold'em alone makes up the largest share by a wide margin.
 
-### What is the difference between Texas Hold'em and Omaha?
+</div>
+</div>
+</div>
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">What is the difference between Texas Hold'em and Omaha?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 Hold'em gives you two hole cards; Omaha gives you four. The bigger strategic difference is that Omaha requires you to use exactly two of your hole cards, which means stronger hands are normal and one pair is almost worthless. If you're choosing between them, start with Hold'em and move to Omaha once community card poker feels comfortable.
 
-### What is the most popular poker game in the world?
+</div>
+</div>
+</div>
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">What is the most popular poker game in the world?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 Texas Hold'em. It dominates online poker, live tournaments, and casino cash games globally. The World Series of Poker, the World Poker Tour, and nearly every major poker broadcast features No-Limit Texas Hold'em.
 
-### Which poker variant is best for home games?
+</div>
+</div>
+</div>
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">Which poker variant is best for home games?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 For a group of beginners, Five-Card Draw or Texas Hold'em. If your group already knows Hold'em and wants variety, Crazy Pineapple is the easiest addition - the rules take thirty seconds to explain. For more experienced groups, a dealer's-choice rotation that includes Omaha and Stud keeps things interesting all night.
+
+</div>
+</div>
+</div>
+
+</div>

@@ -553,27 +553,76 @@ out of it until it's over. Then you can discuss whatever you want.
 
 ---
 
+<div itemscope itemtype="https://schema.org/FAQPage">
+
 ## FAQs
 
-**How many people do you need to play poker?**
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">How many people do you need to play poker?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 Two is the minimum. This format is called "heads-up" and plays faster with more aggression. For Texas Hold'em home games, six to nine players is the sweet spot. Enough action to keep things interesting, not so many that hands drag. Ten is the typical maximum for a single table.
 
-**How long should a poker night last?**
+</div>
+</div>
+</div>
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">How long should a poker night last?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 Two to four hours works for most groups. At roughly 25 hands per hour, you'll see 50 to 100 hands in that window. Enough for skill to matter and for everyone to feel they played real poker. Set a hard end time before you start. People have lives.
 
-**What blinds should beginners start with?**
+</div>
+</div>
+</div>
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">What blinds should beginners start with?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 For cash games, 25/50 or 50/100 chips with starting stacks of 50 to 100 big blinds. This gives everyone room to play without feeling short-stacked immediately. If running a tournament, increase blinds every 20 to 30 minutes so the game wraps up in your target timeframe.
 
-**Is poker luck or skill?**
+</div>
+</div>
+</div>
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">Is poker luck or skill?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 Both. In a single hand or session, luck dominates. The cards fall how they fall. Over hundreds of hands, skill takes over. Simulations show skill becomes the dominant factor after roughly 1,500 hands of play. A [study of the 2010 World Series of Poker](https://www.nber.org/papers/w17023) found that players identified as highly skilled beforehand achieved a 30% return on investment, compared to -15% for everyone else. That gap would be statistically impossible if poker were purely luck.
 
-**Can complete beginners play with experienced players?**
+</div>
+</div>
+</div>
+
+<div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+
+### <span itemprop="name">Can complete beginners play with experienced players?</span>
+
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div itemprop="text">
 
 Yes, with adjustments. Keep stakes low so losses stay small while learning. Experienced players should avoid exploiting obvious beginner mistakes too aggressively; it kills the fun and empties pockets faster than anyone learns. A brief rules walkthrough before the first hand helps. Most beginners pick up the basics within an hour of play.
+
+</div>
+</div>
+</div>
+
+</div>
 
 ---
 
