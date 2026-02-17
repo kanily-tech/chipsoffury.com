@@ -549,9 +549,6 @@ Only if no one else bets. Once any player puts chips in, you have to fold, call,
 **What's the difference between cash games and tournaments?**
 In a cash game, chips represent real money. You buy in for a set amount, and you can leave whenever you want. A good habit is deciding your buy-in budget before you sit down and sticking to it. In a tournament, everyone starts with the same chips, the blinds increase over time, and you play until one player has everything. Same rules, different structure.
 
-**Media Suggestion:**
-Accordion-style FAQ layout for mobile users.
-
 ---
 
 ## What You Don't Need to Worry About Yet
@@ -583,6 +580,3 @@ The best way to learn Texas Hold'em is by playing. Poker apps walk you through e
 **Learn while you play, with guidance every step of the way.**
 
 Poker is a game of skill and chance. Play for fun, set limits you're comfortable with, and never wager more than you can afford to lose.
-
-**Media Suggestion:**
-App gameplay screenshot showing tooltips explaining player actions.
