@@ -402,25 +402,17 @@ The software (or dealer) determines who shows first. In online play, the winning
 
 ## Texas Hold'em Hand Rankings
 
-Your five-card hand falls into one of ten categories, ranked from strongest to weakest. Here they are with concrete examples:
+Your five-card hand falls into one of ten categories, ranked from strongest to weakest:
 
-1. **Royal Flush** - A♥ K♥ Q♥ J♥ 10♥ - The top five cards all in the same suit. The best possible hand.
-2. **Straight Flush** - 7♣ 6♣ 5♣ 4♣ 3♣ - Five sequential cards of the same suit.
-3. **Four of a Kind** - 9♠ 9♥ 9♦ 9♣ 2♠ - Four cards of the same rank.
-4. **Full House** - A♥ A♠ A♦ K♥ K♦ - Three of a kind plus a pair.
-5. **Flush** - K♦ J♦ 8♦ 6♦ 2♦ - Any five cards of the same suit, not in sequence.
-6. **Straight** - 10♠ 9♥ 8♣ 7♦ 6♠ - Five sequential cards of mixed suits.
-7. **Three of a Kind** - Q♠ Q♥ Q♦ 7♣ 4♠ - Three cards of the same rank.
-8. **Two Pair** - J♣ J♠ 5♥ 5♦ A♣ - Two different pairs plus a fifth card.
-9. **One Pair** - 8♥ 8♠ K♦ 10♣ 3♥ - Two cards of the same rank.
-10. **High Card** - A♠ J♦ 8♣ 5♥ 2♠ - Nothing connects. Your highest card plays.
+<div>
+{% renderTemplate "webc" %}
+<hand-rankings></hand-rankings>
+{% endrenderTemplate %}
+</div>
 
 You'll naturally learn these as you play. Most apps display hand rankings during the game, so you won't be guessing at the table.
 
 For a deeper breakdown with visual examples and memory tricks, see the [full hand rankings guide](/learn/poker-winning-hand-rankings/).
-
-**Media Suggestion:**
-Vertical hand rankings chart with icons and card examples.
 
 ---
 
