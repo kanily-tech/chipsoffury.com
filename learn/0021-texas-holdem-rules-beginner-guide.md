@@ -424,6 +424,58 @@ You have seven cards available to you: your two hole cards plus five community c
 
 **Example:** Your hole cards are K♥ 3♦. The board is A♠ A♦ A♣ A♥ Q♠. The best five-card hand here is four Aces with a King kicker - A♠ A♦ A♣ A♥ K♥. You're using one hole card (the King) and ignoring the other (the 3).
 
+<div style="background: #f9fafb; border-radius: 12px; padding: 16px; margin: 20px 0;">
+
+  <!-- All 7 cards -->
+  <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">All 7 cards available</div>
+  <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 14px;">
+    <div>
+      <div style="font-size: 10px; color: #6b7280; margin-bottom: 4px;">Your Cards</div>
+      <div style="display: flex; gap: 4px;">
+        <img src="/images/cards/kh.png" alt="K♥" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+        <img src="/images/cards/3d.png" alt="3♦" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+    <div>
+      <div style="font-size: 10px; color: #6b7280; margin-bottom: 4px;">The Board</div>
+      <div style="display: flex; gap: 4px;">
+        <img src="/images/cards/as.png" alt="A♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+        <img src="/images/cards/ad.png" alt="A♦" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+        <img src="/images/cards/ac.png" alt="A♣" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+        <img src="/images/cards/ah.png" alt="A♥" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+        <img src="/images/cards/qs.png" alt="Q♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div style="border-top: 1px solid #e5e7eb; padding-top: 14px;">
+
+    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">Best 5-card hand</div>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end;">
+      <div>
+        <div style="display: flex; gap: 4px;">
+          <img src="/images/cards/as.png" alt="A♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); border: 2px solid #10b981;">
+          <img src="/images/cards/ad.png" alt="A♦" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); border: 2px solid #10b981;">
+          <img src="/images/cards/ac.png" alt="A♣" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); border: 2px solid #10b981;">
+          <img src="/images/cards/ah.png" alt="A♥" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); border: 2px solid #10b981;">
+          <img src="/images/cards/kh.png" alt="K♥" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); border: 2px solid #10b981;">
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 10px; color: #9ca3af; margin-bottom: 4px;">Not used</div>
+        <div style="display: flex; gap: 4px;">
+          <img src="/images/cards/3d.png" alt="3♦" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); opacity: 0.4;">
+          <img src="/images/cards/qs.png" alt="Q♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); opacity: 0.4;">
+        </div>
+      </div>
+    </div>
+    <div style="color: #065f46; font-weight: 500; font-size: 12px; margin-top: 10px;">Four Aces, King kicker</div>
+
+  </div>
+
+</div>
+
 **What if the best hand is the board itself?** That can happen. If the board shows A♠ K♠ Q♠ J♠ 10♠ (a royal flush), everyone still in the hand has the same best hand, and the pot is split evenly.
 
 ### What's a Kicker?
