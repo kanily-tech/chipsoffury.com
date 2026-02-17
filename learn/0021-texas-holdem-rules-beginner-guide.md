@@ -206,16 +206,21 @@ Where all-in gets specific is when you don't have enough chips to match a bet. Y
 
 Every hand follows the same six-step sequence. Once you've seen it a few times, it becomes second nature.
 
-**Media Suggestion:**
-Horizontal flowchart labeled: Deal -> Preflop -> Flop -> Turn -> River -> Showdown.
+<div>{% renderTemplate "webc" %}
+<hand-flow step="1"></hand-flow>
+{% endrenderTemplate %}</div>
 
 ### Step 1 - The Deal
+
+<div>{% renderTemplate "webc" %}<hand-flow step="1"></hand-flow>{% endrenderTemplate %}</div>
 
 Each player receives two cards face down. These are your hole cards - only you can see them. Look at them, but keep them hidden from everyone else.
 
 ---
 
 ### Step 2 - Preflop Betting
+
+<div>{% renderTemplate "webc" %}<hand-flow step="2"></hand-flow>{% endrenderTemplate %}</div>
 
 The first betting round is called [preflop](glossary:preflop), because it happens before any community cards appear.
 
@@ -233,6 +238,8 @@ Preflop betting order is different from every other round. It starts left of the
 
 ### Step 3 - The Flop
 
+<div>{% renderTemplate "webc" %}<hand-flow step="3"></hand-flow>{% endrenderTemplate %}</div>
+
 Three community cards are dealt face-up in the center of the table. This is called the [flop](glossary:flop).
 
 Now every remaining player can see five cards total: their two hole cards plus three community cards. Hands start taking shape here - you might see a pair, a possible straight, or a flush developing.
@@ -245,6 +252,8 @@ From the flop onward, betting starts with the first active player clockwise from
 
 ### Step 4 - The Turn
 
+<div>{% renderTemplate "webc" %}<hand-flow step="4"></hand-flow>{% endrenderTemplate %}</div>
+
 A fourth community card is added to the board. This card is called the [turn](glossary:turn).
 
 Another betting round follows, same structure as the flop: starts left of the button, check or bet, fold/call/raise if someone bets.
@@ -255,6 +264,8 @@ Another betting round follows, same structure as the flop: starts left of the bu
 
 ### Step 5 - The River
 
+<div>{% renderTemplate "webc" %}<hand-flow step="5"></hand-flow>{% endrenderTemplate %}</div>
+
 The fifth and final community card is revealed. This is the [river](glossary:river).
 
 One last betting round. After this, anyone still in the hand goes to showdown.
@@ -264,6 +275,8 @@ One last betting round. After this, anyone still in the hand goes to showdown.
 ---
 
 ### Step 6 - Showdown
+
+<div>{% renderTemplate "webc" %}<hand-flow step="6"></hand-flow>{% endrenderTemplate %}</div>
 
 If two or more players remain after the final betting round, it's time for showdown. Players reveal their hole cards, and the best five-card hand wins the pot.
 
