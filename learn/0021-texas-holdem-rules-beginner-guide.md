@@ -105,8 +105,66 @@ Why do blinds exist? Without them, there would be nothing in the pot, and everyo
 
 The blinds rotate with the button, so every player pays them equally over time. Nobody gets a free ride.
 
-**Media Suggestion:**
-Diagram highlighting the dealer button, small blind, and big blind positions with clockwise arrow.
+<div style="background-color: #31661E; border: 2px solid #DDA54A; border-radius: 16px; padding: 24px 16px; max-width: 480px; margin: 24px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <!-- Top row: two dimmed generic seats -->
+  <div style="display: flex; justify-content: center; gap: 32px; margin-bottom: 20px;">
+    <div style="text-align: center; opacity: 0.45;">
+      <div style="width: 40px; height: 40px; border-radius: 50%; background: #9ca3af; margin: 0 auto 4px; display: flex; align-items: center; justify-content: center;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div style="font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px;">Player 4</div>
+    </div>
+    <div style="text-align: center; opacity: 0.45;">
+      <div style="width: 40px; height: 40px; border-radius: 50%; background: #9ca3af; margin: 0 auto 4px; display: flex; align-items: center; justify-content: center;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <div style="font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px;">Player 5</div>
+    </div>
+  </div>
+
+  <!-- Middle: clockwise indicator -->
+  <div style="text-align: center; margin-bottom: 20px;">
+    <span style="font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: 0.5px;">&#x27F3; Action flows clockwise</span>
+  </div>
+
+  <!-- Bottom row: BB, SB, BTN -->
+  <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
+
+    <!-- Big Blind -->
+    <div style="text-align: center; min-width: 70px;">
+      <div style="background: #e5e7eb; color: #1f2937; font-weight: 700; font-size: 15px; border-radius: 8px; padding: 8px 12px; margin-bottom: 4px;">BB</div>
+      <div style="font-size: 16px; font-weight: 700; color: #10b981;">$2</div>
+      <div style="font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Big Blind</div>
+    </div>
+
+    <!-- Small Blind -->
+    <div style="text-align: center; min-width: 70px;">
+      <div style="background: #e5e7eb; color: #1f2937; font-weight: 700; font-size: 15px; border-radius: 8px; padding: 8px 12px; margin-bottom: 4px;">SB</div>
+      <div style="font-size: 16px; font-weight: 700; color: #10b981;">$1</div>
+      <div style="font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Small Blind</div>
+    </div>
+
+    <!-- Dealer Button -->
+    <div style="text-align: center; min-width: 70px;">
+      <div style="width: 42px; height: 42px; border-radius: 50%; background: #ffffff; color: #1f2937; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); border: 2px solid #d1d5db;">D</div>
+      <div style="font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Button</div>
+    </div>
+
+  </div>
+
+  <!-- Flow arrows -->
+  <div style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 14px;">
+    <span style="font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;">BTN</span>
+    <span style="color: #DDA54A; font-size: 13px;">&#x2192;</span>
+    <span style="font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;">SB posts $1</span>
+    <span style="color: #DDA54A; font-size: 13px;">&#x2192;</span>
+    <span style="font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;">BB posts $2</span>
+    <span style="color: #DDA54A; font-size: 13px;">&#x2192;</span>
+    <span style="font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;">Deal</span>
+  </div>
+
+</div>
 
 ---
 
