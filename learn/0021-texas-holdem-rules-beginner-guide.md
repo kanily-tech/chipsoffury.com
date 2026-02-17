@@ -21,8 +21,53 @@ Your job is to make the best five-card poker hand using any combination of your 
 
 A standard game seats 2 to 10 players at a table, using a regular 52-card deck with no jokers.
 
-**Media Suggestion:**
-Simple table diagram showing two hole cards per player and five community cards in the center.
+<div style="background-color: #31661E; border: 2px solid #DDA54A; border-radius: 16px; padding: 24px 16px; max-width: 420px; margin: 24px auto;">
+
+  <!-- Player 1 (top) -->
+  <div style="display: flex; justify-content: center; gap: 4px; margin-bottom: 20px;">
+    <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+    <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+  </div>
+
+  <!-- Middle section: left player, community cards, right player -->
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+
+    <!-- Player 2 (left) -->
+    <div style="display: flex; gap: 3px; flex-shrink: 0;">
+      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+    </div>
+
+    <!-- Community cards -->
+    <div style="text-align: center; flex-shrink: 1;">
+      <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.6); margin-bottom: 6px;">Community Cards</div>
+      <div style="display: flex; gap: 4px; justify-content: center; flex-wrap: wrap;">
+        <img src="/images/cards/as.png" alt="A♠" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        <img src="/images/cards/kh.png" alt="K♥" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        <img src="/images/cards/10d.png" alt="10♦" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        <img src="/images/cards/7c.png" alt="7♣" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        <img src="/images/cards/3s.png" alt="3♠" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+      </div>
+    </div>
+
+    <!-- Player 3 (right) -->
+    <div style="display: flex; gap: 3px; flex-shrink: 0;">
+      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+    </div>
+
+  </div>
+
+  <!-- You (bottom) -->
+  <div style="text-align: center; margin-top: 20px;">
+    <div style="display: flex; justify-content: center; gap: 4px;">
+      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+    </div>
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.6); margin-top: 6px;">You</div>
+  </div>
+
+</div>
 
 ---
 
