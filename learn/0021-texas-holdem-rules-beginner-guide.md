@@ -234,6 +234,14 @@ Notice that "check" isn't an option here. The blinds count as a bet, so you can 
 
 Preflop betting order is different from every other round. It starts left of the big blind instead of left of the button. This is because the blinds have already put money in - they act last, which gives them a small advantage for this one round.
 
+<div style="text-align: center; margin: 20px 0;">
+<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">Your hole cards</div>
+<div style="display: flex; gap: 6px; justify-content: center;">
+<img src="/images/cards/ks.png" alt="K♠" style="height: 60px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/qs.png" alt="Q♠" style="height: 60px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+</div>
+</div>
+
 ---
 
 ### Step 3 - The Flop
@@ -248,6 +256,25 @@ From the flop onward, betting starts with the first active player clockwise from
 
 **Example:** You hold K♠ Q♠. The flop comes 10♠ J♦ 3♠. You have two spades with two more on the board, so a flush is possible if another spade comes (this is called a "draw" - you're one card away from completing a hand). You also have K-Q working toward a straight (you need an Ace or a 9). That's a strong position with plenty to play for.
 
+<div style="margin: 20px 0; background: #f9fafb; border-radius: 12px; padding: 16px;">
+<div style="text-align: center; margin-bottom: 12px;">
+<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">The Board</div>
+<div style="display: flex; gap: 6px; justify-content: center;">
+<img src="/images/cards/10s.png" alt="10♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/jd.png" alt="J♦" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/3s.png" alt="3♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+</div>
+</div>
+<div style="border-top: 1px solid #e5e7eb; padding-top: 12px; text-align: center;">
+<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">Your Hand</div>
+<div style="display: flex; gap: 6px; justify-content: center;">
+<img src="/images/cards/ks.png" alt="K♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/qs.png" alt="Q♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+</div>
+</div>
+<div style="text-align: center; margin-top: 10px; font-size: 12px; color: #065f46; font-weight: 500;">Flush draw + straight draw</div>
+</div>
+
 ---
 
 ### Step 4 - The Turn
@@ -260,6 +287,27 @@ Another betting round follows, same structure as the flop: starts left of the bu
 
 **Example:** Continuing the hand above - you hold K♠ Q♠, the board is 10♠ J♦ 3♠. The turn comes A♥. You just made a straight (A-K-Q-J-10). That's a strong hand, though you're no longer drawing to the flush since the Ace was a heart.
 
+<div style="margin: 20px 0; background: #f9fafb; border-radius: 12px; padding: 16px;">
+<div style="text-align: center; margin-bottom: 12px;">
+<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">The Board</div>
+<div style="display: flex; gap: 6px; justify-content: center; align-items: center;">
+<img src="/images/cards/10s.png" alt="10♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/jd.png" alt="J♦" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/3s.png" alt="3♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<div style="width: 8px;"></div>
+<img src="/images/cards/ah.png" alt="A♥" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 2px solid #10b981;">
+</div>
+</div>
+<div style="border-top: 1px solid #e5e7eb; padding-top: 12px; text-align: center;">
+<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">Your Hand</div>
+<div style="display: flex; gap: 6px; justify-content: center;">
+<img src="/images/cards/ks.png" alt="K♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/qs.png" alt="Q♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+</div>
+</div>
+<div style="text-align: center; margin-top: 10px; font-size: 12px; color: #065f46; font-weight: 500;">Straight! A-K-Q-J-10</div>
+</div>
+
 ---
 
 ### Step 5 - The River
@@ -271,6 +319,29 @@ The fifth and final community card is revealed. This is the [river](glossary:riv
 One last betting round. After this, anyone still in the hand goes to showdown.
 
 **Example:** The river comes 7♠. Now the board reads 10♠ J♦ 3♠ A♥ 7♠. You still have your A-K-Q-J-10 straight, but count the spades: K♠ and Q♠ from your hand, plus 10♠, 3♠, and 7♠ on the board. That's five spades - a flush (K♠ Q♠ 10♠ 7♠ 3♠). The flush beats the straight, so you'd play the flush.
+
+<div style="margin: 20px 0; background: #f9fafb; border-radius: 12px; padding: 16px;">
+<div style="text-align: center; margin-bottom: 12px;">
+<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">The Board</div>
+<div style="display: flex; gap: 6px; justify-content: center; align-items: center;">
+<img src="/images/cards/10s.png" alt="10♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/jd.png" alt="J♦" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/3s.png" alt="3♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<div style="width: 8px;"></div>
+<img src="/images/cards/ah.png" alt="A♥" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<div style="width: 8px;"></div>
+<img src="/images/cards/7s.png" alt="7♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 2px solid #10b981;">
+</div>
+</div>
+<div style="border-top: 1px solid #e5e7eb; padding-top: 12px; text-align: center;">
+<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">Your Hand</div>
+<div style="display: flex; gap: 6px; justify-content: center;">
+<img src="/images/cards/ks.png" alt="K♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+<img src="/images/cards/qs.png" alt="Q♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+</div>
+</div>
+<div style="text-align: center; margin-top: 10px; font-size: 12px; color: #065f46; font-weight: 500;">Flush! K♠ Q♠ 10♠ 7♠ 3♠</div>
+</div>
 
 ---
 
