@@ -484,6 +484,50 @@ A [kicker](glossary:kicker) is the side card that breaks ties when two players h
 
 **Example:** You hold A♠ K♦. Your opponent holds A♥ 9♣. The board is A♣ 7♠ 5♦ 3♥ 2♠. You both have a pair of Aces, but your King kicker beats their 9 kicker. You win.
 
+<div style="background: #f9fafb; border-radius: 12px; padding: 16px; margin: 20px 0;">
+
+  <!-- Shared board -->
+  <div style="text-align: center; margin-bottom: 14px;">
+    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 8px;">The Board</div>
+    <div style="display: flex; gap: 4px; justify-content: center;">
+      <img src="/images/cards/ac.png" alt="A♣" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/7s.png" alt="7♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/5d.png" alt="5♦" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/3h.png" alt="3♥" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/2s.png" alt="2♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+    </div>
+  </div>
+
+  <!-- Two player boxes -->
+  <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+
+    <!-- YOU (winner) -->
+    <div style="background: #f9fafb; border-radius: 12px; padding: 16px; flex: 1; min-width: 200px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">You</div>
+      <div style="display: flex; gap: 4px; margin-bottom: 8px;">
+        <img src="/images/cards/as.png" alt="A♠" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+        <img src="/images/cards/kd.png" alt="K♦" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); border: 2px solid #10b981;">
+      </div>
+      <div style="font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 4px;">Pair of Aces</div>
+      <div style="font-size: 12px; color: #065f46; font-weight: 500; margin-bottom: 8px;">K kicker</div>
+      <span style="background: #065f46; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">WIN</span>
+    </div>
+
+    <!-- OPPONENT -->
+    <div style="background: #f9fafb; border-radius: 12px; padding: 16px; flex: 1; min-width: 200px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">Opponent</div>
+      <div style="display: flex; gap: 4px; margin-bottom: 8px;">
+        <img src="/images/cards/ah.png" alt="A♥" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+        <img src="/images/cards/9c.png" alt="9♣" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      </div>
+      <div style="font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 4px;">Pair of Aces</div>
+      <div style="font-size: 12px; color: #9ca3af; font-weight: 500;">9 kicker</div>
+    </div>
+
+  </div>
+
+</div>
+
 Kickers come up constantly in Hold'em, especially when the community cards include a pair. The higher your unpaired cards, the better off you are in these situations.
 
 ---
