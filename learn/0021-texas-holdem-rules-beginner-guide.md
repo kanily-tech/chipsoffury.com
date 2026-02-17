@@ -355,8 +355,48 @@ The software (or dealer) determines who shows first. In online play, the winning
 
 **If only one player remains** (everyone else folded), there's no showdown at all. That player takes the pot without showing their cards. This is the most common way hands end.
 
-**Media Suggestion:**
-Simple showdown comparison with two example hands highlighted.
+<div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0;">
+
+  <!-- YOU (winner) -->
+  <div style="background: #f9fafb; border-radius: 12px; padding: 16px; flex: 1; min-width: 200px;">
+    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">You</div>
+    <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">Hole Cards</div>
+    <div style="display: flex; gap: 4px; margin-bottom: 12px;">
+      <img src="/images/cards/ks.png" alt="K♠" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/qs.png" alt="Q♠" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+    </div>
+    <div style="font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 6px;">Flush</div>
+    <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">Best 5 Cards</div>
+    <div style="display: flex; gap: 4px; margin-bottom: 10px;">
+      <img src="/images/cards/ks.png" alt="K♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/qs.png" alt="Q♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/10s.png" alt="10♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/7s.png" alt="7♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/3s.png" alt="3♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+    </div>
+    <span style="background: #065f46; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">WIN</span>
+  </div>
+
+  <!-- OPPONENT -->
+  <div style="background: #f9fafb; border-radius: 12px; padding: 16px; flex: 1; min-width: 200px;">
+    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">Opponent</div>
+    <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">Hole Cards</div>
+    <div style="display: flex; gap: 4px; margin-bottom: 12px;">
+      <img src="/images/cards/ad.png" alt="A♦" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/ac.png" alt="A♣" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+    </div>
+    <div style="font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 6px;">Three of a Kind</div>
+    <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">Best 5 Cards</div>
+    <div style="display: flex; gap: 4px;">
+      <img src="/images/cards/ad.png" alt="A♦" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/ac.png" alt="A♣" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/ah.png" alt="A♥" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/jd.png" alt="J♦" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+      <img src="/images/cards/10s.png" alt="10♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+    </div>
+  </div>
+
+</div>
 
 ---
 
