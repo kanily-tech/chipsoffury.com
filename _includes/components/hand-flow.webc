@@ -1,0 +1,25 @@
+<div class="hand-flow" :data-step="step">
+  <div class="hand-flow__step" data-index="1">
+    <span class="hand-flow__number">1.</span> Deal
+  </div>
+  <span class="hand-flow__arrow">&rarr;</span>
+  <div class="hand-flow__step" data-index="2">
+    <span class="hand-flow__number">2.</span> Preflop
+  </div>
+  <span class="hand-flow__arrow">&rarr;</span>
+  <div class="hand-flow__step" data-index="3">
+    <span class="hand-flow__number">3.</span> Flop
+  </div>
+  <span class="hand-flow__arrow">&rarr;</span>
+  <div class="hand-flow__step" data-index="4">
+    <span class="hand-flow__number">4.</span> Turn
+  </div>
+  <span class="hand-flow__arrow">&rarr;</span>
+  <div class="hand-flow__step" data-index="5">
+    <span class="hand-flow__number">5.</span> River
+  </div>
+  <span class="hand-flow__arrow">&rarr;</span>
+  <div class="hand-flow__step" data-index="6">
+    <span class="hand-flow__number">6.</span> Showdown
+  </div>
+</div>
