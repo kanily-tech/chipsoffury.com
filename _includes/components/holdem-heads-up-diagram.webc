@@ -1,0 +1,45 @@
+<script webc:setup>
+function normalizeCard(card) {
+  if (!card) return "";
+  const cleaned = card.trim().toLowerCase().replace(/\.png$/, "");
+  if (!cleaned || cleaned === "hidden" || cleaned === "back" || cleaned === "card_back") {
+    return "back";
+  }
+  return cleaned;
+}
+
+function parseCards(raw, limit) {
+  const cards = raw ? raw.split(",").map(normalizeCard).filter(Boolean).slice(0, limit) : [];
+  while (cards.length < limit) cards.push("back");
+  return cards;
+}
+
+function parseBoard(raw) {
+  return raw ? raw.split(",").map(normalizeCard).filter(card => card && card !== "back").slice(0, 5) : [];
+}
+
+function cardImg(card, extraClass = "") {
+  if (card === "back") return `<img src="/images/cards/card_back.png" alt="Hidden card" class="holdem-hu__card ${extraClass}">`;
+  return `<img src="/images/cards/${card}.png" alt="${card.toUpperCase()}" class="holdem-hu__card ${extraClass}">`;
+}
+</script>
+<div class="holdem-hu">
+  <div class="holdem-hu__title" webc:if="title" @text="title"></div>
+  <div class="holdem-hu__felt">
+    <div class="holdem-hu__seat holdem-hu__seat--top">
+      <div class="holdem-hu__cards"><script webc:type="js">const cards = parseCards(villain, 2); let html = ""; for (const card of cards) html += cardImg(card); html;</script></div>
+      <div class="holdem-hu__seat-meta"><span class="holdem-hu__role" webc:if="toprole" @text="toprole"></span><span class="holdem-hu__label" @text="toplabel || 'Opponent'"></span><span class="holdem-hu__win" webc:if="winner === 'top'">WIN</span></div>
+      <div class="holdem-hu__hand" webc:if="tophand" @text="tophand"></div>
+    </div>
+    <div class="holdem-hu__center">
+      <div class="holdem-hu__board-label" @text="boardlabel || 'Community Cards'"></div>
+      <div class="holdem-hu__board"><script webc:type="js">const cards = parseBoard(board); let html = ""; for (let i = 0; i < 5; i++) { if (cards[i]) html += `<div class="holdem-hu__board-slot">${cardImg(cards[i], "holdem-hu__card--board")}</div>`; else html += '<div class="holdem-hu__board-slot holdem-hu__board-slot--empty"></div>'; } html;</script></div>
+    </div>
+    <div class="holdem-hu__seat holdem-hu__seat--bottom">
+      <div class="holdem-hu__cards"><script webc:type="js">const cards = parseCards(hero, 2); let html = ""; for (const card of cards) html += cardImg(card); html;</script></div>
+      <div class="holdem-hu__seat-meta"><span class="holdem-hu__role" webc:if="bottomrole" @text="bottomrole"></span><span class="holdem-hu__label" @text="bottomlabel || 'You'"></span><span class="holdem-hu__win" webc:if="winner === 'bottom'">WIN</span></div>
+      <div class="holdem-hu__hand" webc:if="bottomhand" @text="bottomhand"></div>
+    </div>
+  </div>
+  <div class="holdem-hu__note" webc:if="note" @text="note"></div>
+</div>

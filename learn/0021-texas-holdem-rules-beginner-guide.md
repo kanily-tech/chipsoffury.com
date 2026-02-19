@@ -21,53 +21,17 @@ Your job is to make the best five-card poker hand using any combination of your 
 
 A standard game seats 2 to 10 players at a table, using a regular 52-card deck with no jokers.
 
-<div style="background-color: #31661E; border: 2px solid #DDA54A; border-radius: 16px; padding: 24px 16px; max-width: 420px; margin: 24px auto;">
-
-  <!-- Player 1 (top) -->
-  <div style="display: flex; justify-content: center; gap: 4px; margin-bottom: 20px;">
-    <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
-    <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
-  </div>
-
-  <!-- Middle section: left player, community cards, right player -->
-  <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
-
-    <!-- Player 2 (left) -->
-    <div style="display: flex; gap: 3px; flex-shrink: 0;">
-      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
-      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
-    </div>
-
-    <!-- Community cards -->
-    <div style="text-align: center; flex-shrink: 1;">
-      <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.6); margin-bottom: 6px;">Community Cards</div>
-      <div style="display: flex; gap: 4px; justify-content: center; flex-wrap: wrap;">
-        <img src="/images/cards/as.png" alt="A♠" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-        <img src="/images/cards/kh.png" alt="K♥" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-        <img src="/images/cards/10d.png" alt="10♦" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-        <img src="/images/cards/7c.png" alt="7♣" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-        <img src="/images/cards/3s.png" alt="3♠" style="height: 50px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-      </div>
-    </div>
-
-    <!-- Player 3 (right) -->
-    <div style="display: flex; gap: 3px; flex-shrink: 0;">
-      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
-      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
-    </div>
-
-  </div>
-
-  <!-- You (bottom) -->
-  <div style="text-align: center; margin-top: 20px;">
-    <div style="display: flex; justify-content: center; gap: 4px;">
-      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
-      <img src="/images/cards/card_back.png" alt="Face-down card" style="height: 36px; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
-    </div>
-    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.6); margin-top: 6px;">You</div>
-  </div>
-
-</div>
+<div>{% renderTemplate "webc" %}
+<holdem-heads-up-diagram
+  title="Heads-up layout example"
+  board="as,kh,10d,7c,3s"
+  villain="back,back"
+  hero="back,back"
+  toplabel="Opponent"
+  bottomlabel="You"
+  note="Each player has two private hole cards. Both players share the same five community cards."
+></holdem-heads-up-diagram>
+{% endrenderTemplate %}</div>
 
 ---
 
@@ -105,66 +69,9 @@ Why do blinds exist? Without them, there would be nothing in the pot, and everyo
 
 The blinds rotate with the button, so every player pays them equally over time. Nobody gets a free ride.
 
-<div style="background-color: #31661E; border: 2px solid #DDA54A; border-radius: 16px; padding: 24px 16px; max-width: 480px; margin: 24px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
-
-  <!-- Top row: two dimmed generic seats -->
-  <div style="display: flex; justify-content: center; gap: 32px; margin-bottom: 20px;">
-    <div style="text-align: center; opacity: 0.45;">
-      <div style="width: 40px; height: 40px; border-radius: 50%; background: #9ca3af; margin: 0 auto 4px; display: flex; align-items: center; justify-content: center;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
-      </div>
-      <div style="font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px;">Player 4</div>
-    </div>
-    <div style="text-align: center; opacity: 0.45;">
-      <div style="width: 40px; height: 40px; border-radius: 50%; background: #9ca3af; margin: 0 auto 4px; display: flex; align-items: center; justify-content: center;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-7 8-7s8 3 8 7"/></svg>
-      </div>
-      <div style="font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px;">Player 5</div>
-    </div>
-  </div>
-
-  <!-- Middle: clockwise indicator -->
-  <div style="text-align: center; margin-bottom: 20px;">
-    <span style="font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: 0.5px;">&#x27F3; Action flows clockwise</span>
-  </div>
-
-  <!-- Bottom row: BB, SB, BTN -->
-  <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
-
-    <!-- Big Blind -->
-    <div style="text-align: center; min-width: 70px;">
-      <div style="background: #e5e7eb; color: #1f2937; font-weight: 700; font-size: 15px; border-radius: 8px; padding: 8px 12px; margin-bottom: 4px;">BB</div>
-      <div style="font-size: 16px; font-weight: 700; color: #10b981;">$2</div>
-      <div style="font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Big Blind</div>
-    </div>
-
-    <!-- Small Blind -->
-    <div style="text-align: center; min-width: 70px;">
-      <div style="background: #e5e7eb; color: #1f2937; font-weight: 700; font-size: 15px; border-radius: 8px; padding: 8px 12px; margin-bottom: 4px;">SB</div>
-      <div style="font-size: 16px; font-weight: 700; color: #10b981;">$1</div>
-      <div style="font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Small Blind</div>
-    </div>
-
-    <!-- Dealer Button -->
-    <div style="text-align: center; min-width: 70px;">
-      <div style="width: 42px; height: 42px; border-radius: 50%; background: #ffffff; color: #1f2937; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); border: 2px solid #d1d5db;">D</div>
-      <div style="font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px;">Button</div>
-    </div>
-
-  </div>
-
-  <!-- Flow arrows -->
-  <div style="display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 14px;">
-    <span style="font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;">BTN</span>
-    <span style="color: #DDA54A; font-size: 13px;">&#x2192;</span>
-    <span style="font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;">SB posts $1</span>
-    <span style="color: #DDA54A; font-size: 13px;">&#x2192;</span>
-    <span style="font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;">BB posts $2</span>
-    <span style="color: #DDA54A; font-size: 13px;">&#x2192;</span>
-    <span style="font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.3px;">Deal</span>
-  </div>
-
-</div>
+<div>{% renderTemplate "webc" %}
+<holdem-blinds-diagram title="Button and blind posting order" sb="1" bb="2"></holdem-blinds-diagram>
+{% endrenderTemplate %}</div>
 
 ---
 
@@ -206,10 +113,6 @@ Where all-in gets specific is when you don't have enough chips to match a bet. Y
 
 Every hand follows the same six-step sequence. Once you've seen it a few times, it becomes second nature.
 
-<div>{% renderTemplate "webc" %}
-<hand-flow step="1"></hand-flow>
-{% endrenderTemplate %}</div>
-
 ### Step 1 - The Deal
 
 <div>{% renderTemplate "webc" %}<hand-flow step="1"></hand-flow>{% endrenderTemplate %}</div>
@@ -234,13 +137,19 @@ Notice that "check" isn't an option here. The blinds count as a bet, so you can 
 
 Preflop betting order is different from every other round. It starts left of the big blind instead of left of the button. This is because the blinds have already put money in - they act last, which gives them a small advantage for this one round.
 
-<div style="text-align: center; margin: 20px 0;">
-<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">Your hole cards</div>
-<div style="display: flex; gap: 6px; justify-content: center;">
-<img src="/images/cards/ks.png" alt="K♠" style="height: 60px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/qs.png" alt="Q♠" style="height: 60px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-</div>
-</div>
+<div>{% renderTemplate "webc" %}
+<holdem-heads-up-diagram
+  title="Preflop view"
+  board=""
+  villain="back,back"
+  hero="ks,qs"
+  toplabel="Big Blind"
+  toprole="BB"
+  bottomlabel="You"
+  bottomrole="Button"
+  note="Only hole cards are dealt preflop. Community card slots stay empty until the flop."
+></holdem-heads-up-diagram>
+{% endrenderTemplate %}</div>
 
 ---
 
@@ -256,24 +165,17 @@ From the flop onward, betting starts with the first active player clockwise from
 
 **Example:** You hold K♠ Q♠. The flop comes 10♠ J♦ 3♠. You have two spades with two more on the board, so a flush is possible if another spade comes (this is called a "draw" - you're one card away from completing a hand). You also have K-Q working toward a straight (you need an Ace or a 9). That's a strong position with plenty to play for.
 
-<div style="margin: 20px 0; background: #f9fafb; border-radius: 12px; padding: 16px;">
-<div style="text-align: center; margin-bottom: 12px;">
-<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">The Board</div>
-<div style="display: flex; gap: 6px; justify-content: center;">
-<img src="/images/cards/10s.png" alt="10♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/jd.png" alt="J♦" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/3s.png" alt="3♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-</div>
-</div>
-<div style="border-top: 1px solid #e5e7eb; padding-top: 12px; text-align: center;">
-<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">Your Hand</div>
-<div style="display: flex; gap: 6px; justify-content: center;">
-<img src="/images/cards/ks.png" alt="K♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/qs.png" alt="Q♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-</div>
-</div>
-<div style="text-align: center; margin-top: 10px; font-size: 12px; color: #065f46; font-weight: 500;">Flush draw + straight draw</div>
-</div>
+<div>{% renderTemplate "webc" %}
+<holdem-heads-up-diagram
+  title="Flop view"
+  board="10s,jd,3s"
+  villain="back,back"
+  hero="ks,qs"
+  toplabel="Opponent"
+  bottomlabel="You"
+  note="Flush draw and straight draw: any spade, Ace, or 9 can improve your hand."
+></holdem-heads-up-diagram>
+{% endrenderTemplate %}</div>
 
 ---
 
@@ -287,26 +189,17 @@ Another betting round follows, same structure as the flop: starts left of the bu
 
 **Example:** Continuing the hand above - you hold K♠ Q♠, the board is 10♠ J♦ 3♠. The turn comes A♥. You just made a straight (A-K-Q-J-10). That's a strong hand, though you're no longer drawing to the flush since the Ace was a heart.
 
-<div style="margin: 20px 0; background: #f9fafb; border-radius: 12px; padding: 16px;">
-<div style="text-align: center; margin-bottom: 12px;">
-<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">The Board</div>
-<div style="display: flex; gap: 6px; justify-content: center; align-items: center;">
-<img src="/images/cards/10s.png" alt="10♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/jd.png" alt="J♦" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/3s.png" alt="3♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<div style="width: 8px;"></div>
-<img src="/images/cards/ah.png" alt="A♥" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 2px solid #10b981;">
-</div>
-</div>
-<div style="border-top: 1px solid #e5e7eb; padding-top: 12px; text-align: center;">
-<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">Your Hand</div>
-<div style="display: flex; gap: 6px; justify-content: center;">
-<img src="/images/cards/ks.png" alt="K♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/qs.png" alt="Q♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-</div>
-</div>
-<div style="text-align: center; margin-top: 10px; font-size: 12px; color: #065f46; font-weight: 500;">Straight! A-K-Q-J-10</div>
-</div>
+<div>{% renderTemplate "webc" %}
+<holdem-heads-up-diagram
+  title="Turn view"
+  board="10s,jd,3s,ah"
+  villain="back,back"
+  hero="ks,qs"
+  toplabel="Opponent"
+  bottomlabel="You"
+  note="The Ace on the turn gives you the straight: A-K-Q-J-10."
+></holdem-heads-up-diagram>
+{% endrenderTemplate %}</div>
 
 ---
 
@@ -320,28 +213,17 @@ One last betting round. After this, anyone still in the hand goes to showdown.
 
 **Example:** The river comes 7♠. Now the board reads 10♠ J♦ 3♠ A♥ 7♠. You still have your A-K-Q-J-10 straight, but count the spades: K♠ and Q♠ from your hand, plus 10♠, 3♠, and 7♠ on the board. That's five spades - a flush (K♠ Q♠ 10♠ 7♠ 3♠). The flush beats the straight, so you'd play the flush.
 
-<div style="margin: 20px 0; background: #f9fafb; border-radius: 12px; padding: 16px;">
-<div style="text-align: center; margin-bottom: 12px;">
-<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">The Board</div>
-<div style="display: flex; gap: 6px; justify-content: center; align-items: center;">
-<img src="/images/cards/10s.png" alt="10♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/jd.png" alt="J♦" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/3s.png" alt="3♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<div style="width: 8px;"></div>
-<img src="/images/cards/ah.png" alt="A♥" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<div style="width: 8px;"></div>
-<img src="/images/cards/7s.png" alt="7♠" style="height: 56px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: 2px solid #10b981;">
-</div>
-</div>
-<div style="border-top: 1px solid #e5e7eb; padding-top: 12px; text-align: center;">
-<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin-bottom: 8px;">Your Hand</div>
-<div style="display: flex; gap: 6px; justify-content: center;">
-<img src="/images/cards/ks.png" alt="K♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-<img src="/images/cards/qs.png" alt="Q♠" style="height: 48px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-</div>
-</div>
-<div style="text-align: center; margin-top: 10px; font-size: 12px; color: #065f46; font-weight: 500;">Flush! K♠ Q♠ 10♠ 7♠ 3♠</div>
-</div>
+<div>{% renderTemplate "webc" %}
+<holdem-heads-up-diagram
+  title="River view"
+  board="10s,jd,3s,ah,7s"
+  villain="back,back"
+  hero="ks,qs"
+  toplabel="Opponent"
+  bottomlabel="You"
+  note="The river 7s completes your flush: Ks Qs 10s 7s 3s."
+></holdem-heads-up-diagram>
+{% endrenderTemplate %}</div>
 
 ---
 
@@ -355,48 +237,20 @@ The software (or dealer) determines who shows first. In online play, the winning
 
 **If only one player remains** (everyone else folded), there's no showdown at all. That player takes the pot without showing their cards. This is the most common way hands end.
 
-<div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0;">
-
-  <!-- YOU (winner) -->
-  <div style="background: #f9fafb; border-radius: 12px; padding: 16px; flex: 1; min-width: 200px;">
-    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">You</div>
-    <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">Hole Cards</div>
-    <div style="display: flex; gap: 4px; margin-bottom: 12px;">
-      <img src="/images/cards/ks.png" alt="K♠" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/qs.png" alt="Q♠" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-    </div>
-    <div style="font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 6px;">Flush</div>
-    <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">Best 5 Cards</div>
-    <div style="display: flex; gap: 4px; margin-bottom: 10px;">
-      <img src="/images/cards/ks.png" alt="K♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/qs.png" alt="Q♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/10s.png" alt="10♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/7s.png" alt="7♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/3s.png" alt="3♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-    </div>
-    <span style="background: #065f46; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">WIN</span>
-  </div>
-
-  <!-- OPPONENT -->
-  <div style="background: #f9fafb; border-radius: 12px; padding: 16px; flex: 1; min-width: 200px;">
-    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">Opponent</div>
-    <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">Hole Cards</div>
-    <div style="display: flex; gap: 4px; margin-bottom: 12px;">
-      <img src="/images/cards/ad.png" alt="A♦" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/ac.png" alt="A♣" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-    </div>
-    <div style="font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 6px;">Three of a Kind</div>
-    <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">Best 5 Cards</div>
-    <div style="display: flex; gap: 4px;">
-      <img src="/images/cards/ad.png" alt="A♦" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/ac.png" alt="A♣" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/ah.png" alt="A♥" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/jd.png" alt="J♦" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/10s.png" alt="10♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-    </div>
-  </div>
-
-</div>
+<div>{% renderTemplate "webc" %}
+<holdem-heads-up-diagram
+  title="Showdown example"
+  board="10s,jd,3s,ah,7s"
+  villain="ad,ac"
+  hero="ks,qs"
+  toplabel="Opponent"
+  bottomlabel="You"
+  tophand="Three of a Kind (Aces)"
+  bottomhand="Flush (K high)"
+  winner="bottom"
+  note="You win at showdown with a flush. Opponent has three of a kind (Aces)."
+></holdem-heads-up-diagram>
+{% endrenderTemplate %}</div>
 
 ---
 
@@ -484,49 +338,23 @@ A [kicker](glossary:kicker) is the side card that breaks ties when two players h
 
 **Example:** You hold A♠ K♦. Your opponent holds A♥ 9♣. The board is A♣ 7♠ 5♦ 3♥ 2♠. You both have a pair of Aces, but your King kicker beats their 9 kicker. You win.
 
-<div style="background: #f9fafb; border-radius: 12px; padding: 16px; margin: 20px 0;">
-
-  <!-- Shared board -->
-  <div style="text-align: center; margin-bottom: 14px;">
-    <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 8px;">The Board</div>
-    <div style="display: flex; gap: 4px; justify-content: center;">
-      <img src="/images/cards/ac.png" alt="A♣" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/7s.png" alt="7♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/5d.png" alt="5♦" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/3h.png" alt="3♥" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      <img src="/images/cards/2s.png" alt="2♠" style="height: 44px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-    </div>
-  </div>
-
-  <!-- Two player boxes -->
-  <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-
-    <!-- YOU (winner) -->
-    <div style="background: #f9fafb; border-radius: 12px; padding: 16px; flex: 1; min-width: 200px;">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">You</div>
-      <div style="display: flex; gap: 4px; margin-bottom: 8px;">
-        <img src="/images/cards/as.png" alt="A♠" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-        <img src="/images/cards/kd.png" alt="K♦" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12); border: 2px solid #10b981;">
-      </div>
-      <div style="font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 4px;">Pair of Aces</div>
-      <div style="font-size: 12px; color: #065f46; font-weight: 500; margin-bottom: 8px;">K kicker</div>
-      <span style="background: #065f46; color: white; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600;">WIN</span>
-    </div>
-
-    <!-- OPPONENT -->
-    <div style="background: #f9fafb; border-radius: 12px; padding: 16px; flex: 1; min-width: 200px;">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; font-weight: 600; margin-bottom: 10px;">Opponent</div>
-      <div style="display: flex; gap: 4px; margin-bottom: 8px;">
-        <img src="/images/cards/ah.png" alt="A♥" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-        <img src="/images/cards/9c.png" alt="9♣" style="height: 36px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
-      </div>
-      <div style="font-size: 13px; font-weight: 700; color: #1f2937; margin-bottom: 4px;">Pair of Aces</div>
-      <div style="font-size: 12px; color: #9ca3af; font-weight: 500;">9 kicker</div>
-    </div>
-
-  </div>
-
-</div>
+<div>{% renderTemplate "webc" %}
+<holdem-kicker-diagram
+  board="ac,7s,5d,3h,2s"
+  hero="as,kd"
+  villain="ah,9c"
+  herolabel="You"
+  villainlabel="Opponent"
+  heroresult="Pair of Aces"
+  villainresult="Pair of Aces"
+  herokicker="K kicker"
+  villainkicker="9 kicker"
+  herohighlight="kd"
+  villainhighlight="9c"
+  winner="hero"
+  note="Both players share the same pair of Aces on the board. The higher side card (kicker) breaks the tie."
+></holdem-kicker-diagram>
+{% endrenderTemplate %}</div>
 
 Kickers come up constantly in Hold'em, especially when the community cards include a pair. The higher your unpaired cards, the better off you are in these situations.
 

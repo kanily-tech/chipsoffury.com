@@ -1,0 +1,57 @@
+<div class="holdem-blinds">
+  <div class="holdem-blinds__title" webc:if="title" @text="title"></div>
+  <div class="holdem-blinds__compare">
+    <div class="holdem-blinds__hand">
+      <div class="holdem-blinds__hand-title">Hand 1 (5-handed example)</div>
+      <div class="holdem-blinds__table">
+        <div class="holdem-blinds__oval"></div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--top">
+          <div class="holdem-blinds__player">Player 1</div>
+          <div class="holdem-blinds__role holdem-blinds__role--btn">BTN</div>
+        </div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--upper-right">
+          <div class="holdem-blinds__player">Player 2</div>
+          <div class="holdem-blinds__role holdem-blinds__role--sb">SB $<span @text="sb || '1'"></span></div>
+        </div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--lower-right">
+          <div class="holdem-blinds__player">Player 3</div>
+          <div class="holdem-blinds__role holdem-blinds__role--bb">BB $<span @text="bb || '2'"></span></div>
+        </div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--lower-left">
+          <div class="holdem-blinds__player">Player 4</div>
+        </div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--upper-left">
+          <div class="holdem-blinds__player">Player 5</div>
+        </div>
+        <div class="holdem-blinds__flow">Clockwise order: BTN (P1) -> SB (P2) -> BB (P3) -> Deal</div>
+      </div>
+    </div>
+    <div class="holdem-blinds__shift">Next hand: button moves one seat clockwise to Player 2</div>
+    <div class="holdem-blinds__hand">
+      <div class="holdem-blinds__hand-title">Hand 2</div>
+      <div class="holdem-blinds__table">
+        <div class="holdem-blinds__oval"></div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--top">
+          <div class="holdem-blinds__player">Player 1</div>
+        </div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--upper-right">
+          <div class="holdem-blinds__player">Player 2</div>
+          <div class="holdem-blinds__role holdem-blinds__role--btn">BTN</div>
+        </div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--lower-right">
+          <div class="holdem-blinds__player">Player 3</div>
+          <div class="holdem-blinds__role holdem-blinds__role--sb">SB $<span @text="sb || '1'"></span></div>
+        </div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--lower-left">
+          <div class="holdem-blinds__player">Player 4</div>
+          <div class="holdem-blinds__role holdem-blinds__role--bb">BB $<span @text="bb || '2'"></span></div>
+        </div>
+        <div class="holdem-blinds__seat holdem-blinds__seat--upper-left">
+          <div class="holdem-blinds__player">Player 5</div>
+        </div>
+        <div class="holdem-blinds__flow">Clockwise order: BTN (P2) -> SB (P3) -> BB (P4)</div>
+      </div>
+    </div>
+  </div>
+  <div class="holdem-blinds__note">This is why blinds are fair: roles rotate clockwise after every hand.</div>
+</div>

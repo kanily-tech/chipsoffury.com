@@ -1,0 +1,44 @@
+<script webc:setup>
+function normalizeCard(card) {
+  if (!card) return "";
+  return card.trim().toLowerCase().replace(/\.png$/, "");
+}
+
+function parseCards(raw, limit = 2, allowEmpty = false) {
+  const cards = raw ? raw.split(",").map(normalizeCard).filter(Boolean).slice(0, limit) : [];
+  if (!allowEmpty) {
+    while (cards.length < limit) cards.push("back");
+  }
+  return cards;
+}
+
+function cardImg(card, highlightCard = "") {
+  const isHighlight = highlightCard && card === normalizeCard(highlightCard);
+  const accentClass = isHighlight ? " holdem-kicker__card--accent" : "";
+  if (card === "back") {
+    return `<img src="/images/cards/card_back.png" alt="Hidden card" class="holdem-kicker__card${accentClass}">`;
+  }
+  return `<img src="/images/cards/${card}.png" alt="${card.toUpperCase()}" class="holdem-kicker__card${accentClass}">`;
+}
+</script>
+<div class="holdem-kicker">
+  <div class="holdem-kicker__board">
+    <div class="holdem-kicker__board-label" @text="boardlabel || 'The Board'"></div>
+    <div class="holdem-kicker__cards"><script webc:type="js">const cards = parseCards(board, 5, true); let html = ""; for (const card of cards) html += cardImg(card); html;</script></div>
+  </div>
+  <div class="holdem-kicker__players">
+    <div class="holdem-kicker__player" :class="winner === 'hero' ? 'holdem-kicker__player--winner' : ''">
+      <div class="holdem-kicker__player-top"><span class="holdem-kicker__name" @text="herolabel || 'You'"></span><span class="holdem-kicker__win" webc:if="winner === 'hero'">WIN</span></div>
+      <div class="holdem-kicker__cards"><script webc:type="js">const cards = parseCards(hero, 2); let html = ""; for (const card of cards) html += cardImg(card, herohighlight); html;</script></div>
+      <div class="holdem-kicker__result" @text="heroresult || 'Pair of Aces'"></div>
+      <div class="holdem-kicker__kicker" @text="herokicker || 'K kicker'"></div>
+    </div>
+    <div class="holdem-kicker__player" :class="winner === 'villain' ? 'holdem-kicker__player--winner' : ''">
+      <div class="holdem-kicker__player-top"><span class="holdem-kicker__name" @text="villainlabel || 'Opponent'"></span><span class="holdem-kicker__win" webc:if="winner === 'villain'">WIN</span></div>
+      <div class="holdem-kicker__cards"><script webc:type="js">const cards = parseCards(villain, 2); let html = ""; for (const card of cards) html += cardImg(card, villainhighlight); html;</script></div>
+      <div class="holdem-kicker__result" @text="villainresult || 'Pair of Aces'"></div>
+      <div class="holdem-kicker__kicker holdem-kicker__kicker--muted" @text="villainkicker || '9 kicker'"></div>
+    </div>
+  </div>
+  <div class="holdem-kicker__note" webc:if="note" @text="note"></div>
+</div>
