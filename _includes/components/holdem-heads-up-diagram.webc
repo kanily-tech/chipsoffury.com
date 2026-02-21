@@ -27,7 +27,7 @@ function cardImg(card, extraClass = "") {
   <div class="holdem-hu__title" webc:if="title" @text="title"></div>
   <div class="holdem-hu__felt">
     <div class="holdem-hu__seat holdem-hu__seat--top">
-      <div class="holdem-hu__cards"><script webc:type="js">const cards = parseCards(villain, 2); let html = ""; for (const card of cards) html += cardImg(card); html;</script></div>
+      <div class="holdem-hu__cards"><script webc:type="js">const cards = parseCards(villain, parseInt(holecardcount || '2')); let html = ""; for (const card of cards) html += cardImg(card); html;</script></div>
       <div class="holdem-hu__seat-meta"><span class="holdem-hu__role" webc:if="toprole" @text="toprole"></span><span class="holdem-hu__label" @text="toplabel || 'Opponent'"></span><span class="holdem-hu__win" webc:if="winner === 'top'">WIN</span></div>
       <div class="holdem-hu__hand" webc:if="tophand" @text="tophand"></div>
     </div>
@@ -36,7 +36,7 @@ function cardImg(card, extraClass = "") {
       <div class="holdem-hu__board"><script webc:type="js">const cards = parseBoard(board); let html = ""; for (let i = 0; i < 5; i++) { if (cards[i]) html += `<div class="holdem-hu__board-slot">${cardImg(cards[i], "holdem-hu__card--board")}</div>`; else html += '<div class="holdem-hu__board-slot holdem-hu__board-slot--empty"></div>'; } html;</script></div>
     </div>
     <div class="holdem-hu__seat holdem-hu__seat--bottom">
-      <div class="holdem-hu__cards"><script webc:type="js">const cards = parseCards(hero, 2); let html = ""; for (const card of cards) html += cardImg(card); html;</script></div>
+      <div class="holdem-hu__cards"><script webc:type="js">const cards = parseCards(hero, parseInt(holecardcount || '2')); let html = ""; for (const card of cards) html += cardImg(card); html;</script></div>
       <div class="holdem-hu__seat-meta"><span class="holdem-hu__role" webc:if="bottomrole" @text="bottomrole"></span><span class="holdem-hu__label" @text="bottomlabel || 'You'"></span><span class="holdem-hu__win" webc:if="winner === 'bottom'">WIN</span></div>
       <div class="holdem-hu__hand" webc:if="bottomhand" @text="bottomhand"></div>
     </div>
