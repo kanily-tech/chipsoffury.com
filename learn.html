@@ -9,46 +9,79 @@ description: Master poker from scratch with our free guides. Learn the rules, ha
 {% endrenderTemplate %}
 
 <!-- Learn Header -->
-<div class="bg-indigo-900 text-white py-8">
-  <div class="max-w-3xl mx-auto px-4">
-    <h1 class="text-3xl font-bold mb-2">Learn Poker</h1>
-    <p class="text-purple-200">Free guides for your first home game. No casino jargon, no math degree required.</p>
+<div class="bg-indigo-900 text-white py-16">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3">Learn Poker</h1>
+    <p class="text-purple-200 text-lg">Everything you need for your first game. No jargon, no math.</p>
   </div>
 </div>
 
 <!-- Main Content -->
 <section class="bg-gray-50 min-h-screen">
-  <div class="max-w-3xl mx-auto px-4 py-8">
+  <div class="max-w-4xl mx-auto px-4 py-10">
 
-    <!-- Hero: Featured Pillar Post -->
-    <div class="mb-12">
-      <a href="/learn/play-poker-with-friends-online/" class="block p-8 bg-gradient-to-br from-purple-100 via-indigo-100 to-white rounded-2xl border-2 border-purple-300 hover:border-purple-500 hover:shadow-xl transition-all group">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-purple-600 text-white uppercase tracking-wide">
-            Start Here
+    <!-- PRIMARY HERO: Texas Hold'em Rules -->
+    <a href="/learn/texas-holdem-rules-beginner-guide/" class="block p-8 md:p-10 bg-white rounded-2xl border-2 border-gray-200 hover:border-indigo-400 hover:shadow-xl transition-all group mb-6">
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-indigo-900 text-white uppercase tracking-wide mb-5">
+        Start Here
+      </span>
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-900 group-hover:text-indigo-700 transition-colors">
+        How to Play Texas Hold'em
+      </h2>
+      <p class="text-gray-500 mt-3 text-lg max-w-2xl">
+        The complete beginner's guide. How cards are dealt, what the betting options mean, which hands beat which, and how a hand plays out step by step.
+      </p>
+      <span class="inline-flex items-center mt-8 text-indigo-600 font-semibold text-lg group-hover:translate-x-2 transition-transform">
+        Start learning
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </span>
+    </a>
+
+    <!-- SECONDARY FEATURE: Play Poker With Friends -->
+    <a href="/learn/play-poker-with-friends-online/" class="block px-8 py-6 bg-amber-50 border border-amber-200 rounded-xl hover:border-amber-400 hover:shadow-lg transition-all group mb-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-200 text-amber-800 uppercase tracking-wide mb-3">
+            Ready to play?
           </span>
-          <span class="text-sm text-gray-500">15 min read</span>
+          <h2 class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-amber-700 transition-colors">
+            How to Play Poker With Friends Online
+          </h2>
+          <p class="text-gray-600 mt-1">
+            Pick a platform, set up a game, and host poker night tonight.
+          </p>
         </div>
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
-          How to Play Poker With Friends Online
-        </h2>
-        <p class="text-gray-600 mt-3 text-lg">
-          Everything you need to host poker night with friends online. Pick a platform, learn the rules, and start playing.
-        </p>
-        <span class="inline-flex items-center mt-6 text-purple-600 font-semibold text-lg group-hover:translate-x-2 transition-transform">
-          Start learning
+        <span class="inline-flex items-center text-amber-700 font-semibold text-lg group-hover:translate-x-2 transition-transform flex-shrink-0">
+          Read guide
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
           </svg>
         </span>
+      </div>
+    </a>
+
+    <!-- TWO-UP ROW: Hand Rankings + Beginner Strategy -->
+    <div class="grid md:grid-cols-2 gap-5 mb-10">
+
+      <!-- Hand Rankings -->
+      <a href="/learn/poker-winning-hand-rankings/" class="block p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group">
+        <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
+          Poker Hand Rankings
+        </h3>
+        <p class="text-gray-600 mt-2 text-sm">
+          The one page to bookmark. All ten hand types ranked, with visual examples and memory tricks.
+        </p>
+        <span class="inline-flex items-center mt-4 text-purple-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
+          Read guide
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </span>
       </a>
-    </div>
 
-    <!-- More Resources Section -->
-    <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">More Resources</div>
-
-    <div class="grid md:grid-cols-2 gap-4">
-      <!-- Beginner Poker Strategy -->
+      <!-- Beginner Strategy -->
       <a href="/learn/beginner-poker-strategy-how-to-win/" class="block p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group">
         <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
           Beginner Poker Strategy
@@ -64,78 +97,78 @@ description: Master poker from scratch with our free guides. Learn the rules, ha
         </span>
       </a>
 
-      <!-- Poker Hand Rankings -->
-      <a href="/learn/poker-winning-hand-rankings/" class="block p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group">
-        <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
-          Poker Hand Rankings
-        </h3>
-        <p class="text-gray-600 mt-2 text-sm">
-          The one page to bookmark. All ten hand types ranked, with examples and memory tricks.
-        </p>
-        <span class="inline-flex items-center mt-4 text-purple-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
-          Read guide
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </span>
-      </a>
-
-      <!-- Poker Buy-Ins With Friends -->
-      <a href="/learn/how-to-handle-poker-buy-ins-with-friends/" class="block p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group">
-        <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
-          How to Handle Buy-Ins With Friends
-        </h3>
-        <p class="text-gray-600 mt-2 text-sm">
-          Set fair stakes, handle rebuys, and manage the money so poker night stays fun and drama-free.
-        </p>
-        <span class="inline-flex items-center mt-4 text-purple-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
-          Read guide
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </span>
-      </a>
-
-      <!-- House Rules -->
-      <a href="/learn/poker-house-rules-to-keep-the-game-moving/" class="block p-6 bg-white rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group">
-        <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
-          House Rules to Keep the Game Moving
-        </h3>
-        <p class="text-gray-600 mt-2 text-sm">
-          Simple house rules that prevent delays, disputes, and confusion at your home poker game.
-        </p>
-        <span class="inline-flex items-center mt-4 text-purple-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
-          Read guide
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </span>
-      </a>
-
     </div>
 
-    <!-- 5 Most Popular Poker Variants -->
-    <a href="/learn/5-most-popular-poker-variants/" class="block mt-4 bg-white rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group overflow-hidden">
-      <div class="flex flex-col md:flex-row">
-        <div class="md:w-1/3 flex-shrink-0">
-          <img src="/images/poker-variants-og.webp" alt="Poker variants meme" class="w-full h-full object-cover">
-        </div>
-        <div class="p-6 flex flex-col justify-center">
-          <h3 class="text-lg font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
-            The 5 Most Popular Poker Variants
-          </h3>
-          <p class="text-gray-600 mt-2 text-sm">
-            Texas Hold'em, Omaha, Crazy Pineapple, and more. Which poker games actually matter, and which to learn first.
-          </p>
-          <span class="inline-flex items-center mt-4 text-purple-600 font-medium text-sm group-hover:translate-x-1 transition-transform">
-            Read guide
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-          </span>
-        </div>
+    <!-- COMPACT STRIP: More Guides -->
+    <div class="mb-8">
+      <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">More Guides</div>
+      <div class="space-y-1">
+
+        <a href="/learn/5-most-popular-poker-variants/" class="flex items-start gap-4 py-3 px-4 rounded-lg hover:bg-white hover:shadow-sm transition-all group">
+          <img src="/images/poker-variants-og.webp" alt="Poker variants" class="w-10 h-10 rounded-lg object-cover flex-shrink-0 mt-0.5">
+          <div class="flex-1 min-w-0">
+            <div class="font-semibold text-gray-900 group-hover:text-purple-700 transition-colors">The 5 Most Popular Poker Variants</div>
+            <div class="text-gray-500 text-sm mt-0.5">Texas Hold'em, Omaha, Crazy Pineapple, and which to learn first.</div>
+          </div>
+          <svg class="w-4 h-4 text-gray-300 group-hover:text-purple-500 flex-shrink-0 mt-1.5 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <a href="/learn/how-to-handle-poker-buy-ins-with-friends/" class="flex items-start gap-4 py-3 px-4 rounded-lg hover:bg-white hover:shadow-sm transition-all group">
+          <div class="flex-1 min-w-0">
+            <div class="font-semibold text-gray-900 group-hover:text-purple-700 transition-colors">How to Handle Buy-Ins With Friends</div>
+            <div class="text-gray-500 text-sm mt-0.5">Set fair stakes, handle rebuys, and manage the money so poker night stays fun and drama-free.</div>
+          </div>
+          <svg class="w-4 h-4 text-gray-300 group-hover:text-purple-500 flex-shrink-0 mt-1.5 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+
+        <a href="/learn/poker-house-rules-to-keep-the-game-moving/" class="flex items-start gap-4 py-3 px-4 rounded-lg hover:bg-white hover:shadow-sm transition-all group">
+          <div class="flex-1 min-w-0">
+            <div class="font-semibold text-gray-900 group-hover:text-purple-700 transition-colors">House Rules to Keep the Game Moving</div>
+            <div class="text-gray-500 text-sm mt-0.5">Simple house rules that prevent delays, disputes, and confusion at your home game.</div>
+          </div>
+          <svg class="w-4 h-4 text-gray-300 group-hover:text-purple-500 flex-shrink-0 mt-1.5 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+
       </div>
-    </a>
+    </div>
+
+    <!-- Tools -->
+    <div class="mb-4">
+      <div class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Tools</div>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <a href="/chip-distribution-calculator/" class="block rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group overflow-hidden bg-white">
+          <div class="relative h-28 overflow-hidden">
+            <img src="/images/chip-distribution-calculator-og.webp" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/70"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center px-5">
+              <span class="text-4xl mb-1">🧮</span>
+              <h3 class="font-extrabold text-white text-lg">Chip Distribution Calculator</h3>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm p-5">Enter your buy-in, player count, and chip set to get the exact per-player breakdown.</p>
+        </a>
+
+        <a href="/pre-game-checklist/" class="block rounded-xl border border-gray-200 hover:border-purple-400 hover:shadow-lg transition-all group overflow-hidden bg-white">
+          <div class="relative h-28 overflow-hidden">
+            <img src="/images/pre-game-checklist-og.webp" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/70"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center px-5">
+              <span class="text-4xl mb-1">✅</span>
+              <h3 class="font-extrabold text-white text-lg">Pre-Game Checklist Generator</h3>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm p-5">Set stakes, buy-in, rebuys, and house rules, then copy-paste into your group chat.</p>
+        </a>
+
+      </div>
+    </div>
 
   </div>
 </section>

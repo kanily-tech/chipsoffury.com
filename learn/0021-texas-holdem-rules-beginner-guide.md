@@ -4,7 +4,7 @@ date: 2026-02-16
 description: "Learn how to play Texas Hold'em with simple, beginner-friendly rules. Understand the flow of a hand, card rankings, and start playing with confidence."
 tags: [ 'post', 'guide', 'web' ]
 authorSlugs: [mayank]
-draft: true
+draft: false
 ---
 
 Texas Hold'em is the version of poker you've seen on TV, in movies, and in every poker app on the planet. It's also the version most people learn first, because the basic rules are genuinely simple - even if the game itself can get deep.
