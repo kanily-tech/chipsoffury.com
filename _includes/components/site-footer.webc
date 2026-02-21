@@ -21,7 +21,8 @@
         </ul>
         <h4 class="text-white font-semibold mb-4 mt-6">Tools</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="/chip-distribution-calculator/" class="hover:text-white transition-colors">Chip Calculator</a></li>
+          <li><a href="/chip-distribution-calculator/" class="hover:text-white transition-colors">Chip Distribution Calculator</a></li>
+          <li><a href="/pre-game-checklist/" class="hover:text-white transition-colors">Pre-Game Checklist Generator</a></li>
         </ul>
       </div>
 
