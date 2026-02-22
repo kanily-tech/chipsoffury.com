@@ -179,11 +179,11 @@
   }
 
   var state = {
-    buyIn: 50,
+    buyIn: 20,
     players: 6,
     autoBlinds: true,
-    sb: 0.25,
-    bb: 0.5,
+    sb: 0.1,
+    bb: 0.2,
     chips: cloneChips(PRESETS['300-piece']),
     values: null,
     suggestions: [],
