@@ -85,7 +85,7 @@ extraScripts:
         </div>
       </div>
       <div class="cof-cl-error" id="err-buyin">Max buy-in must be at least the minimum.</div>
-      <div class="cof-cl-helper" id="cof-depth-label" style="margin-bottom:0.5rem"></div>
+      <div class="cof-cl-helper cof-cl-mb-sm" id="cof-depth-label"></div>
       <div class="cof-cl-grid-2">
         <div class="cof-cl-field" id="cof-sb-field">
           <label for="cof-sb">Small blind</label>
@@ -174,13 +174,13 @@ extraScripts:
   <div class="cof-cl-section-body" id="sec-rebuys-body">
     <!-- Cash: top-ups -->
     <div data-show="cash" id="cof-topup-section">
-      <div class="cof-cl-helper" style="margin-bottom:0.5rem" id="cof-topup-desc">Unlimited top-ups to max buy-in between hands.</div>
+      <div class="cof-cl-helper cof-cl-mb-sm" id="cof-topup-desc">Unlimited top-ups to max buy-in between hands.</div>
       <label class="cof-cl-auto-check">
         <input type="checkbox" id="cof-topup-limited">
         <span class="cof-cl-checkmark"></span>
         <span>Limit top-ups</span>
       </label>
-      <div class="cof-cl-field cof-cl-hidden" id="cof-topup-limit-wrap" style="margin-top:0.5rem">
+      <div class="cof-cl-field cof-cl-hidden cof-cl-mt-sm" id="cof-topup-limit-wrap">
         <label for="cof-topup-limit">Max top-ups per player</label>
         <div class="cof-cl-stepper">
           <button type="button" class="cof-cl-step-btn" data-step="-1" data-target="cof-topup-limit" aria-label="Decrease top-up limit">&minus;</button>
@@ -222,7 +222,7 @@ extraScripts:
       </div>
       <!-- Tournament add-on -->
       <div data-show="tournament" id="cof-addon-section">
-        <div class="cof-cl-toggle-row" style="margin-top: 0.5rem;">
+        <div class="cof-cl-toggle-row cof-cl-mt-sm">
           <button type="button" class="cof-cl-toggle" role="switch" aria-checked="false" id="cof-addon-on" aria-label="Add-on allowed"></button>
           <span class="cof-cl-toggle-label">Add-on allowed</span>
         </div>
@@ -306,8 +306,8 @@ extraScripts:
   </button>
   <div class="cof-cl-section-body" id="sec-rules-body">
     <div class="cof-cl-rules-grid" id="cof-rules-list"></div>
-    <div style="margin-top: 0.75rem;">
-      <label style="font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.35rem; display: block;">Custom Rules</label>
+    <div class="cof-cl-mt-md">
+      <label class="cof-cl-section-label">Custom Rules</label>
       <div class="cof-cl-custom-rules" id="cof-custom-rules"></div>
       <button type="button" class="cof-cl-add-btn" id="cof-add-custom-rule">+ Add custom rule</button>
       <div class="cof-cl-helper" id="cof-custom-rules-count"></div>
@@ -436,11 +436,11 @@ extraScripts:
 
 </section>
 
-<section style="background: #FAFAF6; border-top: 1px solid #E8E5DD; padding: 3.5rem 1.5rem;">
-  <div style="max-width: 36rem; margin: 0 auto; text-align: center;">
-    <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8B7335; margin-bottom: 0.45rem;">Feedback</div>
-    <h2 style="font-family: var(--font-heading); font-size: clamp(1.4rem, 3.2vw, 1.85rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.015em; color: #1A2E23; margin: 0 0 1rem;">Have a suggestion or found a bug?</h2>
-    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0 0 1.5rem;">This tool is actively maintained. If something doesn't work for your game, or you have an idea that would make it more useful, we'd love to hear from you.</p>
-    <a href="/contact/" style="display: inline-flex; align-items: center; gap: 0.45rem; background: #BFA24E; color: #091A12; font-family: var(--font-heading); font-weight: 700; padding: 0.85rem 1.7rem; border-radius: 10px; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.01em; transition: background 0.2s, transform 0.12s;" onmouseover="this.style.background='#CEAF5C';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#BFA24E';this.style.transform='none'">Send Feedback</a>
+<section class="cof-lp-feedback">
+  <div class="cof-lp-feedback-inner">
+    <div class="cof-lp-tag">Feedback</div>
+    <h2 class="cof-lp-h2">Have a suggestion or found a bug?</h2>
+    <p class="cof-lp-body">This tool is actively maintained. If something doesn't work for your game, or you have an idea that would make it more useful, we'd love to hear from you.</p>
+    <a href="/contact/" class="cof-lp-cta">Send Feedback</a>
   </div>
 </section>

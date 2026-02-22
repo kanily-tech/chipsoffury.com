@@ -9,6 +9,7 @@ extraScripts:
   - "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
   - "/js/chip-distribution.js"
   - "/js/chip-distribution-calculator-page.js"
+hideAppSchema: true
 ---
 
 <section class="cof-lp-hero">
@@ -170,7 +171,7 @@ extraScripts:
       <div class="cof-lp-card">
         <div class="cof-lp-card-icon">🎨</div>
         <h3>Which values go on which colors?</h3>
-        <p>Most chip sets don't have denominations printed on them. Hosts end up guessing values, and the result is usually an overcomplicated ladder that causes problems during play.</p>
+        <p>Most chip sets don't have denominations printed on them. Hosts end up guessing values, and the result is usually an overcomplicated ladder that causes problems during play. See our <a href="/learn/poker-lingo-and-terms-for-beginners/">poker terminology guide</a> if you're new to the lingo.</p>
       </div>
       <div class="cof-lp-card">
         <div class="cof-lp-card-icon">📦</div>
@@ -185,7 +186,7 @@ extraScripts:
       <div class="cof-lp-card">
         <div class="cof-lp-card-icon">⏱️</div>
         <h3>Setup eats into play time</h3>
-        <p>First-time hosts often spend 20 minutes debating chip values at the table before anyone plays a hand. There's no standard template, so everyone starts from scratch.</p>
+        <p>First-time hosts often spend 20 minutes debating chip values at the table before anyone plays a hand. Use our <a href="/pre-game-checklist/">pre-game checklist</a> to sort everything out before guests arrive.</p>
       </div>
     </div>
   </div>
@@ -223,52 +224,50 @@ extraScripts:
   </div>
 </section>
 
-<section class="cof-lp-problems" style="background: #fff; border-top: 1px solid #E8E5DD;">
+<section class="cof-lp-problems cof-lp--white">
   <div class="cof-lp-problems-inner">
     <div class="cof-lp-tag">Quick Reference</div>
     <h2 class="cof-lp-h2">Standard Poker Chip Colors and Values</h2>
-    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0 0 1.5rem; max-width: 42rem;">These are 
-the most widely accepted chip values, based on Las Vegas casino conventions. Many home chip sets don't have values 
-printed on them, so use this table as a quick reference when assigning denominations.</p>
-    <div style="overflow-x: auto;">
-      <table style="width: 100%; max-width: 42rem; border-collapse: collapse; font-size: 0.9rem; line-height: 1.5;">
+    <p class="cof-lp-body">These are the most widely accepted chip values, based on Las Vegas casino conventions. Many home chip sets don't have values printed on them, so use this table as a quick reference when assigning denominations.</p>
+    <div class="cof-lp-table-wrap">
+      <table class="cof-lp-table cof-lp-narrow">
         <thead>
-          <tr style="border-bottom: 2px solid #D1C9B8;">
-            <th style="text-align: left; padding: 0.6rem 1rem; font-family: var(--font-heading); font-weight: 600; color: #091A12;">Color</th>
-            <th style="text-align: left; padding: 0.6rem 1rem; font-family: var(--font-heading); font-weight: 600; color: #091A12;">Standard Value</th>
-            <th style="text-align: left; padding: 0.6rem 1rem; font-family: var(--font-heading); font-weight: 600; color: #091A12;">Notes</th>
+          <tr>
+            <th>Color</th>
+            <th>Standard Value</th>
+            <th>Notes</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom: 1px solid #E8E5DD;">
-            <td style="padding: 0.6rem 1rem;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #f3f4f6; border: 1.5px solid #d1d5db; vertical-align: middle; margin-right: 0.4rem;"></span> White</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">$1</td>
-            <td style="padding: 0.6rem 1rem; color: #5F6B63;">Nearly universal across casinos and home games</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #E8E5DD;">
-            <td style="padding: 0.6rem 1rem;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #dc2626; border: 1.5px solid #991b1b; vertical-align: middle; margin-right: 0.4rem;"></span> Red</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">$5</td>
-            <td style="padding: 0.6rem 1rem; color: #5F6B63;">The most recognized poker chip</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #E8E5DD;">
-            <td style="padding: 0.6rem 1rem;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #2563eb; border: 1.5px solid #1d4ed8; vertical-align: middle; margin-right: 0.4rem;"></span> Blue</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">$10</td>
-            <td style="padding: 0.6rem 1rem; color: #5F6B63;">Common in home games, not standard in casinos</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #E8E5DD;">
-            <td style="padding: 0.6rem 1rem;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #16a34a; border: 1.5px solid #15803d; vertical-align: middle; margin-right: 0.4rem;"></span> Green</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">$25</td>
-            <td style="padding: 0.6rem 1rem; color: #5F6B63;">Standard casino denomination</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #E8E5DD;">
-            <td style="padding: 0.6rem 1rem;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #1f2937; border: 1.5px solid #111827; vertical-align: middle; margin-right: 0.4rem;"></span> Black</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">$100</td>
-            <td style="padding: 0.6rem 1rem; color: #5F6B63;">High-value standard</td>
+          <tr>
+            <td><span class="cof-lp-dot cof-lp-dot--white"></span> White</td>
+            <td class="val">$1</td>
+            <td class="muted">Nearly universal across casinos and home games</td>
           </tr>
           <tr>
-            <td style="padding: 0.6rem 1rem;"><span style="display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: #7c3aed; border: 1.5px solid #5b21b6; vertical-align: middle; margin-right: 0.4rem;"></span> Purple</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">$500</td>
-            <td style="padding: 0.6rem 1rem; color: #5F6B63;">Used in higher-stakes games</td>
+            <td><span class="cof-lp-dot cof-lp-dot--red"></span> Red</td>
+            <td class="val">$5</td>
+            <td class="muted">The most recognized poker chip</td>
+          </tr>
+          <tr>
+            <td><span class="cof-lp-dot cof-lp-dot--blue"></span> Blue</td>
+            <td class="val">$10</td>
+            <td class="muted">Common in home games, not standard in casinos</td>
+          </tr>
+          <tr>
+            <td><span class="cof-lp-dot cof-lp-dot--green"></span> Green</td>
+            <td class="val">$25</td>
+            <td class="muted">Standard casino denomination</td>
+          </tr>
+          <tr>
+            <td><span class="cof-lp-dot cof-lp-dot--black"></span> Black</td>
+            <td class="val">$100</td>
+            <td class="muted">High-value standard</td>
+          </tr>
+          <tr>
+            <td><span class="cof-lp-dot cof-lp-dot--purple"></span> Purple</td>
+            <td class="val">$500</td>
+            <td class="muted">Used in higher-stakes games</td>
           </tr>
         </tbody>
       </table>
@@ -276,101 +275,99 @@ printed on them, so use this table as a quick reference when assigning denominat
   </div>
 </section>
 
-<section class="cof-lp-features" style="border-top: 1px solid #E8E5DD;">
+<section class="cof-lp-features">
   <div class="cof-lp-features-inner">
     <div class="cof-lp-tag">Planning</div>
-    <h2 class="cof-lp-h2" style="margin-bottom: 1rem;">How Many Chips Do You Need?</h2>
-    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0 0 1.5rem; max-width: 42rem;">Plan for 
-30 chips per player at minimum. For longer sessions or games with rebuys, 60 to 100 per player is better. Hold back 
-20-30% of your total chips as "the bank" for rebuys and change-making.</p>
-    <div style="overflow-x: auto;">
-      <table style="width: 100%; max-width: 36rem; border-collapse: collapse; font-size: 0.9rem; line-height: 1.5;">
+    <h2 class="cof-lp-h2 cof-lp-h2--tight">How Many Chips Do You Need?</h2>
+    <p class="cof-lp-body">Plan for 30 chips per player at minimum. For longer sessions or games with rebuys, 60 to 100 per player is better. Hold back 20-30% of your total chips as "the bank" for rebuys and change-making.</p>
+    <div class="cof-lp-table-wrap">
+      <table class="cof-lp-table cof-lp-narrow-sm">
         <thead>
-          <tr style="border-bottom: 2px solid #D1C9B8;">
-            <th style="text-align: left; padding: 0.6rem 1rem; font-family: var(--font-heading); font-weight: 600; color: #091A12;">Players</th>
-            <th style="text-align: left; padding: 0.6rem 1rem; font-family: var(--font-heading); font-weight: 600; color: #091A12;">Minimum Set Size</th>
-            <th style="text-align: left; padding: 0.6rem 1rem; font-family: var(--font-heading); font-weight: 600; color: #091A12;">Recommended</th>
+          <tr>
+            <th>Players</th>
+            <th>Minimum Set Size</th>
+            <th>Recommended</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom: 1px solid #E8E5DD;">
-            <td style="padding: 0.6rem 1rem;">2-4</td>
-            <td style="padding: 0.6rem 1rem;">200</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">300</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #E8E5DD;">
-            <td style="padding: 0.6rem 1rem;">4-6</td>
-            <td style="padding: 0.6rem 1rem;">300</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">500</td>
-          </tr>
-          <tr style="border-bottom: 1px solid #E8E5DD;">
-            <td style="padding: 0.6rem 1rem;">6-8</td>
-            <td style="padding: 0.6rem 1rem;">500</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">750</td>
+          <tr>
+            <td>2-4</td>
+            <td>200</td>
+            <td class="val">300</td>
           </tr>
           <tr>
-            <td style="padding: 0.6rem 1rem;">8-10</td>
-            <td style="padding: 0.6rem 1rem;">750</td>
-            <td style="padding: 0.6rem 1rem; font-weight: 600;">1,000</td>
+            <td>4-6</td>
+            <td>300</td>
+            <td class="val">500</td>
+          </tr>
+          <tr>
+            <td>6-8</td>
+            <td>500</td>
+            <td class="val">750</td>
+          </tr>
+          <tr>
+            <td>8-10</td>
+            <td>750</td>
+            <td class="val">1,000</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p style="font-size: 0.88rem; line-height: 1.6; color: #5F6B63; margin: 1rem 0 0; max-width: 42rem;">A 300-chip set is comfortable for 4-6 players. A 500-chip set covers 6-8 players with room for rebuys, and can stretch to 10 in a pinch.</p>
+    <p class="cof-lp-body-sm">A 300-chip set is comfortable for 4-6 players. A 500-chip set covers 6-8 players with room for rebuys, and can stretch to 10 in a pinch.</p>
   </div>
 </section>
 
-<section class="cof-lp-problems" style="background: #fff; border-top: 1px solid #E8E5DD;">
-  <div class="cof-lp-problems-inner" style="max-width: 42rem;">
+<section class="cof-lp-problems cof-lp--white">
+  <div class="cof-lp-problems-inner cof-lp-narrow">
     <div class="cof-lp-tag">Denomination Design</div>
     <h2 class="cof-lp-h2">The 4x/5x Denomination Rule</h2>
-    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0 0 0.75rem;">Each chip denomination should be 4 to 5 times the previous one. The standard casino ladder follows this pattern: $1, $5, $25, $100, $500. Notice how casinos skip $10 and $50 entirely.</p>
-    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0;">Fewer denominations means faster stack counting and less time making change at the table. When values are too close together (like $5 and $10), players constantly break chips down, slowing every pot. The calculator above already follows this rule when suggesting chip values for your setup.</p>
+    <p class="cof-lp-body">Each chip denomination should be 4 to 5 times the previous one. The standard casino ladder follows this pattern: $1, $5, $25, $100, $500. Notice how casinos skip $10 and $50 entirely.</p>
+    <p class="cof-lp-body">Fewer denominations means faster stack counting and less time making change at the table. When values are too close together (like $5 and $10), players constantly break chips down, slowing every pot. The calculator above already follows this rule when suggesting chip values for your setup.</p>
   </div>
 </section>
 
-<section class="cof-lp-features" style="border-top: 1px solid #E8E5DD;">
-  <div class="cof-lp-features-inner" style="max-width: 42rem;">
+<section class="cof-lp-features">
+  <div class="cof-lp-features-inner cof-lp-narrow">
     <div class="cof-lp-tag">Format Comparison</div>
     <h2 class="cof-lp-h2">Tournament vs. Cash Game Chip Setup</h2>
-    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0 0 0.75rem;">In a cash game, every chip represents real money. Players can rebuy at any time and cash out whenever they want. In a tournament, chips have no cash value. Everyone starts with the same stack, blinds increase on a timer, and you play until one person has all the chips.</p>
-    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0;">This calculator is built for cash games. For tournaments, the starting stack is usually 50-100x the opening big blind (for example, T10,000 with 50/100 blinds). Use 3-4 chip colors and plan to "color up" (swap smaller chips for larger ones) as blinds increase throughout the night.</p>
+    <p class="cof-lp-body">In a cash game, every chip represents real money. Players can rebuy at any time and cash out whenever they want. In a tournament, chips have no cash value. Everyone starts with the same stack, blinds increase on a timer, and you play until one person has all the chips.</p>
+    <p class="cof-lp-body">This calculator is built for cash games. For tournaments, the starting stack is usually 50-100x the opening big blind (for example, T10,000 with 50/100 blinds). Use 3-4 chip colors and plan to "color up" (swap smaller chips for larger ones) as blinds increase throughout the night.</p>
   </div>
 </section>
 
-<section class="cof-lp-problems" style="background: #fff; border-top: 1px solid #E8E5DD;">
-  <div class="cof-lp-problems-inner" style="max-width: 42rem;">
+<section class="cof-lp-problems cof-lp--white">
+  <div class="cof-lp-problems-inner cof-lp-narrow">
     <div class="cof-lp-tag">FAQ</div>
     <h2 class="cof-lp-h2">Frequently Asked Questions</h2>
 
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="font-size: 1rem; font-weight: 600; color: #091A12; margin: 0 0 0.4rem;">How many poker chips do I need per person?</h3>
-      <p style="font-size: 0.93rem; line-height: 1.6; color: #5F6B63; margin: 0;">Plan for 50 chips per player at minimum. For longer sessions or games with rebuys, 75-100 per player is better. A 300-chip set covers 4-6 players comfortably; a 500-chip set handles 6-8 players with room for rebuys.</p>
+    <div class="cof-lp-faq-item">
+      <h3>How many poker chips do I need per person?</h3>
+      <p>Plan for 50 chips per player at minimum. For longer sessions or games with rebuys, 75-100 per player is better. A 300-chip set covers 4-6 players comfortably; a 500-chip set handles 6-8 players with room for rebuys.<br>Or, if you don't want to deal with physical chips at all (we know, it's half the fun), Chips of Fury has a <a href="/virtual-poker-chips/">virtual chips mode</a> that handles everything on-screen. We didn't think anyone would use it either, but over 100,000 games were played with virtual chips last year.</p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="font-size: 1rem; font-weight: 600; color: #091A12; margin: 0 0 0.4rem;">What are the standard poker chip colors and values?</h3>
-      <p style="font-size: 0.93rem; line-height: 1.6; color: #5F6B63; margin: 0;">The widely accepted standard based on casino conventions is: White = $1, Red = $5, Green = $25, Black = $100, Purple = $500. Blue ($10) is common in home games but not part of the standard casino progression.</p>
+    <div class="cof-lp-faq-item">
+      <h3>What are the standard poker chip colors and values?</h3>
+      <p>The widely accepted standard based on casino conventions is: White = $1, Red = $5, Green = $25, Black = $100, Purple = $500. Blue ($10) is common in home games but not part of the standard casino progression.</p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="font-size: 1rem; font-weight: 600; color: #091A12; margin: 0 0 0.4rem;">What is the difference between cash game and tournament chip setups?</h3>
-      <p style="font-size: 0.93rem; line-height: 1.6; color: #5F6B63; margin: 0;">In a cash game, each chip represents real money and players can rebuy anytime. In a tournament, chips have no cash value. Everyone starts with the same stack, blinds increase on a schedule, and you play until you're eliminated. The same physical chip set works for both formats.</p>
+    <div class="cof-lp-faq-item">
+      <h3>What is the difference between cash game and tournament chip setups?</h3>
+      <p>In a cash game, each chip represents real money and players can rebuy anytime. In a tournament, chips have no cash value. Everyone starts with the same stack, blinds increase on a schedule, and you play until you're eliminated. The same physical chip set works for both formats. Read more about <a href="/learn/how-to-handle-poker-buy-ins-with-friends/">handling buy-ins with friends</a>.</p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="font-size: 1rem; font-weight: 600; color: #091A12; margin: 0 0 0.4rem;">How do I set up chips for a $20 buy-in home game?</h3>
-      <p style="font-size: 0.93rem; line-height: 1.6; color: #5F6B63; margin: 0;">With $0.10/$0.20 blinds (100 big blinds deep), a good setup is 3-4 chip colors with values following the standard progression. The calculator above handles this automatically. Enter your buy-in, player count, and chip set, and it gives you the exact per-player breakdown.</p>
+    <div class="cof-lp-faq-item">
+      <h3>How do I set up chips for a $20 buy-in home game?</h3>
+      <p>With $0.10/$0.20 blinds (100 big blinds deep), a good setup is 3-4 chip colors with values following the standard progression. The calculator above handles this automatically. Enter your buy-in, player count, and chip set, and it gives you the exact per-player breakdown. New to the game? Start with our <a href="/learn/texas-holdem-rules-beginner-guide/">Texas Hold'em rules guide</a>.</p>
     </div>
 
-    <div style="margin-bottom: 1.5rem;">
-      <h3 style="font-size: 1rem; font-weight: 600; color: #091A12; margin: 0 0 0.4rem;">Why should chip denominations jump by 4x or 5x?</h3>
-      <p style="font-size: 0.93rem; line-height: 1.6; color: #5F6B63; margin: 0;">Denominations that multiply by 4 or 5 (like $1, $5, $25, $100) keep the game moving. Close values like $5 and $10 create constant change-making problems. This is why casinos skip $10 and $50 chips entirely.</p>
+    <div class="cof-lp-faq-item">
+      <h3>Why should chip denominations jump by 4x or 5x?</h3>
+      <p>Denominations that multiply by 4 or 5 (like $1, $5, $25, $100) keep the game moving. Close values like $5 and $10 create constant change-making problems. This is why casinos skip $10 and $50 chips entirely.</p>
     </div>
 
-    <div>
-      <h3 style="font-size: 1rem; font-weight: 600; color: #091A12; margin: 0 0 0.4rem;">Do I need a 300-chip set or a 500-chip set?</h3>
-      <p style="font-size: 0.93rem; line-height: 1.6; color: #5F6B63; margin: 0;">A 300-chip set works for up to 6 players in a standard cash game. If you regularly host 7-10 players, or want room for rebuys without running out of chips, go with 500.</p>
+    <div class="cof-lp-faq-item">
+      <h3>Do I need a 300-chip set or a 500-chip set?</h3>
+      <p>A 300-chip set works for up to 6 players in a standard cash game. If you regularly host 7-10 players, or want room for rebuys without running out of chips, go with 500.</p>
     </div>
   </div>
 </section>
@@ -408,7 +405,7 @@ printed on them, so use this table as a quick reference when assigning denominat
       "name": "How many poker chips do I need per person?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Plan for 50 chips per player at minimum. For longer sessions or games with rebuys, 75-100 per player is better. A 300-chip set covers 4-6 players comfortably; a 500-chip set handles 6-8 players with room for rebuys."
+        "text": "Plan for 50 chips per player at minimum. For longer sessions or games with rebuys, 75-100 per player is better. A 300-chip set covers 4-6 players comfortably; a 500-chip set handles 6-8 players with room for rebuys. If you'd rather skip physical chips entirely, Chips of Fury has a virtual chips mode — over 100,000 games were played with it last year."
       }
     },
     {
@@ -455,11 +452,11 @@ printed on them, so use this table as a quick reference when assigning denominat
 }
 </script>
 
-<section class="cof-lp-problems" style="background: #fff; border-top: 1px solid #E8E5DD;">
-  <div class="cof-lp-problems-inner" style="max-width: 36rem; text-align: center;">
+<section class="cof-lp-problems cof-lp--white">
+  <div class="cof-lp-problems-inner cof-lp-narrow-sm cof-lp-center">
     <div class="cof-lp-tag">Feedback</div>
     <h2 class="cof-lp-h2">Have a suggestion or found a bug?</h2>
-    <p style="font-size: 0.95rem; line-height: 1.6; color: #5F6B63; margin: 0 0 1.5rem;">This tool is actively maintained. If something doesn't work for your setup, or you have an idea that would make it more useful, we'd love to hear from you.</p>
-    <a href="/contact/" style="display: inline-flex; align-items: center; gap: 0.45rem; background: #BFA24E; color: #091A12; font-family: var(--font-heading); font-weight: 700; padding: 0.85rem 1.7rem; border-radius: 10px; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.01em; transition: background 0.2s, transform 0.12s;" onmouseover="this.style.background='#CEAF5C';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#BFA24E';this.style.transform='none'">Send Feedback</a>
+    <p class="cof-lp-body">This tool is actively maintained. If something doesn't work for your setup, or you have an idea that would make it more useful, we'd love to hear from you.</p>
+    <a href="/contact/" class="cof-lp-cta">Send Feedback</a>
   </div>
 </section>
