@@ -10,48 +10,52 @@
   </div>
 </div>
 
-<!-- Glossary data for poker terms -->
-<script id="glossaryData" type="application/json">
-{{ glossary | dump | safe }}
-</script>
-
 <script>
 (function() {
   let currentTermElement = null;
-  let glossaryData = {};
+  let glossaryData = null;
+  let fetchPromise = null;
 
-  // Load glossary data
-  try {
-    const dataEl = document.getElementById('glossaryData');
-    if (dataEl) {
-      glossaryData = JSON.parse(dataEl.textContent);
+  function loadGlossary() {
+    if (glossaryData) return Promise.resolve(glossaryData);
+    if (!fetchPromise) {
+      fetchPromise = fetch('/data/glossary.json')
+        .then(function(res) { return res.json(); })
+        .then(function(data) { glossaryData = data; return data; })
+        .catch(function(e) {
+          console.warn('Failed to load glossary data:', e);
+          fetchPromise = null;
+        });
     }
-  } catch (e) {
-    console.warn('Failed to load glossary data:', e);
+    return fetchPromise;
   }
 
   window.openPokerTermModal = function(element) {
-    const slug = element.dataset.term;
-    const entry = glossaryData[slug];
+    var slug = element.dataset.term;
 
-    if (!entry) {
-      console.warn('Glossary entry not found:', slug);
-      return;
-    }
+    loadGlossary().then(function(data) {
+      if (!data) return;
+      var entry = data[slug];
 
-    document.getElementById('pokerTermTitle').textContent = entry.term;
-    document.getElementById('pokerTermDefinition').innerHTML = entry.content;
+      if (!entry) {
+        console.warn('Glossary entry not found:', slug);
+        return;
+      }
 
-    document.getElementById('pokerTermBackdrop').classList.add('active');
-    document.getElementById('pokerTermModal').classList.add('active');
+      document.getElementById('pokerTermTitle').textContent = entry.term;
+      document.getElementById('pokerTermDefinition').innerHTML = entry.content;
 
-    currentTermElement = element;
+      document.getElementById('pokerTermBackdrop').classList.add('active');
+      document.getElementById('pokerTermModal').classList.add('active');
 
-    // Trap focus in modal
-    document.getElementById('pokerTermModal').querySelector('.poker-term-modal__close').focus();
+      currentTermElement = element;
 
-    // Prevent body scroll on mobile
-    document.body.style.overflow = 'hidden';
+      // Trap focus in modal
+      document.getElementById('pokerTermModal').querySelector('.poker-term-modal__close').focus();
+
+      // Prevent body scroll on mobile
+      document.body.style.overflow = 'hidden';
+    });
   };
 
   window.closePokerTermModal = function() {
@@ -65,8 +69,9 @@
     if (currentTermElement) {
       currentTermElement.classList.add('poker-term--just-viewed');
       currentTermElement.focus();
+      var el = currentTermElement;
       setTimeout(() => {
-        currentTermElement.classList.remove('poker-term--just-viewed');
+        el.classList.remove('poker-term--just-viewed');
       }, 600);
       currentTermElement = null;
     }
