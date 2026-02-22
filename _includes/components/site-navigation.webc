@@ -43,7 +43,7 @@
           <div class="dropdown-menu absolute left-0 sm:left-auto sm:right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-left sm:origin-top-right scale-95 hidden">
             <div class="bg-white rounded-xl shadow-2xl border border-purple-100 overflow-hidden">
               <a href="/chip-distribution-calculator/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
-                <div class="font-semibold text-gray-900">Chip Calculator</div>
+                <div class="font-semibold text-gray-900">Chip Distribution Calculator</div>
                 <div class="text-sm text-gray-600">Plan your chip distribution</div>
               </a>
               <a href="/pre-game-checklist/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">

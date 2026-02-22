@@ -72,6 +72,7 @@
     </style>
     
     <!-- Structured Data for Mobile Application -->
+    {% if not hideAppSchema %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -84,7 +85,7 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.5",
-        "ratingCount": "500",
+        "ratingCount": "2000",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -109,6 +110,7 @@
       ]
     }
     </script>
+    {% endif %}
     
     <!-- Organization Schema -->
     <script type="application/ld+json">
