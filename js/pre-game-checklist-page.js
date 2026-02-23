@@ -36,7 +36,7 @@
     settle_policy: 'sp', rules_off: 'ro', rules_on: 'rn',
     custom_rules: 'cr', date: 'dt', start_time: 'st',
     last_buyin_time: 'lt', hard_stop: 'hs', break_schedule: 'bs',
-    location_name: 'ln', location_address: 'la', notes: 'nt',
+    location_name: 'ln', location_address: 'la', announcement: 'an', notes: 'nt',
     payout: 'py', payout_custom: 'pc', starting_stack_bb: 'sk',
     auto_buyin: 'ab', topup_limited: 'tc', topup_limit: 'tl',
     bounty_enabled: 'be'
@@ -94,6 +94,7 @@
       break_schedule: 'every_90',
       location_name: '',
       location_address: '',
+      announcement: '',
       notes: ''
     };
   }
@@ -118,7 +119,7 @@
   // ═══ Sanitize ═══
   function sanitizePlain(str) {
     if (typeof str !== 'string') return '';
-    return str.replace(/[<>"']/g, '').substring(0, 300);
+    return str.replace(/[<>]/g, '').substring(0, 300);
   }
 
   // ═══ Currency Formatting ═══
@@ -365,6 +366,7 @@
     updateConditionalFields();
     updatePreview();
     updateSummaries();
+    renderInviteTemplateExamples();
   }
 
   function setupDate() {
@@ -586,7 +588,7 @@
       'cof-addon-amount', 'cof-addon-chips',
       'cof-banker', 'cof-payment-other',
       'cof-date', 'cof-start-time', 'cof-last-buyin-time', 'cof-hard-stop',
-      'cof-location-name', 'cof-location-addr', 'cof-notes',
+      'cof-location-name', 'cof-location-addr', 'cof-announcement', 'cof-notes',
       'cof-payout-custom'
     ];
 
@@ -604,10 +606,19 @@
       if (el) el.addEventListener('change', onInput);
     });
 
-    // Notes counter
-    $('cof-notes').addEventListener('input', function() {
-      $('cof-notes-count').textContent = this.value.length;
-    });
+    // Textarea counters
+    var announcementEl = $('cof-announcement');
+    if (announcementEl) {
+      announcementEl.addEventListener('input', function() {
+        $('cof-announcement-count').textContent = this.value.length;
+      });
+    }
+    var notesEl = $('cof-notes');
+    if (notesEl) {
+      notesEl.addEventListener('input', function() {
+        $('cof-notes-count').textContent = this.value.length;
+      });
+    }
   }
 
   function readFormState() {
@@ -643,6 +654,7 @@
     state.break_schedule = $('cof-breaks').value;
     state.location_name = sanitizePlain($('cof-location-name').value.trim());
     state.location_address = sanitizePlain($('cof-location-addr').value.trim());
+    state.announcement = sanitizePlain($('cof-announcement').value.trim());
     state.notes = sanitizePlain($('cof-notes').value.trim());
   }
 
@@ -762,32 +774,58 @@
   }
 
   // ═══ Generate Output Text ═══
-  function generateOutput() {
+  function buildInviteOutput(inviteState, activeRules, activeCustom) {
     var lines = [];
-    var fmt = state.format;
+    var fmt = inviteState.format;
 
-    // Header line
-    var dateStr = fmtDate(state.date);
-    if (dateStr) {
-      lines.push('POKER NIGHT \u2014 ' + dateStr);
-    } else {
-      lines.push('POKER NIGHT');
+    // Header line (keep address out of title, but include @ location name)
+    var headerLine = 'POKER NIGHT';
+    var dateStr = fmtDate(inviteState.date);
+    if (dateStr) headerLine += ' \u2014 ' + dateStr;
+    if (inviteState.location_name) headerLine += ' @ ' + inviteState.location_name;
+    lines.push('🎲 *' + headerLine + '*');
+    if (inviteState.announcement) {
+      lines.push('✨ ' + inviteState.announcement);
     }
     lines.push('');
 
-    // Format + stakes line
+    // Logistics (timing / location / notes) — keep this near the top
+    var timeParts = [];
+    if (inviteState.start_time) timeParts.push('Start: ' + fmtTime(inviteState.start_time));
+    if (inviteState.last_buyin_time) timeParts.push('Last buy-in: ' + fmtTime(inviteState.last_buyin_time));
+    if (inviteState.hard_stop) timeParts.push('Hard stop: ' + fmtTime(inviteState.hard_stop));
+    if (timeParts.length) lines.push('🕒 ' + timeParts.join(' | '));
+
+    var breakLabel = BREAK_LABELS[inviteState.break_schedule];
+    if (breakLabel) lines.push('☕ ' + breakLabel);
+
+    if (inviteState.location_address) {
+      if (inviteState.location_name) {
+        lines.push('\uD83D\uDCCD ' + inviteState.location_name);
+        lines.push(inviteState.location_address);
+      } else {
+        lines.push('\uD83D\uDCCD ' + inviteState.location_address);
+      }
+    }
+
+    if (inviteState.notes) {
+      lines.push(inviteState.notes);
+    }
+    lines.push('');
+
+    // Format + stakes line (kept near rebuys for game-structure cohesion)
     if (fmt === 'cash') {
-      lines.push('Cash Game | ' + fmtCurrency(state.sb) + '/' + fmtCurrency(state.bb) + ' blinds');
-      lines.push('Buy-in: ' + fmtCurrency(state.buyin_min) + '\u2013' + fmtCurrency(state.buyin_max));
+      lines.push('Cash Game | ' + fmtCurrency(inviteState.sb) + '/' + fmtCurrency(inviteState.bb) + ' blinds');
+      lines.push('Buy-in: ' + fmtCurrency(inviteState.buyin_min) + '\u2013' + fmtCurrency(inviteState.buyin_max));
     } else if (fmt === 'tournament') {
-      if (state.bounty_enabled) {
-        lines.push('Bounty Tournament | ' + fmtCurrency(state.tournament_buyin) + ' buy-in (' + fmtCurrency(state.bounty_amount) + ' bounty) | ' + state.starting_chips.toLocaleString('en-US') + ' chips');
-        var prizePool = state.tournament_buyin - state.bounty_amount;
-        var payoutStr = state.payout === 'custom' ? (state.payout_custom || 'Custom') : (state.payout === 'wta' ? 'Winner take all' : state.payout);
+      if (inviteState.bounty_enabled) {
+        lines.push('Bounty Tournament | ' + fmtCurrency(inviteState.tournament_buyin) + ' buy-in (' + fmtCurrency(inviteState.bounty_amount) + ' bounty) | ' + inviteState.starting_chips.toLocaleString('en-US') + ' chips');
+        var prizePool = inviteState.tournament_buyin - inviteState.bounty_amount;
+        var payoutStr = inviteState.payout === 'custom' ? (inviteState.payout_custom || 'Custom') : (inviteState.payout === 'wta' ? 'Winner take all' : inviteState.payout);
         lines.push('Payout: ' + payoutStr + ' (from ' + fmtCurrency(prizePool) + '/player prize pool)');
       } else {
-        lines.push('Tournament | ' + fmtCurrency(state.tournament_buyin) + ' buy-in | ' + state.starting_chips.toLocaleString('en-US') + ' chips');
-        var payoutStr = state.payout === 'custom' ? (state.payout_custom || 'Custom') : (state.payout === 'wta' ? 'Winner take all' : state.payout);
+        lines.push('Tournament | ' + fmtCurrency(inviteState.tournament_buyin) + ' buy-in | ' + inviteState.starting_chips.toLocaleString('en-US') + ' chips');
+        var payoutStr = inviteState.payout === 'custom' ? (inviteState.payout_custom || 'Custom') : (inviteState.payout === 'wta' ? 'Winner take all' : inviteState.payout);
         lines.push('Payout: ' + payoutStr);
       }
     }
@@ -795,47 +833,46 @@
 
     // Rebuys / Top-ups
     if (fmt === 'cash') {
-      if (!state.topup_limited) {
-        lines.push('Unlimited top-ups (buy-in limits apply)');
-      } else if (state.topup_limit === 0) {
-        lines.push('No top-ups allowed');
+      if (!inviteState.topup_limited) {
+        lines.push('🔁 Unlimited top-ups (buy-in limits apply)');
+      } else if (inviteState.topup_limit === 0) {
+        lines.push('🔁 No top-ups allowed');
       } else {
-        lines.push('Top-ups: ' + state.topup_limit + ' max (buy-in limits apply)');
+        lines.push('🔁 Top-ups: ' + inviteState.topup_limit + ' max (buy-in limits apply)');
       }
     } else {
-      if (!state.rebuys_allowed) {
-        lines.push('No rebuys');
+      if (!inviteState.rebuys_allowed) {
+        lines.push('🔁 No rebuys');
       } else {
-        var rebuyAmt = state.rebuys_amount === 'same' ? 'same as buy-in' : fmtCurrency(state.rebuys_custom);
-        lines.push('Rebuys: ' + state.rebuys_max + ' max, first ' + state.rebuys_window + ' min, ' + rebuyAmt);
+        var rebuyAmt = inviteState.rebuys_amount === 'same' ? 'same as buy-in' : fmtCurrency(inviteState.rebuys_custom);
+        lines.push('🔁 Rebuys: ' + inviteState.rebuys_max + ' max, first ' + inviteState.rebuys_window + ' min, ' + rebuyAmt);
       }
     }
 
     // Add-on (tournament only)
-    if (fmt === 'tournament' && state.addon_allowed) {
-      lines.push('Add-on: ' + fmtCurrency(state.addon_amount) + ' for ' + state.addon_chips.toLocaleString('en-US') + ' chips at first break');
+    if (fmt === 'tournament' && inviteState.addon_allowed) {
+      lines.push('➕ Add-on: ' + fmtCurrency(inviteState.addon_amount) + ' for ' + inviteState.addon_chips.toLocaleString('en-US') + ' chips at first break');
     }
     lines.push('');
 
     // Money
-    if (state.banker) {
-      lines.push('Banker: ' + state.banker);
+    if (inviteState.banker) {
+      lines.push('👤 Banker: ' + inviteState.banker);
     }
-    if (state.payment_method.length > 0) {
-      var methods = state.payment_method.map(function(m) {
-        if (m === 'other' && state.payment_other) return state.payment_other;
+    if (inviteState.payment_method.length > 0) {
+      var methods = inviteState.payment_method.map(function(m) {
+        if (m === 'other' && inviteState.payment_other) return inviteState.payment_other;
         return PAYMENT_LABELS[m] || m;
       }).filter(Boolean);
-      if (methods.length) lines.push('Payment: ' + methods.join(', '));
+      if (methods.length) lines.push('💸 Payment: ' + methods.join(', '));
     }
-    lines.push(SETTLE_LABELS[state.settle_policy] || '');
+    var settleLabel = SETTLE_LABELS[inviteState.settle_policy] || '';
+    lines.push(settleLabel ? ('🧾 ' + settleLabel) : '');
     lines.push('');
 
     // House Rules
-    var activeRules = getActiveRules();
-    var activeCustom = customRules.filter(function(r) { return r.trim(); });
     if (activeRules.length > 0 || activeCustom.length > 0) {
-      lines.push('House Rules:');
+      lines.push('📋 House Rules:');
       activeRules.forEach(function(r) {
         lines.push('\u2022 ' + r.label);
       });
@@ -843,33 +880,6 @@
         lines.push('\u2022 ' + r);
       });
       lines.push('');
-    }
-
-    // Timing
-    var timeParts = [];
-    if (state.start_time) timeParts.push('Start: ' + fmtTime(state.start_time));
-    if (state.last_buyin_time) timeParts.push('Last buy-in: ' + fmtTime(state.last_buyin_time));
-    if (state.hard_stop) timeParts.push('Hard stop: ' + fmtTime(state.hard_stop));
-    if (timeParts.length) lines.push(timeParts.join(' | '));
-
-    // Breaks
-    var breakLabel = BREAK_LABELS[state.break_schedule];
-    if (breakLabel) lines.push(breakLabel);
-
-    // Location
-    if (state.location_name || state.location_address) {
-      var loc = '\uD83D\uDCCD ';
-      if (state.location_name && state.location_address) {
-        loc += state.location_name + ' \u2014 ' + state.location_address;
-      } else {
-        loc += state.location_name || state.location_address;
-      }
-      lines.push(loc);
-    }
-
-    // Notes
-    if (state.notes) {
-      lines.push(state.notes);
     }
 
     // Clean up: remove consecutive empty lines
@@ -889,6 +899,149 @@
     while (result.length && result[result.length - 1] === '') result.pop();
 
     return result.join('\n');
+  }
+
+  function generateOutput() {
+    return buildInviteOutput(state, getActiveRules(), customRules.filter(function(r) { return r.trim(); }));
+  }
+
+  function decodeShareData(hashOrToken) {
+    if (!hashOrToken || typeof hashOrToken !== 'string') return null;
+    var token = hashOrToken.trim();
+    if (!token) return null;
+    if (token.indexOf('#d=') === 0) token = token.substring(3);
+    try {
+      var json = decodeURIComponent(escape(atob(token)));
+      var data = JSON.parse(json);
+      if (typeof data !== 'object' || data === null) return null;
+      return data;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function decodePreviewConfigFromHash(hashOrToken) {
+    var data = decodeShareData(hashOrToken);
+    if (!data) return null;
+
+    var previewState = getDefaults();
+    var ruleStates = {};
+    PRESET_RULES.forEach(function(rule) {
+      ruleStates[rule.id] = !!rule.defaultOn;
+    });
+
+    // Format
+    if (data[KEY_MAP.format]) {
+      var fmtCode = data[KEY_MAP.format];
+      var fmt = FORMAT_MAP[fmtCode];
+      if (fmtCode === 'b') {
+        fmt = 'tournament';
+        previewState.bounty_enabled = true;
+      }
+      if (fmt) previewState.format = fmt;
+    }
+
+    // Numeric fields
+    [
+      'sb','bb','buyin_min','buyin_max','tournament_buyin','bounty_amount','starting_chips',
+      'topup_limit','rebuys_max','rebuys_window','addon_amount','addon_chips'
+    ].forEach(function(field) {
+      var key = KEY_MAP[field];
+      if (data[key] === undefined) return;
+      var val = parseFloat(data[key]);
+      if (!isNaN(val) && val >= 0 && val < 1000000) previewState[field] = val;
+    });
+
+    // Text fields
+    ['banker','payment_other','location_name','location_address','announcement','notes','payout_custom'].forEach(function(field) {
+      var key = KEY_MAP[field];
+      if (data[key] === undefined) return;
+      previewState[field] = sanitizePlain(String(data[key]));
+    });
+
+    // Plain values
+    if (data[KEY_MAP.date]) previewState.date = sanitizePlain(String(data[KEY_MAP.date]));
+    if (data[KEY_MAP.start_time]) previewState.start_time = sanitizePlain(String(data[KEY_MAP.start_time]));
+    if (data[KEY_MAP.last_buyin_time]) previewState.last_buyin_time = sanitizePlain(String(data[KEY_MAP.last_buyin_time]));
+    if (data[KEY_MAP.hard_stop]) previewState.hard_stop = sanitizePlain(String(data[KEY_MAP.hard_stop]));
+
+    // Select / enum-like fields
+    if (data[KEY_MAP.payout] !== undefined) previewState.payout = sanitizePlain(String(data[KEY_MAP.payout]));
+    if (data[KEY_MAP.rebuys_amount] !== undefined) {
+      var ra = data[KEY_MAP.rebuys_amount];
+      if (ra === 's') {
+        previewState.rebuys_amount = 'same';
+      } else {
+        previewState.rebuys_amount = 'custom';
+        previewState.rebuys_custom = sanitizePlain(String(ra));
+      }
+    }
+    if (data[KEY_MAP.rebuys_condition] !== undefined) {
+      var rc = CONDITION_MAP[data[KEY_MAP.rebuys_condition]];
+      if (rc) previewState.rebuys_condition = rc;
+    }
+    if (data[KEY_MAP.settle_policy] !== undefined) {
+      var sp = SETTLE_MAP[data[KEY_MAP.settle_policy]];
+      if (sp) previewState.settle_policy = sp;
+    }
+    if (data[KEY_MAP.break_schedule] !== undefined) {
+      var bs = BREAK_MAP[data[KEY_MAP.break_schedule]];
+      if (bs) previewState.break_schedule = bs;
+    }
+
+    // Booleans
+    if (data[KEY_MAP.rebuys_allowed] !== undefined) previewState.rebuys_allowed = data[KEY_MAP.rebuys_allowed] === 1;
+    if (data[KEY_MAP.addon_allowed] !== undefined) previewState.addon_allowed = data[KEY_MAP.addon_allowed] === 1;
+    if (data[KEY_MAP.bounty_enabled] !== undefined) previewState.bounty_enabled = data[KEY_MAP.bounty_enabled] === 1;
+    if (data[KEY_MAP.topup_limited] !== undefined) previewState.topup_limited = data[KEY_MAP.topup_limited] === 1;
+    if (data[KEY_MAP.auto_buyin] !== undefined) previewState.auto_buyin = data[KEY_MAP.auto_buyin] !== 0;
+
+    // Payment methods
+    if (data[KEY_MAP.payment_method]) {
+      var pmCodes = String(data[KEY_MAP.payment_method]).split(',');
+      previewState.payment_method = pmCodes.map(function(c) { return PAYMENT_MAP[c]; }).filter(Boolean);
+      if (!previewState.payment_method.length) previewState.payment_method = getDefaults().payment_method.slice();
+    }
+
+    // Rules toggles
+    if (data[KEY_MAP.rules_off]) {
+      String(data[KEY_MAP.rules_off]).split(',').forEach(function(id) {
+        id = sanitizePlain(id);
+        if (id && ruleStates.hasOwnProperty(id)) ruleStates[id] = false;
+      });
+    }
+    if (data[KEY_MAP.rules_on]) {
+      String(data[KEY_MAP.rules_on]).split(',').forEach(function(id) {
+        id = sanitizePlain(id);
+        if (id && ruleStates.hasOwnProperty(id)) ruleStates[id] = true;
+      });
+    }
+
+    // Custom rules
+    var decodedCustomRules = [];
+    if (data[KEY_MAP.custom_rules]) {
+      decodedCustomRules = String(data[KEY_MAP.custom_rules]).split('|').map(sanitizePlain).filter(function(r) { return !!r.trim(); }).slice(0, 10);
+    }
+
+    var decodedRules = PRESET_RULES.filter(function(rule) {
+      if (!ruleStates[rule.id]) return false;
+      return rule.formats === 'all' || rule.formats === previewState.format;
+    });
+
+    return {
+      state: previewState,
+      rules: decodedRules,
+      customRules: decodedCustomRules
+    };
+  }
+
+  function renderInviteTemplateExamples() {
+    $$('[data-cof-example-hash]').forEach(function(pre) {
+      var hash = pre.getAttribute('data-cof-example-hash');
+      var config = decodePreviewConfigFromHash(hash);
+      if (!config) return;
+      pre.textContent = buildInviteOutput(config.state, config.rules, config.customRules);
+    });
   }
 
   function getActiveRules() {
@@ -929,7 +1082,6 @@
       }
     }
     $('sum-stakes').textContent = stakesSummary;
-    setCheck('chk-stakes', true);
 
     // Rebuys / Top-ups
     var rebuysSummary;
@@ -939,7 +1091,6 @@
       rebuysSummary = state.rebuys_allowed ? (state.rebuys_max + ' max, ' + state.rebuys_window + ' min') : 'No rebuys';
     }
     $('sum-rebuys').textContent = rebuysSummary;
-    setCheck('chk-rebuys', true);
 
     // Money
     var moneySummary = '';
@@ -951,24 +1102,16 @@
     }
     moneySummary = parts.join(' | ');
     $('sum-money').textContent = moneySummary;
-    setCheck('chk-money', state.payment_method.length > 0);
 
     // Rules
     var activeCount = getActiveRules().length + customRules.filter(function(r) { return r.trim(); }).length;
     $('sum-rules').textContent = activeCount + ' rules active';
-    setCheck('chk-rules', activeCount > 0);
 
     // Logistics
     var logParts = [];
     if (state.start_time) logParts.push(fmtTime(state.start_time));
     if (state.location_name) logParts.push(state.location_name);
     $('sum-logistics').textContent = logParts.join(' | ');
-    setCheck('chk-logistics', state.start_time || state.location_name);
-  }
-
-  function setCheck(id, visible) {
-    var el = $(id);
-    if (el) el.classList.toggle('is-visible', !!visible);
   }
 
   // ═══ Copy to Clipboard ═══
@@ -1022,6 +1165,13 @@
 
   // ═══ Output Buttons ═══
   function setupOutputButtons() {
+    // Top save button
+    $('cof-share-top').addEventListener('click', function() {
+      var url = generateShareURL();
+      copyToClipboard(url, this, 'Saved!', 'Unique Link copied to clipboard — save it to load these settings again');
+      checkURLLength(url);
+    });
+
     // Desktop copy
     $('cof-copy-desktop').addEventListener('click', function() {
       copyToClipboard(generateOutput(), this, 'Copied!');
@@ -1034,27 +1184,6 @@
       checkURLLength(url);
     });
 
-    // Mobile copy (in bottom sheet)
-    $('cof-copy-mobile').addEventListener('click', function() {
-      copyToClipboard(generateOutput(), this, 'Copied!');
-    });
-
-    // Mobile share (bottom bar)
-    $('cof-share-mobile').addEventListener('click', function() {
-      var url = generateShareURL();
-      copyToClipboard(url, this, 'Saved!', 'Unique Link copied to clipboard — save it to load these settings again');
-      checkURLLength(url);
-    });
-
-    // Mobile preview toggle
-    $('cof-bar-preview').addEventListener('click', function() {
-      openSheet();
-    });
-
-    // Sheet backdrop close
-    $('cof-sheet-backdrop').addEventListener('click', function() {
-      closeSheet();
-    });
   }
 
   function setupClearButtons() {
@@ -1068,27 +1197,6 @@
         updatePreview();
       });
     }
-  }
-
-  function openSheet() {
-    updatePreview();
-    $('cof-sheet-backdrop').style.display = 'block';
-    $('cof-sheet').style.display = 'block';
-    requestAnimationFrame(function() {
-      $('cof-sheet-backdrop').classList.add('is-open');
-      $('cof-sheet').classList.add('is-open');
-    });
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeSheet() {
-    $('cof-sheet-backdrop').classList.remove('is-open');
-    $('cof-sheet').classList.remove('is-open');
-    setTimeout(function() {
-      $('cof-sheet-backdrop').style.display = '';
-      $('cof-sheet').style.display = '';
-      document.body.style.overflow = '';
-    }, 300);
   }
 
   // ═══ Share URL Encoding ═══
@@ -1163,6 +1271,7 @@
     if (state.break_schedule !== defaults.break_schedule) data[KEY_MAP.break_schedule] = BREAK_MAP_REV[state.break_schedule];
     if (state.location_name) data[KEY_MAP.location_name] = state.location_name;
     if (state.location_address) data[KEY_MAP.location_address] = state.location_address;
+    if (state.announcement) data[KEY_MAP.announcement] = state.announcement;
     if (state.notes) data[KEY_MAP.notes] = state.notes;
 
     var json = JSON.stringify(data);
@@ -1237,7 +1346,7 @@
       var textFields = {
         banker: 'cof-banker', payment_other: 'cof-payment-other',
         location_name: 'cof-location-name', location_address: 'cof-location-addr',
-        notes: 'cof-notes', payout_custom: 'cof-payout-custom'
+        announcement: 'cof-announcement', notes: 'cof-notes', payout_custom: 'cof-payout-custom'
       };
       for (var tf in textFields) {
         var tkey = KEY_MAP[tf];
@@ -1378,7 +1487,8 @@
       // Show shared banner
       $('cof-shared-banner').classList.remove('cof-cl-hidden');
 
-      // Notes count
+      // Textarea counts
+      $('cof-announcement-count').textContent = state.announcement.length;
       $('cof-notes-count').textContent = state.notes.length;
 
     } catch(e) {

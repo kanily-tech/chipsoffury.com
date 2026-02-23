@@ -35,6 +35,10 @@ extraScripts:
   <button onclick="document.getElementById('cof-shared-banner').classList.add('cof-cl-hidden')" aria-label="Dismiss">&times;</button>
 </div>
 
+<div class="cof-cl-top-actions">
+  <button type="button" class="cof-cl-save-top-btn" id="cof-share-top">Save Configuration</button>
+</div>
+
 <!-- Format Selector -->
 <div class="cof-cl-format-wrap">
   <div class="cof-cl-format" role="radiogroup" aria-label="Game format">
@@ -55,7 +59,6 @@ extraScripts:
       <span class="cof-cl-section-summary" id="sum-stakes"></span>
     </div>
     <div class="cof-cl-section-right">
-      <span class="cof-cl-check" id="chk-stakes"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
       <svg class="cof-cl-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </button>
@@ -167,7 +170,6 @@ extraScripts:
       <span class="cof-cl-section-summary" id="sum-rebuys"></span>
     </div>
     <div class="cof-cl-section-right">
-      <span class="cof-cl-check" id="chk-rebuys"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
       <svg class="cof-cl-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </button>
@@ -254,7 +256,6 @@ extraScripts:
       <span class="cof-cl-section-summary" id="sum-money"></span>
     </div>
     <div class="cof-cl-section-right">
-      <span class="cof-cl-check" id="chk-money"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
       <svg class="cof-cl-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </button>
@@ -300,7 +301,6 @@ extraScripts:
       <span class="cof-cl-section-summary" id="sum-rules"></span>
     </div>
     <div class="cof-cl-section-right">
-      <span class="cof-cl-check" id="chk-rules"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
       <svg class="cof-cl-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </button>
@@ -324,11 +324,16 @@ extraScripts:
       <span class="cof-cl-section-summary" id="sum-logistics"></span>
     </div>
     <div class="cof-cl-section-right">
-      <span class="cof-cl-check" id="chk-logistics"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
       <svg class="cof-cl-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </button>
   <div class="cof-cl-section-body" id="sec-logistics-body">
+    <div class="cof-cl-field">
+      <label for="cof-announcement">Custom Announcement</label>
+      <textarea id="cof-announcement" placeholder="e.g. We'll play Texas Hold'em. New players welcome — we'll do a quick walkthrough before we start." maxlength="280"></textarea>
+      <div class="cof-cl-helper">Shown right below the title in the preview invite.</div>
+      <div class="cof-cl-helper"><span id="cof-announcement-count">0</span>/280</div>
+    </div>
     <div class="cof-cl-grid-2">
       <div class="cof-cl-field">
         <label for="cof-date">Game date</label>
@@ -369,7 +374,7 @@ extraScripts:
       </div>
     </div>
     <div class="cof-cl-field">
-      <label for="cof-notes">Notes</label>
+      <label for="cof-notes">Logistics Notes</label>
       <textarea id="cof-notes" placeholder="e.g. Street parking is free after 6 PM" maxlength="280"></textarea>
       <div class="cof-cl-helper"><span id="cof-notes-count">0</span>/280</div>
     </div>
@@ -406,30 +411,6 @@ extraScripts:
 
 </div><!-- end layout -->
 </div><!-- end cof-checklist -->
-
-<!-- Mobile bottom bar -->
-<div class="cof-cl-bottom-bar" id="cof-bottom-bar">
-  <button type="button" class="cof-cl-bar-preview-btn" id="cof-bar-preview">Preview</button>
-  <button type="button" class="cof-cl-bar-copy-btn" id="cof-share-mobile">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-    Save Configuration
-  </button>
-</div>
-
-<!-- Mobile bottom sheet -->
-<div class="cof-cl-sheet-backdrop" id="cof-sheet-backdrop"></div>
-<div class="cof-cl-sheet" id="cof-sheet">
-  <div class="cof-cl-sheet-handle"></div>
-  <div class="cof-cl-sheet-content">
-    <div class="cof-cl-preview-text" id="cof-preview-mobile"></div>
-  </div>
-  <div class="cof-cl-sheet-actions">
-    <button type="button" class="cof-cl-btn-copy" id="cof-copy-mobile">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-      Copy to Clipboard
-    </button>
-  </div>
-</div>
 
 <!-- Toast -->
 <div class="cof-cl-toast" id="cof-toast" aria-live="polite"></div>
@@ -491,14 +472,14 @@ extraScripts:
             <td class="muted">Clay composite hits the sweet spot between feel and price. Avoid the ultra-light plastic sets. Not sure how to split them up? Use our <a href="/chip-distribution-calculator/">Chip Distribution Calculator</a>.</td>
           </tr>
           <tr>
-            <td><strong>Table surface</strong></td>
+            <td><strong>Table surface</strong><br><span class="muted">Optional</span></td>
             <td>Felt topper ($10-50) or folding poker table ($160-200)</td>
             <td class="muted">A felt topper on a dining table works fine. Chips slide properly and cards don't bounce.</td>
           </tr>
           <tr>
             <td><strong>Dealer button</strong></td>
-            <td>Plus a cut card</td>
-            <td class="muted">Usually included in chip sets. If not, any distinct object works as a button.</td>
+            <td>Usually part of the chip set</td>
+            <td class="muted">If not in chip set, any distinct object works as a button.</td>
           </tr>
           <tr>
             <td><strong>Snacks</strong></td>
@@ -593,69 +574,16 @@ extraScripts:
   <div class="cof-lp-features-inner cof-lp-narrow">
     <div class="cof-lp-tag">Templates</div>
     <h2 class="cof-lp-h2">Invite Template Examples</h2>
-    <p class="cof-lp-body">Here are three ready-to-copy invite templates. The tool above generates these automatically based on your settings, but if you want something quick, grab one of these and edit the details.</p>
+    <p class="cof-lp-body">Here are three sample invite previews rendered from real saved configurations using the same formatter as the tool above. Use them as quick starting points, then customize the fields to match your game.</p>
 
     <h3>Casual $20 Cash Game</h3>
-<pre class="cof-lp-pre">
-POKER NIGHT - Saturday 7pm @ Mike's
-
-Format: No-Limit Hold'em Cash Game
-Buy-in: $20-$40
-Blinds: $0.25/$0.50
-Rebuys: Unlimited top-ups to max between hands
-
-Payment: Cash or Venmo to Mike
-Last buy-in: 9pm
-
-House rules:
-- No string bets
-- Table stakes only
-- Show one, show all
-
-Snacks provided. BYOB.
-RSVP by Thursday so I know how many chairs to set up.
-</pre>
+<pre class="cof-lp-pre" data-cof-example-hash="#d=eyJkdCI6IjIwMjYtMDMtMDEiLCJsbiI6Ik1pa2UncyIsImxhIjoiMTIzIE1haW4gU3QsIEFwdCA0QiIsImFuIjoiU25hY2tzIHByb3ZpZGVkLiBCWU9CLiIsIm50IjoiU3RyZWV0IHBhcmtpbmcgaXMgZnJlZSBhZnRlciA2IFBNIiwiYmsiOiJNaWtlIiwicG0iOiJjLHYiLCJybyI6Im5vX2dvaW5nX3NvdXRoLG5vX2xlbmRpbmcsYmFua19vbmx5LG9uZV9wbGF5ZXJfaGFuZCxjYXJkc19zcGVhayxob3N0X2RlY2lkZXMscmVidXlzX2JldHdlZW5faGFuZHMifQ==">Loading example…</pre>
 
     <h3>Deepstack Tournament</h3>
-<pre class="cof-lp-pre">
-POKER TOURNAMENT - Friday 7pm @ Jake's
-
-Format: No-Limit Hold'em Tournament
-Buy-in: $50
-Starting chips: 15,000
-Blinds: Increase every 20 min
-Rebuys: 1 allowed (first 90 min)
-Payout: 50/30/20
-
-Payment: Cash only, pay at the door
-Start time is FIRM - late arrivals post both blinds.
-
-House rules:
-- Table stakes
-- Cards speak
-- Host decides disputes
-
-Seats limited to 8. First come, first served.
-</pre>
+<pre class="cof-lp-pre" data-cof-example-hash="#d=eyJmIjoidCIsImR0IjoiMjAyNi0wMy0wNyIsImxuIjoiSmFrZSdzIiwibGEiOiIyOCBPYWt2aWV3IERyIiwiYW4iOiJTZWF0cyBsaW1pdGVkIHRvIDguIEZpcnN0IGNvbWUsIGZpcnN0IHNlcnZlZC4iLCJudCI6IlN0YXJ0IHRpbWUgaXMgZmlybS4iLCJocyI6IjAwOjAwIiwiYnMiOiI2MCIsInRiIjo1MCwic2MiOjE1MDAwLCJiayI6Ikpha2UiLCJybyI6Im5vX3N0cmluZ19iZXRzLHRhYmxlX3N0YWtlcyxub19nb2luZ19zb3V0aCxub19sZW5kaW5nLGJhbmtfb25seSxvbmVfcGxheWVyX2hhbmQsc2hvd19vbmVfc2hvd19hbGwscmVidXlzX2JldHdlZW5faGFuZHMifQ==">Loading example…</pre>
 
     <h3>Beginner-Friendly First Game</h3>
-<pre class="cof-lp-pre">
-POKER NIGHT (beginners welcome!) - Sat 6:30pm @ Sarah's
-
-We'll play Texas Hold'em. Don't know how? No problem.
-We'll do a quick walkthrough before we start.
-
-Buy-in: $10 (that's your max loss for the night)
-Blinds: $0.10/$0.20
-
-Bring: Cash for buy-in, a drink, and a snack to share
-Don't bring: Greasy food (chips get ruined)
-
-House rules will be posted at the table.
-Game ends around 10:30pm.
-
-RSVP in this chat - need at least 4 to play.
-</pre>
+<pre class="cof-lp-pre" data-cof-example-hash="#d=eyJkdCI6IjIwMjYtMDMtMTUiLCJsbiI6IlNhcmFoJ3MiLCJhbiI6IldlJ2xsIHBsYXkgVGV4YXMgSG9sZCdlbS4gRG9uJ3Qga25vdyBob3c/IE5vIHByb2JsZW0uXG5XZSdsbCBkbyBhIHF1aWNrIHdhbGt0aHJvdWdoIGJlZm9yZSB3ZSBzdGFydC4iLCJzdCI6IjE4OjMwIiwiaHMiOiIyMjozMCIsImJzIjoibiIsImJtIjoxMCwiYngiOjIwLCJzYiI6MC4xLCJiYiI6MC4yLCJ0YyI6MSwidGwiOjAsIm50IjoiQnJpbmcgY2FzaCBmb3IgYnV5LWluLCBwbHVzIGEgZHJpbmsgb3Igc25hY2sgdG8gc2hhcmUuIiwicm8iOiJub19zdHJpbmdfYmV0cyx0YWJsZV9zdGFrZXMsbm9fZ29pbmdfc291dGgsbm9fbGVuZGluZyxiYW5rX29ubHksY2FyZHNfc3BlYWsscmVidXlzX2JldHdlZW5faGFuZHMifQ==">Loading example…</pre>
   </div>
 </section>
 
