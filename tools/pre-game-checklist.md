@@ -1,7 +1,7 @@
 ---
-title: "Poker Home Game Rules and Invite Generator | Chips of Fury"
+title: "Poker Night Checklist & Home Game Invite Generator | Chips of Fury"
 date: 2026-02-12
-description: "Generate a shareable poker night checklist in seconds. Set stakes, buy-in, rebuys, house rules, and logistics — then copy-paste it into your group chat."
+description: "The ultimate checklist and invite generator for hosting a poker night. Set your stakes, establish standard house rules, handle buy-ins safely, and generate a text invite for your group chat."
 ogImage: "https://chipsoffury.com/images/pre-game-checklist-og.webp"
 extraStylesheets:
   - "/css/pre-game-checklist.css"
@@ -15,7 +15,7 @@ extraScripts:
   <div class="cof-lp-deco cof-lp-deco--3" aria-hidden="true"></div>
   <div class="cof-lp-hero-inner">
     <div class="cof-lp-eyebrow">Free Tool</div>
-    <h1 class="cof-lp-h1">Pre-Game Checklist Generator</h1>
+    <h1 class="cof-lp-h1">Poker Night Checklist & Home Game Invite Generator</h1>
     <ol class="cof-lp-steps-list">
       <li><span class="cof-lp-step-num">1</span><span><strong>Pick your format</strong> — cash game or tournament</span></li>
       <li><span class="cof-lp-step-num">2</span><span><strong>Fill in the details</strong> — stakes, rebuys, house rules, logistics</span></li>
@@ -435,6 +435,346 @@ extraScripts:
 <div class="cof-cl-toast" id="cof-toast" aria-live="polite"></div>
 
 </section>
+
+<section class="cof-lp-problems">
+  <div class="cof-lp-problems-inner">
+    <div class="cof-lp-tag">The Problem</div>
+    <h2 class="cof-lp-h2">Poker night planning always falls apart in the same ways</h2>
+    <div class="cof-lp-cards">
+      <div class="cof-lp-card">
+        <div class="cof-lp-card-icon">🃏</div>
+        <h3>Rule disputes kill the vibe</h3>
+        <p>It's 1 AM and two players are arguing about whether that was a string bet. Nobody agreed on the rules beforehand, so now every ruling feels arbitrary. These arguments don't happen when the rules are written down and sent out before the game.</p>
+      </div>
+      <div class="cof-lp-card">
+        <div class="cof-lp-card-icon">💸</div>
+        <h3>The banker math never adds up</h3>
+        <p>Three people paid cash, two sent Venmo, and someone owes from last week. By the end of the night, the banker is $15 short and nobody can figure out where it went. A simple ledger fixes this, but nobody thinks to set one up.</p>
+      </div>
+      <div class="cof-lp-card">
+        <div class="cof-lp-card-icon">📱</div>
+        <h3>Herding cats for RSVPs</h3>
+        <p>You text the group chat on Monday. Two people reply "maybe." By Friday, you still don't know if you have 4 players or 9. Pro tip: expect about 50% of "maybes" to actually show. "Maybe" almost always means no.</p>
+      </div>
+      <div class="cof-lp-card">
+        <div class="cof-lp-card-icon">⏱️</div>
+        <h3>Setup eats into play time</h3>
+        <p>Everyone shows up at 7, but the first hand doesn't get dealt until 7:45 because you're still debating [blinds](glossary:blinds), buy-in amounts, and whether rebuys are allowed. Send the details ahead of time and you can start playing the minute people sit down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cof-lp-problems cof-lp--white">
+  <div class="cof-lp-problems-inner">
+    <div class="cof-lp-tag">Equipment</div>
+    <h2 class="cof-lp-h2">The Poker Night Equipment Checklist</h2>
+    <p class="cof-lp-body">You don't need much to host a good game. Here's what actually matters.</p>
+    <div class="cof-lp-table-wrap">
+      <table class="cof-lp-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>What to Get</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Playing cards</strong></td>
+            <td>100% plastic, 2 decks minimum</td>
+            <td class="muted">Copag or KEM are the standard. ~$15 per deck and they last years. Paper cards bend, mark, and stick together.</td>
+          </tr>
+          <tr>
+            <td><strong>Chip set</strong></td>
+            <td>300-piece (4-6 players) or 500-piece (6-8+)</td>
+            <td class="muted">Clay composite hits the sweet spot between feel and price. Avoid the ultra-light plastic sets. Not sure how to split them up? Use our <a href="/chip-distribution-calculator/">Chip Distribution Calculator</a>.</td>
+          </tr>
+          <tr>
+            <td><strong>Table surface</strong></td>
+            <td>Felt topper ($10-50) or folding poker table ($160-200)</td>
+            <td class="muted">A felt topper on a dining table works fine. Chips slide properly and cards don't bounce.</td>
+          </tr>
+          <tr>
+            <td><strong>Dealer button</strong></td>
+            <td>Plus a cut card</td>
+            <td class="muted">Usually included in chip sets. If not, any distinct object works as a button.</td>
+          </tr>
+          <tr>
+            <td><strong>Snacks</strong></td>
+            <td>Non-greasy only</td>
+            <td class="muted">Pretzels, nuts, jerky, candy - all fine. Potato chips, wings, and pizza are chip-destroyers. Keep all food off the felt.</td>
+          </tr>
+          <tr>
+            <td><strong>Seating</strong></td>
+            <td>Count your chairs before game day</td>
+            <td class="muted">Sounds obvious. Gets forgotten constantly. Folding chairs from a hardware store work.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cof-lp-features">
+  <div class="cof-lp-features-inner cof-lp-narrow">
+    <div class="cof-lp-tag">House Rules</div>
+    <h2 class="cof-lp-h2">Standard House Rules Explained</h2>
+    <p class="cof-lp-body">The tool above has 21 rules to choose from. These six are the ones that matter most, especially if anyone at the table is new to poker. Agree on them before the first hand.</p>
+
+    <div class="cof-lp-faq-item">
+      <h3>No string betting</h3>
+      <p>Put all your chips in with one motion, or say your bet amount before you touch chips. You can't toss in a few chips, watch for a reaction, then add more. This is the single most common rule dispute in home games. Read more about betting mechanics in our <a href="/learn/poker-house-rules-to-keep-the-game-moving/">house rules guide</a>.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>No going south</h3>
+      <p>Once chips are on the table, they stay on the table until you leave the game. No pocketing $50 after a big win and playing with a short stack. If you sat down with it or won it, it's in play. This is also called "ratholing" and it's banned in every serious game.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Table stakes</h3>
+      <p>You can only bet what's physically in front of you. No reaching into wallets mid-hand, no writing IOUs on napkins. If you run out of chips during a hand, you're all-in for whatever you had. This protects everyone at the table.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Show one, show all</h3>
+      <p>If you show your [hole cards](glossary:hole-cards) to one player after a hand, the whole table gets to see. No selective information sharing. This keeps the game fair and avoids any suspicion of soft play between friends.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Cards speak</h3>
+      <p>At [showdown](glossary:showdown), the physical cards determine the winner, not what someone says they have. If a player says "I have a flush" but actually has a straight, the straight plays. Mistakes happen. The cards are the final word.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Single chip without declaration = call</h3>
+      <p>If someone bets $5 and you toss in a single $25 chip without saying "raise," it's just a call. You get $20 change. To raise, you have to say "raise" before the chip hits the felt. This trips up new players constantly, so make sure everyone knows before the game starts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cof-lp-problems cof-lp--white">
+  <div class="cof-lp-problems-inner cof-lp-narrow">
+    <div class="cof-lp-tag">Money</div>
+    <h2 class="cof-lp-h2">How to Handle the Bank</h2>
+    <p class="cof-lp-body">Money problems ruin more poker nights than bad beats. Follow these rules and you'll never end a session with someone feeling shortchanged.</p>
+
+    <div class="cof-lp-faq-item">
+      <h3>1. One designated banker</h3>
+      <p>Pick one person to handle all buy-ins and cash-outs for the entire session. This is usually the host. Having multiple people making change is how money goes missing.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>2. No chips without payment</h3>
+      <p>No IOUs. No "I'll get you next time." No credit, ever. If someone doesn't have the [bankroll](glossary:bankroll) to buy in, they watch. This sounds harsh, but it's the one rule that prevents every money-related argument.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>3. Keep a simple ledger</h3>
+      <p>Write down every buy-in and rebuy as it happens. Name, amount, time. Takes 30 seconds per entry and saves you 30 minutes of detective work at the end of the night. A notes app on your phone works fine.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>4. Settle before anyone walks out</h3>
+      <p>Cash out every player before they leave. Once someone is out the door, collecting becomes awkward and unreliable. Make it a house policy: you don't leave until your chips are counted.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>5. Keep cash organized</h3>
+      <p>All the game cash goes in one spot, visible, untouched until cash-out. Not in pockets, not mixed in with pizza money. A simple envelope or box works.</p>
+    </div>
+
+    <p class="cof-lp-body-sm"><strong>A note on Venmo/Zelle:</strong> Venmo's terms of service technically prohibit gambling-related transactions. Zelle doesn't report transactions to the IRS. Neither has been aggressively enforcing rules on casual home games, but be aware of the policies. Cash avoids all of this entirely. For more on managing money in home games, see our guide on <a href="/learn/how-to-handle-poker-buy-ins-with-friends/">handling buy-ins with friends</a>.</p>
+  </div>
+</section>
+
+<section class="cof-lp-features">
+  <div class="cof-lp-features-inner cof-lp-narrow">
+    <div class="cof-lp-tag">Templates</div>
+    <h2 class="cof-lp-h2">Invite Template Examples</h2>
+    <p class="cof-lp-body">Here are three ready-to-copy invite templates. The tool above generates these automatically based on your settings, but if you want something quick, grab one of these and edit the details.</p>
+
+    <h3>Casual $20 Cash Game</h3>
+<pre class="cof-lp-pre">
+POKER NIGHT - Saturday 7pm @ Mike's
+
+Format: No-Limit Hold'em Cash Game
+Buy-in: $20-$40
+Blinds: $0.25/$0.50
+Rebuys: Unlimited top-ups to max between hands
+
+Payment: Cash or Venmo to Mike
+Last buy-in: 9pm
+
+House rules:
+- No string bets
+- Table stakes only
+- Show one, show all
+
+Snacks provided. BYOB.
+RSVP by Thursday so I know how many chairs to set up.
+</pre>
+
+    <h3>Deepstack Tournament</h3>
+<pre class="cof-lp-pre">
+POKER TOURNAMENT - Friday 7pm @ Jake's
+
+Format: No-Limit Hold'em Tournament
+Buy-in: $50
+Starting chips: 15,000
+Blinds: Increase every 20 min
+Rebuys: 1 allowed (first 90 min)
+Payout: 50/30/20
+
+Payment: Cash only, pay at the door
+Start time is FIRM - late arrivals post both blinds.
+
+House rules:
+- Table stakes
+- Cards speak
+- Host decides disputes
+
+Seats limited to 8. First come, first served.
+</pre>
+
+    <h3>Beginner-Friendly First Game</h3>
+<pre class="cof-lp-pre">
+POKER NIGHT (beginners welcome!) - Sat 6:30pm @ Sarah's
+
+We'll play Texas Hold'em. Don't know how? No problem.
+We'll do a quick walkthrough before we start.
+
+Buy-in: $10 (that's your max loss for the night)
+Blinds: $0.10/$0.20
+
+Bring: Cash for buy-in, a drink, and a snack to share
+Don't bring: Greasy food (chips get ruined)
+
+House rules will be posted at the table.
+Game ends around 10:30pm.
+
+RSVP in this chat - need at least 4 to play.
+</pre>
+  </div>
+</section>
+
+<section class="cof-lp-problems cof-lp--white">
+  <div class="cof-lp-problems-inner cof-lp-narrow">
+    <div class="cof-lp-tag">FAQ</div>
+    <h2 class="cof-lp-h2">Frequently Asked Questions</h2>
+
+    <div class="cof-lp-faq-item">
+      <h3>What are the standard rules for a home poker game?</h3>
+      <p>The most widely used house rules are: no string betting (one motion or announce first), [table stakes](glossary:all-in) (bet only what's in front of you), no going south (can't pocket chips mid-session), show one show all, and cards speak (physical cards determine the winner). The checklist above includes 21 standard rules you can toggle on or off. For a deeper breakdown, see our <a href="/learn/poker-house-rules-to-keep-the-game-moving/">house rules guide</a>.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>How do you handle buy-ins and cash-outs at a poker night?</h3>
+      <p>Designate one banker for the entire session. No chips without payment, no IOUs, no exceptions. Keep a written ledger of every buy-in and rebuy. Settle everyone's chips before they leave. Read our full guide on <a href="/learn/how-to-handle-poker-buy-ins-with-friends/">handling buy-ins with friends</a> for more detail.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>What is a good buy-in for a casual poker home game?</h3>
+      <p>$20-$50 works for most casual games. The right test: nobody at the table should be upset if they lose their buy-in. If someone is stressed about the money, the stakes are too high. For a $20 buy-in, $0.25/$0.50 [blinds](glossary:blinds) give you 40 big blinds of depth, which plays well for a home game.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>How many players is ideal for a home poker game?</h3>
+      <p>Six to eight is the sweet spot. Fewer than five and you're playing short-handed poker, which plays very differently. More than nine and hands take too long, especially with new players. Invite 10 people and expect 6-8 to show. If you're playing with a full table, a 500-piece chip set gives you room for rebuys. Use our <a href="/chip-distribution-calculator/">Chip Distribution Calculator</a> to figure out how to split the chips.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>What do you need to host a poker night?</h3>
+      <p>The basics: two decks of plastic playing cards, a poker chip set (300-piece minimum), a dealer [button](glossary:button), a table surface with felt, enough seating, and non-greasy snacks. A felt table topper costs $10-30 and turns any dining table into a poker table. See the full equipment checklist above for specifics.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>How long should a home poker game last?</h3>
+      <p>Four hours is the sweet spot for a cash game. Start at 7pm, last buy-in at 9pm, wrap up around 11pm. Tournaments run longer because you're playing down to a winner. Schedule breaks every 60-90 minutes to keep people fresh and give the host time to restock. Set a hard stop time in your invite so people can plan rides and babysitters.</p>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Poker Night Checklist & Invite Generator",
+  "url": "https://chipsoffury.com/pre-game-checklist/",
+  "description": "Free poker night checklist and invite generator for home games. Set your stakes, establish house rules, handle buy-ins, and generate a text invite for your group chat.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Chips of Fury",
+    "url": "https://chipsoffury.com"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the standard rules for a home poker game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most widely used house rules are: no string betting (one motion or announce first), table stakes (bet only what's in front of you), no going south (can't pocket chips mid-session), show one show all, and cards speak (physical cards determine the winner). Most home games also include rules like one player to a hand (no coaching) and host has final say on disputes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle buy-ins and cash-outs at a poker night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Designate one banker for the entire session. No chips without payment, no IOUs, no exceptions. Keep a written ledger of every buy-in and rebuy. Settle everyone's chips before they leave the table."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good buy-in for a casual poker home game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For casual games, $20-$50 is the standard range. The right test is that nobody at the table should be upset if they lose their buy-in. For a $20 buy-in, $0.25/$0.50 blinds give you 40 big blinds of depth, which plays well for a home game."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many players is ideal for a home poker game?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Six to eight players is the sweet spot. Fewer than five and you're playing short-handed poker, which plays very differently. More than nine and hands take too long, especially with new players."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do you need to host a poker night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The basics: two decks of plastic playing cards, a poker chip set (300-piece minimum), a dealer button, a table surface with felt, enough seating, and non-greasy snacks. A felt table topper costs $10-30 and turns any dining table into a poker table."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should a home poker game last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four hours is the sweet spot for a cash game. Start at 7pm, last buy-in at 9pm, wrap up around 11pm. Tournaments run longer because you play down to a winner. Schedule breaks every 60-90 minutes and set a hard stop time in your invite."
+      }
+    }
+  ]
+}
+</script>
 
 <section class="cof-lp-feedback">
   <div class="cof-lp-feedback-inner">
