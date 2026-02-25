@@ -91,23 +91,27 @@ layout: layouts/base-tailwind.html
 
           <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" itemprop="headline">{{ title }}</h1>
 
-          <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600">
-            <span class="flex items-center">
-              <svg class="w-4 h-4 mr-1.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              {{ content | readingTime }} min read
-            </span>
-            <span class="text-gray-300">·</span>
-            <time itemprop="dateModified" datetime="{{ date | date('%Y-%m-%d') }}">
-              {{ date | postDate }}
+          <div class="flex flex-wrap items-center justify-between gap-2 text-sm text-gray-600">
+            <div>
+              {% if authorSlugs and authorSlugs.length > 0 %}
+                {% for slug in authorSlugs %}{% set authorData = authorsMap[slug] %}<span itemprop="author" itemscope itemtype="https://schema.org/Person">{% if authorData and authorData.hasPage %}<a href="/authors/{{ authorData.slug }}/" class="font-medium text-purple-600 hover:text-purple-800 transition-colors"><span itemprop="name">{{ authorData.name or slug }}</span></a>{% elif authorData %}<span itemprop="name" class="font-medium">{{ authorData.name or slug }}</span>{% else %}<span itemprop="name" class="font-medium">{{ slug }}</span>{% endif %}</span>{% if not loop.last %}, {% endif %}{% endfor %}
+              {% else %}
+                <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name" class="font-medium">Chips of Fury Team</span></span>
+              {% endif %}
+              <span class="mx-1.5 text-gray-300">·</span>
+              <time datetime="{{ date | date('%Y-%m-%d') }}">{{ date | postDate }}</time>
+            </div>
+            {% if lastUpdated %}
+            <time itemprop="dateModified" datetime="{{ lastUpdated | date('%Y-%m-%d') }}" class="text-sm font-medium text-green-700">
+              Updated {{ lastUpdated | postDate }}
             </time>
-            <span class="text-gray-300">·</span>
-            By {% if authorSlugs and authorSlugs.length > 0 %}
-              {% for slug in authorSlugs %}{% set authorData = authorsMap[slug] %}<span itemprop="author" itemscope itemtype="https://schema.org/Person">{% if authorData and authorData.hasPage %}<a href="/authors/{{ authorData.slug }}/" class="font-medium text-purple-600 hover:text-purple-800 transition-colors"><span itemprop="name">{{ authorData.name or slug }}</span></a>{% elif authorData %}<span itemprop="name" class="font-medium">{{ authorData.name or slug }}</span>{% else %}<span itemprop="name" class="font-medium">{{ slug }}</span>{% endif %}</span>{% if not loop.last %}, {% endif %}{% endfor %}
-            {% else %}
-              <span itemprop="author" itemscope itemtype="https://schema.org/Person"><span itemprop="name" class="font-medium">Chips of Fury Team</span></span>
             {% endif %}
+          </div>
+          <div class="flex items-center text-sm text-gray-500 mt-3">
+            <svg class="w-3.5 h-3.5 mr-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            {{ content | readingTime }} min read
           </div>
 
           <meta itemprop="datePublished" content="{{ date | date('%Y-%m-%d') }}">

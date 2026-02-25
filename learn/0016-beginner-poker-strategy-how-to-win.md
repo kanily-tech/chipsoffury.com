@@ -1,6 +1,7 @@
 ---
 title: "Beginner Poker Strategy: The 4-Step System to Stop Losing Chips"
 date: 2026-01-27
+lastUpdated: 2026-02-25
 description: "Stop donating your stack. Learn the tight-aggressive poker strategy that actually works for beginners, with exact preflop ranges, postflop rules, and common traps to avoid."
 tags: [ 'post', 'learn-poker' ]
 authorSlugs: [mayank]
@@ -9,7 +10,6 @@ tocIncludeH3: true
 showAuthorBio: true
 ---
 
-{% include "components/beginner-help-notice.html" %}
 
 You sit down at your weekly home game, buy in for $40, and three hours later you're reaching for your wallet again. The hands blur together. You made "reasonable" calls, played "decent" cards, and somehow the guy who shoves every other hand is stacking your chips.
 
