@@ -34,5 +34,8 @@ temp/
 # Git worktrees
 .worktrees/
 
+# Content team workspace (intermediate artifacts)
+.content-team/
+
 # Script secrets
 scripts/.env
