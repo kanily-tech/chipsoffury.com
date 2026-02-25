@@ -1,7 +1,7 @@
 ---
-title: "Beginner Poker Strategy: A Complete Guide to Winning at Texas Hold'em"
+title: "Beginner Poker Strategy: The 4-Step System to Stop Losing Chips"
 date: 2026-01-27
-description: "Learn winning poker strategy from the ground up. Covers hand selection, position, postflop decisions, common traps to avoid, and detailed hand examples. Everything beginners need to stop donating chips."
+description: "Stop donating your stack. Learn the tight-aggressive poker strategy that actually works for beginners, with exact preflop ranges, postflop rules, and common traps to avoid."
 tags: [ 'post', 'learn-poker' ]
 authorSlugs: [mayank]
 layout: layouts/pillar-post.html
@@ -11,21 +11,37 @@ showAuthorBio: true
 
 {% include "components/beginner-help-notice.html" %}
 
-You know the rules. You've played a few hands with friends, maybe jumped into some low-stakes games online. And yet your
-chip stack keeps shrinking. You're making reasonable decisions - or so it feels - but somehow the players who seem to be
-gambling recklessly keep winning pots while you're left wondering what you're doing wrong.
+You sit down at your weekly home game, buy in for $40, and three hours later you're reaching for your wallet again. The hands blur together. You made "reasonable" calls, played "decent" cards, and somehow the guy who shoves every other hand is stacking your chips.
 
-Knowing poker rules and knowing poker strategy are completely different things. You can follow every rule perfectly and
-still hemorrhage money if you don't understand *why* winning players make certain decisions. Most beginners stay stuck
-in that gap - "I know how to play" vs "I know how to win" - for months or years.
+This isn't a luck problem. This pattern repeats at every home game, every $1/$2 table, every friendly tournament - and after 17 years and over 3 million hands of poker, we've seen it play out the same way every time. The gap between knowing the rules and actually winning is where most players get stuck for months or years.
 
-What follows is a structured way to think through every hand of Texas Hold'em, from the moment you look at your cards to
-the final bet. You'll also find the core math concepts (simplified), the psychological reads that actually matter at
-beginner tables, and the discipline habits that separate players who profit from players who donate.
+This guide closes that gap with a tight-aggressive system built for beginners at home games and low-stakes tables. No fluff, no theory overload. Four concrete steps that change how you play tonight.
 
-Fair warning: some of this advice will feel boring. Play fewer hands. Skip the flashy bluffs. That's not
-sexy, but it's what works. Professional players also fold many hands, more than you would think as shown in movies. The
-players who lose money are the ones who can't resist "just seeing one more flop."
+Fair warning: some of this advice will feel boring. Play fewer hands. Skip the flashy bluffs. That's not sexy, but it's what works. Professional players fold more hands than you'd guess from watching TV. The players who lose money are the ones who can't resist "just seeing one more flop."
+
+<div class="not-prose my-8 rounded-xl border-2 border-amber-500/30 bg-amber-50 p-6">
+<p class="mt-0 mb-3 text-lg font-bold text-amber-700">The 5 Golden Rules of Beginner Poker</p>
+<ol class="m-0 space-y-1 text-base text-gray-700">
+<li><strong>Raise or fold — never limp.</strong> Limping signals weakness and gives up initiative.</li>
+<li><strong>Play ~20% of hands.</strong> Tighter from early position, wider from the button.</li>
+<li><strong>Position beats cards.</strong> The same hand is a fold in early position and a raise on the button.</li>
+<li><strong>Bet your strong hands.</strong> Don't slowplay. Build pots when you're ahead.</li>
+<li><strong>If you're tilting, stop playing.</strong> Frustrated poker is bad poker.</li>
+</ol>
+<p class="mb-0 mt-3 text-sm text-gray-500">These five habits alone will put you ahead of most players at your table. The rest of this guide explains why each one works.</p>
+</div>
+
+---
+
+## Already Know the Rules?
+
+This guide is pure strategy. If you need a refresher on the fundamentals first:
+
+- **[Poker Hand Rankings Explained](/learn/poker-winning-hand-rankings/)** - Which hands beat which, with a memory trick that sticks
+- **[How to Play Texas Hold'em](/learn/texas-holdem-rules-beginner-guide/)** - The complete flow of a hand, from blinds to showdown
+- **[Poker Terms for Beginners](/learn/poker-lingo-and-terms-for-beginners/)** - Every term you'll see in this guide, defined simply
+
+Already comfortable with the basics? Good. The strategy that separates winners from everyone else starts now.
 
 ---
 
@@ -37,10 +53,10 @@ Ask any experienced player what separates winners from losers at low-stakes tabl
 over and over:
 
 **They play too many hands.** New players look at their two cards and want to gamble. A-4? "Well, it's an ace." K-7
-suited? "Could make a flush." 9-6? "Might hit something." This thinking bleeds money. In poker, depending on the 
+suited? "Could make a flush." 9-6? "Might hit something." This thinking bleeds money. In poker, depending on the
 table situation, only about 20% to 40% of starting hands are profitable long-term winners. That means you are folding
-more hands than you play. Learning which hands to play takes time to master, and there is a lot of math and 
-discipline that goes into it. So it is not a skill that you can learn overnight. But as a beginner, it helps to keep 
+more hands than you play. Learning which hands to play takes time to master, and there is a lot of math and
+discipline that goes into it. So it is not a skill that you can learn overnight. But as a beginner, it helps to keep
 this in mind.
 
 **They call when they should fold or raise.** Beginners love calling. It feels safe - you're still in the hand without
@@ -75,34 +91,21 @@ Poker math sounds intimidating, but at the beginner level, you only need a handf
 - **Hand rankings:** Know instantly whether a flush beats a straight (it does) or whether two pair beats three of a
   kind (it doesn't). Confusion here costs you money.
 - **Pot odds:** If the pot is $30 and you need to call $10, you're getting 3:1 odds. That means you need to win more
-  than 25% of the time for the call to be profitable. If your draw only hits 20% of the time, fold. To be honest, 
+  than 25% of the time for the call to be profitable. If your draw only hits 20% of the time, fold. To be honest,
   this is an intermediate concept. Mentioning it here so that you get a taste of the math side of poker.
   ([Learn More](glossary:pot-odds))
 - **Expected Value (EV):** This is the average result of a decision if you made it thousands of times. A simple
   formula: (% chance of winning × amount you'd win) minus (% chance of losing × amount you'd lose). Positive number =
-  good decision. Negative number = bad decision. Again, this is an intermediate level concept, but it gives you some 
+  good decision. Negative number = bad decision. Again, this is an intermediate level concept, but it gives you some
   intuition about the math behind poker. [Learn More](glossary:expected-value)
 
 #### Psychology: Reading People, Not Minds
 
-Forget the Hollywood version of poker tells where someone's eye twitches and you know they're bluffing. At beginner
-tables, psychology is simpler: categorize players and adjust.
+Forget the Hollywood version of poker tells where someone's eye twitches and you know they're bluffing. At beginner tables, psychology is simpler: watch how much someone plays and how aggressively they bet.
 
-Most players fall somewhere on two spectrums: tight to loose (how many hands they play) and passive to aggressive (how
-they bet those hands). This creates four basic types:
+The player who plays every hand and never raises is a [calling station](glossary:calling-station) - don't bluff them, just bet your good hands. The player who folds everything and suddenly raises? They have [the nuts](glossary:nuts). Fold. The style you should aim for is tight-aggressive: play few hands, bet them hard.
 
-- **Tight-aggressive (TAG):** Plays few hands, bets them hard. Respect their raises - they usually have it. This is the
-  style you should aim for.
-- **Loose-passive ([calling station](glossary:calling-station)):** Plays many hands, rarely raises, hates folding. Don't bluff these players. Just
-  bet your good hands for value - they'll call with worse.
-- **Tight-passive (rock):** Plays few hands, rarely bets without [the nuts](glossary:nuts). Steal their blinds, but fold
-  when they show aggression.
-- **Loose-aggressive (maniac):** Plays many hands, bets and raises constantly. Tighten up and let them pay you off with
-  your strong hands.
-
-A quick tell that works at most tables: look at how someone stacks their chips. Messy, scattered stacks often indicate a
-loose, gambling style. Neat, organized stacks suggest a tighter, more methodical player. Not foolproof, but a useful
-first impression.
+You don't need a detailed system yet. Just pay attention. After 20-30 hands, you'll have a rough read on everyone at the table.
 
 #### Discipline: The Multiplier That Makes Everything Else Work
 
@@ -122,170 +125,18 @@ discipline = winning player.
 
 ### Setting Expectations: Variance, Luck & Long-Term Thinking
 
-Here's something that frustrates every new player: you can make the perfect decision and still lose. You can get your
-money in with pocket aces against pocket kings - an 80/20 favorite - and watch a king hit the board. That's not bad
-play. That's [variance](glossary:variance).
+You can make the perfect decision and still lose. Pocket aces against pocket kings is an 80/20 favorite, and one time in five that king hits the board. That's not bad play. That's [variance](glossary:variance) - the gap between what should happen and what actually happens in the short term.
 
-**Variance is the gap between what should happen and what actually happens in the short term.** In any individual hand
-or session, luck dominates. The player making terrible decisions can win. The player making perfect decisions can lose.
-This is what makes poker feel unfair - and what keeps bad players coming back.
+Over thousands of hands, luck evens out and skill takes over. The math doesn't care about your feelings. If you consistently make positive expected value decisions, you will profit long-term. Not might. Will.
 
-But here's what separates poker from pure gambling: over thousands of hands, luck evens out and skill takes over. The
-math is relentless. If you consistently make decisions with positive expected value, you will profit in the long run.
-Not might. Will. The question is whether you can survive the short-term swings without going broke or losing your mind.
-
-**The psychological trap most beginners fall into:** They credit their wins to skill and blame their losses on bad luck.
-Win a session? "I played great." Lose a session? "Couldn't catch a card." This mental pattern prevents improvement
-because you never examine your actual mistakes.
-
-A healthier framework: after every session, ask yourself "Did I make good decisions?" not "Did I win?" You can make
-perfect decisions and lose. You can make terrible decisions and win. Judging your play by results is like judging a
-weather forecaster by whether it rained today. Focus on the process.
+The trap: beginners credit wins to skill and blame losses on bad luck. This prevents improvement because you never examine your actual mistakes. A better approach is to judge sessions by decisions, not results. "Did I play well?" matters more than "Did I win?"
 
 **How to keep your head straight at the table:**
 
-- **Set a number you're comfortable losing before you sit down.** Whether it's $20 at a home game or a tournament buy-in,
-  decide upfront what you're okay walking away without. Then stick to it.
-- **Don't keep score session by session.** One bad night doesn't mean you're terrible at poker. One good night doesn't
-  mean you've figured it out. Your real skill shows up over dozens of games, not one.
-- **Laugh off the bad beats.** Your aces got cracked by someone who called three bets with 7-2? It happens. Groan, shake
-  your head, and deal the next hand. Getting mad won't un-lose those chips.
-- **Notice when you stop having fun.** If you're chasing losses, calling bets just to "get even," or snapping at your
-  friends - take a break. Grab a drink. Step outside. Frustrated poker is bad poker.
-
-The people who stick with this game aren't always the most naturally gifted. They're the ones who can lose a hand,
-shrug, and still make a smart play on the next one.
-
----
-
-## The Poker Basics You Must Master First
-
-### Hand Rankings
-
-Here's the complete list from strongest to weakest. For a deeper breakdown with examples and tie-breaker rules, see
-our [full hand rankings guide](/learn/poker-winning-hand-rankings/).
-
-| Rank | Hand                | What It Looks Like                                             | How Often in Hold'em* |
-|------|---------------------|----------------------------------------------------------------|-----------------------|
-| 1    | **Royal Flush**     | A-K-Q-J-10, all same suit                                      | 1 in 31,000 hands     |
-| 2    | **Straight Flush**  | Five cards in sequence, same suit (e.g., 7-8-9-10-J of hearts) | 1 in 3,600            |
-| 3    | **Four of a Kind**  | Four cards of same rank (e.g., four Kings)                     | 1 in 600              |
-| 4    | **Full House**      | Three of a kind + a pair (e.g., three 8s and two Jacks)        | 1 in 39               |
-| 5    | **Flush**           | Five cards of same suit, any order                             | 1 in 33               |
-| 6    | **Straight**        | Five cards in sequence, mixed suits (e.g., 4-5-6-7-8)          | 1 in 22               |
-| 7    | **Three of a Kind** | Three cards of same rank                                       | 1 in 21               |
-| 8    | **Two Pair**        | Two different pairs (e.g., two 9s and two 5s)                  | 1 in 4                |
-| 9    | **One Pair**        | Two cards of same rank                                         | 1 in 2                |
-| 10   | **High Card**       | Nothing above; highest card plays                              | Most common           |
-
-*Probabilities for Texas Hold'em (best 5 of 7 cards). Source: [Wikipedia](https://en.wikipedia.org/wiki/Poker_probability).
-
-**The logic:** Rarer hands beat common hands. That's the entire system. A royal flush happens about once in 31,000
-Hold'em hands. A pair happens nearly every other hand. Rarity equals strength.
-
-#### A Memory Trick for a common beginner confusion
-
-The part that trips up most beginners is the middle section: Full House, Flush, and Straight. Which beats which? Here's
-a visual that sticks:
-
-**A house contains plumbing.** Picture a house. Inside, it has flushing toilets connected by straight pipes. The house
-contains the flush, which contains the straight.
-
-```
-🏠 Full House
- └─ 🚽 Flush
-     └─ ➡️ Straight
-```
-
-So: **Full House > Flush > Straight**. The container beats what's inside it.
-
-#### The Three Mistakes Everyone Makes
-
-**Mistake 1: Thinking a straight beats a flush.** It doesn't. A flush (five cards of the same suit) always beats a
-straight (five sequential cards of mixed suits). The "plumbing" mnemonic fixes this.
-
-**Mistake 2: The ace wrap-around.** The ace can be high (A-K-Q-J-10) or low (A-2-3-4-5). But it cannot wrap around.
-K-A-2-3-4 is *not* a straight. (A-2-3-4-5) is the lowest straight and loses to all other straights.
-
-**Mistake 3: Forgetting kickers.** When two players have the same hand type, the side cards (kickers) decide the 
-winner. [Learn More](glossary:kicker)
-
-#### What You'll Actually See at the Table
-
-Forget about royal flushes. In home games, most pots are won with one pair, two pair, or high card. If you make three of
-a kind, you're probably winning. A full house at a casual table usually takes down everything. The monster hands you see
-on TV highlights happen because they film thousands of hands and show you the five interesting ones.
-
-### How a Poker Hand Works (Preflop → Postflop → Showdown)
-
-Every Texas Hold'em hand follows the same structure.
-
-#### The Setup: Blinds and the Button
-
-Before any cards are dealt, two players post mandatory bets called blinds. The **small blind** (one seat
-left of the dealer button) puts in a pre-set amount, often half the big blind. The **big blind** (two seats left) puts in
-the full minimum bet. [Learn More](glossary:blinds)
-
-The **dealer button** (a small disc) marks whose turn it is to "deal." It moves clockwise after each hand, so the blinds
-rotate around the table.
-
-#### The Deal: Your Hole Cards
-
-Each player receives two private cards face-down. Only you can see them. This hidden information is what makes poker
-poker - you know something your opponents don't, and they know something you don't. [Learn More](glossary:hole-cards)
-
-#### Pre-flop: The First Betting Round
-
-Action starts with the player to the left of the big blind (the "under the gun" position). Each player can:
-
-- **Fold:** Throw away your cards and sit out this hand
-- **Call:** Match the big blind amount to stay in
-- **Raise:** Increase the bet, forcing others to match or fold
-
-Action moves clockwise. The big blind acts last and has a special option: if nobody raised, they can "check" (stay in
-without adding money) since their blind already counts as a bet. [Learn More](glossary:preflop)
-
-#### The Flop: Three Community Cards
-
-After preflop betting ends, the dealer places three cards face-up in the center. These are 
-**[community cards](glossary:community-cards)** that everyone shares. A new betting round begins, but now the first 
-active player to the left of the button acts first.
-
-New options appear when nobody has bet yet:
-
-- **Check:** Pass the action without betting (only available if nobody has bet this round)
-- **Bet:** Put chips in the pot, starting the action
-
-Once someone bets, other players must call, raise, or fold - you can't check past a bet. [Learn More](glossary:flop)
-
-#### The Turn: Fourth Community Card
-
-After flop betting completes, a fourth community card is added. Another betting round follows the same pattern.
-[Learn More](glossary:turn)
-
-#### The River: Fifth and Final Card
-
-The fifth community card hits the board. This is the last betting round - make it count. [Learn More](glossary:river)
-
-#### Showdown: Who Wins?
-
-If two or more players remain after river betting, they reveal their cards. Each player makes their best five-card hand
-from any combination of their two hole cards and the five community cards. Best hand takes the pot.
-
-If everyone except one player folds at any point, the last player standing wins without showing their cards. This is 
-why [bluffing](glossary:bluff) works - you can win without the best hand if everyone else gives up.
-
-[Learn More](glossary:showdown)
-
-#### Common Beginner Confusions
-
-**"When can I check?"** Only when nobody has bet in the current round, or when you're the big blind preflop and nobody
-raised.
-
-**"Do I have to use both my hole cards?"** No. You can use two, one, or zero. If the board shows A-K-Q-J-10 of the same
-suit, everyone has a royal flush regardless of their cards.
-
-**"What if we have the same hand?"** Split the pot equally. Suits never break ties in Hold'em.
+- **Set a loss limit before you sit down.** Whether it's $20 at a home game or a tournament buy-in, decide upfront and stick to it.
+- **Don't keep score session by session.** Your real skill shows up over dozens of games, not one.
+- **Laugh off the bad beats.** Your aces got cracked by 7-2? It happens. Getting mad won't un-lose those chips.
+- **Notice when you stop having fun.** Chasing losses, snapping at your friends? Take a break. Frustrated poker is bad poker.
 
 ---
 
@@ -300,7 +151,7 @@ Here's your default decision-making framework. Follow this until the patterns be
 Most beginners play way too many hands. Professional players fold around 70% of their starting hands. That's not
 pessimism - it's math.
 
-The hands worth playing depend on your position. The later you act, the more hands become profitable. And the weaker the players at your table, the more hands you can play profitably - a loose home game lets you see more flops than a tough casino table.
+The hands worth playing depend on your position. The later you act, the more hands become profitable. And the weaker the players at your table, the more hands you can play profitably - a loose home game where everyone limps into every pot is a different animal than a tough casino table full of regulars. Adjust accordingly, but when in doubt, play tighter.
 
 #### Quick Guide to Hand Notation
 
@@ -361,16 +212,7 @@ The principle is simple: **the later you act, the more you know, and the more ha
 
 **Stealing the blinds:** When everyone folds to you on the button or one seat before it, you can raise with a wide range. The players in the blinds will fold more than half the time. Even mediocre hands become profitable when you're winning the blinds that often.
 
-#### The Hands That Trap Beginners
-
-**KJ and QJ:** These look good but constantly run into trouble. When you hit top pair, someone often has a better
-kicker (KQ, AK, AQ). You win small pots and lose big ones.
-
-**Weak Aces (A9, A8, A7 offsuit):** When an ace hits, you celebrate. Then your opponent shows AK and you're drawing
-nearly dead.
-
-**Small Pairs:** A pair of fives rarely holds up against multiple opponents. Small pairs make money by hitting a [set](glossary:set) (three of a kind) on the flop, which only happens 12% of the time. Play them from late position with deep stacks, and be
-ready to fold if you miss.
+Some hands on these charts look playable but consistently burn money. Weak aces, pretty face cards, small pairs that miss their [set](glossary:set) - we cover the specific traps in Step 3.
 
 #### The "Raise or Fold" Rule
 
@@ -423,7 +265,7 @@ Sometimes you're stuck acting first. Minimize the damage:
 bet. It protects your checking range and builds pots with your strong hands.
 
 **Accept smaller pots.** With marginal hands out of position, keep pots manageable. Check-call rather than leading out.
-Your goal is minimizing losses, not maximizing wins.
+Your goal is minimizing losses, not maximizing wins. At a 6-player home game, you'll be out of position more often than at a full ring table, so this matters even more.
 
 #### The Simple Framework: "Later = Looser"
 
@@ -433,68 +275,21 @@ Your goal is minimizing losses, not maximizing wins.
 
 This single adjustment - playing tighter early and wider late - will improve your results more than any other concept.
 
----
-
-### Step 3 — Postflop: The Three Questions
-
-Most beginners freeze up after the flop. Too many possibilities, too much uncertainty. Cut through the noise with three
-questions:
-
-#### Question 1: Do I Have a Strong Made Hand?
-
-Strong made hands include top pair with a good kicker, two pair, sets (three of a kind), straights, flushes, and better.
-
-**If yes: [Bet for value](glossary:value-bet).** You want worse hands to call. Bet around half to two-thirds of the pot. Don't get cute -
-strong hands make money by building pots, not by trapping.
-
-#### Question 2: Do I Have a Strong Draw?
-
-Strong draws include flush draws (9 outs), open-ended [straight draws](glossary:straight-draw) (8 outs), and combination draws (flush draw + straight draw).
-
-**If yes: Consider [semi-bluffing](glossary:semi-bluff).** A semi-bluff is a bet with a hand that's not currently best but has a good chance to improve. You can win two ways: everyone folds now, or you hit your draw and win at showdown.
-
-Calculate your pot odds before calling a bet. Count your outs (cards that complete your hand), multiply by 2 for one
-card to come or by 4 for two cards. That's roughly your percentage chance of hitting.
-
-Example: You have a flush draw (9 outs). 9 × 2 = 18% on the turn. If the pot offers better than 4:1 odds, calling is
-profitable.
-
-#### Question 3: Do I Have Nothing?
-
-Nothing means bottom pair, no pair, weak draws with poor odds.
-
-**If yes: Fold to pressure.** Don't call "to see what happens." Don't convince yourself they're bluffing. At low stakes,
-when people bet, they usually have something. Save your chips for better spots.
-
-#### Reading the Board
-
-**Dry boards** (like A-7-2 rainbow) favor the preflop raiser. Few draws available, someone usually has the best hand
-already. Bet your strong hands, fold your weak ones.
-
-**Wet boards** (like 9-8-7 with two hearts) are dangerous. Many draws, ranges connect differently. Be careful with
-one-pair hands - you're often either way ahead or way behind.
-
-#### Bet Sizing Basics
-
-- **Half to two-thirds pot** is standard for most situations
-- **Bigger bets** when the board is wet and you want to charge draws
-- **Smaller bets** on dry boards where you want calls from worse hands
-
-Avoid min-bets (they give great odds to draws) and giant overbets (they fold out everything you beat).
+Now that you know what to play and where to play it, here's what will undo all that good work if you're not careful.
 
 ---
 
-### Step 4 — Traps That Catch Beginners
+### Step 3 — Traps That Catch Beginners
 
-Knowing what to do is half the battle. The other half is knowing what *not* to do. Here are the traps that cost
-beginners the most money.
+Knowing what to do is half the battle. The other half is knowing what *not* to do. These are the traps that cost
+beginners the most money - and you'll see every one of them at your weekly home game.
 
 #### Trap 1: Top Pair, Terrible Kicker
 
 You hold K-4 and the flop comes K-7-2. Top pair! You bet, get called. Turn is a 9, you bet again, they raise. You call.
 River is a 3, they shove.
 
-The problem: Your 4 kicker means you're dominated by K-Q, K-J, K-T, K-9, and even K-7 (which now has two pair). When you
+The problem: Your 4 [kicker](glossary:kicker) - the side card that breaks ties when two players have the same pair - means you're dominated by K-Q, K-J, K-T, K-9, and even K-7 (which now has two pair). When you
 hit top pair with a weak kicker and face serious aggression, ask yourself: "What worse hands are raising here?" If you
 can't name any, fold.
 
@@ -504,7 +299,7 @@ You hold J-9 suited. Flop: K-J-3. Middle pair with a decent kicker. They bet, yo
 because "they might be bluffing." River: 2. Huge bet, you call because "I've come this far."
 
 The problem: Against most betting ranges, middle pair is a bluff-catcher at best. And most low-stakes players don't
-bluff enough to justify calling three streets. One call is reasonable. Two is generous. Three is a donation.
+bluff enough to justify calling three streets. One call is reasonable. Two is generous. Three is a donation. If your home game buddy who never bluffs is firing three barrels at you, believe them.
 
 #### Trap 3: Playing Big Pots Out of Position
 
@@ -534,12 +329,9 @@ attachment to money you've already bet.
 
 #### Trap 6: Fancy Play Syndrome
 
-You have pocket aces. Instead of raising, you just call to "disguise your hand." Three players see the flop: J-T-8 with
-two spades. Suddenly you're in a bloated pot with the most dangerous board possible.
+You have pocket aces at your home game. Instead of raising, you just call to "disguise your hand." Three players see the flop: J-T-8 with two spades. Suddenly you're in a bloated pot with the most dangerous board possible.
 
-The problem: At low stakes, most opponents think only about their own cards. Your elaborate deception? They're not
-picking up on it. Bet your good hands, fold your bad hands, save the fancy stuff for when you're crushing your current
-stakes.
+The problem: At low stakes and friendly home games, most opponents think only about their own cards. Your elaborate deception? They're not picking up on it. Bet your good hands, fold your bad hands, save the fancy stuff for when you're crushing your current stakes.
 
 #### Red Flag Situations: Auto-Fold Territory
 
@@ -554,11 +346,59 @@ the goods. Passive players don't bluff rivers. Save your hero calls for a differ
 
 ---
 
+### Step 4 — Postflop: The Three Questions
+
+Most beginners freeze up after the flop. Too many possibilities, too much uncertainty. Cut through the noise with three
+questions:
+
+#### Question 1: Do I Have a Strong Made Hand?
+
+Strong made hands include top pair with a good kicker, two pair, sets (three of a kind), straights, flushes, and better.
+
+**If yes: [Bet for value](glossary:value-bet).** You want worse hands to call. Bet around half to two-thirds of the pot. Don't get cute -
+strong hands make money by building pots, not by trapping.
+
+#### Question 2: Do I Have a Strong Draw?
+
+Strong draws include flush draws (9 outs), open-ended [straight draws](glossary:straight-draw) (8 outs), and combination draws (flush draw + straight draw).
+
+**If yes: Consider [semi-bluffing](glossary:semi-bluff).** A semi-bluff is a bet with a hand that's not currently best but has a good chance to improve. You can win two ways: everyone folds now, or you hit your draw and win at showdown.
+
+Calculate your pot odds before calling a bet. Count your outs (cards that complete your hand), multiply by 2 for one
+card to come or by 4 for two cards. That's roughly your percentage chance of hitting.
+
+Example: You have a flush draw (9 outs). 9 × 2 = 18% on the turn. If the pot offers better than 4:1 odds, calling is
+profitable.
+
+#### Question 3: Do I Have Nothing?
+
+Nothing means bottom pair, no pair, weak draws with poor odds.
+
+**If yes: Fold to pressure.** Don't call "to see what happens." Don't convince yourself they're bluffing. At your typical home game or low-stakes table, when people bet, they usually have something. Save your chips for better spots.
+
+#### Reading the Board
+
+**Dry boards** (like A-7-2 rainbow) favor the preflop raiser. Few draws available, someone usually has the best hand
+already. Bet your strong hands, fold your weak ones.
+
+**Wet boards** (like 9-8-7 with two hearts) are dangerous. Many draws, ranges connect differently. Be careful with
+one-pair hands - you're often either way ahead or way behind.
+
+#### Bet Sizing Basics
+
+- **Half to two-thirds pot** is standard for most situations
+- **Bigger bets** when the board is wet and you want to charge draws
+- **Smaller bets** on dry boards where you want calls from worse hands
+
+Avoid min-bets (they give great odds to draws) and giant overbets (they fold out everything you beat).
+
+---
+
 ## Putting It Together: Three Real Hands
 
 Reading about poker strategy is one thing. Seeing it in action is another.
 
-These three hands show the "Three Questions" framework from Step 3 in real situations. Each hand focuses on one question:
+These three hands show the "Three Questions" framework from Step 4 in real situations. Each hand focuses on one question:
 
 1. **You're ahead** → Bet for value
 2. **You're drawing** → Check the math
@@ -773,7 +613,7 @@ Three players see the flop. Pot: $21.
 ></hand-display>
 {% endrenderTemplate %}</div>
 
-💭 The 4♠! You made your flush - the third-best hand in poker. But you need to get paid. If you bet big, your opponent might fold. If they check, you can bet smaller and maybe get a call.
+💭 The 4♠! You made your flush - one of the strongest hands in poker. But you need to get paid. If you bet big, your opponent might fold. If they check, you can bet smaller and maybe get a call.
 
 **Villain checks** — your turn to act.
 
@@ -893,6 +733,8 @@ Before moving on, make sure you're comfortable with:
 - Pot odds calculations for common draws
 - Folding when you're beat, even with a "good" hand
 - Finishing sessions without major tilt episodes
+
+Practice these concepts in low-pressure settings. Chips of Fury is built for exactly this - run a poker night with friends where the stakes are fun, not stressful, and focus on applying one concept at a time.
 
 **You're ready for Phase 2 when:** You're no longer thinking about *what* to play - you're curious about *why* certain
 plays work.
@@ -1024,3 +866,88 @@ Do I have a strong made hand?
 - Blinds fold to steal attempts **50-60%** of the time
 - You'll flop a set with a pocket pair **12%** of the time
 - A flush draw hits on the turn **19%** of the time (36% by the river)
+
+---
+
+## Frequently Asked Questions
+
+### Should I limp preflop?
+
+No. If a hand is worth playing, raise with it. Limping gives up initiative, signals weakness to observant opponents, and eliminates the chance of winning the pot preflop. Raise or fold.
+
+### What hands should a beginner play?
+
+Start tight: big pairs (AA through TT), strong aces (AK, AQ), and suited broadway cards from early position. Widen to suited connectors, small pairs, and more suited aces from late position. You should be folding roughly 70-80% of starting hands.
+
+### How much should I bet on the flop?
+
+Half to two-thirds of the pot is standard. Bet bigger on wet boards (lots of draws possible) to charge opponents for chasing. Bet smaller on dry boards to get calls from worse hands.
+
+### Is poker mostly luck or skill?
+
+In any single hand, luck dominates. Over hundreds or thousands of hands, skill takes over completely. The math doesn't bend - players who consistently make positive expected value decisions will profit long-term. That's why professional poker players exist: consistent winners across millions of hands.
+
+### How do I stop losing at poker?
+
+Play fewer hands, respect position, stop calling when you should fold, and quit when you're tilting. Most beginners leak money by playing too many hands and calling too many bets. Tightening up and folding more is the fastest path to breaking even.
+
+### What's the best position at the poker table?
+
+The button (dealer position). You act last after the flop on every street, giving you maximum information about what your opponents did before you decide. The cutoff (one seat right of the button) is second-best.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should I limp preflop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. If a hand is worth playing, raise with it. Limping gives up initiative, signals weakness to observant opponents, and eliminates the chance of winning the pot preflop. Raise or fold."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hands should a beginner play?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start tight: big pairs (AA through TT), strong aces (AK, AQ), and suited broadway cards from early position. Widen to suited connectors, small pairs, and more suited aces from late position. You should be folding roughly 70-80% of starting hands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should I bet on the flop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Half to two-thirds of the pot is standard. Bet bigger on wet boards (lots of draws possible) to charge opponents for chasing. Bet smaller on dry boards to get calls from worse hands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is poker mostly luck or skill?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In any single hand, luck dominates. Over hundreds or thousands of hands, skill takes over completely. The math doesn't bend — players who consistently make positive expected value decisions will profit long-term. That's why professional poker players exist: consistent winners across millions of hands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I stop losing at poker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Play fewer hands, respect position, stop calling when you should fold, and quit when you're tilting. Most beginners leak money by playing too many hands and calling too many bets. Tightening up and folding more is the fastest path to breaking even."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the best position at the poker table?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The button (dealer position). You act last after the flop on every street, giving you maximum information about what your opponents did before you decide. The cutoff (one seat right of the button) is second-best."
+      }
+    }
+  ]
+}
+</script>
