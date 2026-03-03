@@ -6,6 +6,7 @@ description: "Planning a home poker game? Use our free tool to generate a sharea
 ogImage: "https://chipsoffury.com/images/pre-game-checklist-og.webp"
 extraStylesheets:
   - "/css/pre-game-checklist.css"
+lastUpdated: 2026-03-03
 extraScripts:
   - "/js/pre-game-checklist-page.js"
 ---
@@ -16,6 +17,7 @@ extraScripts:
   <div class="cof-lp-deco cof-lp-deco--3" aria-hidden="true"></div>
   <div class="cof-lp-hero-inner">
     <div class="cof-lp-eyebrow">Free Tool for Home Game Hosts</div>
+    <div class="cof-lp-updated">Last updated: {{ lastUpdated | postDate }}</div>
     <h1 class="cof-lp-h1">How to Host a Poker Night</h1>
     <p class="cof-lp-note">Set your stakes, house rules, and logistics below — then copy a ready-to-send invite for your group chat. Scroll past the tool for our complete hosting guide.</p>
     <ol class="cof-lp-steps-list">
@@ -44,6 +46,15 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
 
 <div class="cof-cl-top-actions">
   <button type="button" class="cof-cl-save-top-btn" id="cof-share-top">Save Configuration</button>
+</div>
+
+<!-- Presets -->
+<div class="cof-cl-presets">
+  <span class="cof-cl-presets-label">Quick start:</span>
+  <button type="button" class="cof-cl-preset-btn" data-preset="casual-cash">Casual $20 Cash Game</button>
+  <button type="button" class="cof-cl-preset-btn" data-preset="friendly-tournament">Friendly $10 Tournament</button>
+  <button type="button" class="cof-cl-preset-btn cof-cl-preset-btn--clear" data-preset="clear">Reset to 
+Defaults</button>
 </div>
 
 <!-- Format Selector -->
@@ -426,16 +437,17 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
 
 <nav class="cof-lp-toc" aria-label="Guide contents">
   <div class="cof-lp-toc-inner">
-    <span class="cof-lp-toc-label">In this guide</span>
-    <ul class="cof-lp-toc-list">
-      <li><a href="#common-problems">Common Problems</a></li>
-      <li><a href="#equipment">Equipment Checklist</a></li>
-      <li><a href="#house-rules">House Rules</a></li>
-      <li><a href="#handle-the-bank">Buy-ins & the Bank</a></li>
-      <li><a href="#fill-your-table">How to Fill Your Table</a></li>
-      <li><a href="#invite-templates">Invite Templates</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
+    <span class="cof-lp-toc-label">Hosting Guide</span>
+    <ol class="cof-lp-toc-list">
+      <li><a href="#common-problems"><span class="cof-lp-toc-num">1</span>Common Problems</a></li>
+      <li><a href="#equipment"><span class="cof-lp-toc-num">2</span>Equipment Checklist</a></li>
+      <li><a href="#house-rules"><span class="cof-lp-toc-num">3</span>House Rules</a></li>
+      <li><a href="#handle-the-bank"><span class="cof-lp-toc-num">4</span>Buy-ins &amp; the Bank</a></li>
+      <li><a href="#fill-your-table"><span class="cof-lp-toc-num">5</span>How to Fill Your Table</a></li>
+      <li><a href="#eliminated-players"><span class="cof-lp-toc-num">6</span>Knocked-Out Players</a></li>
+      <li><a href="#invite-templates"><span class="cof-lp-toc-num">7</span>Invite Templates</a></li>
+      <li><a href="#faq"><span class="cof-lp-toc-num">8</span>FAQ</a></li>
+    </ol>
   </div>
 </nav>
 
@@ -520,7 +532,7 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
 </section>
 
 <section class="cof-lp-features" id="house-rules">
-  <div class="cof-lp-features-inner cof-lp-narrow">
+  <div class="cof-lp-features-inner">
     <div class="cof-lp-tag">House Rules</div>
     <h2 class="cof-lp-h2">Standard House Rules for Home Poker Games</h2>
     <p class="cof-lp-body">The tool above has 21 rules to choose from. These six are the ones that matter most, especially if anyone at the table is new to poker. Agree on them before the first hand.</p>
@@ -558,7 +570,7 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
 </section>
 
 <section class="cof-lp-problems cof-lp--white">
-  <div class="cof-lp-problems-inner cof-lp-narrow">
+  <div class="cof-lp-problems-inner">
     <div class="cof-lp-tag">Money</div>
     <h2 class="cof-lp-h2" id="handle-the-bank">How to Handle Buy-ins and the Bank</h2>
     <p class="cof-lp-body">Money problems ruin more poker nights than bad beats. Follow these rules and you'll never end a session with someone feeling shortchanged.</p>
@@ -597,8 +609,8 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
   </div>
 </section>
 
-<section class="cof-lp-problems cof-lp--white" id="fill-your-table">
-  <div class="cof-lp-problems-inner cof-lp-narrow">
+<section class="cof-lp-problems" id="fill-your-table">
+  <div class="cof-lp-problems-inner">
     <div class="cof-lp-tag">Players</div>
     <h2 class="cof-lp-h2">How to Fill Your Table Every Week</h2>
     <p class="cof-lp-body">Getting people to show up is the hardest part of hosting. Poker forum hosts report needing to invite 14-16 people to reliably seat 6-8. Here's what experienced hosts do differently.</p>
@@ -625,8 +637,36 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
   </div>
 </section>
 
+<section class="cof-lp-problems cof-lp--white" id="eliminated-players">
+  <div class="cof-lp-problems-inner">
+    <div class="cof-lp-tag">Tournaments</div>
+    <h2 class="cof-lp-h2">What to Do When Players Get Knocked Out</h2>
+    <p class="cof-lp-body">In a tournament, eliminations are inevitable — and bored eliminated players are the fastest way to kill the vibe at your poker night. The best hosts plan for this before the first hand is dealt.</p>
+
+    <div class="cof-lp-faq-item">
+      <h3>Run a side cash game</h3>
+      <p>This is the go-to move for experienced hosts. Once 2-3 players bust out, start a small cash game at lower stakes — $0.10/$0.20 blinds with a $10 buy-in works well. It keeps eliminated players at the table, and the action often ends up being more fun than the main event. You just need a second deck and a clear spot to play.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Have a backup activity ready</h3>
+      <p>Not everyone wants to jump into another poker game. Board games, video games, or even a card game like Liar's Dice give people something to do. The key is having it ready before someone asks "so… what now?" A Nintendo Switch or a deck of cards for Spoons costs nothing and fills dead time.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Keep food and drinks flowing</h3>
+      <p>Eliminated players who are eating, drinking, and socializing don't feel like they're wasting their Friday night. Time your food drops around when eliminations typically happen — pizza arrives when the tournament is about halfway through, for example. People stay longer when they're comfortable.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Add a last-longer bet or consolation prize</h3>
+      <p>A small last-longer side bet (everyone puts in $5, last person standing among a group wins) gives eliminated players a reason to stick around and sweat the remaining hands. Or offer a consolation prize — the first person knocked out gets first pick of the leftover snacks, or a bounty chip from the next tournament. It's silly, but it works.</p>
+    </div>
+  </div>
+</section>
+
 <section class="cof-lp-features" id="invite-templates">
-  <div class="cof-lp-features-inner cof-lp-narrow">
+  <div class="cof-lp-features-inner">
     <div class="cof-lp-tag">Templates</div>
     <h2 class="cof-lp-h2">Invite Template Examples</h2>
     <p class="cof-lp-body">Here are three sample invite previews rendered from real saved configurations using the same formatter as the tool above. Use them as quick starting points, then customize the fields to match your game.</p>
@@ -643,7 +683,7 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
 </section>
 
 <section class="cof-lp-problems cof-lp--white" id="faq">
-  <div class="cof-lp-problems-inner cof-lp-narrow">
+  <div class="cof-lp-problems-inner">
     <div class="cof-lp-tag">FAQ</div>
     <h2 class="cof-lp-h2">Frequently Asked Questions</h2>
 
@@ -685,6 +725,7 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
   "@type": "WebApplication",
   "name": "How to Host a Poker Night: Checklist & Invite Generator",
   "url": "https://chipsoffury.com/how-to-host-a-poker-night/",
+  "dateModified": "2026-03-03",
   "description": "Free poker night checklist and invite generator for home games. Set your stakes, establish house rules, handle buy-ins, and generate a text invite for your group chat.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
@@ -764,6 +805,7 @@ fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to Host a Poker Night",
+  "dateModified": "2026-03-03",
   "description": "A step-by-step guide to hosting a home poker game, from setting up equipment and buy-ins to establishing house rules and sending invites.",
   "totalTime": "PT30M",
   "tool": [

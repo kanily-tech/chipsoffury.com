@@ -198,7 +198,7 @@ If you're starting from zero, this order makes the most sense:
 
 **1. Texas Hold'em** - Start here. It's the most widely available game, the easiest community card game to pick up, and has the most learning resources by far. Every concept you learn in Hold'em transfers to other variants. Our [beginner poker strategy guide](/learn/beginner-poker-strategy-how-to-win/) is built around Hold'em for this reason.
 
-**2. Five-Card Draw (for home games)** - If you're hosting a casual game night with people who've never played, Draw is actually easier to *teach* than Hold'em because there's no board to explain. Good way to get non-poker friends comfortable with hand rankings and betting.
+**2. Five-Card Draw (for home games)** - If you're [hosting a casual game night](/how-to-host-a-poker-night/) with people who've never played, Draw is actually easier to *teach* than Hold'em because there's no board to explain. Good way to get non-poker friends comfortable with hand rankings and betting.
 
 **3. Omaha** - Once Hold'em clicks, Omaha is the natural next step. Same board structure, but four hole cards and the must-use-two rule change everything. A lot of Hold'em players move to Omaha when they want more action.
 

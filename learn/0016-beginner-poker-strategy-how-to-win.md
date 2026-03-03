@@ -734,7 +734,7 @@ Before moving on, make sure you're comfortable with:
 - Folding when you're beat, even with a "good" hand
 - Finishing sessions without major tilt episodes
 
-Practice these concepts in low-pressure settings. Chips of Fury is built for exactly this - run a poker night with friends where the stakes are fun, not stressful, and focus on applying one concept at a time.
+Practice these concepts in low-pressure settings. Chips of Fury is built for exactly this — [run a poker night with friends](/how-to-host-a-poker-night/) where the stakes are fun, not stressful, and focus on applying one concept at a time.
 
 **You're ready for Phase 2 when:** You're no longer thinking about *what* to play - you're curious about *why* certain
 plays work.

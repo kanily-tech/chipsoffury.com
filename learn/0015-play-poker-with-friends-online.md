@@ -98,7 +98,7 @@ Scenarios include:
 - Want to just play fast with lots of hands per hour
 - Travelling/Camping/Hiking and not carrying any cards & chips
 
-No matter how youp play, fo quick casual games, a set of agreed-upon poker house rules keeps games moving and avoids
+No matter how you play, for quick casual games, a set of agreed-upon [poker house rules](/how-to-host-a-poker-night/) keeps games moving and avoids
 confusion, especially with newer players. You can save a template of your favorite settings in Chips of Fury for easy
 reuse.
 
@@ -549,7 +549,7 @@ Poker is individual. Don't ask friends at the table "what would you do?" Don't o
 announce what you folded. Don't point out that there's a possible flush on the board. If you're not in the hand, stay
 out of it until it's over. Then you can discuss whatever you want.
 
-<!-- TODO: poker-house-rules-to-keep-the-game-moving - "For a complete framework on house rules, see Poker House Rules to Keep the Game Moving." -->
+For a complete framework on house rules and game-night logistics, see our [guide to hosting a poker night](/how-to-host-a-poker-night/).
 
 ---
 

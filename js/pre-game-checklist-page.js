@@ -337,6 +337,152 @@
     });
   }
 
+  // ═══ Presets ═══
+  function applyPreset(presetName) {
+    // Reset state + custom rules
+    state = getDefaults();
+    customRules = [];
+    renderCustomRules();
+
+    // Apply preset-specific overrides
+    if (presetName === 'casual-cash') {
+      state.format = 'cash';
+      state.sb = 0.25;
+      state.bb = 0.50;
+      state.buyin_min = 20;
+      state.buyin_max = 40;
+      state.auto_buyin = true;
+      state.rebuys_allowed = true;
+      state.topup_limited = true;
+      state.topup_limit = 3;
+    } else if (presetName === 'friendly-tournament') {
+      state.format = 'tournament';
+      state.tournament_buyin = 10;
+      state.starting_chips = 5000;
+      state.payout = '50/30/20';
+      state.rebuys_allowed = true;
+      state.rebuys_max = 1;
+      state.rebuys_window = 60;
+      state.rebuys_amount = 'same';
+      state.rebuys_condition = 'below_min';
+      state.auto_buyin = true;
+      state.bounty_enabled = false;
+      state.addon_allowed = false;
+    }
+    // 'clear' just uses getDefaults() — no overrides needed
+
+    // Sync format selector UI
+    $$('.cof-cl-format-btn').forEach(function(b) {
+      b.classList.remove('is-active');
+      b.setAttribute('aria-checked', 'false');
+      if (b.getAttribute('data-format') === state.format) {
+        b.classList.add('is-active');
+        b.setAttribute('aria-checked', 'true');
+      }
+    });
+
+    // Sync numeric inputs
+    var numFields = {
+      sb: 'cof-sb', bb: 'cof-bb', buyin_min: 'cof-buyin-min', buyin_max: 'cof-buyin-max',
+      tournament_buyin: 'cof-tourn-buyin', bounty_amount: 'cof-bounty-amt', starting_chips: 'cof-start-chips',
+      topup_limit: 'cof-topup-limit',
+      rebuys_max: 'cof-rebuys-max', rebuys_window: 'cof-rebuys-window',
+      addon_amount: 'cof-addon-amount', addon_chips: 'cof-addon-chips'
+    };
+    for (var field in numFields) {
+      var el = $(numFields[field]);
+      if (el) el.value = state[field];
+    }
+
+    // Sync text inputs
+    var textFields = {
+      banker: 'cof-banker', payment_other: 'cof-payment-other',
+      location_name: 'cof-location-name', location_address: 'cof-location-addr',
+      announcement: 'cof-announcement', notes: 'cof-notes', payout_custom: 'cof-payout-custom'
+    };
+    for (var tf in textFields) {
+      var tel = $(textFields[tf]);
+      if (tel) tel.value = state[tf];
+    }
+
+    // Sync selects
+    $('cof-payout').value = state.payout;
+    $('cof-payout-custom-wrap').classList.add('cof-cl-hidden');
+    $('cof-rebuys-amount').value = state.rebuys_amount;
+    $('cof-rebuys-custom-wrap').classList.add('cof-cl-hidden');
+    var rcEl = $('cof-rebuys-condition'); if (rcEl) rcEl.value = state.rebuys_condition;
+    $('cof-settle').value = state.settle_policy;
+    $('cof-breaks').value = state.break_schedule;
+
+    // Sync toggles
+    $('cof-rebuys-on').setAttribute('aria-checked', state.rebuys_allowed ? 'true' : 'false');
+    $$('#cof-rebuys-fields > .cof-cl-grid-2, #cof-rebuys-fields > .cof-cl-field').forEach(function(el) {
+      el.style.display = state.rebuys_allowed ? '' : 'none';
+    });
+    var addonEl = $('cof-addon-section');
+    if (addonEl) addonEl.style.display = (state.rebuys_allowed && state.format !== 'cash') ? '' : 'none';
+    $('cof-addon-on').setAttribute('aria-checked', state.addon_allowed ? 'true' : 'false');
+    $('cof-addon-fields').classList.toggle('cof-cl-hidden', !state.addon_allowed);
+    $('cof-bounty-on').setAttribute('aria-checked', state.bounty_enabled ? 'true' : 'false');
+    $('cof-bounty-fields').classList.toggle('cof-cl-hidden', !state.bounty_enabled);
+
+    // Sync auto-buyin checkbox
+    var autoCb = $('cof-auto-buyin');
+    if (autoCb) autoCb.checked = state.auto_buyin;
+
+    // Sync topup checkbox
+    var tlCheck = $('cof-topup-limited');
+    if (tlCheck) tlCheck.checked = state.topup_limited;
+    $('cof-topup-limit-wrap').classList.toggle('cof-cl-hidden', !state.topup_limited);
+
+    // Sync payment chips
+    $$('.cof-cl-chip').forEach(function(chip) {
+      var pm = chip.getAttribute('data-payment');
+      chip.classList.toggle('is-selected', state.payment_method.indexOf(pm) >= 0);
+    });
+    $('cof-payment-other-wrap').classList.add('cof-cl-hidden');
+
+    // Reset rules to defaults
+    PRESET_RULES.forEach(function(rule) {
+      var t = document.querySelector('[data-rule="' + rule.id + '"]');
+      if (t) t.setAttribute('aria-checked', rule.defaultOn ? 'true' : 'false');
+    });
+
+    // Sync date/time
+    $('cof-date').value = state.date;
+    $('cof-start-time').value = state.start_time;
+    $('cof-last-buyin-time').value = state.last_buyin_time;
+    $('cof-hard-stop').value = state.hard_stop;
+
+    // Reset textarea counts
+    $('cof-announcement-count').textContent = '0';
+    $('cof-notes-count').textContent = '0';
+
+    // Run update chain
+    applyAutoBuyin();
+    updateDepthLabel();
+    updateAutoDerivedStyling();
+    updateTopupDesc();
+    updateStepperState();
+    updateConditionalFields();
+    updatePreview();
+    updateSummaries();
+
+    // Open first accordion section on mobile
+    var firstSection = document.querySelector('.cof-cl-section');
+    if (firstSection && !firstSection.classList.contains('is-expanded')) {
+      firstSection.querySelector('.cof-cl-section-header').click();
+    }
+  }
+
+  function setupPresets() {
+    $$('.cof-cl-preset-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        applyPreset(this.getAttribute('data-preset'));
+      });
+    });
+  }
+
   // ═══ Initialize ═══
   function init() {
     syncViewportWidthVar();
@@ -357,6 +503,7 @@
     setupOutputButtons();
     setupClearButtons();
     setupSteppers();
+    setupPresets();
     loadFromHash();
     applyAutoBuyin();
     updateDepthLabel();
