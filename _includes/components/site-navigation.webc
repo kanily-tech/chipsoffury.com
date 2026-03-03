@@ -46,9 +46,9 @@
                 <div class="font-semibold text-gray-900">Chip Distribution Calculator</div>
                 <div class="text-sm text-gray-600">Plan your chip distribution</div>
               </a>
-              <a href="/pre-game-checklist/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
-                <div class="font-semibold text-gray-900">Pre-Game Checklist</div>
-                <div class="text-sm text-gray-600">Generate a shareable game plan</div>
+              <a href="/how-to-host-a-poker-night/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
+                <div class="font-semibold text-gray-900">Poker Night Hosting Helper</div>
+                <div class="text-sm text-gray-600">Generate a shareable plan</div>
               </a>
             </div>
           </div>

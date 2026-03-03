@@ -345,7 +345,7 @@ It sounds goofy. It works. Some of the best home games out there have laughably 
 
 ## The Pre-Game Checklist
 
-Send this in your group chat before the first game. Modify it for your group, but cover every item.
+Send this in your group chat before the first game. Modify it for your group, but cover every item. Or skip the manual version — our [poker night hosting tool](/how-to-host-a-poker-night/) lets you set all of this up and copy a formatted invite straight into your group chat.
 
 **Stakes and Buy-In**
 - Blinds: ___/___
