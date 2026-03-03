@@ -186,7 +186,7 @@ hideAppSchema: true
       <div class="cof-lp-card">
         <div class="cof-lp-card-icon">⏱️</div>
         <h3>Setup eats into play time</h3>
-        <p>First-time hosts often spend 20 minutes debating chip values at the table before anyone plays a hand. Use our <a href="/pre-game-checklist/">pre-game checklist</a> to sort everything out before guests arrive.</p>
+        <p>First-time hosts often spend 20 minutes debating chip values at the table before anyone plays a hand. <a href="/how-to-host-a-poker-night/">Sort out stakes, rules, and logistics before guests arrive</a> and you can start playing the minute people sit down.</p>
       </div>
     </div>
   </div>

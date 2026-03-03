@@ -243,7 +243,7 @@ Experienced hosts eventually write their house rules down. It doesn't need to be
 
 > House rules for Saturday: verbal bets binding, no string bets, one player to a hand, host decides disputes (backup: Sarah). Table stakes only. Buy-in $50, one rebuy allowed first 90 min. Hard stop midnight.
 
-That takes thirty seconds to type and prevents hours of arguments over a season. Pair it with the [Pre-Game Checklist](/learn/how-to-handle-poker-buy-ins-with-friends/) from our buy-ins guide and you've covered everything before the first shuffle.
+That takes thirty seconds to type and prevents hours of arguments over a season. Or use our [poker night setup tool](/how-to-host-a-poker-night/) to generate a shareable invite with rules, stakes, and logistics baked in.
 
 ---
 
@@ -297,9 +297,9 @@ A few optional rules that sound fun but slow things down:
 
 ## Put It All Together
 
-You don't need to memorize any of this. Our [Pre-Game Checklist](/tools/pre-game-checklist/) lets you toggle the rules that apply to your game, set stakes, buy-ins, and logistics, then copy the whole thing into your group chat. It takes about two minutes and saves you from explaining the same rules at the start of every session.
+You don't need to memorize any of this. We built a tool that lets you [set up your entire poker night in a few minutes](/how-to-host-a-poker-night/) — toggle the rules that apply, set stakes and buy-ins, add logistics, and copy a formatted invite into your group chat.
 
-<a href="/tools/pre-game-checklist/" class="btn-primary" style="display:inline-block; margin-top:0.5rem;">Open the Pre-Game Checklist &rarr;</a>
+<a href="/how-to-host-a-poker-night/" class="btn-primary" style="display:inline-block; margin-top:0.5rem;">Set Up Your Poker Night &rarr;</a>
 
 ---
 

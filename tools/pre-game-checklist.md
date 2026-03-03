@@ -1,7 +1,8 @@
 ---
-title: "Poker Night Checklist & Home Game Invite Generator | Chips of Fury"
+title: "How to Host a Poker Night: Checklist & Free Invite Generator"
+permalink: /how-to-host-a-poker-night/
 date: 2026-02-12
-description: "The ultimate checklist and invite generator for hosting a poker night. Set your stakes, establish standard house rules, handle buy-ins safely, and generate a text invite for your group chat."
+description: "Planning a home poker game? Use our free tool to generate a shareable invite with your blinds, buy-ins, and house rules. Plus, get the complete checklist for equipment, managing the bank, and filling your table."
 ogImage: "https://chipsoffury.com/images/pre-game-checklist-og.webp"
 extraStylesheets:
   - "/css/pre-game-checklist.css"
@@ -14,14 +15,20 @@ extraScripts:
   <div class="cof-lp-deco cof-lp-deco--2" aria-hidden="true"></div>
   <div class="cof-lp-deco cof-lp-deco--3" aria-hidden="true"></div>
   <div class="cof-lp-hero-inner">
-    <div class="cof-lp-eyebrow">Free Tool</div>
-    <h1 class="cof-lp-h1">Poker Night Checklist & Home Game Invite Generator</h1>
+    <div class="cof-lp-eyebrow">Free Tool for Home Game Hosts</div>
+    <h1 class="cof-lp-h1">How to Host a Poker Night</h1>
+    <p class="cof-lp-note">Set your stakes, house rules, and logistics below — then copy a ready-to-send invite for your group chat. Scroll past the tool for our complete hosting guide.</p>
     <ol class="cof-lp-steps-list">
       <li><span class="cof-lp-step-num">1</span><span><strong>Pick your format</strong> — cash game or tournament</span></li>
       <li><span class="cof-lp-step-num">2</span><span><strong>Fill in the details</strong> — stakes, rebuys, house rules, logistics</span></li>
       <li><span class="cof-lp-step-num">3</span><span><strong>Copy and share</strong> — paste into your group chat</span></li>
     </ol>
-    <a href="#checklist" class="cof-lp-cta">Start Building <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
+    <div class="cof-lp-cta-row">
+      <a href="#checklist" class="cof-lp-cta">Set Up Game Invite &amp; Checklist <svg viewBox="0 0 20 20" 
+fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
+      <span class="cof-lp-cta-or">or</span>
+      <a href="#common-problems" class="cof-lp-cta-secondary">Jump to the Hosting Guide <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -417,7 +424,22 @@ extraScripts:
 
 </section>
 
-<section class="cof-lp-problems">
+<nav class="cof-lp-toc" aria-label="Guide contents">
+  <div class="cof-lp-toc-inner">
+    <span class="cof-lp-toc-label">In this guide</span>
+    <ul class="cof-lp-toc-list">
+      <li><a href="#common-problems">Common Problems</a></li>
+      <li><a href="#equipment">Equipment Checklist</a></li>
+      <li><a href="#house-rules">House Rules</a></li>
+      <li><a href="#handle-the-bank">Buy-ins & the Bank</a></li>
+      <li><a href="#fill-your-table">How to Fill Your Table</a></li>
+      <li><a href="#invite-templates">Invite Templates</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="cof-lp-problems" id="common-problems">
   <div class="cof-lp-problems-inner">
     <div class="cof-lp-tag">The Problem</div>
     <h2 class="cof-lp-h2">Poker night planning always falls apart in the same ways</h2>
@@ -446,7 +468,7 @@ extraScripts:
   </div>
 </section>
 
-<section class="cof-lp-problems cof-lp--white">
+<section class="cof-lp-problems cof-lp--white" id="equipment">
   <div class="cof-lp-problems-inner">
     <div class="cof-lp-tag">Equipment</div>
     <h2 class="cof-lp-h2">The Poker Night Equipment Checklist</h2>
@@ -497,10 +519,10 @@ extraScripts:
   </div>
 </section>
 
-<section class="cof-lp-features">
+<section class="cof-lp-features" id="house-rules">
   <div class="cof-lp-features-inner cof-lp-narrow">
     <div class="cof-lp-tag">House Rules</div>
-    <h2 class="cof-lp-h2">Standard House Rules Explained</h2>
+    <h2 class="cof-lp-h2">Standard House Rules for Home Poker Games</h2>
     <p class="cof-lp-body">The tool above has 21 rules to choose from. These six are the ones that matter most, especially if anyone at the table is new to poker. Agree on them before the first hand.</p>
 
     <div class="cof-lp-faq-item">
@@ -538,7 +560,7 @@ extraScripts:
 <section class="cof-lp-problems cof-lp--white">
   <div class="cof-lp-problems-inner cof-lp-narrow">
     <div class="cof-lp-tag">Money</div>
-    <h2 class="cof-lp-h2">How to Handle the Bank</h2>
+    <h2 class="cof-lp-h2" id="handle-the-bank">How to Handle Buy-ins and the Bank</h2>
     <p class="cof-lp-body">Money problems ruin more poker nights than bad beats. Follow these rules and you'll never end a session with someone feeling shortchanged.</p>
 
     <div class="cof-lp-faq-item">
@@ -566,11 +588,44 @@ extraScripts:
       <p>All the game cash goes in one spot, visible, untouched until cash-out. Not in pockets, not mixed in with pizza money. A simple envelope or box works.</p>
     </div>
 
+    <div class="cof-lp-faq-item">
+      <h3>6. Get small bills before the game</h3>
+      <p>Hit the bank beforehand for $1s and $5s. Someone always shows up with a $50 for a $20 buy-in, and if you can't make change, the night starts with an IOU — exactly what you're trying to avoid.</p>
+    </div>
+
     <p class="cof-lp-body-sm"><strong>A note on Venmo/Zelle:</strong> Venmo's terms of service technically prohibit gambling-related transactions. Zelle doesn't report transactions to the IRS. Neither has been aggressively enforcing rules on casual home games, but be aware of the policies. Cash avoids all of this entirely. For more on managing money in home games, see our guide on <a href="/learn/how-to-handle-poker-buy-ins-with-friends/">handling buy-ins with friends</a>.</p>
   </div>
 </section>
 
-<section class="cof-lp-features">
+<section class="cof-lp-problems cof-lp--white" id="fill-your-table">
+  <div class="cof-lp-problems-inner cof-lp-narrow">
+    <div class="cof-lp-tag">Players</div>
+    <h2 class="cof-lp-h2">How to Fill Your Table Every Week</h2>
+    <p class="cof-lp-body">Getting people to show up is the hardest part of hosting. Poker forum hosts report needing to invite 14-16 people to reliably seat 6-8. Here's what experienced hosts do differently.</p>
+
+    <div class="cof-lp-faq-item">
+      <h3>Set a fixed recurring date</h3>
+      <p>"Let's figure out when everyone can play" kills more home games than bad beats. Pick a night — every other Thursday, first Saturday of the month — and make it non-negotiable. People build it into their schedule. The game that moves around the calendar is the game that stops happening.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Over-invite by 50%</h3>
+      <p>If you want 8 at the table, invite 12. "Maybe" almost always means no. Experienced hosts keep a running player list of 15-20 people and rotate invites. If someone declines three times in a row, they drop off the active list — no hard feelings, just logistics.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Send the details early and clearly</h3>
+      <p>A vague "poker Friday?" gets vague responses. A complete invite with date, time, stakes, buy-in, and house rules gets commitments. People are more likely to show up when they know exactly what they're walking into. That's what the generator above is built for — fill it in once, paste it in the group chat, done.</p>
+    </div>
+
+    <div class="cof-lp-faq-item">
+      <h3>Make new players feel welcome</h3>
+      <p>Your player pool shrinks every time a new person has a bad first experience. Offer a quick rules walkthrough before the game, keep stakes low enough that losing a buy-in doesn't sting, and pair them next to someone patient. A beginner who has fun comes back and brings a friend. A beginner who gets embarrassed doesn't.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cof-lp-features" id="invite-templates">
   <div class="cof-lp-features-inner cof-lp-narrow">
     <div class="cof-lp-tag">Templates</div>
     <h2 class="cof-lp-h2">Invite Template Examples</h2>
@@ -587,7 +642,7 @@ extraScripts:
   </div>
 </section>
 
-<section class="cof-lp-problems cof-lp--white">
+<section class="cof-lp-problems cof-lp--white" id="faq">
   <div class="cof-lp-problems-inner cof-lp-narrow">
     <div class="cof-lp-tag">FAQ</div>
     <h2 class="cof-lp-h2">Frequently Asked Questions</h2>
@@ -628,8 +683,8 @@ extraScripts:
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Poker Night Checklist & Invite Generator",
-  "url": "https://chipsoffury.com/pre-game-checklist/",
+  "name": "How to Host a Poker Night: Checklist & Invite Generator",
+  "url": "https://chipsoffury.com/how-to-host-a-poker-night/",
   "description": "Free poker night checklist and invite generator for home games. Set your stakes, establish house rules, handle buy-ins, and generate a text invite for your group chat.",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
@@ -699,6 +754,54 @@ extraScripts:
         "@type": "Answer",
         "text": "Four hours is the sweet spot for a cash game. Start at 7pm, last buy-in at 9pm, wrap up around 11pm. Tournaments run longer because you play down to a winner. Schedule breaks every 60-90 minutes and set a hard stop time in your invite."
       }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Host a Poker Night",
+  "description": "A step-by-step guide to hosting a home poker game, from setting up equipment and buy-ins to establishing house rules and sending invites.",
+  "totalTime": "PT30M",
+  "tool": [
+    {"@type": "HowToTool", "name": "Two decks of plastic playing cards"},
+    {"@type": "HowToTool", "name": "Poker chip set (300-500 pieces)"},
+    {"@type": "HowToTool", "name": "Dealer button"},
+    {"@type": "HowToTool", "name": "Felt table topper or poker table"}
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Get Your Equipment Ready",
+      "text": "You need two decks of 100% plastic playing cards, a 300-500 piece poker chip set, a dealer button, and a playing surface. A felt topper on a dining table works fine.",
+      "url": "https://chipsoffury.com/how-to-host-a-poker-night/#equipment"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Set Stakes and Buy-ins",
+      "text": "Choose a buy-in amount that nobody at the table would be upset to lose. For casual games, $20-$50 is standard. Designate one banker to handle all buy-ins and cash-outs.",
+      "url": "https://chipsoffury.com/how-to-host-a-poker-night/#handle-the-bank"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Establish House Rules",
+      "text": "Agree on house rules before the first hand: no string betting, table stakes, no going south, show one show all, and cards speak. Write them down and share with players.",
+      "url": "https://chipsoffury.com/how-to-host-a-poker-night/#house-rules"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Invite Your Players",
+      "text": "Over-invite by 50% — if you want 8 at the table, invite 12. Send a clear invite with date, time, stakes, and house rules so people know exactly what to expect.",
+      "url": "https://chipsoffury.com/how-to-host-a-poker-night/#fill-your-table"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Generate and Share Your Invite",
+      "text": "Use the free invite generator to set your blinds, buy-in, house rules, and logistics, then copy the formatted invite into your group chat.",
+      "url": "https://chipsoffury.com/how-to-host-a-poker-night/#checklist"
     }
   ]
 }
