@@ -24,14 +24,15 @@ Commit modes:
 
 Instructions:
 1. Analyze the changes and our session discussion
-2. For "relevant" mode, identify which files are related to the work we've done
-3. Stage the appropriate files based on the selected mode
-4. Create a commit message that:
+2. Do NOT use command substitution or compound commands. Write simple, separate commands for each step.
+3. For "relevant" mode, identify which files are related to the work we've done
+4. Stage the appropriate files based on the selected mode
+5. Create a commit message that:
    - Summarizes the changes concisely in the subject line
    - Has a detailed body ONLY for complex changes that need explanation (multiple features, breaking changes, non-obvious refactors)
    - For simple fixes and straightforward changes, use a single line that includes the "why" if not obvious
    - Follows the repository's commit message style
-5. Show the commit message in a clearly highlighted format and ask for user confirmation before committing
+6. Show the commit message in a clearly highlighted format and ask for user confirmation before committing
    - Format:
      ```
      **COMMIT MESSAGE:**

@@ -48,7 +48,7 @@ User request: $ARGUMENTS
 | `fal-ai/nano-banana` | $0.04 | Multiple aspect ratios, editing |
 | `fal-ai/nano-banana-pro` | $0.15 | Premium quality, text rendering |
 | `fal-ai/flux-2/turbo` | ~$0.01 | Fast and cheap |
-
+| `fal-ai/nano-banana-2` | $0.04 | Updated version of nano-banana |
 ## Aspect ratios
 
 Most models: `1:1`, `4:3`, `3:4`, `16:9`, `9:16`, `3:2`, `2:3`
