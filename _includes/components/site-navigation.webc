@@ -1,9 +1,9 @@
-<nav class="relative z-50 bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-900 border-b border-purple-800/50">
+<nav class="relative z-50 bg-indigo-950 border-b border-indigo-800/30">
   <div class="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-4">
     <!-- Desktop: single row | Mobile: two rows -->
     <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
       <!-- Logo/Brand — centered on mobile, left on desktop -->
-      <a href="/" class="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 text-white hover:text-purple-200 transition-colors mb-2 sm:mb-0">
+      <a href="/" class="flex items-center justify-center sm:justify-start space-x-2 sm:space-x-3 text-white hover:text-indigo-300 transition-colors mb-2 sm:mb-0">
         <img src="/images/chips_of_fury_logo.webp" alt="Chips of Fury" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl shadow-lg">
         <span class="text-sm sm:text-xl font-bold" @html="'Chips of Fury®'"></span>
       </a>
@@ -12,7 +12,7 @@
       <div class="flex items-center justify-center sm:justify-end space-x-3 sm:space-x-6 text-sm sm:text-base">
         <!-- Features Dropdown -->
         <div class="relative nav-dropdown">
-          <button class="flex items-center space-x-1 text-purple-200 hover:text-white transition-colors py-2 dropdown-toggle focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/60 rounded">
+          <button class="flex items-center space-x-1 text-indigo-300 hover:text-white transition-colors py-2 dropdown-toggle focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60 rounded">
             <span>Features</span>
             <svg class="w-4 h-4 transition-transform dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -21,10 +21,10 @@
 
           <!-- Dropdown Menu -->
           <div class="dropdown-menu absolute left-0 sm:left-auto sm:right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-left sm:origin-top-right scale-95 hidden">
-            <div class="bg-white rounded-xl shadow-2xl border border-purple-100 overflow-hidden">
-              <a href="/virtual-poker-chips/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
-                <div class="font-semibold text-gray-900">Chips Only Mode</div>
-                <div class="text-sm text-gray-600">Use real cards, virtual chips</div>
+            <div class="bg-white rounded-xl shadow-2xl border border-indigo-100 overflow-hidden">
+              <a href="/virtual-poker-chips/" class="block px-4 py-3 hover:bg-indigo-50 transition-colors">
+                <div class="font-semibold text-gray-900">Virtual Poker Chips</div>
+                <div class="text-sm text-gray-600">Play poker with physical cards without a chip set</div>
               </a>
             </div>
           </div>
@@ -32,7 +32,7 @@
 
         <!-- Tools Dropdown -->
         <div class="relative nav-dropdown">
-          <button class="flex items-center space-x-1 text-purple-200 hover:text-white transition-colors py-2 dropdown-toggle focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/60 rounded">
+          <button class="flex items-center space-x-1 text-indigo-300 hover:text-white transition-colors py-2 dropdown-toggle focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60 rounded">
             <span>Tools</span>
             <svg class="w-4 h-4 transition-transform dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -41,12 +41,12 @@
 
           <!-- Dropdown Menu -->
           <div class="dropdown-menu absolute left-0 sm:left-auto sm:right-0 mt-1 w-56 opacity-0 invisible transition-all duration-200 transform origin-top-left sm:origin-top-right scale-95 hidden">
-            <div class="bg-white rounded-xl shadow-2xl border border-purple-100 overflow-hidden">
-              <a href="/chip-distribution-calculator/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
+            <div class="bg-white rounded-xl shadow-2xl border border-indigo-100 overflow-hidden">
+              <a href="/chip-distribution-calculator/" class="block px-4 py-3 hover:bg-indigo-50 transition-colors">
                 <div class="font-semibold text-gray-900">Chip Distribution Calculator</div>
                 <div class="text-sm text-gray-600">Plan your chip distribution</div>
               </a>
-              <a href="/how-to-host-a-poker-night/" class="block px-4 py-3 hover:bg-purple-50 transition-colors">
+              <a href="/how-to-host-a-poker-night/" class="block px-4 py-3 hover:bg-indigo-50 transition-colors">
                 <div class="font-semibold text-gray-900">Poker Night Hosting Helper</div>
                 <div class="text-sm text-gray-600">Generate a shareable plan</div>
               </a>
@@ -55,13 +55,13 @@
         </div>
 
         <!-- Learn Link -->
-        <a href="/learn" class="text-purple-200 hover:text-white transition-colors">Learn</a>
+        <a href="/learn" class="text-indigo-300 hover:text-white transition-colors">Learn</a>
 
         <!-- Blog Link -->
-        <a href="/blog" class="text-purple-200 hover:text-white transition-colors">Blog</a>
+        <a href="/blog" class="text-indigo-300 hover:text-white transition-colors">Blog</a>
 
         <!-- Contact Button -->
-        <a href="/contact" class="bg-purple-600 hover:bg-purple-700 px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg transition-all hover:shadow-lg text-white font-medium" title="Contact">
+        <a href="/contact" class="bg-indigo-600 hover:bg-indigo-500 px-3 sm:px-5 py-1.5 sm:py-2 rounded-lg transition-all hover:shadow-lg text-white font-medium" title="Contact">
           <!-- Icon on mobile, text on desktop -->
           <svg class="w-5 h-5 sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
