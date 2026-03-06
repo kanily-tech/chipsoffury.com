@@ -34,6 +34,7 @@
     "@fal-ai/client": "^1.9.1",
     "@tailwindcss/cli": "^4.1.8",
     "dotenv": "^17.2.4",
+    "googleapis": "^171.4.0",
     "markdown-it-anchor": "^9.2.0"
   }
 }

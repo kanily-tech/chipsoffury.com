@@ -4,7 +4,7 @@ const { fal } = require("@fal-ai/client");
 const fs = require("fs");
 const path = require("path");
 
-require("dotenv").config({ path: path.join(__dirname, ".env") });
+require("dotenv").config({ path: path.join(__dirname, ".env"), quiet: true });
 
 // Models that use image_size (e.g., "landscape_4_3") instead of aspect_ratio (e.g., "4:3")
 const IMAGE_SIZE_MODELS = ["fal-ai/flux-2/turbo", "fal-ai/flux/dev"];

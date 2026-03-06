@@ -103,3 +103,51 @@ Fast and cheap ($0.008/megapixel). Good realism and native editing capabilities.
 | enable_prompt_expansion | false (default) |
 
 > **Note:** flux models use `image_size` format (e.g., `landscape_4_3`). All other models use aspect ratio format (e.g., `4:3`). The script handles this automatically — you can pass `4:3` to a flux model and it will be converted.
+
+## search-console.js
+
+Query Google Search Console data for SEO analysis.
+
+### Setup
+
+1. Create OAuth2 credentials (Desktop app) in [Google Cloud Console](https://console.cloud.google.com/apis/credentials) with Search Console API enabled
+2. Add to `scripts/.env`:
+   ```
+   GSC_CLIENT_ID=<your client id>
+   GSC_CLIENT_SECRET=<your client secret>
+   GSC_PROPERTY=sc-domain:chipsoffury.com
+   ```
+3. Run `node scripts/search-console.js auth` — browser opens, approve access, refresh token is saved to `.env` automatically
+
+### Usage
+
+```bash
+# Page performance (last 28 days)
+node scripts/search-console.js page /learn/poker-positions/
+
+# Top keywords for a page
+node scripts/search-console.js keywords /learn/poker-positions/ --limit 30
+
+# Track a keyword over 90 days
+node scripts/search-console.js query "poker positions" --days 90
+
+# Site overview
+node scripts/search-console.js overview --limit 10
+
+# Compare to previous period
+node scripts/search-console.js page /learn/poker-positions/ --compare
+
+# Explicit date range
+node scripts/search-console.js page /learn/poker-positions/ --start 2026-01-01 --end 2026-01-31
+
+# Explicit date range with comparison
+node scripts/search-console.js page /learn/poker-positions/ --start 2026-01-01 --end 2026-01-31 --compare
+```
+
+### Via Claude skill
+
+```
+/search-console how is the poker positions page doing?
+/search-console what keywords bring traffic to /learn/pre-game-checklist/?
+/search-console compare /learn/poker-positions/ last 2 weeks vs before
+```
