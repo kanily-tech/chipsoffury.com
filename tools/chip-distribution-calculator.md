@@ -1,7 +1,7 @@
 ---
-title: "Poker Chip Distribution Calculator & Starting Stack Guide (Home Games)"
+title: "Poker Chip Distribution Calculator | Instant Setup for Any Game"
 date: 2026-02-10
-description: "Free poker chip distribution calculator for home games. Figure out exactly how many chips per person you need, standard color values, and starting stacks for your buy-in."
+description: "Enter your chip set and buy-in — get the exact per-player breakdown in seconds. Auto-suggests blinds, maps colors to values, and handles any chip inventory."
 ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
 extraStylesheets:
   - "/css/chip-distribution-calculator.css"
@@ -378,7 +378,8 @@ hideAppSchema: true
   "@type": "WebApplication",
   "name": "Poker Chip Distribution Calculator",
   "url": "https://chipsoffury.com/chip-distribution-calculator/",
-  "description": "Free poker chip distribution calculator for home games. Figure out exactly how many chips per person you need, standard color values, and starting stacks.",
+  "description": "Enter your chip set and buy-in — get the exact per-player breakdown in seconds. Auto-suggests blinds, maps colors to values, and handles any chip inventory.",
+  "dateModified": "2026-03-07",
   "applicationCategory": "UtilityApplication",
   "operatingSystem": "All",
   "browserRequirements": "Requires JavaScript",
