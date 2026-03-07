@@ -3,6 +3,8 @@ title: "Poker Chip Distribution Calculator | Instant Setup for Any Game"
 date: 2026-02-10
 description: "Enter your chip set and buy-in — get the exact per-player breakdown in seconds. Auto-suggests blinds, maps colors to values, and handles any chip inventory."
 ogImage: "https://chipsoffury.com/images/chip-distribution-calculator-og.webp"
+ogImageWidth: 1200
+ogImageHeight: 630
 extraStylesheets:
   - "/css/chip-distribution-calculator.css"
 extraScripts:
