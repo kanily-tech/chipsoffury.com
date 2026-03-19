@@ -37,5 +37,8 @@ temp/
 # Content team workspace (intermediate artifacts)
 .content-team/
 
+# Python venv
+scripts/python/.venv/
+
 # Script secrets
 scripts/.env
