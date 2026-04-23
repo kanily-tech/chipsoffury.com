@@ -1,13 +1,13 @@
 ---
-allowed-tools: Bash(uv run --project scripts/python withoutbg:*)
-description: Remove background from an image using AI (local or API)
-argument-hint: <input-path> [--output path] [--use-api] [--format png|jpg|webp]
+allowed-tools: Bash(node scripts/remove-bg.js:*)
+description: Remove background from an image using fal.ai pixelcut/background-removal
+argument-hint: <input-path> [--output path]
 ---
 
 ## Context
 
-- API key config: `scripts/.env` (WITHOUTBG_API_KEY)
-- Python env: `scripts/python/` (run `uv sync --project scripts/python` if missing)
+- API key config: `scripts/.env` (FAL_API_KEY)
+- Model: `pixelcut/background-removal` (fal.ai)
 
 ## Your task
 
@@ -18,38 +18,24 @@ User request: $ARGUMENTS
 ## Instructions
 
 1. Parse the user's request to extract:
-   - **input** (required): Path to the input image
+   - **input** (required): Path to the input image (PNG or JPEG)
    - **output** (optional): Output file path. Default: `temp/removed-bg/<original-name>-no-bg.png`
-   - **use-api** (optional): If specified, use withoutBG Pro cloud API instead of local model
-   - **format** (optional): Output format — `png`, `jpg`, or `webp`. Default: `png`
-   - **quality** (optional): JPEG quality 1-100 (only relevant for jpg format)
-   - **batch** (optional): If the input is a directory, process all images in it
+   - **batch** (optional): If the input is a directory, loop over images in it and call the script once per file.
 
 2. Generate an output path if none given:
    - Extract the filename without extension
    - Place in `temp/removed-bg/`
    - Example: `images/chip.png` → `temp/removed-bg/chip-no-bg.png`
 
-3. Build and run the command:
+3. Run the script:
 
-   **Local mode (default):**
    ```
-   uv run --project scripts/python withoutbg "<input>" --output <output-path> [--format <fmt>]
-   ```
-
-   **API mode** (when user requests `--use-api` or higher quality):
-   ```
-   source scripts/.env && WITHOUTBG_API_KEY=$WITHOUTBG_API_KEY uv run --project scripts/python withoutbg "<input>" --output <output-path> --use-api [--format <fmt>]
+   node scripts/remove-bg.js --input "<input>" --output "<output-path>"
    ```
 
-4. After processing, report:
-   - The output path
-   - The mode used (local or API)
-   - The output format
+4. After processing, report the output path.
 
-## Modes
+## Notes
 
-| Mode | Cost | Quality | Speed |
-|------|------|---------|-------|
-| Local (default) | Free | Good | ~5-10s first run (downloads ~320MB models), fast after |
-| API (`--use-api`) | Per-image | Best | Fast, 7 req/min rate limit |
+- Output is always PNG with an alpha channel (transparency). If the user needs a different format, convert afterwards (e.g. `sips -s format jpeg <path>`).
+- Uses fal.ai credits (billed per call).
