@@ -257,7 +257,7 @@ genmedia status <endpoint_id> "$REQ" \
 ### Upload then reference
 
 ```bash
-URL=$(genmedia upload ./input.png --json | jq -r '.url')
+URL=$(genmedia upload ./input.png --json | jq -r '.cdn_url')
 genmedia run fal-ai/nano-banana-pro/edit \
  --image_urls "$URL" \
  --prompt "..." \
