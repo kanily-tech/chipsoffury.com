@@ -6,7 +6,6 @@ description: >
  out subject", "isolate from background", or supplies an image path and asks
  for it without a background. Output is PNG with alpha. Executes via the
  `genmedia` skill — no bespoke script.
-allowed-tools: Bash(genmedia:*) Bash(mkdir:*)
 ---
 
 # remove-bg: background removal via fal.ai
@@ -22,26 +21,27 @@ If input is a directory, loop and run the steps below once per image.
 
 ## Steps
 
-Run each step as its own Bash call — do not chain with `&&`, do not use shell variable assignment with `$(…)`, do not add stray `echo` statements. Each call must be a single simple command that matches the allow-list.
-
 1. Compute the output path if none was given (replace extension with `-no-bg.png`, place under `temp/removed-bg/`), then ensure its parent directory exists:
 
    ```bash
-   mkdir -p "<output-dir>"
+   mkdir -p "<output-path>"
    ```
 
-2. Upload the local file to the fal.ai CDN:
+2. Upload the local file to the fal.ai CDN. The upload response field is `cdn_url`:
 
    ```bash
-   genmedia upload "<input>" --json
+   URL=$(genmedia upload "<input>" --json | jq -r .cdn_url)
    ```
 
-   Read the `url` field from the JSON response — that is the CDN URL to use in step 3.
-
-3. Run the model and download the result, passing the URL from step 2 as a literal string:
+3. Run the model and download the result. Pass `--sync_mode false` so fal returns a real CDN URL instead of a `data:image/png;base64,...` URI (genmedia's `--download` cannot save data URIs and silently produces no file):
 
    ```bash
-   genmedia run pixelcut/background-removal --image_url "<cdn-url-from-step-2>" --output_format rgba --download "<output-path>" --json
+   genmedia run pixelcut/background-removal \
+     --image_url "$URL" \
+     --output_format rgba \
+     --sync_mode false \
+     --download "<output-path>" \
+     --json
    ```
 
 4. Report the saved output path.

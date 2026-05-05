@@ -66,7 +66,7 @@ genmedia status fal-ai/veo3.1 "$REQ" \
 ### Upload then run
 
 ```bash
-URL=$(genmedia upload ./photo.jpg --json | jq -r '.url')
+URL=$(genmedia upload ./photo.jpg --json | jq -r '.cdn_url')
 genmedia run fal-ai/nano-banana-pro/edit \
  --image_urls "[\"$URL\"]" \
  --prompt "make the sky stormy" \
