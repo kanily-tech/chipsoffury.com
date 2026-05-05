@@ -722,13 +722,7 @@ h2[id], h3[id] {
 }
 
 .scroll-indicator {
-  /* position: absolute: positions relative to hero-section */
-  /* bottom-0: positions at the bottom edge of hero section */
-  /* left-1/2: positions at 50% from left */
-  /* transform: centers horizontally and moves down by half height to cross border */
-  /* z-[9999]: extremely high z-index to appear above all components */
-  /* cursor-pointer: shows pointer cursor */
-  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-[9999] cursor-pointer;
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 z-20 cursor-pointer;
 }
 
 .scroll-arrow {

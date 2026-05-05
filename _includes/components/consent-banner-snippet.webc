@@ -1,0 +1,55 @@
+<script webc:keep webc:root>
+  // Consent Mode v2 default-deny + replay of any previously stored choice.
+  // Must run before any script that loads gtag.js (GTM, Firebase Analytics, etc.).
+  // Spec: docs/plans/2026-05-05-gdpr-consent-banner-marketing.md
+  (function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = window.gtag || gtag;
+
+    gtag('consent', 'default', {
+      ad_storage:         'denied',
+      ad_user_data:       'denied',
+      ad_personalization: 'denied',
+      analytics_storage:  'denied',
+      wait_for_update:    500
+    });
+
+    // Inline cookie parse — must NOT depend on /js/consent-cookie.js (which
+    // loads deferred). Mirror the same schema-version check.
+    var COOKIE_NAME = 'cof_consent';
+    var CURRENT_VERSION = 1;
+
+    function readInitial() {
+      var c = document.cookie || '';
+      var parts = c.split(';');
+      for (var i = 0; i < parts.length; i++) {
+        var kv = parts[i].trim().split('=');
+        if (kv[0] !== COOKIE_NAME) continue;
+        var raw = kv.slice(1).join('=');
+        if (!raw) return null;
+        try {
+          var rec = JSON.parse(decodeURIComponent(raw));
+          if (!rec || typeof rec !== 'object') return null;
+          if (typeof rec.v !== 'number' || rec.v < CURRENT_VERSION) return null;
+          if (typeof rec.analytics !== 'boolean') return null;
+          return rec;
+        } catch (e) {
+          return null;
+        }
+      }
+      return null;
+    }
+
+    var initial = readInitial();
+    if (initial && initial.analytics === true) {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+
+    // Skeleton API for later phases. cookie-consent.js will set .open() once
+    // the DOM is ready. Defining `initial` here lets other scripts read the
+    // current cookie state without re-parsing.
+    window.cofConsent = window.cofConsent || {};
+    window.cofConsent.initial = initial;
+  })();
+</script>
