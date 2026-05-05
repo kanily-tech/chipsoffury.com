@@ -98,9 +98,34 @@ genmedia run fal-ai/flux/dev --help # introspect parameters as CLI flags
 
 Any model input parameter can be passed as `--<param> <value>`. Run `genmedia run <endpoint_id> --help` to see a model's accepted parameters as CLI flags, or `genmedia schema <endpoint_id>` for the same as JSON.
 
+### Passing `array<...>` parameters
+
+The CLI presents every model input as a single string-valued flag — including fields the server expects as a list (e.g. `image_urls`, `images`, `reference_images`). To send a list, the value must itself be a **JSON-encoded array literal**:
+
+```bash
+# Correct — single flag, JSON array literal as the value
+genmedia run fal-ai/nano-banana-2/edit \
+  --image_urls '["https://cdn/a.png","https://cdn/b.png"]' \
+  --prompt "..."
+
+# Build it cleanly with jq when URLs come from variables
+URLS_JSON=$(jq -nc '$ARGS.positional' --args "$URL_A" "$URL_B")
+genmedia run fal-ai/nano-banana-2/edit --image_urls "$URLS_JSON" --prompt "..."
+```
+
+What does **not** work, and why:
+
+| Form | Result |
+|---|---|
+| `--image_urls "url1,url2"` | Sent as the literal string `"url1,url2"`. Server returns 422 `Input should be a valid list`. The CLI does not split on commas. |
+| `--image_urls url1 --image_urls url2` | Last flag wins — server receives only `url2` as a single string. Same 422. The CLI does not repeat-collect. |
+| `--image_urls=value` | Flag name and value get merged into a key like `"image_urls=value": true`; both `image_urls` and any other required fields then come back missing. Always use space-separated `--flag value`. |
+
+Single-element arrays still need the bracket form: `--image_urls '["only-url"]'`. A bare `--image_urls "$URL"` happens to work on some endpoints that coerce string → singleton list, but it is not portable across models — prefer the literal.
+
 | Option | Description |
 |---|---|
-| `--<param>` | Any model input parameter |
+| `--<param>` | Any model input parameter (use JSON-array literal for `array<...>` types — see above) |
 | `--logs` | Stream logs while the model runs (pretty mode only) |
 | `--async` | Submit to queue without waiting, returns a `request_id` |
 | `--download [template]` | Save every media URL in the result. Optional template uses `{index}`, `{name}`, `{ext}`, `{request_id}` placeholders. Omitted → cwd with source file names. Trailing `/` or existing dir → dir + source names. Plain filename + multiple outputs → `_1`, `_2` collision suffixes. Downloaded paths appear under `downloaded_files` in JSON. |
@@ -251,7 +276,8 @@ genmedia pricing <endpoint_id> --json
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| `422 Unprocessable Entity` | Wrong field name or missing required field | `genmedia schema <endpoint_id> --json` and read `validation_errors` |
+| `422 Unprocessable Entity` with `Input should be a valid list` | Array param sent as comma-string or repeated flags | Re-pass as a JSON-array literal (`--<param> '["a","b"]'`) — see [Passing `array<...>` parameters](#passing-array-parameters) |
+| `422 Unprocessable Entity` (other) | Wrong field name or missing required field | `genmedia schema <endpoint_id> --json` and read `validation_errors` |
 | `401 Unauthorized` | Missing or invalid API key | `genmedia setup` or `export FAL_KEY=…` |
 | `Endpoint not found` | Wrong endpoint ID, deprecated, or typo | `genmedia models "<task>" --json` to discover |
 | Slow / timeout | Long-running generation | Use `--async`, then `genmedia status … --result` |

@@ -8,6 +8,7 @@ description: >
  fal.ai endpoint catalog. This is the foundational skill. Every other
  fal.ai-related skill in this repo executes its work through genmedia
  commands. Use `--json` whenever the output will be parsed by an agent.
+allowed-tools: Bash(genmedia:*) Bash(jq:*) Bash(mkdir:*)
 ---
 
 # genmedia CLI: fal.ai endpoint runner
@@ -21,8 +22,9 @@ For the full command surface (every flag, every option, every example), see [ref
 1. **Always use `--json` when an agent will read the output.** Pretty mode is for humans only.
 2. **Never invent endpoint IDs.** Use `genmedia models "<query>"` to discover, `genmedia models --endpoint_id <id>` to verify.
 3. **Inspect schema before running.** `genmedia schema <endpoint_id> --json` shows the exact field names. Guessed flags fail with 422.
-4. **Save files with `--download`, not curl.** The CLI handles authentication, naming, and file format detection.
-5. **Use `--async` for long-running generation.** Image work usually completes inline; video/audio/3D usually need queue + status polling.
+4. **Pass `array<...>` inputs as a JSON-array literal.** For any field whose schema type is `array<...>` (e.g. `image_urls`, `images`, `reference_images`), use a single flag whose value is a JSON-encoded list: `--image_urls '["url1","url2"]'`. Comma-joined strings (`"url1,url2"`) and repeated flags (`--image_urls url1 --image_urls url2`) both fail with 422 `Input should be a valid list` — the CLI does not split or repeat-collect for array params.
+5. **Save files with `--download`, not curl.** The CLI handles authentication, naming, and file format detection.
+6. **Use `--async` for long-running generation.** Image work usually completes inline; video/audio/3D usually need queue + status polling.
 
 ## Command index
 
@@ -66,9 +68,19 @@ genmedia status fal-ai/veo3.1 "$REQ" \
 ```bash
 URL=$(genmedia upload ./photo.jpg --json | jq -r '.url')
 genmedia run fal-ai/nano-banana-pro/edit \
- --image_urls "$URL" \
+ --image_urls "[\"$URL\"]" \
  --prompt "make the sky stormy" \
  --download "./out/{request_id}_{index}.{ext}" \
+ --json
+```
+
+For multiple URLs, build the JSON array with `jq` so quoting stays clean:
+
+```bash
+URLS_JSON=$(jq -nc '$ARGS.positional' --args "$URL_A" "$URL_B" "$URL_C")
+genmedia run fal-ai/nano-banana-2/edit \
+ --image_urls "$URLS_JSON" \
+ --prompt "..." \
  --json
 ```
 
