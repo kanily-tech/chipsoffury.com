@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI coding agents (Claude Code, Codex, pi, and others) when working with code in this repository.
 
 ## Project Overview
 
@@ -34,7 +34,11 @@ npx wrangler deploy
 
 2. **Component Architecture**: WebC components in `_includes/components/` use inline Tailwind utilities (not @apply). Components are rendered using `{% renderTemplate "webc" %}` wrapper.
 
-3**Blog System**: Markdown posts in `posts/` directory use frontmatter and the `layouts/blog-post.html` layout.
+3. **Content System**: Two content directories with different purposes:
+   - **`blog/`**: Dev blog / technical posts → `/blog/<slug>/`
+   - **`learn/`**: User-facing educational content → `/learn/<slug>/`
+   - **URL slugs**: The numeric prefix is stripped from filenames. `0001-hello-world.md` → `/blog/hello-world/`
+   - **Frontmatter flags**: `draft: true` (hidden everywhere), `unlisted: true` (hidden from /blog listing but in sitemap)
 
 ### Directory Structure
 
@@ -48,9 +52,45 @@ css/
 ├── chips-of-fury.webflow.css  # Legacy Webflow styles
 └── normalize.css        # CSS reset
 
-posts/               # Blog posts in Markdown
+blog/                # Dev blog / technical posts in Markdown
+learn/               # User-facing educational content in Markdown
+glossary/            # Poker term definitions (*.md)
 _site/              # Build output (gitignored)
 ```
+
+### Poker Glossary System
+
+Interactive inline definitions for poker terms, designed for beginner-friendly content.
+
+**Usage in markdown:**
+```markdown
+destroys more [bankrolls](glossary:bankroll) than bad cards ever could.
+```
+
+**Creating a glossary term** (`glossary/bankroll.md`):
+```markdown
+---
+term: Bankroll
+---
+
+Your total poker funds set aside specifically for playing.
+
+- **Separate** from living expenses
+- Supports full markdown including images
+```
+
+**How it works:**
+1. `_data/glossary.js` reads all `glossary/*.md` files at build time
+2. Eleventy transform converts `[text](glossary:slug)` → clickable `<span class="poker-term">`
+3. Glossary data is embedded as JSON in blog pages
+4. JS powers the modal popup with formatted HTML content
+
+**Files involved:**
+- `glossary/*.md` — Term definitions
+- `_data/glossary.js` — Processes markdown to HTML
+- `.eleventy.js` — Transform for link syntax
+- `css/tailwind-full.css` — `.poker-term` and modal styles
+- `_includes/layouts/blog-post-tailwind.html` — Modal HTML + JS
 
 ### CSS Architecture
 
@@ -91,5 +131,17 @@ Example component structure:
 ### Current Branch Structure
 
 - Main branch: `master` (for PRs)
-- Current branch: `release/v10`
 - Clean working directory as of initialization
+
+## Agent Skills
+
+Reusable skills live in `.agents/skills/` (one directory per skill, each with a
+`SKILL.md`). This is the single source of truth, shared across coding agents:
+
+- `.claude/skills/` is a symlink to `.agents/skills/` (Claude Code).
+- For Codex, symlink `.codex/skills` → `../.agents/skills`.
+- For pi, point its skills directory at `.agents/skills/`.
+
+Skills follow the open [Agent Skills](https://agentskills.io) format and are
+portable across agents. Exception: `content-team` and `poker-article-agent-team`
+rely on Claude Code's multi-agent teams and only work in Claude Code.
