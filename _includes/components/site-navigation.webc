@@ -46,6 +46,10 @@
                 <div class="font-semibold text-gray-900">Chip Distribution Calculator</div>
                 <div class="text-sm text-gray-600">Plan your chip distribution</div>
               </a>
+              <a href="/tournament-blinds-calculator/" class="block px-4 py-3 hover:bg-indigo-50 transition-colors">
+                <div class="font-semibold text-gray-900">Tournament Blinds Calculator</div>
+                <div class="text-sm text-gray-600">Create an editable blind structure</div>
+              </a>
               <a href="/how-to-host-a-poker-night/" class="block px-4 py-3 hover:bg-indigo-50 transition-colors">
                 <div class="font-semibold text-gray-900">Poker Night Hosting Helper</div>
                 <div class="text-sm text-gray-600">Generate a shareable plan</div>

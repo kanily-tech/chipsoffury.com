@@ -42,3 +42,5 @@ scripts/python/.venv/
 
 # Script secrets
 scripts/.env
+
+.superpowers/

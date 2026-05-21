@@ -28,6 +28,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy({"css/chips-of-fury.webflow.css": "css/chips-of-fury.webflow.css"});
     eleventyConfig.addPassthroughCopy({"css/chip-distribution-calculator.css": "css/chip-distribution-calculator.css"});
     eleventyConfig.addPassthroughCopy({"css/pre-game-checklist.css": "css/pre-game-checklist.css"});
+    eleventyConfig.addPassthroughCopy({"css/tournament-blinds-calculator.css": "css/tournament-blinds-calculator.css"});
 
     // Copy js files to _site/js
     // Keeps the same directory structure.

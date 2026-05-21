@@ -1,0 +1,896 @@
+.tb-hero {
+  background: #091A12;
+  color: #F2EFE8;
+  position: relative;
+  overflow: hidden;
+  padding: 4.6rem 1.5rem 4rem;
+}
+.tb-hero::before {
+  content: '';
+  position: absolute;
+  inset: -35% -12% auto auto;
+  width: 58%;
+  height: 150%;
+  background: radial-gradient(ellipse at center, rgba(20, 83, 50, 0.34), transparent 64%);
+  pointer-events: none;
+}
+.tb-hero-ring {
+  position: absolute;
+  border-radius: 999px;
+  border: 1.5px solid rgba(191, 162, 78, 0.1);
+  pointer-events: none;
+}
+.tb-hero-ring--one {
+  width: 290px;
+  height: 290px;
+  right: 6%;
+  top: -80px;
+}
+.tb-hero-ring--two {
+  width: 120px;
+  height: 120px;
+  right: 24%;
+  bottom: 36px;
+}
+.tb-hero-inner {
+  max-width: 56rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.tb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: #BFA24E;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.tb-eyebrow::before {
+  content: '';
+  width: 1.35rem;
+  height: 1.5px;
+  background: #BFA24E;
+}
+.tb-hero h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.1rem;
+  max-width: 46rem;
+}
+.tb-hero p {
+  color: #9BB09F;
+  font-size: 1.08rem;
+  line-height: 1.62;
+  max-width: 40rem;
+  margin: 0 0 2rem;
+}
+.tb-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #BFA24E;
+  color: #091A12;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  padding: 0.88rem 1.7rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.12s, background 0.2s;
+}
+.tb-hero-cta:hover {
+  background: #CEAF5C;
+  transform: translateY(-1px);
+}
+.tb-hero-cta svg {
+  width: 1rem;
+  height: 1rem;
+}
+.tb-tool {
+  background: #EEEDEA;
+  padding: 3rem 0.85rem 3.6rem;
+  position: relative;
+}
+.tb-tool::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C8B87A 50%, transparent);
+}
+.tb-tool-inner {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+.tb-tool-head {
+  text-align: center;
+  margin-bottom: 1.35rem;
+}
+.tb-tool-head h2 {
+  font-family: var(--font-heading);
+  color: #1A2E23;
+  font-size: 1.35rem;
+  margin: 0 0 0.2rem;
+}
+.tb-tool-head p {
+  color: #5F6B63;
+  font-size: 0.9rem;
+  margin: 0;
+}
+.tb-calc {
+  --tb-ink: #0f172a;
+  --tb-sub: #475569;
+  --tb-line: #dbe4f0;
+  --tb-teal: #0f766e;
+  --tb-teal-soft: #effcf8;
+  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  font-variant-numeric: tabular-nums;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  color: var(--tb-ink);
+  min-width: 0;
+}
+.tb-calc * {
+  box-sizing: border-box;
+}
+.tb-form,
+.tb-results {
+  display: grid;
+  gap: 0.85rem;
+}
+.tb-panel,
+.tb-schedule-card {
+  background: #fff;
+  border: 1px solid var(--tb-line);
+  border-radius: 12px;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.06);
+}
+.tb-panel-body {
+  padding: 1.25rem 1.3rem;
+}
+/* Section title inside the setup panel: small uppercase heading with a
+   trailing hairline so groups read as distinct without heavy dividers. */
+.tb-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.6rem 0 0.95rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a2e23;
+}
+.tb-section-title:first-child {
+  margin-top: 0;
+}
+.tb-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+.tb-setup-primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem 1.8rem;
+}
+.tb-field {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.tb-field--players input { width: 3.5rem; text-align: right; }
+.tb-field--stack input { width: 6.5rem; text-align: right; }
+.tb-field--target .tb-input-suffix { width: auto; }
+.tb-field--target .tb-input-suffix input { width: 4rem; text-align: right; }
+.tb-field--growth select { width: 12rem; }
+.tb-field span {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.tb-field input,
+.tb-field select {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: var(--tb-ink);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  outline: 0;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+.tb-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #94a3b8 50%), linear-gradient(135deg, #94a3b8 50%, transparent 50%);
+  background-position: calc(100% - 15px) 55%, calc(100% - 10px) 55%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+}
+.tb-field input:hover,
+.tb-field select:hover {
+  border-color: #cbd5e1;
+}
+.tb-field input:focus,
+.tb-field select:focus {
+  border-color: var(--tb-teal);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+/* Secondary row: Opening Blinds + Blind Increases side-by-side, caption below.
+   Top margin removed — the "Blinds" section title now provides separation. */
+.tb-setup-secondary {
+  margin-top: 0;
+}
+.tb-setup-secondary-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1rem 2.5rem;
+}
+.tb-input-suffix {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+.tb-input-suffix:hover {
+  border-color: #cbd5e1;
+}
+.tb-input-suffix:focus-within {
+  border-color: var(--tb-teal);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+.tb-input-suffix input {
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+.tb-input-suffix input:focus {
+  box-shadow: none;
+}
+.tb-input-suffix b {
+  color: #94a3b8;
+  padding-right: 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* Opening Blinds — compact pair of inputs with "/" separator */
+.tb-opening-label {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.tb-opening-inputs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.tb-opening-inputs input {
+  width: 5rem;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: var(--tb-ink);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  outline: 0;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+.tb-opening-inputs input:hover {
+  border-color: #cbd5e1;
+}
+.tb-opening-inputs input:focus {
+  border-color: var(--tb-teal);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+}
+.tb-opening-sep {
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+.tb-opening-caption {
+  margin: 0.85rem 0 0;
+  color: var(--tb-sub);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+.tb-opening-caption strong {
+  color: var(--tb-ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.tb-opening-caption-sep {
+  color: #cbd5e1;
+  margin: 0 0.25rem;
+}
+.tb-opening-caption-hint {
+  color: #94a3b8;
+}
+
+/* Antes block — lives inside the Blinds section, below the caption.
+   Two-row grid: row 1 holds the field labels ("Antes", "% of BB"); row 2
+   holds the controls (toggle, segment group, percent input). This keeps the
+   "Antes" and "% of BB" labels on a single baseline no matter which controls
+   are visible, and — paired with `align-self: start` on the toggle — pins
+   the toggle in place so it never shifts when antes are turned on. */
+.tb-setup-antes {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+    "lbl-toggle  lbl-seg  lbl-pct"
+    "ctrl-toggle ctrl-seg ctrl-pct";
+  /* Top-align both rows so labels share a baseline and the toggle, segment
+     bar, and percent input all start at the same Y. */
+  align-items: start;
+  justify-content: start;
+  column-gap: 1.5rem;
+  row-gap: 0.4rem;
+}
+.tb-antes-lbl-toggle { grid-area: lbl-toggle; }
+.tb-antes-lbl-seg    { grid-area: lbl-seg; }
+.tb-antes-lbl-pct    { grid-area: lbl-pct; }
+.tb-antes-toggle     { grid-area: ctrl-toggle; }
+.tb-antes-segments   { grid-area: ctrl-seg; }
+.tb-antes-pct        { grid-area: ctrl-pct; }
+
+.tb-field--break .tb-input-suffix {
+  width: auto;
+}
+.tb-field--break .tb-input-suffix input {
+  width: 4rem;
+  text-align: right;
+}
+
+.tb-ante-label {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* iOS-style toggle switch */
+.tb-switch {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+}
+.tb-switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.tb-switch-track {
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: background 0.18s;
+  position: relative;
+}
+.tb-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.18);
+  transition: transform 0.18s;
+}
+.tb-switch input:checked + .tb-switch-track {
+  background: var(--tb-teal);
+}
+.tb-switch input:checked + .tb-switch-track .tb-switch-thumb {
+  transform: translateX(14px);
+}
+.tb-switch input:focus-visible + .tb-switch-track {
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.22);
+}
+
+/* Segmented pill control */
+.tb-segment-group {
+  display: inline-flex;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 3px;
+}
+.tb-segment {
+  position: relative;
+  display: inline-flex;
+}
+.tb-segment input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.tb-segment span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.14s, color 0.14s, box-shadow 0.14s;
+}
+.tb-segment input:checked + span {
+  background: #fff;
+  color: var(--tb-ink);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+.tb-segment input:focus-visible + span {
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.3);
+}
+
+/* Wrapper sizes to the input + "%" suffix (same pattern as Target Length /
+   Break Every). Sizing the WRAPPER to 4rem and the input to 100% squeezes the
+   input to ~45px, leaving no room for the number once the spinner is drawn. */
+.tb-antes-pct {
+  width: auto;
+}
+/* Match the look/height of the other .tb-input-suffix inputs (Target Length,
+   Break Every). Those inherit padding+font from `.tb-field input`, but this
+   one isn't wrapped in a .tb-field, so it needs the styles inline. 4rem fits
+   3 digits ("100") plus the native number-input spinner. */
+.tb-antes-pct input {
+  width: 4rem;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--tb-ink);
+  text-align: right;
+  outline: 0;
+}
+.tb-warning-list {
+  display: grid;
+  gap: 0.45rem;
+}
+.tb-warning {
+  border: 1px solid #fde68a;
+  background: #fffbeb;
+  color: #92400e;
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.42;
+}
+.tb-schedule-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #edf2f7;
+}
+.tb-schedule-head h2 {
+  color: #1e293b;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  margin: 0 0 0.18rem;
+}
+.tb-schedule-head p {
+  color: #64748b;
+  font-size: 0.84rem;
+  margin: 0;
+}
+.tb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.tb-ghost {
+  border: 1px solid #b9d7d1;
+  background: #effcf8;
+  color: #0f5f58;
+  border-radius: 999px;
+  padding: 0.48rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.tb-ghost--gold {
+  border-color: #e4d29a;
+  background: #fbf6eb;
+  color: #8b7335;
+}
+.tb-table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.tb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.tb-table th {
+  background: #f8fafc;
+  color: #64748b;
+  text-align: left;
+  padding: 0.7rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  vertical-align: top;
+}
+.tb-th-level { padding-left: 1.25rem; }
+/* Inline next to "Blinds" — e.g. "BLINDS  + every-player ante". */
+.tb-th-sub {
+  display: inline;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: #94a3b8;
+  margin-left: 0.5rem;
+}
+.tb-th-blinds {
+  white-space: nowrap;
+}
+.tb-th-schedule {
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 1.1rem;
+}
+/* Override the global SVG `display: block` reset (Tailwind preflight) so the
+   clock sits inline next to "Schedule" instead of stacking above it. */
+.tb-th-schedule .tb-th-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  margin-right: 0.3rem;
+  color: #94a3b8;
+}
+.tb-table td {
+  border-top: 1px solid #edf2f7;
+  padding: 0.5rem 1rem;
+  color: var(--tb-ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  vertical-align: middle;
+}
+.tb-table td[data-label="Level"] {
+  width: 1%;
+  white-space: nowrap;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.92rem;
+  padding-left: 1.25rem;
+}
+.tb-table td[data-label="Schedule"] {
+  width: 1%;
+  white-space: nowrap;
+  padding-right: 1.1rem;
+}
+.tb-row-break td {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+/* Inputs shared by both Blinds and Schedule cells */
+.tb-table input {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: var(--tb-ink);
+  border-radius: 6px;
+  padding: 0.35rem 0.55rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  transition: border-color 0.12s, box-shadow 0.12s;
+}
+.tb-table input:hover {
+  border-color: #cbd5e1;
+}
+.tb-table input:focus {
+  outline: 0;
+  border-color: var(--tb-teal);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.18);
+}
+
+.tb-blinds-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tb-blinds-cell input {
+  width: 5.25rem;     /* fits 5-digit blinds like "10000" comfortably */
+}
+.tb-sep {
+  color: #cbd5e1;
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+
+.tb-schedule-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  justify-content: flex-end;
+}
+.tb-schedule-cell input {
+  width: 3.25rem;
+}
+.tb-sched-unit {
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.82rem;
+}
+.tb-sched-sep {
+  color: #cbd5e1;
+  font-weight: 400;
+}
+/* Fixed width so the whole schedule cell is a constant width across rows —
+   that makes the duration inputs (left of cell) and the action icons (right
+   of cell) line up vertically without any extra layout work. Sized to fit
+   the longest realistic value, e.g. "18 min" / "59 min" / "12:30", with as
+   little dead space as possible before short values like "0 min". */
+.tb-starts-time {
+  color: #64748b;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  width: 3.5rem;
+  text-align: right;
+}
+
+.tb-break-cell {
+  text-align: center;
+  padding-left: 1.25rem;
+}
+.tb-break-cell .tb-break-label {
+  justify-content: center;
+}
+.tb-icon {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  color: #94a3b8;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 0;
+  transition: color 0.12s, background 0.12s;
+}
+.tb-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.tb-icon:hover,
+.tb-icon:focus-visible {
+  color: var(--tb-teal);
+  background: var(--tb-teal-soft);
+  outline: 0;
+}
+.tb-icon--danger:hover,
+.tb-icon--danger:focus-visible {
+  color: #b91c1c;
+  background: #fff1f2;
+}
+.tb-break-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #92400e;
+  font-weight: 800;
+}
+.tb-break-label svg {
+  width: 14px;
+  height: 14px;
+}
+.tb-schedule-foot {
+  border-top: 1px solid #edf2f7;
+  background: #f8fafc;
+  color: #475569;
+  padding: 0.82rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.tb-content {
+  background: #FAFAF6;
+  padding: 3.4rem 1.5rem;
+}
+.tb-content-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+.tb-tag {
+  color: #8B7335;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+.tb-content h2 {
+  color: #1A2E23;
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+.tb-content p {
+  color: #5F6B63;
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin: 0 0 1rem;
+}
+@media (max-width: 640px) {
+  .tb-hero {
+    padding: 3.5rem 1.15rem 3rem;
+  }
+  .tb-tool {
+    padding: 2.4rem 0.65rem 3rem;
+  }
+  .tb-panel-body {
+    padding: 1.1rem 1rem;
+  }
+  .tb-setup-primary,
+  .tb-setup-secondary-row {
+    gap: 0.9rem 1.4rem;
+  }
+  /* On mobile, drop the % field onto its own row beneath the segment bar so
+     the bar has the full remaining width and doesn't wrap to two lines. */
+  .tb-setup-antes {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "lbl-toggle  lbl-seg"
+      "ctrl-toggle ctrl-seg"
+      ".           lbl-pct"
+      ".           ctrl-pct";
+    column-gap: 1rem;
+    row-gap: 0.4rem;
+    margin-top: 0.85rem;
+  }
+  /* Breathing room between the segment bar and the % sub-field below it. */
+  .tb-antes-lbl-pct {
+    margin-top: 0.6rem;
+  }
+  /* The % field is now placed in the `1fr` segments column on mobile — pull
+     it back to content width so it doesn't inflate to the full column. */
+  .tb-antes-pct {
+    justify-self: start;
+  }
+  .tb-segment-group {
+    flex-wrap: wrap;
+  }
+  .tb-field--growth {
+    width: 100%;
+  }
+  .tb-field--growth select {
+    width: 100%;
+  }
+  .tb-schedule-head {
+    flex-direction: column;
+  }
+  .tb-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* Two-row grid per schedule row: [Level | Blinds] on top, [Schedule right] below. */
+  .tb-table {
+    font-size: 0.92rem;
+  }
+  .tb-table tr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "level blinds"
+      "sched sched";
+    align-items: center;
+    gap: 0.2rem 0.65rem;
+    padding: 0.55rem 0.85rem;
+    border-top: 1px solid #edf2f7;
+  }
+  /* Single-line header on mobile: "LEVEL  BLINDS + every-player ante".
+     Schedule header is suppressed — the inline "min · 1:22 ☕" reads on its own. */
+  .tb-table thead tr {
+    grid-template-areas: "level blinds";
+    background: #f8fafc;
+    border-top: 0;
+  }
+  .tb-table thead th {
+    padding: 0;
+    background: transparent;
+    vertical-align: middle;
+  }
+  .tb-table thead th.tb-th-level { padding-left: 0; }
+  .tb-table thead th.tb-th-schedule { display: none; }
+  .tb-table td {
+    border: 0;
+    padding: 0;
+  }
+  .tb-table td[data-label="Level"] {
+    grid-area: level;
+    padding-left: 0;
+  }
+  .tb-table td[data-label="Blinds"] { grid-area: blinds; }
+  /* Override desktop's `width: 1%` / `white-space: nowrap` so the cell can
+     occupy the full second grid row instead of shrinking to content and
+     overflowing the viewport. */
+  .tb-table td[data-label="Schedule"] {
+    grid-area: sched;
+    justify-self: stretch;
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+  }
+  /* Right-align the schedule controls inside the now-full-width cell. */
+  .tb-schedule-cell {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+  }
+  .tb-blinds-cell input { width: 4rem; }
+  .tb-schedule-cell input { width: 2.75rem; }
+
+  .tb-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Break rows: "Break" label centered on row 1, schedule cell right-aligned on row 2. */
+  .tb-table tr.tb-row-break {
+    grid-template-areas:
+      "break break"
+      "sched sched";
+  }
+  .tb-row-break .tb-break-cell {
+    grid-area: break;
+    padding-left: 0;
+  }
+  .tb-row-break .tb-break-cell .tb-break-label {
+    justify-content: center;
+    width: 100%;
+  }
+  .tb-row-break td[data-label="Schedule"] input {
+    background: #fff;
+    box-shadow: 0 0 0 1px #fde68a inset;
+  }
+}
