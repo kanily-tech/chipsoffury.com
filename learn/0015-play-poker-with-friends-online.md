@@ -591,7 +591,7 @@ Two to four hours works for most groups. At roughly 25 hands per hour, you'll se
 <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
 <div itemprop="text">
 
-For cash games, 25/50 or 50/100 chips with starting stacks of 50 to 100 big blinds. This gives everyone room to play without feeling short-stacked immediately. If running a tournament, increase blinds every 20 to 30 minutes so the game wraps up in your target timeframe.
+For cash games, 25/50 or 50/100 chips with starting stacks of 50 to 100 big blinds. This gives everyone room to play without feeling short-stacked immediately. If running a tournament, use the <a href="/tournament-blinds-calculator/">poker blinds calculator</a> to build a schedule around your player count and target finish time.
 
 </div>
 </div>

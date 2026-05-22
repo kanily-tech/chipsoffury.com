@@ -333,7 +333,7 @@ hideAppSchema: true
     <div class="cof-lp-tag">Format Comparison</div>
     <h2 class="cof-lp-h2">Tournament vs. Cash Game Chip Setup</h2>
     <p class="cof-lp-body">In a cash game, every chip represents real money. Players can rebuy at any time and cash out whenever they want. In a tournament, chips have no cash value. Everyone starts with the same stack, blinds increase on a timer, and you play until one person has all the chips.</p>
-    <p class="cof-lp-body">This calculator is built for cash games. For tournaments, the starting stack is usually 50-100x the opening big blind (for example, T10,000 with 50/100 blinds). Use 3-4 chip colors and plan to "color up" (swap smaller chips for larger ones) as blinds increase throughout the night.</p>
+    <p class="cof-lp-body">This calculator is built for cash games. For tournaments, the starting stack is usually 50-100x the opening big blind (for example, T10,000 with 50/100 blinds). Use 3-4 chip colors and plan to "color up" (swap smaller chips for larger ones) as blinds increase throughout the night. To build the blind schedule itself, use the <a href="/tournament-blinds-calculator/">poker blinds calculator</a>.</p>
   </div>
 </section>
 

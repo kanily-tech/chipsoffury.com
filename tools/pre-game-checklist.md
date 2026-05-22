@@ -714,7 +714,7 @@ Defaults</button>
 
     <div class="cof-lp-faq-item">
       <h3>How long should a home poker game last?</h3>
-      <p>Four hours is the sweet spot for a cash game. Start at 7pm, last buy-in at 9pm, wrap up around 11pm. Tournaments run longer because you're playing down to a winner. Schedule breaks every 60-90 minutes to keep people fresh and give the host time to restock. Set a hard stop time in your invite so people can plan rides and babysitters.</p>
+      <p>Four hours is the sweet spot for a cash game. Start at 7pm, last buy-in at 9pm, wrap up around 11pm. Tournaments run longer because you're playing down to a winner. Schedule breaks every 60-90 minutes to keep people fresh and give the host time to restock. For tournament nights, use the <a href="/tournament-blinds-calculator/">poker blinds calculator</a> to match the blind schedule to your target finish time.</p>
     </div>
   </div>
 </section>
@@ -793,7 +793,7 @@ Defaults</button>
       "name": "How long should a home poker game last?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Four hours is the sweet spot for a cash game. Start at 7pm, last buy-in at 9pm, wrap up around 11pm. Tournaments run longer because you play down to a winner. Schedule breaks every 60-90 minutes and set a hard stop time in your invite."
+        "text": "Four hours is the sweet spot for a cash game. Start at 7pm, last buy-in at 9pm, wrap up around 11pm. Tournaments run longer because you play down to a winner. Schedule breaks every 60-90 minutes to keep people fresh. For tournament nights, use a blind schedule that matches your target finish time."
       }
     }
   ]

@@ -375,7 +375,7 @@ Before the flop, the blinds have already put money in the pot. To compensate, th
 Only if no one else bets. Once any player puts chips in, you have to fold, call, or raise. You can't check your way through a hand if there's money going in.
 
 **What's the difference between cash games and tournaments?**
-In a cash game, chips represent real money. You buy in for a set amount, and you can leave whenever you want. A good habit is deciding your buy-in budget before you sit down and sticking to it. In a tournament, everyone starts with the same chips, the blinds increase over time, and you play until one player has everything. Same rules, different structure.
+In a cash game, chips represent real money. You buy in for a set amount, and you can leave whenever you want. A good habit is deciding your buy-in budget before you sit down and sticking to it. In a tournament, everyone starts with the same chips, the [blinds](glossary:blinds) increase over time, and you play until one player has everything. Same rules, different structure. If you are hosting one, our [poker blinds calculator](/tournament-blinds-calculator/) can build the schedule.
 
 ---
 

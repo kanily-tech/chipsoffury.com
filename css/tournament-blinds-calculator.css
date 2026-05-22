@@ -733,9 +733,18 @@
   background: #FAFAF6;
   padding: 3.4rem 1.5rem;
 }
+.tb-content--white {
+  background: #fff;
+}
+.tb-feedback {
+  border-top: 1px solid #E6E0D2;
+}
 .tb-content-inner {
   max-width: 52rem;
   margin: 0 auto;
+}
+.tb-content-inner--center {
+  text-align: center;
 }
 .tb-tag {
   color: #8B7335;
@@ -757,6 +766,110 @@
   font-size: 0.96rem;
   line-height: 1.65;
   margin: 0 0 1rem;
+}
+.tb-content a:not(.tb-hero-cta) {
+  color: #0f766e;
+  font-weight: 700;
+  text-decoration-color: rgba(15, 118, 110, 0.3);
+  text-underline-offset: 3px;
+}
+.tb-content h3 {
+  color: #1A2E23;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  line-height: 1.3;
+  margin: 0 0 0.55rem;
+}
+.tb-table-guide-wrap {
+  overflow-x: auto;
+  margin: 1.35rem 0 1rem;
+  border: 1px solid #E6E0D2;
+  border-radius: 10px;
+  background: #fff;
+}
+.tb-guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 680px;
+  font-size: 0.9rem;
+}
+.tb-guide-table th {
+  background: #F7F3EA;
+  color: #6E5B2A;
+  text-align: left;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.tb-guide-table td {
+  border-top: 1px solid #EFE8D8;
+  color: #48524B;
+  padding: 0.85rem 0.9rem;
+  line-height: 1.45;
+  vertical-align: top;
+}
+.tb-guide-table td:first-child {
+  color: #1A2E23;
+  font-weight: 800;
+}
+.tb-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.35rem;
+}
+.tb-info-card {
+  background: #fff;
+  border: 1px solid #E6E0D2;
+  border-radius: 10px;
+  padding: 1.1rem;
+}
+.tb-info-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+.tb-info-card p:last-child {
+  margin-bottom: 0;
+}
+.tb-check-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.tb-check-list li {
+  position: relative;
+  color: #5F6B63;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-left: 1.45rem;
+}
+.tb-check-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.66rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #BFA24E;
+}
+.tb-check-list strong {
+  color: #1A2E23;
+}
+.tb-faq-item {
+  border-top: 1px solid #E6E0D2;
+  padding-top: 1.15rem;
+  margin-top: 1.15rem;
+}
+.tb-faq-item:first-of-type {
+  margin-top: 1.35rem;
+}
+.tb-faq-item p:last-child {
+  margin-bottom: 0;
 }
 @media (max-width: 640px) {
   .tb-hero {
@@ -873,6 +986,12 @@
   .tb-icon {
     width: 26px;
     height: 26px;
+  }
+  .tb-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .tb-guide-table {
+    min-width: 620px;
   }
 
   /* Break rows: "Break" label centered on row 1, schedule cell right-aligned on row 2. */

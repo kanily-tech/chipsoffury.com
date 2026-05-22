@@ -319,6 +319,8 @@ Tournaments solve most money problems automatically: everyone pays the same entr
 - 15-minute blind levels
 - Top 3 paid from total prize pool
 
+Once you know the buy-in and rebuy rules, use the [poker blinds calculator](/tournament-blinds-calculator/) to turn the player count, starting stack, and target length into a blind schedule.
+
 ### Bounty Tournaments
 
 Split the buy-in: $20 total, with $10 going to the prize pool and $10 becoming your bounty. Knock someone out and you collect their $10 bounty immediately - cash in hand. Even if you bust in 6th place, you might still be up for the night if you knocked out two people. This format adds excitement and gives everyone a secondary goal beyond just surviving.
