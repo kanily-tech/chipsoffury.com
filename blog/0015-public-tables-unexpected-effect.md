@@ -42,4 +42,4 @@ I have an OCD for not being able to sit still, if I know something's wrong. So l
 I hope you don't feel shy, please write in with any requests / advice.
 
 We have recently started a public Discord server - you can hop on here as
-well - [CoF Discord](https://discord.gg/WrzENQ8d). Me and Kirill are usually around to answer all queries.
+well - [CoF Discord](https://discord.gg/Pt2JMyU8Gp). Me and Kirill are usually around to answer all queries.

@@ -301,7 +301,7 @@ One more gotcha: Discord caches aggressively. After deploying updates, users kep
 
 ---
 
-That's it. Chips of Fury is now on Discord with some platform-specific enhancements! Join our [official Discord server](https://discord.gg/9x7MPRPacZ) to get in touch with us or find people to play with.
+That's it. Chips of Fury is now on Discord with some platform-specific enhancements! Join our [official Discord server](https://discord.gg/Pt2JMyU8Gp) to get in touch with us or find people to play with.
 
 <img src="/images/posts/discord-activity/screenshot.png" class="post_image">
 
