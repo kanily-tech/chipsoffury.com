@@ -13,7 +13,7 @@ permalink: /virtual-poker-chips/
 
 <!-- Hero Section -->
 <section class="bg-indigo-900 text-white py-16 md:py-24">
-  <div class="max-w-6xl mx-auto px-4">
+  <div class="max-w-7xl mx-auto px-4">
     <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
       <div>
         <h1 class="font-heading text-4xl md:text-6xl font-bold mb-5 leading-[1.1]">
@@ -48,10 +48,11 @@ permalink: /virtual-poker-chips/
         </div>
 
         <div class="flex flex-col gap-4 items-start">
-          <a href="https://app.chipsoffury.com" class="primary-cta">
-            <span class="text-2xl">🌐</span>
-            <span>Play Now on Web</span>
-          </a>
+          <div class="flex flex-col xl:flex-row gap-4 items-start">
+            {% include "components/play-web-button.html" %}
+            {% include "components/play-discord-button.html" %}
+          </div>
+          <p class="text-sm text-indigo-300">Play the game right inside Discord, then stick around for the community.</p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="https://apps.apple.com/app/id1292493748" class="app-store-button">
               <img src="/images/app-store-badge.svg" alt="Download on App Store" class="h-14">
@@ -509,13 +510,13 @@ permalink: /virtual-poker-chips/
     <!-- App download buttons -->
     <!-- App Store Badges -->
     <div class="download-buttons">
-      <!-- Primary Web CTA - Centered on its own row -->
-      <div class="flex justify-center mb-4">
-        <a href="https://app.chipsoffury.com" class="primary-cta">
-          <span class="text-2xl">🌐</span>
-          <span>Play Now on Web</span>
-        </a>
+      <!-- Primary Play CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {% include "components/play-web-button.html" %}
+        {% include "components/play-discord-button.html" %}
       </div>
+
+      <p class="text-center text-sm text-indigo-200">Play the game right inside Discord, then stick around for the community.</p>
       
       <!-- Mobile App Buttons - On their own row -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">

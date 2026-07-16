@@ -166,13 +166,13 @@ eleventyNavigation:
     
     <!-- App Store Badges -->
     <div class="download-buttons">
-      <!-- Primary Web CTA - Centered on its own row -->
-      <div class="flex justify-center mb-4">
-        <a href="https://app.chipsoffury.com" class="primary-cta">
-          <span class="text-2xl">🌐</span>
-          <span>Play Now on Web</span>
-        </a>
+      <!-- Primary Play CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {% include "components/play-web-button.html" %}
+        {% include "components/play-discord-button.html" %}
       </div>
+
+      <p class="text-center text-sm text-gray-600">Play the game right inside Discord, then stick around for the community.</p>
       
       <!-- Mobile App Buttons - On their own row -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
